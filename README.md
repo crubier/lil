@@ -46,63 +46,54 @@ Once you are ready to install the lil framework sources into (framework_path), d
 
 1. Clone this repository
 
-		Github >> Clone in Desktop >> to (framework_path)
-		or
-		Github >> Download ZIP >> Unzip in (framework_path)
-		or
-		Terminal >> cd (framework_path) >> git clone https://github.com/crubier/lil.git
+		Github >> Clone in Desktop >> to (framework_path) or
+		Github >> Download ZIP >> Unzip in (framework_path) or
+		Terminal >>
+			cd (framework_path) 
+			git clone https://github.com/crubier/lil.git
 	
 	(framework_path) should now contain only one folder called lil, containing the repository files
 	
 2. Launch Eclipse / Xtext and switch to a fresh new workspace wherever on your machine, but NOT inside of the folder you just cloned
 
-		In Eclipse >> File >> Switch Workspace >> Other...
-		then
+		Eclipse >> File >> Switch Workspace >> Other...>>
 		Pick a new folder, typically (framework_path)/workspace
 	
 	(framework_path) should now contain two folders : workspace, and lil
 	
 3. Import the 4 Projects found in (framework_path)/lil/projects/ into your workspace
 
-		In Eclipse >> File >> Import 
-		then
-		General >> Existing projects into workspace >> Next
-		then
-		Select root directory : (framework_path)/lil/projects/ >> Select all >> Uncheck Copy projects into workspace >> Finish
+		Eclipse >> File >> Import >> 
+		General >> Existing projects into workspace >> Next >>
+		Select root directory : (framework_path)/lil/projects/ >> 
+		Select all >> Uncheck Copy projects into workspace >> Finish
 	
 	Your eclipse packages explorer view should now display 4 projects in your workspace
 	
 4. Build the language infrastructure
 
-		In the Eclipse package explorer view, expand the "com.crubier.lil" project
-		then
-		Expand the "launch" folder
-		then
-		Right-click "Generate lil infrastructure.launch" >> "Run as" >> "Generate lil infrastructure" 
-		then 
+		Eclipse package explorer view, got to "com.crubier.lil/launch" 
+		Right-click "Generate lil infrastructure.launch" >> 
+		"Run as" >> "Generate lil infrastructure" 
 		Wait during the language infrastructure generation
 	
 	Your Eclipse console view should now indicate that the MWE2 workflow succeeded without errors
 	
 5. Launch the lil editor runtime Eclipse
 
-		In the Eclipse package explorer view, expand the "com.crubier.lil" project
-		then
-		Expand the "launch" folder
-		then
-		Right-click "Launch lil runtime eclipse.launch" >> "Run as" >> "Launch lil runtime eclipse" 
-		then 
+		Eclipse package explorer view, got to "com.crubier.lil/launch" 
+		Right-click "Launch lil runtime eclipse.launch" >>
+		"Run as" >> "Launch lil runtime eclipse" 
 		Wait until the new eclipse instance is up and running
 	
 	You should now have two Eclipse instances running : The Xtext IDE, and the lil IDE you just launched
 	
 6. Import sample projects into the lil sample workspace
 
-		In the lil IDE Eclipse >> File >> Import 
-		then
-		General >> Existing projects into workspace >> Next
-		then
-		Select root directory : (framework_path)/lil/sample projects/ >> Select all >> Uncheck Copy projects into workspace >> Finish
+		lil IDE Eclipse >> File >> Import 
+		General >> Existing projects into workspace >> 
+		Select root directory : (framework_path)/lil/sample projects/ >> 
+		Select all >> Uncheck Copy projects into workspace >> Finish
 	
 	Your lil IDE packages explorer view should now display the sample project in the lil workspace
 	
