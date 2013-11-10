@@ -6,22 +6,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Field</b></em>'.
+ * A representation of the model object '<em><b>Data Type Compound Field</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.Field#getType <em>Type</em>}</li>
- *   <li>{@link com.crubier.lil.lil.Field#getName <em>Name</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.DataTypeCompoundField#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.DataTypeCompoundField#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.crubier.lil.lil.LilPackage#getField()
+ * @see com.crubier.lil.lil.LilPackage#getDataTypeCompoundField()
  * @model
  * @generated
  */
-public interface Field extends EObject
+public interface DataTypeCompoundField extends EObject
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.
@@ -33,14 +33,14 @@ public interface Field extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' containment reference.
    * @see #setType(DataType)
-   * @see com.crubier.lil.lil.LilPackage#getField_Type()
+   * @see com.crubier.lil.lil.LilPackage#getDataTypeCompoundField_Type()
    * @model containment="true"
    * @generated
    */
   DataType getType();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.Field#getType <em>Type</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.DataTypeCompoundField#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' containment reference.
@@ -59,14 +59,14 @@ public interface Field extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.crubier.lil.lil.LilPackage#getField_Name()
+   * @see com.crubier.lil.lil.LilPackage#getDataTypeCompoundField_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.Field#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.crubier.lil.lil.DataTypeCompoundField#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -75,4 +75,4 @@ public interface Field extends EObject
    */
   void setName(String value);
 
-} // Field
+} // DataTypeCompoundField

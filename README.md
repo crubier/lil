@@ -105,4 +105,8 @@ Once you are ready to install the **lil** framework into (framework_path), do th
 - The syntax is defined in [Lil.xtext](projects/com.crubier.lil/src/com/crubier/lil/Lil.xtext)
 - Scoping, validation, code formatting and code generation sources are available [there](projects/com.crubier.lil/src/com/crubier/lil/)
 
+# Some interesting links
+
+http://www.infoq.com/presentations/S4-Declarative-DSL-UI
+http://www.openxava.org
 

@@ -90,18 +90,21 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.SET_EFFECT: return createSetEffect();
       case LilPackage.TRIGGER_EFFECT: return createTriggerEffect();
       case LilPackage.EXPRESSION: return createExpression();
-      case LilPackage.DATA_TYPE_DECLARATION: return createDataTypeDeclaration();
-      case LilPackage.FIELD: return createField();
+      case LilPackage.DATA_TYPE_COMPOUND_DECLARATION: return createDataTypeCompoundDeclaration();
+      case LilPackage.DATA_TYPE_COMPOUND_FIELD: return createDataTypeCompoundField();
       case LilPackage.DATA_TYPE: return createDataType();
       case LilPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
       case LilPackage.NUMBER_EXPRESSION: return createNumberExpression();
       case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER_CASE: return createNumberSwitchExpressionNumberCase();
       case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT_CASE: return createNumberSwitchExpressionTextCase();
       case LilPackage.TEXT_EXPRESSION: return createTextExpression();
+      case LilPackage.DATA_TYPE_COMPOUND: return createDataTypeCompound();
+      case LilPackage.DATA_TYPE_BASE: return createDataTypeBase();
       case LilPackage.BOOLEAN_DISJONCTION: return createBooleanDisjonction();
       case LilPackage.BOOLEAN_CONJONCTION: return createBooleanConjonction();
       case LilPackage.BOOLEAN_NEGATION: return createBooleanNegation();
       case LilPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
+      case LilPackage.BOOLEAN_NUMBER_COMPARISON: return createBooleanNumberComparison();
       case LilPackage.NUMBER_IF_EXPRESSION: return createNumberIfExpression();
       case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER: return createNumberSwitchExpressionNumber();
       case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT: return createNumberSwitchExpressionText();
@@ -412,10 +415,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataTypeDeclaration createDataTypeDeclaration()
+  public DataTypeCompoundDeclaration createDataTypeCompoundDeclaration()
   {
-    DataTypeDeclarationImpl dataTypeDeclaration = new DataTypeDeclarationImpl();
-    return dataTypeDeclaration;
+    DataTypeCompoundDeclarationImpl dataTypeCompoundDeclaration = new DataTypeCompoundDeclarationImpl();
+    return dataTypeCompoundDeclaration;
   }
 
   /**
@@ -423,10 +426,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Field createField()
+  public DataTypeCompoundField createDataTypeCompoundField()
   {
-    FieldImpl field = new FieldImpl();
-    return field;
+    DataTypeCompoundFieldImpl dataTypeCompoundField = new DataTypeCompoundFieldImpl();
+    return dataTypeCompoundField;
   }
 
   /**
@@ -500,6 +503,28 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public DataTypeCompound createDataTypeCompound()
+  {
+    DataTypeCompoundImpl dataTypeCompound = new DataTypeCompoundImpl();
+    return dataTypeCompound;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeBase createDataTypeBase()
+  {
+    DataTypeBaseImpl dataTypeBase = new DataTypeBaseImpl();
+    return dataTypeBase;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BooleanDisjonction createBooleanDisjonction()
   {
     BooleanDisjonctionImpl booleanDisjonction = new BooleanDisjonctionImpl();
@@ -537,6 +562,17 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     BooleanLiteralImpl booleanLiteral = new BooleanLiteralImpl();
     return booleanLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanNumberComparison createBooleanNumberComparison()
+  {
+    BooleanNumberComparisonImpl booleanNumberComparison = new BooleanNumberComparisonImpl();
+    return booleanNumberComparison;
   }
 
   /**

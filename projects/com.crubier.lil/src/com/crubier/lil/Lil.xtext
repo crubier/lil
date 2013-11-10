@@ -8,7 +8,7 @@ generate lil "http://www.crubier.com/lil/Lil"
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Model
 Model:
-	((interactors+=InteractorDeclaration) | (dataTypes+=DataTypeDeclaration))*;
+	((interactors+=InteractorDeclaration) | (dataTypes+=DataTypeCompoundDeclaration))*;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,8 +23,7 @@ AccessibleEntity:
 	generic=('any' | 'self' | 'other' | 'parent' | 'child' | 'all' | 'actors') | specific=Entity;
 
 Entity:
-	instance=[EntityDeclaration]
-;
+	instance=[EntityDeclaration];
 
 Actor:
 	instance=[ActorDeclaration];
@@ -77,10 +76,10 @@ Cause:
 	(OnCause | WhenCause) ;
 
 OnCause:
-	'on' event=EventReception ('if' guard=Expression)?;
+	'on' event=EventReception ('if' guard=BooleanExpression)?;
 
 WhenCause:
-	'when' condition=Expression ('if' guard=Expression)?;
+	'when' condition=BooleanExpression ('if' guard=BooleanExpression)?;
 
 Effect:
 	(AlwaysEffect | SetEffect | TriggerEffect)
@@ -104,20 +103,17 @@ Expression:
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Structure
-DataTypeDeclaration:
-	'data' 'type' name=ID ':'
-	(fields+=Field)*;
+//Compound data types
+DataTypeCompoundDeclaration:
+	'structure' name=ID ':'
+	(fields+=DataTypeCompoundField)*;
 
-Field:
+DataTypeCompoundField:
 	type=DataType name=ID;
 
 DataType:
-	compound=[DataTypeDeclaration] | base=DataTypeBase;
-
-DataTypeBase:
-	('void' | 'symbol' | 'number' | 'text' | 'time' | 'reference')
-;
+	({DataTypeCompound} type=[DataTypeCompoundDeclaration]) | 
+	({DataTypeBase} type=('void' | 'symbol' | 'number' | 'text' | 'time' | 'reference'));
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -128,7 +124,7 @@ DataTypeBase:
 
 //Boolean expressions
 BooleanExpression:
-	BooleanDisjonction
+	 BooleanDisjonction
 ;
 
 BooleanDisjonction returns BooleanExpression:
@@ -148,8 +144,13 @@ BooleanUnary returns BooleanExpression:
 
 BooleanTerminalExpression returns BooleanExpression:
 	'(' BooleanExpression ')' |
-	({BooleanLiteral} value=BooleanLiteral)
+	({BooleanLiteral} value=BooleanLiteral) |
+	( {BooleanNumberComparison} 'qq' left=NumberExpression op=('=='|'!='|'<'|'>'|'<='|'>=') right=NumberExpression 'ee') 
 ;
+
+
+
+
 
 
 //Numeric expressions
@@ -189,6 +190,7 @@ NumberUnary returns NumberExpression:
 
 NumberTerminalExpression returns NumberExpression:
   '(' NumberExpression ')' |
+/*   	({NumberTerminalSignal} ref=[SignalDeclaration])|*/
   ({NumberLiteral} value=NumberLiteral) |
   {NumberFunctionExpression} function=ID ('(' arguments+=NumberExpression (',' arguments+=NumberExpression)* ')')? 
 ;
@@ -206,6 +208,277 @@ TextJoin returns TextExpression:
 TextTerminalExpression returns TextExpression:
 	{TextLiteral} value=TextLiteral
 ;
+
+
+
+
+
+
+
+
+XExpression:
+	XOrExpression
+;
+
+XOrExpression returns XExpression:
+	XAndExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOr) rightOperand=XAndExpression)*;
+
+OpOr:
+	'||';
+
+XAndExpression returns XExpression:
+	XEqualityExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAnd) rightOperand=XEqualityExpression)*;
+
+OpAnd:
+	'&&';
+
+XEqualityExpression returns XExpression:
+	XRelationalExpression (=>({XBinaryOperation.leftOperand=current} feature=OpEquality) rightOperand=XRelationalExpression)*;
+
+OpEquality:
+	'==' | '!=' ;
+
+XRelationalExpression returns XExpression:
+	XOtherOperatorExpression
+	/*(=>({XInstanceOfExpression.expression=current} 'instanceof') type=JvmTypeReference |*/
+	 (=>({XBinaryOperation.leftOperand=current} feature=OpCompare) rightOperand=XOtherOperatorExpression);
+
+OpCompare:
+	'>=' | '<=' | '>' | '<' ;
+
+XOtherOperatorExpression returns XExpression:
+	XAdditiveExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOther) rightOperand=XAdditiveExpression)*;
+
+OpOther:
+	  '<>'
+	| '?:' ;
+
+XAdditiveExpression returns XExpression:
+	XMultiplicativeExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAdd)
+	rightOperand=XMultiplicativeExpression)*;
+
+OpAdd:
+	'+' | '-';
+
+XMultiplicativeExpression returns XExpression:
+	XUnaryOperation (=>({XBinaryOperation.leftOperand=current} feature=OpMulti) rightOperand=XUnaryOperation)*;
+
+OpMulti:
+	'*' | '/' | '%';
+
+XUnaryOperation returns XExpression:
+	{XUnaryOperation} feature=OpUnary operand=XUnaryOperation | XCastedExpression;
+
+OpUnary:
+	"!" | "-" | "+";
+	
+XCastedExpression returns XExpression:
+	XMemberFeatureCall (=>({XCastedExpression.target=current} 'as') type=JvmTypeReference)*
+;
+
+XMemberFeatureCall returns XExpression:
+	XPrimaryExpression
+	(=>({XAssignment.assignable=current} ('.'|explicitStatic?="::") feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment
+	|=>({XMemberFeatureCall.memberCallTarget=current} ("."|nullSafe?="?."|explicitStatic?="::")) 
+		('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?  
+		feature=[types::JvmIdentifiableElement|FeatureCallID] (
+			=>explicitOperationCall?='(' 
+				(
+				    memberCallArguments+=XShortClosure
+				  |	memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*
+				)? 
+			')')?
+			memberCallArguments+=XClosure?
+		)*;
+
+XPrimaryExpression returns XExpression:
+	XConstructorCall |
+	XBlockExpression |
+	XSwitchExpression |
+	XFeatureCall |
+	XLiteral |
+	XIfExpression |
+	XForLoopExpression |
+	XWhileExpression |
+	XDoWhileExpression |
+	XThrowExpression |
+	XReturnExpression |
+	XTryCatchFinallyExpression |
+	XParenthesizedExpression;
+
+XLiteral returns XExpression:
+	XCollectionLiteral |
+	XClosure |
+	XBooleanLiteral |
+	XNumberLiteral |
+	XNullLiteral |
+	XStringLiteral |
+	XTypeLiteral
+;
+
+XCollectionLiteral:
+	XSetLiteral | XListLiteral
+;
+
+XSetLiteral:
+	{XSetLiteral} '#' '{' (elements+=XExpression (',' elements+=XExpression )*)? '}'
+;
+
+XListLiteral:
+	{XListLiteral} '#' '[' (elements+=XExpression (',' elements+=XExpression )*)? ']'
+;
+
+XClosure returns XExpression:
+	=>({XClosure} 
+	'[') 
+		=>((declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|')? 
+		expression=XExpressionInClosure 
+	']';
+	
+XExpressionInClosure returns XExpression: 
+	{XBlockExpression}
+	(expressions+=XExpressionInsideBlock ';'?)*
+;
+
+XShortClosure returns XExpression:
+	=>({XClosure} (declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|') expression=XExpression;
+
+XParenthesizedExpression returns XExpression:
+	'(' XExpression ')';
+
+XIfExpression returns XExpression:
+	{XIfExpression}
+	'if' '(' if=XExpression ')'
+	then=XExpression
+	(=>'else' else=XExpression)?;
+
+XSwitchExpression returns XExpression:
+	{XSwitchExpression}
+	'switch' (=>(localVarName=ValidID ':')? switch=XExpression
+		| =>('(' localVarName=ValidID ':') switch=XExpression ')') '{'
+	(cases+=XCasePart)+
+	('default' ':' default=XExpression )?
+	'}';
+
+XCasePart:
+	typeGuard=JvmTypeReference? ('case' case=XExpression)? 
+		':' then=XExpression ;
+
+XForLoopExpression returns XExpression:
+	{XForLoopExpression}
+	'for' '(' declaredParam=JvmFormalParameter ':' forExpression=XExpression ')'
+		eachExpression=XExpression;
+
+XWhileExpression returns XExpression:
+	{XWhileExpression}
+	'while' '(' predicate=XExpression ')'
+		body=XExpression;
+	
+XDoWhileExpression returns XExpression:
+	{XDoWhileExpression}
+   'do'
+       body=XExpression
+   'while' '(' predicate=XExpression ')';
+
+XBlockExpression returns XExpression: 
+	{XBlockExpression}
+	'{'
+		(expressions+=XExpressionInsideBlock ';'?)*
+	'}';
+
+XExpressionInsideBlock returns XExpression:
+	XVariableDeclaration | XExpression;
+
+XVariableDeclaration returns XExpression:
+	{XVariableDeclaration}
+	(writeable?='var'|'val') (=>(type=JvmTypeReference name=ValidID) | name=ValidID) ('=' right=XExpression)?;
+
+JvmFormalParameter returns types::JvmFormalParameter:
+	(parameterType=JvmTypeReference)? name=ValidID;
+	
+FullJvmFormalParameter returns types::JvmFormalParameter:
+	parameterType=JvmTypeReference name=ValidID;
+
+XFeatureCall returns XExpression:
+	{XFeatureCall}
+	('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')? 
+	feature=[types::JvmIdentifiableElement|IdOrSuper] 
+	(=>explicitOperationCall?='(' 
+		(
+		    featureCallArguments+=XShortClosure
+		  |	featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*
+		)? 
+	')')?
+	featureCallArguments+=XClosure?;
+	
+FeatureCallID:
+	ValidID | 'extends' | 'static' | 'import' | 'extension'
+;
+
+IdOrSuper :
+	FeatureCallID | 'super'
+;
+	
+XConstructorCall returns XExpression:
+	{XConstructorCall}
+	'new' constructor=[types::JvmConstructor|QualifiedName] 
+	(=>'<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
+	(=>'(' 
+		(
+		    arguments+=XShortClosure
+		  |	arguments+=XExpression (',' arguments+=XExpression)*
+		)? 
+	')')?
+	arguments+=XClosure?;
+
+XBooleanLiteral returns XExpression :
+	{XBooleanLiteral} ('false' | isTrue?='true');
+
+XNullLiteral returns XExpression :
+	{XNullLiteral} 'null';
+
+XNumberLiteral returns XExpression :
+	{XNumberLiteral} value=Number;
+
+XStringLiteral returns XExpression:
+	{XStringLiteral} value=STRING;
+
+XTypeLiteral returns XExpression :
+	{XTypeLiteral} 'typeof' '(' type=[types::JvmType|QualifiedName] (arrayDimensions+=ArrayBrackets)* ')'
+;
+
+XThrowExpression returns XExpression :
+	{XThrowExpression} 'throw' expression=XExpression;
+	
+XReturnExpression returns XExpression :
+	{XReturnExpression} 'return' (=>expression=XExpression)?;
+	
+XTryCatchFinallyExpression returns XExpression:
+	{XTryCatchFinallyExpression}
+	'try' 
+		expression=XExpression
+	(
+		catchClauses+=XCatchClause+
+		(=>'finally' finallyExpression=XExpression)?
+	|	'finally' finallyExpression=XExpression
+	);
+	
+XCatchClause :
+	=>'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
+
+
+QualifiedName:
+  ValidID (=>'.' ValidID)*;
+
+
+
+
+
+
+
+
+
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

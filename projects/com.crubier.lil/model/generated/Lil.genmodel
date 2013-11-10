@@ -93,18 +93,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//TriggerEffect/target"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//Expression"/>
-    <genClasses ecoreClass="Lil.ecore#//DataTypeDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeDeclaration/fields"/>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeCompoundDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeCompoundDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompoundDeclaration/fields"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//Field">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Field/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//Field/name"/>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeCompoundField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompoundField/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeCompoundField/name"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//DataType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//DataType/compound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataType/base"/>
-    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//DataType"/>
     <genClasses ecoreClass="Lil.ecore#//BooleanExpression"/>
     <genClasses ecoreClass="Lil.ecore#//NumberExpression"/>
     <genClasses ecoreClass="Lil.ecore#//NumberSwitchExpressionNumberCase">
@@ -116,6 +113,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionTextCase/value"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//TextExpression"/>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeCompound">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompound/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeBase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeBase/type"/>
+    </genClasses>
     <genClasses ecoreClass="Lil.ecore#//BooleanDisjonction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanDisjonction/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanDisjonction/right"/>
@@ -129,6 +132,11 @@
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//BooleanLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//BooleanLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//BooleanNumberComparison">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanNumberComparison/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//BooleanNumberComparison/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanNumberComparison/right"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//NumberIfExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberIfExpression/if"/>

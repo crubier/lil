@@ -43,7 +43,7 @@ public interface Model extends EObject
 
   /**
    * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.DataTypeDeclaration}.
+   * The list contents are of type {@link com.crubier.lil.lil.DataTypeCompoundDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Data Types</em>' containment reference list isn't clear,
@@ -55,6 +55,6 @@ public interface Model extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<DataTypeDeclaration> getDataTypes();
+  EList<DataTypeCompoundDeclaration> getDataTypes();
 
 } // Model

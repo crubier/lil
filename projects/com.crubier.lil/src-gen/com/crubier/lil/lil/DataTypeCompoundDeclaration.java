@@ -8,22 +8,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Data Type Declaration</b></em>'.
+ * A representation of the model object '<em><b>Data Type Compound Declaration</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.DataTypeDeclaration#getName <em>Name</em>}</li>
- *   <li>{@link com.crubier.lil.lil.DataTypeDeclaration#getFields <em>Fields</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.DataTypeCompoundDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.DataTypeCompoundDeclaration#getFields <em>Fields</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.crubier.lil.lil.LilPackage#getDataTypeDeclaration()
+ * @see com.crubier.lil.lil.LilPackage#getDataTypeCompoundDeclaration()
  * @model
  * @generated
  */
-public interface DataTypeDeclaration extends EObject
+public interface DataTypeCompoundDeclaration extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -35,14 +35,14 @@ public interface DataTypeDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.crubier.lil.lil.LilPackage#getDataTypeDeclaration_Name()
+   * @see com.crubier.lil.lil.LilPackage#getDataTypeCompoundDeclaration_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.DataTypeDeclaration#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -53,7 +53,7 @@ public interface DataTypeDeclaration extends EObject
 
   /**
    * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.Field}.
+   * The list contents are of type {@link com.crubier.lil.lil.DataTypeCompoundField}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
@@ -61,10 +61,10 @@ public interface DataTypeDeclaration extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Fields</em>' containment reference list.
-   * @see com.crubier.lil.lil.LilPackage#getDataTypeDeclaration_Fields()
+   * @see com.crubier.lil.lil.LilPackage#getDataTypeCompoundDeclaration_Fields()
    * @model containment="true"
    * @generated
    */
-  EList<Field> getFields();
+  EList<DataTypeCompoundField> getFields();
 
-} // DataTypeDeclaration
+} // DataTypeCompoundDeclaration

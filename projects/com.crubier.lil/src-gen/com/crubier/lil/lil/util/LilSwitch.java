@@ -263,17 +263,17 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_TYPE_DECLARATION:
+      case LilPackage.DATA_TYPE_COMPOUND_DECLARATION:
       {
-        DataTypeDeclaration dataTypeDeclaration = (DataTypeDeclaration)theEObject;
-        T result = caseDataTypeDeclaration(dataTypeDeclaration);
+        DataTypeCompoundDeclaration dataTypeCompoundDeclaration = (DataTypeCompoundDeclaration)theEObject;
+        T result = caseDataTypeCompoundDeclaration(dataTypeCompoundDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.FIELD:
+      case LilPackage.DATA_TYPE_COMPOUND_FIELD:
       {
-        Field field = (Field)theEObject;
-        T result = caseField(field);
+        DataTypeCompoundField dataTypeCompoundField = (DataTypeCompoundField)theEObject;
+        T result = caseDataTypeCompoundField(dataTypeCompoundField);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -320,6 +320,22 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilPackage.DATA_TYPE_COMPOUND:
+      {
+        DataTypeCompound dataTypeCompound = (DataTypeCompound)theEObject;
+        T result = caseDataTypeCompound(dataTypeCompound);
+        if (result == null) result = caseDataType(dataTypeCompound);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_BASE:
+      {
+        DataTypeBase dataTypeBase = (DataTypeBase)theEObject;
+        T result = caseDataTypeBase(dataTypeBase);
+        if (result == null) result = caseDataType(dataTypeBase);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilPackage.BOOLEAN_DISJONCTION:
       {
         BooleanDisjonction booleanDisjonction = (BooleanDisjonction)theEObject;
@@ -349,6 +365,14 @@ public class LilSwitch<T> extends Switch<T>
         BooleanLiteral booleanLiteral = (BooleanLiteral)theEObject;
         T result = caseBooleanLiteral(booleanLiteral);
         if (result == null) result = caseBooleanExpression(booleanLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.BOOLEAN_NUMBER_COMPARISON:
+      {
+        BooleanNumberComparison booleanNumberComparison = (BooleanNumberComparison)theEObject;
+        T result = caseBooleanNumberComparison(booleanNumberComparison);
+        if (result == null) result = caseBooleanExpression(booleanNumberComparison);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -897,33 +921,33 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Type Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Type Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Compound Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataTypeDeclaration(DataTypeDeclaration object)
+  public T caseDataTypeCompoundDeclaration(DataTypeCompoundDeclaration object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound Field</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Field</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Compound Field</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseField(Field object)
+  public T caseDataTypeCompoundField(DataTypeCompoundField object)
   {
     return null;
   }
@@ -1025,6 +1049,38 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Compound</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeCompound(DataTypeCompound object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Base</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Base</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeBase(DataTypeBase object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Boolean Disjonction</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1084,6 +1140,22 @@ public class LilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBooleanLiteral(BooleanLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Number Comparison</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Number Comparison</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanNumberComparison(BooleanNumberComparison object)
   {
     return null;
   }

@@ -23,16 +23,16 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cInteractorsAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cInteractorsInteractorDeclarationParserRuleCall_0_0 = (RuleCall)cInteractorsAssignment_0.eContents().get(0);
 		private final Assignment cDataTypesAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cDataTypesDataTypeDeclarationParserRuleCall_1_0 = (RuleCall)cDataTypesAssignment_1.eContents().get(0);
+		private final RuleCall cDataTypesDataTypeCompoundDeclarationParserRuleCall_1_0 = (RuleCall)cDataTypesAssignment_1.eContents().get(0);
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		////Model
 		//Model:
-		//	(interactors+=InteractorDeclaration | dataTypes+=DataTypeDeclaration)*;
+		//	(interactors+=InteractorDeclaration | dataTypes+=DataTypeCompoundDeclaration)*;
 		public ParserRule getRule() { return rule; }
 
-		//(interactors+=InteractorDeclaration | dataTypes+=DataTypeDeclaration)*
+		//(interactors+=InteractorDeclaration | dataTypes+=DataTypeCompoundDeclaration)*
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//interactors+=InteractorDeclaration
@@ -41,11 +41,11 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//InteractorDeclaration
 		public RuleCall getInteractorsInteractorDeclarationParserRuleCall_0_0() { return cInteractorsInteractorDeclarationParserRuleCall_0_0; }
 
-		//dataTypes+=DataTypeDeclaration
+		//dataTypes+=DataTypeCompoundDeclaration
 		public Assignment getDataTypesAssignment_1() { return cDataTypesAssignment_1; }
 
-		//DataTypeDeclaration
-		public RuleCall getDataTypesDataTypeDeclarationParserRuleCall_1_0() { return cDataTypesDataTypeDeclarationParserRuleCall_1_0; }
+		//DataTypeCompoundDeclaration
+		public RuleCall getDataTypesDataTypeCompoundDeclarationParserRuleCall_1_0() { return cDataTypesDataTypeCompoundDeclarationParserRuleCall_1_0; }
 	}
 
 	public class InteractorDeclarationElements extends AbstractParserRuleElementFinder {
@@ -750,13 +750,13 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cIfKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cGuardAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cGuardExpressionParserRuleCall_2_1_0 = (RuleCall)cGuardAssignment_2_1.eContents().get(0);
+		private final RuleCall cGuardBooleanExpressionParserRuleCall_2_1_0 = (RuleCall)cGuardAssignment_2_1.eContents().get(0);
 		
 		//OnCause:
-		//	"on" event=EventReception ("if" guard=Expression)?;
+		//	"on" event=EventReception ("if" guard=BooleanExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//"on" event=EventReception ("if" guard=Expression)?
+		//"on" event=EventReception ("if" guard=BooleanExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//"on"
@@ -768,17 +768,17 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//EventReception
 		public RuleCall getEventEventReceptionParserRuleCall_1_0() { return cEventEventReceptionParserRuleCall_1_0; }
 
-		//("if" guard=Expression)?
+		//("if" guard=BooleanExpression)?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"if"
 		public Keyword getIfKeyword_2_0() { return cIfKeyword_2_0; }
 
-		//guard=Expression
+		//guard=BooleanExpression
 		public Assignment getGuardAssignment_2_1() { return cGuardAssignment_2_1; }
 
-		//Expression
-		public RuleCall getGuardExpressionParserRuleCall_2_1_0() { return cGuardExpressionParserRuleCall_2_1_0; }
+		//BooleanExpression
+		public RuleCall getGuardBooleanExpressionParserRuleCall_2_1_0() { return cGuardBooleanExpressionParserRuleCall_2_1_0; }
 	}
 
 	public class WhenCauseElements extends AbstractParserRuleElementFinder {
@@ -786,39 +786,39 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWhenKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cConditionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cConditionExpressionParserRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
+		private final RuleCall cConditionBooleanExpressionParserRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cIfKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cGuardAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cGuardExpressionParserRuleCall_2_1_0 = (RuleCall)cGuardAssignment_2_1.eContents().get(0);
+		private final RuleCall cGuardBooleanExpressionParserRuleCall_2_1_0 = (RuleCall)cGuardAssignment_2_1.eContents().get(0);
 		
 		//WhenCause:
-		//	"when" condition=Expression ("if" guard=Expression)?;
+		//	"when" condition=BooleanExpression ("if" guard=BooleanExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//"when" condition=Expression ("if" guard=Expression)?
+		//"when" condition=BooleanExpression ("if" guard=BooleanExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//"when"
 		public Keyword getWhenKeyword_0() { return cWhenKeyword_0; }
 
-		//condition=Expression
+		//condition=BooleanExpression
 		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
 
-		//Expression
-		public RuleCall getConditionExpressionParserRuleCall_1_0() { return cConditionExpressionParserRuleCall_1_0; }
+		//BooleanExpression
+		public RuleCall getConditionBooleanExpressionParserRuleCall_1_0() { return cConditionBooleanExpressionParserRuleCall_1_0; }
 
-		//("if" guard=Expression)?
+		//("if" guard=BooleanExpression)?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"if"
 		public Keyword getIfKeyword_2_0() { return cIfKeyword_2_0; }
 
-		//guard=Expression
+		//guard=BooleanExpression
 		public Assignment getGuardAssignment_2_1() { return cGuardAssignment_2_1; }
 
-		//Expression
-		public RuleCall getGuardExpressionParserRuleCall_2_1_0() { return cGuardExpressionParserRuleCall_2_1_0; }
+		//BooleanExpression
+		public RuleCall getGuardBooleanExpressionParserRuleCall_2_1_0() { return cGuardBooleanExpressionParserRuleCall_2_1_0; }
 	}
 
 	public class EffectElements extends AbstractParserRuleElementFinder {
@@ -965,58 +965,54 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNumberExpressionParserRuleCall() { return cNumberExpressionParserRuleCall; }
 	}
 
-	public class DataTypeDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataTypeDeclaration");
+	public class DataTypeCompoundDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataTypeCompoundDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDataKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cFieldsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cFieldsFieldParserRuleCall_4_0 = (RuleCall)cFieldsAssignment_4.eContents().get(0);
+		private final Keyword cStructureKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cFieldsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFieldsDataTypeCompoundFieldParserRuleCall_3_0 = (RuleCall)cFieldsAssignment_3.eContents().get(0);
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		////Structure
-		//DataTypeDeclaration:
-		//	"data" "type" name=ID ":" fields+=Field*;
+		////Compound data types
+		//DataTypeCompoundDeclaration:
+		//	"structure" name=ID ":" fields+=DataTypeCompoundField*;
 		public ParserRule getRule() { return rule; }
 
-		//"data" "type" name=ID ":" fields+=Field*
+		//"structure" name=ID ":" fields+=DataTypeCompoundField*
 		public Group getGroup() { return cGroup; }
 
-		//"data"
-		public Keyword getDataKeyword_0() { return cDataKeyword_0; }
-
-		//"type"
-		public Keyword getTypeKeyword_1() { return cTypeKeyword_1; }
+		//"structure"
+		public Keyword getStructureKeyword_0() { return cStructureKeyword_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//":"
-		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//fields+=Field*
-		public Assignment getFieldsAssignment_4() { return cFieldsAssignment_4; }
+		//fields+=DataTypeCompoundField*
+		public Assignment getFieldsAssignment_3() { return cFieldsAssignment_3; }
 
-		//Field
-		public RuleCall getFieldsFieldParserRuleCall_4_0() { return cFieldsFieldParserRuleCall_4_0; }
+		//DataTypeCompoundField
+		public RuleCall getFieldsDataTypeCompoundFieldParserRuleCall_3_0() { return cFieldsDataTypeCompoundFieldParserRuleCall_3_0; }
 	}
 
-	public class FieldElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Field");
+	public class DataTypeCompoundFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataTypeCompoundField");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypeDataTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
-		//Field:
+		//DataTypeCompoundField:
 		//	type=DataType name=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -1039,69 +1035,75 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	public class DataTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cCompoundAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final CrossReference cCompoundDataTypeDeclarationCrossReference_0_0 = (CrossReference)cCompoundAssignment_0.eContents().get(0);
-		private final RuleCall cCompoundDataTypeDeclarationIDTerminalRuleCall_0_0_1 = (RuleCall)cCompoundDataTypeDeclarationCrossReference_0_0.eContents().get(1);
-		private final Assignment cBaseAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cBaseDataTypeBaseParserRuleCall_1_0 = (RuleCall)cBaseAssignment_1.eContents().get(0);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cDataTypeCompoundAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cTypeAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final CrossReference cTypeDataTypeCompoundDeclarationCrossReference_0_1_0 = (CrossReference)cTypeAssignment_0_1.eContents().get(0);
+		private final RuleCall cTypeDataTypeCompoundDeclarationIDTerminalRuleCall_0_1_0_1 = (RuleCall)cTypeDataTypeCompoundDeclarationCrossReference_0_1_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cDataTypeBaseAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cTypeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final Alternatives cTypeAlternatives_1_1_0 = (Alternatives)cTypeAssignment_1_1.eContents().get(0);
+		private final Keyword cTypeVoidKeyword_1_1_0_0 = (Keyword)cTypeAlternatives_1_1_0.eContents().get(0);
+		private final Keyword cTypeSymbolKeyword_1_1_0_1 = (Keyword)cTypeAlternatives_1_1_0.eContents().get(1);
+		private final Keyword cTypeNumberKeyword_1_1_0_2 = (Keyword)cTypeAlternatives_1_1_0.eContents().get(2);
+		private final Keyword cTypeTextKeyword_1_1_0_3 = (Keyword)cTypeAlternatives_1_1_0.eContents().get(3);
+		private final Keyword cTypeTimeKeyword_1_1_0_4 = (Keyword)cTypeAlternatives_1_1_0.eContents().get(4);
+		private final Keyword cTypeReferenceKeyword_1_1_0_5 = (Keyword)cTypeAlternatives_1_1_0.eContents().get(5);
 		
 		//DataType:
-		//	compound=[DataTypeDeclaration] | base=DataTypeBase;
+		//	{DataTypeCompound} type=[DataTypeCompoundDeclaration] | {DataTypeBase} type=("void" | "symbol" | "number" | "text" |
+		//	"time" | "reference");
 		public ParserRule getRule() { return rule; }
 
-		//compound=[DataTypeDeclaration] | base=DataTypeBase
+		//{DataTypeCompound} type=[DataTypeCompoundDeclaration] | {DataTypeBase} type=("void" | "symbol" | "number" | "text" |
+		//"time" | "reference")
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//compound=[DataTypeDeclaration]
-		public Assignment getCompoundAssignment_0() { return cCompoundAssignment_0; }
+		//{DataTypeCompound} type=[DataTypeCompoundDeclaration]
+		public Group getGroup_0() { return cGroup_0; }
 
-		//[DataTypeDeclaration]
-		public CrossReference getCompoundDataTypeDeclarationCrossReference_0_0() { return cCompoundDataTypeDeclarationCrossReference_0_0; }
+		//{DataTypeCompound}
+		public Action getDataTypeCompoundAction_0_0() { return cDataTypeCompoundAction_0_0; }
+
+		//type=[DataTypeCompoundDeclaration]
+		public Assignment getTypeAssignment_0_1() { return cTypeAssignment_0_1; }
+
+		//[DataTypeCompoundDeclaration]
+		public CrossReference getTypeDataTypeCompoundDeclarationCrossReference_0_1_0() { return cTypeDataTypeCompoundDeclarationCrossReference_0_1_0; }
 
 		//ID
-		public RuleCall getCompoundDataTypeDeclarationIDTerminalRuleCall_0_0_1() { return cCompoundDataTypeDeclarationIDTerminalRuleCall_0_0_1; }
+		public RuleCall getTypeDataTypeCompoundDeclarationIDTerminalRuleCall_0_1_0_1() { return cTypeDataTypeCompoundDeclarationIDTerminalRuleCall_0_1_0_1; }
 
-		//base=DataTypeBase
-		public Assignment getBaseAssignment_1() { return cBaseAssignment_1; }
+		//{DataTypeBase} type=("void" | "symbol" | "number" | "text" | "time" | "reference")
+		public Group getGroup_1() { return cGroup_1; }
 
-		//DataTypeBase
-		public RuleCall getBaseDataTypeBaseParserRuleCall_1_0() { return cBaseDataTypeBaseParserRuleCall_1_0; }
-	}
+		//{DataTypeBase}
+		public Action getDataTypeBaseAction_1_0() { return cDataTypeBaseAction_1_0; }
 
-	public class DataTypeBaseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataTypeBase");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cVoidKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cSymbolKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cNumberKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cTextKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cTimeKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cReferenceKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		
-		//DataTypeBase:
-		//	"void" | "symbol" | "number" | "text" | "time" | "reference";
-		public ParserRule getRule() { return rule; }
+		//type=("void" | "symbol" | "number" | "text" | "time" | "reference")
+		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
 
 		//"void" | "symbol" | "number" | "text" | "time" | "reference"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getTypeAlternatives_1_1_0() { return cTypeAlternatives_1_1_0; }
 
 		//"void"
-		public Keyword getVoidKeyword_0() { return cVoidKeyword_0; }
+		public Keyword getTypeVoidKeyword_1_1_0_0() { return cTypeVoidKeyword_1_1_0_0; }
 
 		//"symbol"
-		public Keyword getSymbolKeyword_1() { return cSymbolKeyword_1; }
+		public Keyword getTypeSymbolKeyword_1_1_0_1() { return cTypeSymbolKeyword_1_1_0_1; }
 
 		//"number"
-		public Keyword getNumberKeyword_2() { return cNumberKeyword_2; }
+		public Keyword getTypeNumberKeyword_1_1_0_2() { return cTypeNumberKeyword_1_1_0_2; }
 
 		//"text"
-		public Keyword getTextKeyword_3() { return cTextKeyword_3; }
+		public Keyword getTypeTextKeyword_1_1_0_3() { return cTypeTextKeyword_1_1_0_3; }
 
 		//"time"
-		public Keyword getTimeKeyword_4() { return cTimeKeyword_4; }
+		public Keyword getTypeTimeKeyword_1_1_0_4() { return cTypeTimeKeyword_1_1_0_4; }
 
 		//"reference"
-		public Keyword getReferenceKeyword_5() { return cReferenceKeyword_5; }
+		public Keyword getTypeReferenceKeyword_1_1_0_5() { return cTypeReferenceKeyword_1_1_0_5; }
 	}
 
 	public class BooleanExpressionElements extends AbstractParserRuleElementFinder {
@@ -1253,12 +1255,30 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cBooleanLiteralAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cValueBooleanLiteralParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cBooleanNumberComparisonAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cQqKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cLeftAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cLeftNumberExpressionParserRuleCall_2_2_0 = (RuleCall)cLeftAssignment_2_2.eContents().get(0);
+		private final Assignment cOpAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final Alternatives cOpAlternatives_2_3_0 = (Alternatives)cOpAssignment_2_3.eContents().get(0);
+		private final Keyword cOpEqualsSignEqualsSignKeyword_2_3_0_0 = (Keyword)cOpAlternatives_2_3_0.eContents().get(0);
+		private final Keyword cOpExclamationMarkEqualsSignKeyword_2_3_0_1 = (Keyword)cOpAlternatives_2_3_0.eContents().get(1);
+		private final Keyword cOpLessThanSignKeyword_2_3_0_2 = (Keyword)cOpAlternatives_2_3_0.eContents().get(2);
+		private final Keyword cOpGreaterThanSignKeyword_2_3_0_3 = (Keyword)cOpAlternatives_2_3_0.eContents().get(3);
+		private final Keyword cOpLessThanSignEqualsSignKeyword_2_3_0_4 = (Keyword)cOpAlternatives_2_3_0.eContents().get(4);
+		private final Keyword cOpGreaterThanSignEqualsSignKeyword_2_3_0_5 = (Keyword)cOpAlternatives_2_3_0.eContents().get(5);
+		private final Assignment cRightAssignment_2_4 = (Assignment)cGroup_2.eContents().get(4);
+		private final RuleCall cRightNumberExpressionParserRuleCall_2_4_0 = (RuleCall)cRightAssignment_2_4.eContents().get(0);
+		private final Keyword cEeKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
 		
 		//BooleanTerminalExpression returns BooleanExpression:
-		//	"(" BooleanExpression ")" | {BooleanLiteral} value=BooleanLiteral;
+		//	"(" BooleanExpression ")" | {BooleanLiteral} value=BooleanLiteral | {BooleanNumberComparison} "qq" =>
+		//	left=NumberExpression => op=("==" | "!=" | "<" | ">" | "<=" | ">=") => right=NumberExpression "ee";
 		public ParserRule getRule() { return rule; }
 
-		//"(" BooleanExpression ")" | {BooleanLiteral} value=BooleanLiteral
+		//"(" BooleanExpression ")" | {BooleanLiteral} value=BooleanLiteral | {BooleanNumberComparison} "qq" =>
+		//left=NumberExpression => op=("==" | "!=" | "<" | ">" | "<=" | ">=") => right=NumberExpression "ee"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" BooleanExpression ")"
@@ -1284,6 +1304,55 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 		//BooleanLiteral
 		public RuleCall getValueBooleanLiteralParserRuleCall_1_1_0() { return cValueBooleanLiteralParserRuleCall_1_1_0; }
+
+		//{BooleanNumberComparison} "qq" => left=NumberExpression => op=("==" | "!=" | "<" | ">" | "<=" | ">=") =>
+		//right=NumberExpression "ee"
+		public Group getGroup_2() { return cGroup_2; }
+
+		//{BooleanNumberComparison}
+		public Action getBooleanNumberComparisonAction_2_0() { return cBooleanNumberComparisonAction_2_0; }
+
+		//"qq"
+		public Keyword getQqKeyword_2_1() { return cQqKeyword_2_1; }
+
+		//=> left=NumberExpression
+		public Assignment getLeftAssignment_2_2() { return cLeftAssignment_2_2; }
+
+		//NumberExpression
+		public RuleCall getLeftNumberExpressionParserRuleCall_2_2_0() { return cLeftNumberExpressionParserRuleCall_2_2_0; }
+
+		//=> op=("==" | "!=" | "<" | ">" | "<=" | ">=")
+		public Assignment getOpAssignment_2_3() { return cOpAssignment_2_3; }
+
+		//"==" | "!=" | "<" | ">" | "<=" | ">="
+		public Alternatives getOpAlternatives_2_3_0() { return cOpAlternatives_2_3_0; }
+
+		//"=="
+		public Keyword getOpEqualsSignEqualsSignKeyword_2_3_0_0() { return cOpEqualsSignEqualsSignKeyword_2_3_0_0; }
+
+		//"!="
+		public Keyword getOpExclamationMarkEqualsSignKeyword_2_3_0_1() { return cOpExclamationMarkEqualsSignKeyword_2_3_0_1; }
+
+		//"<"
+		public Keyword getOpLessThanSignKeyword_2_3_0_2() { return cOpLessThanSignKeyword_2_3_0_2; }
+
+		//">"
+		public Keyword getOpGreaterThanSignKeyword_2_3_0_3() { return cOpGreaterThanSignKeyword_2_3_0_3; }
+
+		//"<="
+		public Keyword getOpLessThanSignEqualsSignKeyword_2_3_0_4() { return cOpLessThanSignEqualsSignKeyword_2_3_0_4; }
+
+		//">="
+		public Keyword getOpGreaterThanSignEqualsSignKeyword_2_3_0_5() { return cOpGreaterThanSignEqualsSignKeyword_2_3_0_5; }
+
+		//=> right=NumberExpression
+		public Assignment getRightAssignment_2_4() { return cRightAssignment_2_4; }
+
+		//NumberExpression
+		public RuleCall getRightNumberExpressionParserRuleCall_2_4_0() { return cRightNumberExpressionParserRuleCall_2_4_0; }
+
+		//"ee"
+		public Keyword getEeKeyword_2_5() { return cEeKeyword_2_5; }
 	}
 
 	public class NumberExpressionElements extends AbstractParserRuleElementFinder {
@@ -1796,12 +1865,13 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_2_2_3 = (Keyword)cGroup_2_2.eContents().get(3);
 		
 		//NumberTerminalExpression returns NumberExpression:
-		//	"(" NumberExpression ")" | {NumberLiteral} value=NumberLiteral | {NumberFunctionExpression} function=ID ("("
-		//	arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?;
+		//	"(" NumberExpression ")" / *   	({NumberTerminalSignal} ref=[SignalDeclaration])|* / | {NumberLiteral}
+		//	value=NumberLiteral | {NumberFunctionExpression} function=ID ("(" arguments+=NumberExpression (","
+		//	arguments+=NumberExpression)* ")")?;
 		public ParserRule getRule() { return rule; }
 
-		//"(" NumberExpression ")" | {NumberLiteral} value=NumberLiteral | {NumberFunctionExpression} function=ID ("("
-		//arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?
+		//"(" NumberExpression ")" / *   	({NumberTerminalSignal} ref=[SignalDeclaration])|* / | {NumberLiteral} value=NumberLiteral
+		//| {NumberFunctionExpression} function=ID ("(" arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" NumberExpression ")"
@@ -2199,10 +2269,9 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	private SetEffectElements pSetEffect;
 	private TriggerEffectElements pTriggerEffect;
 	private ExpressionElements pExpression;
-	private DataTypeDeclarationElements pDataTypeDeclaration;
-	private FieldElements pField;
+	private DataTypeCompoundDeclarationElements pDataTypeCompoundDeclaration;
+	private DataTypeCompoundFieldElements pDataTypeCompoundField;
 	private DataTypeElements pDataType;
-	private DataTypeBaseElements pDataTypeBase;
 	private BooleanExpressionElements pBooleanExpression;
 	private BooleanDisjonctionElements pBooleanDisjonction;
 	private BooleanConjonctionElements pBooleanConjonction;
@@ -2269,7 +2338,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////Model
 	//Model:
-	//	(interactors+=InteractorDeclaration | dataTypes+=DataTypeDeclaration)*;
+	//	(interactors+=InteractorDeclaration | dataTypes+=DataTypeCompoundDeclaration)*;
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
@@ -2468,7 +2537,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OnCause:
-	//	"on" event=EventReception ("if" guard=Expression)?;
+	//	"on" event=EventReception ("if" guard=BooleanExpression)?;
 	public OnCauseElements getOnCauseAccess() {
 		return (pOnCause != null) ? pOnCause : (pOnCause = new OnCauseElements());
 	}
@@ -2478,7 +2547,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//WhenCause:
-	//	"when" condition=Expression ("if" guard=Expression)?;
+	//	"when" condition=BooleanExpression ("if" guard=BooleanExpression)?;
 	public WhenCauseElements getWhenCauseAccess() {
 		return (pWhenCause != null) ? pWhenCause : (pWhenCause = new WhenCauseElements());
 	}
@@ -2539,45 +2608,36 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////Structure
-	//DataTypeDeclaration:
-	//	"data" "type" name=ID ":" fields+=Field*;
-	public DataTypeDeclarationElements getDataTypeDeclarationAccess() {
-		return (pDataTypeDeclaration != null) ? pDataTypeDeclaration : (pDataTypeDeclaration = new DataTypeDeclarationElements());
+	////Compound data types
+	//DataTypeCompoundDeclaration:
+	//	"structure" name=ID ":" fields+=DataTypeCompoundField*;
+	public DataTypeCompoundDeclarationElements getDataTypeCompoundDeclarationAccess() {
+		return (pDataTypeCompoundDeclaration != null) ? pDataTypeCompoundDeclaration : (pDataTypeCompoundDeclaration = new DataTypeCompoundDeclarationElements());
 	}
 	
-	public ParserRule getDataTypeDeclarationRule() {
-		return getDataTypeDeclarationAccess().getRule();
+	public ParserRule getDataTypeCompoundDeclarationRule() {
+		return getDataTypeCompoundDeclarationAccess().getRule();
 	}
 
-	//Field:
+	//DataTypeCompoundField:
 	//	type=DataType name=ID;
-	public FieldElements getFieldAccess() {
-		return (pField != null) ? pField : (pField = new FieldElements());
+	public DataTypeCompoundFieldElements getDataTypeCompoundFieldAccess() {
+		return (pDataTypeCompoundField != null) ? pDataTypeCompoundField : (pDataTypeCompoundField = new DataTypeCompoundFieldElements());
 	}
 	
-	public ParserRule getFieldRule() {
-		return getFieldAccess().getRule();
+	public ParserRule getDataTypeCompoundFieldRule() {
+		return getDataTypeCompoundFieldAccess().getRule();
 	}
 
 	//DataType:
-	//	compound=[DataTypeDeclaration] | base=DataTypeBase;
+	//	{DataTypeCompound} type=[DataTypeCompoundDeclaration] | {DataTypeBase} type=("void" | "symbol" | "number" | "text" |
+	//	"time" | "reference");
 	public DataTypeElements getDataTypeAccess() {
 		return (pDataType != null) ? pDataType : (pDataType = new DataTypeElements());
 	}
 	
 	public ParserRule getDataTypeRule() {
 		return getDataTypeAccess().getRule();
-	}
-
-	//DataTypeBase:
-	//	"void" | "symbol" | "number" | "text" | "time" | "reference";
-	public DataTypeBaseElements getDataTypeBaseAccess() {
-		return (pDataTypeBase != null) ? pDataTypeBase : (pDataTypeBase = new DataTypeBaseElements());
-	}
-	
-	public ParserRule getDataTypeBaseRule() {
-		return getDataTypeBaseAccess().getRule();
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2627,7 +2687,8 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BooleanTerminalExpression returns BooleanExpression:
-	//	"(" BooleanExpression ")" | {BooleanLiteral} value=BooleanLiteral;
+	//	"(" BooleanExpression ")" | {BooleanLiteral} value=BooleanLiteral | {BooleanNumberComparison} "qq" =>
+	//	left=NumberExpression => op=("==" | "!=" | "<" | ">" | "<=" | ">=") => right=NumberExpression "ee";
 	public BooleanTerminalExpressionElements getBooleanTerminalExpressionAccess() {
 		return (pBooleanTerminalExpression != null) ? pBooleanTerminalExpression : (pBooleanTerminalExpression = new BooleanTerminalExpressionElements());
 	}
@@ -2724,8 +2785,9 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NumberTerminalExpression returns NumberExpression:
-	//	"(" NumberExpression ")" | {NumberLiteral} value=NumberLiteral | {NumberFunctionExpression} function=ID ("("
-	//	arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?;
+	//	"(" NumberExpression ")" / *   	({NumberTerminalSignal} ref=[SignalDeclaration])|* / | {NumberLiteral}
+	//	value=NumberLiteral | {NumberFunctionExpression} function=ID ("(" arguments+=NumberExpression (","
+	//	arguments+=NumberExpression)* ")")?;
 	public NumberTerminalExpressionElements getNumberTerminalExpressionAccess() {
 		return (pNumberTerminalExpression != null) ? pNumberTerminalExpression : (pNumberTerminalExpression = new NumberTerminalExpressionElements());
 	}

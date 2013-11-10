@@ -1,4 +1,4 @@
-data type person :
+structure person :
 	text name
 	text surname
 	time birthdate
@@ -32,7 +32,7 @@ interactor ControlPanel :
 						default : 5
 				always val to theGauge = (1-2)+15*sin(45)
 				
-	on select : set selection = if(true and false) 1+1*5 else 6
+	on select : set selection = if((5 > (if(true) 4 else 3)) and false) 1+1*(switch(4) case 3:2 default:1) else 6
 		
 				
 	

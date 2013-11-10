@@ -2,7 +2,7 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.DataTypeDeclaration;
+import com.crubier.lil.lil.DataTypeCompoundDeclaration;
 import com.crubier.lil.lil.InteractorDeclaration;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.Model;
@@ -55,7 +55,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    * @ordered
    */
-  protected EList<DataTypeDeclaration> dataTypes;
+  protected EList<DataTypeCompoundDeclaration> dataTypes;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,11 +97,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DataTypeDeclaration> getDataTypes()
+  public EList<DataTypeCompoundDeclaration> getDataTypes()
   {
     if (dataTypes == null)
     {
-      dataTypes = new EObjectContainmentEList<DataTypeDeclaration>(DataTypeDeclaration.class, this, LilPackage.MODEL__DATA_TYPES);
+      dataTypes = new EObjectContainmentEList<DataTypeCompoundDeclaration>(DataTypeCompoundDeclaration.class, this, LilPackage.MODEL__DATA_TYPES);
     }
     return dataTypes;
   }
@@ -159,7 +159,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return;
       case LilPackage.MODEL__DATA_TYPES:
         getDataTypes().clear();
-        getDataTypes().addAll((Collection<? extends DataTypeDeclaration>)newValue);
+        getDataTypes().addAll((Collection<? extends DataTypeCompoundDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

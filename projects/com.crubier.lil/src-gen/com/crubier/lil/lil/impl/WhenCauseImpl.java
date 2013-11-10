@@ -2,7 +2,7 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.Expression;
+import com.crubier.lil.lil.BooleanExpression;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.WhenCause;
 
@@ -37,7 +37,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
    * @generated
    * @ordered
    */
-  protected Expression condition;
+  protected BooleanExpression condition;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getCondition()
+  public BooleanExpression getCondition()
   {
     return condition;
   }
@@ -75,9 +75,9 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs)
+  public NotificationChain basicSetCondition(BooleanExpression newCondition, NotificationChain msgs)
   {
-    Expression oldCondition = condition;
+    BooleanExpression oldCondition = condition;
     condition = newCondition;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCondition(Expression newCondition)
+  public void setCondition(BooleanExpression newCondition)
   {
     if (newCondition != condition)
     {
@@ -151,7 +151,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
     switch (featureID)
     {
       case LilPackage.WHEN_CAUSE__CONDITION:
-        setCondition((Expression)newValue);
+        setCondition((BooleanExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
     switch (featureID)
     {
       case LilPackage.WHEN_CAUSE__CONDITION:
-        setCondition((Expression)null);
+        setCondition((BooleanExpression)null);
         return;
     }
     super.eUnset(featureID);

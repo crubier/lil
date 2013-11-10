@@ -257,22 +257,22 @@ public interface LilFactory extends EFactory
   Expression createExpression();
 
   /**
-   * Returns a new object of class '<em>Data Type Declaration</em>'.
+   * Returns a new object of class '<em>Data Type Compound Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Declaration</em>'.
+   * @return a new object of class '<em>Data Type Compound Declaration</em>'.
    * @generated
    */
-  DataTypeDeclaration createDataTypeDeclaration();
+  DataTypeCompoundDeclaration createDataTypeCompoundDeclaration();
 
   /**
-   * Returns a new object of class '<em>Field</em>'.
+   * Returns a new object of class '<em>Data Type Compound Field</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Field</em>'.
+   * @return a new object of class '<em>Data Type Compound Field</em>'.
    * @generated
    */
-  Field createField();
+  DataTypeCompoundField createDataTypeCompoundField();
 
   /**
    * Returns a new object of class '<em>Data Type</em>'.
@@ -329,6 +329,24 @@ public interface LilFactory extends EFactory
   TextExpression createTextExpression();
 
   /**
+   * Returns a new object of class '<em>Data Type Compound</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Compound</em>'.
+   * @generated
+   */
+  DataTypeCompound createDataTypeCompound();
+
+  /**
+   * Returns a new object of class '<em>Data Type Base</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Base</em>'.
+   * @generated
+   */
+  DataTypeBase createDataTypeBase();
+
+  /**
    * Returns a new object of class '<em>Boolean Disjonction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -363,6 +381,15 @@ public interface LilFactory extends EFactory
    * @generated
    */
   BooleanLiteral createBooleanLiteral();
+
+  /**
+   * Returns a new object of class '<em>Boolean Number Comparison</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Number Comparison</em>'.
+   * @generated
+   */
+  BooleanNumberComparison createBooleanNumberComparison();
 
   /**
    * Returns a new object of class '<em>Number If Expression</em>'.

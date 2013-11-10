@@ -1028,14 +1028,14 @@ public interface LilPackage extends EPackage
   int EXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeDeclarationImpl <em>Data Type Declaration</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl <em>Data Type Compound Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.DataTypeDeclarationImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeDeclaration()
+   * @see com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundDeclaration()
    * @generated
    */
-  int DATA_TYPE_DECLARATION = 26;
+  int DATA_TYPE_COMPOUND_DECLARATION = 26;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1044,7 +1044,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_TYPE_DECLARATION__NAME = 0;
+  int DATA_TYPE_COMPOUND_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -1053,26 +1053,26 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_TYPE_DECLARATION__FIELDS = 1;
+  int DATA_TYPE_COMPOUND_DECLARATION__FIELDS = 1;
 
   /**
-   * The number of structural features of the '<em>Data Type Declaration</em>' class.
+   * The number of structural features of the '<em>Data Type Compound Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_TYPE_DECLARATION_FEATURE_COUNT = 2;
+  int DATA_TYPE_COMPOUND_DECLARATION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.FieldImpl <em>Field</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl <em>Data Type Compound Field</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.FieldImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getField()
+   * @see com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundField()
    * @generated
    */
-  int FIELD = 27;
+  int DATA_TYPE_COMPOUND_FIELD = 27;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1081,7 +1081,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIELD__TYPE = 0;
+  int DATA_TYPE_COMPOUND_FIELD__TYPE = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1090,16 +1090,16 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FIELD__NAME = 1;
+  int DATA_TYPE_COMPOUND_FIELD__NAME = 1;
 
   /**
-   * The number of structural features of the '<em>Field</em>' class.
+   * The number of structural features of the '<em>Data Type Compound Field</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FIELD_FEATURE_COUNT = 2;
+  int DATA_TYPE_COMPOUND_FIELD_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -1112,31 +1112,13 @@ public interface LilPackage extends EPackage
   int DATA_TYPE = 28;
 
   /**
-   * The feature id for the '<em><b>Compound</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE__COMPOUND = 0;
-
-  /**
-   * The feature id for the '<em><b>Base</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE__BASE = 1;
-
-  /**
    * The number of structural features of the '<em>Data Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_TYPE_FEATURE_COUNT = 2;
+  int DATA_TYPE_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
@@ -1270,6 +1252,62 @@ public interface LilPackage extends EPackage
   int TEXT_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundImpl <em>Data Type Compound</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.DataTypeCompoundImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompound()
+   * @generated
+   */
+  int DATA_TYPE_COMPOUND = 34;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_COMPOUND__TYPE = DATA_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Data Type Compound</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_COMPOUND_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeBaseImpl <em>Data Type Base</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.DataTypeBaseImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeBase()
+   * @generated
+   */
+  int DATA_TYPE_BASE = 35;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_BASE__TYPE = DATA_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Data Type Base</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_BASE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanDisjonctionImpl <em>Boolean Disjonction</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1277,7 +1315,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanDisjonction()
    * @generated
    */
-  int BOOLEAN_DISJONCTION = 34;
+  int BOOLEAN_DISJONCTION = 36;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1314,7 +1352,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanConjonction()
    * @generated
    */
-  int BOOLEAN_CONJONCTION = 35;
+  int BOOLEAN_CONJONCTION = 37;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1351,7 +1389,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanNegation()
    * @generated
    */
-  int BOOLEAN_NEGATION = 36;
+  int BOOLEAN_NEGATION = 38;
 
   /**
    * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -1379,7 +1417,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 37;
+  int BOOLEAN_LITERAL = 39;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1400,6 +1438,52 @@ public interface LilPackage extends EPackage
   int BOOLEAN_LITERAL_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanNumberComparisonImpl <em>Boolean Number Comparison</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.BooleanNumberComparisonImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanNumberComparison()
+   * @generated
+   */
+  int BOOLEAN_NUMBER_COMPARISON = 40;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_NUMBER_COMPARISON__LEFT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_NUMBER_COMPARISON__OP = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_NUMBER_COMPARISON__RIGHT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Boolean Number Comparison</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_NUMBER_COMPARISON_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberIfExpressionImpl <em>Number If Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1407,7 +1491,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberIfExpression()
    * @generated
    */
-  int NUMBER_IF_EXPRESSION = 38;
+  int NUMBER_IF_EXPRESSION = 41;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -1453,7 +1537,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionNumber()
    * @generated
    */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER = 39;
+  int NUMBER_SWITCH_EXPRESSION_NUMBER = 42;
 
   /**
    * The feature id for the '<em><b>Switch</b></em>' containment reference.
@@ -1499,7 +1583,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionText()
    * @generated
    */
-  int NUMBER_SWITCH_EXPRESSION_TEXT = 40;
+  int NUMBER_SWITCH_EXPRESSION_TEXT = 43;
 
   /**
    * The feature id for the '<em><b>Switch</b></em>' containment reference.
@@ -1545,7 +1629,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberAddition()
    * @generated
    */
-  int NUMBER_ADDITION = 41;
+  int NUMBER_ADDITION = 44;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1582,7 +1666,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSubstraction()
    * @generated
    */
-  int NUMBER_SUBSTRACTION = 42;
+  int NUMBER_SUBSTRACTION = 45;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1619,7 +1703,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberMultiplication()
    * @generated
    */
-  int NUMBER_MULTIPLICATION = 43;
+  int NUMBER_MULTIPLICATION = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1656,7 +1740,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberDivision()
    * @generated
    */
-  int NUMBER_DIVISION = 44;
+  int NUMBER_DIVISION = 47;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1693,7 +1777,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberModulo()
    * @generated
    */
-  int NUMBER_MODULO = 45;
+  int NUMBER_MODULO = 48;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1730,7 +1814,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberPower()
    * @generated
    */
-  int NUMBER_POWER = 46;
+  int NUMBER_POWER = 49;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1767,7 +1851,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberOpposition()
    * @generated
    */
-  int NUMBER_OPPOSITION = 47;
+  int NUMBER_OPPOSITION = 50;
 
   /**
    * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -1795,7 +1879,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 48;
+  int NUMBER_LITERAL = 51;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1823,7 +1907,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberFunctionExpression()
    * @generated
    */
-  int NUMBER_FUNCTION_EXPRESSION = 49;
+  int NUMBER_FUNCTION_EXPRESSION = 52;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -1860,7 +1944,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextJoin()
    * @generated
    */
-  int TEXT_JOIN = 50;
+  int TEXT_JOIN = 53;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1897,7 +1981,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextLiteral()
    * @generated
    */
-  int TEXT_LITERAL = 51;
+  int TEXT_LITERAL = 54;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2597,68 +2681,68 @@ public interface LilPackage extends EPackage
   EClass getExpression();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeDeclaration <em>Data Type Declaration</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration <em>Data Type Compound Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Type Declaration</em>'.
-   * @see com.crubier.lil.lil.DataTypeDeclaration
+   * @return the meta object for class '<em>Data Type Compound Declaration</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration
    * @generated
    */
-  EClass getDataTypeDeclaration();
+  EClass getDataTypeCompoundDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.crubier.lil.lil.DataTypeDeclaration#getName()
-   * @see #getDataTypeDeclaration()
+   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration#getName()
+   * @see #getDataTypeCompoundDeclaration()
    * @generated
    */
-  EAttribute getDataTypeDeclaration_Name();
+  EAttribute getDataTypeCompoundDeclaration_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.DataTypeDeclaration#getFields <em>Fields</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration#getFields <em>Fields</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Fields</em>'.
-   * @see com.crubier.lil.lil.DataTypeDeclaration#getFields()
-   * @see #getDataTypeDeclaration()
+   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration#getFields()
+   * @see #getDataTypeCompoundDeclaration()
    * @generated
    */
-  EReference getDataTypeDeclaration_Fields();
+  EReference getDataTypeCompoundDeclaration_Fields();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.Field <em>Field</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeCompoundField <em>Data Type Compound Field</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Field</em>'.
-   * @see com.crubier.lil.lil.Field
+   * @return the meta object for class '<em>Data Type Compound Field</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompoundField
    * @generated
    */
-  EClass getField();
+  EClass getDataTypeCompoundField();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.Field#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.DataTypeCompoundField#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see com.crubier.lil.lil.Field#getType()
-   * @see #getField()
+   * @see com.crubier.lil.lil.DataTypeCompoundField#getType()
+   * @see #getDataTypeCompoundField()
    * @generated
    */
-  EReference getField_Type();
+  EReference getDataTypeCompoundField_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.Field#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeCompoundField#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.crubier.lil.lil.Field#getName()
-   * @see #getField()
+   * @see com.crubier.lil.lil.DataTypeCompoundField#getName()
+   * @see #getDataTypeCompoundField()
    * @generated
    */
-  EAttribute getField_Name();
+  EAttribute getDataTypeCompoundField_Name();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.DataType <em>Data Type</em>}'.
@@ -2669,28 +2753,6 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EClass getDataType();
-
-  /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.DataType#getCompound <em>Compound</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Compound</em>'.
-   * @see com.crubier.lil.lil.DataType#getCompound()
-   * @see #getDataType()
-   * @generated
-   */
-  EReference getDataType_Compound();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataType#getBase <em>Base</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Base</em>'.
-   * @see com.crubier.lil.lil.DataType#getBase()
-   * @see #getDataType()
-   * @generated
-   */
-  EAttribute getDataType_Base();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanExpression <em>Boolean Expression</em>}'.
@@ -2785,6 +2847,48 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EClass getTextExpression();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeCompound <em>Data Type Compound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Type Compound</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompound
+   * @generated
+   */
+  EClass getDataTypeCompound();
+
+  /**
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.DataTypeCompound#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompound#getType()
+   * @see #getDataTypeCompound()
+   * @generated
+   */
+  EReference getDataTypeCompound_Type();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeBase <em>Data Type Base</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Type Base</em>'.
+   * @see com.crubier.lil.lil.DataTypeBase
+   * @generated
+   */
+  EClass getDataTypeBase();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeBase#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see com.crubier.lil.lil.DataTypeBase#getType()
+   * @see #getDataTypeBase()
+   * @generated
+   */
+  EAttribute getDataTypeBase_Type();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanDisjonction <em>Boolean Disjonction</em>}'.
@@ -2891,6 +2995,49 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EAttribute getBooleanLiteral_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanNumberComparison <em>Boolean Number Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Number Comparison</em>'.
+   * @see com.crubier.lil.lil.BooleanNumberComparison
+   * @generated
+   */
+  EClass getBooleanNumberComparison();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BooleanNumberComparison#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.crubier.lil.lil.BooleanNumberComparison#getLeft()
+   * @see #getBooleanNumberComparison()
+   * @generated
+   */
+  EReference getBooleanNumberComparison_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.BooleanNumberComparison#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.crubier.lil.lil.BooleanNumberComparison#getOp()
+   * @see #getBooleanNumberComparison()
+   * @generated
+   */
+  EAttribute getBooleanNumberComparison_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BooleanNumberComparison#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.crubier.lil.lil.BooleanNumberComparison#getRight()
+   * @see #getBooleanNumberComparison()
+   * @generated
+   */
+  EReference getBooleanNumberComparison_Right();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.NumberIfExpression <em>Number If Expression</em>}'.
@@ -3928,14 +4075,14 @@ public interface LilPackage extends EPackage
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeDeclarationImpl <em>Data Type Declaration</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl <em>Data Type Compound Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.DataTypeDeclarationImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeDeclaration()
+     * @see com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundDeclaration()
      * @generated
      */
-    EClass DATA_TYPE_DECLARATION = eINSTANCE.getDataTypeDeclaration();
+    EClass DATA_TYPE_COMPOUND_DECLARATION = eINSTANCE.getDataTypeCompoundDeclaration();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3943,7 +4090,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATA_TYPE_DECLARATION__NAME = eINSTANCE.getDataTypeDeclaration_Name();
+    EAttribute DATA_TYPE_COMPOUND_DECLARATION__NAME = eINSTANCE.getDataTypeCompoundDeclaration_Name();
 
     /**
      * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
@@ -3951,17 +4098,17 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DATA_TYPE_DECLARATION__FIELDS = eINSTANCE.getDataTypeDeclaration_Fields();
+    EReference DATA_TYPE_COMPOUND_DECLARATION__FIELDS = eINSTANCE.getDataTypeCompoundDeclaration_Fields();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.FieldImpl <em>Field</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl <em>Data Type Compound Field</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.FieldImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getField()
+     * @see com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundField()
      * @generated
      */
-    EClass FIELD = eINSTANCE.getField();
+    EClass DATA_TYPE_COMPOUND_FIELD = eINSTANCE.getDataTypeCompoundField();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -3969,7 +4116,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FIELD__TYPE = eINSTANCE.getField_Type();
+    EReference DATA_TYPE_COMPOUND_FIELD__TYPE = eINSTANCE.getDataTypeCompoundField_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3977,7 +4124,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FIELD__NAME = eINSTANCE.getField_Name();
+    EAttribute DATA_TYPE_COMPOUND_FIELD__NAME = eINSTANCE.getDataTypeCompoundField_Name();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -3988,22 +4135,6 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EClass DATA_TYPE = eINSTANCE.getDataType();
-
-    /**
-     * The meta object literal for the '<em><b>Compound</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DATA_TYPE__COMPOUND = eINSTANCE.getDataType_Compound();
-
-    /**
-     * The meta object literal for the '<em><b>Base</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DATA_TYPE__BASE = eINSTANCE.getDataType_Base();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
@@ -4086,6 +4217,42 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EClass TEXT_EXPRESSION = eINSTANCE.getTextExpression();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundImpl <em>Data Type Compound</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.DataTypeCompoundImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompound()
+     * @generated
+     */
+    EClass DATA_TYPE_COMPOUND = eINSTANCE.getDataTypeCompound();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_TYPE_COMPOUND__TYPE = eINSTANCE.getDataTypeCompound_Type();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeBaseImpl <em>Data Type Base</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.DataTypeBaseImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeBase()
+     * @generated
+     */
+    EClass DATA_TYPE_BASE = eINSTANCE.getDataTypeBase();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_TYPE_BASE__TYPE = eINSTANCE.getDataTypeBase_Type();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanDisjonctionImpl <em>Boolean Disjonction</em>}' class.
@@ -4174,6 +4341,40 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EAttribute BOOLEAN_LITERAL__VALUE = eINSTANCE.getBooleanLiteral_Value();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanNumberComparisonImpl <em>Boolean Number Comparison</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.BooleanNumberComparisonImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanNumberComparison()
+     * @generated
+     */
+    EClass BOOLEAN_NUMBER_COMPARISON = eINSTANCE.getBooleanNumberComparison();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BOOLEAN_NUMBER_COMPARISON__LEFT = eINSTANCE.getBooleanNumberComparison_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOLEAN_NUMBER_COMPARISON__OP = eINSTANCE.getBooleanNumberComparison_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BOOLEAN_NUMBER_COMPARISON__RIGHT = eINSTANCE.getBooleanNumberComparison_Right();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberIfExpressionImpl <em>Number If Expression</em>}' class.

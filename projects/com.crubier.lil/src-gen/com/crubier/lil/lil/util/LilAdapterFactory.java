@@ -205,14 +205,14 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createExpressionAdapter();
       }
       @Override
-      public Adapter caseDataTypeDeclaration(DataTypeDeclaration object)
+      public Adapter caseDataTypeCompoundDeclaration(DataTypeCompoundDeclaration object)
       {
-        return createDataTypeDeclarationAdapter();
+        return createDataTypeCompoundDeclarationAdapter();
       }
       @Override
-      public Adapter caseField(Field object)
+      public Adapter caseDataTypeCompoundField(DataTypeCompoundField object)
       {
-        return createFieldAdapter();
+        return createDataTypeCompoundFieldAdapter();
       }
       @Override
       public Adapter caseDataType(DataType object)
@@ -245,6 +245,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createTextExpressionAdapter();
       }
       @Override
+      public Adapter caseDataTypeCompound(DataTypeCompound object)
+      {
+        return createDataTypeCompoundAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeBase(DataTypeBase object)
+      {
+        return createDataTypeBaseAdapter();
+      }
+      @Override
       public Adapter caseBooleanDisjonction(BooleanDisjonction object)
       {
         return createBooleanDisjonctionAdapter();
@@ -263,6 +273,11 @@ public class LilAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBooleanLiteral(BooleanLiteral object)
       {
         return createBooleanLiteralAdapter();
+      }
+      @Override
+      public Adapter caseBooleanNumberComparison(BooleanNumberComparison object)
+      {
+        return createBooleanNumberComparisonAdapter();
       }
       @Override
       public Adapter caseNumberIfExpression(NumberIfExpression object)
@@ -747,31 +762,31 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeDeclaration <em>Data Type Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration <em>Data Type Compound Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataTypeDeclaration
+   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration
    * @generated
    */
-  public Adapter createDataTypeDeclarationAdapter()
+  public Adapter createDataTypeCompoundDeclarationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Field <em>Field</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompoundField <em>Data Type Compound Field</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.Field
+   * @see com.crubier.lil.lil.DataTypeCompoundField
    * @generated
    */
-  public Adapter createFieldAdapter()
+  public Adapter createDataTypeCompoundFieldAdapter()
   {
     return null;
   }
@@ -867,6 +882,36 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompound <em>Data Type Compound</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeCompound
+   * @generated
+   */
+  public Adapter createDataTypeCompoundAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeBase <em>Data Type Base</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeBase
+   * @generated
+   */
+  public Adapter createDataTypeBaseAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanDisjonction <em>Boolean Disjonction</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -922,6 +967,21 @@ public class LilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBooleanLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanNumberComparison <em>Boolean Number Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.BooleanNumberComparison
+   * @generated
+   */
+  public Adapter createBooleanNumberComparisonAdapter()
   {
     return null;
   }

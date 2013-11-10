@@ -13,11 +13,15 @@ import com.crubier.lil.lil.BooleanDisjonction;
 import com.crubier.lil.lil.BooleanExpression;
 import com.crubier.lil.lil.BooleanLiteral;
 import com.crubier.lil.lil.BooleanNegation;
+import com.crubier.lil.lil.BooleanNumberComparison;
 import com.crubier.lil.lil.Cause;
 import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.ComponentDeclaration;
 import com.crubier.lil.lil.DataType;
-import com.crubier.lil.lil.DataTypeDeclaration;
+import com.crubier.lil.lil.DataTypeBase;
+import com.crubier.lil.lil.DataTypeCompound;
+import com.crubier.lil.lil.DataTypeCompoundDeclaration;
+import com.crubier.lil.lil.DataTypeCompoundField;
 import com.crubier.lil.lil.Effect;
 import com.crubier.lil.lil.Entity;
 import com.crubier.lil.lil.EntityDeclaration;
@@ -25,7 +29,6 @@ import com.crubier.lil.lil.EventDeclaration;
 import com.crubier.lil.lil.EventEmission;
 import com.crubier.lil.lil.EventReception;
 import com.crubier.lil.lil.Expression;
-import com.crubier.lil.lil.Field;
 import com.crubier.lil.lil.FlowDeclaration;
 import com.crubier.lil.lil.FlowEmission;
 import com.crubier.lil.lil.FlowReception;
@@ -259,14 +262,14 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dataTypeDeclarationEClass = null;
+  private EClass dataTypeCompoundDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass fieldEClass = null;
+  private EClass dataTypeCompoundFieldEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -315,6 +318,20 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass dataTypeCompoundEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataTypeBaseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass booleanDisjonctionEClass = null;
 
   /**
@@ -337,6 +354,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * @generated
    */
   private EClass booleanLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanNumberComparisonEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1144,9 +1168,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDataTypeDeclaration()
+  public EClass getDataTypeCompoundDeclaration()
   {
-    return dataTypeDeclarationEClass;
+    return dataTypeCompoundDeclarationEClass;
   }
 
   /**
@@ -1154,9 +1178,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDataTypeDeclaration_Name()
+  public EAttribute getDataTypeCompoundDeclaration_Name()
   {
-    return (EAttribute)dataTypeDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)dataTypeCompoundDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1164,9 +1188,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDataTypeDeclaration_Fields()
+  public EReference getDataTypeCompoundDeclaration_Fields()
   {
-    return (EReference)dataTypeDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)dataTypeCompoundDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1174,9 +1198,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getField()
+  public EClass getDataTypeCompoundField()
   {
-    return fieldEClass;
+    return dataTypeCompoundFieldEClass;
   }
 
   /**
@@ -1184,9 +1208,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getField_Type()
+  public EReference getDataTypeCompoundField_Type()
   {
-    return (EReference)fieldEClass.getEStructuralFeatures().get(0);
+    return (EReference)dataTypeCompoundFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1194,9 +1218,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getField_Name()
+  public EAttribute getDataTypeCompoundField_Name()
   {
-    return (EAttribute)fieldEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)dataTypeCompoundFieldEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1207,26 +1231,6 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
   public EClass getDataType()
   {
     return dataTypeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDataType_Compound()
-  {
-    return (EReference)dataTypeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getDataType_Base()
-  {
-    return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1317,6 +1321,46 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
   public EClass getTextExpression()
   {
     return textExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDataTypeCompound()
+  {
+    return dataTypeCompoundEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDataTypeCompound_Type()
+  {
+    return (EReference)dataTypeCompoundEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDataTypeBase()
+  {
+    return dataTypeBaseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDataTypeBase_Type()
+  {
+    return (EAttribute)dataTypeBaseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1417,6 +1461,46 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
   public EAttribute getBooleanLiteral_Value()
   {
     return (EAttribute)booleanLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBooleanNumberComparison()
+  {
+    return booleanNumberComparisonEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBooleanNumberComparison_Left()
+  {
+    return (EReference)booleanNumberComparisonEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBooleanNumberComparison_Op()
+  {
+    return (EAttribute)booleanNumberComparisonEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBooleanNumberComparison_Right()
+  {
+    return (EReference)booleanNumberComparisonEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1959,17 +2043,15 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
 
     expressionEClass = createEClass(EXPRESSION);
 
-    dataTypeDeclarationEClass = createEClass(DATA_TYPE_DECLARATION);
-    createEAttribute(dataTypeDeclarationEClass, DATA_TYPE_DECLARATION__NAME);
-    createEReference(dataTypeDeclarationEClass, DATA_TYPE_DECLARATION__FIELDS);
+    dataTypeCompoundDeclarationEClass = createEClass(DATA_TYPE_COMPOUND_DECLARATION);
+    createEAttribute(dataTypeCompoundDeclarationEClass, DATA_TYPE_COMPOUND_DECLARATION__NAME);
+    createEReference(dataTypeCompoundDeclarationEClass, DATA_TYPE_COMPOUND_DECLARATION__FIELDS);
 
-    fieldEClass = createEClass(FIELD);
-    createEReference(fieldEClass, FIELD__TYPE);
-    createEAttribute(fieldEClass, FIELD__NAME);
+    dataTypeCompoundFieldEClass = createEClass(DATA_TYPE_COMPOUND_FIELD);
+    createEReference(dataTypeCompoundFieldEClass, DATA_TYPE_COMPOUND_FIELD__TYPE);
+    createEAttribute(dataTypeCompoundFieldEClass, DATA_TYPE_COMPOUND_FIELD__NAME);
 
     dataTypeEClass = createEClass(DATA_TYPE);
-    createEReference(dataTypeEClass, DATA_TYPE__COMPOUND);
-    createEAttribute(dataTypeEClass, DATA_TYPE__BASE);
 
     booleanExpressionEClass = createEClass(BOOLEAN_EXPRESSION);
 
@@ -1985,6 +2067,12 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
 
     textExpressionEClass = createEClass(TEXT_EXPRESSION);
 
+    dataTypeCompoundEClass = createEClass(DATA_TYPE_COMPOUND);
+    createEReference(dataTypeCompoundEClass, DATA_TYPE_COMPOUND__TYPE);
+
+    dataTypeBaseEClass = createEClass(DATA_TYPE_BASE);
+    createEAttribute(dataTypeBaseEClass, DATA_TYPE_BASE__TYPE);
+
     booleanDisjonctionEClass = createEClass(BOOLEAN_DISJONCTION);
     createEReference(booleanDisjonctionEClass, BOOLEAN_DISJONCTION__LEFT);
     createEReference(booleanDisjonctionEClass, BOOLEAN_DISJONCTION__RIGHT);
@@ -1998,6 +2086,11 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
 
     booleanLiteralEClass = createEClass(BOOLEAN_LITERAL);
     createEAttribute(booleanLiteralEClass, BOOLEAN_LITERAL__VALUE);
+
+    booleanNumberComparisonEClass = createEClass(BOOLEAN_NUMBER_COMPARISON);
+    createEReference(booleanNumberComparisonEClass, BOOLEAN_NUMBER_COMPARISON__LEFT);
+    createEAttribute(booleanNumberComparisonEClass, BOOLEAN_NUMBER_COMPARISON__OP);
+    createEReference(booleanNumberComparisonEClass, BOOLEAN_NUMBER_COMPARISON__RIGHT);
 
     numberIfExpressionEClass = createEClass(NUMBER_IF_EXPRESSION);
     createEReference(numberIfExpressionEClass, NUMBER_IF_EXPRESSION__IF);
@@ -2095,10 +2188,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     setEffectEClass.getESuperTypes().add(this.getEffect());
     triggerEffectEClass.getESuperTypes().add(this.getEffect());
     numberExpressionEClass.getESuperTypes().add(this.getExpression());
+    dataTypeCompoundEClass.getESuperTypes().add(this.getDataType());
+    dataTypeBaseEClass.getESuperTypes().add(this.getDataType());
     booleanDisjonctionEClass.getESuperTypes().add(this.getBooleanExpression());
     booleanConjonctionEClass.getESuperTypes().add(this.getBooleanExpression());
     booleanNegationEClass.getESuperTypes().add(this.getBooleanExpression());
     booleanLiteralEClass.getESuperTypes().add(this.getBooleanExpression());
+    booleanNumberComparisonEClass.getESuperTypes().add(this.getBooleanExpression());
     numberIfExpressionEClass.getESuperTypes().add(this.getNumberExpression());
     numberSwitchExpressionNumberEClass.getESuperTypes().add(this.getNumberExpression());
     numberSwitchExpressionTextEClass.getESuperTypes().add(this.getNumberExpression());
@@ -2117,7 +2213,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Interactors(), this.getInteractorDeclaration(), null, "interactors", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_DataTypes(), this.getDataTypeDeclaration(), null, "dataTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_DataTypes(), this.getDataTypeCompoundDeclaration(), null, "dataTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(interactorDeclarationEClass, InteractorDeclaration.class, "InteractorDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInteractorDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, InteractorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2183,13 +2279,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEReference(getBehaviorDeclaration_Effects(), this.getEffect(), null, "effects", null, 0, -1, BehaviorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(causeEClass, Cause.class, "Cause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCause_Guard(), this.getExpression(), null, "guard", null, 0, 1, Cause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCause_Guard(), this.getBooleanExpression(), null, "guard", null, 0, 1, Cause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(onCauseEClass, OnCause.class, "OnCause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOnCause_Event(), this.getEventReception(), null, "event", null, 0, 1, OnCause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whenCauseEClass, WhenCause.class, "WhenCause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWhenCause_Condition(), this.getExpression(), null, "condition", null, 0, 1, WhenCause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhenCause_Condition(), this.getBooleanExpression(), null, "condition", null, 0, 1, WhenCause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(effectEClass, Effect.class, "Effect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEffect_Value(), this.getExpression(), null, "value", null, 0, 1, Effect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2205,17 +2301,15 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(dataTypeDeclarationEClass, DataTypeDeclaration.class, "DataTypeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDataTypeDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataTypeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDataTypeDeclaration_Fields(), this.getField(), null, "fields", null, 0, -1, DataTypeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(dataTypeCompoundDeclarationEClass, DataTypeCompoundDeclaration.class, "DataTypeCompoundDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDataTypeCompoundDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataTypeCompoundDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDataTypeCompoundDeclaration_Fields(), this.getDataTypeCompoundField(), null, "fields", null, 0, -1, DataTypeCompoundDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getField_Type(), this.getDataType(), null, "type", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getField_Name(), ecorePackage.getEString(), "name", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(dataTypeCompoundFieldEClass, DataTypeCompoundField.class, "DataTypeCompoundField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDataTypeCompoundField_Type(), this.getDataType(), null, "type", null, 0, 1, DataTypeCompoundField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDataTypeCompoundField_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataTypeCompoundField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDataType_Compound(), this.getDataTypeDeclaration(), null, "compound", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDataType_Base(), ecorePackage.getEString(), "base", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(booleanExpressionEClass, BooleanExpression.class, "BooleanExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2231,6 +2325,12 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
 
     initEClass(textExpressionEClass, TextExpression.class, "TextExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(dataTypeCompoundEClass, DataTypeCompound.class, "DataTypeCompound", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDataTypeCompound_Type(), this.getDataTypeCompoundDeclaration(), null, "type", null, 0, 1, DataTypeCompound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataTypeBaseEClass, DataTypeBase.class, "DataTypeBase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDataTypeBase_Type(), ecorePackage.getEString(), "type", null, 0, 1, DataTypeBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(booleanDisjonctionEClass, BooleanDisjonction.class, "BooleanDisjonction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBooleanDisjonction_Left(), this.getBooleanExpression(), null, "left", null, 0, 1, BooleanDisjonction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBooleanDisjonction_Right(), this.getBooleanExpression(), null, "right", null, 0, 1, BooleanDisjonction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2244,6 +2344,11 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
 
     initEClass(booleanLiteralEClass, BooleanLiteral.class, "BooleanLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBooleanLiteral_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, BooleanLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booleanNumberComparisonEClass, BooleanNumberComparison.class, "BooleanNumberComparison", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBooleanNumberComparison_Left(), this.getNumberExpression(), null, "left", null, 0, 1, BooleanNumberComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBooleanNumberComparison_Op(), ecorePackage.getEString(), "op", null, 0, 1, BooleanNumberComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBooleanNumberComparison_Right(), this.getNumberExpression(), null, "right", null, 0, 1, BooleanNumberComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numberIfExpressionEClass, NumberIfExpression.class, "NumberIfExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNumberIfExpression_If(), this.getBooleanExpression(), null, "if", null, 0, 1, NumberIfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

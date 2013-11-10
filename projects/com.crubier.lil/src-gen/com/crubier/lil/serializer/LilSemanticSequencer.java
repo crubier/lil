@@ -10,15 +10,17 @@ import com.crubier.lil.lil.BooleanConjonction;
 import com.crubier.lil.lil.BooleanDisjonction;
 import com.crubier.lil.lil.BooleanLiteral;
 import com.crubier.lil.lil.BooleanNegation;
+import com.crubier.lil.lil.BooleanNumberComparison;
 import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.ComponentDeclaration;
-import com.crubier.lil.lil.DataType;
-import com.crubier.lil.lil.DataTypeDeclaration;
+import com.crubier.lil.lil.DataTypeBase;
+import com.crubier.lil.lil.DataTypeCompound;
+import com.crubier.lil.lil.DataTypeCompoundDeclaration;
+import com.crubier.lil.lil.DataTypeCompoundField;
 import com.crubier.lil.lil.Entity;
 import com.crubier.lil.lil.EventDeclaration;
 import com.crubier.lil.lil.EventEmission;
 import com.crubier.lil.lil.EventReception;
-import com.crubier.lil.lil.Field;
 import com.crubier.lil.lil.FlowDeclaration;
 import com.crubier.lil.lil.FlowEmission;
 import com.crubier.lil.lil.FlowReception;
@@ -154,6 +156,18 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case LilPackage.BOOLEAN_NUMBER_COMPARISON:
+				if(context == grammarAccess.getBooleanConjonctionRule() ||
+				   context == grammarAccess.getBooleanConjonctionAccess().getBooleanConjonctionLeftAction_1_0_0() ||
+				   context == grammarAccess.getBooleanDisjonctionRule() ||
+				   context == grammarAccess.getBooleanDisjonctionAccess().getBooleanDisjonctionLeftAction_1_0_0() ||
+				   context == grammarAccess.getBooleanExpressionRule() ||
+				   context == grammarAccess.getBooleanTerminalExpressionRule() ||
+				   context == grammarAccess.getBooleanUnaryRule()) {
+					sequence_BooleanTerminalExpression(context, (BooleanNumberComparison) semanticObject); 
+					return; 
+				}
+				else break;
 			case LilPackage.COMPONENT:
 				if(context == grammarAccess.getComponentRule()) {
 					sequence_Component(context, (Component) semanticObject); 
@@ -167,15 +181,27 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_TYPE:
+			case LilPackage.DATA_TYPE_BASE:
 				if(context == grammarAccess.getDataTypeRule()) {
-					sequence_DataType(context, (DataType) semanticObject); 
+					sequence_DataType(context, (DataTypeBase) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_TYPE_DECLARATION:
-				if(context == grammarAccess.getDataTypeDeclarationRule()) {
-					sequence_DataTypeDeclaration(context, (DataTypeDeclaration) semanticObject); 
+			case LilPackage.DATA_TYPE_COMPOUND:
+				if(context == grammarAccess.getDataTypeRule()) {
+					sequence_DataType(context, (DataTypeCompound) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_COMPOUND_DECLARATION:
+				if(context == grammarAccess.getDataTypeCompoundDeclarationRule()) {
+					sequence_DataTypeCompoundDeclaration(context, (DataTypeCompoundDeclaration) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_COMPOUND_FIELD:
+				if(context == grammarAccess.getDataTypeCompoundFieldRule()) {
+					sequence_DataTypeCompoundField(context, (DataTypeCompoundField) semanticObject); 
 					return; 
 				}
 				else break;
@@ -201,12 +227,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.EVENT_RECEPTION:
 				if(context == grammarAccess.getEventReceptionRule()) {
 					sequence_EventReception(context, (EventReception) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.FIELD:
-				if(context == grammarAccess.getFieldRule()) {
-					sequence_Field(context, (Field) semanticObject); 
 					return; 
 				}
 				else break;
@@ -683,6 +703,26 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (
+	 *         left=NumberExpression 
+	 *         (
+	 *             op='==' | 
+	 *             op='!=' | 
+	 *             op='<' | 
+	 *             op='>' | 
+	 *             op='<=' | 
+	 *             op='>='
+	 *         ) 
+	 *         right=NumberExpression
+	 *     )
+	 */
+	protected void sequence_BooleanTerminalExpression(EObject context, BooleanNumberComparison semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     operand=BooleanTerminalExpression
 	 */
 	protected void sequence_BooleanUnary(EObject context, BooleanNegation semanticObject) {
@@ -724,19 +764,61 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID fields+=Field*)
+	 *     (name=ID fields+=DataTypeCompoundField*)
 	 */
-	protected void sequence_DataTypeDeclaration(EObject context, DataTypeDeclaration semanticObject) {
+	protected void sequence_DataTypeCompoundDeclaration(EObject context, DataTypeCompoundDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (compound=[DataTypeDeclaration|ID] | base=DataTypeBase)
+	 *     (type=DataType name=ID)
 	 */
-	protected void sequence_DataType(EObject context, DataType semanticObject) {
+	protected void sequence_DataTypeCompoundField(EObject context, DataTypeCompoundField semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__TYPE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeCompoundFieldAccess().getTypeDataTypeParserRuleCall_0_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getDataTypeCompoundFieldAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         type='void' | 
+	 *         type='symbol' | 
+	 *         type='number' | 
+	 *         type='text' | 
+	 *         type='time' | 
+	 *         type='reference'
+	 *     )
+	 */
+	protected void sequence_DataType(EObject context, DataTypeBase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     type=[DataTypeCompoundDeclaration|ID]
+	 */
+	protected void sequence_DataType(EObject context, DataTypeCompound semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND__TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeAccess().getTypeDataTypeCompoundDeclarationIDTerminalRuleCall_0_1_0_1(), semanticObject.getType());
+		feeder.finish();
 	}
 	
 	
@@ -785,25 +867,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (type=DataType name=ID)
-	 */
-	protected void sequence_Field(EObject context, Field semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.FIELD__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.FIELD__TYPE));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.FIELD__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.FIELD__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getFieldAccess().getTypeDataTypeParserRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getFieldAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (type=DataType name=ID source=AccessibleEntity? destinations+=AccessibleEntity*)
 	 */
 	protected void sequence_FlowDeclaration(EObject context, FlowDeclaration semanticObject) {
@@ -840,7 +903,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (interactors+=InteractorDeclaration | dataTypes+=DataTypeDeclaration)*
+	 *     (interactors+=InteractorDeclaration | dataTypes+=DataTypeCompoundDeclaration)*
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1069,7 +1132,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (event=EventReception guard=Expression?)
+	 *     (event=EventReception guard=BooleanExpression?)
 	 */
 	protected void sequence_OnCause(EObject context, OnCause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1151,7 +1214,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (condition=Expression guard=Expression?)
+	 *     (condition=BooleanExpression guard=BooleanExpression?)
 	 */
 	protected void sequence_WhenCause(EObject context, WhenCause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
