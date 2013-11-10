@@ -6,7 +6,7 @@
 
 ## lil interaction language
 
-**lil** is a domain specific language for Human Machine Interfaces specification, originally developped by Vincent Lecrubier during his Ph.D. at [ONERA](http://www.onera.fr), [ISAE](http://www.isae.fr) and [UPS Toulouse](http://www.univ-tlse3.fr) with the help of his tutors Bruno d'Ausbourg at [ONERA](http://www.onera.fr) and Yamine Aït-Ameur at [ENSEEIHT](http://www.enseeiht.fr). **lil** aims at enabling the following :
+**lil** is a domain specific language for Human Machine Interfaces specification, originally developped by Vincent Lecrubier during his Ph.D. at [ONERA](http://www.onera.fr), [ISAE](http://www.isae.fr) and [UPS Toulouse](http://www.univ-tlse3.fr) with the help of his tutors Bruno d'Ausbourg at [ONERA](http://www.onera.fr) and Yamine Aït-Ameur at [ENSEEIHT](http://www.enseeiht.fr). **lil** aims at enabling the following:
 
 - Specification of abstract human-machine interfaces
 - Collaboration of different stakeholders on the same specification document
@@ -15,7 +15,7 @@
 
 ## lil standard framework
 
-**lil framework** is a baseline framework designed to implement the **lil** specification canonically. It aims at enabling the following :
+**lil framework** is a baseline framework designed to implement the **lil** specification canonically. It aims at enabling the following:
 
 - Code generation for prototyping 
 - Code generation of runtime backbone
@@ -29,7 +29,7 @@
 
 ## Prerequisites
 
-In order to get started in developping the **lil** framework, you must comply with the following prerequisites :
+In order to get started in developping the **lil** framework, you must comply with the following prerequisites:
 
 1. Have a working installation of the latest release of [Eclipse](http://www.eclipse.org/)
 
@@ -38,7 +38,7 @@ In order to get started in developping the **lil** framework, you must comply wi
 
 ## Installation
 
-Once you are ready to install the **lil** framework into (framework_path), do the following :
+Once you are ready to install the **lil** framework into (framework_path), do the following:
 
 1. Clone this repository in your desktop
 
@@ -99,7 +99,7 @@ Once you are ready to install the **lil** framework into (framework_path), do th
 
 ## Sources
 
-**lil** is specified in [Xtext](http://www.eclipse.org/Xtext/). So far, due to the xtext architecture, the interaction language specification and the standard framework code are quite intricated, but here is the important files you might want to have a look at :
+**lil** is specified in [Xtext](http://www.eclipse.org/Xtext/). So far, due to the xtext architecture, the interaction language specification and the standard framework code are quite intricated, but here is the important files you might want to have a look at:
 
 - The syntax is defined in [Lil.xtext](com.crubier.lil/src/com/crubier/lil/Lil.xtext)
 - Scoping, validation, code formatting and code generation sources are available here [here](com.crubier.lil/src/com/crubier/lil/)
