@@ -42,108 +42,108 @@ In order to get started in developping the lil framework, you must comply with t
 - Have a working installation of the latest release of [Eclipse](http://www.eclipse.org/)
 - Have a working installation of the latest release of [Xtext](http://www.eclipse.org/Xtext/) 
 
-Once you are ready to install the lil framework sources into <framework_path>, do the following :
+Once you are ready to install the lil framework sources into (framework_path), do the following :
 
 1. Clone this repository
 
-	Github >> Clone in Desktop >> to <framework_path>
+		Github >> Clone in Desktop >> to (framework_path)
 	
-	or
+		or
 	
-	Github >> Download ZIP >> Unzip in <framework_path>
+		Github >> Download ZIP >> Unzip in (framework_path)
 	
-	or
+		or
 	
-	Terminal >> cd <framework_path> >> git clone https://github.com/crubier/lil.git
+		Terminal >> cd (framework_path) >> git clone https://github.com/crubier/lil.git
 	
-	<framework_path> should now contain only one folder called lil, containing the repository files
+		(framework_path) should now contain only one folder called lil, containing the repository files
 	
 2. Launch Eclipse / Xtext and switch to a fresh new workspace wherever on your machine, but NOT inside of the folder you just cloned
 
-	In Eclipse >> File >> Switch Workspace >> Other...
+		In Eclipse >> File >> Switch Workspace >> Other...
 	
-	then
+		then
 	
-	Pick a new folder, typically <framework_path>/workspace
+		Pick a new folder, typically (framework_path)/workspace
 	
-	<framework_path> should now contain two folders : workspace, and lil
+		(framework_path) should now contain two folders : workspace, and lil
 	
-3. Import the 4 Projects found in <framework_path>/lil/projects/ into your workspace
+3. Import the 4 Projects found in (framework_path)/lil/projects/ into your workspace
 
-	In Eclipse >> File >> Import 
+		In Eclipse >> File >> Import 
 	
-	then
+		then
 	
-	General >> Existing projects into workspace >> Next
+		General >> Existing projects into workspace >> Next
 	
-	then
+		then
 	
-	Select root directory : <framework_path>/lil/projects/ >> Select all >> Uncheck Copy projects into workspace >> Finish
+		Select root directory : (framework_path)/lil/projects/ >> Select all >> Uncheck Copy projects into workspace >> Finish
 	
-	Your eclipse packages explorer view should now display 4 projects in your workspace
+		Your eclipse packages explorer view should now display 4 projects in your workspace
 	
 4. Build the language infrastructure
 
-	In the Eclipse package explorer view, expand the "com.crubier.lil" project
+		In the Eclipse package explorer view, expand the "com.crubier.lil" project
 	
-	then
+		then
 	
-	Expand the "launch" folder
+		Expand the "launch" folder
 	
-	then
+		then
 	
-	Right-click "Generate lil infrastructure.launch" >> "Run as" >> "Generate lil infrastructure" 
+		Right-click "Generate lil infrastructure.launch" >> "Run as" >> "Generate lil infrastructure" 
 	
-	then 
+		then 
 	
-	Wait during the language infrastructure generation
+		Wait during the language infrastructure generation
 	
-	Your Eclipse console view should now indicate that the MWE2 workflow succeeded without errors
+		Your Eclipse console view should now indicate that the MWE2 workflow succeeded without errors
 	
 5. Launch the lil editor runtime Eclipse
 
-	In the Eclipse package explorer view, expand the "com.crubier.lil" project
+		In the Eclipse package explorer view, expand the "com.crubier.lil" project
 	
-	then
+		then
 	
-	Expand the "launch" folder
+		Expand the "launch" folder
 	
-	then
+		then
 	
-	Right-click "Launch lil runtime eclipse.launch" >> "Run as" >> "Launch lil runtime eclipse" 
+		Right-click "Launch lil runtime eclipse.launch" >> "Run as" >> "Launch lil runtime eclipse" 
 	
-	then 
+		then 
 	
-	Wait until the new eclipse instance is up and running
+		Wait until the new eclipse instance is up and running
 	
-	You should now have two Eclipse instances running : The Xtext IDE, and the lil IDE you just launched
+		You should now have two Eclipse instances running : The Xtext IDE, and the lil IDE you just launched
 	
 6. Import sample projects into the lil sample workspace
 
-	In the lil IDE Eclipse >> File >> Import 
+		In the lil IDE Eclipse >> File >> Import 
 	
-	then
+		then
 	
-	General >> Existing projects into workspace >> Next
+		General >> Existing projects into workspace >> Next
 	
-	then
+		then
 	
-	Select root directory : <framework_path>/lil/sample projects/ >> Select all >> Uncheck Copy projects into workspace >> Finish
+		Select root directory : (framework_path)/lil/sample projects/ >> Select all >> Uncheck Copy projects into workspace >> Finish
 	
-	Your lil IDE packages explorer view should now display the sample project in the lil workspace
+		Your lil IDE packages explorer view should now display the sample project in the lil workspace
 	
 7. Play with the sample projects
 
-	In the lil IDE Eclipse >> Open any sample project
+		In the lil IDE Eclipse >> Open any sample project
 	
-	then
+		then
 	
-	Expand the "src" folder 
+		Expand the "src" folder 
 	
-	then 
+		then 
 	
-	Open any "*.lil" file
+		Open any "*.lil" file
 	
-	You are done ! You are now playing with a lil source file, enjoy 
+		You are done ! You are now playing with a lil source file, enjoy 
 
 
