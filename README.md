@@ -40,68 +40,69 @@ In order to get started in developping the **lil** framework, you must comply wi
 
 Once you are ready to install the **lil** framework into (framework_path), do the following:
 
-1. Clone this repository in your desktop
+1. Clone this repository in your desktop:
 
 		cd (framework_path) 
 		git clone https://github.com/crubier/lil.git
 	
-	(framework_path) should now contain only one folder called lil, containing the repository files
+	(framework_path) should now contain only one folder called lil, containing the repository files.
 	
-2. Launch Eclipse / Xtext and switch to a fresh new workspace wherever on your machine, but NOT inside of the folder you just cloned
+2. Launch Eclipse / Xtext and switch to a fresh new workspace wherever on your machine, but NOT inside of the folder you just cloned:
 
 		Eclipse  >>  File  >>  Switch Workspace  >>  Other...  >>
 		Pick a new folder, typically (framework_path)/workspace  >>  Ok
 	
-	(framework_path) should now contain two folders : workspace, and lil
+	(framework_path) should now contain two folders : lil, and workspace
 	
-3. Import the 4 Projects found in (framework_path)/lil/projects/ into your workspace
+3. Import the 4 Projects found in (framework_path)/lil/projects/ into your workspace:
 
 		Eclipse  >>  File  >>  Import  >> 
 		General  >>  Existing projects into workspace  >>  Next  >>
 		Select root directory : (framework_path)/lil/projects/  >> 
 		Select all  >>  Uncheck Copy projects into workspace  >>  Finish
 	
-	Your eclipse packages explorer view should now display 4 projects in your workspace
+	Your eclipse packages explorer view should now display 4 projects in your workspace.
 	
-4. Build the language infrastructure
+4. Build the language infrastructure:
 
 		Eclipse package explorer view  >>  go to "com.crubier.lil/launch"  >>
 		Right-click "Generate lil infrastructure.launch"  >> 
 		"Run as"  >>  "Generate lil infrastructure"  >>
 		Wait during the language infrastructure generation
 	
-	Your Eclipse console view should now indicate that the MWE2 workflow succeeded without errors
+	Your Eclipse console view should now indicate that the MWE2 workflow succeeded without errors.
 	
-5. Launch the lil editor runtime Eclipse
+5. Launch the lil editor runtime Eclipse:
 
 		Eclipse package explorer view  >>  go to "com.crubier.lil/launch"  >>
 		Right-click "Launch lil runtime eclipse.launch"  >>
 		"Run as"  >>  "Launch lil runtime eclipse"  >>
 		Wait until the new eclipse instance is up and running
 	
-	You should now have two Eclipse instances running : The Xtext IDE, and the lil IDE you just launched
+	You should now have two Eclipse instances running : The Xtext IDE, and the lil IDE you just launched.
+	Also, (framework_path) should now contain three folders : lil, workspace, and lilsampleworkspace
 	
-6. Import sample projects into the lil sample workspace
+6. Import sample projects into the lil sample workspace:
 
 		lil IDE Eclipse  >>  File  >>  Import  >>
 		General  >>  Existing projects into workspace  >> 
 		Select root directory : (framework_path)/lil/sample projects/  >> 
 		Select all  >>  Uncheck Copy projects into workspace  >>  Finish
 	
-	Your lil IDE packages explorer view should now display the sample project in the lil workspace
+	Your lil IDE packages explorer view should now display the sample project in the lil workspace.
 	
-7. Play with the sample projects
+7. Play with the sample projects:
 
 		lil IDE Eclipse  >>  Go in any sample project  >>
 		Expand the "src" folder >> Open any "*.lil" file
 	
-	You are done ! You are now playing with a lil source file, enjoy 
+	You are done ! You are now playing with a lil source file, enjoy !
 
 ## Sources
 
 **lil** is specified in [Xtext](http://www.eclipse.org/Xtext/). So far, due to the xtext architecture, the interaction language specification and the standard framework code are quite intricated, but here is the important files you might want to have a look at:
 
-- The syntax is defined in [Lil.xtext](com.crubier.lil/src/com/crubier/lil/Lil.xtext)
-- Scoping, validation, code formatting and code generation sources are available here [here](com.crubier.lil/src/com/crubier/lil/)
+- The syntax is defined in [Lil.xtext](projects/com.crubier.lil/src/com/crubier/lil/Lil.xtext)
+- Scoping, validation, code formatting and code generation sources are available [there](projects/com.crubier.lil/src/com/crubier/lil/)
 
 
