@@ -2282,7 +2282,7 @@ ruleNumberCompoundExpression returns [EObject current=null]
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getNumberCompoundExpressionAccess().getNumberSwitchExpressionAction_2_0(),
+            grammarAccess.getNumberCompoundExpressionAccess().getNumberSwitchExpressionNumberAction_2_0(),
             $current);
     }
 )	otherlv_10='switch' 
@@ -2364,6 +2364,92 @@ ruleNumberSwitchExpressionNumberCase
 	    }
 
 )
+))?)
+    |((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getNumberCompoundExpressionAccess().getNumberSwitchExpressionTextAction_3_0(),
+            $current);
+    }
+)	otherlv_19='switch' 
+    {
+    	newLeafNode(otherlv_19, grammarAccess.getNumberCompoundExpressionAccess().getSwitchKeyword_3_1());
+    }
+	otherlv_20='(' 
+    {
+    	newLeafNode(otherlv_20, grammarAccess.getNumberCompoundExpressionAccess().getLeftParenthesisKeyword_3_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNumberCompoundExpressionAccess().getSwitchTextExpressionParserRuleCall_3_3_0()); 
+	    }
+		lv_switch_21_0=ruleTextExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNumberCompoundExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"switch",
+        		lv_switch_21_0, 
+        		"TextExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_22=')' 
+    {
+    	newLeafNode(otherlv_22, grammarAccess.getNumberCompoundExpressionAccess().getRightParenthesisKeyword_3_4());
+    }
+((
+(
+ruleNumberSwitchExpressionTextCase
+)
+)=>
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNumberCompoundExpressionAccess().getCasesNumberSwitchExpressionTextCaseParserRuleCall_3_5_0()); 
+	    }
+		lv_cases_23_0=ruleNumberSwitchExpressionTextCase		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNumberCompoundExpressionRule());
+	        }
+       		add(
+       			$current, 
+       			"cases",
+        		lv_cases_23_0, 
+        		"NumberSwitchExpressionTextCase");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)+(((	'default' 
+)=>	otherlv_24='default' 
+    {
+    	newLeafNode(otherlv_24, grammarAccess.getNumberCompoundExpressionAccess().getDefaultKeyword_3_6_0());
+    }
+)	otherlv_25=':' 
+    {
+    	newLeafNode(otherlv_25, grammarAccess.getNumberCompoundExpressionAccess().getColonKeyword_3_6_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNumberCompoundExpressionAccess().getDefaultNumberExpressionParserRuleCall_3_6_2_0()); 
+	    }
+		lv_default_26_0=ruleNumberExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNumberCompoundExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"default",
+        		lv_default_26_0, 
+        		"NumberExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))?))
 ;
 
@@ -2419,6 +2505,71 @@ ruleNumberSwitchExpressionNumberCase returns [EObject current=null]
 		lv_value_3_0=ruleNumberExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNumberSwitchExpressionNumberCaseRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_3_0, 
+        		"NumberExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleNumberSwitchExpressionTextCase
+entryRuleNumberSwitchExpressionTextCase returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNumberSwitchExpressionTextCaseRule()); }
+	 iv_ruleNumberSwitchExpressionTextCase=ruleNumberSwitchExpressionTextCase 
+	 { $current=$iv_ruleNumberSwitchExpressionTextCase.current; } 
+	 EOF 
+;
+
+// Rule NumberSwitchExpressionTextCase
+ruleNumberSwitchExpressionTextCase returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='case' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getNumberSwitchExpressionTextCaseAccess().getCaseKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNumberSwitchExpressionTextCaseAccess().getConditionTextExpressionParserRuleCall_1_0()); 
+	    }
+		lv_condition_1_0=ruleTextExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNumberSwitchExpressionTextCaseRule());
+	        }
+       		set(
+       			$current, 
+       			"condition",
+        		lv_condition_1_0, 
+        		"TextExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=':' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getNumberSwitchExpressionTextCaseAccess().getColonKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNumberSwitchExpressionTextCaseAccess().getValueNumberExpressionParserRuleCall_3_0()); 
+	    }
+		lv_value_3_0=ruleNumberExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNumberSwitchExpressionTextCaseRule());
 	        }
        		set(
        			$current, 
@@ -2838,6 +2989,139 @@ ruleNumberTerminalExpression returns [EObject current=null]
 
 
 
+// Entry rule entryRuleTextExpression
+entryRuleTextExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTextExpressionRule()); }
+	 iv_ruleTextExpression=ruleTextExpression 
+	 { $current=$iv_ruleTextExpression.current; } 
+	 EOF 
+;
+
+// Rule TextExpression
+ruleTextExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getTextExpressionAccess().getTextJoinParserRuleCall()); 
+    }
+    this_TextJoin_0=ruleTextJoin
+    { 
+        $current = $this_TextJoin_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+;
+
+
+
+
+
+// Entry rule entryRuleTextJoin
+entryRuleTextJoin returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTextJoinRule()); }
+	 iv_ruleTextJoin=ruleTextJoin 
+	 { $current=$iv_ruleTextJoin.current; } 
+	 EOF 
+;
+
+// Rule TextJoin
+ruleTextJoin returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getTextJoinAccess().getTextTerminalExpressionParserRuleCall_0()); 
+    }
+    this_TextTerminalExpression_0=ruleTextTerminalExpression
+    { 
+        $current = $this_TextTerminalExpression_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+(((
+    {
+        $current = forceCreateModelElementAndSet(
+            grammarAccess.getTextJoinAccess().getTextJoinLeftAction_1_0_0(),
+            $current);
+    }
+)	otherlv_2='<>' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getTextJoinAccess().getLessThanSignGreaterThanSignKeyword_1_0_1());
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTextJoinAccess().getRightTextTerminalExpressionParserRuleCall_1_1_0()); 
+	    }
+		lv_right_3_0=ruleTextTerminalExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTextJoinRule());
+	        }
+       		set(
+       			$current, 
+       			"right",
+        		lv_right_3_0, 
+        		"TextTerminalExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)
+;
+
+
+
+
+
+// Entry rule entryRuleTextTerminalExpression
+entryRuleTextTerminalExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTextTerminalExpressionRule()); }
+	 iv_ruleTextTerminalExpression=ruleTextTerminalExpression 
+	 { $current=$iv_ruleTextTerminalExpression.current; } 
+	 EOF 
+;
+
+// Rule TextTerminalExpression
+ruleTextTerminalExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getTextTerminalExpressionAccess().getTextLiteralAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTextTerminalExpressionAccess().getValueTextLiteralParserRuleCall_1_0()); 
+	    }
+		lv_value_1_0=ruleTextLiteral		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTextTerminalExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_1_0, 
+        		"TextLiteral");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
 
 
 // Entry rule entryRuleBooleanLiteral
@@ -2926,6 +3210,32 @@ ruleNumberLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
     ;
 
 
+
+
+
+// Entry rule entryRuleTextLiteral
+entryRuleTextLiteral returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTextLiteralRule()); } 
+	 iv_ruleTextLiteral=ruleTextLiteral 
+	 { $current=$iv_ruleTextLiteral.current.getText(); }  
+	 EOF 
+;
+
+// Rule TextLiteral
+ruleTextLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+    this_STRING_0=RULE_STRING    {
+		$current.merge(this_STRING_0);
+    }
+
+    { 
+    newLeafNode(this_STRING_0, grammarAccess.getTextLiteralAccess().getSTRINGTerminalRuleCall()); 
+    }
+
+    ;
 
 
 

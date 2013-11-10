@@ -1214,6 +1214,62 @@ public interface LilPackage extends EPackage
   int NUMBER_SWITCH_EXPRESSION_NUMBER_CASE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionTextCaseImpl <em>Number Switch Expression Text Case</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.NumberSwitchExpressionTextCaseImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionTextCase()
+   * @generated
+   */
+  int NUMBER_SWITCH_EXPRESSION_TEXT_CASE = 32;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_SWITCH_EXPRESSION_TEXT_CASE__CONDITION = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_SWITCH_EXPRESSION_TEXT_CASE__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Number Switch Expression Text Case</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_SWITCH_EXPRESSION_TEXT_CASE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.TextExpressionImpl <em>Text Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.TextExpressionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextExpression()
+   * @generated
+   */
+  int TEXT_EXPRESSION = 33;
+
+  /**
+   * The number of structural features of the '<em>Text Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanDisjonctionImpl <em>Boolean Disjonction</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1221,7 +1277,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanDisjonction()
    * @generated
    */
-  int BOOLEAN_DISJONCTION = 32;
+  int BOOLEAN_DISJONCTION = 34;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1258,7 +1314,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanConjonction()
    * @generated
    */
-  int BOOLEAN_CONJONCTION = 33;
+  int BOOLEAN_CONJONCTION = 35;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1295,7 +1351,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanNegation()
    * @generated
    */
-  int BOOLEAN_NEGATION = 34;
+  int BOOLEAN_NEGATION = 36;
 
   /**
    * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -1323,7 +1379,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 35;
+  int BOOLEAN_LITERAL = 37;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1351,7 +1407,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberIfExpression()
    * @generated
    */
-  int NUMBER_IF_EXPRESSION = 36;
+  int NUMBER_IF_EXPRESSION = 38;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -1390,14 +1446,14 @@ public interface LilPackage extends EPackage
   int NUMBER_IF_EXPRESSION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionImpl <em>Number Switch Expression</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl <em>Number Switch Expression Number</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberSwitchExpressionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpression()
+   * @see com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionNumber()
    * @generated
    */
-  int NUMBER_SWITCH_EXPRESSION = 37;
+  int NUMBER_SWITCH_EXPRESSION_NUMBER = 39;
 
   /**
    * The feature id for the '<em><b>Switch</b></em>' containment reference.
@@ -1406,7 +1462,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION__SWITCH = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
+  int NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Cases</b></em>' containment reference list.
@@ -1415,7 +1471,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION__CASES = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
+  int NUMBER_SWITCH_EXPRESSION_NUMBER__CASES = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1424,16 +1480,62 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION__DEFAULT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
+  int NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Number Switch Expression</em>' class.
+   * The number of structural features of the '<em>Number Switch Expression Number</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 3;
+  int NUMBER_SWITCH_EXPRESSION_NUMBER_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionTextImpl <em>Number Switch Expression Text</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.NumberSwitchExpressionTextImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionText()
+   * @generated
+   */
+  int NUMBER_SWITCH_EXPRESSION_TEXT = 40;
+
+  /**
+   * The feature id for the '<em><b>Switch</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_SWITCH_EXPRESSION_TEXT__SWITCH = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Cases</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_SWITCH_EXPRESSION_TEXT__CASES = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Default</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_SWITCH_EXPRESSION_TEXT__DEFAULT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Number Switch Expression Text</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_SWITCH_EXPRESSION_TEXT_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberAdditionImpl <em>Number Addition</em>}' class.
@@ -1443,7 +1545,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberAddition()
    * @generated
    */
-  int NUMBER_ADDITION = 38;
+  int NUMBER_ADDITION = 41;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1480,7 +1582,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSubstraction()
    * @generated
    */
-  int NUMBER_SUBSTRACTION = 39;
+  int NUMBER_SUBSTRACTION = 42;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1517,7 +1619,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberMultiplication()
    * @generated
    */
-  int NUMBER_MULTIPLICATION = 40;
+  int NUMBER_MULTIPLICATION = 43;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1554,7 +1656,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberDivision()
    * @generated
    */
-  int NUMBER_DIVISION = 41;
+  int NUMBER_DIVISION = 44;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1591,7 +1693,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberModulo()
    * @generated
    */
-  int NUMBER_MODULO = 42;
+  int NUMBER_MODULO = 45;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1628,7 +1730,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberPower()
    * @generated
    */
-  int NUMBER_POWER = 43;
+  int NUMBER_POWER = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1665,7 +1767,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberOpposition()
    * @generated
    */
-  int NUMBER_OPPOSITION = 44;
+  int NUMBER_OPPOSITION = 47;
 
   /**
    * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -1693,7 +1795,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 45;
+  int NUMBER_LITERAL = 48;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1721,7 +1823,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberFunctionExpression()
    * @generated
    */
-  int NUMBER_FUNCTION_EXPRESSION = 46;
+  int NUMBER_FUNCTION_EXPRESSION = 49;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -1749,6 +1851,71 @@ public interface LilPackage extends EPackage
    * @ordered
    */
   int NUMBER_FUNCTION_EXPRESSION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.TextJoinImpl <em>Text Join</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.TextJoinImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextJoin()
+   * @generated
+   */
+  int TEXT_JOIN = 50;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_JOIN__LEFT = TEXT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_JOIN__RIGHT = TEXT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Text Join</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_JOIN_FEATURE_COUNT = TEXT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.TextLiteralImpl <em>Text Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.TextLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextLiteral()
+   * @generated
+   */
+  int TEXT_LITERAL = 51;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_LITERAL__VALUE = TEXT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Text Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_LITERAL_FEATURE_COUNT = TEXT_EXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
@@ -2578,6 +2745,48 @@ public interface LilPackage extends EPackage
   EReference getNumberSwitchExpressionNumberCase_Value();
 
   /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberSwitchExpressionTextCase <em>Number Switch Expression Text Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number Switch Expression Text Case</em>'.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionTextCase
+   * @generated
+   */
+  EClass getNumberSwitchExpressionTextCase();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionTextCase#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionTextCase#getCondition()
+   * @see #getNumberSwitchExpressionTextCase()
+   * @generated
+   */
+  EReference getNumberSwitchExpressionTextCase_Condition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionTextCase#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionTextCase#getValue()
+   * @see #getNumberSwitchExpressionTextCase()
+   * @generated
+   */
+  EReference getNumberSwitchExpressionTextCase_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.TextExpression <em>Text Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text Expression</em>'.
+   * @see com.crubier.lil.lil.TextExpression
+   * @generated
+   */
+  EClass getTextExpression();
+
+  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanDisjonction <em>Boolean Disjonction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2727,47 +2936,90 @@ public interface LilPackage extends EPackage
   EReference getNumberIfExpression_Else();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberSwitchExpression <em>Number Switch Expression</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber <em>Number Switch Expression Number</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Switch Expression</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpression
+   * @return the meta object for class '<em>Number Switch Expression Number</em>'.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber
    * @generated
    */
-  EClass getNumberSwitchExpression();
+  EClass getNumberSwitchExpressionNumber();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpression#getSwitch <em>Switch</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getSwitch <em>Switch</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Switch</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpression#getSwitch()
-   * @see #getNumberSwitchExpression()
+   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber#getSwitch()
+   * @see #getNumberSwitchExpressionNumber()
    * @generated
    */
-  EReference getNumberSwitchExpression_Switch();
+  EReference getNumberSwitchExpressionNumber_Switch();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.NumberSwitchExpression#getCases <em>Cases</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getCases <em>Cases</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Cases</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpression#getCases()
-   * @see #getNumberSwitchExpression()
+   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber#getCases()
+   * @see #getNumberSwitchExpressionNumber()
    * @generated
    */
-  EReference getNumberSwitchExpression_Cases();
+  EReference getNumberSwitchExpressionNumber_Cases();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpression#getDefault <em>Default</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getDefault <em>Default</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Default</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpression#getDefault()
-   * @see #getNumberSwitchExpression()
+   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber#getDefault()
+   * @see #getNumberSwitchExpressionNumber()
    * @generated
    */
-  EReference getNumberSwitchExpression_Default();
+  EReference getNumberSwitchExpressionNumber_Default();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberSwitchExpressionText <em>Number Switch Expression Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number Switch Expression Text</em>'.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionText
+   * @generated
+   */
+  EClass getNumberSwitchExpressionText();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionText#getSwitch <em>Switch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Switch</em>'.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionText#getSwitch()
+   * @see #getNumberSwitchExpressionText()
+   * @generated
+   */
+  EReference getNumberSwitchExpressionText_Switch();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.NumberSwitchExpressionText#getCases <em>Cases</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Cases</em>'.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionText#getCases()
+   * @see #getNumberSwitchExpressionText()
+   * @generated
+   */
+  EReference getNumberSwitchExpressionText_Cases();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionText#getDefault <em>Default</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Default</em>'.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionText#getDefault()
+   * @see #getNumberSwitchExpressionText()
+   * @generated
+   */
+  EReference getNumberSwitchExpressionText_Default();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.NumberAddition <em>Number Addition</em>}'.
@@ -3034,6 +3286,59 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EReference getNumberFunctionExpression_Arguments();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.TextJoin <em>Text Join</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text Join</em>'.
+   * @see com.crubier.lil.lil.TextJoin
+   * @generated
+   */
+  EClass getTextJoin();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.TextJoin#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.crubier.lil.lil.TextJoin#getLeft()
+   * @see #getTextJoin()
+   * @generated
+   */
+  EReference getTextJoin_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.TextJoin#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.crubier.lil.lil.TextJoin#getRight()
+   * @see #getTextJoin()
+   * @generated
+   */
+  EReference getTextJoin_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.TextLiteral <em>Text Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text Literal</em>'.
+   * @see com.crubier.lil.lil.TextLiteral
+   * @generated
+   */
+  EClass getTextLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.TextLiteral#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.crubier.lil.lil.TextLiteral#getValue()
+   * @see #getTextLiteral()
+   * @generated
+   */
+  EAttribute getTextLiteral_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -3747,6 +4052,42 @@ public interface LilPackage extends EPackage
     EReference NUMBER_SWITCH_EXPRESSION_NUMBER_CASE__VALUE = eINSTANCE.getNumberSwitchExpressionNumberCase_Value();
 
     /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionTextCaseImpl <em>Number Switch Expression Text Case</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.NumberSwitchExpressionTextCaseImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionTextCase()
+     * @generated
+     */
+    EClass NUMBER_SWITCH_EXPRESSION_TEXT_CASE = eINSTANCE.getNumberSwitchExpressionTextCase();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER_SWITCH_EXPRESSION_TEXT_CASE__CONDITION = eINSTANCE.getNumberSwitchExpressionTextCase_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER_SWITCH_EXPRESSION_TEXT_CASE__VALUE = eINSTANCE.getNumberSwitchExpressionTextCase_Value();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.TextExpressionImpl <em>Text Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.TextExpressionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextExpression()
+     * @generated
+     */
+    EClass TEXT_EXPRESSION = eINSTANCE.getTextExpression();
+
+    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanDisjonctionImpl <em>Boolean Disjonction</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3869,14 +4210,14 @@ public interface LilPackage extends EPackage
     EReference NUMBER_IF_EXPRESSION__ELSE = eINSTANCE.getNumberIfExpression_Else();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionImpl <em>Number Switch Expression</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl <em>Number Switch Expression Number</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberSwitchExpressionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpression()
+     * @see com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionNumber()
      * @generated
      */
-    EClass NUMBER_SWITCH_EXPRESSION = eINSTANCE.getNumberSwitchExpression();
+    EClass NUMBER_SWITCH_EXPRESSION_NUMBER = eINSTANCE.getNumberSwitchExpressionNumber();
 
     /**
      * The meta object literal for the '<em><b>Switch</b></em>' containment reference feature.
@@ -3884,7 +4225,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION__SWITCH = eINSTANCE.getNumberSwitchExpression_Switch();
+    EReference NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH = eINSTANCE.getNumberSwitchExpressionNumber_Switch();
 
     /**
      * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
@@ -3892,7 +4233,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION__CASES = eINSTANCE.getNumberSwitchExpression_Cases();
+    EReference NUMBER_SWITCH_EXPRESSION_NUMBER__CASES = eINSTANCE.getNumberSwitchExpressionNumber_Cases();
 
     /**
      * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
@@ -3900,7 +4241,41 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION__DEFAULT = eINSTANCE.getNumberSwitchExpression_Default();
+    EReference NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT = eINSTANCE.getNumberSwitchExpressionNumber_Default();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionTextImpl <em>Number Switch Expression Text</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.NumberSwitchExpressionTextImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionText()
+     * @generated
+     */
+    EClass NUMBER_SWITCH_EXPRESSION_TEXT = eINSTANCE.getNumberSwitchExpressionText();
+
+    /**
+     * The meta object literal for the '<em><b>Switch</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER_SWITCH_EXPRESSION_TEXT__SWITCH = eINSTANCE.getNumberSwitchExpressionText_Switch();
+
+    /**
+     * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER_SWITCH_EXPRESSION_TEXT__CASES = eINSTANCE.getNumberSwitchExpressionText_Cases();
+
+    /**
+     * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER_SWITCH_EXPRESSION_TEXT__DEFAULT = eINSTANCE.getNumberSwitchExpressionText_Default();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberAdditionImpl <em>Number Addition</em>}' class.
@@ -4119,6 +4494,50 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EReference NUMBER_FUNCTION_EXPRESSION__ARGUMENTS = eINSTANCE.getNumberFunctionExpression_Arguments();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.TextJoinImpl <em>Text Join</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.TextJoinImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextJoin()
+     * @generated
+     */
+    EClass TEXT_JOIN = eINSTANCE.getTextJoin();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEXT_JOIN__LEFT = eINSTANCE.getTextJoin_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEXT_JOIN__RIGHT = eINSTANCE.getTextJoin_Right();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.TextLiteralImpl <em>Text Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.TextLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextLiteral()
+     * @generated
+     */
+    EClass TEXT_LITERAL = eINSTANCE.getTextLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEXT_LITERAL__VALUE = eINSTANCE.getTextLiteral_Value();
 
   }
 

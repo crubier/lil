@@ -96,12 +96,15 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
       case LilPackage.NUMBER_EXPRESSION: return createNumberExpression();
       case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER_CASE: return createNumberSwitchExpressionNumberCase();
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT_CASE: return createNumberSwitchExpressionTextCase();
+      case LilPackage.TEXT_EXPRESSION: return createTextExpression();
       case LilPackage.BOOLEAN_DISJONCTION: return createBooleanDisjonction();
       case LilPackage.BOOLEAN_CONJONCTION: return createBooleanConjonction();
       case LilPackage.BOOLEAN_NEGATION: return createBooleanNegation();
       case LilPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
       case LilPackage.NUMBER_IF_EXPRESSION: return createNumberIfExpression();
-      case LilPackage.NUMBER_SWITCH_EXPRESSION: return createNumberSwitchExpression();
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER: return createNumberSwitchExpressionNumber();
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT: return createNumberSwitchExpressionText();
       case LilPackage.NUMBER_ADDITION: return createNumberAddition();
       case LilPackage.NUMBER_SUBSTRACTION: return createNumberSubstraction();
       case LilPackage.NUMBER_MULTIPLICATION: return createNumberMultiplication();
@@ -111,6 +114,8 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.NUMBER_OPPOSITION: return createNumberOpposition();
       case LilPackage.NUMBER_LITERAL: return createNumberLiteral();
       case LilPackage.NUMBER_FUNCTION_EXPRESSION: return createNumberFunctionExpression();
+      case LilPackage.TEXT_JOIN: return createTextJoin();
+      case LilPackage.TEXT_LITERAL: return createTextLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -473,6 +478,28 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public NumberSwitchExpressionTextCase createNumberSwitchExpressionTextCase()
+  {
+    NumberSwitchExpressionTextCaseImpl numberSwitchExpressionTextCase = new NumberSwitchExpressionTextCaseImpl();
+    return numberSwitchExpressionTextCase;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextExpression createTextExpression()
+  {
+    TextExpressionImpl textExpression = new TextExpressionImpl();
+    return textExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BooleanDisjonction createBooleanDisjonction()
   {
     BooleanDisjonctionImpl booleanDisjonction = new BooleanDisjonctionImpl();
@@ -528,10 +555,21 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberSwitchExpression createNumberSwitchExpression()
+  public NumberSwitchExpressionNumber createNumberSwitchExpressionNumber()
   {
-    NumberSwitchExpressionImpl numberSwitchExpression = new NumberSwitchExpressionImpl();
-    return numberSwitchExpression;
+    NumberSwitchExpressionNumberImpl numberSwitchExpressionNumber = new NumberSwitchExpressionNumberImpl();
+    return numberSwitchExpressionNumber;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumberSwitchExpressionText createNumberSwitchExpressionText()
+  {
+    NumberSwitchExpressionTextImpl numberSwitchExpressionText = new NumberSwitchExpressionTextImpl();
+    return numberSwitchExpressionText;
   }
 
   /**
@@ -631,6 +669,28 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     NumberFunctionExpressionImpl numberFunctionExpression = new NumberFunctionExpressionImpl();
     return numberFunctionExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextJoin createTextJoin()
+  {
+    TextJoinImpl textJoin = new TextJoinImpl();
+    return textJoin;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextLiteral createTextLiteral()
+  {
+    TextLiteralImpl textLiteral = new TextLiteralImpl();
+    return textLiteral;
   }
 
   /**

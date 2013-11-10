@@ -44,11 +44,16 @@ import com.crubier.lil.lil.NumberMultiplication;
 import com.crubier.lil.lil.NumberOpposition;
 import com.crubier.lil.lil.NumberPower;
 import com.crubier.lil.lil.NumberSubstraction;
-import com.crubier.lil.lil.NumberSwitchExpression;
+import com.crubier.lil.lil.NumberSwitchExpressionNumber;
 import com.crubier.lil.lil.NumberSwitchExpressionNumberCase;
+import com.crubier.lil.lil.NumberSwitchExpressionText;
+import com.crubier.lil.lil.NumberSwitchExpressionTextCase;
 import com.crubier.lil.lil.OnCause;
 import com.crubier.lil.lil.SetEffect;
 import com.crubier.lil.lil.SignalDeclaration;
+import com.crubier.lil.lil.TextExpression;
+import com.crubier.lil.lil.TextJoin;
+import com.crubier.lil.lil.TextLiteral;
 import com.crubier.lil.lil.TriggerEffect;
 import com.crubier.lil.lil.WhenCause;
 
@@ -296,6 +301,20 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass numberSwitchExpressionTextCaseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass booleanDisjonctionEClass = null;
 
   /**
@@ -331,7 +350,14 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass numberSwitchExpressionEClass = null;
+  private EClass numberSwitchExpressionNumberEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numberSwitchExpressionTextEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -395,6 +421,20 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * @generated
    */
   private EClass numberFunctionExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textJoinEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textLiteralEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1244,6 +1284,46 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getNumberSwitchExpressionTextCase()
+  {
+    return numberSwitchExpressionTextCaseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumberSwitchExpressionTextCase_Condition()
+  {
+    return (EReference)numberSwitchExpressionTextCaseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumberSwitchExpressionTextCase_Value()
+  {
+    return (EReference)numberSwitchExpressionTextCaseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTextExpression()
+  {
+    return textExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getBooleanDisjonction()
   {
     return booleanDisjonctionEClass;
@@ -1384,9 +1464,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNumberSwitchExpression()
+  public EClass getNumberSwitchExpressionNumber()
   {
-    return numberSwitchExpressionEClass;
+    return numberSwitchExpressionNumberEClass;
   }
 
   /**
@@ -1394,9 +1474,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNumberSwitchExpression_Switch()
+  public EReference getNumberSwitchExpressionNumber_Switch()
   {
-    return (EReference)numberSwitchExpressionEClass.getEStructuralFeatures().get(0);
+    return (EReference)numberSwitchExpressionNumberEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1404,9 +1484,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNumberSwitchExpression_Cases()
+  public EReference getNumberSwitchExpressionNumber_Cases()
   {
-    return (EReference)numberSwitchExpressionEClass.getEStructuralFeatures().get(1);
+    return (EReference)numberSwitchExpressionNumberEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1414,9 +1494,49 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNumberSwitchExpression_Default()
+  public EReference getNumberSwitchExpressionNumber_Default()
   {
-    return (EReference)numberSwitchExpressionEClass.getEStructuralFeatures().get(2);
+    return (EReference)numberSwitchExpressionNumberEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNumberSwitchExpressionText()
+  {
+    return numberSwitchExpressionTextEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumberSwitchExpressionText_Switch()
+  {
+    return (EReference)numberSwitchExpressionTextEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumberSwitchExpressionText_Cases()
+  {
+    return (EReference)numberSwitchExpressionTextEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumberSwitchExpressionText_Default()
+  {
+    return (EReference)numberSwitchExpressionTextEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1674,6 +1794,56 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getTextJoin()
+  {
+    return textJoinEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextJoin_Left()
+  {
+    return (EReference)textJoinEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTextJoin_Right()
+  {
+    return (EReference)textJoinEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTextLiteral()
+  {
+    return textLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTextLiteral_Value()
+  {
+    return (EAttribute)textLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public LilFactory getLilFactory()
   {
     return (LilFactory)getEFactoryInstance();
@@ -1809,6 +1979,12 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEReference(numberSwitchExpressionNumberCaseEClass, NUMBER_SWITCH_EXPRESSION_NUMBER_CASE__CONDITION);
     createEReference(numberSwitchExpressionNumberCaseEClass, NUMBER_SWITCH_EXPRESSION_NUMBER_CASE__VALUE);
 
+    numberSwitchExpressionTextCaseEClass = createEClass(NUMBER_SWITCH_EXPRESSION_TEXT_CASE);
+    createEReference(numberSwitchExpressionTextCaseEClass, NUMBER_SWITCH_EXPRESSION_TEXT_CASE__CONDITION);
+    createEReference(numberSwitchExpressionTextCaseEClass, NUMBER_SWITCH_EXPRESSION_TEXT_CASE__VALUE);
+
+    textExpressionEClass = createEClass(TEXT_EXPRESSION);
+
     booleanDisjonctionEClass = createEClass(BOOLEAN_DISJONCTION);
     createEReference(booleanDisjonctionEClass, BOOLEAN_DISJONCTION__LEFT);
     createEReference(booleanDisjonctionEClass, BOOLEAN_DISJONCTION__RIGHT);
@@ -1828,10 +2004,15 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEReference(numberIfExpressionEClass, NUMBER_IF_EXPRESSION__THEN);
     createEReference(numberIfExpressionEClass, NUMBER_IF_EXPRESSION__ELSE);
 
-    numberSwitchExpressionEClass = createEClass(NUMBER_SWITCH_EXPRESSION);
-    createEReference(numberSwitchExpressionEClass, NUMBER_SWITCH_EXPRESSION__SWITCH);
-    createEReference(numberSwitchExpressionEClass, NUMBER_SWITCH_EXPRESSION__CASES);
-    createEReference(numberSwitchExpressionEClass, NUMBER_SWITCH_EXPRESSION__DEFAULT);
+    numberSwitchExpressionNumberEClass = createEClass(NUMBER_SWITCH_EXPRESSION_NUMBER);
+    createEReference(numberSwitchExpressionNumberEClass, NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH);
+    createEReference(numberSwitchExpressionNumberEClass, NUMBER_SWITCH_EXPRESSION_NUMBER__CASES);
+    createEReference(numberSwitchExpressionNumberEClass, NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT);
+
+    numberSwitchExpressionTextEClass = createEClass(NUMBER_SWITCH_EXPRESSION_TEXT);
+    createEReference(numberSwitchExpressionTextEClass, NUMBER_SWITCH_EXPRESSION_TEXT__SWITCH);
+    createEReference(numberSwitchExpressionTextEClass, NUMBER_SWITCH_EXPRESSION_TEXT__CASES);
+    createEReference(numberSwitchExpressionTextEClass, NUMBER_SWITCH_EXPRESSION_TEXT__DEFAULT);
 
     numberAdditionEClass = createEClass(NUMBER_ADDITION);
     createEReference(numberAdditionEClass, NUMBER_ADDITION__LEFT);
@@ -1866,6 +2047,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     numberFunctionExpressionEClass = createEClass(NUMBER_FUNCTION_EXPRESSION);
     createEAttribute(numberFunctionExpressionEClass, NUMBER_FUNCTION_EXPRESSION__FUNCTION);
     createEReference(numberFunctionExpressionEClass, NUMBER_FUNCTION_EXPRESSION__ARGUMENTS);
+
+    textJoinEClass = createEClass(TEXT_JOIN);
+    createEReference(textJoinEClass, TEXT_JOIN__LEFT);
+    createEReference(textJoinEClass, TEXT_JOIN__RIGHT);
+
+    textLiteralEClass = createEClass(TEXT_LITERAL);
+    createEAttribute(textLiteralEClass, TEXT_LITERAL__VALUE);
   }
 
   /**
@@ -1912,7 +2100,8 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     booleanNegationEClass.getESuperTypes().add(this.getBooleanExpression());
     booleanLiteralEClass.getESuperTypes().add(this.getBooleanExpression());
     numberIfExpressionEClass.getESuperTypes().add(this.getNumberExpression());
-    numberSwitchExpressionEClass.getESuperTypes().add(this.getNumberExpression());
+    numberSwitchExpressionNumberEClass.getESuperTypes().add(this.getNumberExpression());
+    numberSwitchExpressionTextEClass.getESuperTypes().add(this.getNumberExpression());
     numberAdditionEClass.getESuperTypes().add(this.getNumberExpression());
     numberSubstractionEClass.getESuperTypes().add(this.getNumberExpression());
     numberMultiplicationEClass.getESuperTypes().add(this.getNumberExpression());
@@ -1922,6 +2111,8 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     numberOppositionEClass.getESuperTypes().add(this.getNumberExpression());
     numberLiteralEClass.getESuperTypes().add(this.getNumberExpression());
     numberFunctionExpressionEClass.getESuperTypes().add(this.getNumberExpression());
+    textJoinEClass.getESuperTypes().add(this.getTextExpression());
+    textLiteralEClass.getESuperTypes().add(this.getTextExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2034,6 +2225,12 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEReference(getNumberSwitchExpressionNumberCase_Condition(), this.getNumberExpression(), null, "condition", null, 0, 1, NumberSwitchExpressionNumberCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNumberSwitchExpressionNumberCase_Value(), this.getNumberExpression(), null, "value", null, 0, 1, NumberSwitchExpressionNumberCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(numberSwitchExpressionTextCaseEClass, NumberSwitchExpressionTextCase.class, "NumberSwitchExpressionTextCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNumberSwitchExpressionTextCase_Condition(), this.getTextExpression(), null, "condition", null, 0, 1, NumberSwitchExpressionTextCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNumberSwitchExpressionTextCase_Value(), this.getNumberExpression(), null, "value", null, 0, 1, NumberSwitchExpressionTextCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textExpressionEClass, TextExpression.class, "TextExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(booleanDisjonctionEClass, BooleanDisjonction.class, "BooleanDisjonction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBooleanDisjonction_Left(), this.getBooleanExpression(), null, "left", null, 0, 1, BooleanDisjonction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBooleanDisjonction_Right(), this.getBooleanExpression(), null, "right", null, 0, 1, BooleanDisjonction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2053,10 +2250,15 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEReference(getNumberIfExpression_Then(), this.getNumberExpression(), null, "then", null, 0, 1, NumberIfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNumberIfExpression_Else(), this.getNumberExpression(), null, "else", null, 0, 1, NumberIfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(numberSwitchExpressionEClass, NumberSwitchExpression.class, "NumberSwitchExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNumberSwitchExpression_Switch(), this.getNumberExpression(), null, "switch", null, 0, 1, NumberSwitchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNumberSwitchExpression_Cases(), this.getNumberSwitchExpressionNumberCase(), null, "cases", null, 0, -1, NumberSwitchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNumberSwitchExpression_Default(), this.getNumberExpression(), null, "default", null, 0, 1, NumberSwitchExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(numberSwitchExpressionNumberEClass, NumberSwitchExpressionNumber.class, "NumberSwitchExpressionNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNumberSwitchExpressionNumber_Switch(), this.getNumberExpression(), null, "switch", null, 0, 1, NumberSwitchExpressionNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNumberSwitchExpressionNumber_Cases(), this.getNumberSwitchExpressionNumberCase(), null, "cases", null, 0, -1, NumberSwitchExpressionNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNumberSwitchExpressionNumber_Default(), this.getNumberExpression(), null, "default", null, 0, 1, NumberSwitchExpressionNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(numberSwitchExpressionTextEClass, NumberSwitchExpressionText.class, "NumberSwitchExpressionText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNumberSwitchExpressionText_Switch(), this.getTextExpression(), null, "switch", null, 0, 1, NumberSwitchExpressionText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNumberSwitchExpressionText_Cases(), this.getNumberSwitchExpressionTextCase(), null, "cases", null, 0, -1, NumberSwitchExpressionText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNumberSwitchExpressionText_Default(), this.getNumberExpression(), null, "default", null, 0, 1, NumberSwitchExpressionText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numberAdditionEClass, NumberAddition.class, "NumberAddition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNumberAddition_Left(), this.getNumberExpression(), null, "left", null, 0, 1, NumberAddition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2091,6 +2293,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEClass(numberFunctionExpressionEClass, NumberFunctionExpression.class, "NumberFunctionExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumberFunctionExpression_Function(), ecorePackage.getEString(), "function", null, 0, 1, NumberFunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNumberFunctionExpression_Arguments(), this.getNumberExpression(), null, "arguments", null, 0, -1, NumberFunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textJoinEClass, TextJoin.class, "TextJoin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTextJoin_Left(), this.getTextExpression(), null, "left", null, 0, 1, TextJoin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTextJoin_Right(), this.getTextExpression(), null, "right", null, 0, 1, TextJoin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textLiteralEClass, TextLiteral.class, "TextLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTextLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, TextLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

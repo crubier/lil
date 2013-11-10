@@ -1111,8 +1111,9 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		////Expressions
-		////We do not use xbase because we only need a small subset of it in order to be able to generate c code and in order to simplify the language
-		////Booleans
+		////We do not use xbase because we only need a small subset of it in order to be able to generate C code and in order to simplify the language
+		////So we are going to construct the expressions we need
+		////Boolean expressions
 		//BooleanExpression:
 		//	BooleanDisjonction;
 		public ParserRule getRule() { return rule; }
@@ -1289,7 +1290,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NumberExpression");
 		private final RuleCall cNumberCompoundExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		////Numbers
+		////Numeric expressions
 		//NumberExpression:
 		//	NumberCompoundExpression;
 		public ParserRule getRule() { return rule; }
@@ -1316,7 +1317,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cElseAssignment_1_6_1 = (Assignment)cGroup_1_6.eContents().get(1);
 		private final RuleCall cElseNumberAdditionParserRuleCall_1_6_1_0 = (RuleCall)cElseAssignment_1_6_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cNumberSwitchExpressionAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Action cNumberSwitchExpressionNumberAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Keyword cSwitchKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		private final Assignment cSwitchAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
@@ -1329,16 +1330,34 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_2_6_1 = (Keyword)cGroup_2_6.eContents().get(1);
 		private final Assignment cDefaultAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
 		private final RuleCall cDefaultNumberExpressionParserRuleCall_2_6_2_0 = (RuleCall)cDefaultAssignment_2_6_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cNumberSwitchExpressionTextAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Keyword cSwitchKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cSwitchAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cSwitchTextExpressionParserRuleCall_3_3_0 = (RuleCall)cSwitchAssignment_3_3.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final Assignment cCasesAssignment_3_5 = (Assignment)cGroup_3.eContents().get(5);
+		private final RuleCall cCasesNumberSwitchExpressionTextCaseParserRuleCall_3_5_0 = (RuleCall)cCasesAssignment_3_5.eContents().get(0);
+		private final Group cGroup_3_6 = (Group)cGroup_3.eContents().get(6);
+		private final Keyword cDefaultKeyword_3_6_0 = (Keyword)cGroup_3_6.eContents().get(0);
+		private final Keyword cColonKeyword_3_6_1 = (Keyword)cGroup_3_6.eContents().get(1);
+		private final Assignment cDefaultAssignment_3_6_2 = (Assignment)cGroup_3_6.eContents().get(2);
+		private final RuleCall cDefaultNumberExpressionParserRuleCall_3_6_2_0 = (RuleCall)cDefaultAssignment_3_6_2.eContents().get(0);
 		
 		//NumberCompoundExpression returns NumberExpression:
 		//	NumberAddition | {NumberIfExpression} "if" "(" if=BooleanExpression ")" then=NumberAddition ("else"
-		//	else=NumberAddition)? | {NumberSwitchExpression} "switch" "(" switch=NumberExpression ")" =>
-		//	cases+=NumberSwitchExpressionNumberCase+ ("default" ":" default=NumberExpression)?;
+		//	else=NumberAddition)? | {NumberSwitchExpressionNumber} "switch" "(" switch=NumberExpression ")" =>
+		//	cases+=NumberSwitchExpressionNumberCase+ ("default" ":" default=NumberExpression)? | {NumberSwitchExpressionText}
+		//	"switch" "(" switch=TextExpression ")" => cases+=NumberSwitchExpressionTextCase+ ("default" ":"
+		//	default=NumberExpression)?;
 		public ParserRule getRule() { return rule; }
 
 		//NumberAddition | {NumberIfExpression} "if" "(" if=BooleanExpression ")" then=NumberAddition ("else"
-		//else=NumberAddition)? | {NumberSwitchExpression} "switch" "(" switch=NumberExpression ")" =>
-		//cases+=NumberSwitchExpressionNumberCase+ ("default" ":" default=NumberExpression)?
+		//else=NumberAddition)? | {NumberSwitchExpressionNumber} "switch" "(" switch=NumberExpression ")" =>
+		//cases+=NumberSwitchExpressionNumberCase+ ("default" ":" default=NumberExpression)? | {NumberSwitchExpressionText}
+		//"switch" "(" switch=TextExpression ")" => cases+=NumberSwitchExpressionTextCase+ ("default" ":"
+		//default=NumberExpression)?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NumberAddition
@@ -1383,12 +1402,12 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//NumberAddition
 		public RuleCall getElseNumberAdditionParserRuleCall_1_6_1_0() { return cElseNumberAdditionParserRuleCall_1_6_1_0; }
 
-		//{NumberSwitchExpression} "switch" "(" switch=NumberExpression ")" => cases+=NumberSwitchExpressionNumberCase+ ("default"
-		//":" default=NumberExpression)?
+		//{NumberSwitchExpressionNumber} "switch" "(" switch=NumberExpression ")" => cases+=NumberSwitchExpressionNumberCase+
+		//("default" ":" default=NumberExpression)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//{NumberSwitchExpression}
-		public Action getNumberSwitchExpressionAction_2_0() { return cNumberSwitchExpressionAction_2_0; }
+		//{NumberSwitchExpressionNumber}
+		public Action getNumberSwitchExpressionNumberAction_2_0() { return cNumberSwitchExpressionNumberAction_2_0; }
 
 		//"switch"
 		public Keyword getSwitchKeyword_2_1() { return cSwitchKeyword_2_1; }
@@ -1425,6 +1444,49 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 		//NumberExpression
 		public RuleCall getDefaultNumberExpressionParserRuleCall_2_6_2_0() { return cDefaultNumberExpressionParserRuleCall_2_6_2_0; }
+
+		//{NumberSwitchExpressionText} "switch" "(" switch=TextExpression ")" => cases+=NumberSwitchExpressionTextCase+ ("default"
+		//":" default=NumberExpression)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//{NumberSwitchExpressionText}
+		public Action getNumberSwitchExpressionTextAction_3_0() { return cNumberSwitchExpressionTextAction_3_0; }
+
+		//"switch"
+		public Keyword getSwitchKeyword_3_1() { return cSwitchKeyword_3_1; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_3_2() { return cLeftParenthesisKeyword_3_2; }
+
+		//switch=TextExpression
+		public Assignment getSwitchAssignment_3_3() { return cSwitchAssignment_3_3; }
+
+		//TextExpression
+		public RuleCall getSwitchTextExpressionParserRuleCall_3_3_0() { return cSwitchTextExpressionParserRuleCall_3_3_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3_4() { return cRightParenthesisKeyword_3_4; }
+
+		//=> cases+=NumberSwitchExpressionTextCase+
+		public Assignment getCasesAssignment_3_5() { return cCasesAssignment_3_5; }
+
+		//NumberSwitchExpressionTextCase
+		public RuleCall getCasesNumberSwitchExpressionTextCaseParserRuleCall_3_5_0() { return cCasesNumberSwitchExpressionTextCaseParserRuleCall_3_5_0; }
+
+		//(=> "default" ":" default=NumberExpression)?
+		public Group getGroup_3_6() { return cGroup_3_6; }
+
+		//=> "default"
+		public Keyword getDefaultKeyword_3_6_0() { return cDefaultKeyword_3_6_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_6_1() { return cColonKeyword_3_6_1; }
+
+		//default=NumberExpression
+		public Assignment getDefaultAssignment_3_6_2() { return cDefaultAssignment_3_6_2; }
+
+		//NumberExpression
+		public RuleCall getDefaultNumberExpressionParserRuleCall_3_6_2_0() { return cDefaultNumberExpressionParserRuleCall_3_6_2_0; }
 	}
 
 	public class NumberSwitchExpressionNumberCaseElements extends AbstractParserRuleElementFinder {
@@ -1452,6 +1514,42 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 		//NumberExpression
 		public RuleCall getConditionNumberExpressionParserRuleCall_1_0() { return cConditionNumberExpressionParserRuleCall_1_0; }
+
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+
+		//value=NumberExpression
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+
+		//NumberExpression
+		public RuleCall getValueNumberExpressionParserRuleCall_3_0() { return cValueNumberExpressionParserRuleCall_3_0; }
+	}
+
+	public class NumberSwitchExpressionTextCaseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NumberSwitchExpressionTextCase");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCaseKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cConditionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cConditionTextExpressionParserRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueNumberExpressionParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		
+		//NumberSwitchExpressionTextCase:
+		//	"case" condition=TextExpression ":" value=NumberExpression;
+		public ParserRule getRule() { return rule; }
+
+		//"case" condition=TextExpression ":" value=NumberExpression
+		public Group getGroup() { return cGroup; }
+
+		//"case"
+		public Keyword getCaseKeyword_0() { return cCaseKeyword_0; }
+
+		//condition=TextExpression
+		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
+
+		//TextExpression
+		public RuleCall getConditionTextExpressionParserRuleCall_1_0() { return cConditionTextExpressionParserRuleCall_1_0; }
 
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
@@ -1770,13 +1868,90 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightParenthesisKeyword_2_2_3() { return cRightParenthesisKeyword_2_2_3; }
 	}
 
+	public class TextExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TextExpression");
+		private final RuleCall cTextJoinParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		////Text expressions
+		//TextExpression:
+		//	TextJoin;
+		public ParserRule getRule() { return rule; }
+
+		//TextJoin
+		public RuleCall getTextJoinParserRuleCall() { return cTextJoinParserRuleCall; }
+	}
+
+	public class TextJoinElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TextJoin");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cTextTerminalExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Action cTextJoinLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
+		private final Keyword cLessThanSignGreaterThanSignKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightTextTerminalExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//TextJoin returns TextExpression:
+		//	TextTerminalExpression (({TextJoin.left=current} "<>") right=TextTerminalExpression)*;
+		public ParserRule getRule() { return rule; }
+
+		//TextTerminalExpression (({TextJoin.left=current} "<>") right=TextTerminalExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//TextTerminalExpression
+		public RuleCall getTextTerminalExpressionParserRuleCall_0() { return cTextTerminalExpressionParserRuleCall_0; }
+
+		//(({TextJoin.left=current} "<>") right=TextTerminalExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{TextJoin.left=current} "<>"
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
+		//{TextJoin.left=current}
+		public Action getTextJoinLeftAction_1_0_0() { return cTextJoinLeftAction_1_0_0; }
+
+		//"<>"
+		public Keyword getLessThanSignGreaterThanSignKeyword_1_0_1() { return cLessThanSignGreaterThanSignKeyword_1_0_1; }
+
+		//right=TextTerminalExpression
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+
+		//TextTerminalExpression
+		public RuleCall getRightTextTerminalExpressionParserRuleCall_1_1_0() { return cRightTextTerminalExpressionParserRuleCall_1_1_0; }
+	}
+
+	public class TextTerminalExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TextTerminalExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cTextLiteralAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueTextLiteralParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//TextTerminalExpression returns TextExpression:
+		//	{TextLiteral} value=TextLiteral;
+		public ParserRule getRule() { return rule; }
+
+		//{TextLiteral} value=TextLiteral
+		public Group getGroup() { return cGroup; }
+
+		//{TextLiteral}
+		public Action getTextLiteralAction_0() { return cTextLiteralAction_0; }
+
+		//value=TextLiteral
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//TextLiteral
+		public RuleCall getValueTextLiteralParserRuleCall_1_0() { return cValueTextLiteralParserRuleCall_1_0; }
+	}
+
 	public class SymbolLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SymbolLiteral");
 		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		////Data type rules, are almost terminals
+		////Literals
 		//SymbolLiteral returns ecore::EString:
 		//	ID;
 		public ParserRule getRule() { return rule; }
@@ -2036,11 +2211,15 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	private NumberExpressionElements pNumberExpression;
 	private NumberCompoundExpressionElements pNumberCompoundExpression;
 	private NumberSwitchExpressionNumberCaseElements pNumberSwitchExpressionNumberCase;
+	private NumberSwitchExpressionTextCaseElements pNumberSwitchExpressionTextCase;
 	private NumberAdditionElements pNumberAddition;
 	private NumberMultiplicationElements pNumberMultiplication;
 	private NumberPowerElements pNumberPower;
 	private NumberUnaryElements pNumberUnary;
 	private NumberTerminalExpressionElements pNumberTerminalExpression;
+	private TextExpressionElements pTextExpression;
+	private TextJoinElements pTextJoin;
+	private TextTerminalExpressionElements pTextTerminalExpression;
 	private SymbolLiteralElements pSymbolLiteral;
 	private BooleanLiteralElements pBooleanLiteral;
 	private NumberLiteralElements pNumberLiteral;
@@ -2404,8 +2583,9 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////Expressions
-	////We do not use xbase because we only need a small subset of it in order to be able to generate c code and in order to simplify the language
-	////Booleans
+	////We do not use xbase because we only need a small subset of it in order to be able to generate C code and in order to simplify the language
+	////So we are going to construct the expressions we need
+	////Boolean expressions
 	//BooleanExpression:
 	//	BooleanDisjonction;
 	public BooleanExpressionElements getBooleanExpressionAccess() {
@@ -2456,7 +2636,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		return getBooleanTerminalExpressionAccess().getRule();
 	}
 
-	////Numbers
+	////Numeric expressions
 	//NumberExpression:
 	//	NumberCompoundExpression;
 	public NumberExpressionElements getNumberExpressionAccess() {
@@ -2469,8 +2649,10 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 	//NumberCompoundExpression returns NumberExpression:
 	//	NumberAddition | {NumberIfExpression} "if" "(" if=BooleanExpression ")" then=NumberAddition ("else"
-	//	else=NumberAddition)? | {NumberSwitchExpression} "switch" "(" switch=NumberExpression ")" =>
-	//	cases+=NumberSwitchExpressionNumberCase+ ("default" ":" default=NumberExpression)?;
+	//	else=NumberAddition)? | {NumberSwitchExpressionNumber} "switch" "(" switch=NumberExpression ")" =>
+	//	cases+=NumberSwitchExpressionNumberCase+ ("default" ":" default=NumberExpression)? | {NumberSwitchExpressionText}
+	//	"switch" "(" switch=TextExpression ")" => cases+=NumberSwitchExpressionTextCase+ ("default" ":"
+	//	default=NumberExpression)?;
 	public NumberCompoundExpressionElements getNumberCompoundExpressionAccess() {
 		return (pNumberCompoundExpression != null) ? pNumberCompoundExpression : (pNumberCompoundExpression = new NumberCompoundExpressionElements());
 	}
@@ -2487,6 +2669,16 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getNumberSwitchExpressionNumberCaseRule() {
 		return getNumberSwitchExpressionNumberCaseAccess().getRule();
+	}
+
+	//NumberSwitchExpressionTextCase:
+	//	"case" condition=TextExpression ":" value=NumberExpression;
+	public NumberSwitchExpressionTextCaseElements getNumberSwitchExpressionTextCaseAccess() {
+		return (pNumberSwitchExpressionTextCase != null) ? pNumberSwitchExpressionTextCase : (pNumberSwitchExpressionTextCase = new NumberSwitchExpressionTextCaseElements());
+	}
+	
+	public ParserRule getNumberSwitchExpressionTextCaseRule() {
+		return getNumberSwitchExpressionTextCaseAccess().getRule();
 	}
 
 	//NumberAddition returns NumberExpression:
@@ -2542,9 +2734,40 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		return getNumberTerminalExpressionAccess().getRule();
 	}
 
+	////Text expressions
+	//TextExpression:
+	//	TextJoin;
+	public TextExpressionElements getTextExpressionAccess() {
+		return (pTextExpression != null) ? pTextExpression : (pTextExpression = new TextExpressionElements());
+	}
+	
+	public ParserRule getTextExpressionRule() {
+		return getTextExpressionAccess().getRule();
+	}
+
+	//TextJoin returns TextExpression:
+	//	TextTerminalExpression (({TextJoin.left=current} "<>") right=TextTerminalExpression)*;
+	public TextJoinElements getTextJoinAccess() {
+		return (pTextJoin != null) ? pTextJoin : (pTextJoin = new TextJoinElements());
+	}
+	
+	public ParserRule getTextJoinRule() {
+		return getTextJoinAccess().getRule();
+	}
+
+	//TextTerminalExpression returns TextExpression:
+	//	{TextLiteral} value=TextLiteral;
+	public TextTerminalExpressionElements getTextTerminalExpressionAccess() {
+		return (pTextTerminalExpression != null) ? pTextTerminalExpression : (pTextTerminalExpression = new TextTerminalExpressionElements());
+	}
+	
+	public ParserRule getTextTerminalExpressionRule() {
+		return getTextTerminalExpressionAccess().getRule();
+	}
+
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////Data type rules, are almost terminals
+	////Literals
 	//SymbolLiteral returns ecore::EString:
 	//	ID;
 	public SymbolLiteralElements getSymbolLiteralAccess() {

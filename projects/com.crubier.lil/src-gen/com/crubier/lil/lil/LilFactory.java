@@ -311,6 +311,24 @@ public interface LilFactory extends EFactory
   NumberSwitchExpressionNumberCase createNumberSwitchExpressionNumberCase();
 
   /**
+   * Returns a new object of class '<em>Number Switch Expression Text Case</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Switch Expression Text Case</em>'.
+   * @generated
+   */
+  NumberSwitchExpressionTextCase createNumberSwitchExpressionTextCase();
+
+  /**
+   * Returns a new object of class '<em>Text Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Expression</em>'.
+   * @generated
+   */
+  TextExpression createTextExpression();
+
+  /**
    * Returns a new object of class '<em>Boolean Disjonction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -356,13 +374,22 @@ public interface LilFactory extends EFactory
   NumberIfExpression createNumberIfExpression();
 
   /**
-   * Returns a new object of class '<em>Number Switch Expression</em>'.
+   * Returns a new object of class '<em>Number Switch Expression Number</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Switch Expression</em>'.
+   * @return a new object of class '<em>Number Switch Expression Number</em>'.
    * @generated
    */
-  NumberSwitchExpression createNumberSwitchExpression();
+  NumberSwitchExpressionNumber createNumberSwitchExpressionNumber();
+
+  /**
+   * Returns a new object of class '<em>Number Switch Expression Text</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Switch Expression Text</em>'.
+   * @generated
+   */
+  NumberSwitchExpressionText createNumberSwitchExpressionText();
 
   /**
    * Returns a new object of class '<em>Number Addition</em>'.
@@ -444,6 +471,24 @@ public interface LilFactory extends EFactory
    * @generated
    */
   NumberFunctionExpression createNumberFunctionExpression();
+
+  /**
+   * Returns a new object of class '<em>Text Join</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Join</em>'.
+   * @generated
+   */
+  TextJoin createTextJoin();
+
+  /**
+   * Returns a new object of class '<em>Text Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Literal</em>'.
+   * @generated
+   */
+  TextLiteral createTextLiteral();
 
   /**
    * Returns the package supported by this factory.

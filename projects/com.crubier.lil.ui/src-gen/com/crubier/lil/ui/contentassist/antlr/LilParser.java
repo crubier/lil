@@ -101,7 +101,10 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberCompoundExpressionAccess().getGroup_1_6(), "rule__NumberCompoundExpression__Group_1_6__0");
 					put(grammarAccess.getNumberCompoundExpressionAccess().getGroup_2(), "rule__NumberCompoundExpression__Group_2__0");
 					put(grammarAccess.getNumberCompoundExpressionAccess().getGroup_2_6(), "rule__NumberCompoundExpression__Group_2_6__0");
+					put(grammarAccess.getNumberCompoundExpressionAccess().getGroup_3(), "rule__NumberCompoundExpression__Group_3__0");
+					put(grammarAccess.getNumberCompoundExpressionAccess().getGroup_3_6(), "rule__NumberCompoundExpression__Group_3_6__0");
 					put(grammarAccess.getNumberSwitchExpressionNumberCaseAccess().getGroup(), "rule__NumberSwitchExpressionNumberCase__Group__0");
+					put(grammarAccess.getNumberSwitchExpressionTextCaseAccess().getGroup(), "rule__NumberSwitchExpressionTextCase__Group__0");
 					put(grammarAccess.getNumberAdditionAccess().getGroup(), "rule__NumberAddition__Group__0");
 					put(grammarAccess.getNumberAdditionAccess().getGroup_1(), "rule__NumberAddition__Group_1__0");
 					put(grammarAccess.getNumberAdditionAccess().getGroup_1_0_0(), "rule__NumberAddition__Group_1_0_0__0");
@@ -121,6 +124,10 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberTerminalExpressionAccess().getGroup_2(), "rule__NumberTerminalExpression__Group_2__0");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getGroup_2_2(), "rule__NumberTerminalExpression__Group_2_2__0");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getGroup_2_2_2(), "rule__NumberTerminalExpression__Group_2_2_2__0");
+					put(grammarAccess.getTextJoinAccess().getGroup(), "rule__TextJoin__Group__0");
+					put(grammarAccess.getTextJoinAccess().getGroup_1(), "rule__TextJoin__Group_1__0");
+					put(grammarAccess.getTextJoinAccess().getGroup_1_0(), "rule__TextJoin__Group_1_0__0");
+					put(grammarAccess.getTextTerminalExpressionAccess().getGroup(), "rule__TextTerminalExpression__Group__0");
 					put(grammarAccess.getNumberLiteralAccess().getGroup(), "rule__NumberLiteral__Group__0");
 					put(grammarAccess.getNumberLiteralAccess().getGroup_1(), "rule__NumberLiteral__Group_1__0");
 					put(grammarAccess.getTimeLiteralAccess().getGroup_0(), "rule__TimeLiteral__Group_0__0");
@@ -195,8 +202,13 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberCompoundExpressionAccess().getSwitchAssignment_2_3(), "rule__NumberCompoundExpression__SwitchAssignment_2_3");
 					put(grammarAccess.getNumberCompoundExpressionAccess().getCasesAssignment_2_5(), "rule__NumberCompoundExpression__CasesAssignment_2_5");
 					put(grammarAccess.getNumberCompoundExpressionAccess().getDefaultAssignment_2_6_2(), "rule__NumberCompoundExpression__DefaultAssignment_2_6_2");
+					put(grammarAccess.getNumberCompoundExpressionAccess().getSwitchAssignment_3_3(), "rule__NumberCompoundExpression__SwitchAssignment_3_3");
+					put(grammarAccess.getNumberCompoundExpressionAccess().getCasesAssignment_3_5(), "rule__NumberCompoundExpression__CasesAssignment_3_5");
+					put(grammarAccess.getNumberCompoundExpressionAccess().getDefaultAssignment_3_6_2(), "rule__NumberCompoundExpression__DefaultAssignment_3_6_2");
 					put(grammarAccess.getNumberSwitchExpressionNumberCaseAccess().getConditionAssignment_1(), "rule__NumberSwitchExpressionNumberCase__ConditionAssignment_1");
 					put(grammarAccess.getNumberSwitchExpressionNumberCaseAccess().getValueAssignment_3(), "rule__NumberSwitchExpressionNumberCase__ValueAssignment_3");
+					put(grammarAccess.getNumberSwitchExpressionTextCaseAccess().getConditionAssignment_1(), "rule__NumberSwitchExpressionTextCase__ConditionAssignment_1");
+					put(grammarAccess.getNumberSwitchExpressionTextCaseAccess().getValueAssignment_3(), "rule__NumberSwitchExpressionTextCase__ValueAssignment_3");
 					put(grammarAccess.getNumberAdditionAccess().getRightAssignment_1_1(), "rule__NumberAddition__RightAssignment_1_1");
 					put(grammarAccess.getNumberMultiplicationAccess().getRightAssignment_1_1(), "rule__NumberMultiplication__RightAssignment_1_1");
 					put(grammarAccess.getNumberPowerAccess().getRightAssignment_1_1(), "rule__NumberPower__RightAssignment_1_1");
@@ -205,6 +217,8 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberTerminalExpressionAccess().getFunctionAssignment_2_1(), "rule__NumberTerminalExpression__FunctionAssignment_2_1");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getArgumentsAssignment_2_2_1(), "rule__NumberTerminalExpression__ArgumentsAssignment_2_2_1");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getArgumentsAssignment_2_2_2_1(), "rule__NumberTerminalExpression__ArgumentsAssignment_2_2_2_1");
+					put(grammarAccess.getTextJoinAccess().getRightAssignment_1_1(), "rule__TextJoin__RightAssignment_1_1");
+					put(grammarAccess.getTextTerminalExpressionAccess().getValueAssignment_1(), "rule__TextTerminalExpression__ValueAssignment_1");
 				}
 			};
 		}

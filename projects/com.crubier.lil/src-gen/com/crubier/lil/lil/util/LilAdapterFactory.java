@@ -235,6 +235,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createNumberSwitchExpressionNumberCaseAdapter();
       }
       @Override
+      public Adapter caseNumberSwitchExpressionTextCase(NumberSwitchExpressionTextCase object)
+      {
+        return createNumberSwitchExpressionTextCaseAdapter();
+      }
+      @Override
+      public Adapter caseTextExpression(TextExpression object)
+      {
+        return createTextExpressionAdapter();
+      }
+      @Override
       public Adapter caseBooleanDisjonction(BooleanDisjonction object)
       {
         return createBooleanDisjonctionAdapter();
@@ -260,9 +270,14 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createNumberIfExpressionAdapter();
       }
       @Override
-      public Adapter caseNumberSwitchExpression(NumberSwitchExpression object)
+      public Adapter caseNumberSwitchExpressionNumber(NumberSwitchExpressionNumber object)
       {
-        return createNumberSwitchExpressionAdapter();
+        return createNumberSwitchExpressionNumberAdapter();
+      }
+      @Override
+      public Adapter caseNumberSwitchExpressionText(NumberSwitchExpressionText object)
+      {
+        return createNumberSwitchExpressionTextAdapter();
       }
       @Override
       public Adapter caseNumberAddition(NumberAddition object)
@@ -308,6 +323,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
       public Adapter caseNumberFunctionExpression(NumberFunctionExpression object)
       {
         return createNumberFunctionExpressionAdapter();
+      }
+      @Override
+      public Adapter caseTextJoin(TextJoin object)
+      {
+        return createTextJoinAdapter();
+      }
+      @Override
+      public Adapter caseTextLiteral(TextLiteral object)
+      {
+        return createTextLiteralAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -812,6 +837,36 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberSwitchExpressionTextCase <em>Number Switch Expression Text Case</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionTextCase
+   * @generated
+   */
+  public Adapter createNumberSwitchExpressionTextCaseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.TextExpression <em>Text Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.TextExpression
+   * @generated
+   */
+  public Adapter createTextExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanDisjonction <em>Boolean Disjonction</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -887,16 +942,31 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberSwitchExpression <em>Number Switch Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber <em>Number Switch Expression Number</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberSwitchExpression
+   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber
    * @generated
    */
-  public Adapter createNumberSwitchExpressionAdapter()
+  public Adapter createNumberSwitchExpressionNumberAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberSwitchExpressionText <em>Number Switch Expression Text</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.NumberSwitchExpressionText
+   * @generated
+   */
+  public Adapter createNumberSwitchExpressionTextAdapter()
   {
     return null;
   }
@@ -1032,6 +1102,36 @@ public class LilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNumberFunctionExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.TextJoin <em>Text Join</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.TextJoin
+   * @generated
+   */
+  public Adapter createTextJoinAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.TextLiteral <em>Text Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.TextLiteral
+   * @generated
+   */
+  public Adapter createTextLiteralAdapter()
   {
     return null;
   }

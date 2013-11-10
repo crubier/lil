@@ -6,23 +6,23 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Number Switch Expression</b></em>'.
+ * A representation of the model object '<em><b>Number Switch Expression Number</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.NumberSwitchExpression#getSwitch <em>Switch</em>}</li>
- *   <li>{@link com.crubier.lil.lil.NumberSwitchExpression#getCases <em>Cases</em>}</li>
- *   <li>{@link com.crubier.lil.lil.NumberSwitchExpression#getDefault <em>Default</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getSwitch <em>Switch</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getCases <em>Cases</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getDefault <em>Default</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.crubier.lil.lil.LilPackage#getNumberSwitchExpression()
+ * @see com.crubier.lil.lil.LilPackage#getNumberSwitchExpressionNumber()
  * @model
  * @generated
  */
-public interface NumberSwitchExpression extends NumberExpression
+public interface NumberSwitchExpressionNumber extends NumberExpression
 {
   /**
    * Returns the value of the '<em><b>Switch</b></em>' containment reference.
@@ -34,14 +34,14 @@ public interface NumberSwitchExpression extends NumberExpression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Switch</em>' containment reference.
    * @see #setSwitch(NumberExpression)
-   * @see com.crubier.lil.lil.LilPackage#getNumberSwitchExpression_Switch()
+   * @see com.crubier.lil.lil.LilPackage#getNumberSwitchExpressionNumber_Switch()
    * @model containment="true"
    * @generated
    */
   NumberExpression getSwitch();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.NumberSwitchExpression#getSwitch <em>Switch</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getSwitch <em>Switch</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Switch</em>' containment reference.
@@ -60,7 +60,7 @@ public interface NumberSwitchExpression extends NumberExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Cases</em>' containment reference list.
-   * @see com.crubier.lil.lil.LilPackage#getNumberSwitchExpression_Cases()
+   * @see com.crubier.lil.lil.LilPackage#getNumberSwitchExpressionNumber_Cases()
    * @model containment="true"
    * @generated
    */
@@ -76,14 +76,14 @@ public interface NumberSwitchExpression extends NumberExpression
    * <!-- end-user-doc -->
    * @return the value of the '<em>Default</em>' containment reference.
    * @see #setDefault(NumberExpression)
-   * @see com.crubier.lil.lil.LilPackage#getNumberSwitchExpression_Default()
+   * @see com.crubier.lil.lil.LilPackage#getNumberSwitchExpressionNumber_Default()
    * @model containment="true"
    * @generated
    */
   NumberExpression getDefault();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.NumberSwitchExpression#getDefault <em>Default</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getDefault <em>Default</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Default</em>' containment reference.
@@ -92,4 +92,4 @@ public interface NumberSwitchExpression extends NumberExpression
    */
   void setDefault(NumberExpression value);
 
-} // NumberSwitchExpression
+} // NumberSwitchExpressionNumber

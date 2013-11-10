@@ -35,10 +35,14 @@ import com.crubier.lil.lil.NumberMultiplication;
 import com.crubier.lil.lil.NumberOpposition;
 import com.crubier.lil.lil.NumberPower;
 import com.crubier.lil.lil.NumberSubstraction;
-import com.crubier.lil.lil.NumberSwitchExpression;
+import com.crubier.lil.lil.NumberSwitchExpressionNumber;
 import com.crubier.lil.lil.NumberSwitchExpressionNumberCase;
+import com.crubier.lil.lil.NumberSwitchExpressionText;
+import com.crubier.lil.lil.NumberSwitchExpressionTextCase;
 import com.crubier.lil.lil.OnCause;
 import com.crubier.lil.lil.SetEffect;
+import com.crubier.lil.lil.TextJoin;
+import com.crubier.lil.lil.TextLiteral;
 import com.crubier.lil.lil.TriggerEffect;
 import com.crubier.lil.lil.WhenCause;
 import com.crubier.lil.services.LilGrammarAccess;
@@ -427,7 +431,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.NUMBER_SWITCH_EXPRESSION:
+			case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER:
 				if(context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getNumberAdditionRule() ||
 				   context == grammarAccess.getNumberAdditionAccess().getNumberAdditionLeftAction_1_0_0_0() ||
@@ -442,13 +446,38 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getNumberPowerAccess().getNumberPowerLeftAction_1_0_0() ||
 				   context == grammarAccess.getNumberTerminalExpressionRule() ||
 				   context == grammarAccess.getNumberUnaryRule()) {
-					sequence_NumberCompoundExpression(context, (NumberSwitchExpression) semanticObject); 
+					sequence_NumberCompoundExpression(context, (NumberSwitchExpressionNumber) semanticObject); 
 					return; 
 				}
 				else break;
 			case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER_CASE:
 				if(context == grammarAccess.getNumberSwitchExpressionNumberCaseRule()) {
 					sequence_NumberSwitchExpressionNumberCase(context, (NumberSwitchExpressionNumberCase) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getNumberAdditionRule() ||
+				   context == grammarAccess.getNumberAdditionAccess().getNumberAdditionLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getNumberAdditionAccess().getNumberSubstractionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getNumberCompoundExpressionRule() ||
+				   context == grammarAccess.getNumberExpressionRule() ||
+				   context == grammarAccess.getNumberMultiplicationRule() ||
+				   context == grammarAccess.getNumberMultiplicationAccess().getNumberDivisionLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getNumberMultiplicationAccess().getNumberModuloLeftAction_1_0_2_0() ||
+				   context == grammarAccess.getNumberMultiplicationAccess().getNumberMultiplicationLeftAction_1_0_0_0() ||
+				   context == grammarAccess.getNumberPowerRule() ||
+				   context == grammarAccess.getNumberPowerAccess().getNumberPowerLeftAction_1_0_0() ||
+				   context == grammarAccess.getNumberTerminalExpressionRule() ||
+				   context == grammarAccess.getNumberUnaryRule()) {
+					sequence_NumberCompoundExpression(context, (NumberSwitchExpressionText) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT_CASE:
+				if(context == grammarAccess.getNumberSwitchExpressionTextCaseRule()) {
+					sequence_NumberSwitchExpressionTextCase(context, (NumberSwitchExpressionTextCase) semanticObject); 
 					return; 
 				}
 				else break;
@@ -463,6 +492,23 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				if(context == grammarAccess.getEffectRule() ||
 				   context == grammarAccess.getSetEffectRule()) {
 					sequence_SetEffect(context, (SetEffect) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.TEXT_JOIN:
+				if(context == grammarAccess.getTextExpressionRule() ||
+				   context == grammarAccess.getTextJoinRule() ||
+				   context == grammarAccess.getTextJoinAccess().getTextJoinLeftAction_1_0_0()) {
+					sequence_TextJoin(context, (TextJoin) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.TEXT_LITERAL:
+				if(context == grammarAccess.getTextExpressionRule() ||
+				   context == grammarAccess.getTextJoinRule() ||
+				   context == grammarAccess.getTextJoinAccess().getTextJoinLeftAction_1_0_0() ||
+				   context == grammarAccess.getTextTerminalExpressionRule()) {
+					sequence_TextTerminalExpression(context, (TextLiteral) semanticObject); 
 					return; 
 				}
 				else break;
@@ -852,7 +898,16 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (switch=NumberExpression cases+=NumberSwitchExpressionNumberCase+ default=NumberExpression?)
 	 */
-	protected void sequence_NumberCompoundExpression(EObject context, NumberSwitchExpression semanticObject) {
+	protected void sequence_NumberCompoundExpression(EObject context, NumberSwitchExpressionNumber semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (switch=TextExpression cases+=NumberSwitchExpressionTextCase+ default=NumberExpression?)
+	 */
+	protected void sequence_NumberCompoundExpression(EObject context, NumberSwitchExpressionText semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -954,6 +1009,25 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (condition=TextExpression value=NumberExpression)
+	 */
+	protected void sequence_NumberSwitchExpressionTextCase(EObject context, NumberSwitchExpressionTextCase semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.NUMBER_SWITCH_EXPRESSION_TEXT_CASE__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.NUMBER_SWITCH_EXPRESSION_TEXT_CASE__CONDITION));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.NUMBER_SWITCH_EXPRESSION_TEXT_CASE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.NUMBER_SWITCH_EXPRESSION_TEXT_CASE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNumberSwitchExpressionTextCaseAccess().getConditionTextExpressionParserRuleCall_1_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getNumberSwitchExpressionTextCaseAccess().getValueNumberExpressionParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (function=ID (arguments+=NumberExpression arguments+=NumberExpression*)?)
 	 */
 	protected void sequence_NumberTerminalExpression(EObject context, NumberFunctionExpression semanticObject) {
@@ -1017,6 +1091,41 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getSetEffectAccess().getTargetFlowEmissionParserRuleCall_1_0(), semanticObject.getTarget());
 		feeder.accept(grammarAccess.getSetEffectAccess().getValueExpressionParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=TextJoin_TextJoin_1_0_0 right=TextTerminalExpression)
+	 */
+	protected void sequence_TextJoin(EObject context, TextJoin semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.TEXT_JOIN__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.TEXT_JOIN__LEFT));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.TEXT_JOIN__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.TEXT_JOIN__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTextJoinAccess().getTextJoinLeftAction_1_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getTextJoinAccess().getRightTextTerminalExpressionParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=TextLiteral
+	 */
+	protected void sequence_TextTerminalExpression(EObject context, TextLiteral semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.TEXT_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.TEXT_LITERAL__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTextTerminalExpressionAccess().getValueTextLiteralParserRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

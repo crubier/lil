@@ -4,7 +4,7 @@ package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.NumberExpression;
-import com.crubier.lil.lil.NumberSwitchExpression;
+import com.crubier.lil.lil.NumberSwitchExpressionNumber;
 import com.crubier.lil.lil.NumberSwitchExpressionNumberCase;
 
 import java.util.Collection;
@@ -24,20 +24,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Number Switch Expression</b></em>'.
+ * An implementation of the model object '<em><b>Number Switch Expression Number</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.NumberSwitchExpressionImpl#getSwitch <em>Switch</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.NumberSwitchExpressionImpl#getCases <em>Cases</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.NumberSwitchExpressionImpl#getDefault <em>Default</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl#getSwitch <em>Switch</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl#getCases <em>Cases</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl#getDefault <em>Default</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements NumberSwitchExpression
+public class NumberSwitchExpressionNumberImpl extends NumberExpressionImpl implements NumberSwitchExpressionNumber
 {
   /**
    * The cached value of the '{@link #getSwitch() <em>Switch</em>}' containment reference.
@@ -74,7 +74,7 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NumberSwitchExpressionImpl()
+  protected NumberSwitchExpressionNumberImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
   @Override
   protected EClass eStaticClass()
   {
-    return LilPackage.Literals.NUMBER_SWITCH_EXPRESSION;
+    return LilPackage.Literals.NUMBER_SWITCH_EXPRESSION_NUMBER;
   }
 
   /**
@@ -111,7 +111,7 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
     switch_ = newSwitch;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.NUMBER_SWITCH_EXPRESSION__SWITCH, oldSwitch, newSwitch);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH, oldSwitch, newSwitch);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -128,14 +128,14 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
     {
       NotificationChain msgs = null;
       if (switch_ != null)
-        msgs = ((InternalEObject)switch_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.NUMBER_SWITCH_EXPRESSION__SWITCH, null, msgs);
+        msgs = ((InternalEObject)switch_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH, null, msgs);
       if (newSwitch != null)
-        msgs = ((InternalEObject)newSwitch).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.NUMBER_SWITCH_EXPRESSION__SWITCH, null, msgs);
+        msgs = ((InternalEObject)newSwitch).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH, null, msgs);
       msgs = basicSetSwitch(newSwitch, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.NUMBER_SWITCH_EXPRESSION__SWITCH, newSwitch, newSwitch));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH, newSwitch, newSwitch));
   }
 
   /**
@@ -147,7 +147,7 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
   {
     if (cases == null)
     {
-      cases = new EObjectContainmentEList<NumberSwitchExpressionNumberCase>(NumberSwitchExpressionNumberCase.class, this, LilPackage.NUMBER_SWITCH_EXPRESSION__CASES);
+      cases = new EObjectContainmentEList<NumberSwitchExpressionNumberCase>(NumberSwitchExpressionNumberCase.class, this, LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__CASES);
     }
     return cases;
   }
@@ -173,7 +173,7 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
     default_ = newDefault;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.NUMBER_SWITCH_EXPRESSION__DEFAULT, oldDefault, newDefault);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT, oldDefault, newDefault);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -190,14 +190,14 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
     {
       NotificationChain msgs = null;
       if (default_ != null)
-        msgs = ((InternalEObject)default_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.NUMBER_SWITCH_EXPRESSION__DEFAULT, null, msgs);
+        msgs = ((InternalEObject)default_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT, null, msgs);
       if (newDefault != null)
-        msgs = ((InternalEObject)newDefault).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.NUMBER_SWITCH_EXPRESSION__DEFAULT, null, msgs);
+        msgs = ((InternalEObject)newDefault).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT, null, msgs);
       msgs = basicSetDefault(newDefault, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.NUMBER_SWITCH_EXPRESSION__DEFAULT, newDefault, newDefault));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT, newDefault, newDefault));
   }
 
   /**
@@ -210,11 +210,11 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
   {
     switch (featureID)
     {
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__SWITCH:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH:
         return basicSetSwitch(null, msgs);
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__CASES:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__CASES:
         return ((InternalEList<?>)getCases()).basicRemove(otherEnd, msgs);
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__DEFAULT:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT:
         return basicSetDefault(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -230,11 +230,11 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
   {
     switch (featureID)
     {
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__SWITCH:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH:
         return getSwitch();
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__CASES:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__CASES:
         return getCases();
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__DEFAULT:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT:
         return getDefault();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -251,14 +251,14 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
   {
     switch (featureID)
     {
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__SWITCH:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH:
         setSwitch((NumberExpression)newValue);
         return;
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__CASES:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__CASES:
         getCases().clear();
         getCases().addAll((Collection<? extends NumberSwitchExpressionNumberCase>)newValue);
         return;
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__DEFAULT:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT:
         setDefault((NumberExpression)newValue);
         return;
     }
@@ -275,13 +275,13 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
   {
     switch (featureID)
     {
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__SWITCH:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH:
         setSwitch((NumberExpression)null);
         return;
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__CASES:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__CASES:
         getCases().clear();
         return;
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__DEFAULT:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT:
         setDefault((NumberExpression)null);
         return;
     }
@@ -298,14 +298,14 @@ public class NumberSwitchExpressionImpl extends NumberExpressionImpl implements 
   {
     switch (featureID)
     {
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__SWITCH:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH:
         return switch_ != null;
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__CASES:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__CASES:
         return cases != null && !cases.isEmpty();
-      case LilPackage.NUMBER_SWITCH_EXPRESSION__DEFAULT:
+      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT:
         return default_ != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //NumberSwitchExpressionImpl
+} //NumberSwitchExpressionNumberImpl

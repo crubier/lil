@@ -134,6 +134,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//NumberExpression"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberSwitchExpressionTextCase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//TextExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//NumberExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanDisjonction" eSuperTypes="#//BooleanExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanExpression"
         containment="true"/>
@@ -161,11 +168,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//NumberExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NumberSwitchExpression" eSuperTypes="#//NumberExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="NumberSwitchExpressionNumber" eSuperTypes="#//NumberExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="switch" eType="#//NumberExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cases" upperBound="-1"
         eType="#//NumberSwitchExpressionNumberCase" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="default" eType="#//NumberExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberSwitchExpressionText" eSuperTypes="#//NumberExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switch" eType="#//TextExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cases" upperBound="-1"
+        eType="#//NumberSwitchExpressionTextCase" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="default" eType="#//NumberExpression"
         containment="true"/>
   </eClassifiers>
@@ -216,5 +231,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
         eType="#//NumberExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextJoin" eSuperTypes="#//TextExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//TextExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//TextExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextLiteral" eSuperTypes="#//TextExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

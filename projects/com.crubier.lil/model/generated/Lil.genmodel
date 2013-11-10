@@ -111,6 +111,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumberCase/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumberCase/value"/>
     </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//NumberSwitchExpressionTextCase">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionTextCase/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionTextCase/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//TextExpression"/>
     <genClasses ecoreClass="Lil.ecore#//BooleanDisjonction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanDisjonction/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanDisjonction/right"/>
@@ -130,10 +135,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberIfExpression/then"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberIfExpression/else"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberSwitchExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpression/switch"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpression/cases"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpression/default"/>
+    <genClasses ecoreClass="Lil.ecore#//NumberSwitchExpressionNumber">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumber/switch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumber/cases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumber/default"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//NumberSwitchExpressionText">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionText/switch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionText/cases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionText/default"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//NumberAddition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberAddition/left"/>
@@ -168,6 +178,13 @@
     <genClasses ecoreClass="Lil.ecore#//NumberFunctionExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//NumberFunctionExpression/function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberFunctionExpression/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//TextJoin">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//TextJoin/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//TextJoin/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//TextLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//TextLiteral/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
