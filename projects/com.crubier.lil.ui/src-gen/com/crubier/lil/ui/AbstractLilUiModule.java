@@ -128,6 +128,11 @@ public abstract class AbstractLilUiModule extends DefaultUiModule {
 		binder.bind(org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.CONTENT_ASSIST)).to(com.crubier.lil.ui.contentassist.antlr.internal.InternalLilLexer.class);
 	}
 
+	// contributed by org.eclipse.xtext.ui.generator.projectWizard.SimpleProjectWizardFragment
+	public Class<? extends org.eclipse.xtext.ui.wizard.IProjectCreator> bindIProjectCreator() {
+		return com.crubier.lil.ui.wizard.LilProjectCreator.class;
+	}
+
 	// contributed by org.eclipse.xtext.ui.generator.refactoring.RefactorElementNameFragment
 	public Class<? extends org.eclipse.xtext.ui.refactoring.IRenameStrategy> bindIRenameStrategy() {
 		return org.eclipse.xtext.ui.refactoring.impl.DefaultRenameStrategy.class;

@@ -1,0 +1,28 @@
+«IMPORT com::crubier::lil::ui::wizard»
+
+«DEFINE main FOR LilProjectInfo»
+«EXPAND model FOR this»
+«EXPAND workflow FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR LilProjectInfo»
+«FILE "src/model/Model.lil"-»
+/*
+ * This is an example model
+ */
+Hello Xtext!
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE workflow FOR LilProjectInfo»
+«FILE "src/Generator.mwe2"-»
+module Generator
+
+var targetDir = "src-gen"
+var modelPath = "src/model"
+
+Workflow {
+	component = @workflow.LilGenerator auto-inject {}
+}
+«ENDFILE»
+«ENDDEFINE»
