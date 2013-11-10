@@ -17,18 +17,7 @@ import com.google.inject.Injector;
 public class LilStandaloneSetupGenerated implements ISetup {
 
 	public Injector createInjectorAndDoEMFRegistration() {
-		// register default ePackages
-		if (!Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().containsKey("ecore"))
-			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
-				"ecore", new org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl());
-		if (!Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().containsKey("xmi"))
-			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
-				"xmi", new org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl());
-		if (!Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().containsKey("xtextbin"))
-			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
-				"xtextbin", new org.eclipse.xtext.resource.impl.BinaryGrammarResourceFactoryImpl());
-		if (!EPackage.Registry.INSTANCE.containsKey(org.eclipse.xtext.XtextPackage.eNS_URI))
-			EPackage.Registry.INSTANCE.put(org.eclipse.xtext.XtextPackage.eNS_URI, org.eclipse.xtext.XtextPackage.eINSTANCE);
+		org.eclipse.xtext.xbase.XbaseStandaloneSetup.doSetup();
 
 		Injector injector = createInjector();
 		register(injector);
@@ -49,6 +38,7 @@ public class LilStandaloneSetupGenerated implements ISetup {
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("lil", resourceFactory);
 		org.eclipse.xtext.resource.IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("lil", serviceProvider);
 		
+
 
 
 	}

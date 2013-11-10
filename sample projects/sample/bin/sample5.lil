@@ -6,7 +6,7 @@ structure person :
 	
 interactor Gauge :
 	actor user
-	number flow val from parent to user
+	number flow value from parent to user
 	
 	
 interactor ControlPanel :
@@ -27,12 +27,13 @@ interactor ControlPanel :
 	number flow current
 	
 	on init : 	always current = 
-					switch(5+5) 
+					switch(bobie) {
 						case 10 : 3 
 						default : 5
-				always val to theGauge = (1-2)+15*sin(45)
+						}
+				always value to theGauge = if(a==5) 30 else 40
 				
-	on select : set selection = if((5 > (if(true) 4 else 3)) and false) 1+1*(switch(4) case 3:2 default:1) else 6
+	on select if true : set selection = if((5 > (if(true) 4 else 3)) && false) 1+1*(switch(4) {case 3:2 default:1}) else 6
 		
 				
 	

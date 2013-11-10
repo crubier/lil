@@ -4,7 +4,7 @@
     editorDirectory="/com.crubier.lil.editor/src" modelPluginID="com.crubier.lil"
     forceOverwrite="true" modelName="Lil" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="com.crubier.lil.edit"
-    editorPluginID="com.crubier.lil.editor" runtimeVersion="2.9">
+    editorPluginID="com.crubier.lil.editor" runtimeVersion="2.9" usedGenPackages="../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="Lil" basePackage="com.crubier.lil" disposableProviderFactory="true"
       fileExtensions="lil" ecorePackage="Lil.ecore#/">
     <genClasses ecoreClass="Lil.ecore#//Model">
@@ -92,7 +92,6 @@
     <genClasses ecoreClass="Lil.ecore#//TriggerEffect">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//TriggerEffect/target"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//Expression"/>
     <genClasses ecoreClass="Lil.ecore#//DataTypeCompoundDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeCompoundDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompoundDeclaration/fields"/>
@@ -102,97 +101,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeCompoundField/name"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//DataType"/>
-    <genClasses ecoreClass="Lil.ecore#//BooleanExpression"/>
-    <genClasses ecoreClass="Lil.ecore#//NumberExpression"/>
-    <genClasses ecoreClass="Lil.ecore#//NumberSwitchExpressionNumberCase">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumberCase/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumberCase/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberSwitchExpressionTextCase">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionTextCase/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionTextCase/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//TextExpression"/>
     <genClasses ecoreClass="Lil.ecore#//DataTypeCompound">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompound/type"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//DataTypeBase">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeBase/type"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//BooleanDisjonction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanDisjonction/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanDisjonction/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//BooleanConjonction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanConjonction/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanConjonction/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//BooleanNegation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanNegation/operand"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//BooleanLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//BooleanLiteral/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//BooleanNumberComparison">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanNumberComparison/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//BooleanNumberComparison/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BooleanNumberComparison/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberIfExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberIfExpression/if"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberIfExpression/then"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberIfExpression/else"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberSwitchExpressionNumber">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumber/switch"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumber/cases"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionNumber/default"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberSwitchExpressionText">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionText/switch"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionText/cases"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSwitchExpressionText/default"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberAddition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberAddition/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberAddition/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberSubstraction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSubstraction/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberSubstraction/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberMultiplication">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberMultiplication/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberMultiplication/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberDivision">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberDivision/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberDivision/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberModulo">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberModulo/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberModulo/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberPower">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberPower/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberPower/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberOpposition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberOpposition/operand"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//NumberLiteral/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//NumberFunctionExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//NumberFunctionExpression/function"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberFunctionExpression/arguments"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//TextJoin">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//TextJoin/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//TextJoin/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//TextLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//TextLiteral/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
