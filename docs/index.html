@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+            <meta http-equiv="X-UA-Compatible" content="chrome=1">
+                <link href="https://fonts.googleapis.com/css?family=Chivo:900" rel='stylesheet' type='text/css'>
+                    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+                    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+                    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+                    <!--[if lt IE 9]>
+                     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                     <![endif]-->
+                    <title>lil</title>
+                    </head>
+    
+    <body>
+        <div id="container">
+            <div class="inner">
+                
+                <header>
+                    <p align="center">
+                    <img src="images/lilframework.png"></p>
+                        </header>
+                <section id="downloads" class="clearfix">
+                    <a href="https://github.com/crubier/lil/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+                    <a href="https://github.com/crubier/lil/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+                    <a href="https://github.com/crubier/lil" id="view-on-github" class="button"><span>View on GitHub</span></a>
+                </section>
+                <section id="main_content">
+                    
+                    
+                    <h1>
+                        <a name="presentation" class="anchor" href="#presentation"><span class="octicon octicon-link"></span></a>Presentation</h1>
+                    
+                    <h2>
+                        <a name="lil-interaction-language" class="anchor" href="#lil-interaction-language"><span class="octicon octicon-link"></span></a>lil interaction language</h2>
+                    
+                    <p><strong>lil</strong> is a domain specific language for Human Machine Interfaces specification, originally developped by Vincent Lecrubier during his Ph.D. at <a href="http://www.onera.fr">ONERA</a>, <a href="http://www.isae.fr">ISAE</a> and <a href="http://www.univ-tlse3.fr">UPS Toulouse</a> with the help of his tutors Bruno d'Ausbourg (<a href="http://www.onera.fr">ONERA</a>) and Yamine Aït-Ameur (<a href="http://www.enseeiht.fr">ENSEEIHT</a>).</p>
+                    
+                    <p><strong>lil</strong> aims at enabling the following :</p>
+                    
+                    <ul>
+                        <li>specification of abstract human-machine interfaces</li>
+                        <li>collaboration of different stakeholders on the same specification document</li>
+                        <li>design of safety-critical human-machine interfaces</li>
+                        <li>ensuring non ambiguous formal specification of human-machine interfaces</li>
+                    </ul><h2>
+                        <a name="lil-standard-framework" class="anchor" href="#lil-standard-framework"><span class="octicon octicon-link"></span></a>lil standard framework</h2>
+                    
+                    <p><strong>lil framework</strong> is a baseline framework designed to implement the <strong>lil</strong> specification canonically
+                    It aims at enabling the following :</p>
+                    
+                    <ul>
+                        <li>code generation for prototyping </li>
+                        <li>code generation of runtime backbone</li>
+                        <li>model checking of interaction properties</li>
+                        <li>model checking of performance properties</li>
+                        <li>IDE integration with syntax coloring, content assist, validation</li>
+                        <li>Integration with ARINC 661</li>
+                    </ul><h1>
+                        <a name="implementation" class="anchor" href="#implementation"><span class="octicon octicon-link"></span></a>Implementation</h1>
+                    
+                    <p><strong>lil</strong> is specified in <a href="http://www.eclipse.org/Xtext/">xtext</a>. So far, due to the xtext architecture, the interaction language specification and the standard framework code are quite intricated, but here is the important:</p>
+                    
+                    <ul>
+                        <li>The syntax is defined in <a href="com.crubier.lil/src/com/crubier/lil/Lil.xtext">Lil.xtext</a>
+                        </li>
+                        <li>Scoping, validation, code formatting and code generation sources are available here <a href="com.crubier.lil/src/com/crubier/lil/">here</a>
+                        </li>
+                    </ul>
+                </section>
+                
+                <footer>
+                    lil is maintained by <a href="https://github.com/crubier">crubier</a><br>
+                    This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+                </footer>
+                
+                <script type="text/javascript">
+                    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+                    </script>
+                <script type="text/javascript">
+                    try {
+                        var pageTracker = _gat._getTracker("UA-17613042-2");
+                        pageTracker._trackPageview();
+                    } catch(err) {}
+                </script>
+                
+            </div>
+        </div>
+    </body>
+</html>

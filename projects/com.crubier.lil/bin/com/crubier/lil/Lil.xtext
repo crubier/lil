@@ -1,0 +1,254 @@
+grammar com.crubier.lil.Lil hidden(WS, ML_COMMENT, SL_COMMENT)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate lil "http://www.crubier.com/lil/Lil"
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Model
+Model:
+	((interactors+=InteractorDeclaration) | (dataTypes+=DataTypeDeclaration))*;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Interactor
+InteractorDeclaration:
+	'interactor' name=ID ':'
+	((entities+=EntityDeclaration) | (signals+=SignalDeclaration) | (behaviors+=BehaviorDeclaration))*;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Entities
+AccessibleEntity:
+	generic=('any' | 'self' | 'other' | 'parent' | 'child' | 'all' | 'actors') | specific=Entity;
+
+Entity:
+	instance=[EntityDeclaration]
+;
+
+Actor:
+	instance=[ActorDeclaration];
+
+Component:
+	instance=[ComponentDeclaration];
+
+EntityDeclaration:
+	ActorDeclaration | ComponentDeclaration;
+
+ActorDeclaration:
+	'actor' name=ID ;
+
+ActorAlias:
+	source=Actor 'as' remote=Actor;
+
+ComponentDeclaration:
+	interactor=[InteractorDeclaration] name=ID ('with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Signals
+
+EventReception:
+	(instance=[EventDeclaration] ('from' source=Component)?) | base = ('init');
+
+FlowReception:
+	instance=[FlowDeclaration] ('from' source=Component)?;
+	
+EventEmission:
+	instance=[EventDeclaration] ('to' destination=Component)?;
+	
+FlowEmission:
+	instance=[FlowDeclaration] ('to' destination=Component)?;
+	
+SignalDeclaration:
+	EventDeclaration | FlowDeclaration;
+
+EventDeclaration:
+	type=DataType 'event' name=ID ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
+
+FlowDeclaration:
+	type=DataType 'flow' name=ID ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Behaviors
+BehaviorDeclaration:
+	cause=Cause ':' (effects+=Effect)+;
+
+Cause:
+	(OnCause | WhenCause) ;
+
+OnCause:
+	'on' event=EventReception ('if' guard=Expression)?;
+
+WhenCause:
+	'when' condition=Expression ('if' guard=Expression)?;
+
+Effect:
+	(AlwaysEffect | SetEffect | TriggerEffect)
+;
+
+AlwaysEffect:
+	'always' target=FlowEmission '=' value=Expression
+;
+
+SetEffect:
+	'set' target=FlowEmission '=' value=Expression
+;
+
+TriggerEffect:
+	'trigger' target=EventEmission '=' value=Expression
+;
+
+Expression:
+	NumberExpression
+;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Structure
+DataTypeDeclaration:
+	'data' 'type' name=ID ':'
+	(fields+=Field)*;
+
+Field:
+	type=DataType name=ID;
+
+DataType:
+	compound=[DataTypeDeclaration] | base=DataTypeBase;
+
+DataTypeBase:
+	('void' | 'symbol' | 'number' | 'text' | 'time' | 'reference')
+;
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Expressions
+//We do not use xbase because we only need a small subset of it in order to be able to generate C code and in order to simplify the language
+//So we are going to construct the expressions we need
+
+//Boolean expressions
+BooleanExpression:
+	BooleanDisjonction
+;
+
+BooleanDisjonction returns BooleanExpression:
+	BooleanConjonction 
+ 	(({BooleanDisjonction.left=current} 'or') right=BooleanConjonction)*
+;
+
+BooleanConjonction returns BooleanExpression:
+	BooleanUnary 
+ 	(({BooleanConjonction.left=current} 'and') right=BooleanUnary)*
+;
+
+BooleanUnary returns BooleanExpression:
+	BooleanTerminalExpression |
+	(( {BooleanNegation} '!')  operand=BooleanTerminalExpression )
+;
+
+BooleanTerminalExpression returns BooleanExpression:
+	'(' BooleanExpression ')' |
+	({BooleanLiteral} value=BooleanLiteral)
+;
+
+
+//Numeric expressions
+NumberExpression:
+ NumberCompoundExpression;
+ 
+ NumberCompoundExpression returns NumberExpression:
+ 	NumberAddition |
+ 	{NumberIfExpression} 'if' '(' if=BooleanExpression ')' then=NumberAddition (=>'else' else=NumberAddition)? |
+ 	{NumberSwitchExpressionNumber} 'switch' '(' switch=NumberExpression ')'  (=> cases+=NumberSwitchExpressionNumberCase)+ (=>'default' ':' default=NumberExpression )? |
+ 	{NumberSwitchExpressionText} 'switch' '(' switch=TextExpression ')'  (=> cases+=NumberSwitchExpressionTextCase)+ (=>'default' ':' default=NumberExpression )?
+ ;
+ 
+ NumberSwitchExpressionNumberCase :
+ 	'case' condition=NumberExpression ':' value=NumberExpression
+ ;
+ 
+  NumberSwitchExpressionTextCase :
+ 	'case' condition=TextExpression ':' value=NumberExpression
+ ;
+ 
+NumberAddition returns NumberExpression:
+ NumberMultiplication
+  (({NumberAddition.left=current} '+' | {NumberSubstraction.left=current} '-') right=NumberMultiplication)*;
+
+NumberMultiplication returns NumberExpression:
+ NumberPower 
+ (({NumberMultiplication.left=current} '*' | {NumberDivision.left=current} '/'| {NumberModulo.left=current} '%') right=NumberPower)*;
+
+NumberPower returns NumberExpression:
+ NumberUnary 
+ (({NumberPower.left=current} '^' ) right=NumberUnary)*;
+ 
+NumberUnary returns NumberExpression:
+	NumberTerminalExpression |
+	(( {NumberOpposition} '-')  operand=NumberTerminalExpression );
+
+NumberTerminalExpression returns NumberExpression:
+  '(' NumberExpression ')' |
+  ({NumberLiteral} value=NumberLiteral) |
+  {NumberFunctionExpression} function=ID ('(' arguments+=NumberExpression (',' arguments+=NumberExpression)* ')')? 
+;
+
+
+//Text expressions
+TextExpression:
+	TextJoin
+;
+
+TextJoin returns TextExpression:
+	TextTerminalExpression
+  (({TextJoin.left=current} '<>' ) right=TextTerminalExpression)*;
+
+TextTerminalExpression returns TextExpression:
+	{TextLiteral} value=TextLiteral
+;
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Literals
+SymbolLiteral returns ecore::EString : 
+  ID
+;
+
+BooleanLiteral returns ecore::EBoolean : 
+  'true' |'yes' | 'false'| 'no' 
+;
+
+NumberLiteral returns ecore::EDouble : 
+  INT ('.' INT)?
+;
+
+TextLiteral returns ecore::EString :
+	STRING
+;
+
+TimeLiteral returns ecore::ELong :
+	(INT 'ms') | (INT ('.' INT)? 's') | (INT ('.' INT)? 'm') | (INT ('.' INT)? 'h') | (INT ('.' INT)? 'd') 
+;
+
+ReferenceLiteral returns ecore::EString :
+	ID
+;
+
+IndexLiteral returns ecore::EInt : 
+  INT
+;
+
+// Terminals
+terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal INT returns ecore::EInt: ('0'..'9')+;
+terminal STRING	: 
+			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
+		; 
+terminal ML_COMMENT	: '/*' -> '*/';
+terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS			: (' '|'\t'|'\r'|'\n')+;
+
+terminal ANY_OTHER: .;
