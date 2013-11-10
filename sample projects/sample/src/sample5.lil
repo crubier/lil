@@ -1,0 +1,39 @@
+data type person :
+	text name
+	text surname
+	time birthdate
+	symbol sex
+	
+interactor Gauge :
+	actor user
+	number flow val from parent to user
+	
+	
+interactor ControlPanel :
+	actor user
+	actor system
+	
+	Gauge theGauge
+	
+	symbol flow selection to user
+	symbol event select from user
+	void event increment from user to system
+	void event decrement from user to system
+	void event reset from user to system
+	number flow min from system
+	number flow max from system
+	number flow x from system
+	number flow y from system
+	number flow current
+	
+	on init : 	always current = 
+					switch(5+5) 
+						case 10 : 3 
+						default : 5
+				always val to theGauge = (1-2)+15*sin(45)
+				
+	on select : set selection = if(true and false) 1+1*5 else 6
+		
+				
+	
+	
