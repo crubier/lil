@@ -576,22 +576,22 @@ public interface LilPackage extends EPackage
   int SIGNAL_DECLARATION = 14;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIGNAL_DECLARATION__TYPE = 0;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIGNAL_DECLARATION__NAME = 1;
+  int SIGNAL_DECLARATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIGNAL_DECLARATION__TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -631,15 +631,6 @@ public interface LilPackage extends EPackage
   int EVENT_DECLARATION = 15;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT_DECLARATION__TYPE = SIGNAL_DECLARATION__TYPE;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -647,6 +638,15 @@ public interface LilPackage extends EPackage
    * @ordered
    */
   int EVENT_DECLARATION__NAME = SIGNAL_DECLARATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_DECLARATION__TYPE = SIGNAL_DECLARATION__TYPE;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -686,15 +686,6 @@ public interface LilPackage extends EPackage
   int FLOW_DECLARATION = 16;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_DECLARATION__TYPE = SIGNAL_DECLARATION__TYPE;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -702,6 +693,15 @@ public interface LilPackage extends EPackage
    * @ordered
    */
   int FLOW_DECLARATION__NAME = SIGNAL_DECLARATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_DECLARATION__TYPE = SIGNAL_DECLARATION__TYPE;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -1056,22 +1056,22 @@ public interface LilPackage extends EPackage
   int DATA_TYPE_COMPOUND_FIELD = 26;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE_COMPOUND_FIELD__TYPE = 0;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_TYPE_COMPOUND_FIELD__NAME = 1;
+  int DATA_TYPE_COMPOUND_FIELD__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_COMPOUND_FIELD__TYPE = 1;
 
   /**
    * The number of structural features of the '<em>Data Type Compound Field</em>' class.
@@ -2076,17 +2076,6 @@ public interface LilPackage extends EPackage
   EClass getSignalDeclaration();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.SignalDeclaration#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see com.crubier.lil.lil.SignalDeclaration#getType()
-   * @see #getSignalDeclaration()
-   * @generated
-   */
-  EReference getSignalDeclaration_Type();
-
-  /**
    * Returns the meta object for the attribute '{@link com.crubier.lil.lil.SignalDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2096,6 +2085,17 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EAttribute getSignalDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.SignalDeclaration#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see com.crubier.lil.lil.SignalDeclaration#getType()
+   * @see #getSignalDeclaration()
+   * @generated
+   */
+  EReference getSignalDeclaration_Type();
 
   /**
    * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.SignalDeclaration#getSource <em>Source</em>}'.
@@ -2361,17 +2361,6 @@ public interface LilPackage extends EPackage
   EClass getDataTypeCompoundField();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.DataTypeCompoundField#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see com.crubier.lil.lil.DataTypeCompoundField#getType()
-   * @see #getDataTypeCompoundField()
-   * @generated
-   */
-  EReference getDataTypeCompoundField_Type();
-
-  /**
    * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeCompoundField#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2381,6 +2370,17 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EAttribute getDataTypeCompoundField_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.DataTypeCompoundField#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompoundField#getType()
+   * @see #getDataTypeCompoundField()
+   * @generated
+   */
+  EReference getDataTypeCompoundField_Type();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.DataType <em>Data Type</em>}'.
@@ -3189,20 +3189,20 @@ public interface LilPackage extends EPackage
     EClass SIGNAL_DECLARATION = eINSTANCE.getSignalDeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SIGNAL_DECLARATION__TYPE = eINSTANCE.getSignalDeclaration_Type();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute SIGNAL_DECLARATION__NAME = eINSTANCE.getSignalDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIGNAL_DECLARATION__TYPE = eINSTANCE.getSignalDeclaration_Type();
 
     /**
      * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
@@ -3429,20 +3429,20 @@ public interface LilPackage extends EPackage
     EClass DATA_TYPE_COMPOUND_FIELD = eINSTANCE.getDataTypeCompoundField();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DATA_TYPE_COMPOUND_FIELD__TYPE = eINSTANCE.getDataTypeCompoundField_Type();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute DATA_TYPE_COMPOUND_FIELD__NAME = eINSTANCE.getDataTypeCompoundField_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_TYPE_COMPOUND_FIELD__TYPE = eINSTANCE.getDataTypeCompoundField_Type();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeImpl <em>Data Type</em>}' class.

@@ -1,38 +1,41 @@
 structure person :
-	text name
-	text surname
-	time birthdate
-	symbol sex
+	name : text
+	surname : text
+	birthdate : text
+	sex : symbol
 	
 interactor Gauge :
-	actor user
-	number flow val from parent to user
+	user : actor
+	val : number flow from parent to user
 	
 	
 interactor ControlPanel :
-	actor user
-	actor system
+	user : actor
+	system : actor
+		
+	theGauge : Gauge
 	
-	Gauge theGauge
+	selection : symbol flow  to user
+	select: symbol event from user
+	increment : void event from user to system
+	decrement : void event from user to system
+	reset: void event from user to system
+	min: number flow from system
+	max: number flow from system
+	x: number flow from system
+	y: number flow from system
+	current: number flow 
+
 	
-	symbol flow selection to user
-	symbol event select from user
-	void event increment from user to system
-	void event decrement from user to system
-	void event reset from user to system
-	number flow min from system
-	number flow max from system
-	number flow x from system
-	number flow y from system
-	number flow current
+	on init : 	always current = null
 	
-	on init : 	always current = 
-					switch(5) 
-						case 10 : 3 
-						default : 5
-				always val to theGauge = (1-2)+15*sin(45)
+	on init : 	always x = null
+	
+	
+	
+	
 				
-	on select : set selection = if((5 > (if(true) 4 else 3)) and false) 1+1*(switch(4) case 3:2 default:1) else 6
+	//on select : set selection = if((5 > (if(true) 4 else 3)) and false) 1+1*(switch(4) case 3:2 default:1) else 6
 		
 				
 	

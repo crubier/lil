@@ -60,8 +60,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//FlowEmission/destination"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//SignalDeclaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalDeclaration/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//SignalDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalDeclaration/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalDeclaration/source"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalDeclaration/destinations"/>
     </genClasses>
@@ -97,8 +97,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompoundDeclaration/fields"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//DataTypeCompoundField">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompoundField/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeCompoundField/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompoundField/type"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//DataType"/>
     <genClasses ecoreClass="Lil.ecore#//XExpression"/>

@@ -491,7 +491,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActorDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getActorDeclarationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -542,7 +542,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (interactor=[InteractorDeclaration|ID] name=ID (aliases+=ActorAlias aliases+=ActorAlias*)?)
+	 *     (name=ID interactor=[InteractorDeclaration|ID] (aliases+=ActorAlias aliases+=ActorAlias*)?)
 	 */
 	protected void sequence_ComponentDeclaration(EObject context, ComponentDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -576,19 +576,19 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (type=DataType name=ID)
+	 *     (name=ID type=DataType)
 	 */
 	protected void sequence_DataTypeCompoundField(EObject context, DataTypeCompoundField semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__TYPE));
 			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__NAME));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD__TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataTypeCompoundFieldAccess().getTypeDataTypeParserRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getDataTypeCompoundFieldAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDataTypeCompoundFieldAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDataTypeCompoundFieldAccess().getTypeDataTypeParserRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	
@@ -643,7 +643,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (type=DataType name=ID source=AccessibleEntity? destinations+=AccessibleEntity*)
+	 *     (name=ID type=DataType source=AccessibleEntity? destinations+=AccessibleEntity*)
 	 */
 	protected void sequence_EventDeclaration(EObject context, EventDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -670,7 +670,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (type=DataType name=ID source=AccessibleEntity? destinations+=AccessibleEntity*)
+	 *     (name=ID type=DataType source=AccessibleEntity? destinations+=AccessibleEntity*)
 	 */
 	protected void sequence_FlowDeclaration(EObject context, FlowDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -914,10 +914,23 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (if=XExpression then=XExpression else=XExpression?)
+	 *     (if=XExpression then=XExpression else=XExpression)
 	 */
 	protected void sequence_XIfExpression(EObject context, XIfExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.XIF_EXPRESSION__IF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.XIF_EXPRESSION__IF));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.XIF_EXPRESSION__THEN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.XIF_EXPRESSION__THEN));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.XIF_EXPRESSION__ELSE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.XIF_EXPRESSION__ELSE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getXIfExpressionAccess().getIfXExpressionParserRuleCall_3_0(), semanticObject.getIf());
+		feeder.accept(grammarAccess.getXIfExpressionAccess().getThenXExpressionParserRuleCall_5_0(), semanticObject.getThen());
+		feeder.accept(grammarAccess.getXIfExpressionAccess().getElseXExpressionParserRuleCall_6_1_0(), semanticObject.getElse());
+		feeder.finish();
 	}
 	
 	
@@ -1004,7 +1017,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (switch=XExpression cases+=XCasePart+ default=XExpression?)
+	 *     (switch=XExpression cases+=XCasePart+ default=XExpression)
 	 */
 	protected void sequence_XSwitchExpression(EObject context, XSwitchExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1013,7 +1026,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (feature=OpUnary operand=XUnaryOperation)
+	 *     (feature=OpUnary operand=XPrimaryExpression)
 	 */
 	protected void sequence_XUnaryOperation(EObject context, XUnaryOperation semanticObject) {
 		if(errorAcceptor != null) {
@@ -1025,7 +1038,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getXUnaryOperationAccess().getFeatureOpUnaryParserRuleCall_0_1_0(), semanticObject.getFeature());
-		feeder.accept(grammarAccess.getXUnaryOperationAccess().getOperandXUnaryOperationParserRuleCall_0_2_0(), semanticObject.getOperand());
+		feeder.accept(grammarAccess.getXUnaryOperationAccess().getOperandXPrimaryExpressionParserRuleCall_0_2_0(), semanticObject.getOperand());
 		feeder.finish();
 	}
 }

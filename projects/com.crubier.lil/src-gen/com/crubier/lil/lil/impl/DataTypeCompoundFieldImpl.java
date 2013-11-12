@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,16 +31,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class DataTypeCompoundFieldImpl extends MinimalEObjectImpl.Container implements DataTypeCompoundField
 {
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected DataType type;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -62,6 +52,16 @@ public class DataTypeCompoundFieldImpl extends MinimalEObjectImpl.Container impl
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected DataType type;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -80,6 +80,29 @@ public class DataTypeCompoundFieldImpl extends MinimalEObjectImpl.Container impl
   protected EClass eStaticClass()
   {
     return LilPackage.Literals.DATA_TYPE_COMPOUND_FIELD;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.DATA_TYPE_COMPOUND_FIELD__NAME, oldName, name));
   }
 
   /**
@@ -135,29 +158,6 @@ public class DataTypeCompoundFieldImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.DATA_TYPE_COMPOUND_FIELD__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -179,10 +179,10 @@ public class DataTypeCompoundFieldImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case LilPackage.DATA_TYPE_COMPOUND_FIELD__TYPE:
-        return getType();
       case LilPackage.DATA_TYPE_COMPOUND_FIELD__NAME:
         return getName();
+      case LilPackage.DATA_TYPE_COMPOUND_FIELD__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -197,11 +197,11 @@ public class DataTypeCompoundFieldImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case LilPackage.DATA_TYPE_COMPOUND_FIELD__TYPE:
-        setType((DataType)newValue);
-        return;
       case LilPackage.DATA_TYPE_COMPOUND_FIELD__NAME:
         setName((String)newValue);
+        return;
+      case LilPackage.DATA_TYPE_COMPOUND_FIELD__TYPE:
+        setType((DataType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -217,11 +217,11 @@ public class DataTypeCompoundFieldImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case LilPackage.DATA_TYPE_COMPOUND_FIELD__TYPE:
-        setType((DataType)null);
-        return;
       case LilPackage.DATA_TYPE_COMPOUND_FIELD__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case LilPackage.DATA_TYPE_COMPOUND_FIELD__TYPE:
+        setType((DataType)null);
         return;
     }
     super.eUnset(featureID);
@@ -237,10 +237,10 @@ public class DataTypeCompoundFieldImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case LilPackage.DATA_TYPE_COMPOUND_FIELD__TYPE:
-        return type != null;
       case LilPackage.DATA_TYPE_COMPOUND_FIELD__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case LilPackage.DATA_TYPE_COMPOUND_FIELD__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }

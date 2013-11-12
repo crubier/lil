@@ -848,9 +848,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSignalDeclaration_Type()
+  public EAttribute getSignalDeclaration_Name()
   {
-    return (EReference)signalDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)signalDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -858,9 +858,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSignalDeclaration_Name()
+  public EReference getSignalDeclaration_Type()
   {
-    return (EAttribute)signalDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)signalDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1118,9 +1118,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDataTypeCompoundField_Type()
+  public EAttribute getDataTypeCompoundField_Name()
   {
-    return (EReference)dataTypeCompoundFieldEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)dataTypeCompoundFieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1128,9 +1128,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDataTypeCompoundField_Name()
+  public EReference getDataTypeCompoundField_Type()
   {
-    return (EAttribute)dataTypeCompoundFieldEClass.getEStructuralFeatures().get(1);
+    return (EReference)dataTypeCompoundFieldEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1627,8 +1627,8 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEReference(flowEmissionEClass, FLOW_EMISSION__DESTINATION);
 
     signalDeclarationEClass = createEClass(SIGNAL_DECLARATION);
-    createEReference(signalDeclarationEClass, SIGNAL_DECLARATION__TYPE);
     createEAttribute(signalDeclarationEClass, SIGNAL_DECLARATION__NAME);
+    createEReference(signalDeclarationEClass, SIGNAL_DECLARATION__TYPE);
     createEReference(signalDeclarationEClass, SIGNAL_DECLARATION__SOURCE);
     createEReference(signalDeclarationEClass, SIGNAL_DECLARATION__DESTINATIONS);
 
@@ -1666,8 +1666,8 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEReference(dataTypeCompoundDeclarationEClass, DATA_TYPE_COMPOUND_DECLARATION__FIELDS);
 
     dataTypeCompoundFieldEClass = createEClass(DATA_TYPE_COMPOUND_FIELD);
-    createEReference(dataTypeCompoundFieldEClass, DATA_TYPE_COMPOUND_FIELD__TYPE);
     createEAttribute(dataTypeCompoundFieldEClass, DATA_TYPE_COMPOUND_FIELD__NAME);
+    createEReference(dataTypeCompoundFieldEClass, DATA_TYPE_COMPOUND_FIELD__TYPE);
 
     dataTypeEClass = createEClass(DATA_TYPE);
 
@@ -1838,8 +1838,8 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEReference(getFlowEmission_Destination(), this.getComponent(), null, "destination", null, 0, 1, FlowEmission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(signalDeclarationEClass, SignalDeclaration.class, "SignalDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSignalDeclaration_Type(), this.getDataType(), null, "type", null, 0, 1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSignalDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSignalDeclaration_Type(), this.getDataType(), null, "type", null, 0, 1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSignalDeclaration_Source(), this.getAccessibleEntity(), null, "source", null, 0, 1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSignalDeclaration_Destinations(), this.getAccessibleEntity(), null, "destinations", null, 0, -1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1877,8 +1877,8 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEReference(getDataTypeCompoundDeclaration_Fields(), this.getDataTypeCompoundField(), null, "fields", null, 0, -1, DataTypeCompoundDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeCompoundFieldEClass, DataTypeCompoundField.class, "DataTypeCompoundField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDataTypeCompoundField_Type(), this.getDataType(), null, "type", null, 0, 1, DataTypeCompoundField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDataTypeCompoundField_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataTypeCompoundField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDataTypeCompoundField_Type(), this.getDataType(), null, "type", null, 0, 1, DataTypeCompoundField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -35,13 +35,13 @@ EntityDeclaration:
 	ActorDeclaration | ComponentDeclaration;
 
 ActorDeclaration:
-	'actor' name=ID ;
+	name=ID ':' 'actor'  ;
 
 ActorAlias:
 	source=Actor 'as' remote=Actor;
 
 ComponentDeclaration:
-	interactor=[InteractorDeclaration] name=ID ('with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
+	name=ID ':' interactor=[InteractorDeclaration] (=> 'with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Signals
@@ -62,10 +62,10 @@ SignalDeclaration:
 	EventDeclaration | FlowDeclaration;
 
 EventDeclaration:
-	type=DataType 'event' name=ID ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
+	name=ID ':'  type=DataType 'event' ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
 
 FlowDeclaration:
-	type=DataType 'flow' name=ID ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
+	name=ID ':' type=DataType 'flow' ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Behaviors
@@ -105,7 +105,7 @@ DataTypeCompoundDeclaration:
 	(fields+=DataTypeCompoundField)*;
 
 DataTypeCompoundField:
-	type=DataType name=ID;
+	name=ID ':' type=DataType ;
 
 DataType:
 	({DataTypeCompound} type=[DataTypeCompoundDeclaration]) | 
@@ -172,7 +172,7 @@ OpMulti:
 	'*' | '/' | '%';
 
 XUnaryOperation returns XExpression:
-	{XUnaryOperation} feature=OpUnary operand=XUnaryOperation | XPrimaryExpression;
+	({XUnaryOperation} feature=OpUnary operand=XPrimaryExpression) | XPrimaryExpression;
 
 OpUnary:
 	"!" | "-" | "+";
@@ -201,11 +201,12 @@ XMemberFeatureCall returns XExpression:
 
 XPrimaryExpression returns XExpression:
 	XSwitchExpression |
-	XIfExpression |
+	XIfExpression | //Switched as compared to xbase 
+	XLiteral|       //Switched as compared to xbase
 	XForEachExpression |
 	XFunctionCallExpression |
-	XParenthesizedExpression |
-	XLiteral;
+	XParenthesizedExpression
+;
 
 XLiteral returns XExpression:
 	XCollectionLiteral |
@@ -247,16 +248,16 @@ XParenthesizedExpression returns XExpression:
 
 XIfExpression returns XExpression:
 	{XIfExpression}
-	'if' '(' if=XExpression ')'
-	then=XExpression
-	(=>'else' else=XExpression)?;
+	'if' '(' if=XExpression =>')'
+	(then=XExpression)
+	(=>'else' else=XExpression);
 
 //TODO remove the need for braces
 XSwitchExpression returns XExpression:
 	{XSwitchExpression}
-	'switch' =>'(' switch=XExpression ')' /*'{'*/
-	 (=> cases+=XCasePart)+
-	 (=>'default' ':' default=XExpression )?
+	'switch' '(' switch=XExpression =>')' /*'{'*/
+	 (cases+=XCasePart)+
+	 (=>'default' ':' default=XExpression )
 	/*'}'*/;
 
 XCasePart:
