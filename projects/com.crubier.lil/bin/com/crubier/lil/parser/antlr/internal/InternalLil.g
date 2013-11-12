@@ -2049,20 +2049,20 @@ ruleBooleanUnary returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
-    |(((
+    |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getBooleanUnaryAccess().getBooleanNegationAction_1_0_0(),
+            grammarAccess.getBooleanUnaryAccess().getBooleanNegationAction_1_0(),
             $current);
     }
 )	otherlv_2='!' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getBooleanUnaryAccess().getExclamationMarkKeyword_1_0_1());
+    	newLeafNode(otherlv_2, grammarAccess.getBooleanUnaryAccess().getExclamationMarkKeyword_1_1());
     }
-)(
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBooleanUnaryAccess().getOperandBooleanTerminalExpressionParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getBooleanUnaryAccess().getOperandBooleanTerminalExpressionParserRuleCall_1_2_0()); 
 	    }
 		lv_operand_3_0=ruleBooleanTerminalExpression		{
 	        if ($current==null) {
@@ -2818,20 +2818,20 @@ ruleNumberUnary returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
-    |(((
+    |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getNumberUnaryAccess().getNumberOppositionAction_1_0_0(),
+            grammarAccess.getNumberUnaryAccess().getNumberOppositionAction_1_0(),
             $current);
     }
 )	otherlv_2='-' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getNumberUnaryAccess().getHyphenMinusKeyword_1_0_1());
+    	newLeafNode(otherlv_2, grammarAccess.getNumberUnaryAccess().getHyphenMinusKeyword_1_1());
     }
-)(
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNumberUnaryAccess().getOperandNumberTerminalExpressionParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getNumberUnaryAccess().getOperandNumberTerminalExpressionParserRuleCall_1_2_0()); 
 	    }
 		lv_operand_3_0=ruleNumberTerminalExpression		{
 	        if ($current==null) {

@@ -1207,39 +1207,35 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cBooleanTerminalExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cBooleanNegationAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Keyword cExclamationMarkKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
-		private final Assignment cOperandAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOperandBooleanTerminalExpressionParserRuleCall_1_1_0 = (RuleCall)cOperandAssignment_1_1.eContents().get(0);
+		private final Action cBooleanNegationAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cExclamationMarkKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cOperandBooleanTerminalExpressionParserRuleCall_1_2_0 = (RuleCall)cOperandAssignment_1_2.eContents().get(0);
 		
 		//BooleanUnary returns BooleanExpression:
-		//	BooleanTerminalExpression | ({BooleanNegation} "!") operand=BooleanTerminalExpression;
+		//	BooleanTerminalExpression | {BooleanNegation} "!" operand=BooleanTerminalExpression;
 		public ParserRule getRule() { return rule; }
 
-		//BooleanTerminalExpression | ({BooleanNegation} "!") operand=BooleanTerminalExpression
+		//BooleanTerminalExpression | {BooleanNegation} "!" operand=BooleanTerminalExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//BooleanTerminalExpression
 		public RuleCall getBooleanTerminalExpressionParserRuleCall_0() { return cBooleanTerminalExpressionParserRuleCall_0; }
 
-		//({BooleanNegation} "!") operand=BooleanTerminalExpression
+		//{BooleanNegation} "!" operand=BooleanTerminalExpression
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{BooleanNegation} "!"
-		public Group getGroup_1_0() { return cGroup_1_0; }
-
 		//{BooleanNegation}
-		public Action getBooleanNegationAction_1_0_0() { return cBooleanNegationAction_1_0_0; }
+		public Action getBooleanNegationAction_1_0() { return cBooleanNegationAction_1_0; }
 
 		//"!"
-		public Keyword getExclamationMarkKeyword_1_0_1() { return cExclamationMarkKeyword_1_0_1; }
+		public Keyword getExclamationMarkKeyword_1_1() { return cExclamationMarkKeyword_1_1; }
 
 		//operand=BooleanTerminalExpression
-		public Assignment getOperandAssignment_1_1() { return cOperandAssignment_1_1; }
+		public Assignment getOperandAssignment_1_2() { return cOperandAssignment_1_2; }
 
 		//BooleanTerminalExpression
-		public RuleCall getOperandBooleanTerminalExpressionParserRuleCall_1_1_0() { return cOperandBooleanTerminalExpressionParserRuleCall_1_1_0; }
+		public RuleCall getOperandBooleanTerminalExpressionParserRuleCall_1_2_0() { return cOperandBooleanTerminalExpressionParserRuleCall_1_2_0; }
 	}
 
 	public class BooleanTerminalExpressionElements extends AbstractParserRuleElementFinder {
@@ -1735,39 +1731,35 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNumberTerminalExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cNumberOppositionAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
-		private final Assignment cOperandAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOperandNumberTerminalExpressionParserRuleCall_1_1_0 = (RuleCall)cOperandAssignment_1_1.eContents().get(0);
+		private final Action cNumberOppositionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cOperandNumberTerminalExpressionParserRuleCall_1_2_0 = (RuleCall)cOperandAssignment_1_2.eContents().get(0);
 		
 		//NumberUnary returns NumberExpression:
-		//	NumberTerminalExpression | ({NumberOpposition} "-") operand=NumberTerminalExpression;
+		//	NumberTerminalExpression | {NumberOpposition} "-" operand=NumberTerminalExpression;
 		public ParserRule getRule() { return rule; }
 
-		//NumberTerminalExpression | ({NumberOpposition} "-") operand=NumberTerminalExpression
+		//NumberTerminalExpression | {NumberOpposition} "-" operand=NumberTerminalExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NumberTerminalExpression
 		public RuleCall getNumberTerminalExpressionParserRuleCall_0() { return cNumberTerminalExpressionParserRuleCall_0; }
 
-		//({NumberOpposition} "-") operand=NumberTerminalExpression
+		//{NumberOpposition} "-" operand=NumberTerminalExpression
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{NumberOpposition} "-"
-		public Group getGroup_1_0() { return cGroup_1_0; }
-
 		//{NumberOpposition}
-		public Action getNumberOppositionAction_1_0_0() { return cNumberOppositionAction_1_0_0; }
+		public Action getNumberOppositionAction_1_0() { return cNumberOppositionAction_1_0; }
 
 		//"-"
-		public Keyword getHyphenMinusKeyword_1_0_1() { return cHyphenMinusKeyword_1_0_1; }
+		public Keyword getHyphenMinusKeyword_1_1() { return cHyphenMinusKeyword_1_1; }
 
 		//operand=NumberTerminalExpression
-		public Assignment getOperandAssignment_1_1() { return cOperandAssignment_1_1; }
+		public Assignment getOperandAssignment_1_2() { return cOperandAssignment_1_2; }
 
 		//NumberTerminalExpression
-		public RuleCall getOperandNumberTerminalExpressionParserRuleCall_1_1_0() { return cOperandNumberTerminalExpressionParserRuleCall_1_1_0; }
+		public RuleCall getOperandNumberTerminalExpressionParserRuleCall_1_2_0() { return cOperandNumberTerminalExpressionParserRuleCall_1_2_0; }
 	}
 
 	public class NumberTerminalExpressionElements extends AbstractParserRuleElementFinder {
@@ -1796,12 +1788,12 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_2_2_3 = (Keyword)cGroup_2_2.eContents().get(3);
 		
 		//NumberTerminalExpression returns NumberExpression:
-		//	"(" NumberExpression ")" | {NumberLiteral} value=NumberLiteral | {NumberFunctionExpression} function=ID ("("
-		//	arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?;
+		//	"(" NumberExpression ")" | {NumberLiteral} value=NumberLiteral | / *({NumberTerminalSignal} value=[FlowDeclaration])|* /
+		//	{NumberFunctionExpression} function=ID ("(" arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?;
 		public ParserRule getRule() { return rule; }
 
-		//"(" NumberExpression ")" | {NumberLiteral} value=NumberLiteral | {NumberFunctionExpression} function=ID ("("
-		//arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?
+		//"(" NumberExpression ")" | {NumberLiteral} value=NumberLiteral | / *({NumberTerminalSignal} value=[FlowDeclaration])|* /
+		//{NumberFunctionExpression} function=ID ("(" arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" NumberExpression ")"
@@ -1828,10 +1820,11 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//NumberLiteral
 		public RuleCall getValueNumberLiteralParserRuleCall_1_1_0() { return cValueNumberLiteralParserRuleCall_1_1_0; }
 
-		//{NumberFunctionExpression} function=ID ("(" arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?
+		/// *({NumberTerminalSignal} value=[FlowDeclaration])|* / {NumberFunctionExpression} function=ID ("("
+		//arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//{NumberFunctionExpression}
+		/// *({NumberTerminalSignal} value=[FlowDeclaration])|* / {NumberFunctionExpression}
 		public Action getNumberFunctionExpressionAction_2_0() { return cNumberFunctionExpressionAction_2_0; }
 
 		//function=ID
@@ -2617,7 +2610,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BooleanUnary returns BooleanExpression:
-	//	BooleanTerminalExpression | ({BooleanNegation} "!") operand=BooleanTerminalExpression;
+	//	BooleanTerminalExpression | {BooleanNegation} "!" operand=BooleanTerminalExpression;
 	public BooleanUnaryElements getBooleanUnaryAccess() {
 		return (pBooleanUnary != null) ? pBooleanUnary : (pBooleanUnary = new BooleanUnaryElements());
 	}
@@ -2714,7 +2707,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NumberUnary returns NumberExpression:
-	//	NumberTerminalExpression | ({NumberOpposition} "-") operand=NumberTerminalExpression;
+	//	NumberTerminalExpression | {NumberOpposition} "-" operand=NumberTerminalExpression;
 	public NumberUnaryElements getNumberUnaryAccess() {
 		return (pNumberUnary != null) ? pNumberUnary : (pNumberUnary = new NumberUnaryElements());
 	}
@@ -2724,8 +2717,8 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NumberTerminalExpression returns NumberExpression:
-	//	"(" NumberExpression ")" | {NumberLiteral} value=NumberLiteral | {NumberFunctionExpression} function=ID ("("
-	//	arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?;
+	//	"(" NumberExpression ")" | {NumberLiteral} value=NumberLiteral | / *({NumberTerminalSignal} value=[FlowDeclaration])|* /
+	//	{NumberFunctionExpression} function=ID ("(" arguments+=NumberExpression ("," arguments+=NumberExpression)* ")")?;
 	public NumberTerminalExpressionElements getNumberTerminalExpressionAccess() {
 		return (pNumberTerminalExpression != null) ? pNumberTerminalExpression : (pNumberTerminalExpression = new NumberTerminalExpressionElements());
 	}

@@ -143,7 +143,7 @@ BooleanConjonction returns BooleanExpression:
 
 BooleanUnary returns BooleanExpression:
 	BooleanTerminalExpression |
-	(( {BooleanNegation} '!')  operand=BooleanTerminalExpression )
+	( {BooleanNegation} '!'  operand=BooleanTerminalExpression )
 ;
 
 BooleanTerminalExpression returns BooleanExpression:
@@ -185,11 +185,12 @@ NumberPower returns NumberExpression:
  
 NumberUnary returns NumberExpression:
 	NumberTerminalExpression |
-	(( {NumberOpposition} '-')  operand=NumberTerminalExpression );
+	( {NumberOpposition} '-'  operand=NumberTerminalExpression );
 
 NumberTerminalExpression returns NumberExpression:
   '(' NumberExpression ')' |
   ({NumberLiteral} value=NumberLiteral) |
+  /*({NumberTerminalSignal} value=[FlowDeclaration])|*/
   {NumberFunctionExpression} function=ID ('(' arguments+=NumberExpression (',' arguments+=NumberExpression)* ')')? 
 ;
 

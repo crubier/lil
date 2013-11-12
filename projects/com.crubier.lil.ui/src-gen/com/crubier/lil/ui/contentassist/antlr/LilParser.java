@@ -94,7 +94,6 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanConjonctionAccess().getGroup_1(), "rule__BooleanConjonction__Group_1__0");
 					put(grammarAccess.getBooleanConjonctionAccess().getGroup_1_0(), "rule__BooleanConjonction__Group_1_0__0");
 					put(grammarAccess.getBooleanUnaryAccess().getGroup_1(), "rule__BooleanUnary__Group_1__0");
-					put(grammarAccess.getBooleanUnaryAccess().getGroup_1_0(), "rule__BooleanUnary__Group_1_0__0");
 					put(grammarAccess.getBooleanTerminalExpressionAccess().getGroup_0(), "rule__BooleanTerminalExpression__Group_0__0");
 					put(grammarAccess.getBooleanTerminalExpressionAccess().getGroup_1(), "rule__BooleanTerminalExpression__Group_1__0");
 					put(grammarAccess.getNumberCompoundExpressionAccess().getGroup_1(), "rule__NumberCompoundExpression__Group_1__0");
@@ -118,7 +117,6 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberPowerAccess().getGroup_1(), "rule__NumberPower__Group_1__0");
 					put(grammarAccess.getNumberPowerAccess().getGroup_1_0(), "rule__NumberPower__Group_1_0__0");
 					put(grammarAccess.getNumberUnaryAccess().getGroup_1(), "rule__NumberUnary__Group_1__0");
-					put(grammarAccess.getNumberUnaryAccess().getGroup_1_0(), "rule__NumberUnary__Group_1_0__0");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getGroup_0(), "rule__NumberTerminalExpression__Group_0__0");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getGroup_1(), "rule__NumberTerminalExpression__Group_1__0");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getGroup_2(), "rule__NumberTerminalExpression__Group_2__0");
@@ -194,7 +192,7 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataTypeAccess().getBaseAssignment_1(), "rule__DataType__BaseAssignment_1");
 					put(grammarAccess.getBooleanDisjonctionAccess().getRightAssignment_1_1(), "rule__BooleanDisjonction__RightAssignment_1_1");
 					put(grammarAccess.getBooleanConjonctionAccess().getRightAssignment_1_1(), "rule__BooleanConjonction__RightAssignment_1_1");
-					put(grammarAccess.getBooleanUnaryAccess().getOperandAssignment_1_1(), "rule__BooleanUnary__OperandAssignment_1_1");
+					put(grammarAccess.getBooleanUnaryAccess().getOperandAssignment_1_2(), "rule__BooleanUnary__OperandAssignment_1_2");
 					put(grammarAccess.getBooleanTerminalExpressionAccess().getValueAssignment_1_1(), "rule__BooleanTerminalExpression__ValueAssignment_1_1");
 					put(grammarAccess.getNumberCompoundExpressionAccess().getIfAssignment_1_3(), "rule__NumberCompoundExpression__IfAssignment_1_3");
 					put(grammarAccess.getNumberCompoundExpressionAccess().getThenAssignment_1_5(), "rule__NumberCompoundExpression__ThenAssignment_1_5");
@@ -212,7 +210,7 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberAdditionAccess().getRightAssignment_1_1(), "rule__NumberAddition__RightAssignment_1_1");
 					put(grammarAccess.getNumberMultiplicationAccess().getRightAssignment_1_1(), "rule__NumberMultiplication__RightAssignment_1_1");
 					put(grammarAccess.getNumberPowerAccess().getRightAssignment_1_1(), "rule__NumberPower__RightAssignment_1_1");
-					put(grammarAccess.getNumberUnaryAccess().getOperandAssignment_1_1(), "rule__NumberUnary__OperandAssignment_1_1");
+					put(grammarAccess.getNumberUnaryAccess().getOperandAssignment_1_2(), "rule__NumberUnary__OperandAssignment_1_2");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getValueAssignment_1_1(), "rule__NumberTerminalExpression__ValueAssignment_1_1");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getFunctionAssignment_2_1(), "rule__NumberTerminalExpression__FunctionAssignment_2_1");
 					put(grammarAccess.getNumberTerminalExpressionAccess().getArgumentsAssignment_2_2_1(), "rule__NumberTerminalExpression__ArgumentsAssignment_2_2_1");
