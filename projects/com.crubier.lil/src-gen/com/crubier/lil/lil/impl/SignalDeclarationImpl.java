@@ -30,8 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getSource <em>Source</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getDestinations <em>Destinations</em>}</li>
  * </ul>
@@ -41,16 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implements SignalDeclaration
 {
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected DataType type;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -70,6 +60,16 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected DataType type;
 
   /**
    * The cached value of the '{@link #getSource() <em>Source</em>}' containment reference.
@@ -110,6 +110,29 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   protected EClass eStaticClass()
   {
     return LilPackage.Literals.SIGNAL_DECLARATION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -158,29 +181,6 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__TYPE, newType, newType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -275,10 +275,10 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LilPackage.SIGNAL_DECLARATION__TYPE:
-        return getType();
       case LilPackage.SIGNAL_DECLARATION__NAME:
         return getName();
+      case LilPackage.SIGNAL_DECLARATION__TYPE:
+        return getType();
       case LilPackage.SIGNAL_DECLARATION__SOURCE:
         return getSource();
       case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
@@ -298,11 +298,11 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LilPackage.SIGNAL_DECLARATION__TYPE:
-        setType((DataType)newValue);
-        return;
       case LilPackage.SIGNAL_DECLARATION__NAME:
         setName((String)newValue);
+        return;
+      case LilPackage.SIGNAL_DECLARATION__TYPE:
+        setType((DataType)newValue);
         return;
       case LilPackage.SIGNAL_DECLARATION__SOURCE:
         setSource((AccessibleEntity)newValue);
@@ -325,11 +325,11 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LilPackage.SIGNAL_DECLARATION__TYPE:
-        setType((DataType)null);
-        return;
       case LilPackage.SIGNAL_DECLARATION__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case LilPackage.SIGNAL_DECLARATION__TYPE:
+        setType((DataType)null);
         return;
       case LilPackage.SIGNAL_DECLARATION__SOURCE:
         setSource((AccessibleEntity)null);
@@ -351,10 +351,10 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LilPackage.SIGNAL_DECLARATION__TYPE:
-        return type != null;
       case LilPackage.SIGNAL_DECLARATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case LilPackage.SIGNAL_DECLARATION__TYPE:
+        return type != null;
       case LilPackage.SIGNAL_DECLARATION__SOURCE:
         return source != null;
       case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:

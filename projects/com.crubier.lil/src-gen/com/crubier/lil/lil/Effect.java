@@ -31,12 +31,12 @@ public interface Effect extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(Expression)
+   * @see #setValue(XExpression)
    * @see com.crubier.lil.lil.LilPackage#getEffect_Value()
    * @model containment="true"
    * @generated
    */
-  Expression getValue();
+  XExpression getValue();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.Effect#getValue <em>Value</em>}' containment reference.
@@ -46,6 +46,6 @@ public interface Effect extends EObject
    * @see #getValue()
    * @generated
    */
-  void setValue(Expression value);
+  void setValue(XExpression value);
 
 } // Effect

@@ -3,8 +3,8 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.Effect;
-import com.crubier.lil.lil.Expression;
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -38,7 +38,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
    * @generated
    * @ordered
    */
-  protected Expression value;
+  protected XExpression value;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getValue()
+  public XExpression getValue()
   {
     return value;
   }
@@ -76,9 +76,9 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs)
+  public NotificationChain basicSetValue(XExpression newValue, NotificationChain msgs)
   {
-    Expression oldValue = value;
+    XExpression oldValue = value;
     value = newValue;
     if (eNotificationRequired())
     {
@@ -93,7 +93,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(Expression newValue)
+  public void setValue(XExpression newValue)
   {
     if (newValue != value)
     {
@@ -152,7 +152,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
     switch (featureID)
     {
       case LilPackage.EFFECT__VALUE:
-        setValue((Expression)newValue);
+        setValue((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,7 +169,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
     switch (featureID)
     {
       case LilPackage.EFFECT__VALUE:
-        setValue((Expression)null);
+        setValue((XExpression)null);
         return;
     }
     super.eUnset(featureID);

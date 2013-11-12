@@ -64,7 +64,7 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     switch (eClass.getClassifierID())
     {
-      case LilPackage.MODEL: return createModel();
+      case LilPackage.LIL_MODEL: return createLilModel();
       case LilPackage.INTERACTOR_DECLARATION: return createInteractorDeclaration();
       case LilPackage.ACCESSIBLE_ENTITY: return createAccessibleEntity();
       case LilPackage.ENTITY: return createEntity();
@@ -89,33 +89,26 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.ALWAYS_EFFECT: return createAlwaysEffect();
       case LilPackage.SET_EFFECT: return createSetEffect();
       case LilPackage.TRIGGER_EFFECT: return createTriggerEffect();
-      case LilPackage.EXPRESSION: return createExpression();
-      case LilPackage.DATA_TYPE_DECLARATION: return createDataTypeDeclaration();
-      case LilPackage.FIELD: return createField();
+      case LilPackage.DATA_TYPE_COMPOUND_DECLARATION: return createDataTypeCompoundDeclaration();
+      case LilPackage.DATA_TYPE_COMPOUND_FIELD: return createDataTypeCompoundField();
       case LilPackage.DATA_TYPE: return createDataType();
-      case LilPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
-      case LilPackage.NUMBER_EXPRESSION: return createNumberExpression();
-      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER_CASE: return createNumberSwitchExpressionNumberCase();
-      case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT_CASE: return createNumberSwitchExpressionTextCase();
-      case LilPackage.TEXT_EXPRESSION: return createTextExpression();
-      case LilPackage.BOOLEAN_DISJONCTION: return createBooleanDisjonction();
-      case LilPackage.BOOLEAN_CONJONCTION: return createBooleanConjonction();
-      case LilPackage.BOOLEAN_NEGATION: return createBooleanNegation();
-      case LilPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
-      case LilPackage.NUMBER_IF_EXPRESSION: return createNumberIfExpression();
-      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER: return createNumberSwitchExpressionNumber();
-      case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT: return createNumberSwitchExpressionText();
-      case LilPackage.NUMBER_ADDITION: return createNumberAddition();
-      case LilPackage.NUMBER_SUBSTRACTION: return createNumberSubstraction();
-      case LilPackage.NUMBER_MULTIPLICATION: return createNumberMultiplication();
-      case LilPackage.NUMBER_DIVISION: return createNumberDivision();
-      case LilPackage.NUMBER_MODULO: return createNumberModulo();
-      case LilPackage.NUMBER_POWER: return createNumberPower();
-      case LilPackage.NUMBER_OPPOSITION: return createNumberOpposition();
-      case LilPackage.NUMBER_LITERAL: return createNumberLiteral();
-      case LilPackage.NUMBER_FUNCTION_EXPRESSION: return createNumberFunctionExpression();
-      case LilPackage.TEXT_JOIN: return createTextJoin();
-      case LilPackage.TEXT_LITERAL: return createTextLiteral();
+      case LilPackage.XEXPRESSION: return createXExpression();
+      case LilPackage.XCOLLECTION_LITERAL: return createXCollectionLiteral();
+      case LilPackage.XSET_LITERAL: return createXSetLiteral();
+      case LilPackage.XLIST_LITERAL: return createXListLiteral();
+      case LilPackage.XCASE_PART: return createXCasePart();
+      case LilPackage.DATA_TYPE_COMPOUND: return createDataTypeCompound();
+      case LilPackage.DATA_TYPE_BASE: return createDataTypeBase();
+      case LilPackage.XBINARY_OPERATION: return createXBinaryOperation();
+      case LilPackage.XUNARY_OPERATION: return createXUnaryOperation();
+      case LilPackage.XIF_EXPRESSION: return createXIfExpression();
+      case LilPackage.XSWITCH_EXPRESSION: return createXSwitchExpression();
+      case LilPackage.XFOR_EACH_EXPRESSION: return createXForEachExpression();
+      case LilPackage.XFUNCTION_CALL_EXPRESSION: return createXFunctionCallExpression();
+      case LilPackage.XBOOLEAN_LITERAL: return createXBooleanLiteral();
+      case LilPackage.XNULL_LITERAL: return createXNullLiteral();
+      case LilPackage.XNUMBER_LITERAL: return createXNumberLiteral();
+      case LilPackage.XSTRING_LITERAL: return createXStringLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -126,10 +119,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Model createModel()
+  public LilModel createLilModel()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    LilModelImpl lilModel = new LilModelImpl();
+    return lilModel;
   }
 
   /**
@@ -401,10 +394,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression createExpression()
+  public DataTypeCompoundDeclaration createDataTypeCompoundDeclaration()
   {
-    ExpressionImpl expression = new ExpressionImpl();
-    return expression;
+    DataTypeCompoundDeclarationImpl dataTypeCompoundDeclaration = new DataTypeCompoundDeclarationImpl();
+    return dataTypeCompoundDeclaration;
   }
 
   /**
@@ -412,21 +405,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataTypeDeclaration createDataTypeDeclaration()
+  public DataTypeCompoundField createDataTypeCompoundField()
   {
-    DataTypeDeclarationImpl dataTypeDeclaration = new DataTypeDeclarationImpl();
-    return dataTypeDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Field createField()
-  {
-    FieldImpl field = new FieldImpl();
-    return field;
+    DataTypeCompoundFieldImpl dataTypeCompoundField = new DataTypeCompoundFieldImpl();
+    return dataTypeCompoundField;
   }
 
   /**
@@ -445,10 +427,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanExpression createBooleanExpression()
+  public XExpression createXExpression()
   {
-    BooleanExpressionImpl booleanExpression = new BooleanExpressionImpl();
-    return booleanExpression;
+    XExpressionImpl xExpression = new XExpressionImpl();
+    return xExpression;
   }
 
   /**
@@ -456,10 +438,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberExpression createNumberExpression()
+  public XCollectionLiteral createXCollectionLiteral()
   {
-    NumberExpressionImpl numberExpression = new NumberExpressionImpl();
-    return numberExpression;
+    XCollectionLiteralImpl xCollectionLiteral = new XCollectionLiteralImpl();
+    return xCollectionLiteral;
   }
 
   /**
@@ -467,10 +449,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberSwitchExpressionNumberCase createNumberSwitchExpressionNumberCase()
+  public XSetLiteral createXSetLiteral()
   {
-    NumberSwitchExpressionNumberCaseImpl numberSwitchExpressionNumberCase = new NumberSwitchExpressionNumberCaseImpl();
-    return numberSwitchExpressionNumberCase;
+    XSetLiteralImpl xSetLiteral = new XSetLiteralImpl();
+    return xSetLiteral;
   }
 
   /**
@@ -478,10 +460,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberSwitchExpressionTextCase createNumberSwitchExpressionTextCase()
+  public XListLiteral createXListLiteral()
   {
-    NumberSwitchExpressionTextCaseImpl numberSwitchExpressionTextCase = new NumberSwitchExpressionTextCaseImpl();
-    return numberSwitchExpressionTextCase;
+    XListLiteralImpl xListLiteral = new XListLiteralImpl();
+    return xListLiteral;
   }
 
   /**
@@ -489,10 +471,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TextExpression createTextExpression()
+  public XCasePart createXCasePart()
   {
-    TextExpressionImpl textExpression = new TextExpressionImpl();
-    return textExpression;
+    XCasePartImpl xCasePart = new XCasePartImpl();
+    return xCasePart;
   }
 
   /**
@@ -500,10 +482,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanDisjonction createBooleanDisjonction()
+  public DataTypeCompound createDataTypeCompound()
   {
-    BooleanDisjonctionImpl booleanDisjonction = new BooleanDisjonctionImpl();
-    return booleanDisjonction;
+    DataTypeCompoundImpl dataTypeCompound = new DataTypeCompoundImpl();
+    return dataTypeCompound;
   }
 
   /**
@@ -511,10 +493,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanConjonction createBooleanConjonction()
+  public DataTypeBase createDataTypeBase()
   {
-    BooleanConjonctionImpl booleanConjonction = new BooleanConjonctionImpl();
-    return booleanConjonction;
+    DataTypeBaseImpl dataTypeBase = new DataTypeBaseImpl();
+    return dataTypeBase;
   }
 
   /**
@@ -522,10 +504,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanNegation createBooleanNegation()
+  public XBinaryOperation createXBinaryOperation()
   {
-    BooleanNegationImpl booleanNegation = new BooleanNegationImpl();
-    return booleanNegation;
+    XBinaryOperationImpl xBinaryOperation = new XBinaryOperationImpl();
+    return xBinaryOperation;
   }
 
   /**
@@ -533,10 +515,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanLiteral createBooleanLiteral()
+  public XUnaryOperation createXUnaryOperation()
   {
-    BooleanLiteralImpl booleanLiteral = new BooleanLiteralImpl();
-    return booleanLiteral;
+    XUnaryOperationImpl xUnaryOperation = new XUnaryOperationImpl();
+    return xUnaryOperation;
   }
 
   /**
@@ -544,10 +526,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberIfExpression createNumberIfExpression()
+  public XIfExpression createXIfExpression()
   {
-    NumberIfExpressionImpl numberIfExpression = new NumberIfExpressionImpl();
-    return numberIfExpression;
+    XIfExpressionImpl xIfExpression = new XIfExpressionImpl();
+    return xIfExpression;
   }
 
   /**
@@ -555,10 +537,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberSwitchExpressionNumber createNumberSwitchExpressionNumber()
+  public XSwitchExpression createXSwitchExpression()
   {
-    NumberSwitchExpressionNumberImpl numberSwitchExpressionNumber = new NumberSwitchExpressionNumberImpl();
-    return numberSwitchExpressionNumber;
+    XSwitchExpressionImpl xSwitchExpression = new XSwitchExpressionImpl();
+    return xSwitchExpression;
   }
 
   /**
@@ -566,10 +548,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberSwitchExpressionText createNumberSwitchExpressionText()
+  public XForEachExpression createXForEachExpression()
   {
-    NumberSwitchExpressionTextImpl numberSwitchExpressionText = new NumberSwitchExpressionTextImpl();
-    return numberSwitchExpressionText;
+    XForEachExpressionImpl xForEachExpression = new XForEachExpressionImpl();
+    return xForEachExpression;
   }
 
   /**
@@ -577,10 +559,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberAddition createNumberAddition()
+  public XFunctionCallExpression createXFunctionCallExpression()
   {
-    NumberAdditionImpl numberAddition = new NumberAdditionImpl();
-    return numberAddition;
+    XFunctionCallExpressionImpl xFunctionCallExpression = new XFunctionCallExpressionImpl();
+    return xFunctionCallExpression;
   }
 
   /**
@@ -588,10 +570,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberSubstraction createNumberSubstraction()
+  public XBooleanLiteral createXBooleanLiteral()
   {
-    NumberSubstractionImpl numberSubstraction = new NumberSubstractionImpl();
-    return numberSubstraction;
+    XBooleanLiteralImpl xBooleanLiteral = new XBooleanLiteralImpl();
+    return xBooleanLiteral;
   }
 
   /**
@@ -599,10 +581,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberMultiplication createNumberMultiplication()
+  public XNullLiteral createXNullLiteral()
   {
-    NumberMultiplicationImpl numberMultiplication = new NumberMultiplicationImpl();
-    return numberMultiplication;
+    XNullLiteralImpl xNullLiteral = new XNullLiteralImpl();
+    return xNullLiteral;
   }
 
   /**
@@ -610,10 +592,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberDivision createNumberDivision()
+  public XNumberLiteral createXNumberLiteral()
   {
-    NumberDivisionImpl numberDivision = new NumberDivisionImpl();
-    return numberDivision;
+    XNumberLiteralImpl xNumberLiteral = new XNumberLiteralImpl();
+    return xNumberLiteral;
   }
 
   /**
@@ -621,76 +603,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberModulo createNumberModulo()
+  public XStringLiteral createXStringLiteral()
   {
-    NumberModuloImpl numberModulo = new NumberModuloImpl();
-    return numberModulo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NumberPower createNumberPower()
-  {
-    NumberPowerImpl numberPower = new NumberPowerImpl();
-    return numberPower;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NumberOpposition createNumberOpposition()
-  {
-    NumberOppositionImpl numberOpposition = new NumberOppositionImpl();
-    return numberOpposition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NumberLiteral createNumberLiteral()
-  {
-    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
-    return numberLiteral;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NumberFunctionExpression createNumberFunctionExpression()
-  {
-    NumberFunctionExpressionImpl numberFunctionExpression = new NumberFunctionExpressionImpl();
-    return numberFunctionExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TextJoin createTextJoin()
-  {
-    TextJoinImpl textJoin = new TextJoinImpl();
-    return textJoin;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TextLiteral createTextLiteral()
-  {
-    TextLiteralImpl textLiteral = new TextLiteralImpl();
-    return textLiteral;
+    XStringLiteralImpl xStringLiteral = new XStringLiteralImpl();
+    return xStringLiteral;
   }
 
   /**

@@ -25,7 +25,7 @@ public class LilParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParse
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "LilModel";
 	}
 	
 	public LilGrammarAccess getGrammarAccess() {
