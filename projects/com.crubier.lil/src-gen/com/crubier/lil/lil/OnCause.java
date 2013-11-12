@@ -30,12 +30,12 @@ public interface OnCause extends Cause
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Event</em>' containment reference.
-   * @see #setEvent(EventReception)
+   * @see #setEvent(SignalReception)
    * @see com.crubier.lil.lil.LilPackage#getOnCause_Event()
    * @model containment="true"
    * @generated
    */
-  EventReception getEvent();
+  SignalReception getEvent();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.OnCause#getEvent <em>Event</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface OnCause extends Cause
    * @see #getEvent()
    * @generated
    */
-  void setEvent(EventReception value);
+  void setEvent(SignalReception value);
 
 } // OnCause

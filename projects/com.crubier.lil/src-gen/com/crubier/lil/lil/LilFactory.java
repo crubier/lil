@@ -50,33 +50,6 @@ public interface LilFactory extends EFactory
   AccessibleEntity createAccessibleEntity();
 
   /**
-   * Returns a new object of class '<em>Entity</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entity</em>'.
-   * @generated
-   */
-  Entity createEntity();
-
-  /**
-   * Returns a new object of class '<em>Actor</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Actor</em>'.
-   * @generated
-   */
-  Actor createActor();
-
-  /**
-   * Returns a new object of class '<em>Component</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component</em>'.
-   * @generated
-   */
-  Component createComponent();
-
-  /**
    * Returns a new object of class '<em>Entity Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -113,40 +86,22 @@ public interface LilFactory extends EFactory
   ComponentDeclaration createComponentDeclaration();
 
   /**
-   * Returns a new object of class '<em>Event Reception</em>'.
+   * Returns a new object of class '<em>Signal Reception</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Reception</em>'.
+   * @return a new object of class '<em>Signal Reception</em>'.
    * @generated
    */
-  EventReception createEventReception();
+  SignalReception createSignalReception();
 
   /**
-   * Returns a new object of class '<em>Flow Reception</em>'.
+   * Returns a new object of class '<em>Signal Emission</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Flow Reception</em>'.
+   * @return a new object of class '<em>Signal Emission</em>'.
    * @generated
    */
-  FlowReception createFlowReception();
-
-  /**
-   * Returns a new object of class '<em>Event Emission</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Emission</em>'.
-   * @generated
-   */
-  EventEmission createEventEmission();
-
-  /**
-   * Returns a new object of class '<em>Flow Emission</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Flow Emission</em>'.
-   * @generated
-   */
-  FlowEmission createFlowEmission();
+  SignalEmission createSignalEmission();
 
   /**
    * Returns a new object of class '<em>Signal Declaration</em>'.
@@ -158,22 +113,40 @@ public interface LilFactory extends EFactory
   SignalDeclaration createSignalDeclaration();
 
   /**
-   * Returns a new object of class '<em>Event Declaration</em>'.
+   * Returns a new object of class '<em>Signal Alias</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event Declaration</em>'.
+   * @return a new object of class '<em>Signal Alias</em>'.
    * @generated
    */
-  EventDeclaration createEventDeclaration();
+  SignalAlias createSignalAlias();
 
   /**
-   * Returns a new object of class '<em>Flow Declaration</em>'.
+   * Returns a new object of class '<em>Data Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Flow Declaration</em>'.
+   * @return a new object of class '<em>Data Type</em>'.
    * @generated
    */
-  FlowDeclaration createFlowDeclaration();
+  DataType createDataType();
+
+  /**
+   * Returns a new object of class '<em>Data Type Compound Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Compound Declaration</em>'.
+   * @generated
+   */
+  DataTypeCompoundDeclaration createDataTypeCompoundDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Data Type Compound Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Compound Field</em>'.
+   * @generated
+   */
+  DataTypeCompoundField createDataTypeCompoundField();
 
   /**
    * Returns a new object of class '<em>Behavior Declaration</em>'.
@@ -246,33 +219,6 @@ public interface LilFactory extends EFactory
    * @generated
    */
   TriggerEffect createTriggerEffect();
-
-  /**
-   * Returns a new object of class '<em>Data Type Compound Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Compound Declaration</em>'.
-   * @generated
-   */
-  DataTypeCompoundDeclaration createDataTypeCompoundDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Data Type Compound Field</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Compound Field</em>'.
-   * @generated
-   */
-  DataTypeCompoundField createDataTypeCompoundField();
-
-  /**
-   * Returns a new object of class '<em>Data Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type</em>'.
-   * @generated
-   */
-  DataType createDataType();
 
   /**
    * Returns a new object of class '<em>XExpression</em>'.

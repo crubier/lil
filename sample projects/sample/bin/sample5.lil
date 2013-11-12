@@ -27,16 +27,11 @@ interactor ControlPanel :
 	current: number flow 
 
 	
-	on init : 	always current = null
-	
-	on init : 	always x = null
-	
+	on init : 	always current = if(false) "yes" else (-5 * 3) + (2 ~ (5 + 2)) <3 <3
+	on increment : set val to theGauge = switch (5) case +1:false case 2:true default : false
 	
 	
 	
-				
-	//on select : set selection = if((5 > (if(true) 4 else 3)) and false) 1+1*(switch(4) case 3:2 default:1) else 6
-		
-				
+	
 	
 	

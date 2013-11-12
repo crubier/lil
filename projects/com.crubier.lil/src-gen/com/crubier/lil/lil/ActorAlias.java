@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.crubier.lil.lil.ActorAlias#getSource <em>Source</em>}</li>
- *   <li>{@link com.crubier.lil.lil.ActorAlias#getRemote <em>Remote</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.ActorAlias#getAlias <em>Alias</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,55 +24,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface ActorAlias extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Source</b></em>' containment reference.
+   * Returns the value of the '<em><b>Source</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Source</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Source</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Source</em>' containment reference.
-   * @see #setSource(Actor)
+   * @return the value of the '<em>Source</em>' reference.
+   * @see #setSource(ActorDeclaration)
    * @see com.crubier.lil.lil.LilPackage#getActorAlias_Source()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Actor getSource();
+  ActorDeclaration getSource();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.ActorAlias#getSource <em>Source</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.ActorAlias#getSource <em>Source</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Source</em>' containment reference.
+   * @param value the new value of the '<em>Source</em>' reference.
    * @see #getSource()
    * @generated
    */
-  void setSource(Actor value);
+  void setSource(ActorDeclaration value);
 
   /**
-   * Returns the value of the '<em><b>Remote</b></em>' containment reference.
+   * Returns the value of the '<em><b>Alias</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Remote</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Alias</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Remote</em>' containment reference.
-   * @see #setRemote(Actor)
-   * @see com.crubier.lil.lil.LilPackage#getActorAlias_Remote()
-   * @model containment="true"
+   * @return the value of the '<em>Alias</em>' reference.
+   * @see #setAlias(ActorDeclaration)
+   * @see com.crubier.lil.lil.LilPackage#getActorAlias_Alias()
+   * @model
    * @generated
    */
-  Actor getRemote();
+  ActorDeclaration getAlias();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.ActorAlias#getRemote <em>Remote</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.ActorAlias#getAlias <em>Alias</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Remote</em>' containment reference.
-   * @see #getRemote()
+   * @param value the new value of the '<em>Alias</em>' reference.
+   * @see #getAlias()
    * @generated
    */
-  void setRemote(Actor value);
+  void setAlias(ActorDeclaration value);
 
 } // ActorAlias

@@ -3,13 +3,14 @@
  */
 package com.crubier.lil.scoping
 
-import com.crubier.lil.lil.FlowEmission
+import com.crubier.lil.lil.SignalEmission
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
 import org.eclipse.xtext.scoping.Scopes
 import com.crubier.lil.lil.InteractorDeclaration
 import org.eclipse.emf.ecore.EObject
+import com.crubier.lil.lil.ComponentDeclaration
 
 /**
  * This class contains custom scoping description.
@@ -22,7 +23,7 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
 	
 	
 	// flow emission instance scope : either a signal defined in this interactor, or a signal defined in the interactor specified by the "to <destination>" statement
-  	 def public IScope scope_FlowEmission_instance(FlowEmission flowemission, EReference ref) {
+  	 def public IScope scope_FlowEmission_instance(SignalEmission flowemission, EReference ref) {
         if(flowemission.destination == null) {
         	var EObject temp = flowemission;
         	while(!(temp instanceof InteractorDeclaration)) {
@@ -31,7 +32,7 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
         	Scopes.scopeFor(temp.eContents);
         }
         else {
-        	Scopes.scopeFor(flowemission.destination.instance.interactor.eContents);
+        	Scopes.scopeFor((flowemission.destination.source.specific as ComponentDeclaration).interactor.eContents);
         }
     }
 

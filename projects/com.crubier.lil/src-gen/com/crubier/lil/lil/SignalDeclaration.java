@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getName <em>Name</em>}</li>
  *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getMode <em>Mode</em>}</li>
  *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getSource <em>Source</em>}</li>
  *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getDestinations <em>Destinations</em>}</li>
  * </ul>
@@ -80,6 +81,32 @@ public interface SignalDeclaration extends EObject
   void setType(DataType value);
 
   /**
+   * Returns the value of the '<em><b>Mode</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Mode</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mode</em>' attribute.
+   * @see #setMode(String)
+   * @see com.crubier.lil.lil.LilPackage#getSignalDeclaration_Mode()
+   * @model
+   * @generated
+   */
+  String getMode();
+
+  /**
+   * Sets the value of the '{@link com.crubier.lil.lil.SignalDeclaration#getMode <em>Mode</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Mode</em>' attribute.
+   * @see #getMode()
+   * @generated
+   */
+  void setMode(String value);
+
+  /**
    * Returns the value of the '<em><b>Source</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -88,12 +115,12 @@ public interface SignalDeclaration extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source</em>' containment reference.
-   * @see #setSource(AccessibleEntity)
+   * @see #setSource(SignalAlias)
    * @see com.crubier.lil.lil.LilPackage#getSignalDeclaration_Source()
    * @model containment="true"
    * @generated
    */
-  AccessibleEntity getSource();
+  SignalAlias getSource();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.SignalDeclaration#getSource <em>Source</em>}' containment reference.
@@ -103,11 +130,11 @@ public interface SignalDeclaration extends EObject
    * @see #getSource()
    * @generated
    */
-  void setSource(AccessibleEntity value);
+  void setSource(SignalAlias value);
 
   /**
    * Returns the value of the '<em><b>Destinations</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.AccessibleEntity}.
+   * The list contents are of type {@link com.crubier.lil.lil.SignalAlias}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Destinations</em>' containment reference list isn't clear,
@@ -119,6 +146,6 @@ public interface SignalDeclaration extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<AccessibleEntity> getDestinations();
+  EList<SignalAlias> getDestinations();
 
 } // SignalDeclaration

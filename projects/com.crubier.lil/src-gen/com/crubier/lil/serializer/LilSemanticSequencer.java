@@ -1,29 +1,24 @@
 package com.crubier.lil.serializer;
 
 import com.crubier.lil.lil.AccessibleEntity;
-import com.crubier.lil.lil.Actor;
 import com.crubier.lil.lil.ActorAlias;
 import com.crubier.lil.lil.ActorDeclaration;
 import com.crubier.lil.lil.AlwaysEffect;
 import com.crubier.lil.lil.BehaviorDeclaration;
-import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.ComponentDeclaration;
 import com.crubier.lil.lil.DataTypeBase;
 import com.crubier.lil.lil.DataTypeCompound;
 import com.crubier.lil.lil.DataTypeCompoundDeclaration;
 import com.crubier.lil.lil.DataTypeCompoundField;
-import com.crubier.lil.lil.Entity;
-import com.crubier.lil.lil.EventDeclaration;
-import com.crubier.lil.lil.EventEmission;
-import com.crubier.lil.lil.EventReception;
-import com.crubier.lil.lil.FlowDeclaration;
-import com.crubier.lil.lil.FlowEmission;
-import com.crubier.lil.lil.FlowReception;
 import com.crubier.lil.lil.InteractorDeclaration;
 import com.crubier.lil.lil.LilModel;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.OnCause;
 import com.crubier.lil.lil.SetEffect;
+import com.crubier.lil.lil.SignalAlias;
+import com.crubier.lil.lil.SignalDeclaration;
+import com.crubier.lil.lil.SignalEmission;
+import com.crubier.lil.lil.SignalReception;
 import com.crubier.lil.lil.TriggerEffect;
 import com.crubier.lil.lil.WhenCause;
 import com.crubier.lil.lil.XBinaryOperation;
@@ -68,12 +63,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.ACTOR:
-				if(context == grammarAccess.getActorRule()) {
-					sequence_Actor(context, (Actor) semanticObject); 
-					return; 
-				}
-				else break;
 			case LilPackage.ACTOR_ALIAS:
 				if(context == grammarAccess.getActorAliasRule()) {
 					sequence_ActorAlias(context, (ActorAlias) semanticObject); 
@@ -97,12 +86,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.BEHAVIOR_DECLARATION:
 				if(context == grammarAccess.getBehaviorDeclarationRule()) {
 					sequence_BehaviorDeclaration(context, (BehaviorDeclaration) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.COMPONENT:
-				if(context == grammarAccess.getComponentRule()) {
-					sequence_Component(context, (Component) semanticObject); 
 					return; 
 				}
 				else break;
@@ -137,50 +120,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.ENTITY:
-				if(context == grammarAccess.getEntityRule()) {
-					sequence_Entity(context, (Entity) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.EVENT_DECLARATION:
-				if(context == grammarAccess.getEventDeclarationRule() ||
-				   context == grammarAccess.getSignalDeclarationRule()) {
-					sequence_EventDeclaration(context, (EventDeclaration) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.EVENT_EMISSION:
-				if(context == grammarAccess.getEventEmissionRule()) {
-					sequence_EventEmission(context, (EventEmission) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.EVENT_RECEPTION:
-				if(context == grammarAccess.getEventReceptionRule()) {
-					sequence_EventReception(context, (EventReception) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.FLOW_DECLARATION:
-				if(context == grammarAccess.getFlowDeclarationRule() ||
-				   context == grammarAccess.getSignalDeclarationRule()) {
-					sequence_FlowDeclaration(context, (FlowDeclaration) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.FLOW_EMISSION:
-				if(context == grammarAccess.getFlowEmissionRule()) {
-					sequence_FlowEmission(context, (FlowEmission) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.FLOW_RECEPTION:
-				if(context == grammarAccess.getFlowReceptionRule()) {
-					sequence_FlowReception(context, (FlowReception) semanticObject); 
-					return; 
-				}
-				else break;
 			case LilPackage.INTERACTOR_DECLARATION:
 				if(context == grammarAccess.getInteractorDeclarationRule()) {
 					sequence_InteractorDeclaration(context, (InteractorDeclaration) semanticObject); 
@@ -207,6 +146,30 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case LilPackage.SIGNAL_ALIAS:
+				if(context == grammarAccess.getSignalAliasRule()) {
+					sequence_SignalAlias(context, (SignalAlias) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.SIGNAL_DECLARATION:
+				if(context == grammarAccess.getSignalDeclarationRule()) {
+					sequence_SignalDeclaration(context, (SignalDeclaration) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.SIGNAL_EMISSION:
+				if(context == grammarAccess.getSignalEmissionRule()) {
+					sequence_SignalEmission(context, (SignalEmission) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.SIGNAL_RECEPTION:
+				if(context == grammarAccess.getSignalReceptionRule()) {
+					sequence_SignalReception(context, (SignalReception) semanticObject); 
+					return; 
+				}
+				else break;
 			case LilPackage.TRIGGER_EFFECT:
 				if(context == grammarAccess.getEffectRule() ||
 				   context == grammarAccess.getTriggerEffectRule()) {
@@ -222,56 +185,47 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case LilPackage.XBINARY_OPERATION:
-				if(context == grammarAccess.getXOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()) {
-					sequence_XAdditiveExpression_XAndExpression_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXAdditiveExpressionRule() ||
-				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()) {
-					sequence_XAdditiveExpression_XAndExpression_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()) {
-					sequence_XAndExpression_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXExpressionRule() ||
+				if(context == grammarAccess.getXAdditiveExpressionRule() ||
+				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
+				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
+				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOrExpressionRule() ||
 				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
+				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
-					sequence_XAndExpression_XEqualityExpression_XOrExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXAndExpressionRule() ||
-				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()) {
-					sequence_XAndExpression_XEqualityExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXEqualityExpressionRule() ||
-				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0()) {
-					sequence_XEqualityExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getXRelationalExpressionRule()) {
-					sequence_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
+					sequence_XAdditiveExpression_XAndExpression_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(context, (XBinaryOperation) semanticObject); 
 					return; 
 				}
 				else break;
 			case LilPackage.XBOOLEAN_LITERAL:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXBooleanLiteralRule() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
 					sequence_XBooleanLiteral(context, (XBooleanLiteral) semanticObject); 
@@ -287,12 +241,21 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XFOR_EACH_EXPRESSION:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXForEachExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
 					sequence_XForEachExpression(context, (XForEachExpression) semanticObject); 
@@ -302,12 +265,21 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XFUNCTION_CALL_EXPRESSION:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXFunctionCallExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
 					sequence_XFunctionCallExpression(context, (XFunctionCallExpression) semanticObject); 
@@ -317,12 +289,21 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XIF_EXPRESSION:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXIfExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
 					sequence_XIfExpression(context, (XIfExpression) semanticObject); 
@@ -332,14 +313,23 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XLIST_LITERAL:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXCollectionLiteralRule() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXListLiteralRule() ||
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
 					sequence_XListLiteral(context, (XListLiteral) semanticObject); 
@@ -349,29 +339,47 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XNULL_LITERAL:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXNullLiteralRule() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
-					sequence_XRelationalExpression_XBinaryOperation_1_0_0_0(context, (XNullLiteral) semanticObject); 
+					sequence_XNullLiteral(context, (XNullLiteral) semanticObject); 
 					return; 
 				}
 				else break;
 			case LilPackage.XNUMBER_LITERAL:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXNumberLiteralRule() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
 					sequence_XNumberLiteral(context, (XNumberLiteral) semanticObject); 
@@ -381,13 +389,22 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XSET_LITERAL:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXCollectionLiteralRule() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXSetLiteralRule() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
@@ -398,12 +415,21 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XSTRING_LITERAL:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXLiteralRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXStringLiteralRule() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
@@ -414,11 +440,20 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XSWITCH_EXPRESSION:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
 				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXSwitchExpressionRule() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
@@ -429,10 +464,20 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XUNARY_OPERATION:
 				if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
 				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
+				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
 				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
 					sequence_XUnaryOperation(context, (XUnaryOperation) semanticObject); 
@@ -445,16 +490,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         generic='any' | 
-	 *         generic='self' | 
-	 *         generic='other' | 
-	 *         generic='parent' | 
-	 *         generic='child' | 
-	 *         generic='all' | 
-	 *         generic='actors' | 
-	 *         specific=Entity
-	 *     )
+	 *     (generic=GenericEntity | specific=[EntityDeclaration|ID])
 	 */
 	protected void sequence_AccessibleEntity(EObject context, AccessibleEntity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -463,19 +499,19 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (source=Actor remote=Actor)
+	 *     (source=[ActorDeclaration|ID] alias=[ActorDeclaration|ID])
 	 */
 	protected void sequence_ActorAlias(EObject context, ActorAlias semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_ALIAS__SOURCE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_ALIAS__SOURCE));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_ALIAS__REMOTE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_ALIAS__REMOTE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_ALIAS__ALIAS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_ALIAS__ALIAS));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActorAliasAccess().getSourceActorParserRuleCall_0_0(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getActorAliasAccess().getRemoteActorParserRuleCall_2_0(), semanticObject.getRemote());
+		feeder.accept(grammarAccess.getActorAliasAccess().getSourceActorDeclarationIDTerminalRuleCall_0_0_1(), semanticObject.getSource());
+		feeder.accept(grammarAccess.getActorAliasAccess().getAliasActorDeclarationIDTerminalRuleCall_2_0_1(), semanticObject.getAlias());
 		feeder.finish();
 	}
 	
@@ -498,34 +534,18 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     instance=[ActorDeclaration|ID]
-	 */
-	protected void sequence_Actor(EObject context, Actor semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR__INSTANCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR__INSTANCE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActorAccess().getInstanceActorDeclarationIDTerminalRuleCall_0_1(), semanticObject.getInstance());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (target=FlowEmission value=XExpression)
+	 *     (target=SignalEmission value=XExpression)
 	 */
 	protected void sequence_AlwaysEffect(EObject context, AlwaysEffect semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__TARGET));
 			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__VALUE));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ALWAYS_EFFECT__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ALWAYS_EFFECT__TARGET));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAlwaysEffectAccess().getTargetFlowEmissionParserRuleCall_1_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getAlwaysEffectAccess().getTargetSignalEmissionParserRuleCall_1_0(), semanticObject.getTarget());
 		feeder.accept(grammarAccess.getAlwaysEffectAccess().getValueXExpressionParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
@@ -546,22 +566,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_ComponentDeclaration(EObject context, ComponentDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     instance=[ComponentDeclaration|ID]
-	 */
-	protected void sequence_Component(EObject context, Component semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.COMPONENT__INSTANCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.COMPONENT__INSTANCE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getComponentAccess().getInstanceComponentDeclarationIDTerminalRuleCall_0_1(), semanticObject.getInstance());
-		feeder.finish();
 	}
 	
 	
@@ -627,76 +631,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     instance=[EntityDeclaration|ID]
-	 */
-	protected void sequence_Entity(EObject context, Entity semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ENTITY__INSTANCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ENTITY__INSTANCE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getEntityAccess().getInstanceEntityDeclarationIDTerminalRuleCall_0_1(), semanticObject.getInstance());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID type=DataType source=AccessibleEntity? destinations+=AccessibleEntity*)
-	 */
-	protected void sequence_EventDeclaration(EObject context, EventDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (instance=[EventDeclaration|ID] destination=Component?)
-	 */
-	protected void sequence_EventEmission(EObject context, EventEmission semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((instance=[EventDeclaration|ID] source=Component?) | base='init')
-	 */
-	protected void sequence_EventReception(EObject context, EventReception semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID type=DataType source=AccessibleEntity? destinations+=AccessibleEntity*)
-	 */
-	protected void sequence_FlowDeclaration(EObject context, FlowDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (instance=[FlowDeclaration|ID] destination=Component?)
-	 */
-	protected void sequence_FlowEmission(EObject context, FlowEmission semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (instance=[FlowDeclaration|ID] source=Component?)
-	 */
-	protected void sequence_FlowReception(EObject context, FlowReception semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (name=ID (entities+=EntityDeclaration | signals+=SignalDeclaration | behaviors+=BehaviorDeclaration)*)
 	 */
 	protected void sequence_InteractorDeclaration(EObject context, InteractorDeclaration semanticObject) {
@@ -715,7 +649,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (event=EventReception guard=XExpression?)
+	 *     (event=SignalReception guard=XExpression?)
 	 */
 	protected void sequence_OnCause(EObject context, OnCause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -724,18 +658,18 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (target=FlowEmission value=XExpression)
+	 *     (target=SignalEmission value=XExpression)
 	 */
 	protected void sequence_SetEffect(EObject context, SetEffect semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__TARGET));
 			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__VALUE));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.SET_EFFECT__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.SET_EFFECT__TARGET));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSetEffectAccess().getTargetFlowEmissionParserRuleCall_1_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getSetEffectAccess().getTargetSignalEmissionParserRuleCall_1_0(), semanticObject.getTarget());
 		feeder.accept(grammarAccess.getSetEffectAccess().getValueXExpressionParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
@@ -743,18 +677,54 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (target=EventEmission value=XExpression)
+	 *     (source=AccessibleEntity alias=[SignalDeclaration|ID]?)
+	 */
+	protected void sequence_SignalAlias(EObject context, SignalAlias semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID type=DataType mode=SignalMode source=SignalAlias? destinations+=SignalAlias*)
+	 */
+	protected void sequence_SignalDeclaration(EObject context, SignalDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (instance=[SignalDeclaration|ID] destination=SignalAlias?)
+	 */
+	protected void sequence_SignalEmission(EObject context, SignalEmission semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((instance=[SignalDeclaration|ID] source=SignalAlias?) | init?='init')
+	 */
+	protected void sequence_SignalReception(EObject context, SignalReception semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (target=SignalEmission value=XExpression)
 	 */
 	protected void sequence_TriggerEffect(EObject context, TriggerEffect semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__TARGET));
 			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__VALUE));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.TRIGGER_EFFECT__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.TRIGGER_EFFECT__TARGET));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTriggerEffectAccess().getTargetEventEmissionParserRuleCall_1_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getTriggerEffectAccess().getTargetSignalEmissionParserRuleCall_1_0(), semanticObject.getTarget());
 		feeder.accept(grammarAccess.getTriggerEffectAccess().getValueXExpressionParserRuleCall_3_0(), semanticObject.getValue());
 		feeder.finish();
 	}
@@ -772,74 +742,16 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (
-	 *         (leftOperand=XEqualityExpression_XBinaryOperation_1_0_0_0 feature=OpEquality rightOperand=XRelationalExpression) | 
-	 *         (leftOperand=XRelationalExpression_XBinaryOperation_1_0_0_0 feature=OpCompare rightOperand=XOtherOperatorExpression) | 
-	 *         (leftOperand=XAndExpression_XBinaryOperation_1_0_0_0 feature=OpAnd rightOperand=XEqualityExpression) | 
-	 *         (leftOperand=XOrExpression_XBinaryOperation_1_0_0_0 feature=OpOr rightOperand=XAndExpression) | 
-	 *         (leftOperand=XMultiplicativeExpression_XBinaryOperation_1_0_0_0 feature=OpMulti rightOperand=XUnaryOperation) | 
 	 *         (leftOperand=XAdditiveExpression_XBinaryOperation_1_0_0_0 feature=OpAdd rightOperand=XMultiplicativeExpression) | 
-	 *         (leftOperand=XOtherOperatorExpression_XBinaryOperation_1_0_0_0 feature=OpOther rightOperand=XAdditiveExpression)
-	 *     )
-	 */
-	protected void sequence_XAdditiveExpression_XAndExpression_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(EObject context, XBinaryOperation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         (leftOperand=XEqualityExpression_XBinaryOperation_1_0_0_0 feature=OpEquality rightOperand=XRelationalExpression) | 
-	 *         (leftOperand=XRelationalExpression_XBinaryOperation_1_0_0_0 feature=OpCompare rightOperand=XOtherOperatorExpression) | 
-	 *         (leftOperand=XAndExpression_XBinaryOperation_1_0_0_0 feature=OpAnd rightOperand=XEqualityExpression) | 
-	 *         (leftOperand=XOrExpression_XBinaryOperation_1_0_0_0 feature=OpOr rightOperand=XAndExpression) | 
 	 *         (leftOperand=XMultiplicativeExpression_XBinaryOperation_1_0_0_0 feature=OpMulti rightOperand=XUnaryOperation) | 
-	 *         (leftOperand=XAdditiveExpression_XBinaryOperation_1_0_0_0 feature=OpAdd rightOperand=XMultiplicativeExpression)
-	 *     )
-	 */
-	protected void sequence_XAdditiveExpression_XAndExpression_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XRelationalExpression(EObject context, XBinaryOperation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         (leftOperand=XEqualityExpression_XBinaryOperation_1_0_0_0 feature=OpEquality rightOperand=XRelationalExpression) | 
+	 *         (leftOperand=XOtherOperatorExpression_XBinaryOperation_1_0_0_0 feature=OpOther rightOperand=XAdditiveExpression) | 
 	 *         (leftOperand=XRelationalExpression_XBinaryOperation_1_0_0_0 feature=OpCompare rightOperand=XOtherOperatorExpression) | 
-	 *         (leftOperand=XAndExpression_XBinaryOperation_1_0_0_0 feature=OpAnd rightOperand=XEqualityExpression) | 
-	 *         (leftOperand=XOrExpression_XBinaryOperation_1_0_0_0 feature=OpOr rightOperand=XAndExpression) | 
-	 *         (leftOperand=XMultiplicativeExpression_XBinaryOperation_1_0_0_0 feature=OpMulti rightOperand=XUnaryOperation)
-	 *     )
-	 */
-	protected void sequence_XAndExpression_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XRelationalExpression(EObject context, XBinaryOperation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
 	 *         (leftOperand=XEqualityExpression_XBinaryOperation_1_0_0_0 feature=OpEquality rightOperand=XRelationalExpression) | 
-	 *         (leftOperand=XRelationalExpression_XBinaryOperation_1_0_0_0 feature=OpCompare rightOperand=XOtherOperatorExpression) | 
 	 *         (leftOperand=XAndExpression_XBinaryOperation_1_0_0_0 feature=OpAnd rightOperand=XEqualityExpression) | 
 	 *         (leftOperand=XOrExpression_XBinaryOperation_1_0_0_0 feature=OpOr rightOperand=XAndExpression)
 	 *     )
 	 */
-	protected void sequence_XAndExpression_XEqualityExpression_XOrExpression_XRelationalExpression(EObject context, XBinaryOperation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         (leftOperand=XEqualityExpression_XBinaryOperation_1_0_0_0 feature=OpEquality rightOperand=XRelationalExpression) | 
-	 *         (leftOperand=XRelationalExpression_XBinaryOperation_1_0_0_0 feature=OpCompare rightOperand=XOtherOperatorExpression) | 
-	 *         (leftOperand=XAndExpression_XBinaryOperation_1_0_0_0 feature=OpAnd rightOperand=XEqualityExpression)
-	 *     )
-	 */
-	protected void sequence_XAndExpression_XEqualityExpression_XRelationalExpression(EObject context, XBinaryOperation semanticObject) {
+	protected void sequence_XAdditiveExpression_XAndExpression_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(EObject context, XBinaryOperation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -869,18 +781,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getXCasePartAccess().getCaseXExpressionParserRuleCall_1_0(), semanticObject.getCase());
 		feeder.accept(grammarAccess.getXCasePartAccess().getThenXExpressionParserRuleCall_3_0(), semanticObject.getThen());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         (leftOperand=XEqualityExpression_XBinaryOperation_1_0_0_0 feature=OpEquality rightOperand=XRelationalExpression) | 
-	 *         (leftOperand=XRelationalExpression_XBinaryOperation_1_0_0_0 feature=OpCompare rightOperand=XOtherOperatorExpression)
-	 *     )
-	 */
-	protected void sequence_XEqualityExpression_XRelationalExpression(EObject context, XBinaryOperation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -945,6 +845,15 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     {XNullLiteral}
+	 */
+	protected void sequence_XNullLiteral(EObject context, XNullLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=NUMBER
 	 */
 	protected void sequence_XNumberLiteral(EObject context, XNumberLiteral semanticObject) {
@@ -956,37 +865,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getXNumberLiteralAccess().getValueNUMBERParserRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (leftOperand=XRelationalExpression_XBinaryOperation_1_0_0_0 feature=OpCompare rightOperand=XOtherOperatorExpression)
-	 */
-	protected void sequence_XRelationalExpression(EObject context, XBinaryOperation semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.XBINARY_OPERATION__LEFT_OPERAND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.XBINARY_OPERATION__LEFT_OPERAND));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.XBINARY_OPERATION__FEATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.XBINARY_OPERATION__FEATURE));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.XBINARY_OPERATION__RIGHT_OPERAND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.XBINARY_OPERATION__RIGHT_OPERAND));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0(), semanticObject.getLeftOperand());
-		feeder.accept(grammarAccess.getXRelationalExpressionAccess().getFeatureOpCompareParserRuleCall_1_0_0_1_0(), semanticObject.getFeature());
-		feeder.accept(grammarAccess.getXRelationalExpressionAccess().getRightOperandXOtherOperatorExpressionParserRuleCall_1_1_0(), semanticObject.getRightOperand());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     {XNullLiteral}
-	 */
-	protected void sequence_XRelationalExpression_XBinaryOperation_1_0_0_0(EObject context, XNullLiteral semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -2,9 +2,9 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.AccessibleEntity;
 import com.crubier.lil.lil.DataType;
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.SignalAlias;
 import com.crubier.lil.lil.SignalDeclaration;
 
 import java.util.Collection;
@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getMode <em>Mode</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getSource <em>Source</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getDestinations <em>Destinations</em>}</li>
  * </ul>
@@ -72,6 +73,26 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   protected DataType type;
 
   /**
+   * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMode()
+   * @generated
+   * @ordered
+   */
+  protected static final String MODE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMode()
+   * @generated
+   * @ordered
+   */
+  protected String mode = MODE_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getSource() <em>Source</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -79,7 +100,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected AccessibleEntity source;
+  protected SignalAlias source;
 
   /**
    * The cached value of the '{@link #getDestinations() <em>Destinations</em>}' containment reference list.
@@ -89,7 +110,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected EList<AccessibleEntity> destinations;
+  protected EList<SignalAlias> destinations;
 
   /**
    * <!-- begin-user-doc -->
@@ -188,7 +209,30 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public AccessibleEntity getSource()
+  public String getMode()
+  {
+    return mode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMode(String newMode)
+  {
+    String oldMode = mode;
+    mode = newMode;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__MODE, oldMode, mode));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SignalAlias getSource()
   {
     return source;
   }
@@ -198,9 +242,9 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSource(AccessibleEntity newSource, NotificationChain msgs)
+  public NotificationChain basicSetSource(SignalAlias newSource, NotificationChain msgs)
   {
-    AccessibleEntity oldSource = source;
+    SignalAlias oldSource = source;
     source = newSource;
     if (eNotificationRequired())
     {
@@ -215,7 +259,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSource(AccessibleEntity newSource)
+  public void setSource(SignalAlias newSource)
   {
     if (newSource != source)
     {
@@ -236,11 +280,11 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<AccessibleEntity> getDestinations()
+  public EList<SignalAlias> getDestinations()
   {
     if (destinations == null)
     {
-      destinations = new EObjectContainmentEList<AccessibleEntity>(AccessibleEntity.class, this, LilPackage.SIGNAL_DECLARATION__DESTINATIONS);
+      destinations = new EObjectContainmentEList<SignalAlias>(SignalAlias.class, this, LilPackage.SIGNAL_DECLARATION__DESTINATIONS);
     }
     return destinations;
   }
@@ -279,6 +323,8 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
         return getName();
       case LilPackage.SIGNAL_DECLARATION__TYPE:
         return getType();
+      case LilPackage.SIGNAL_DECLARATION__MODE:
+        return getMode();
       case LilPackage.SIGNAL_DECLARATION__SOURCE:
         return getSource();
       case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
@@ -304,12 +350,15 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
       case LilPackage.SIGNAL_DECLARATION__TYPE:
         setType((DataType)newValue);
         return;
+      case LilPackage.SIGNAL_DECLARATION__MODE:
+        setMode((String)newValue);
+        return;
       case LilPackage.SIGNAL_DECLARATION__SOURCE:
-        setSource((AccessibleEntity)newValue);
+        setSource((SignalAlias)newValue);
         return;
       case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
         getDestinations().clear();
-        getDestinations().addAll((Collection<? extends AccessibleEntity>)newValue);
+        getDestinations().addAll((Collection<? extends SignalAlias>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -331,8 +380,11 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
       case LilPackage.SIGNAL_DECLARATION__TYPE:
         setType((DataType)null);
         return;
+      case LilPackage.SIGNAL_DECLARATION__MODE:
+        setMode(MODE_EDEFAULT);
+        return;
       case LilPackage.SIGNAL_DECLARATION__SOURCE:
-        setSource((AccessibleEntity)null);
+        setSource((SignalAlias)null);
         return;
       case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
         getDestinations().clear();
@@ -355,6 +407,8 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LilPackage.SIGNAL_DECLARATION__TYPE:
         return type != null;
+      case LilPackage.SIGNAL_DECLARATION__MODE:
+        return MODE_EDEFAULT == null ? mode != null : !MODE_EDEFAULT.equals(mode);
       case LilPackage.SIGNAL_DECLARATION__SOURCE:
         return source != null;
       case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
@@ -376,6 +430,8 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", mode: ");
+    result.append(mode);
     result.append(')');
     return result.toString();
   }

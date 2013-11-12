@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.crubier.lil.lil.Effect#getTarget <em>Target</em>}</li>
  *   <li>{@link com.crubier.lil.lil.Effect#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
@@ -22,6 +23,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Effect extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Target</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Target</em>' containment reference.
+   * @see #setTarget(SignalEmission)
+   * @see com.crubier.lil.lil.LilPackage#getEffect_Target()
+   * @model containment="true"
+   * @generated
+   */
+  SignalEmission getTarget();
+
+  /**
+   * Sets the value of the '{@link com.crubier.lil.lil.Effect#getTarget <em>Target</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Target</em>' containment reference.
+   * @see #getTarget()
+   * @generated
+   */
+  void setTarget(SignalEmission value);
+
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->

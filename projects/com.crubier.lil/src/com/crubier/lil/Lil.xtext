@@ -20,16 +20,11 @@ InteractorDeclaration:
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Entities
 AccessibleEntity:
-	generic=('any' | 'self' | 'other' | 'parent' | 'child' | 'all' | 'actors') | specific=Entity;
-
-Entity:
-	instance=[EntityDeclaration];
-
-Actor:
-	instance=[ActorDeclaration];
-
-Component:
-	instance=[ComponentDeclaration];
+	generic=GenericEntity | specific=[EntityDeclaration];
+	
+GenericEntity:
+	'any' | 'self' | 'other' | 'parent' | 'child' | 'all' | 'actors'
+;
 
 EntityDeclaration:
 	ActorDeclaration | ComponentDeclaration;
@@ -38,34 +33,43 @@ ActorDeclaration:
 	name=ID ':' 'actor'  ;
 
 ActorAlias:
-	source=Actor 'as' remote=Actor;
+	source=[ActorDeclaration] 'as' alias=[ActorDeclaration];
 
 ComponentDeclaration:
-	name=ID ':' interactor=[InteractorDeclaration] (=> 'with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
+	name=ID ':' interactor=[InteractorDeclaration] ( 'with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Signals
 
-EventReception:
-	(instance=[EventDeclaration] ('from' source=Component)?) | base = ('init');
+SignalReception:
+	(instance=[SignalDeclaration] ('from' source=SignalAlias)? )| 
+	(init?='init');
+	
+SignalEmission:
+	(instance=[SignalDeclaration] ('to' destination=SignalAlias)?);
 
-FlowReception:
-	instance=[FlowDeclaration] ('from' source=Component)?;
-	
-EventEmission:
-	instance=[EventDeclaration] ('to' destination=Component)?;
-	
-FlowEmission:
-	instance=[FlowDeclaration] ('to' destination=Component)?;
-	
 SignalDeclaration:
-	EventDeclaration | FlowDeclaration;
+	name=ID ':'  type=DataType mode=SignalMode ('from' source=SignalAlias)? ('to' destinations+=SignalAlias)*;
 
-EventDeclaration:
-	name=ID ':'  type=DataType 'event' ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
+SignalAlias:
+	source=AccessibleEntity ('as' alias=[SignalDeclaration])?;
+	
+SignalMode:
+	'event' | 'flow';
 
-FlowDeclaration:
-	name=ID ':' type=DataType 'flow' ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
+DataType:
+	({DataTypeCompound} type=[DataTypeCompoundDeclaration]) | 
+	({DataTypeBase} type=DataTypeBase);
+
+DataTypeBase:
+	'void' | 'symbol' | 'number' | 'text' | 'time' | 'reference';
+
+DataTypeCompoundDeclaration:
+	'structure' name=ID ':'
+	(fields+=DataTypeCompoundField)*;
+
+DataTypeCompoundField:
+	name=ID ':' type=DataType ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Behaviors
@@ -76,7 +80,7 @@ Cause:
 	(OnCause | WhenCause) ;
 
 OnCause:
-	'on' event=EventReception ('if' guard=XExpression)?;
+	'on' event=SignalReception ('if' guard=XExpression)?;
 
 WhenCause:
 	'when' condition=XExpression ('if' guard=XExpression)?;
@@ -86,34 +90,17 @@ Effect:
 ;
 
 AlwaysEffect:
-	'always' target=FlowEmission '=' value=XExpression
+	'always' target=SignalEmission '=' value=XExpression
 ;
 
 SetEffect:
-	'set' target=FlowEmission '=' value=XExpression
+	'set' target=SignalEmission '=' value=XExpression
 ;
 
 TriggerEffect:
-	'trigger' target=EventEmission '=' value=XExpression
+	'trigger' target=SignalEmission '=' value=XExpression
 ;
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Compound data types
-DataTypeCompoundDeclaration:
-	'structure' name=ID ':'
-	(fields+=DataTypeCompoundField)*;
-
-DataTypeCompoundField:
-	name=ID ':' type=DataType ;
-
-DataType:
-	({DataTypeCompound} type=[DataTypeCompoundDeclaration]) | 
-	({DataTypeBase} type=DataTypeBase);
-
-DataTypeBase:
-	'void' | 'symbol' | 'number' | 'text' | 'time' | 'reference'
-;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -122,8 +109,7 @@ DataTypeBase:
 //So we are going to construct the expressions language we need. It is similar to xbase on certain points, but still clearly different, semantically and syntaxically
 
 XExpression:
-	XOrExpression
-;
+	XOrExpression;
 
 XOrExpression returns XExpression:
 	XAndExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOr) rightOperand=XAndExpression)*;
@@ -144,23 +130,19 @@ OpEquality:
 	'==' | '!=' ;
 
 XRelationalExpression returns XExpression:
-	XOtherOperatorExpression
-	/*(=>({XInstanceOfExpression.expression=current} 'instanceof') type=JvmTypeReference |*/
-	 (=>({XBinaryOperation.leftOperand=current} feature=OpCompare) rightOperand=XOtherOperatorExpression);
+	XOtherOperatorExpression (=>({XBinaryOperation.leftOperand=current} feature=OpCompare) rightOperand=XOtherOperatorExpression)*;
 
 OpCompare:
-	'>=' | '<=' | '>' | '<' ;
+	'<=' | '>=' | '<' | '>' ;
 
 XOtherOperatorExpression returns XExpression:
 	XAdditiveExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOther) rightOperand=XAdditiveExpression)*;
 
 OpOther:
-	  '<>'
-	| '?:' ;
+	  '~' ;
 
 XAdditiveExpression returns XExpression:
-	XMultiplicativeExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAdd)
-	rightOperand=XMultiplicativeExpression)*;
+	XMultiplicativeExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAdd) rightOperand=XMultiplicativeExpression)*;
 
 OpAdd:
 	'+' | '-';
@@ -176,72 +158,21 @@ XUnaryOperation returns XExpression:
 
 OpUnary:
 	"!" | "-" | "+";
-	
-/* TODO HERE Add access to signals	
-XCastedExpression returns XExpression:
-	XMemberFeatureCall (=>({XCastedExpression.target=current} 'as') type=JvmTypeReference)*
-;
-
-XMemberFeatureCall returns XExpression:
-	XPrimaryExpression
-	(=>({XAssignment.assignable=current} ('.'|explicitStatic?="::") feature=[types::JvmIdentifiableElement|FeatureCallID] OpSingleAssign) value=XAssignment
-	|=>({XMemberFeatureCall.memberCallTarget=current} ("."|nullSafe?="?."|explicitStatic?="::")) 
-		('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?  
-		feature=[types::JvmIdentifiableElement|FeatureCallID] (
-			=>explicitOperationCall?='(' 
-				(
-				    memberCallArguments+=XShortClosure
-				  |	memberCallArguments+=XExpression (',' memberCallArguments+=XExpression)*
-				)? 
-			')')?
-			memberCallArguments+=XClosure?
-		)*;
-
-* */
 
 XPrimaryExpression returns XExpression:
-	XSwitchExpression |
-	XIfExpression | //Switched as compared to xbase 
-	XLiteral|       //Switched as compared to xbase
-	XForEachExpression |
-	XFunctionCallExpression |
-	XParenthesizedExpression
-;
+	XSwitchExpression | XIfExpression | XLiteral | XForEachExpression | XFunctionCallExpression | XParenthesizedExpression;
 
 XLiteral returns XExpression:
-	XCollectionLiteral |
-	XBooleanLiteral |
-	XNumberLiteral |
-	XNullLiteral |
-	XStringLiteral
-;
+	XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral;
 
 XCollectionLiteral:
-	XSetLiteral | XListLiteral
-;
+	XSetLiteral | XListLiteral;
 
 XSetLiteral:
-	{XSetLiteral} '@{' (elements+=XExpression (',' elements+=XExpression )*)? '}'
-;
+	{XSetLiteral} '@{' (elements+=XExpression (',' elements+=XExpression )*)? '}';
 
 XListLiteral:
-	{XListLiteral} '@[' (elements+=XExpression (',' elements+=XExpression )*)? ']'
-;
-
-//XClosure returns XExpression:
-//	=>({XClosure} 
-//	'[') 
-//		=>((declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|')? 
-//		expression=XExpressionInClosure 
-//	']';
-//	
-//XExpressionInClosure returns XExpression: 
-//	{XBlockExpression}
-//	(expressions+=XExpressionInsideBlock ';'?)*
-//;
-//
-//XShortClosure returns XExpression:
-//	=>({XClosure} (declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|') expression=XExpression;
+	{XListLiteral} '@[' (elements+=XExpression (',' elements+=XExpression )*)? ']';
 
 XParenthesizedExpression returns XExpression:
 	'(' XExpression ')';
@@ -252,13 +183,11 @@ XIfExpression returns XExpression:
 	(then=XExpression)
 	(=>'else' else=XExpression);
 
-//TODO remove the need for braces
 XSwitchExpression returns XExpression:
 	{XSwitchExpression}
-	'switch' '(' switch=XExpression =>')' /*'{'*/
+	'switch' '(' switch=XExpression =>')' 
 	 (cases+=XCasePart)+
-	 (=>'default' ':' default=XExpression )
-	/*'}'*/;
+	 (=>'default' ':' default=XExpression );
 
 XCasePart:
 	'case' case=XExpression ':' then=XExpression ;
@@ -269,81 +198,15 @@ XForEachExpression returns XExpression:
 		eachExpression=XExpression;
 
 XFunctionCallExpression returns XExpression:
-	{XFunctionCallExpression} function=BuiltInFunction '(' (arguments+=XExpression)? (',' arguments+=XExpression)* ')'
-;
+	{XFunctionCallExpression} function=BuiltInFunction '(' (arguments+=XExpression)? (',' arguments+=XExpression)* ')';
 
-//Same functions as c math.*
-BuiltInFunction :
+
+BuiltInFunction : //Same functions as c math.*
 'Math.abs'|'Math.acos'|'Math.acosh' |'Math.asin'|'Math.asinh' |'Math.atan'|'Math.atanh' |'Math.atan2' |
 'Math.ceil'|'Math.cos'|'Math.cosh' |'Math.exp'|'Math.floor'|'Math.fround' |'Math.hypot' |'Math.log'|
 'Math.log10' |'Math.log2' |'Math.max'|'Math.min'|'Math.pow'|'Math.random'|'Math.round'|'Math.sign'|
 'Math.sin'|'Math.sinh'|'Math.sqrt'|'Math.tan'|'Math.tanh'|'Math.trunc'|
-'Set.orderby'|'Set.add'|'Set.find'|'Set.change'|'Set.remove'  
-;
-
-//XWhileExpression returns XExpression:
-//	{XWhileExpression}
-//	'while' '(' predicate=XExpression ')'
-//		body=XExpression;
-//	
-//XDoWhileExpression returns XExpression:
-//	{XDoWhileExpression}
-//   'do'
-//       body=XExpression
-//   'while' '(' predicate=XExpression ')';
-//
-//XBlockExpression returns XExpression: 
-//	{XBlockExpression}
-//	'{'
-//		(expressions+=XExpressionInsideBlock ';'?)*
-//	'}';
-//
-//XExpressionInsideBlock returns XExpression:
-//	XVariableDeclaration | XExpression;
-//
-//XVariableDeclaration returns XExpression:
-//	{XVariableDeclaration}
-//	(writeable?='var'|'val') (=>(type=JvmTypeReference name=ValidID) | name=ValidID) ('=' right=XExpression)?;
-//
-//JvmFormalParameter returns types::JvmFormalParameter:
-//	(parameterType=JvmTypeReference)? name=ValidID;
-//	
-//FullJvmFormalParameter returns types::JvmFormalParameter:
-//	parameterType=JvmTypeReference name=ValidID;
-//
-//XFeatureCall returns XExpression:
-//	{XFeatureCall}
-//	('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')? 
-//	feature=[types::JvmIdentifiableElement|IdOrSuper] 
-//	(=>explicitOperationCall?='(' 
-//		(
-//		    featureCallArguments+=XShortClosure
-//		  |	featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*
-//		)? 
-//	')')?
-//	featureCallArguments+=XClosure?;
-//	
-//FeatureCallID:
-//	ValidID | 'extends' | 'static' | 'import' | 'extension'
-//;
-//
-//IdOrSuper :
-//	FeatureCallID | 'super'
-//;
-//	
-//XConstructorCall returns XExpression:
-//	{XConstructorCall}
-//	'new' constructor=[types::JvmConstructor|QualifiedName] 
-//	(=>'<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-//	(=>'(' 
-//		(
-//		    arguments+=XShortClosure
-//		  |	arguments+=XExpression (',' arguments+=XExpression)*
-//		)? 
-//	')')?
-//	arguments+=XClosure?;
-
-
+'Set.orderby'|'Set.add'|'Set.find'|'Set.change'|'Set.remove';
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
