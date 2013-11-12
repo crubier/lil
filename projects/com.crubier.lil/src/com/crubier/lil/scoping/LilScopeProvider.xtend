@@ -23,7 +23,7 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
 	
 	
 	// flow emission instance scope : either a signal defined in this interactor, or a signal defined in the interactor specified by the "to <destination>" statement
-  	 def public IScope scope_FlowEmission_instance(SignalEmission flowemission, EReference ref) {
+  	 def public IScope scope_SignalEmission_instance(SignalEmission flowemission, EReference ref) {
         if(flowemission.destination == null) {
         	var EObject temp = flowemission;
         	while(!(temp instanceof InteractorDeclaration)) {
@@ -32,6 +32,7 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
         	Scopes.scopeFor(temp.eContents);
         }
         else {
+        	println((flowemission.destination.source.specific as ComponentDeclaration).interactor.eContents);
         	Scopes.scopeFor((flowemission.destination.source.specific as ComponentDeclaration).interactor.eContents);
         }
     }
