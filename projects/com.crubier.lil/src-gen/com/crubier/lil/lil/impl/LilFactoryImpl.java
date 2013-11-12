@@ -67,20 +67,17 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.LIL_MODEL: return createLilModel();
       case LilPackage.INTERACTOR_DECLARATION: return createInteractorDeclaration();
       case LilPackage.ACCESSIBLE_ENTITY: return createAccessibleEntity();
-      case LilPackage.ENTITY: return createEntity();
-      case LilPackage.ACTOR: return createActor();
-      case LilPackage.COMPONENT: return createComponent();
       case LilPackage.ENTITY_DECLARATION: return createEntityDeclaration();
       case LilPackage.ACTOR_DECLARATION: return createActorDeclaration();
       case LilPackage.ACTOR_ALIAS: return createActorAlias();
       case LilPackage.COMPONENT_DECLARATION: return createComponentDeclaration();
-      case LilPackage.EVENT_RECEPTION: return createEventReception();
-      case LilPackage.FLOW_RECEPTION: return createFlowReception();
-      case LilPackage.EVENT_EMISSION: return createEventEmission();
-      case LilPackage.FLOW_EMISSION: return createFlowEmission();
+      case LilPackage.SIGNAL_RECEPTION: return createSignalReception();
+      case LilPackage.SIGNAL_EMISSION: return createSignalEmission();
       case LilPackage.SIGNAL_DECLARATION: return createSignalDeclaration();
-      case LilPackage.EVENT_DECLARATION: return createEventDeclaration();
-      case LilPackage.FLOW_DECLARATION: return createFlowDeclaration();
+      case LilPackage.SIGNAL_ALIAS: return createSignalAlias();
+      case LilPackage.DATA_TYPE: return createDataType();
+      case LilPackage.DATA_TYPE_COMPOUND_DECLARATION: return createDataTypeCompoundDeclaration();
+      case LilPackage.DATA_TYPE_COMPOUND_FIELD: return createDataTypeCompoundField();
       case LilPackage.BEHAVIOR_DECLARATION: return createBehaviorDeclaration();
       case LilPackage.CAUSE: return createCause();
       case LilPackage.ON_CAUSE: return createOnCause();
@@ -89,9 +86,6 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.ALWAYS_EFFECT: return createAlwaysEffect();
       case LilPackage.SET_EFFECT: return createSetEffect();
       case LilPackage.TRIGGER_EFFECT: return createTriggerEffect();
-      case LilPackage.DATA_TYPE_COMPOUND_DECLARATION: return createDataTypeCompoundDeclaration();
-      case LilPackage.DATA_TYPE_COMPOUND_FIELD: return createDataTypeCompoundField();
-      case LilPackage.DATA_TYPE: return createDataType();
       case LilPackage.XEXPRESSION: return createXExpression();
       case LilPackage.XCOLLECTION_LITERAL: return createXCollectionLiteral();
       case LilPackage.XSET_LITERAL: return createXSetLiteral();
@@ -152,39 +146,6 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Entity createEntity()
-  {
-    EntityImpl entity = new EntityImpl();
-    return entity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Actor createActor()
-  {
-    ActorImpl actor = new ActorImpl();
-    return actor;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Component createComponent()
-  {
-    ComponentImpl component = new ComponentImpl();
-    return component;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EntityDeclaration createEntityDeclaration()
   {
     EntityDeclarationImpl entityDeclaration = new EntityDeclarationImpl();
@@ -229,10 +190,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventReception createEventReception()
+  public SignalReception createSignalReception()
   {
-    EventReceptionImpl eventReception = new EventReceptionImpl();
-    return eventReception;
+    SignalReceptionImpl signalReception = new SignalReceptionImpl();
+    return signalReception;
   }
 
   /**
@@ -240,32 +201,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FlowReception createFlowReception()
+  public SignalEmission createSignalEmission()
   {
-    FlowReceptionImpl flowReception = new FlowReceptionImpl();
-    return flowReception;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EventEmission createEventEmission()
-  {
-    EventEmissionImpl eventEmission = new EventEmissionImpl();
-    return eventEmission;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FlowEmission createFlowEmission()
-  {
-    FlowEmissionImpl flowEmission = new FlowEmissionImpl();
-    return flowEmission;
+    SignalEmissionImpl signalEmission = new SignalEmissionImpl();
+    return signalEmission;
   }
 
   /**
@@ -284,10 +223,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventDeclaration createEventDeclaration()
+  public SignalAlias createSignalAlias()
   {
-    EventDeclarationImpl eventDeclaration = new EventDeclarationImpl();
-    return eventDeclaration;
+    SignalAliasImpl signalAlias = new SignalAliasImpl();
+    return signalAlias;
   }
 
   /**
@@ -295,10 +234,32 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FlowDeclaration createFlowDeclaration()
+  public DataType createDataType()
   {
-    FlowDeclarationImpl flowDeclaration = new FlowDeclarationImpl();
-    return flowDeclaration;
+    DataTypeImpl dataType = new DataTypeImpl();
+    return dataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeCompoundDeclaration createDataTypeCompoundDeclaration()
+  {
+    DataTypeCompoundDeclarationImpl dataTypeCompoundDeclaration = new DataTypeCompoundDeclarationImpl();
+    return dataTypeCompoundDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeCompoundField createDataTypeCompoundField()
+  {
+    DataTypeCompoundFieldImpl dataTypeCompoundField = new DataTypeCompoundFieldImpl();
+    return dataTypeCompoundField;
   }
 
   /**
@@ -387,39 +348,6 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     TriggerEffectImpl triggerEffect = new TriggerEffectImpl();
     return triggerEffect;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DataTypeCompoundDeclaration createDataTypeCompoundDeclaration()
-  {
-    DataTypeCompoundDeclarationImpl dataTypeCompoundDeclaration = new DataTypeCompoundDeclarationImpl();
-    return dataTypeCompoundDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DataTypeCompoundField createDataTypeCompoundField()
-  {
-    DataTypeCompoundFieldImpl dataTypeCompoundField = new DataTypeCompoundFieldImpl();
-    return dataTypeCompoundField;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DataType createDataType()
-  {
-    DataTypeImpl dataType = new DataTypeImpl();
-    return dataType;
   }
 
   /**

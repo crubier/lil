@@ -4,6 +4,7 @@ package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.Effect;
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.SignalEmission;
 import com.crubier.lil.lil.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.crubier.lil.lil.impl.EffectImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.EffectImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
@@ -30,6 +32,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
 {
+  /**
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTarget()
+   * @generated
+   * @ordered
+   */
+  protected SignalEmission target;
+
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +71,54 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
   protected EClass eStaticClass()
   {
     return LilPackage.Literals.EFFECT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SignalEmission getTarget()
+  {
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetTarget(SignalEmission newTarget, NotificationChain msgs)
+  {
+    SignalEmission oldTarget = target;
+    target = newTarget;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.EFFECT__TARGET, oldTarget, newTarget);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTarget(SignalEmission newTarget)
+  {
+    if (newTarget != target)
+    {
+      NotificationChain msgs = null;
+      if (target != null)
+        msgs = ((InternalEObject)target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.EFFECT__TARGET, null, msgs);
+      if (newTarget != null)
+        msgs = ((InternalEObject)newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.EFFECT__TARGET, null, msgs);
+      msgs = basicSetTarget(newTarget, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.EFFECT__TARGET, newTarget, newTarget));
   }
 
   /**
@@ -119,6 +179,8 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
   {
     switch (featureID)
     {
+      case LilPackage.EFFECT__TARGET:
+        return basicSetTarget(null, msgs);
       case LilPackage.EFFECT__VALUE:
         return basicSetValue(null, msgs);
     }
@@ -135,6 +197,8 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
   {
     switch (featureID)
     {
+      case LilPackage.EFFECT__TARGET:
+        return getTarget();
       case LilPackage.EFFECT__VALUE:
         return getValue();
     }
@@ -151,6 +215,9 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
   {
     switch (featureID)
     {
+      case LilPackage.EFFECT__TARGET:
+        setTarget((SignalEmission)newValue);
+        return;
       case LilPackage.EFFECT__VALUE:
         setValue((XExpression)newValue);
         return;
@@ -168,6 +235,9 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
   {
     switch (featureID)
     {
+      case LilPackage.EFFECT__TARGET:
+        setTarget((SignalEmission)null);
+        return;
       case LilPackage.EFFECT__VALUE:
         setValue((XExpression)null);
         return;
@@ -185,6 +255,8 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
   {
     switch (featureID)
     {
+      case LilPackage.EFFECT__TARGET:
+        return target != null;
       case LilPackage.EFFECT__VALUE:
         return value != null;
     }

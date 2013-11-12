@@ -2,12 +2,11 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.Actor;
 import com.crubier.lil.lil.ActorAlias;
+import com.crubier.lil.lil.ActorDeclaration;
 import com.crubier.lil.lil.LilPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -23,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.crubier.lil.lil.impl.ActorAliasImpl#getSource <em>Source</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.ActorAliasImpl#getRemote <em>Remote</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.ActorAliasImpl#getAlias <em>Alias</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,24 +31,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ActorAliasImpl extends MinimalEObjectImpl.Container implements ActorAlias
 {
   /**
-   * The cached value of the '{@link #getSource() <em>Source</em>}' containment reference.
+   * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSource()
    * @generated
    * @ordered
    */
-  protected Actor source;
+  protected ActorDeclaration source;
 
   /**
-   * The cached value of the '{@link #getRemote() <em>Remote</em>}' containment reference.
+   * The cached value of the '{@link #getAlias() <em>Alias</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRemote()
+   * @see #getAlias()
    * @generated
    * @ordered
    */
-  protected Actor remote;
+  protected ActorDeclaration alias;
 
   /**
    * <!-- begin-user-doc -->
@@ -77,7 +76,27 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Actor getSource()
+  public ActorDeclaration getSource()
+  {
+    if (source != null && source.eIsProxy())
+    {
+      InternalEObject oldSource = (InternalEObject)source;
+      source = (ActorDeclaration)eResolveProxy(oldSource);
+      if (source != oldSource)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilPackage.ACTOR_ALIAS__SOURCE, oldSource, source));
+      }
+    }
+    return source;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActorDeclaration basicGetSource()
   {
     return source;
   }
@@ -87,16 +106,32 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSource(Actor newSource, NotificationChain msgs)
+  public void setSource(ActorDeclaration newSource)
   {
-    Actor oldSource = source;
+    ActorDeclaration oldSource = source;
     source = newSource;
     if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.ACTOR_ALIAS__SOURCE, oldSource, source));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActorDeclaration getAlias()
+  {
+    if (alias != null && alias.eIsProxy())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.ACTOR_ALIAS__SOURCE, oldSource, newSource);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      InternalEObject oldAlias = (InternalEObject)alias;
+      alias = (ActorDeclaration)eResolveProxy(oldAlias);
+      if (alias != oldAlias)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilPackage.ACTOR_ALIAS__ALIAS, oldAlias, alias));
+      }
     }
-    return msgs;
+    return alias;
   }
 
   /**
@@ -104,20 +139,9 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSource(Actor newSource)
+  public ActorDeclaration basicGetAlias()
   {
-    if (newSource != source)
-    {
-      NotificationChain msgs = null;
-      if (source != null)
-        msgs = ((InternalEObject)source).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.ACTOR_ALIAS__SOURCE, null, msgs);
-      if (newSource != null)
-        msgs = ((InternalEObject)newSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.ACTOR_ALIAS__SOURCE, null, msgs);
-      msgs = basicSetSource(newSource, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.ACTOR_ALIAS__SOURCE, newSource, newSource));
+    return alias;
   }
 
   /**
@@ -125,65 +149,12 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Actor getRemote()
+  public void setAlias(ActorDeclaration newAlias)
   {
-    return remote;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRemote(Actor newRemote, NotificationChain msgs)
-  {
-    Actor oldRemote = remote;
-    remote = newRemote;
+    ActorDeclaration oldAlias = alias;
+    alias = newAlias;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.ACTOR_ALIAS__REMOTE, oldRemote, newRemote);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRemote(Actor newRemote)
-  {
-    if (newRemote != remote)
-    {
-      NotificationChain msgs = null;
-      if (remote != null)
-        msgs = ((InternalEObject)remote).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.ACTOR_ALIAS__REMOTE, null, msgs);
-      if (newRemote != null)
-        msgs = ((InternalEObject)newRemote).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.ACTOR_ALIAS__REMOTE, null, msgs);
-      msgs = basicSetRemote(newRemote, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.ACTOR_ALIAS__REMOTE, newRemote, newRemote));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case LilPackage.ACTOR_ALIAS__SOURCE:
-        return basicSetSource(null, msgs);
-      case LilPackage.ACTOR_ALIAS__REMOTE:
-        return basicSetRemote(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.ACTOR_ALIAS__ALIAS, oldAlias, alias));
   }
 
   /**
@@ -197,9 +168,11 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
     switch (featureID)
     {
       case LilPackage.ACTOR_ALIAS__SOURCE:
-        return getSource();
-      case LilPackage.ACTOR_ALIAS__REMOTE:
-        return getRemote();
+        if (resolve) return getSource();
+        return basicGetSource();
+      case LilPackage.ACTOR_ALIAS__ALIAS:
+        if (resolve) return getAlias();
+        return basicGetAlias();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,10 +188,10 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
     switch (featureID)
     {
       case LilPackage.ACTOR_ALIAS__SOURCE:
-        setSource((Actor)newValue);
+        setSource((ActorDeclaration)newValue);
         return;
-      case LilPackage.ACTOR_ALIAS__REMOTE:
-        setRemote((Actor)newValue);
+      case LilPackage.ACTOR_ALIAS__ALIAS:
+        setAlias((ActorDeclaration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,10 +208,10 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
     switch (featureID)
     {
       case LilPackage.ACTOR_ALIAS__SOURCE:
-        setSource((Actor)null);
+        setSource((ActorDeclaration)null);
         return;
-      case LilPackage.ACTOR_ALIAS__REMOTE:
-        setRemote((Actor)null);
+      case LilPackage.ACTOR_ALIAS__ALIAS:
+        setAlias((ActorDeclaration)null);
         return;
     }
     super.eUnset(featureID);
@@ -256,8 +229,8 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
     {
       case LilPackage.ACTOR_ALIAS__SOURCE:
         return source != null;
-      case LilPackage.ACTOR_ALIAS__REMOTE:
-        return remote != null;
+      case LilPackage.ACTOR_ALIAS__ALIAS:
+        return alias != null;
     }
     return super.eIsSet(featureID);
   }

@@ -2,10 +2,10 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.Component;
-import com.crubier.lil.lil.FlowDeclaration;
-import com.crubier.lil.lil.FlowEmission;
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.SignalAlias;
+import com.crubier.lil.lil.SignalDeclaration;
+import com.crubier.lil.lil.SignalEmission;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -18,19 +18,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Flow Emission</b></em>'.
+ * An implementation of the model object '<em><b>Signal Emission</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.FlowEmissionImpl#getInstance <em>Instance</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.FlowEmissionImpl#getDestination <em>Destination</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalEmissionImpl#getInstance <em>Instance</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalEmissionImpl#getDestination <em>Destination</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements FlowEmission
+public class SignalEmissionImpl extends MinimalEObjectImpl.Container implements SignalEmission
 {
   /**
    * The cached value of the '{@link #getInstance() <em>Instance</em>}' reference.
@@ -40,7 +40,7 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
    * @generated
    * @ordered
    */
-  protected FlowDeclaration instance;
+  protected SignalDeclaration instance;
 
   /**
    * The cached value of the '{@link #getDestination() <em>Destination</em>}' containment reference.
@@ -50,14 +50,14 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
    * @generated
    * @ordered
    */
-  protected Component destination;
+  protected SignalAlias destination;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FlowEmissionImpl()
+  protected SignalEmissionImpl()
   {
     super();
   }
@@ -70,7 +70,7 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
   @Override
   protected EClass eStaticClass()
   {
-    return LilPackage.Literals.FLOW_EMISSION;
+    return LilPackage.Literals.SIGNAL_EMISSION;
   }
 
   /**
@@ -78,16 +78,16 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
    * <!-- end-user-doc -->
    * @generated
    */
-  public FlowDeclaration getInstance()
+  public SignalDeclaration getInstance()
   {
     if (instance != null && instance.eIsProxy())
     {
       InternalEObject oldInstance = (InternalEObject)instance;
-      instance = (FlowDeclaration)eResolveProxy(oldInstance);
+      instance = (SignalDeclaration)eResolveProxy(oldInstance);
       if (instance != oldInstance)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilPackage.FLOW_EMISSION__INSTANCE, oldInstance, instance));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilPackage.SIGNAL_EMISSION__INSTANCE, oldInstance, instance));
       }
     }
     return instance;
@@ -98,7 +98,7 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
    * <!-- end-user-doc -->
    * @generated
    */
-  public FlowDeclaration basicGetInstance()
+  public SignalDeclaration basicGetInstance()
   {
     return instance;
   }
@@ -108,12 +108,12 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInstance(FlowDeclaration newInstance)
+  public void setInstance(SignalDeclaration newInstance)
   {
-    FlowDeclaration oldInstance = instance;
+    SignalDeclaration oldInstance = instance;
     instance = newInstance;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.FLOW_EMISSION__INSTANCE, oldInstance, instance));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_EMISSION__INSTANCE, oldInstance, instance));
   }
 
   /**
@@ -121,7 +121,7 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component getDestination()
+  public SignalAlias getDestination()
   {
     return destination;
   }
@@ -131,13 +131,13 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetDestination(Component newDestination, NotificationChain msgs)
+  public NotificationChain basicSetDestination(SignalAlias newDestination, NotificationChain msgs)
   {
-    Component oldDestination = destination;
+    SignalAlias oldDestination = destination;
     destination = newDestination;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.FLOW_EMISSION__DESTINATION, oldDestination, newDestination);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_EMISSION__DESTINATION, oldDestination, newDestination);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -148,20 +148,20 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDestination(Component newDestination)
+  public void setDestination(SignalAlias newDestination)
   {
     if (newDestination != destination)
     {
       NotificationChain msgs = null;
       if (destination != null)
-        msgs = ((InternalEObject)destination).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.FLOW_EMISSION__DESTINATION, null, msgs);
+        msgs = ((InternalEObject)destination).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL_EMISSION__DESTINATION, null, msgs);
       if (newDestination != null)
-        msgs = ((InternalEObject)newDestination).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.FLOW_EMISSION__DESTINATION, null, msgs);
+        msgs = ((InternalEObject)newDestination).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL_EMISSION__DESTINATION, null, msgs);
       msgs = basicSetDestination(newDestination, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.FLOW_EMISSION__DESTINATION, newDestination, newDestination));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_EMISSION__DESTINATION, newDestination, newDestination));
   }
 
   /**
@@ -174,7 +174,7 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case LilPackage.FLOW_EMISSION__DESTINATION:
+      case LilPackage.SIGNAL_EMISSION__DESTINATION:
         return basicSetDestination(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -190,10 +190,10 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case LilPackage.FLOW_EMISSION__INSTANCE:
+      case LilPackage.SIGNAL_EMISSION__INSTANCE:
         if (resolve) return getInstance();
         return basicGetInstance();
-      case LilPackage.FLOW_EMISSION__DESTINATION:
+      case LilPackage.SIGNAL_EMISSION__DESTINATION:
         return getDestination();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -209,11 +209,11 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case LilPackage.FLOW_EMISSION__INSTANCE:
-        setInstance((FlowDeclaration)newValue);
+      case LilPackage.SIGNAL_EMISSION__INSTANCE:
+        setInstance((SignalDeclaration)newValue);
         return;
-      case LilPackage.FLOW_EMISSION__DESTINATION:
-        setDestination((Component)newValue);
+      case LilPackage.SIGNAL_EMISSION__DESTINATION:
+        setDestination((SignalAlias)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -229,11 +229,11 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case LilPackage.FLOW_EMISSION__INSTANCE:
-        setInstance((FlowDeclaration)null);
+      case LilPackage.SIGNAL_EMISSION__INSTANCE:
+        setInstance((SignalDeclaration)null);
         return;
-      case LilPackage.FLOW_EMISSION__DESTINATION:
-        setDestination((Component)null);
+      case LilPackage.SIGNAL_EMISSION__DESTINATION:
+        setDestination((SignalAlias)null);
         return;
     }
     super.eUnset(featureID);
@@ -249,12 +249,12 @@ public class FlowEmissionImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case LilPackage.FLOW_EMISSION__INSTANCE:
+      case LilPackage.SIGNAL_EMISSION__INSTANCE:
         return instance != null;
-      case LilPackage.FLOW_EMISSION__DESTINATION:
+      case LilPackage.SIGNAL_EMISSION__DESTINATION:
         return destination != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //FlowEmissionImpl
+} //SignalEmissionImpl

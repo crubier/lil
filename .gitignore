@@ -10,6 +10,8 @@
 # Icon must ends with two \r.
 Icon
 
+# No compiled classes
+*.class
 
 # Thumbnails
 ._*

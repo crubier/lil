@@ -6,23 +6,23 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Event Reception</b></em>'.
+ * A representation of the model object '<em><b>Signal Reception</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.EventReception#getInstance <em>Instance</em>}</li>
- *   <li>{@link com.crubier.lil.lil.EventReception#getSource <em>Source</em>}</li>
- *   <li>{@link com.crubier.lil.lil.EventReception#getBase <em>Base</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.SignalReception#getInstance <em>Instance</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.SignalReception#getSource <em>Source</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.SignalReception#isInit <em>Init</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.crubier.lil.lil.LilPackage#getEventReception()
+ * @see com.crubier.lil.lil.LilPackage#getSignalReception()
  * @model
  * @generated
  */
-public interface EventReception extends EObject
+public interface SignalReception extends EObject
 {
   /**
    * Returns the value of the '<em><b>Instance</b></em>' reference.
@@ -33,22 +33,22 @@ public interface EventReception extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Instance</em>' reference.
-   * @see #setInstance(EventDeclaration)
-   * @see com.crubier.lil.lil.LilPackage#getEventReception_Instance()
+   * @see #setInstance(SignalDeclaration)
+   * @see com.crubier.lil.lil.LilPackage#getSignalReception_Instance()
    * @model
    * @generated
    */
-  EventDeclaration getInstance();
+  SignalDeclaration getInstance();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.EventReception#getInstance <em>Instance</em>}' reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.SignalReception#getInstance <em>Instance</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Instance</em>' reference.
    * @see #getInstance()
    * @generated
    */
-  void setInstance(EventDeclaration value);
+  void setInstance(SignalDeclaration value);
 
   /**
    * Returns the value of the '<em><b>Source</b></em>' containment reference.
@@ -59,47 +59,47 @@ public interface EventReception extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source</em>' containment reference.
-   * @see #setSource(Component)
-   * @see com.crubier.lil.lil.LilPackage#getEventReception_Source()
+   * @see #setSource(SignalAlias)
+   * @see com.crubier.lil.lil.LilPackage#getSignalReception_Source()
    * @model containment="true"
    * @generated
    */
-  Component getSource();
+  SignalAlias getSource();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.EventReception#getSource <em>Source</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.SignalReception#getSource <em>Source</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Source</em>' containment reference.
    * @see #getSource()
    * @generated
    */
-  void setSource(Component value);
+  void setSource(SignalAlias value);
 
   /**
-   * Returns the value of the '<em><b>Base</b></em>' attribute.
+   * Returns the value of the '<em><b>Init</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Base</em>' attribute isn't clear,
+   * If the meaning of the '<em>Init</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Base</em>' attribute.
-   * @see #setBase(String)
-   * @see com.crubier.lil.lil.LilPackage#getEventReception_Base()
+   * @return the value of the '<em>Init</em>' attribute.
+   * @see #setInit(boolean)
+   * @see com.crubier.lil.lil.LilPackage#getSignalReception_Init()
    * @model
    * @generated
    */
-  String getBase();
+  boolean isInit();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.EventReception#getBase <em>Base</em>}' attribute.
+   * Sets the value of the '{@link com.crubier.lil.lil.SignalReception#isInit <em>Init</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Base</em>' attribute.
-   * @see #getBase()
+   * @param value the new value of the '<em>Init</em>' attribute.
+   * @see #isInit()
    * @generated
    */
-  void setBase(String value);
+  void setInit(boolean value);
 
-} // EventReception
+} // SignalReception

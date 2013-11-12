@@ -3,10 +3,12 @@
  */
 package com.crubier.lil.scoping;
 
-import com.crubier.lil.lil.Component;
+import com.crubier.lil.lil.AccessibleEntity;
 import com.crubier.lil.lil.ComponentDeclaration;
-import com.crubier.lil.lil.FlowEmission;
+import com.crubier.lil.lil.EntityDeclaration;
 import com.crubier.lil.lil.InteractorDeclaration;
+import com.crubier.lil.lil.SignalAlias;
+import com.crubier.lil.lil.SignalEmission;
 import com.google.common.base.Objects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -23,9 +25,9 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
  */
 @SuppressWarnings("all")
 public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
-  public IScope scope_FlowEmission_instance(final FlowEmission flowemission, final EReference ref) {
+  public IScope scope_FlowEmission_instance(final SignalEmission flowemission, final EReference ref) {
     IScope _xifexpression = null;
-    Component _destination = flowemission.getDestination();
+    SignalAlias _destination = flowemission.getDestination();
     boolean _equals = Objects.equal(_destination, null);
     if (_equals) {
       IScope _xblockexpression = null;
@@ -45,9 +47,10 @@ public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
       }
       _xifexpression = _xblockexpression;
     } else {
-      Component _destination_1 = flowemission.getDestination();
-      ComponentDeclaration _instance = _destination_1.getInstance();
-      InteractorDeclaration _interactor = _instance.getInteractor();
+      SignalAlias _destination_1 = flowemission.getDestination();
+      AccessibleEntity _source = _destination_1.getSource();
+      EntityDeclaration _specific = _source.getSpecific();
+      InteractorDeclaration _interactor = ((ComponentDeclaration) _specific).getInteractor();
       EList<EObject> _eContents = _interactor.eContents();
       IScope _scopeFor = Scopes.scopeFor(_eContents);
       _xifexpression = _scopeFor;

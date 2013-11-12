@@ -2,9 +2,9 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.EventReception;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.OnCause;
+import com.crubier.lil.lil.SignalReception;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -37,7 +37,7 @@ public class OnCauseImpl extends CauseImpl implements OnCause
    * @generated
    * @ordered
    */
-  protected EventReception event;
+  protected SignalReception event;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class OnCauseImpl extends CauseImpl implements OnCause
    * <!-- end-user-doc -->
    * @generated
    */
-  public EventReception getEvent()
+  public SignalReception getEvent()
   {
     return event;
   }
@@ -75,9 +75,9 @@ public class OnCauseImpl extends CauseImpl implements OnCause
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetEvent(EventReception newEvent, NotificationChain msgs)
+  public NotificationChain basicSetEvent(SignalReception newEvent, NotificationChain msgs)
   {
-    EventReception oldEvent = event;
+    SignalReception oldEvent = event;
     event = newEvent;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class OnCauseImpl extends CauseImpl implements OnCause
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvent(EventReception newEvent)
+  public void setEvent(SignalReception newEvent)
   {
     if (newEvent != event)
     {
@@ -151,7 +151,7 @@ public class OnCauseImpl extends CauseImpl implements OnCause
     switch (featureID)
     {
       case LilPackage.ON_CAUSE__EVENT:
-        setEvent((EventReception)newValue);
+        setEvent((SignalReception)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class OnCauseImpl extends CauseImpl implements OnCause
     switch (featureID)
     {
       case LilPackage.ON_CAUSE__EVENT:
-        setEvent((EventReception)null);
+        setEvent((SignalReception)null);
         return;
     }
     super.eUnset(featureID);

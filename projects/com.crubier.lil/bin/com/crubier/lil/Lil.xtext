@@ -7,8 +7,8 @@ generate lil "http://www.crubier.com/lil/Lil"
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Model
-Model:
-	((interactors+=InteractorDeclaration) | (dataTypes+=DataTypeDeclaration))*;
+LilModel:
+	((interactors+=InteractorDeclaration) | (dataTypes+=DataTypeCompoundDeclaration))*;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,53 +20,56 @@ InteractorDeclaration:
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Entities
 AccessibleEntity:
-	generic=('any' | 'self' | 'other' | 'parent' | 'child' | 'all' | 'actors') | specific=Entity;
-
-Entity:
-	instance=[EntityDeclaration]
+	generic=GenericEntity | specific=[EntityDeclaration];
+	
+GenericEntity:
+	'any' | 'self' | 'other' | 'parent' | 'child' | 'all' | 'actors'
 ;
-
-Actor:
-	instance=[ActorDeclaration];
-
-Component:
-	instance=[ComponentDeclaration];
 
 EntityDeclaration:
 	ActorDeclaration | ComponentDeclaration;
 
 ActorDeclaration:
-	'actor' name=ID ;
+	name=ID ':' 'actor'  ;
 
 ActorAlias:
-	source=Actor 'as' remote=Actor;
+	source=[ActorDeclaration] 'as' alias=[ActorDeclaration];
 
 ComponentDeclaration:
-	interactor=[InteractorDeclaration] name=ID ('with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
+	name=ID ':' interactor=[InteractorDeclaration] ( 'with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Signals
 
-EventReception:
-	(instance=[EventDeclaration] ('from' source=Component)?) | base = ('init');
+SignalReception:
+	(instance=[SignalDeclaration] ('from' source=SignalAlias)? )| 
+	(init?='init');
+	
+SignalEmission:
+	(instance=[SignalDeclaration] ('to' destination=SignalAlias)?);
 
-FlowReception:
-	instance=[FlowDeclaration] ('from' source=Component)?;
-	
-EventEmission:
-	instance=[EventDeclaration] ('to' destination=Component)?;
-	
-FlowEmission:
-	instance=[FlowDeclaration] ('to' destination=Component)?;
-	
 SignalDeclaration:
-	EventDeclaration | FlowDeclaration;
+	name=ID ':'  type=DataType mode=SignalMode ('from' source=SignalAlias)? ('to' destinations+=SignalAlias)*;
 
-EventDeclaration:
-	type=DataType 'event' name=ID ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
+SignalAlias:
+	source=AccessibleEntity ('as' alias=[SignalDeclaration])?;
+	
+SignalMode:
+	'event' | 'flow';
 
-FlowDeclaration:
-	type=DataType 'flow' name=ID ('from' source=AccessibleEntity)? ('to' destinations+=AccessibleEntity)*;
+DataType:
+	({DataTypeCompound} type=[DataTypeCompoundDeclaration]) | 
+	({DataTypeBase} type=DataTypeBase);
+
+DataTypeBase:
+	'void' | 'symbol' | 'number' | 'text' | 'time' | 'reference';
+
+DataTypeCompoundDeclaration:
+	'structure' name=ID ':'
+	(fields+=DataTypeCompoundField)*;
+
+DataTypeCompoundField:
+	name=ID ':' type=DataType ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Behaviors
@@ -77,168 +80,164 @@ Cause:
 	(OnCause | WhenCause) ;
 
 OnCause:
-	'on' event=EventReception ('if' guard=Expression)?;
+	'on' event=SignalReception ('if' guard=XExpression)?;
 
 WhenCause:
-	'when' condition=Expression ('if' guard=Expression)?;
+	'when' condition=XExpression ('if' guard=XExpression)?;
 
 Effect:
 	(AlwaysEffect | SetEffect | TriggerEffect)
 ;
 
 AlwaysEffect:
-	'always' target=FlowEmission '=' value=Expression
+	'always' target=SignalEmission '=' value=XExpression
 ;
 
 SetEffect:
-	'set' target=FlowEmission '=' value=Expression
+	'set' target=SignalEmission '=' value=XExpression
 ;
 
 TriggerEffect:
-	'trigger' target=EventEmission '=' value=Expression
-;
-
-Expression:
-	NumberExpression
-;
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Structure
-DataTypeDeclaration:
-	'data' 'type' name=ID ':'
-	(fields+=Field)*;
-
-Field:
-	type=DataType name=ID;
-
-DataType:
-	compound=[DataTypeDeclaration] | base=DataTypeBase;
-
-DataTypeBase:
-	('void' | 'symbol' | 'number' | 'text' | 'time' | 'reference')
+	'trigger' target=SignalEmission '=' value=XExpression
 ;
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Expressions
-//We do not use xbase because we only need a small subset of it in order to be able to generate C code and in order to simplify the language
-//So we are going to construct the expressions we need
+//We do not use xbase because we only need a subset of it in order to be able to generate C code and in order to simplify the language
+//So we are going to construct the expressions language we need. It is similar to xbase on certain points, but still clearly different, semantically and syntaxically
 
-//Boolean expressions
-BooleanExpression:
-	BooleanDisjonction
-;
+XExpression:
+	XOrExpression;
 
-BooleanDisjonction returns BooleanExpression:
-	BooleanConjonction 
- 	(({BooleanDisjonction.left=current} 'or') right=BooleanConjonction)*
-;
+XOrExpression returns XExpression:
+	XAndExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOr) rightOperand=XAndExpression)*;
 
-BooleanConjonction returns BooleanExpression:
-	BooleanUnary 
- 	(({BooleanConjonction.left=current} 'and') right=BooleanUnary)*
-;
+OpOr:
+	'or';
 
-BooleanUnary returns BooleanExpression:
-	BooleanTerminalExpression |
-	( {BooleanNegation} '!'  operand=BooleanTerminalExpression )
-;
+XAndExpression returns XExpression:
+	XEqualityExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAnd) rightOperand=XEqualityExpression)*;
 
-BooleanTerminalExpression returns BooleanExpression:
-	'(' BooleanExpression ')' |
-	({BooleanLiteral} value=BooleanLiteral)
-;
+OpAnd:
+	'and';
+
+XEqualityExpression returns XExpression:
+	XRelationalExpression (=>({XBinaryOperation.leftOperand=current} feature=OpEquality) rightOperand=XRelationalExpression)*;
+
+OpEquality:
+	'==' | '!=' ;
+
+XRelationalExpression returns XExpression:
+	XOtherOperatorExpression (=>({XBinaryOperation.leftOperand=current} feature=OpCompare) rightOperand=XOtherOperatorExpression)*;
+
+OpCompare:
+	'<=' | '>=' | '<' | '>' ;
+
+XOtherOperatorExpression returns XExpression:
+	XAdditiveExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOther) rightOperand=XAdditiveExpression)*;
+
+OpOther:
+	  '~' ;
+
+XAdditiveExpression returns XExpression:
+	XMultiplicativeExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAdd) rightOperand=XMultiplicativeExpression)*;
+
+OpAdd:
+	'+' | '-';
+
+XMultiplicativeExpression returns XExpression:
+	XUnaryOperation (=>({XBinaryOperation.leftOperand=current} feature=OpMulti) rightOperand=XUnaryOperation)*;
+
+OpMulti:
+	'*' | '/' | '%';
+
+XUnaryOperation returns XExpression:
+	({XUnaryOperation} feature=OpUnary operand=XPrimaryExpression) | XPrimaryExpression;
+
+OpUnary:
+	"!" | "-" | "+";
+
+XPrimaryExpression returns XExpression:
+	XSwitchExpression | XIfExpression | XLiteral | XForEachExpression | XFunctionCallExpression | XParenthesizedExpression;
+
+XLiteral returns XExpression:
+	XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral;
+
+XCollectionLiteral:
+	XSetLiteral | XListLiteral;
+
+XSetLiteral:
+	{XSetLiteral} '@{' (elements+=XExpression (',' elements+=XExpression )*)? '}';
+
+XListLiteral:
+	{XListLiteral} '@[' (elements+=XExpression (',' elements+=XExpression )*)? ']';
+
+XParenthesizedExpression returns XExpression:
+	'(' XExpression ')';
+
+XIfExpression returns XExpression:
+	{XIfExpression}
+	'if' '(' if=XExpression =>')'
+	(then=XExpression)
+	(=>'else' else=XExpression);
+
+XSwitchExpression returns XExpression:
+	{XSwitchExpression}
+	'switch' '(' switch=XExpression =>')' 
+	 (cases+=XCasePart)+
+	 (=>'default' ':' default=XExpression );
+
+XCasePart:
+	'case' case=XExpression ':' then=XExpression ;
+
+XForEachExpression returns XExpression:
+	{XForEachExpression}
+	'for' 'each' '(' forExpression=XExpression ')'
+		eachExpression=XExpression;
+
+XFunctionCallExpression returns XExpression:
+	{XFunctionCallExpression} function=BuiltInFunction '(' (arguments+=XExpression)? (',' arguments+=XExpression)* ')';
 
 
-//Numeric expressions
-NumberExpression:
- NumberCompoundExpression;
- 
- NumberCompoundExpression returns NumberExpression:
- 	NumberAddition |
- 	{NumberIfExpression} 'if' '(' if=BooleanExpression ')' then=NumberAddition (=>'else' else=NumberAddition)? |
- 	{NumberSwitchExpressionNumber} 'switch' '(' switch=NumberExpression ')'  (=> cases+=NumberSwitchExpressionNumberCase)+ (=>'default' ':' default=NumberExpression )? |
- 	{NumberSwitchExpressionText} 'switch' '(' switch=TextExpression ')'  (=> cases+=NumberSwitchExpressionTextCase)+ (=>'default' ':' default=NumberExpression )?
- ;
- 
- NumberSwitchExpressionNumberCase :
- 	'case' condition=NumberExpression ':' value=NumberExpression
- ;
- 
-  NumberSwitchExpressionTextCase :
- 	'case' condition=TextExpression ':' value=NumberExpression
- ;
- 
-NumberAddition returns NumberExpression:
- NumberMultiplication
-  (({NumberAddition.left=current} '+' | {NumberSubstraction.left=current} '-') right=NumberMultiplication)*;
-
-NumberMultiplication returns NumberExpression:
- NumberPower 
- (({NumberMultiplication.left=current} '*' | {NumberDivision.left=current} '/'| {NumberModulo.left=current} '%') right=NumberPower)*;
-
-NumberPower returns NumberExpression:
- NumberUnary 
- (({NumberPower.left=current} '^' ) right=NumberUnary)*;
- 
-NumberUnary returns NumberExpression:
-	NumberTerminalExpression |
-	( {NumberOpposition} '-'  operand=NumberTerminalExpression );
-
-NumberTerminalExpression returns NumberExpression:
-  '(' NumberExpression ')' |
-  ({NumberLiteral} value=NumberLiteral) |
-  /*({NumberTerminalSignal} value=[FlowDeclaration])|*/
-  {NumberFunctionExpression} function=ID ('(' arguments+=NumberExpression (',' arguments+=NumberExpression)* ')')? 
-;
-
-
-//Text expressions
-TextExpression:
-	TextJoin
-;
-
-TextJoin returns TextExpression:
-	TextTerminalExpression
-  (({TextJoin.left=current} '<>' ) right=TextTerminalExpression)*;
-
-TextTerminalExpression returns TextExpression:
-	{TextLiteral} value=TextLiteral
-;
+BuiltInFunction : //Same functions as c math.*
+'Math.abs'|'Math.acos'|'Math.acosh' |'Math.asin'|'Math.asinh' |'Math.atan'|'Math.atanh' |'Math.atan2' |
+'Math.ceil'|'Math.cos'|'Math.cosh' |'Math.exp'|'Math.floor'|'Math.fround' |'Math.hypot' |'Math.log'|
+'Math.log10' |'Math.log2' |'Math.max'|'Math.min'|'Math.pow'|'Math.random'|'Math.round'|'Math.sign'|
+'Math.sin'|'Math.sinh'|'Math.sqrt'|'Math.tan'|'Math.tanh'|'Math.trunc'|
+'Set.orderby'|'Set.add'|'Set.find'|'Set.change'|'Set.remove';
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Literals
-SymbolLiteral returns ecore::EString : 
-  ID
-;
+XBooleanLiteral returns XExpression :
+	{XBooleanLiteral} ('false' | isTrue?='true');
 
-BooleanLiteral returns ecore::EBoolean : 
-  'true' |'yes' | 'false'| 'no' 
-;
+XNullLiteral returns XExpression :
+	{XNullLiteral} 'null';
 
-NumberLiteral returns ecore::EDouble : 
-  INT ('.' INT)?
-;
+XNumberLiteral returns XExpression :
+	{XNumberLiteral} value= NUMBER;
 
-TextLiteral returns ecore::EString :
-	STRING
-;
+XStringLiteral returns XExpression:
+	{XStringLiteral} value=STRING;
 
-TimeLiteral returns ecore::ELong :
-	(INT 'ms') | (INT ('.' INT)? 's') | (INT ('.' INT)? 'm') | (INT ('.' INT)? 'h') | (INT ('.' INT)? 'd') 
-;
+//QualifiedName:
+//  ValidID (=>'.' ValidID)*;
 
-ReferenceLiteral returns ecore::EString :
-	ID
-;
 
-IndexLiteral returns ecore::EInt : 
-  INT
-;
+
+
+
+
+
+
+
+//Xtext Data types
+
+NUMBER returns ecore::EDouble : INT ('.' INT)?;
 
 // Terminals
 terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

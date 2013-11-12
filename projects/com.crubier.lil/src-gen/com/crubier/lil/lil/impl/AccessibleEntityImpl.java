@@ -3,11 +3,10 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.AccessibleEntity;
-import com.crubier.lil.lil.Entity;
+import com.crubier.lil.lil.EntityDeclaration;
 import com.crubier.lil.lil.LilPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -52,14 +51,14 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
   protected String generic = GENERIC_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSpecific() <em>Specific</em>}' containment reference.
+   * The cached value of the '{@link #getSpecific() <em>Specific</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSpecific()
    * @generated
    * @ordered
    */
-  protected Entity specific;
+  protected EntityDeclaration specific;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,7 +109,27 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public Entity getSpecific()
+  public EntityDeclaration getSpecific()
+  {
+    if (specific != null && specific.eIsProxy())
+    {
+      InternalEObject oldSpecific = (InternalEObject)specific;
+      specific = (EntityDeclaration)eResolveProxy(oldSpecific);
+      if (specific != oldSpecific)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilPackage.ACCESSIBLE_ENTITY__SPECIFIC, oldSpecific, specific));
+      }
+    }
+    return specific;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EntityDeclaration basicGetSpecific()
   {
     return specific;
   }
@@ -120,53 +139,12 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSpecific(Entity newSpecific, NotificationChain msgs)
+  public void setSpecific(EntityDeclaration newSpecific)
   {
-    Entity oldSpecific = specific;
+    EntityDeclaration oldSpecific = specific;
     specific = newSpecific;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.ACCESSIBLE_ENTITY__SPECIFIC, oldSpecific, newSpecific);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSpecific(Entity newSpecific)
-  {
-    if (newSpecific != specific)
-    {
-      NotificationChain msgs = null;
-      if (specific != null)
-        msgs = ((InternalEObject)specific).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.ACCESSIBLE_ENTITY__SPECIFIC, null, msgs);
-      if (newSpecific != null)
-        msgs = ((InternalEObject)newSpecific).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.ACCESSIBLE_ENTITY__SPECIFIC, null, msgs);
-      msgs = basicSetSpecific(newSpecific, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.ACCESSIBLE_ENTITY__SPECIFIC, newSpecific, newSpecific));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case LilPackage.ACCESSIBLE_ENTITY__SPECIFIC:
-        return basicSetSpecific(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.ACCESSIBLE_ENTITY__SPECIFIC, oldSpecific, specific));
   }
 
   /**
@@ -182,7 +160,8 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
       case LilPackage.ACCESSIBLE_ENTITY__GENERIC:
         return getGeneric();
       case LilPackage.ACCESSIBLE_ENTITY__SPECIFIC:
-        return getSpecific();
+        if (resolve) return getSpecific();
+        return basicGetSpecific();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -201,7 +180,7 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
         setGeneric((String)newValue);
         return;
       case LilPackage.ACCESSIBLE_ENTITY__SPECIFIC:
-        setSpecific((Entity)newValue);
+        setSpecific((EntityDeclaration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,7 +200,7 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
         setGeneric(GENERIC_EDEFAULT);
         return;
       case LilPackage.ACCESSIBLE_ENTITY__SPECIFIC:
-        setSpecific((Entity)null);
+        setSpecific((EntityDeclaration)null);
         return;
     }
     super.eUnset(featureID);

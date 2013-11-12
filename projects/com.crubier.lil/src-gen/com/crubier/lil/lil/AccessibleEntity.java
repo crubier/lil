@@ -50,29 +50,29 @@ public interface AccessibleEntity extends EObject
   void setGeneric(String value);
 
   /**
-   * Returns the value of the '<em><b>Specific</b></em>' containment reference.
+   * Returns the value of the '<em><b>Specific</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Specific</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Specific</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Specific</em>' containment reference.
-   * @see #setSpecific(Entity)
+   * @return the value of the '<em>Specific</em>' reference.
+   * @see #setSpecific(EntityDeclaration)
    * @see com.crubier.lil.lil.LilPackage#getAccessibleEntity_Specific()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Entity getSpecific();
+  EntityDeclaration getSpecific();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.AccessibleEntity#getSpecific <em>Specific</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.AccessibleEntity#getSpecific <em>Specific</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Specific</em>' containment reference.
+   * @param value the new value of the '<em>Specific</em>' reference.
    * @see #getSpecific()
    * @generated
    */
-  void setSpecific(Entity value);
+  void setSpecific(EntityDeclaration value);
 
 } // AccessibleEntity

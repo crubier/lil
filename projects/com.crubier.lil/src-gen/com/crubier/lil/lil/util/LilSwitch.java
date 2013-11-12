@@ -93,27 +93,6 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.ENTITY:
-      {
-        Entity entity = (Entity)theEObject;
-        T result = caseEntity(entity);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.ACTOR:
-      {
-        Actor actor = (Actor)theEObject;
-        T result = caseActor(actor);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.COMPONENT:
-      {
-        Component component = (Component)theEObject;
-        T result = caseComponent(component);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case LilPackage.ENTITY_DECLARATION:
       {
         EntityDeclaration entityDeclaration = (EntityDeclaration)theEObject;
@@ -144,31 +123,17 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.EVENT_RECEPTION:
+      case LilPackage.SIGNAL_RECEPTION:
       {
-        EventReception eventReception = (EventReception)theEObject;
-        T result = caseEventReception(eventReception);
+        SignalReception signalReception = (SignalReception)theEObject;
+        T result = caseSignalReception(signalReception);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.FLOW_RECEPTION:
+      case LilPackage.SIGNAL_EMISSION:
       {
-        FlowReception flowReception = (FlowReception)theEObject;
-        T result = caseFlowReception(flowReception);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.EVENT_EMISSION:
-      {
-        EventEmission eventEmission = (EventEmission)theEObject;
-        T result = caseEventEmission(eventEmission);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.FLOW_EMISSION:
-      {
-        FlowEmission flowEmission = (FlowEmission)theEObject;
-        T result = caseFlowEmission(flowEmission);
+        SignalEmission signalEmission = (SignalEmission)theEObject;
+        T result = caseSignalEmission(signalEmission);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -179,19 +144,31 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.EVENT_DECLARATION:
+      case LilPackage.SIGNAL_ALIAS:
       {
-        EventDeclaration eventDeclaration = (EventDeclaration)theEObject;
-        T result = caseEventDeclaration(eventDeclaration);
-        if (result == null) result = caseSignalDeclaration(eventDeclaration);
+        SignalAlias signalAlias = (SignalAlias)theEObject;
+        T result = caseSignalAlias(signalAlias);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.FLOW_DECLARATION:
+      case LilPackage.DATA_TYPE:
       {
-        FlowDeclaration flowDeclaration = (FlowDeclaration)theEObject;
-        T result = caseFlowDeclaration(flowDeclaration);
-        if (result == null) result = caseSignalDeclaration(flowDeclaration);
+        DataType dataType = (DataType)theEObject;
+        T result = caseDataType(dataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_COMPOUND_DECLARATION:
+      {
+        DataTypeCompoundDeclaration dataTypeCompoundDeclaration = (DataTypeCompoundDeclaration)theEObject;
+        T result = caseDataTypeCompoundDeclaration(dataTypeCompoundDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_COMPOUND_FIELD:
+      {
+        DataTypeCompoundField dataTypeCompoundField = (DataTypeCompoundField)theEObject;
+        T result = caseDataTypeCompoundField(dataTypeCompoundField);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -253,27 +230,6 @@ public class LilSwitch<T> extends Switch<T>
         TriggerEffect triggerEffect = (TriggerEffect)theEObject;
         T result = caseTriggerEffect(triggerEffect);
         if (result == null) result = caseEffect(triggerEffect);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.DATA_TYPE_COMPOUND_DECLARATION:
-      {
-        DataTypeCompoundDeclaration dataTypeCompoundDeclaration = (DataTypeCompoundDeclaration)theEObject;
-        T result = caseDataTypeCompoundDeclaration(dataTypeCompoundDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.DATA_TYPE_COMPOUND_FIELD:
-      {
-        DataTypeCompoundField dataTypeCompoundField = (DataTypeCompoundField)theEObject;
-        T result = caseDataTypeCompoundField(dataTypeCompoundField);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.DATA_TYPE:
-      {
-        DataType dataType = (DataType)theEObject;
-        T result = caseDataType(dataType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -466,54 +422,6 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEntity(Entity object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Actor</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Actor</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseActor(Actor object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Component</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComponent(Component object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Entity Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -578,65 +486,33 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Event Reception</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Signal Reception</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Event Reception</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Signal Reception</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEventReception(EventReception object)
+  public T caseSignalReception(SignalReception object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Flow Reception</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Signal Emission</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Flow Reception</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Signal Emission</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFlowReception(FlowReception object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Event Emission</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Event Emission</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEventEmission(EventEmission object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Flow Emission</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Flow Emission</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFlowEmission(FlowEmission object)
+  public T caseSignalEmission(SignalEmission object)
   {
     return null;
   }
@@ -658,33 +534,65 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Event Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Signal Alias</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Event Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Signal Alias</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEventDeclaration(EventDeclaration object)
+  public T caseSignalAlias(SignalAlias object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Flow Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Flow Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFlowDeclaration(FlowDeclaration object)
+  public T caseDataType(DataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Compound Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeCompoundDeclaration(DataTypeCompoundDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Compound Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeCompoundField(DataTypeCompoundField object)
   {
     return null;
   }
@@ -813,54 +721,6 @@ public class LilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTriggerEffect(TriggerEffect object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Type Compound Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDataTypeCompoundDeclaration(DataTypeCompoundDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound Field</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Type Compound Field</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDataTypeCompoundField(DataTypeCompoundField object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDataType(DataType object)
   {
     return null;
   }

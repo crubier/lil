@@ -168,7 +168,7 @@ public interface LilPackage extends EPackage
   int ACCESSIBLE_ENTITY__GENERIC = 0;
 
   /**
-   * The feature id for the '<em><b>Specific</b></em>' containment reference.
+   * The feature id for the '<em><b>Specific</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -186,90 +186,6 @@ public interface LilPackage extends EPackage
   int ACCESSIBLE_ENTITY_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.EntityImpl <em>Entity</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.EntityImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getEntity()
-   * @generated
-   */
-  int ENTITY = 3;
-
-  /**
-   * The feature id for the '<em><b>Instance</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__INSTANCE = 0;
-
-  /**
-   * The number of structural features of the '<em>Entity</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.ActorImpl <em>Actor</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.ActorImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getActor()
-   * @generated
-   */
-  int ACTOR = 4;
-
-  /**
-   * The feature id for the '<em><b>Instance</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTOR__INSTANCE = 0;
-
-  /**
-   * The number of structural features of the '<em>Actor</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTOR_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.ComponentImpl <em>Component</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.ComponentImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getComponent()
-   * @generated
-   */
-  int COMPONENT = 5;
-
-  /**
-   * The feature id for the '<em><b>Instance</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__INSTANCE = 0;
-
-  /**
-   * The number of structural features of the '<em>Component</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.EntityDeclarationImpl <em>Entity Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -277,7 +193,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getEntityDeclaration()
    * @generated
    */
-  int ENTITY_DECLARATION = 6;
+  int ENTITY_DECLARATION = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -305,7 +221,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorDeclaration()
    * @generated
    */
-  int ACTOR_DECLARATION = 7;
+  int ACTOR_DECLARATION = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -333,10 +249,10 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorAlias()
    * @generated
    */
-  int ACTOR_ALIAS = 8;
+  int ACTOR_ALIAS = 5;
 
   /**
-   * The feature id for the '<em><b>Source</b></em>' containment reference.
+   * The feature id for the '<em><b>Source</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -345,13 +261,13 @@ public interface LilPackage extends EPackage
   int ACTOR_ALIAS__SOURCE = 0;
 
   /**
-   * The feature id for the '<em><b>Remote</b></em>' containment reference.
+   * The feature id for the '<em><b>Alias</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTOR_ALIAS__REMOTE = 1;
+  int ACTOR_ALIAS__ALIAS = 1;
 
   /**
    * The number of structural features of the '<em>Actor Alias</em>' class.
@@ -370,7 +286,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getComponentDeclaration()
    * @generated
    */
-  int COMPONENT_DECLARATION = 9;
+  int COMPONENT_DECLARATION = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -409,14 +325,14 @@ public interface LilPackage extends EPackage
   int COMPONENT_DECLARATION_FEATURE_COUNT = ENTITY_DECLARATION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.EventReceptionImpl <em>Event Reception</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.SignalReceptionImpl <em>Signal Reception</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.EventReceptionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getEventReception()
+   * @see com.crubier.lil.lil.impl.SignalReceptionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getSignalReception()
    * @generated
    */
-  int EVENT_RECEPTION = 10;
+  int SIGNAL_RECEPTION = 7;
 
   /**
    * The feature id for the '<em><b>Instance</b></em>' reference.
@@ -425,7 +341,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_RECEPTION__INSTANCE = 0;
+  int SIGNAL_RECEPTION__INSTANCE = 0;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -434,35 +350,35 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_RECEPTION__SOURCE = 1;
+  int SIGNAL_RECEPTION__SOURCE = 1;
 
   /**
-   * The feature id for the '<em><b>Base</b></em>' attribute.
+   * The feature id for the '<em><b>Init</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_RECEPTION__BASE = 2;
+  int SIGNAL_RECEPTION__INIT = 2;
 
   /**
-   * The number of structural features of the '<em>Event Reception</em>' class.
+   * The number of structural features of the '<em>Signal Reception</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_RECEPTION_FEATURE_COUNT = 3;
+  int SIGNAL_RECEPTION_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.FlowReceptionImpl <em>Flow Reception</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.SignalEmissionImpl <em>Signal Emission</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.FlowReceptionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getFlowReception()
+   * @see com.crubier.lil.lil.impl.SignalEmissionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getSignalEmission()
    * @generated
    */
-  int FLOW_RECEPTION = 11;
+  int SIGNAL_EMISSION = 8;
 
   /**
    * The feature id for the '<em><b>Instance</b></em>' reference.
@@ -471,44 +387,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_RECEPTION__INSTANCE = 0;
-
-  /**
-   * The feature id for the '<em><b>Source</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_RECEPTION__SOURCE = 1;
-
-  /**
-   * The number of structural features of the '<em>Flow Reception</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_RECEPTION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.EventEmissionImpl <em>Event Emission</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.EventEmissionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getEventEmission()
-   * @generated
-   */
-  int EVENT_EMISSION = 12;
-
-  /**
-   * The feature id for the '<em><b>Instance</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT_EMISSION__INSTANCE = 0;
+  int SIGNAL_EMISSION__INSTANCE = 0;
 
   /**
    * The feature id for the '<em><b>Destination</b></em>' containment reference.
@@ -517,53 +396,16 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_EMISSION__DESTINATION = 1;
+  int SIGNAL_EMISSION__DESTINATION = 1;
 
   /**
-   * The number of structural features of the '<em>Event Emission</em>' class.
+   * The number of structural features of the '<em>Signal Emission</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_EMISSION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.FlowEmissionImpl <em>Flow Emission</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.FlowEmissionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getFlowEmission()
-   * @generated
-   */
-  int FLOW_EMISSION = 13;
-
-  /**
-   * The feature id for the '<em><b>Instance</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_EMISSION__INSTANCE = 0;
-
-  /**
-   * The feature id for the '<em><b>Destination</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_EMISSION__DESTINATION = 1;
-
-  /**
-   * The number of structural features of the '<em>Flow Emission</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_EMISSION_FEATURE_COUNT = 2;
+  int SIGNAL_EMISSION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.SignalDeclarationImpl <em>Signal Declaration</em>}' class.
@@ -573,7 +415,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getSignalDeclaration()
    * @generated
    */
-  int SIGNAL_DECLARATION = 14;
+  int SIGNAL_DECLARATION = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -594,13 +436,22 @@ public interface LilPackage extends EPackage
   int SIGNAL_DECLARATION__TYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Mode</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIGNAL_DECLARATION__MODE = 2;
+
+  /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIGNAL_DECLARATION__SOURCE = 2;
+  int SIGNAL_DECLARATION__SOURCE = 3;
 
   /**
    * The feature id for the '<em><b>Destinations</b></em>' containment reference list.
@@ -609,7 +460,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIGNAL_DECLARATION__DESTINATIONS = 3;
+  int SIGNAL_DECLARATION__DESTINATIONS = 4;
 
   /**
    * The number of structural features of the '<em>Signal Declaration</em>' class.
@@ -618,35 +469,17 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIGNAL_DECLARATION_FEATURE_COUNT = 4;
+  int SIGNAL_DECLARATION_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.EventDeclarationImpl <em>Event Declaration</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.SignalAliasImpl <em>Signal Alias</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.EventDeclarationImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getEventDeclaration()
+   * @see com.crubier.lil.lil.impl.SignalAliasImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getSignalAlias()
    * @generated
    */
-  int EVENT_DECLARATION = 15;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT_DECLARATION__NAME = SIGNAL_DECLARATION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT_DECLARATION__TYPE = SIGNAL_DECLARATION__TYPE;
+  int SIGNAL_ALIAS = 10;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -655,358 +488,44 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_DECLARATION__SOURCE = SIGNAL_DECLARATION__SOURCE;
+  int SIGNAL_ALIAS__SOURCE = 0;
 
   /**
-   * The feature id for the '<em><b>Destinations</b></em>' containment reference list.
+   * The feature id for the '<em><b>Alias</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_DECLARATION__DESTINATIONS = SIGNAL_DECLARATION__DESTINATIONS;
+  int SIGNAL_ALIAS__ALIAS = 1;
 
   /**
-   * The number of structural features of the '<em>Event Declaration</em>' class.
+   * The number of structural features of the '<em>Signal Alias</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_DECLARATION_FEATURE_COUNT = SIGNAL_DECLARATION_FEATURE_COUNT + 0;
+  int SIGNAL_ALIAS_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.FlowDeclarationImpl <em>Flow Declaration</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeImpl <em>Data Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.FlowDeclarationImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getFlowDeclaration()
+   * @see com.crubier.lil.lil.impl.DataTypeImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataType()
    * @generated
    */
-  int FLOW_DECLARATION = 16;
+  int DATA_TYPE = 11;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_DECLARATION__NAME = SIGNAL_DECLARATION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * The number of structural features of the '<em>Data Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOW_DECLARATION__TYPE = SIGNAL_DECLARATION__TYPE;
-
-  /**
-   * The feature id for the '<em><b>Source</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_DECLARATION__SOURCE = SIGNAL_DECLARATION__SOURCE;
-
-  /**
-   * The feature id for the '<em><b>Destinations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_DECLARATION__DESTINATIONS = SIGNAL_DECLARATION__DESTINATIONS;
-
-  /**
-   * The number of structural features of the '<em>Flow Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_DECLARATION_FEATURE_COUNT = SIGNAL_DECLARATION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.BehaviorDeclarationImpl <em>Behavior Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.BehaviorDeclarationImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBehaviorDeclaration()
-   * @generated
-   */
-  int BEHAVIOR_DECLARATION = 17;
-
-  /**
-   * The feature id for the '<em><b>Cause</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BEHAVIOR_DECLARATION__CAUSE = 0;
-
-  /**
-   * The feature id for the '<em><b>Effects</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BEHAVIOR_DECLARATION__EFFECTS = 1;
-
-  /**
-   * The number of structural features of the '<em>Behavior Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BEHAVIOR_DECLARATION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.CauseImpl <em>Cause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.CauseImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getCause()
-   * @generated
-   */
-  int CAUSE = 18;
-
-  /**
-   * The feature id for the '<em><b>Guard</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CAUSE__GUARD = 0;
-
-  /**
-   * The number of structural features of the '<em>Cause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CAUSE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.OnCauseImpl <em>On Cause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.OnCauseImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getOnCause()
-   * @generated
-   */
-  int ON_CAUSE = 19;
-
-  /**
-   * The feature id for the '<em><b>Guard</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ON_CAUSE__GUARD = CAUSE__GUARD;
-
-  /**
-   * The feature id for the '<em><b>Event</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ON_CAUSE__EVENT = CAUSE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>On Cause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ON_CAUSE_FEATURE_COUNT = CAUSE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.WhenCauseImpl <em>When Cause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.WhenCauseImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getWhenCause()
-   * @generated
-   */
-  int WHEN_CAUSE = 20;
-
-  /**
-   * The feature id for the '<em><b>Guard</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_CAUSE__GUARD = CAUSE__GUARD;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_CAUSE__CONDITION = CAUSE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>When Cause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHEN_CAUSE_FEATURE_COUNT = CAUSE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.EffectImpl <em>Effect</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.EffectImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getEffect()
-   * @generated
-   */
-  int EFFECT = 21;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFFECT__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>Effect</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFFECT_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.AlwaysEffectImpl <em>Always Effect</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.AlwaysEffectImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getAlwaysEffect()
-   * @generated
-   */
-  int ALWAYS_EFFECT = 22;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALWAYS_EFFECT__VALUE = EFFECT__VALUE;
-
-  /**
-   * The feature id for the '<em><b>Target</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALWAYS_EFFECT__TARGET = EFFECT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Always Effect</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALWAYS_EFFECT_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.SetEffectImpl <em>Set Effect</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.SetEffectImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getSetEffect()
-   * @generated
-   */
-  int SET_EFFECT = 23;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_EFFECT__VALUE = EFFECT__VALUE;
-
-  /**
-   * The feature id for the '<em><b>Target</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_EFFECT__TARGET = EFFECT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Set Effect</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_EFFECT_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.TriggerEffectImpl <em>Trigger Effect</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.TriggerEffectImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getTriggerEffect()
-   * @generated
-   */
-  int TRIGGER_EFFECT = 24;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRIGGER_EFFECT__VALUE = EFFECT__VALUE;
-
-  /**
-   * The feature id for the '<em><b>Target</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRIGGER_EFFECT__TARGET = EFFECT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Trigger Effect</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRIGGER_EFFECT_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 1;
+  int DATA_TYPE_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl <em>Data Type Compound Declaration</em>}' class.
@@ -1016,7 +535,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundDeclaration()
    * @generated
    */
-  int DATA_TYPE_COMPOUND_DECLARATION = 25;
+  int DATA_TYPE_COMPOUND_DECLARATION = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1053,7 +572,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundField()
    * @generated
    */
-  int DATA_TYPE_COMPOUND_FIELD = 26;
+  int DATA_TYPE_COMPOUND_FIELD = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1083,23 +602,291 @@ public interface LilPackage extends EPackage
   int DATA_TYPE_COMPOUND_FIELD_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeImpl <em>Data Type</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.BehaviorDeclarationImpl <em>Behavior Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.DataTypeImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataType()
+   * @see com.crubier.lil.lil.impl.BehaviorDeclarationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBehaviorDeclaration()
    * @generated
    */
-  int DATA_TYPE = 27;
+  int BEHAVIOR_DECLARATION = 14;
 
   /**
-   * The number of structural features of the '<em>Data Type</em>' class.
+   * The feature id for the '<em><b>Cause</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_TYPE_FEATURE_COUNT = 0;
+  int BEHAVIOR_DECLARATION__CAUSE = 0;
+
+  /**
+   * The feature id for the '<em><b>Effects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR_DECLARATION__EFFECTS = 1;
+
+  /**
+   * The number of structural features of the '<em>Behavior Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR_DECLARATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.CauseImpl <em>Cause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.CauseImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getCause()
+   * @generated
+   */
+  int CAUSE = 15;
+
+  /**
+   * The feature id for the '<em><b>Guard</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAUSE__GUARD = 0;
+
+  /**
+   * The number of structural features of the '<em>Cause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAUSE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.OnCauseImpl <em>On Cause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.OnCauseImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getOnCause()
+   * @generated
+   */
+  int ON_CAUSE = 16;
+
+  /**
+   * The feature id for the '<em><b>Guard</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ON_CAUSE__GUARD = CAUSE__GUARD;
+
+  /**
+   * The feature id for the '<em><b>Event</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ON_CAUSE__EVENT = CAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>On Cause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ON_CAUSE_FEATURE_COUNT = CAUSE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.WhenCauseImpl <em>When Cause</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.WhenCauseImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getWhenCause()
+   * @generated
+   */
+  int WHEN_CAUSE = 17;
+
+  /**
+   * The feature id for the '<em><b>Guard</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_CAUSE__GUARD = CAUSE__GUARD;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_CAUSE__CONDITION = CAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>When Cause</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_CAUSE_FEATURE_COUNT = CAUSE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.EffectImpl <em>Effect</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.EffectImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getEffect()
+   * @generated
+   */
+  int EFFECT = 18;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EFFECT__TARGET = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EFFECT__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Effect</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EFFECT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.AlwaysEffectImpl <em>Always Effect</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.AlwaysEffectImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getAlwaysEffect()
+   * @generated
+   */
+  int ALWAYS_EFFECT = 19;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALWAYS_EFFECT__TARGET = EFFECT__TARGET;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALWAYS_EFFECT__VALUE = EFFECT__VALUE;
+
+  /**
+   * The number of structural features of the '<em>Always Effect</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALWAYS_EFFECT_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.SetEffectImpl <em>Set Effect</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.SetEffectImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getSetEffect()
+   * @generated
+   */
+  int SET_EFFECT = 20;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_EFFECT__TARGET = EFFECT__TARGET;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_EFFECT__VALUE = EFFECT__VALUE;
+
+  /**
+   * The number of structural features of the '<em>Set Effect</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_EFFECT_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.TriggerEffectImpl <em>Trigger Effect</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.TriggerEffectImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getTriggerEffect()
+   * @generated
+   */
+  int TRIGGER_EFFECT = 21;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_EFFECT__TARGET = EFFECT__TARGET;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_EFFECT__VALUE = EFFECT__VALUE;
+
+  /**
+   * The number of structural features of the '<em>Trigger Effect</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_EFFECT_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.XExpressionImpl <em>XExpression</em>}' class.
@@ -1109,7 +896,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXExpression()
    * @generated
    */
-  int XEXPRESSION = 28;
+  int XEXPRESSION = 22;
 
   /**
    * The number of structural features of the '<em>XExpression</em>' class.
@@ -1128,7 +915,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXCollectionLiteral()
    * @generated
    */
-  int XCOLLECTION_LITERAL = 29;
+  int XCOLLECTION_LITERAL = 23;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1156,7 +943,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSetLiteral()
    * @generated
    */
-  int XSET_LITERAL = 30;
+  int XSET_LITERAL = 24;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1184,7 +971,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXListLiteral()
    * @generated
    */
-  int XLIST_LITERAL = 31;
+  int XLIST_LITERAL = 25;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1212,7 +999,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXCasePart()
    * @generated
    */
-  int XCASE_PART = 32;
+  int XCASE_PART = 26;
 
   /**
    * The feature id for the '<em><b>Case</b></em>' containment reference.
@@ -1249,7 +1036,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompound()
    * @generated
    */
-  int DATA_TYPE_COMPOUND = 33;
+  int DATA_TYPE_COMPOUND = 27;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1277,7 +1064,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeBase()
    * @generated
    */
-  int DATA_TYPE_BASE = 34;
+  int DATA_TYPE_BASE = 28;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1305,7 +1092,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBinaryOperation()
    * @generated
    */
-  int XBINARY_OPERATION = 35;
+  int XBINARY_OPERATION = 29;
 
   /**
    * The feature id for the '<em><b>Left Operand</b></em>' containment reference.
@@ -1351,7 +1138,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXUnaryOperation()
    * @generated
    */
-  int XUNARY_OPERATION = 36;
+  int XUNARY_OPERATION = 30;
 
   /**
    * The feature id for the '<em><b>Feature</b></em>' attribute.
@@ -1388,7 +1175,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXIfExpression()
    * @generated
    */
-  int XIF_EXPRESSION = 37;
+  int XIF_EXPRESSION = 31;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -1434,7 +1221,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSwitchExpression()
    * @generated
    */
-  int XSWITCH_EXPRESSION = 38;
+  int XSWITCH_EXPRESSION = 32;
 
   /**
    * The feature id for the '<em><b>Switch</b></em>' containment reference.
@@ -1480,7 +1267,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXForEachExpression()
    * @generated
    */
-  int XFOR_EACH_EXPRESSION = 39;
+  int XFOR_EACH_EXPRESSION = 33;
 
   /**
    * The feature id for the '<em><b>For Expression</b></em>' containment reference.
@@ -1517,7 +1304,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXFunctionCallExpression()
    * @generated
    */
-  int XFUNCTION_CALL_EXPRESSION = 40;
+  int XFUNCTION_CALL_EXPRESSION = 34;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -1554,7 +1341,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBooleanLiteral()
    * @generated
    */
-  int XBOOLEAN_LITERAL = 41;
+  int XBOOLEAN_LITERAL = 35;
 
   /**
    * The feature id for the '<em><b>Is True</b></em>' attribute.
@@ -1582,7 +1369,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNullLiteral()
    * @generated
    */
-  int XNULL_LITERAL = 42;
+  int XNULL_LITERAL = 36;
 
   /**
    * The number of structural features of the '<em>XNull Literal</em>' class.
@@ -1601,7 +1388,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNumberLiteral()
    * @generated
    */
-  int XNUMBER_LITERAL = 43;
+  int XNUMBER_LITERAL = 37;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1629,7 +1416,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXStringLiteral()
    * @generated
    */
-  int XSTRING_LITERAL = 44;
+  int XSTRING_LITERAL = 38;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1758,78 +1545,15 @@ public interface LilPackage extends EPackage
   EAttribute getAccessibleEntity_Generic();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.AccessibleEntity#getSpecific <em>Specific</em>}'.
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.AccessibleEntity#getSpecific <em>Specific</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Specific</em>'.
+   * @return the meta object for the reference '<em>Specific</em>'.
    * @see com.crubier.lil.lil.AccessibleEntity#getSpecific()
    * @see #getAccessibleEntity()
    * @generated
    */
   EReference getAccessibleEntity_Specific();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.Entity <em>Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Entity</em>'.
-   * @see com.crubier.lil.lil.Entity
-   * @generated
-   */
-  EClass getEntity();
-
-  /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.Entity#getInstance <em>Instance</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Instance</em>'.
-   * @see com.crubier.lil.lil.Entity#getInstance()
-   * @see #getEntity()
-   * @generated
-   */
-  EReference getEntity_Instance();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.Actor <em>Actor</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Actor</em>'.
-   * @see com.crubier.lil.lil.Actor
-   * @generated
-   */
-  EClass getActor();
-
-  /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.Actor#getInstance <em>Instance</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Instance</em>'.
-   * @see com.crubier.lil.lil.Actor#getInstance()
-   * @see #getActor()
-   * @generated
-   */
-  EReference getActor_Instance();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.Component <em>Component</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component</em>'.
-   * @see com.crubier.lil.lil.Component
-   * @generated
-   */
-  EClass getComponent();
-
-  /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.Component#getInstance <em>Instance</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Instance</em>'.
-   * @see com.crubier.lil.lil.Component#getInstance()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Instance();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.EntityDeclaration <em>Entity Declaration</em>}'.
@@ -1873,10 +1597,10 @@ public interface LilPackage extends EPackage
   EClass getActorAlias();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.ActorAlias#getSource <em>Source</em>}'.
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.ActorAlias#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Source</em>'.
+   * @return the meta object for the reference '<em>Source</em>'.
    * @see com.crubier.lil.lil.ActorAlias#getSource()
    * @see #getActorAlias()
    * @generated
@@ -1884,15 +1608,15 @@ public interface LilPackage extends EPackage
   EReference getActorAlias_Source();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.ActorAlias#getRemote <em>Remote</em>}'.
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.ActorAlias#getAlias <em>Alias</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Remote</em>'.
-   * @see com.crubier.lil.lil.ActorAlias#getRemote()
+   * @return the meta object for the reference '<em>Alias</em>'.
+   * @see com.crubier.lil.lil.ActorAlias#getAlias()
    * @see #getActorAlias()
    * @generated
    */
-  EReference getActorAlias_Remote();
+  EReference getActorAlias_Alias();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.ComponentDeclaration <em>Component Declaration</em>}'.
@@ -1927,143 +1651,79 @@ public interface LilPackage extends EPackage
   EReference getComponentDeclaration_Aliases();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.EventReception <em>Event Reception</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.SignalReception <em>Signal Reception</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Event Reception</em>'.
-   * @see com.crubier.lil.lil.EventReception
+   * @return the meta object for class '<em>Signal Reception</em>'.
+   * @see com.crubier.lil.lil.SignalReception
    * @generated
    */
-  EClass getEventReception();
+  EClass getSignalReception();
 
   /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.EventReception#getInstance <em>Instance</em>}'.
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.SignalReception#getInstance <em>Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Instance</em>'.
-   * @see com.crubier.lil.lil.EventReception#getInstance()
-   * @see #getEventReception()
+   * @see com.crubier.lil.lil.SignalReception#getInstance()
+   * @see #getSignalReception()
    * @generated
    */
-  EReference getEventReception_Instance();
+  EReference getSignalReception_Instance();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.EventReception#getSource <em>Source</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.SignalReception#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Source</em>'.
-   * @see com.crubier.lil.lil.EventReception#getSource()
-   * @see #getEventReception()
+   * @see com.crubier.lil.lil.SignalReception#getSource()
+   * @see #getSignalReception()
    * @generated
    */
-  EReference getEventReception_Source();
+  EReference getSignalReception_Source();
 
   /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.EventReception#getBase <em>Base</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.SignalReception#isInit <em>Init</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Base</em>'.
-   * @see com.crubier.lil.lil.EventReception#getBase()
-   * @see #getEventReception()
+   * @return the meta object for the attribute '<em>Init</em>'.
+   * @see com.crubier.lil.lil.SignalReception#isInit()
+   * @see #getSignalReception()
    * @generated
    */
-  EAttribute getEventReception_Base();
+  EAttribute getSignalReception_Init();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.FlowReception <em>Flow Reception</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.SignalEmission <em>Signal Emission</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Flow Reception</em>'.
-   * @see com.crubier.lil.lil.FlowReception
+   * @return the meta object for class '<em>Signal Emission</em>'.
+   * @see com.crubier.lil.lil.SignalEmission
    * @generated
    */
-  EClass getFlowReception();
+  EClass getSignalEmission();
 
   /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.FlowReception#getInstance <em>Instance</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Instance</em>'.
-   * @see com.crubier.lil.lil.FlowReception#getInstance()
-   * @see #getFlowReception()
-   * @generated
-   */
-  EReference getFlowReception_Instance();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.FlowReception#getSource <em>Source</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Source</em>'.
-   * @see com.crubier.lil.lil.FlowReception#getSource()
-   * @see #getFlowReception()
-   * @generated
-   */
-  EReference getFlowReception_Source();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.EventEmission <em>Event Emission</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Event Emission</em>'.
-   * @see com.crubier.lil.lil.EventEmission
-   * @generated
-   */
-  EClass getEventEmission();
-
-  /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.EventEmission#getInstance <em>Instance</em>}'.
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.SignalEmission#getInstance <em>Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Instance</em>'.
-   * @see com.crubier.lil.lil.EventEmission#getInstance()
-   * @see #getEventEmission()
+   * @see com.crubier.lil.lil.SignalEmission#getInstance()
+   * @see #getSignalEmission()
    * @generated
    */
-  EReference getEventEmission_Instance();
+  EReference getSignalEmission_Instance();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.EventEmission#getDestination <em>Destination</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.SignalEmission#getDestination <em>Destination</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Destination</em>'.
-   * @see com.crubier.lil.lil.EventEmission#getDestination()
-   * @see #getEventEmission()
+   * @see com.crubier.lil.lil.SignalEmission#getDestination()
+   * @see #getSignalEmission()
    * @generated
    */
-  EReference getEventEmission_Destination();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.FlowEmission <em>Flow Emission</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Flow Emission</em>'.
-   * @see com.crubier.lil.lil.FlowEmission
-   * @generated
-   */
-  EClass getFlowEmission();
-
-  /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.FlowEmission#getInstance <em>Instance</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Instance</em>'.
-   * @see com.crubier.lil.lil.FlowEmission#getInstance()
-   * @see #getFlowEmission()
-   * @generated
-   */
-  EReference getFlowEmission_Instance();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.FlowEmission#getDestination <em>Destination</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Destination</em>'.
-   * @see com.crubier.lil.lil.FlowEmission#getDestination()
-   * @see #getFlowEmission()
-   * @generated
-   */
-  EReference getFlowEmission_Destination();
+  EReference getSignalEmission_Destination();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.SignalDeclaration <em>Signal Declaration</em>}'.
@@ -2098,6 +1758,17 @@ public interface LilPackage extends EPackage
   EReference getSignalDeclaration_Type();
 
   /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.SignalDeclaration#getMode <em>Mode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mode</em>'.
+   * @see com.crubier.lil.lil.SignalDeclaration#getMode()
+   * @see #getSignalDeclaration()
+   * @generated
+   */
+  EAttribute getSignalDeclaration_Mode();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.SignalDeclaration#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2120,24 +1791,110 @@ public interface LilPackage extends EPackage
   EReference getSignalDeclaration_Destinations();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.EventDeclaration <em>Event Declaration</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.SignalAlias <em>Signal Alias</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Event Declaration</em>'.
-   * @see com.crubier.lil.lil.EventDeclaration
+   * @return the meta object for class '<em>Signal Alias</em>'.
+   * @see com.crubier.lil.lil.SignalAlias
    * @generated
    */
-  EClass getEventDeclaration();
+  EClass getSignalAlias();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.FlowDeclaration <em>Flow Declaration</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.SignalAlias#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Flow Declaration</em>'.
-   * @see com.crubier.lil.lil.FlowDeclaration
+   * @return the meta object for the containment reference '<em>Source</em>'.
+   * @see com.crubier.lil.lil.SignalAlias#getSource()
+   * @see #getSignalAlias()
    * @generated
    */
-  EClass getFlowDeclaration();
+  EReference getSignalAlias_Source();
+
+  /**
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.SignalAlias#getAlias <em>Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Alias</em>'.
+   * @see com.crubier.lil.lil.SignalAlias#getAlias()
+   * @see #getSignalAlias()
+   * @generated
+   */
+  EReference getSignalAlias_Alias();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.DataType <em>Data Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Type</em>'.
+   * @see com.crubier.lil.lil.DataType
+   * @generated
+   */
+  EClass getDataType();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration <em>Data Type Compound Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Type Compound Declaration</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration
+   * @generated
+   */
+  EClass getDataTypeCompoundDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration#getName()
+   * @see #getDataTypeCompoundDeclaration()
+   * @generated
+   */
+  EAttribute getDataTypeCompoundDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration#getFields <em>Fields</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Fields</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration#getFields()
+   * @see #getDataTypeCompoundDeclaration()
+   * @generated
+   */
+  EReference getDataTypeCompoundDeclaration_Fields();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeCompoundField <em>Data Type Compound Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Type Compound Field</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompoundField
+   * @generated
+   */
+  EClass getDataTypeCompoundField();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeCompoundField#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompoundField#getName()
+   * @see #getDataTypeCompoundField()
+   * @generated
+   */
+  EAttribute getDataTypeCompoundField_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.DataTypeCompoundField#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see com.crubier.lil.lil.DataTypeCompoundField#getType()
+   * @see #getDataTypeCompoundField()
+   * @generated
+   */
+  EReference getDataTypeCompoundField_Type();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.BehaviorDeclaration <em>Behavior Declaration</em>}'.
@@ -2245,6 +2002,17 @@ public interface LilPackage extends EPackage
   EClass getEffect();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.Effect#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Target</em>'.
+   * @see com.crubier.lil.lil.Effect#getTarget()
+   * @see #getEffect()
+   * @generated
+   */
+  EReference getEffect_Target();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.Effect#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2266,17 +2034,6 @@ public interface LilPackage extends EPackage
   EClass getAlwaysEffect();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.AlwaysEffect#getTarget <em>Target</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Target</em>'.
-   * @see com.crubier.lil.lil.AlwaysEffect#getTarget()
-   * @see #getAlwaysEffect()
-   * @generated
-   */
-  EReference getAlwaysEffect_Target();
-
-  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.SetEffect <em>Set Effect</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2287,17 +2044,6 @@ public interface LilPackage extends EPackage
   EClass getSetEffect();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.SetEffect#getTarget <em>Target</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Target</em>'.
-   * @see com.crubier.lil.lil.SetEffect#getTarget()
-   * @see #getSetEffect()
-   * @generated
-   */
-  EReference getSetEffect_Target();
-
-  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.TriggerEffect <em>Trigger Effect</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2306,91 +2052,6 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EClass getTriggerEffect();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.TriggerEffect#getTarget <em>Target</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Target</em>'.
-   * @see com.crubier.lil.lil.TriggerEffect#getTarget()
-   * @see #getTriggerEffect()
-   * @generated
-   */
-  EReference getTriggerEffect_Target();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration <em>Data Type Compound Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Type Compound Declaration</em>'.
-   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration
-   * @generated
-   */
-  EClass getDataTypeCompoundDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration#getName()
-   * @see #getDataTypeCompoundDeclaration()
-   * @generated
-   */
-  EAttribute getDataTypeCompoundDeclaration_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration#getFields <em>Fields</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Fields</em>'.
-   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration#getFields()
-   * @see #getDataTypeCompoundDeclaration()
-   * @generated
-   */
-  EReference getDataTypeCompoundDeclaration_Fields();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeCompoundField <em>Data Type Compound Field</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Type Compound Field</em>'.
-   * @see com.crubier.lil.lil.DataTypeCompoundField
-   * @generated
-   */
-  EClass getDataTypeCompoundField();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeCompoundField#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.crubier.lil.lil.DataTypeCompoundField#getName()
-   * @see #getDataTypeCompoundField()
-   * @generated
-   */
-  EAttribute getDataTypeCompoundField_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.DataTypeCompoundField#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see com.crubier.lil.lil.DataTypeCompoundField#getType()
-   * @see #getDataTypeCompoundField()
-   * @generated
-   */
-  EReference getDataTypeCompoundField_Type();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.DataType <em>Data Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Type</em>'.
-   * @see com.crubier.lil.lil.DataType
-   * @generated
-   */
-  EClass getDataType();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.XExpression <em>XExpression</em>}'.
@@ -2925,66 +2586,12 @@ public interface LilPackage extends EPackage
     EAttribute ACCESSIBLE_ENTITY__GENERIC = eINSTANCE.getAccessibleEntity_Generic();
 
     /**
-     * The meta object literal for the '<em><b>Specific</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Specific</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference ACCESSIBLE_ENTITY__SPECIFIC = eINSTANCE.getAccessibleEntity_Specific();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.EntityImpl <em>Entity</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.EntityImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getEntity()
-     * @generated
-     */
-    EClass ENTITY = eINSTANCE.getEntity();
-
-    /**
-     * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ENTITY__INSTANCE = eINSTANCE.getEntity_Instance();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.ActorImpl <em>Actor</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.ActorImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getActor()
-     * @generated
-     */
-    EClass ACTOR = eINSTANCE.getActor();
-
-    /**
-     * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTOR__INSTANCE = eINSTANCE.getActor_Instance();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.ComponentImpl <em>Component</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.ComponentImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getComponent()
-     * @generated
-     */
-    EClass COMPONENT = eINSTANCE.getComponent();
-
-    /**
-     * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__INSTANCE = eINSTANCE.getComponent_Instance();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.EntityDeclarationImpl <em>Entity Declaration</em>}' class.
@@ -3025,7 +2632,7 @@ public interface LilPackage extends EPackage
     EClass ACTOR_ALIAS = eINSTANCE.getActorAlias();
 
     /**
-     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Source</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3033,12 +2640,12 @@ public interface LilPackage extends EPackage
     EReference ACTOR_ALIAS__SOURCE = eINSTANCE.getActorAlias_Source();
 
     /**
-     * The meta object literal for the '<em><b>Remote</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Alias</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTOR_ALIAS__REMOTE = eINSTANCE.getActorAlias_Remote();
+    EReference ACTOR_ALIAS__ALIAS = eINSTANCE.getActorAlias_Alias();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.ComponentDeclarationImpl <em>Component Declaration</em>}' class.
@@ -3067,14 +2674,14 @@ public interface LilPackage extends EPackage
     EReference COMPONENT_DECLARATION__ALIASES = eINSTANCE.getComponentDeclaration_Aliases();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.EventReceptionImpl <em>Event Reception</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.SignalReceptionImpl <em>Signal Reception</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.EventReceptionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getEventReception()
+     * @see com.crubier.lil.lil.impl.SignalReceptionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getSignalReception()
      * @generated
      */
-    EClass EVENT_RECEPTION = eINSTANCE.getEventReception();
+    EClass SIGNAL_RECEPTION = eINSTANCE.getSignalReception();
 
     /**
      * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
@@ -3082,7 +2689,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_RECEPTION__INSTANCE = eINSTANCE.getEventReception_Instance();
+    EReference SIGNAL_RECEPTION__INSTANCE = eINSTANCE.getSignalReception_Instance();
 
     /**
      * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
@@ -3090,51 +2697,25 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_RECEPTION__SOURCE = eINSTANCE.getEventReception_Source();
+    EReference SIGNAL_RECEPTION__SOURCE = eINSTANCE.getSignalReception_Source();
 
     /**
-     * The meta object literal for the '<em><b>Base</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Init</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EVENT_RECEPTION__BASE = eINSTANCE.getEventReception_Base();
+    EAttribute SIGNAL_RECEPTION__INIT = eINSTANCE.getSignalReception_Init();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.FlowReceptionImpl <em>Flow Reception</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.SignalEmissionImpl <em>Signal Emission</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.FlowReceptionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getFlowReception()
+     * @see com.crubier.lil.lil.impl.SignalEmissionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getSignalEmission()
      * @generated
      */
-    EClass FLOW_RECEPTION = eINSTANCE.getFlowReception();
-
-    /**
-     * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FLOW_RECEPTION__INSTANCE = eINSTANCE.getFlowReception_Instance();
-
-    /**
-     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FLOW_RECEPTION__SOURCE = eINSTANCE.getFlowReception_Source();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.EventEmissionImpl <em>Event Emission</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.EventEmissionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getEventEmission()
-     * @generated
-     */
-    EClass EVENT_EMISSION = eINSTANCE.getEventEmission();
+    EClass SIGNAL_EMISSION = eINSTANCE.getSignalEmission();
 
     /**
      * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
@@ -3142,7 +2723,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_EMISSION__INSTANCE = eINSTANCE.getEventEmission_Instance();
+    EReference SIGNAL_EMISSION__INSTANCE = eINSTANCE.getSignalEmission_Instance();
 
     /**
      * The meta object literal for the '<em><b>Destination</b></em>' containment reference feature.
@@ -3150,33 +2731,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EVENT_EMISSION__DESTINATION = eINSTANCE.getEventEmission_Destination();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.FlowEmissionImpl <em>Flow Emission</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.FlowEmissionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getFlowEmission()
-     * @generated
-     */
-    EClass FLOW_EMISSION = eINSTANCE.getFlowEmission();
-
-    /**
-     * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FLOW_EMISSION__INSTANCE = eINSTANCE.getFlowEmission_Instance();
-
-    /**
-     * The meta object literal for the '<em><b>Destination</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FLOW_EMISSION__DESTINATION = eINSTANCE.getFlowEmission_Destination();
+    EReference SIGNAL_EMISSION__DESTINATION = eINSTANCE.getSignalEmission_Destination();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.SignalDeclarationImpl <em>Signal Declaration</em>}' class.
@@ -3205,6 +2760,14 @@ public interface LilPackage extends EPackage
     EReference SIGNAL_DECLARATION__TYPE = eINSTANCE.getSignalDeclaration_Type();
 
     /**
+     * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIGNAL_DECLARATION__MODE = eINSTANCE.getSignalDeclaration_Mode();
+
+    /**
      * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3221,24 +2784,92 @@ public interface LilPackage extends EPackage
     EReference SIGNAL_DECLARATION__DESTINATIONS = eINSTANCE.getSignalDeclaration_Destinations();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.EventDeclarationImpl <em>Event Declaration</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.SignalAliasImpl <em>Signal Alias</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.EventDeclarationImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getEventDeclaration()
+     * @see com.crubier.lil.lil.impl.SignalAliasImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getSignalAlias()
      * @generated
      */
-    EClass EVENT_DECLARATION = eINSTANCE.getEventDeclaration();
+    EClass SIGNAL_ALIAS = eINSTANCE.getSignalAlias();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.FlowDeclarationImpl <em>Flow Declaration</em>}' class.
+     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.FlowDeclarationImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getFlowDeclaration()
      * @generated
      */
-    EClass FLOW_DECLARATION = eINSTANCE.getFlowDeclaration();
+    EReference SIGNAL_ALIAS__SOURCE = eINSTANCE.getSignalAlias_Source();
+
+    /**
+     * The meta object literal for the '<em><b>Alias</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIGNAL_ALIAS__ALIAS = eINSTANCE.getSignalAlias_Alias();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeImpl <em>Data Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.DataTypeImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataType()
+     * @generated
+     */
+    EClass DATA_TYPE = eINSTANCE.getDataType();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl <em>Data Type Compound Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundDeclaration()
+     * @generated
+     */
+    EClass DATA_TYPE_COMPOUND_DECLARATION = eINSTANCE.getDataTypeCompoundDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_TYPE_COMPOUND_DECLARATION__NAME = eINSTANCE.getDataTypeCompoundDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_TYPE_COMPOUND_DECLARATION__FIELDS = eINSTANCE.getDataTypeCompoundDeclaration_Fields();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl <em>Data Type Compound Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundField()
+     * @generated
+     */
+    EClass DATA_TYPE_COMPOUND_FIELD = eINSTANCE.getDataTypeCompoundField();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_TYPE_COMPOUND_FIELD__NAME = eINSTANCE.getDataTypeCompoundField_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_TYPE_COMPOUND_FIELD__TYPE = eINSTANCE.getDataTypeCompoundField_Type();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.BehaviorDeclarationImpl <em>Behavior Declaration</em>}' class.
@@ -3331,6 +2962,14 @@ public interface LilPackage extends EPackage
     EClass EFFECT = eINSTANCE.getEffect();
 
     /**
+     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EFFECT__TARGET = eINSTANCE.getEffect_Target();
+
+    /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3349,14 +2988,6 @@ public interface LilPackage extends EPackage
     EClass ALWAYS_EFFECT = eINSTANCE.getAlwaysEffect();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ALWAYS_EFFECT__TARGET = eINSTANCE.getAlwaysEffect_Target();
-
-    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.SetEffectImpl <em>Set Effect</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3367,14 +2998,6 @@ public interface LilPackage extends EPackage
     EClass SET_EFFECT = eINSTANCE.getSetEffect();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SET_EFFECT__TARGET = eINSTANCE.getSetEffect_Target();
-
-    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.TriggerEffectImpl <em>Trigger Effect</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3383,76 +3006,6 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EClass TRIGGER_EFFECT = eINSTANCE.getTriggerEffect();
-
-    /**
-     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TRIGGER_EFFECT__TARGET = eINSTANCE.getTriggerEffect_Target();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl <em>Data Type Compound Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundDeclaration()
-     * @generated
-     */
-    EClass DATA_TYPE_COMPOUND_DECLARATION = eINSTANCE.getDataTypeCompoundDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DATA_TYPE_COMPOUND_DECLARATION__NAME = eINSTANCE.getDataTypeCompoundDeclaration_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DATA_TYPE_COMPOUND_DECLARATION__FIELDS = eINSTANCE.getDataTypeCompoundDeclaration_Fields();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl <em>Data Type Compound Field</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.DataTypeCompoundFieldImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundField()
-     * @generated
-     */
-    EClass DATA_TYPE_COMPOUND_FIELD = eINSTANCE.getDataTypeCompoundField();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DATA_TYPE_COMPOUND_FIELD__NAME = eINSTANCE.getDataTypeCompoundField_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DATA_TYPE_COMPOUND_FIELD__TYPE = eINSTANCE.getDataTypeCompoundField_Type();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeImpl <em>Data Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.DataTypeImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataType()
-     * @generated
-     */
-    EClass DATA_TYPE = eINSTANCE.getDataType();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.XExpressionImpl <em>XExpression</em>}' class.
