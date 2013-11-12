@@ -30,12 +30,12 @@ public interface WhenCause extends Cause
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Condition</em>' containment reference.
-   * @see #setCondition(BooleanExpression)
+   * @see #setCondition(XExpression)
    * @see com.crubier.lil.lil.LilPackage#getWhenCause_Condition()
    * @model containment="true"
    * @generated
    */
-  BooleanExpression getCondition();
+  XExpression getCondition();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.WhenCause#getCondition <em>Condition</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface WhenCause extends Cause
    * @see #getCondition()
    * @generated
    */
-  void setCondition(BooleanExpression value);
+  void setCondition(XExpression value);
 
 } // WhenCause

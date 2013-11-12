@@ -29,7 +29,7 @@ public interface LilFactory extends EFactory
    * @return a new object of class '<em>Model</em>'.
    * @generated
    */
-  Model createModel();
+  LilModel createLilModel();
 
   /**
    * Returns a new object of class '<em>Interactor Declaration</em>'.
@@ -248,15 +248,6 @@ public interface LilFactory extends EFactory
   TriggerEffect createTriggerEffect();
 
   /**
-   * Returns a new object of class '<em>Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression</em>'.
-   * @generated
-   */
-  Expression createExpression();
-
-  /**
    * Returns a new object of class '<em>Data Type Compound Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -284,49 +275,49 @@ public interface LilFactory extends EFactory
   DataType createDataType();
 
   /**
-   * Returns a new object of class '<em>Boolean Expression</em>'.
+   * Returns a new object of class '<em>XExpression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Expression</em>'.
+   * @return a new object of class '<em>XExpression</em>'.
    * @generated
    */
-  BooleanExpression createBooleanExpression();
+  XExpression createXExpression();
 
   /**
-   * Returns a new object of class '<em>Number Expression</em>'.
+   * Returns a new object of class '<em>XCollection Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Expression</em>'.
+   * @return a new object of class '<em>XCollection Literal</em>'.
    * @generated
    */
-  NumberExpression createNumberExpression();
+  XCollectionLiteral createXCollectionLiteral();
 
   /**
-   * Returns a new object of class '<em>Number Switch Expression Number Case</em>'.
+   * Returns a new object of class '<em>XSet Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Switch Expression Number Case</em>'.
+   * @return a new object of class '<em>XSet Literal</em>'.
    * @generated
    */
-  NumberSwitchExpressionNumberCase createNumberSwitchExpressionNumberCase();
+  XSetLiteral createXSetLiteral();
 
   /**
-   * Returns a new object of class '<em>Number Switch Expression Text Case</em>'.
+   * Returns a new object of class '<em>XList Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Switch Expression Text Case</em>'.
+   * @return a new object of class '<em>XList Literal</em>'.
    * @generated
    */
-  NumberSwitchExpressionTextCase createNumberSwitchExpressionTextCase();
+  XListLiteral createXListLiteral();
 
   /**
-   * Returns a new object of class '<em>Text Expression</em>'.
+   * Returns a new object of class '<em>XCase Part</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text Expression</em>'.
+   * @return a new object of class '<em>XCase Part</em>'.
    * @generated
    */
-  TextExpression createTextExpression();
+  XCasePart createXCasePart();
 
   /**
    * Returns a new object of class '<em>Data Type Compound</em>'.
@@ -347,175 +338,94 @@ public interface LilFactory extends EFactory
   DataTypeBase createDataTypeBase();
 
   /**
-   * Returns a new object of class '<em>Boolean Disjonction</em>'.
+   * Returns a new object of class '<em>XBinary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Disjonction</em>'.
+   * @return a new object of class '<em>XBinary Operation</em>'.
    * @generated
    */
-  BooleanDisjonction createBooleanDisjonction();
+  XBinaryOperation createXBinaryOperation();
 
   /**
-   * Returns a new object of class '<em>Boolean Conjonction</em>'.
+   * Returns a new object of class '<em>XUnary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Conjonction</em>'.
+   * @return a new object of class '<em>XUnary Operation</em>'.
    * @generated
    */
-  BooleanConjonction createBooleanConjonction();
+  XUnaryOperation createXUnaryOperation();
 
   /**
-   * Returns a new object of class '<em>Boolean Negation</em>'.
+   * Returns a new object of class '<em>XIf Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Negation</em>'.
+   * @return a new object of class '<em>XIf Expression</em>'.
    * @generated
    */
-  BooleanNegation createBooleanNegation();
+  XIfExpression createXIfExpression();
 
   /**
-   * Returns a new object of class '<em>Boolean Literal</em>'.
+   * Returns a new object of class '<em>XSwitch Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Literal</em>'.
+   * @return a new object of class '<em>XSwitch Expression</em>'.
    * @generated
    */
-  BooleanLiteral createBooleanLiteral();
+  XSwitchExpression createXSwitchExpression();
 
   /**
-   * Returns a new object of class '<em>Boolean Number Comparison</em>'.
+   * Returns a new object of class '<em>XFor Each Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Number Comparison</em>'.
+   * @return a new object of class '<em>XFor Each Expression</em>'.
    * @generated
    */
-  BooleanNumberComparison createBooleanNumberComparison();
+  XForEachExpression createXForEachExpression();
 
   /**
-   * Returns a new object of class '<em>Number If Expression</em>'.
+   * Returns a new object of class '<em>XFunction Call Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number If Expression</em>'.
+   * @return a new object of class '<em>XFunction Call Expression</em>'.
    * @generated
    */
-  NumberIfExpression createNumberIfExpression();
+  XFunctionCallExpression createXFunctionCallExpression();
 
   /**
-   * Returns a new object of class '<em>Number Switch Expression Number</em>'.
+   * Returns a new object of class '<em>XBoolean Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Switch Expression Number</em>'.
+   * @return a new object of class '<em>XBoolean Literal</em>'.
    * @generated
    */
-  NumberSwitchExpressionNumber createNumberSwitchExpressionNumber();
+  XBooleanLiteral createXBooleanLiteral();
 
   /**
-   * Returns a new object of class '<em>Number Switch Expression Text</em>'.
+   * Returns a new object of class '<em>XNull Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Switch Expression Text</em>'.
+   * @return a new object of class '<em>XNull Literal</em>'.
    * @generated
    */
-  NumberSwitchExpressionText createNumberSwitchExpressionText();
+  XNullLiteral createXNullLiteral();
 
   /**
-   * Returns a new object of class '<em>Number Addition</em>'.
+   * Returns a new object of class '<em>XNumber Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Addition</em>'.
+   * @return a new object of class '<em>XNumber Literal</em>'.
    * @generated
    */
-  NumberAddition createNumberAddition();
+  XNumberLiteral createXNumberLiteral();
 
   /**
-   * Returns a new object of class '<em>Number Substraction</em>'.
+   * Returns a new object of class '<em>XString Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Substraction</em>'.
+   * @return a new object of class '<em>XString Literal</em>'.
    * @generated
    */
-  NumberSubstraction createNumberSubstraction();
-
-  /**
-   * Returns a new object of class '<em>Number Multiplication</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Multiplication</em>'.
-   * @generated
-   */
-  NumberMultiplication createNumberMultiplication();
-
-  /**
-   * Returns a new object of class '<em>Number Division</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Division</em>'.
-   * @generated
-   */
-  NumberDivision createNumberDivision();
-
-  /**
-   * Returns a new object of class '<em>Number Modulo</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Modulo</em>'.
-   * @generated
-   */
-  NumberModulo createNumberModulo();
-
-  /**
-   * Returns a new object of class '<em>Number Power</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Power</em>'.
-   * @generated
-   */
-  NumberPower createNumberPower();
-
-  /**
-   * Returns a new object of class '<em>Number Opposition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Opposition</em>'.
-   * @generated
-   */
-  NumberOpposition createNumberOpposition();
-
-  /**
-   * Returns a new object of class '<em>Number Literal</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Literal</em>'.
-   * @generated
-   */
-  NumberLiteral createNumberLiteral();
-
-  /**
-   * Returns a new object of class '<em>Number Function Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Function Expression</em>'.
-   * @generated
-   */
-  NumberFunctionExpression createNumberFunctionExpression();
-
-  /**
-   * Returns a new object of class '<em>Text Join</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text Join</em>'.
-   * @generated
-   */
-  TextJoin createTextJoin();
-
-  /**
-   * Returns a new object of class '<em>Text Literal</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text Literal</em>'.
-   * @generated
-   */
-  TextLiteral createTextLiteral();
+  XStringLiteral createXStringLiteral();
 
   /**
    * Returns the package supported by this factory.

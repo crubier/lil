@@ -7,7 +7,7 @@ generate lil "http://www.crubier.com/lil/Lil"
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Model
-Model:
+LilModel:
 	((interactors+=InteractorDeclaration) | (dataTypes+=DataTypeCompoundDeclaration))*;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -76,29 +76,25 @@ Cause:
 	(OnCause | WhenCause) ;
 
 OnCause:
-	'on' event=EventReception ('if' guard=BooleanExpression)?;
+	'on' event=EventReception ('if' guard=XExpression)?;
 
 WhenCause:
-	'when' condition=BooleanExpression ('if' guard=BooleanExpression)?;
+	'when' condition=XExpression ('if' guard=XExpression)?;
 
 Effect:
 	(AlwaysEffect | SetEffect | TriggerEffect)
 ;
 
 AlwaysEffect:
-	'always' target=FlowEmission '=' value=Expression
+	'always' target=FlowEmission '=' value=XExpression
 ;
 
 SetEffect:
-	'set' target=FlowEmission '=' value=Expression
+	'set' target=FlowEmission '=' value=XExpression
 ;
 
 TriggerEffect:
-	'trigger' target=EventEmission '=' value=Expression
-;
-
-Expression:
-	NumberExpression
+	'trigger' target=EventEmission '=' value=XExpression
 ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -113,108 +109,17 @@ DataTypeCompoundField:
 
 DataType:
 	({DataTypeCompound} type=[DataTypeCompoundDeclaration]) | 
-	({DataTypeBase} type=('void' | 'symbol' | 'number' | 'text' | 'time' | 'reference'));
+	({DataTypeBase} type=DataTypeBase);
 
+DataTypeBase:
+	'void' | 'symbol' | 'number' | 'text' | 'time' | 'reference'
+;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Expressions
-//We do not use xbase because we only need a small subset of it in order to be able to generate C code and in order to simplify the language
-//So we are going to construct the expressions we need
-
-//Boolean expressions
-BooleanExpression:
-	 BooleanDisjonction
-;
-
-BooleanDisjonction returns BooleanExpression:
-	BooleanConjonction 
- 	(({BooleanDisjonction.left=current} 'or') right=BooleanConjonction)*
-;
-
-BooleanConjonction returns BooleanExpression:
-	BooleanUnary 
- 	(({BooleanConjonction.left=current} 'and') right=BooleanUnary)*
-;
-
-BooleanUnary returns BooleanExpression:
-	BooleanTerminalExpression |
-	(( {BooleanNegation} '!')  operand=BooleanTerminalExpression )
-;
-
-BooleanTerminalExpression returns BooleanExpression:
-	'(' BooleanExpression ')' |
-	({BooleanLiteral} value=BooleanLiteral) |
-	( {BooleanNumberComparison} 'qq' left=NumberExpression op=('=='|'!='|'<'|'>'|'<='|'>=') right=NumberExpression 'ee') 
-;
-
-
-
-
-
-
-//Numeric expressions
-NumberExpression:
- NumberCompoundExpression;
- 
- NumberCompoundExpression returns NumberExpression:
- 	NumberAddition |
- 	{NumberIfExpression} 'if' '(' if=BooleanExpression ')' then=NumberAddition (=>'else' else=NumberAddition)? |
- 	{NumberSwitchExpressionNumber} 'switch' '(' switch=NumberExpression ')'  (=> cases+=NumberSwitchExpressionNumberCase)+ (=>'default' ':' default=NumberExpression )? |
- 	{NumberSwitchExpressionText} 'switch' '(' switch=TextExpression ')'  (=> cases+=NumberSwitchExpressionTextCase)+ (=>'default' ':' default=NumberExpression )?
- ;
- 
- NumberSwitchExpressionNumberCase :
- 	'case' condition=NumberExpression ':' value=NumberExpression
- ;
- 
-  NumberSwitchExpressionTextCase :
- 	'case' condition=TextExpression ':' value=NumberExpression
- ;
- 
-NumberAddition returns NumberExpression:
- NumberMultiplication
-  (({NumberAddition.left=current} '+' | {NumberSubstraction.left=current} '-') right=NumberMultiplication)*;
-
-NumberMultiplication returns NumberExpression:
- NumberPower 
- (({NumberMultiplication.left=current} '*' | {NumberDivision.left=current} '/'| {NumberModulo.left=current} '%') right=NumberPower)*;
-
-NumberPower returns NumberExpression:
- NumberUnary 
- (({NumberPower.left=current} '^' ) right=NumberUnary)*;
- 
-NumberUnary returns NumberExpression:
-	NumberTerminalExpression |
-	(( {NumberOpposition} '-')  operand=NumberTerminalExpression );
-
-NumberTerminalExpression returns NumberExpression:
-  '(' NumberExpression ')' |
-/*   	({NumberTerminalSignal} ref=[SignalDeclaration])|*/
-  ({NumberLiteral} value=NumberLiteral) |
-  {NumberFunctionExpression} function=ID ('(' arguments+=NumberExpression (',' arguments+=NumberExpression)* ')')? 
-;
-
-
-//Text expressions
-TextExpression:
-	TextJoin
-;
-
-TextJoin returns TextExpression:
-	TextTerminalExpression
-  (({TextJoin.left=current} '<>' ) right=TextTerminalExpression)*;
-
-TextTerminalExpression returns TextExpression:
-	{TextLiteral} value=TextLiteral
-;
-
-
-
-
-
-
-
+//We do not use xbase because we only need a subset of it in order to be able to generate C code and in order to simplify the language
+//So we are going to construct the expressions language we need. It is similar to xbase on certain points, but still clearly different, semantically and syntaxically
 
 XExpression:
 	XOrExpression
@@ -224,13 +129,13 @@ XOrExpression returns XExpression:
 	XAndExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOr) rightOperand=XAndExpression)*;
 
 OpOr:
-	'||';
+	'or';
 
 XAndExpression returns XExpression:
 	XEqualityExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAnd) rightOperand=XEqualityExpression)*;
 
 OpAnd:
-	'&&';
+	'and';
 
 XEqualityExpression returns XExpression:
 	XRelationalExpression (=>({XBinaryOperation.leftOperand=current} feature=OpEquality) rightOperand=XRelationalExpression)*;
@@ -267,11 +172,12 @@ OpMulti:
 	'*' | '/' | '%';
 
 XUnaryOperation returns XExpression:
-	{XUnaryOperation} feature=OpUnary operand=XUnaryOperation | XCastedExpression;
+	{XUnaryOperation} feature=OpUnary operand=XUnaryOperation | XPrimaryExpression;
 
 OpUnary:
 	"!" | "-" | "+";
 	
+/* TODO HERE Add access to signals	
 XCastedExpression returns XExpression:
 	XMemberFeatureCall (=>({XCastedExpression.target=current} 'as') type=JvmTypeReference)*
 ;
@@ -291,29 +197,22 @@ XMemberFeatureCall returns XExpression:
 			memberCallArguments+=XClosure?
 		)*;
 
+* */
+
 XPrimaryExpression returns XExpression:
-	XConstructorCall |
-	XBlockExpression |
 	XSwitchExpression |
-	XFeatureCall |
-	XLiteral |
 	XIfExpression |
-	XForLoopExpression |
-	XWhileExpression |
-	XDoWhileExpression |
-	XThrowExpression |
-	XReturnExpression |
-	XTryCatchFinallyExpression |
-	XParenthesizedExpression;
+	XForEachExpression |
+	XFunctionCallExpression |
+	XParenthesizedExpression |
+	XLiteral;
 
 XLiteral returns XExpression:
 	XCollectionLiteral |
-	XClosure |
 	XBooleanLiteral |
 	XNumberLiteral |
 	XNullLiteral |
-	XStringLiteral |
-	XTypeLiteral
+	XStringLiteral
 ;
 
 XCollectionLiteral:
@@ -321,27 +220,27 @@ XCollectionLiteral:
 ;
 
 XSetLiteral:
-	{XSetLiteral} '#' '{' (elements+=XExpression (',' elements+=XExpression )*)? '}'
+	{XSetLiteral} '@{' (elements+=XExpression (',' elements+=XExpression )*)? '}'
 ;
 
 XListLiteral:
-	{XListLiteral} '#' '[' (elements+=XExpression (',' elements+=XExpression )*)? ']'
+	{XListLiteral} '@[' (elements+=XExpression (',' elements+=XExpression )*)? ']'
 ;
 
-XClosure returns XExpression:
-	=>({XClosure} 
-	'[') 
-		=>((declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|')? 
-		expression=XExpressionInClosure 
-	']';
-	
-XExpressionInClosure returns XExpression: 
-	{XBlockExpression}
-	(expressions+=XExpressionInsideBlock ';'?)*
-;
-
-XShortClosure returns XExpression:
-	=>({XClosure} (declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|') expression=XExpression;
+//XClosure returns XExpression:
+//	=>({XClosure} 
+//	'[') 
+//		=>((declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|')? 
+//		expression=XExpressionInClosure 
+//	']';
+//	
+//XExpressionInClosure returns XExpression: 
+//	{XBlockExpression}
+//	(expressions+=XExpressionInsideBlock ';'?)*
+//;
+//
+//XShortClosure returns XExpression:
+//	=>({XClosure} (declaredFormalParameters+=JvmFormalParameter (',' declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?='|') expression=XExpression;
 
 XParenthesizedExpression returns XExpression:
 	'(' XExpression ')';
@@ -352,131 +251,96 @@ XIfExpression returns XExpression:
 	then=XExpression
 	(=>'else' else=XExpression)?;
 
+//TODO remove the need for braces
 XSwitchExpression returns XExpression:
 	{XSwitchExpression}
-	'switch' (=>(localVarName=ValidID ':')? switch=XExpression
-		| =>('(' localVarName=ValidID ':') switch=XExpression ')') '{'
-	(cases+=XCasePart)+
-	('default' ':' default=XExpression )?
-	'}';
+	'switch' =>'(' switch=XExpression ')' /*'{'*/
+	 (=> cases+=XCasePart)+
+	 (=>'default' ':' default=XExpression )?
+	/*'}'*/;
 
 XCasePart:
-	typeGuard=JvmTypeReference? ('case' case=XExpression)? 
-		':' then=XExpression ;
+	'case' case=XExpression ':' then=XExpression ;
 
-XForLoopExpression returns XExpression:
-	{XForLoopExpression}
-	'for' '(' declaredParam=JvmFormalParameter ':' forExpression=XExpression ')'
+XForEachExpression returns XExpression:
+	{XForEachExpression}
+	'for' 'each' '(' forExpression=XExpression ')'
 		eachExpression=XExpression;
 
-XWhileExpression returns XExpression:
-	{XWhileExpression}
-	'while' '(' predicate=XExpression ')'
-		body=XExpression;
-	
-XDoWhileExpression returns XExpression:
-	{XDoWhileExpression}
-   'do'
-       body=XExpression
-   'while' '(' predicate=XExpression ')';
-
-XBlockExpression returns XExpression: 
-	{XBlockExpression}
-	'{'
-		(expressions+=XExpressionInsideBlock ';'?)*
-	'}';
-
-XExpressionInsideBlock returns XExpression:
-	XVariableDeclaration | XExpression;
-
-XVariableDeclaration returns XExpression:
-	{XVariableDeclaration}
-	(writeable?='var'|'val') (=>(type=JvmTypeReference name=ValidID) | name=ValidID) ('=' right=XExpression)?;
-
-JvmFormalParameter returns types::JvmFormalParameter:
-	(parameterType=JvmTypeReference)? name=ValidID;
-	
-FullJvmFormalParameter returns types::JvmFormalParameter:
-	parameterType=JvmTypeReference name=ValidID;
-
-XFeatureCall returns XExpression:
-	{XFeatureCall}
-	('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')? 
-	feature=[types::JvmIdentifiableElement|IdOrSuper] 
-	(=>explicitOperationCall?='(' 
-		(
-		    featureCallArguments+=XShortClosure
-		  |	featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*
-		)? 
-	')')?
-	featureCallArguments+=XClosure?;
-	
-FeatureCallID:
-	ValidID | 'extends' | 'static' | 'import' | 'extension'
+XFunctionCallExpression returns XExpression:
+	{XFunctionCallExpression} function=BuiltInFunction '(' (arguments+=XExpression)? (',' arguments+=XExpression)* ')'
 ;
 
-IdOrSuper :
-	FeatureCallID | 'super'
-;
-	
-XConstructorCall returns XExpression:
-	{XConstructorCall}
-	'new' constructor=[types::JvmConstructor|QualifiedName] 
-	(=>'<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
-	(=>'(' 
-		(
-		    arguments+=XShortClosure
-		  |	arguments+=XExpression (',' arguments+=XExpression)*
-		)? 
-	')')?
-	arguments+=XClosure?;
-
-XBooleanLiteral returns XExpression :
-	{XBooleanLiteral} ('false' | isTrue?='true');
-
-XNullLiteral returns XExpression :
-	{XNullLiteral} 'null';
-
-XNumberLiteral returns XExpression :
-	{XNumberLiteral} value=Number;
-
-XStringLiteral returns XExpression:
-	{XStringLiteral} value=STRING;
-
-XTypeLiteral returns XExpression :
-	{XTypeLiteral} 'typeof' '(' type=[types::JvmType|QualifiedName] (arrayDimensions+=ArrayBrackets)* ')'
+//Same functions as c math.*
+BuiltInFunction :
+'Math.abs'|'Math.acos'|'Math.acosh' |'Math.asin'|'Math.asinh' |'Math.atan'|'Math.atanh' |'Math.atan2' |
+'Math.ceil'|'Math.cos'|'Math.cosh' |'Math.exp'|'Math.floor'|'Math.fround' |'Math.hypot' |'Math.log'|
+'Math.log10' |'Math.log2' |'Math.max'|'Math.min'|'Math.pow'|'Math.random'|'Math.round'|'Math.sign'|
+'Math.sin'|'Math.sinh'|'Math.sqrt'|'Math.tan'|'Math.tanh'|'Math.trunc'|
+'Set.orderby'|'Set.add'|'Set.find'|'Set.change'|'Set.remove'  
 ;
 
-XThrowExpression returns XExpression :
-	{XThrowExpression} 'throw' expression=XExpression;
-	
-XReturnExpression returns XExpression :
-	{XReturnExpression} 'return' (=>expression=XExpression)?;
-	
-XTryCatchFinallyExpression returns XExpression:
-	{XTryCatchFinallyExpression}
-	'try' 
-		expression=XExpression
-	(
-		catchClauses+=XCatchClause+
-		(=>'finally' finallyExpression=XExpression)?
-	|	'finally' finallyExpression=XExpression
-	);
-	
-XCatchClause :
-	=>'catch' '(' declaredParam=FullJvmFormalParameter ')' expression=XExpression;
-
-
-QualifiedName:
-  ValidID (=>'.' ValidID)*;
-
-
-
-
-
-
-
-
+//XWhileExpression returns XExpression:
+//	{XWhileExpression}
+//	'while' '(' predicate=XExpression ')'
+//		body=XExpression;
+//	
+//XDoWhileExpression returns XExpression:
+//	{XDoWhileExpression}
+//   'do'
+//       body=XExpression
+//   'while' '(' predicate=XExpression ')';
+//
+//XBlockExpression returns XExpression: 
+//	{XBlockExpression}
+//	'{'
+//		(expressions+=XExpressionInsideBlock ';'?)*
+//	'}';
+//
+//XExpressionInsideBlock returns XExpression:
+//	XVariableDeclaration | XExpression;
+//
+//XVariableDeclaration returns XExpression:
+//	{XVariableDeclaration}
+//	(writeable?='var'|'val') (=>(type=JvmTypeReference name=ValidID) | name=ValidID) ('=' right=XExpression)?;
+//
+//JvmFormalParameter returns types::JvmFormalParameter:
+//	(parameterType=JvmTypeReference)? name=ValidID;
+//	
+//FullJvmFormalParameter returns types::JvmFormalParameter:
+//	parameterType=JvmTypeReference name=ValidID;
+//
+//XFeatureCall returns XExpression:
+//	{XFeatureCall}
+//	('<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')? 
+//	feature=[types::JvmIdentifiableElement|IdOrSuper] 
+//	(=>explicitOperationCall?='(' 
+//		(
+//		    featureCallArguments+=XShortClosure
+//		  |	featureCallArguments+=XExpression (',' featureCallArguments+=XExpression)*
+//		)? 
+//	')')?
+//	featureCallArguments+=XClosure?;
+//	
+//FeatureCallID:
+//	ValidID | 'extends' | 'static' | 'import' | 'extension'
+//;
+//
+//IdOrSuper :
+//	FeatureCallID | 'super'
+//;
+//	
+//XConstructorCall returns XExpression:
+//	{XConstructorCall}
+//	'new' constructor=[types::JvmConstructor|QualifiedName] 
+//	(=>'<' typeArguments+=JvmArgumentTypeReference (',' typeArguments+=JvmArgumentTypeReference)* '>')?
+//	(=>'(' 
+//		(
+//		    arguments+=XShortClosure
+//		  |	arguments+=XExpression (',' arguments+=XExpression)*
+//		)? 
+//	')')?
+//	arguments+=XClosure?;
 
 
 
@@ -484,33 +348,32 @@ QualifiedName:
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Literals
-SymbolLiteral returns ecore::EString : 
-  ID
-;
+XBooleanLiteral returns XExpression :
+	{XBooleanLiteral} ('false' | isTrue?='true');
 
-BooleanLiteral returns ecore::EBoolean : 
-  'true' |'yes' | 'false'| 'no' 
-;
+XNullLiteral returns XExpression :
+	{XNullLiteral} 'null';
 
-NumberLiteral returns ecore::EDouble : 
-  INT ('.' INT)?
-;
+XNumberLiteral returns XExpression :
+	{XNumberLiteral} value= NUMBER;
 
-TextLiteral returns ecore::EString :
-	STRING
-;
+XStringLiteral returns XExpression:
+	{XStringLiteral} value=STRING;
 
-TimeLiteral returns ecore::ELong :
-	(INT 'ms') | (INT ('.' INT)? 's') | (INT ('.' INT)? 'm') | (INT ('.' INT)? 'h') | (INT ('.' INT)? 'd') 
-;
+//QualifiedName:
+//  ValidID (=>'.' ValidID)*;
 
-ReferenceLiteral returns ecore::EString :
-	ID
-;
 
-IndexLiteral returns ecore::EInt : 
-  INT
-;
+
+
+
+
+
+
+
+//Xtext Data types
+
+NUMBER returns ecore::EDouble : INT ('.' INT)?;
 
 // Terminals
 terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

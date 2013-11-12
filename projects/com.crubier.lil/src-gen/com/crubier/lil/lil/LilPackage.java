@@ -57,14 +57,14 @@ public interface LilPackage extends EPackage
   LilPackage eINSTANCE = com.crubier.lil.lil.impl.LilPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.LilModelImpl <em>Model</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.ModelImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getModel()
+   * @see com.crubier.lil.lil.impl.LilModelImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getLilModel()
    * @generated
    */
-  int MODEL = 0;
+  int LIL_MODEL = 0;
 
   /**
    * The feature id for the '<em><b>Interactors</b></em>' containment reference list.
@@ -73,7 +73,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__INTERACTORS = 0;
+  int LIL_MODEL__INTERACTORS = 0;
 
   /**
    * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
@@ -82,7 +82,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__DATA_TYPES = 1;
+  int LIL_MODEL__DATA_TYPES = 1;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -91,7 +91,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int LIL_MODEL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDeclarationImpl <em>Interactor Declaration</em>}' class.
@@ -1009,25 +1009,6 @@ public interface LilPackage extends EPackage
   int TRIGGER_EFFECT_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.ExpressionImpl <em>Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.ExpressionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpression()
-   * @generated
-   */
-  int EXPRESSION = 25;
-
-  /**
-   * The number of structural features of the '<em>Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl <em>Data Type Compound Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1035,7 +1016,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundDeclaration()
    * @generated
    */
-  int DATA_TYPE_COMPOUND_DECLARATION = 26;
+  int DATA_TYPE_COMPOUND_DECLARATION = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1072,7 +1053,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundField()
    * @generated
    */
-  int DATA_TYPE_COMPOUND_FIELD = 27;
+  int DATA_TYPE_COMPOUND_FIELD = 26;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1109,7 +1090,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 28;
+  int DATA_TYPE = 27;
 
   /**
    * The number of structural features of the '<em>Data Type</em>' class.
@@ -1121,135 +1102,144 @@ public interface LilPackage extends EPackage
   int DATA_TYPE_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XExpressionImpl <em>XExpression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.BooleanExpressionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanExpression()
+   * @see com.crubier.lil.lil.impl.XExpressionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXExpression()
    * @generated
    */
-  int BOOLEAN_EXPRESSION = 29;
+  int XEXPRESSION = 28;
 
   /**
-   * The number of structural features of the '<em>Boolean Expression</em>' class.
+   * The number of structural features of the '<em>XExpression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_EXPRESSION_FEATURE_COUNT = 0;
+  int XEXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberExpressionImpl <em>Number Expression</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XCollectionLiteralImpl <em>XCollection Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberExpressionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberExpression()
+   * @see com.crubier.lil.lil.impl.XCollectionLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXCollectionLiteral()
    * @generated
    */
-  int NUMBER_EXPRESSION = 30;
+  int XCOLLECTION_LITERAL = 29;
 
   /**
-   * The number of structural features of the '<em>Number Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionNumberCaseImpl <em>Number Switch Expression Number Case</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberSwitchExpressionNumberCaseImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionNumberCase()
-   * @generated
-   */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER_CASE = 31;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER_CASE__CONDITION = 0;
+  int XCOLLECTION_LITERAL__ELEMENTS = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * The number of structural features of the '<em>XCollection Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER_CASE__VALUE = 1;
+  int XCOLLECTION_LITERAL_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Number Switch Expression Number Case</em>' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XSetLiteralImpl <em>XSet Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.XSetLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSetLiteral()
+   * @generated
+   */
+  int XSET_LITERAL = 30;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER_CASE_FEATURE_COUNT = 2;
+  int XSET_LITERAL__ELEMENTS = XCOLLECTION_LITERAL__ELEMENTS;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionTextCaseImpl <em>Number Switch Expression Text Case</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberSwitchExpressionTextCaseImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionTextCase()
-   * @generated
-   */
-  int NUMBER_SWITCH_EXPRESSION_TEXT_CASE = 32;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * The number of structural features of the '<em>XSet Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_TEXT_CASE__CONDITION = 0;
+  int XSET_LITERAL_FEATURE_COUNT = XCOLLECTION_LITERAL_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XListLiteralImpl <em>XList Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.XListLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXListLiteral()
+   * @generated
+   */
+  int XLIST_LITERAL = 31;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_TEXT_CASE__VALUE = 1;
+  int XLIST_LITERAL__ELEMENTS = XCOLLECTION_LITERAL__ELEMENTS;
 
   /**
-   * The number of structural features of the '<em>Number Switch Expression Text Case</em>' class.
+   * The number of structural features of the '<em>XList Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_TEXT_CASE_FEATURE_COUNT = 2;
+  int XLIST_LITERAL_FEATURE_COUNT = XCOLLECTION_LITERAL_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.TextExpressionImpl <em>Text Expression</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XCasePartImpl <em>XCase Part</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.TextExpressionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextExpression()
+   * @see com.crubier.lil.lil.impl.XCasePartImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXCasePart()
    * @generated
    */
-  int TEXT_EXPRESSION = 33;
+  int XCASE_PART = 32;
 
   /**
-   * The number of structural features of the '<em>Text Expression</em>' class.
+   * The feature id for the '<em><b>Case</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEXT_EXPRESSION_FEATURE_COUNT = 0;
+  int XCASE_PART__CASE = 0;
+
+  /**
+   * The feature id for the '<em><b>Then</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XCASE_PART__THEN = 1;
+
+  /**
+   * The number of structural features of the '<em>XCase Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XCASE_PART_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundImpl <em>Data Type Compound</em>}' class.
@@ -1259,7 +1249,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompound()
    * @generated
    */
-  int DATA_TYPE_COMPOUND = 34;
+  int DATA_TYPE_COMPOUND = 33;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1287,7 +1277,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeBase()
    * @generated
    */
-  int DATA_TYPE_BASE = 35;
+  int DATA_TYPE_BASE = 34;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1308,88 +1298,69 @@ public interface LilPackage extends EPackage
   int DATA_TYPE_BASE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanDisjonctionImpl <em>Boolean Disjonction</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XBinaryOperationImpl <em>XBinary Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.BooleanDisjonctionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanDisjonction()
+   * @see com.crubier.lil.lil.impl.XBinaryOperationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBinaryOperation()
    * @generated
    */
-  int BOOLEAN_DISJONCTION = 36;
+  int XBINARY_OPERATION = 35;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * The feature id for the '<em><b>Left Operand</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_DISJONCTION__LEFT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+  int XBINARY_OPERATION__LEFT_OPERAND = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The feature id for the '<em><b>Feature</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_DISJONCTION__RIGHT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+  int XBINARY_OPERATION__FEATURE = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Boolean Disjonction</em>' class.
+   * The feature id for the '<em><b>Right Operand</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_DISJONCTION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+  int XBINARY_OPERATION__RIGHT_OPERAND = XEXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanConjonctionImpl <em>Boolean Conjonction</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.BooleanConjonctionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanConjonction()
-   * @generated
-   */
-  int BOOLEAN_CONJONCTION = 37;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * The number of structural features of the '<em>XBinary Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_CONJONCTION__LEFT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+  int XBINARY_OPERATION_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XUnaryOperationImpl <em>XUnary Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.XUnaryOperationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXUnaryOperation()
+   * @generated
+   */
+  int XUNARY_OPERATION = 36;
+
+  /**
+   * The feature id for the '<em><b>Feature</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_CONJONCTION__RIGHT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Boolean Conjonction</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_CONJONCTION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanNegationImpl <em>Boolean Negation</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.BooleanNegationImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanNegation()
-   * @generated
-   */
-  int BOOLEAN_NEGATION = 38;
+  int XUNARY_OPERATION__FEATURE = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -1398,100 +1369,26 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOLEAN_NEGATION__OPERAND = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+  int XUNARY_OPERATION__OPERAND = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Boolean Negation</em>' class.
+   * The number of structural features of the '<em>XUnary Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_NEGATION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+  int XUNARY_OPERATION_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XIfExpressionImpl <em>XIf Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.BooleanLiteralImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanLiteral()
+   * @see com.crubier.lil.lil.impl.XIfExpressionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXIfExpression()
    * @generated
    */
-  int BOOLEAN_LITERAL = 39;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__VALUE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Boolean Literal</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.BooleanNumberComparisonImpl <em>Boolean Number Comparison</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.BooleanNumberComparisonImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanNumberComparison()
-   * @generated
-   */
-  int BOOLEAN_NUMBER_COMPARISON = 40;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_NUMBER_COMPARISON__LEFT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_NUMBER_COMPARISON__OP = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_NUMBER_COMPARISON__RIGHT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Boolean Number Comparison</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_NUMBER_COMPARISON_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberIfExpressionImpl <em>Number If Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberIfExpressionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberIfExpression()
-   * @generated
-   */
-  int NUMBER_IF_EXPRESSION = 41;
+  int XIF_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -1500,7 +1397,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_IF_EXPRESSION__IF = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
+  int XIF_EXPRESSION__IF = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then</b></em>' containment reference.
@@ -1509,7 +1406,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_IF_EXPRESSION__THEN = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
+  int XIF_EXPRESSION__THEN = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Else</b></em>' containment reference.
@@ -1518,26 +1415,26 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_IF_EXPRESSION__ELSE = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
+  int XIF_EXPRESSION__ELSE = XEXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Number If Expression</em>' class.
+   * The number of structural features of the '<em>XIf Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_IF_EXPRESSION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 3;
+  int XIF_EXPRESSION_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl <em>Number Switch Expression Number</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XSwitchExpressionImpl <em>XSwitch Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionNumber()
+   * @see com.crubier.lil.lil.impl.XSwitchExpressionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSwitchExpression()
    * @generated
    */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER = 42;
+  int XSWITCH_EXPRESSION = 38;
 
   /**
    * The feature id for the '<em><b>Switch</b></em>' containment reference.
@@ -1546,7 +1443,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
+  int XSWITCH_EXPRESSION__SWITCH = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Cases</b></em>' containment reference list.
@@ -1555,7 +1452,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER__CASES = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
+  int XSWITCH_EXPRESSION__CASES = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Default</b></em>' containment reference.
@@ -1564,350 +1461,63 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
+  int XSWITCH_EXPRESSION__DEFAULT = XEXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Number Switch Expression Number</em>' class.
+   * The number of structural features of the '<em>XSwitch Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_NUMBER_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 3;
+  int XSWITCH_EXPRESSION_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionTextImpl <em>Number Switch Expression Text</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XForEachExpressionImpl <em>XFor Each Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberSwitchExpressionTextImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionText()
+   * @see com.crubier.lil.lil.impl.XForEachExpressionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXForEachExpression()
    * @generated
    */
-  int NUMBER_SWITCH_EXPRESSION_TEXT = 43;
+  int XFOR_EACH_EXPRESSION = 39;
 
   /**
-   * The feature id for the '<em><b>Switch</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_SWITCH_EXPRESSION_TEXT__SWITCH = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Cases</b></em>' containment reference list.
+   * The feature id for the '<em><b>For Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_TEXT__CASES = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
+  int XFOR_EACH_EXPRESSION__FOR_EXPRESSION = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Default</b></em>' containment reference.
+   * The feature id for the '<em><b>Each Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_TEXT__DEFAULT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
+  int XFOR_EACH_EXPRESSION__EACH_EXPRESSION = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Number Switch Expression Text</em>' class.
+   * The number of structural features of the '<em>XFor Each Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_SWITCH_EXPRESSION_TEXT_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 3;
+  int XFOR_EACH_EXPRESSION_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberAdditionImpl <em>Number Addition</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XFunctionCallExpressionImpl <em>XFunction Call Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberAdditionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberAddition()
+   * @see com.crubier.lil.lil.impl.XFunctionCallExpressionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXFunctionCallExpression()
    * @generated
    */
-  int NUMBER_ADDITION = 44;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_ADDITION__LEFT = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_ADDITION__RIGHT = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Number Addition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_ADDITION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberSubstractionImpl <em>Number Substraction</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberSubstractionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSubstraction()
-   * @generated
-   */
-  int NUMBER_SUBSTRACTION = 45;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_SUBSTRACTION__LEFT = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_SUBSTRACTION__RIGHT = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Number Substraction</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_SUBSTRACTION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberMultiplicationImpl <em>Number Multiplication</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberMultiplicationImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberMultiplication()
-   * @generated
-   */
-  int NUMBER_MULTIPLICATION = 46;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_MULTIPLICATION__LEFT = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_MULTIPLICATION__RIGHT = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Number Multiplication</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_MULTIPLICATION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberDivisionImpl <em>Number Division</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberDivisionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberDivision()
-   * @generated
-   */
-  int NUMBER_DIVISION = 47;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_DIVISION__LEFT = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_DIVISION__RIGHT = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Number Division</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_DIVISION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberModuloImpl <em>Number Modulo</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberModuloImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberModulo()
-   * @generated
-   */
-  int NUMBER_MODULO = 48;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_MODULO__LEFT = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_MODULO__RIGHT = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Number Modulo</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_MODULO_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberPowerImpl <em>Number Power</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberPowerImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberPower()
-   * @generated
-   */
-  int NUMBER_POWER = 49;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_POWER__LEFT = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_POWER__RIGHT = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Number Power</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_POWER_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberOppositionImpl <em>Number Opposition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberOppositionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberOpposition()
-   * @generated
-   */
-  int NUMBER_OPPOSITION = 50;
-
-  /**
-   * The feature id for the '<em><b>Operand</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_OPPOSITION__OPERAND = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Number Opposition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_OPPOSITION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberLiteralImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberLiteral()
-   * @generated
-   */
-  int NUMBER_LITERAL = 51;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_LITERAL__VALUE = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Number Literal</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_LITERAL_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberFunctionExpressionImpl <em>Number Function Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.NumberFunctionExpressionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberFunctionExpression()
-   * @generated
-   */
-  int NUMBER_FUNCTION_EXPRESSION = 52;
+  int XFUNCTION_CALL_EXPRESSION = 40;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -1916,7 +1526,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_FUNCTION_EXPRESSION__FUNCTION = NUMBER_EXPRESSION_FEATURE_COUNT + 0;
+  int XFUNCTION_CALL_EXPRESSION__FUNCTION = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -1925,63 +1535,73 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_FUNCTION_EXPRESSION__ARGUMENTS = NUMBER_EXPRESSION_FEATURE_COUNT + 1;
+  int XFUNCTION_CALL_EXPRESSION__ARGUMENTS = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Number Function Expression</em>' class.
+   * The number of structural features of the '<em>XFunction Call Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMBER_FUNCTION_EXPRESSION_FEATURE_COUNT = NUMBER_EXPRESSION_FEATURE_COUNT + 2;
+  int XFUNCTION_CALL_EXPRESSION_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.TextJoinImpl <em>Text Join</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XBooleanLiteralImpl <em>XBoolean Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.TextJoinImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextJoin()
+   * @see com.crubier.lil.lil.impl.XBooleanLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBooleanLiteral()
    * @generated
    */
-  int TEXT_JOIN = 53;
+  int XBOOLEAN_LITERAL = 41;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEXT_JOIN__LEFT = TEXT_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The feature id for the '<em><b>Is True</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEXT_JOIN__RIGHT = TEXT_EXPRESSION_FEATURE_COUNT + 1;
+  int XBOOLEAN_LITERAL__IS_TRUE = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Text Join</em>' class.
+   * The number of structural features of the '<em>XBoolean Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEXT_JOIN_FEATURE_COUNT = TEXT_EXPRESSION_FEATURE_COUNT + 2;
+  int XBOOLEAN_LITERAL_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.TextLiteralImpl <em>Text Literal</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XNullLiteralImpl <em>XNull Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.TextLiteralImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextLiteral()
+   * @see com.crubier.lil.lil.impl.XNullLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNullLiteral()
    * @generated
    */
-  int TEXT_LITERAL = 54;
+  int XNULL_LITERAL = 42;
+
+  /**
+   * The number of structural features of the '<em>XNull Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XNULL_LITERAL_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XNumberLiteralImpl <em>XNumber Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.XNumberLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNumberLiteral()
+   * @generated
+   */
+  int XNUMBER_LITERAL = 43;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1990,49 +1610,77 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_LITERAL__VALUE = TEXT_EXPRESSION_FEATURE_COUNT + 0;
+  int XNUMBER_LITERAL__VALUE = XEXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Text Literal</em>' class.
+   * The number of structural features of the '<em>XNumber Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEXT_LITERAL_FEATURE_COUNT = TEXT_EXPRESSION_FEATURE_COUNT + 1;
+  int XNUMBER_LITERAL_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XStringLiteralImpl <em>XString Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.XStringLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXStringLiteral()
+   * @generated
+   */
+  int XSTRING_LITERAL = 44;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSTRING_LITERAL__VALUE = XEXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>XString Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSTRING_LITERAL_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.LilModel <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Model</em>'.
-   * @see com.crubier.lil.lil.Model
+   * @see com.crubier.lil.lil.LilModel
    * @generated
    */
-  EClass getModel();
+  EClass getLilModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.Model#getInteractors <em>Interactors</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.LilModel#getInteractors <em>Interactors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Interactors</em>'.
-   * @see com.crubier.lil.lil.Model#getInteractors()
-   * @see #getModel()
+   * @see com.crubier.lil.lil.LilModel#getInteractors()
+   * @see #getLilModel()
    * @generated
    */
-  EReference getModel_Interactors();
+  EReference getLilModel_Interactors();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.Model#getDataTypes <em>Data Types</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.LilModel#getDataTypes <em>Data Types</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Data Types</em>'.
-   * @see com.crubier.lil.lil.Model#getDataTypes()
-   * @see #getModel()
+   * @see com.crubier.lil.lil.LilModel#getDataTypes()
+   * @see #getLilModel()
    * @generated
    */
-  EReference getModel_DataTypes();
+  EReference getLilModel_DataTypes();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDeclaration <em>Interactor Declaration</em>}'.
@@ -2671,16 +2319,6 @@ public interface LilPackage extends EPackage
   EReference getTriggerEffect_Target();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.Expression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression</em>'.
-   * @see com.crubier.lil.lil.Expression
-   * @generated
-   */
-  EClass getExpression();
-
-  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration <em>Data Type Compound Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2755,98 +2393,87 @@ public interface LilPackage extends EPackage
   EClass getDataType();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanExpression <em>Boolean Expression</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XExpression <em>XExpression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Expression</em>'.
-   * @see com.crubier.lil.lil.BooleanExpression
+   * @return the meta object for class '<em>XExpression</em>'.
+   * @see com.crubier.lil.lil.XExpression
    * @generated
    */
-  EClass getBooleanExpression();
+  EClass getXExpression();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberExpression <em>Number Expression</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XCollectionLiteral <em>XCollection Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Expression</em>'.
-   * @see com.crubier.lil.lil.NumberExpression
+   * @return the meta object for class '<em>XCollection Literal</em>'.
+   * @see com.crubier.lil.lil.XCollectionLiteral
    * @generated
    */
-  EClass getNumberExpression();
+  EClass getXCollectionLiteral();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberSwitchExpressionNumberCase <em>Number Switch Expression Number Case</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.XCollectionLiteral#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Switch Expression Number Case</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionNumberCase
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see com.crubier.lil.lil.XCollectionLiteral#getElements()
+   * @see #getXCollectionLiteral()
    * @generated
    */
-  EClass getNumberSwitchExpressionNumberCase();
+  EReference getXCollectionLiteral_Elements();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionNumberCase#getCondition <em>Condition</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XSetLiteral <em>XSet Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionNumberCase#getCondition()
-   * @see #getNumberSwitchExpressionNumberCase()
+   * @return the meta object for class '<em>XSet Literal</em>'.
+   * @see com.crubier.lil.lil.XSetLiteral
    * @generated
    */
-  EReference getNumberSwitchExpressionNumberCase_Condition();
+  EClass getXSetLiteral();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionNumberCase#getValue <em>Value</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XListLiteral <em>XList Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionNumberCase#getValue()
-   * @see #getNumberSwitchExpressionNumberCase()
+   * @return the meta object for class '<em>XList Literal</em>'.
+   * @see com.crubier.lil.lil.XListLiteral
    * @generated
    */
-  EReference getNumberSwitchExpressionNumberCase_Value();
+  EClass getXListLiteral();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberSwitchExpressionTextCase <em>Number Switch Expression Text Case</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XCasePart <em>XCase Part</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Switch Expression Text Case</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionTextCase
+   * @return the meta object for class '<em>XCase Part</em>'.
+   * @see com.crubier.lil.lil.XCasePart
    * @generated
    */
-  EClass getNumberSwitchExpressionTextCase();
+  EClass getXCasePart();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionTextCase#getCondition <em>Condition</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XCasePart#getCase <em>Case</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionTextCase#getCondition()
-   * @see #getNumberSwitchExpressionTextCase()
+   * @return the meta object for the containment reference '<em>Case</em>'.
+   * @see com.crubier.lil.lil.XCasePart#getCase()
+   * @see #getXCasePart()
    * @generated
    */
-  EReference getNumberSwitchExpressionTextCase_Condition();
+  EReference getXCasePart_Case();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionTextCase#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XCasePart#getThen <em>Then</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionTextCase#getValue()
-   * @see #getNumberSwitchExpressionTextCase()
+   * @return the meta object for the containment reference '<em>Then</em>'.
+   * @see com.crubier.lil.lil.XCasePart#getThen()
+   * @see #getXCasePart()
    * @generated
    */
-  EReference getNumberSwitchExpressionTextCase_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.TextExpression <em>Text Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Text Expression</em>'.
-   * @see com.crubier.lil.lil.TextExpression
-   * @generated
-   */
-  EClass getTextExpression();
+  EReference getXCasePart_Then();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeCompound <em>Data Type Compound</em>}'.
@@ -2891,601 +2518,302 @@ public interface LilPackage extends EPackage
   EAttribute getDataTypeBase_Type();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanDisjonction <em>Boolean Disjonction</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XBinaryOperation <em>XBinary Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Disjonction</em>'.
-   * @see com.crubier.lil.lil.BooleanDisjonction
+   * @return the meta object for class '<em>XBinary Operation</em>'.
+   * @see com.crubier.lil.lil.XBinaryOperation
    * @generated
    */
-  EClass getBooleanDisjonction();
+  EClass getXBinaryOperation();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BooleanDisjonction#getLeft <em>Left</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XBinaryOperation#getLeftOperand <em>Left Operand</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.BooleanDisjonction#getLeft()
-   * @see #getBooleanDisjonction()
+   * @return the meta object for the containment reference '<em>Left Operand</em>'.
+   * @see com.crubier.lil.lil.XBinaryOperation#getLeftOperand()
+   * @see #getXBinaryOperation()
    * @generated
    */
-  EReference getBooleanDisjonction_Left();
+  EReference getXBinaryOperation_LeftOperand();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BooleanDisjonction#getRight <em>Right</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.XBinaryOperation#getFeature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.BooleanDisjonction#getRight()
-   * @see #getBooleanDisjonction()
+   * @return the meta object for the attribute '<em>Feature</em>'.
+   * @see com.crubier.lil.lil.XBinaryOperation#getFeature()
+   * @see #getXBinaryOperation()
    * @generated
    */
-  EReference getBooleanDisjonction_Right();
+  EAttribute getXBinaryOperation_Feature();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanConjonction <em>Boolean Conjonction</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XBinaryOperation#getRightOperand <em>Right Operand</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Conjonction</em>'.
-   * @see com.crubier.lil.lil.BooleanConjonction
+   * @return the meta object for the containment reference '<em>Right Operand</em>'.
+   * @see com.crubier.lil.lil.XBinaryOperation#getRightOperand()
+   * @see #getXBinaryOperation()
    * @generated
    */
-  EClass getBooleanConjonction();
+  EReference getXBinaryOperation_RightOperand();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BooleanConjonction#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XUnaryOperation <em>XUnary Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.BooleanConjonction#getLeft()
-   * @see #getBooleanConjonction()
+   * @return the meta object for class '<em>XUnary Operation</em>'.
+   * @see com.crubier.lil.lil.XUnaryOperation
    * @generated
    */
-  EReference getBooleanConjonction_Left();
+  EClass getXUnaryOperation();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BooleanConjonction#getRight <em>Right</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.XUnaryOperation#getFeature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.BooleanConjonction#getRight()
-   * @see #getBooleanConjonction()
+   * @return the meta object for the attribute '<em>Feature</em>'.
+   * @see com.crubier.lil.lil.XUnaryOperation#getFeature()
+   * @see #getXUnaryOperation()
    * @generated
    */
-  EReference getBooleanConjonction_Right();
+  EAttribute getXUnaryOperation_Feature();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanNegation <em>Boolean Negation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Negation</em>'.
-   * @see com.crubier.lil.lil.BooleanNegation
-   * @generated
-   */
-  EClass getBooleanNegation();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BooleanNegation#getOperand <em>Operand</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XUnaryOperation#getOperand <em>Operand</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Operand</em>'.
-   * @see com.crubier.lil.lil.BooleanNegation#getOperand()
-   * @see #getBooleanNegation()
+   * @see com.crubier.lil.lil.XUnaryOperation#getOperand()
+   * @see #getXUnaryOperation()
    * @generated
    */
-  EReference getBooleanNegation_Operand();
+  EReference getXUnaryOperation_Operand();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanLiteral <em>Boolean Literal</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XIfExpression <em>XIf Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Literal</em>'.
-   * @see com.crubier.lil.lil.BooleanLiteral
+   * @return the meta object for class '<em>XIf Expression</em>'.
+   * @see com.crubier.lil.lil.XIfExpression
    * @generated
    */
-  EClass getBooleanLiteral();
+  EClass getXIfExpression();
 
   /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.BooleanLiteral#isValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see com.crubier.lil.lil.BooleanLiteral#isValue()
-   * @see #getBooleanLiteral()
-   * @generated
-   */
-  EAttribute getBooleanLiteral_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.BooleanNumberComparison <em>Boolean Number Comparison</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Number Comparison</em>'.
-   * @see com.crubier.lil.lil.BooleanNumberComparison
-   * @generated
-   */
-  EClass getBooleanNumberComparison();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BooleanNumberComparison#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.BooleanNumberComparison#getLeft()
-   * @see #getBooleanNumberComparison()
-   * @generated
-   */
-  EReference getBooleanNumberComparison_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.BooleanNumberComparison#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.crubier.lil.lil.BooleanNumberComparison#getOp()
-   * @see #getBooleanNumberComparison()
-   * @generated
-   */
-  EAttribute getBooleanNumberComparison_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BooleanNumberComparison#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.BooleanNumberComparison#getRight()
-   * @see #getBooleanNumberComparison()
-   * @generated
-   */
-  EReference getBooleanNumberComparison_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberIfExpression <em>Number If Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number If Expression</em>'.
-   * @see com.crubier.lil.lil.NumberIfExpression
-   * @generated
-   */
-  EClass getNumberIfExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberIfExpression#getIf <em>If</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XIfExpression#getIf <em>If</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>If</em>'.
-   * @see com.crubier.lil.lil.NumberIfExpression#getIf()
-   * @see #getNumberIfExpression()
+   * @see com.crubier.lil.lil.XIfExpression#getIf()
+   * @see #getXIfExpression()
    * @generated
    */
-  EReference getNumberIfExpression_If();
+  EReference getXIfExpression_If();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberIfExpression#getThen <em>Then</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XIfExpression#getThen <em>Then</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Then</em>'.
-   * @see com.crubier.lil.lil.NumberIfExpression#getThen()
-   * @see #getNumberIfExpression()
+   * @see com.crubier.lil.lil.XIfExpression#getThen()
+   * @see #getXIfExpression()
    * @generated
    */
-  EReference getNumberIfExpression_Then();
+  EReference getXIfExpression_Then();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberIfExpression#getElse <em>Else</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XIfExpression#getElse <em>Else</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Else</em>'.
-   * @see com.crubier.lil.lil.NumberIfExpression#getElse()
-   * @see #getNumberIfExpression()
+   * @see com.crubier.lil.lil.XIfExpression#getElse()
+   * @see #getXIfExpression()
    * @generated
    */
-  EReference getNumberIfExpression_Else();
+  EReference getXIfExpression_Else();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber <em>Number Switch Expression Number</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XSwitchExpression <em>XSwitch Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Switch Expression Number</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber
+   * @return the meta object for class '<em>XSwitch Expression</em>'.
+   * @see com.crubier.lil.lil.XSwitchExpression
    * @generated
    */
-  EClass getNumberSwitchExpressionNumber();
+  EClass getXSwitchExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getSwitch <em>Switch</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Switch</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber#getSwitch()
-   * @see #getNumberSwitchExpressionNumber()
-   * @generated
-   */
-  EReference getNumberSwitchExpressionNumber_Switch();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getCases <em>Cases</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Cases</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber#getCases()
-   * @see #getNumberSwitchExpressionNumber()
-   * @generated
-   */
-  EReference getNumberSwitchExpressionNumber_Cases();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber#getDefault <em>Default</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Default</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber#getDefault()
-   * @see #getNumberSwitchExpressionNumber()
-   * @generated
-   */
-  EReference getNumberSwitchExpressionNumber_Default();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberSwitchExpressionText <em>Number Switch Expression Text</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Switch Expression Text</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionText
-   * @generated
-   */
-  EClass getNumberSwitchExpressionText();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionText#getSwitch <em>Switch</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XSwitchExpression#getSwitch <em>Switch</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Switch</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionText#getSwitch()
-   * @see #getNumberSwitchExpressionText()
+   * @see com.crubier.lil.lil.XSwitchExpression#getSwitch()
+   * @see #getXSwitchExpression()
    * @generated
    */
-  EReference getNumberSwitchExpressionText_Switch();
+  EReference getXSwitchExpression_Switch();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.NumberSwitchExpressionText#getCases <em>Cases</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.XSwitchExpression#getCases <em>Cases</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Cases</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionText#getCases()
-   * @see #getNumberSwitchExpressionText()
+   * @see com.crubier.lil.lil.XSwitchExpression#getCases()
+   * @see #getXSwitchExpression()
    * @generated
    */
-  EReference getNumberSwitchExpressionText_Cases();
+  EReference getXSwitchExpression_Cases();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSwitchExpressionText#getDefault <em>Default</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XSwitchExpression#getDefault <em>Default</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Default</em>'.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionText#getDefault()
-   * @see #getNumberSwitchExpressionText()
+   * @see com.crubier.lil.lil.XSwitchExpression#getDefault()
+   * @see #getXSwitchExpression()
    * @generated
    */
-  EReference getNumberSwitchExpressionText_Default();
+  EReference getXSwitchExpression_Default();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberAddition <em>Number Addition</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XForEachExpression <em>XFor Each Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Addition</em>'.
-   * @see com.crubier.lil.lil.NumberAddition
+   * @return the meta object for class '<em>XFor Each Expression</em>'.
+   * @see com.crubier.lil.lil.XForEachExpression
    * @generated
    */
-  EClass getNumberAddition();
+  EClass getXForEachExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberAddition#getLeft <em>Left</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XForEachExpression#getForExpression <em>For Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.NumberAddition#getLeft()
-   * @see #getNumberAddition()
+   * @return the meta object for the containment reference '<em>For Expression</em>'.
+   * @see com.crubier.lil.lil.XForEachExpression#getForExpression()
+   * @see #getXForEachExpression()
    * @generated
    */
-  EReference getNumberAddition_Left();
+  EReference getXForEachExpression_ForExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberAddition#getRight <em>Right</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.XForEachExpression#getEachExpression <em>Each Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.NumberAddition#getRight()
-   * @see #getNumberAddition()
+   * @return the meta object for the containment reference '<em>Each Expression</em>'.
+   * @see com.crubier.lil.lil.XForEachExpression#getEachExpression()
+   * @see #getXForEachExpression()
    * @generated
    */
-  EReference getNumberAddition_Right();
+  EReference getXForEachExpression_EachExpression();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberSubstraction <em>Number Substraction</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XFunctionCallExpression <em>XFunction Call Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Substraction</em>'.
-   * @see com.crubier.lil.lil.NumberSubstraction
+   * @return the meta object for class '<em>XFunction Call Expression</em>'.
+   * @see com.crubier.lil.lil.XFunctionCallExpression
    * @generated
    */
-  EClass getNumberSubstraction();
+  EClass getXFunctionCallExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSubstraction#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.NumberSubstraction#getLeft()
-   * @see #getNumberSubstraction()
-   * @generated
-   */
-  EReference getNumberSubstraction_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberSubstraction#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.NumberSubstraction#getRight()
-   * @see #getNumberSubstraction()
-   * @generated
-   */
-  EReference getNumberSubstraction_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberMultiplication <em>Number Multiplication</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Multiplication</em>'.
-   * @see com.crubier.lil.lil.NumberMultiplication
-   * @generated
-   */
-  EClass getNumberMultiplication();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberMultiplication#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.NumberMultiplication#getLeft()
-   * @see #getNumberMultiplication()
-   * @generated
-   */
-  EReference getNumberMultiplication_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberMultiplication#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.NumberMultiplication#getRight()
-   * @see #getNumberMultiplication()
-   * @generated
-   */
-  EReference getNumberMultiplication_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberDivision <em>Number Division</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Division</em>'.
-   * @see com.crubier.lil.lil.NumberDivision
-   * @generated
-   */
-  EClass getNumberDivision();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberDivision#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.NumberDivision#getLeft()
-   * @see #getNumberDivision()
-   * @generated
-   */
-  EReference getNumberDivision_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberDivision#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.NumberDivision#getRight()
-   * @see #getNumberDivision()
-   * @generated
-   */
-  EReference getNumberDivision_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberModulo <em>Number Modulo</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Modulo</em>'.
-   * @see com.crubier.lil.lil.NumberModulo
-   * @generated
-   */
-  EClass getNumberModulo();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberModulo#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.NumberModulo#getLeft()
-   * @see #getNumberModulo()
-   * @generated
-   */
-  EReference getNumberModulo_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberModulo#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.NumberModulo#getRight()
-   * @see #getNumberModulo()
-   * @generated
-   */
-  EReference getNumberModulo_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberPower <em>Number Power</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Power</em>'.
-   * @see com.crubier.lil.lil.NumberPower
-   * @generated
-   */
-  EClass getNumberPower();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberPower#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.NumberPower#getLeft()
-   * @see #getNumberPower()
-   * @generated
-   */
-  EReference getNumberPower_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberPower#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.NumberPower#getRight()
-   * @see #getNumberPower()
-   * @generated
-   */
-  EReference getNumberPower_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberOpposition <em>Number Opposition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Opposition</em>'.
-   * @see com.crubier.lil.lil.NumberOpposition
-   * @generated
-   */
-  EClass getNumberOpposition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberOpposition#getOperand <em>Operand</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Operand</em>'.
-   * @see com.crubier.lil.lil.NumberOpposition#getOperand()
-   * @see #getNumberOpposition()
-   * @generated
-   */
-  EReference getNumberOpposition_Operand();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberLiteral <em>Number Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Literal</em>'.
-   * @see com.crubier.lil.lil.NumberLiteral
-   * @generated
-   */
-  EClass getNumberLiteral();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.NumberLiteral#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see com.crubier.lil.lil.NumberLiteral#getValue()
-   * @see #getNumberLiteral()
-   * @generated
-   */
-  EAttribute getNumberLiteral_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberFunctionExpression <em>Number Function Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Number Function Expression</em>'.
-   * @see com.crubier.lil.lil.NumberFunctionExpression
-   * @generated
-   */
-  EClass getNumberFunctionExpression();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.NumberFunctionExpression#getFunction <em>Function</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.XFunctionCallExpression#getFunction <em>Function</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Function</em>'.
-   * @see com.crubier.lil.lil.NumberFunctionExpression#getFunction()
-   * @see #getNumberFunctionExpression()
+   * @see com.crubier.lil.lil.XFunctionCallExpression#getFunction()
+   * @see #getXFunctionCallExpression()
    * @generated
    */
-  EAttribute getNumberFunctionExpression_Function();
+  EAttribute getXFunctionCallExpression_Function();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.NumberFunctionExpression#getArguments <em>Arguments</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.XFunctionCallExpression#getArguments <em>Arguments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Arguments</em>'.
-   * @see com.crubier.lil.lil.NumberFunctionExpression#getArguments()
-   * @see #getNumberFunctionExpression()
+   * @see com.crubier.lil.lil.XFunctionCallExpression#getArguments()
+   * @see #getXFunctionCallExpression()
    * @generated
    */
-  EReference getNumberFunctionExpression_Arguments();
+  EReference getXFunctionCallExpression_Arguments();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.TextJoin <em>Text Join</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XBooleanLiteral <em>XBoolean Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Text Join</em>'.
-   * @see com.crubier.lil.lil.TextJoin
+   * @return the meta object for class '<em>XBoolean Literal</em>'.
+   * @see com.crubier.lil.lil.XBooleanLiteral
    * @generated
    */
-  EClass getTextJoin();
+  EClass getXBooleanLiteral();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.TextJoin#getLeft <em>Left</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.XBooleanLiteral#isIsTrue <em>Is True</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.crubier.lil.lil.TextJoin#getLeft()
-   * @see #getTextJoin()
+   * @return the meta object for the attribute '<em>Is True</em>'.
+   * @see com.crubier.lil.lil.XBooleanLiteral#isIsTrue()
+   * @see #getXBooleanLiteral()
    * @generated
    */
-  EReference getTextJoin_Left();
+  EAttribute getXBooleanLiteral_IsTrue();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.TextJoin#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XNullLiteral <em>XNull Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.crubier.lil.lil.TextJoin#getRight()
-   * @see #getTextJoin()
+   * @return the meta object for class '<em>XNull Literal</em>'.
+   * @see com.crubier.lil.lil.XNullLiteral
    * @generated
    */
-  EReference getTextJoin_Right();
+  EClass getXNullLiteral();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.TextLiteral <em>Text Literal</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XNumberLiteral <em>XNumber Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Text Literal</em>'.
-   * @see com.crubier.lil.lil.TextLiteral
+   * @return the meta object for class '<em>XNumber Literal</em>'.
+   * @see com.crubier.lil.lil.XNumberLiteral
    * @generated
    */
-  EClass getTextLiteral();
+  EClass getXNumberLiteral();
 
   /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.TextLiteral#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.XNumberLiteral#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see com.crubier.lil.lil.TextLiteral#getValue()
-   * @see #getTextLiteral()
+   * @see com.crubier.lil.lil.XNumberLiteral#getValue()
+   * @see #getXNumberLiteral()
    * @generated
    */
-  EAttribute getTextLiteral_Value();
+  EAttribute getXNumberLiteral_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XStringLiteral <em>XString Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XString Literal</em>'.
+   * @see com.crubier.lil.lil.XStringLiteral
+   * @generated
+   */
+  EClass getXStringLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.XStringLiteral#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.crubier.lil.lil.XStringLiteral#getValue()
+   * @see #getXStringLiteral()
+   * @generated
+   */
+  EAttribute getXStringLiteral_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -3511,14 +2839,14 @@ public interface LilPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.LilModelImpl <em>Model</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.ModelImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getModel()
+     * @see com.crubier.lil.lil.impl.LilModelImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getLilModel()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass LIL_MODEL = eINSTANCE.getLilModel();
 
     /**
      * The meta object literal for the '<em><b>Interactors</b></em>' containment reference list feature.
@@ -3526,7 +2854,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__INTERACTORS = eINSTANCE.getModel_Interactors();
+    EReference LIL_MODEL__INTERACTORS = eINSTANCE.getLilModel_Interactors();
 
     /**
      * The meta object literal for the '<em><b>Data Types</b></em>' containment reference list feature.
@@ -3534,7 +2862,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__DATA_TYPES = eINSTANCE.getModel_DataTypes();
+    EReference LIL_MODEL__DATA_TYPES = eINSTANCE.getLilModel_DataTypes();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDeclarationImpl <em>Interactor Declaration</em>}' class.
@@ -4065,16 +3393,6 @@ public interface LilPackage extends EPackage
     EReference TRIGGER_EFFECT__TARGET = eINSTANCE.getTriggerEffect_Target();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.ExpressionImpl <em>Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.ExpressionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpression()
-     * @generated
-     */
-    EClass EXPRESSION = eINSTANCE.getExpression();
-
-    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundDeclarationImpl <em>Data Type Compound Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4137,86 +3455,78 @@ public interface LilPackage extends EPackage
     EClass DATA_TYPE = eINSTANCE.getDataType();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XExpressionImpl <em>XExpression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.BooleanExpressionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanExpression()
+     * @see com.crubier.lil.lil.impl.XExpressionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXExpression()
      * @generated
      */
-    EClass BOOLEAN_EXPRESSION = eINSTANCE.getBooleanExpression();
+    EClass XEXPRESSION = eINSTANCE.getXExpression();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberExpressionImpl <em>Number Expression</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XCollectionLiteralImpl <em>XCollection Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberExpressionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberExpression()
+     * @see com.crubier.lil.lil.impl.XCollectionLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXCollectionLiteral()
      * @generated
      */
-    EClass NUMBER_EXPRESSION = eINSTANCE.getNumberExpression();
+    EClass XCOLLECTION_LITERAL = eINSTANCE.getXCollectionLiteral();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionNumberCaseImpl <em>Number Switch Expression Number Case</em>}' class.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberSwitchExpressionNumberCaseImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionNumberCase()
      * @generated
      */
-    EClass NUMBER_SWITCH_EXPRESSION_NUMBER_CASE = eINSTANCE.getNumberSwitchExpressionNumberCase();
+    EReference XCOLLECTION_LITERAL__ELEMENTS = eINSTANCE.getXCollectionLiteral_Elements();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XSetLiteralImpl <em>XSet Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.XSetLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSetLiteral()
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION_NUMBER_CASE__CONDITION = eINSTANCE.getNumberSwitchExpressionNumberCase_Condition();
+    EClass XSET_LITERAL = eINSTANCE.getXSetLiteral();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XListLiteralImpl <em>XList Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.XListLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXListLiteral()
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION_NUMBER_CASE__VALUE = eINSTANCE.getNumberSwitchExpressionNumberCase_Value();
+    EClass XLIST_LITERAL = eINSTANCE.getXListLiteral();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionTextCaseImpl <em>Number Switch Expression Text Case</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XCasePartImpl <em>XCase Part</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberSwitchExpressionTextCaseImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionTextCase()
+     * @see com.crubier.lil.lil.impl.XCasePartImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXCasePart()
      * @generated
      */
-    EClass NUMBER_SWITCH_EXPRESSION_TEXT_CASE = eINSTANCE.getNumberSwitchExpressionTextCase();
+    EClass XCASE_PART = eINSTANCE.getXCasePart();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Case</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION_TEXT_CASE__CONDITION = eINSTANCE.getNumberSwitchExpressionTextCase_Condition();
+    EReference XCASE_PART__CASE = eINSTANCE.getXCasePart_Case();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Then</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION_TEXT_CASE__VALUE = eINSTANCE.getNumberSwitchExpressionTextCase_Value();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.TextExpressionImpl <em>Text Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.TextExpressionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextExpression()
-     * @generated
-     */
-    EClass TEXT_EXPRESSION = eINSTANCE.getTextExpression();
+    EReference XCASE_PART__THEN = eINSTANCE.getXCasePart_Then();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeCompoundImpl <em>Data Type Compound</em>}' class.
@@ -4255,66 +3565,56 @@ public interface LilPackage extends EPackage
     EAttribute DATA_TYPE_BASE__TYPE = eINSTANCE.getDataTypeBase_Type();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanDisjonctionImpl <em>Boolean Disjonction</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XBinaryOperationImpl <em>XBinary Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.BooleanDisjonctionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanDisjonction()
+     * @see com.crubier.lil.lil.impl.XBinaryOperationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBinaryOperation()
      * @generated
      */
-    EClass BOOLEAN_DISJONCTION = eINSTANCE.getBooleanDisjonction();
+    EClass XBINARY_OPERATION = eINSTANCE.getXBinaryOperation();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Left Operand</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOOLEAN_DISJONCTION__LEFT = eINSTANCE.getBooleanDisjonction_Left();
+    EReference XBINARY_OPERATION__LEFT_OPERAND = eINSTANCE.getXBinaryOperation_LeftOperand();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Feature</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOOLEAN_DISJONCTION__RIGHT = eINSTANCE.getBooleanDisjonction_Right();
+    EAttribute XBINARY_OPERATION__FEATURE = eINSTANCE.getXBinaryOperation_Feature();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanConjonctionImpl <em>Boolean Conjonction</em>}' class.
+     * The meta object literal for the '<em><b>Right Operand</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.BooleanConjonctionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanConjonction()
      * @generated
      */
-    EClass BOOLEAN_CONJONCTION = eINSTANCE.getBooleanConjonction();
+    EReference XBINARY_OPERATION__RIGHT_OPERAND = eINSTANCE.getXBinaryOperation_RightOperand();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XUnaryOperationImpl <em>XUnary Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.XUnaryOperationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXUnaryOperation()
      * @generated
      */
-    EReference BOOLEAN_CONJONCTION__LEFT = eINSTANCE.getBooleanConjonction_Left();
+    EClass XUNARY_OPERATION = eINSTANCE.getXUnaryOperation();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Feature</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOOLEAN_CONJONCTION__RIGHT = eINSTANCE.getBooleanConjonction_Right();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanNegationImpl <em>Boolean Negation</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.BooleanNegationImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanNegation()
-     * @generated
-     */
-    EClass BOOLEAN_NEGATION = eINSTANCE.getBooleanNegation();
+    EAttribute XUNARY_OPERATION__FEATURE = eINSTANCE.getXUnaryOperation_Feature();
 
     /**
      * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
@@ -4322,69 +3622,17 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOOLEAN_NEGATION__OPERAND = eINSTANCE.getBooleanNegation_Operand();
+    EReference XUNARY_OPERATION__OPERAND = eINSTANCE.getXUnaryOperation_Operand();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XIfExpressionImpl <em>XIf Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.BooleanLiteralImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanLiteral()
+     * @see com.crubier.lil.lil.impl.XIfExpressionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXIfExpression()
      * @generated
      */
-    EClass BOOLEAN_LITERAL = eINSTANCE.getBooleanLiteral();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BOOLEAN_LITERAL__VALUE = eINSTANCE.getBooleanLiteral_Value();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.BooleanNumberComparisonImpl <em>Boolean Number Comparison</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.BooleanNumberComparisonImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getBooleanNumberComparison()
-     * @generated
-     */
-    EClass BOOLEAN_NUMBER_COMPARISON = eINSTANCE.getBooleanNumberComparison();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BOOLEAN_NUMBER_COMPARISON__LEFT = eINSTANCE.getBooleanNumberComparison_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BOOLEAN_NUMBER_COMPARISON__OP = eINSTANCE.getBooleanNumberComparison_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BOOLEAN_NUMBER_COMPARISON__RIGHT = eINSTANCE.getBooleanNumberComparison_Right();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberIfExpressionImpl <em>Number If Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberIfExpressionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberIfExpression()
-     * @generated
-     */
-    EClass NUMBER_IF_EXPRESSION = eINSTANCE.getNumberIfExpression();
+    EClass XIF_EXPRESSION = eINSTANCE.getXIfExpression();
 
     /**
      * The meta object literal for the '<em><b>If</b></em>' containment reference feature.
@@ -4392,7 +3640,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_IF_EXPRESSION__IF = eINSTANCE.getNumberIfExpression_If();
+    EReference XIF_EXPRESSION__IF = eINSTANCE.getXIfExpression_If();
 
     /**
      * The meta object literal for the '<em><b>Then</b></em>' containment reference feature.
@@ -4400,7 +3648,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_IF_EXPRESSION__THEN = eINSTANCE.getNumberIfExpression_Then();
+    EReference XIF_EXPRESSION__THEN = eINSTANCE.getXIfExpression_Then();
 
     /**
      * The meta object literal for the '<em><b>Else</b></em>' containment reference feature.
@@ -4408,51 +3656,17 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_IF_EXPRESSION__ELSE = eINSTANCE.getNumberIfExpression_Else();
+    EReference XIF_EXPRESSION__ELSE = eINSTANCE.getXIfExpression_Else();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl <em>Number Switch Expression Number</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XSwitchExpressionImpl <em>XSwitch Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberSwitchExpressionNumberImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionNumber()
+     * @see com.crubier.lil.lil.impl.XSwitchExpressionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSwitchExpression()
      * @generated
      */
-    EClass NUMBER_SWITCH_EXPRESSION_NUMBER = eINSTANCE.getNumberSwitchExpressionNumber();
-
-    /**
-     * The meta object literal for the '<em><b>Switch</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_SWITCH_EXPRESSION_NUMBER__SWITCH = eINSTANCE.getNumberSwitchExpressionNumber_Switch();
-
-    /**
-     * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_SWITCH_EXPRESSION_NUMBER__CASES = eINSTANCE.getNumberSwitchExpressionNumber_Cases();
-
-    /**
-     * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_SWITCH_EXPRESSION_NUMBER__DEFAULT = eINSTANCE.getNumberSwitchExpressionNumber_Default();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberSwitchExpressionTextImpl <em>Number Switch Expression Text</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberSwitchExpressionTextImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSwitchExpressionText()
-     * @generated
-     */
-    EClass NUMBER_SWITCH_EXPRESSION_TEXT = eINSTANCE.getNumberSwitchExpressionText();
+    EClass XSWITCH_EXPRESSION = eINSTANCE.getXSwitchExpression();
 
     /**
      * The meta object literal for the '<em><b>Switch</b></em>' containment reference feature.
@@ -4460,7 +3674,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION_TEXT__SWITCH = eINSTANCE.getNumberSwitchExpressionText_Switch();
+    EReference XSWITCH_EXPRESSION__SWITCH = eINSTANCE.getXSwitchExpression_Switch();
 
     /**
      * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
@@ -4468,7 +3682,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION_TEXT__CASES = eINSTANCE.getNumberSwitchExpressionText_Cases();
+    EReference XSWITCH_EXPRESSION__CASES = eINSTANCE.getXSwitchExpression_Cases();
 
     /**
      * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
@@ -4476,209 +3690,43 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_SWITCH_EXPRESSION_TEXT__DEFAULT = eINSTANCE.getNumberSwitchExpressionText_Default();
+    EReference XSWITCH_EXPRESSION__DEFAULT = eINSTANCE.getXSwitchExpression_Default();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberAdditionImpl <em>Number Addition</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XForEachExpressionImpl <em>XFor Each Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberAdditionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberAddition()
+     * @see com.crubier.lil.lil.impl.XForEachExpressionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXForEachExpression()
      * @generated
      */
-    EClass NUMBER_ADDITION = eINSTANCE.getNumberAddition();
+    EClass XFOR_EACH_EXPRESSION = eINSTANCE.getXForEachExpression();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_ADDITION__LEFT = eINSTANCE.getNumberAddition_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>For Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_ADDITION__RIGHT = eINSTANCE.getNumberAddition_Right();
+    EReference XFOR_EACH_EXPRESSION__FOR_EXPRESSION = eINSTANCE.getXForEachExpression_ForExpression();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberSubstractionImpl <em>Number Substraction</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberSubstractionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberSubstraction()
-     * @generated
-     */
-    EClass NUMBER_SUBSTRACTION = eINSTANCE.getNumberSubstraction();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Each Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_SUBSTRACTION__LEFT = eINSTANCE.getNumberSubstraction_Left();
+    EReference XFOR_EACH_EXPRESSION__EACH_EXPRESSION = eINSTANCE.getXForEachExpression_EachExpression();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XFunctionCallExpressionImpl <em>XFunction Call Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.XFunctionCallExpressionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXFunctionCallExpression()
      * @generated
      */
-    EReference NUMBER_SUBSTRACTION__RIGHT = eINSTANCE.getNumberSubstraction_Right();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberMultiplicationImpl <em>Number Multiplication</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberMultiplicationImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberMultiplication()
-     * @generated
-     */
-    EClass NUMBER_MULTIPLICATION = eINSTANCE.getNumberMultiplication();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_MULTIPLICATION__LEFT = eINSTANCE.getNumberMultiplication_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_MULTIPLICATION__RIGHT = eINSTANCE.getNumberMultiplication_Right();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberDivisionImpl <em>Number Division</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberDivisionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberDivision()
-     * @generated
-     */
-    EClass NUMBER_DIVISION = eINSTANCE.getNumberDivision();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_DIVISION__LEFT = eINSTANCE.getNumberDivision_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_DIVISION__RIGHT = eINSTANCE.getNumberDivision_Right();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberModuloImpl <em>Number Modulo</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberModuloImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberModulo()
-     * @generated
-     */
-    EClass NUMBER_MODULO = eINSTANCE.getNumberModulo();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_MODULO__LEFT = eINSTANCE.getNumberModulo_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_MODULO__RIGHT = eINSTANCE.getNumberModulo_Right();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberPowerImpl <em>Number Power</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberPowerImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberPower()
-     * @generated
-     */
-    EClass NUMBER_POWER = eINSTANCE.getNumberPower();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_POWER__LEFT = eINSTANCE.getNumberPower_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_POWER__RIGHT = eINSTANCE.getNumberPower_Right();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberOppositionImpl <em>Number Opposition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberOppositionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberOpposition()
-     * @generated
-     */
-    EClass NUMBER_OPPOSITION = eINSTANCE.getNumberOpposition();
-
-    /**
-     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NUMBER_OPPOSITION__OPERAND = eINSTANCE.getNumberOpposition_Operand();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberLiteralImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberLiteral()
-     * @generated
-     */
-    EClass NUMBER_LITERAL = eINSTANCE.getNumberLiteral();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NUMBER_LITERAL__VALUE = eINSTANCE.getNumberLiteral_Value();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberFunctionExpressionImpl <em>Number Function Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.NumberFunctionExpressionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberFunctionExpression()
-     * @generated
-     */
-    EClass NUMBER_FUNCTION_EXPRESSION = eINSTANCE.getNumberFunctionExpression();
+    EClass XFUNCTION_CALL_EXPRESSION = eINSTANCE.getXFunctionCallExpression();
 
     /**
      * The meta object literal for the '<em><b>Function</b></em>' attribute feature.
@@ -4686,7 +3734,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NUMBER_FUNCTION_EXPRESSION__FUNCTION = eINSTANCE.getNumberFunctionExpression_Function();
+    EAttribute XFUNCTION_CALL_EXPRESSION__FUNCTION = eINSTANCE.getXFunctionCallExpression_Function();
 
     /**
      * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
@@ -4694,43 +3742,45 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NUMBER_FUNCTION_EXPRESSION__ARGUMENTS = eINSTANCE.getNumberFunctionExpression_Arguments();
+    EReference XFUNCTION_CALL_EXPRESSION__ARGUMENTS = eINSTANCE.getXFunctionCallExpression_Arguments();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.TextJoinImpl <em>Text Join</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XBooleanLiteralImpl <em>XBoolean Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.TextJoinImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextJoin()
+     * @see com.crubier.lil.lil.impl.XBooleanLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBooleanLiteral()
      * @generated
      */
-    EClass TEXT_JOIN = eINSTANCE.getTextJoin();
+    EClass XBOOLEAN_LITERAL = eINSTANCE.getXBooleanLiteral();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TEXT_JOIN__LEFT = eINSTANCE.getTextJoin_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Is True</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEXT_JOIN__RIGHT = eINSTANCE.getTextJoin_Right();
+    EAttribute XBOOLEAN_LITERAL__IS_TRUE = eINSTANCE.getXBooleanLiteral_IsTrue();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.TextLiteralImpl <em>Text Literal</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XNullLiteralImpl <em>XNull Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.TextLiteralImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getTextLiteral()
+     * @see com.crubier.lil.lil.impl.XNullLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNullLiteral()
      * @generated
      */
-    EClass TEXT_LITERAL = eINSTANCE.getTextLiteral();
+    EClass XNULL_LITERAL = eINSTANCE.getXNullLiteral();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XNumberLiteralImpl <em>XNumber Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.XNumberLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNumberLiteral()
+     * @generated
+     */
+    EClass XNUMBER_LITERAL = eINSTANCE.getXNumberLiteral();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -4738,7 +3788,25 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TEXT_LITERAL__VALUE = eINSTANCE.getTextLiteral_Value();
+    EAttribute XNUMBER_LITERAL__VALUE = eINSTANCE.getXNumberLiteral_Value();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XStringLiteralImpl <em>XString Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.XStringLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXStringLiteral()
+     * @generated
+     */
+    EClass XSTRING_LITERAL = eINSTANCE.getXStringLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XSTRING_LITERAL__VALUE = eINSTANCE.getXStringLiteral_Value();
 
   }
 

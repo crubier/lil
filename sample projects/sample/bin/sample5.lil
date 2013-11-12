@@ -27,7 +27,7 @@ interactor ControlPanel :
 	number flow current
 	
 	on init : 	always current = 
-					switch(5+5) 
+					switch(5) 
 						case 10 : 3 
 						default : 5
 				always val to theGauge = (1-2)+15*sin(45)

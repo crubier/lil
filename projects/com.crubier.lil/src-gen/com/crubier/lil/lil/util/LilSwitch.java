@@ -72,10 +72,10 @@ public class LilSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case LilPackage.MODEL:
+      case LilPackage.LIL_MODEL:
       {
-        Model model = (Model)theEObject;
-        T result = caseModel(model);
+        LilModel lilModel = (LilModel)theEObject;
+        T result = caseLilModel(lilModel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -256,13 +256,6 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.EXPRESSION:
-      {
-        Expression expression = (Expression)theEObject;
-        T result = caseExpression(expression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case LilPackage.DATA_TYPE_COMPOUND_DECLARATION:
       {
         DataTypeCompoundDeclaration dataTypeCompoundDeclaration = (DataTypeCompoundDeclaration)theEObject;
@@ -284,39 +277,43 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.BOOLEAN_EXPRESSION:
+      case LilPackage.XEXPRESSION:
       {
-        BooleanExpression booleanExpression = (BooleanExpression)theEObject;
-        T result = caseBooleanExpression(booleanExpression);
+        XExpression xExpression = (XExpression)theEObject;
+        T result = caseXExpression(xExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.NUMBER_EXPRESSION:
+      case LilPackage.XCOLLECTION_LITERAL:
       {
-        NumberExpression numberExpression = (NumberExpression)theEObject;
-        T result = caseNumberExpression(numberExpression);
-        if (result == null) result = caseExpression(numberExpression);
+        XCollectionLiteral xCollectionLiteral = (XCollectionLiteral)theEObject;
+        T result = caseXCollectionLiteral(xCollectionLiteral);
+        if (result == null) result = caseXExpression(xCollectionLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER_CASE:
+      case LilPackage.XSET_LITERAL:
       {
-        NumberSwitchExpressionNumberCase numberSwitchExpressionNumberCase = (NumberSwitchExpressionNumberCase)theEObject;
-        T result = caseNumberSwitchExpressionNumberCase(numberSwitchExpressionNumberCase);
+        XSetLiteral xSetLiteral = (XSetLiteral)theEObject;
+        T result = caseXSetLiteral(xSetLiteral);
+        if (result == null) result = caseXCollectionLiteral(xSetLiteral);
+        if (result == null) result = caseXExpression(xSetLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT_CASE:
+      case LilPackage.XLIST_LITERAL:
       {
-        NumberSwitchExpressionTextCase numberSwitchExpressionTextCase = (NumberSwitchExpressionTextCase)theEObject;
-        T result = caseNumberSwitchExpressionTextCase(numberSwitchExpressionTextCase);
+        XListLiteral xListLiteral = (XListLiteral)theEObject;
+        T result = caseXListLiteral(xListLiteral);
+        if (result == null) result = caseXCollectionLiteral(xListLiteral);
+        if (result == null) result = caseXExpression(xListLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.TEXT_EXPRESSION:
+      case LilPackage.XCASE_PART:
       {
-        TextExpression textExpression = (TextExpression)theEObject;
-        T result = caseTextExpression(textExpression);
+        XCasePart xCasePart = (XCasePart)theEObject;
+        T result = caseXCasePart(xCasePart);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -336,167 +333,83 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.BOOLEAN_DISJONCTION:
+      case LilPackage.XBINARY_OPERATION:
       {
-        BooleanDisjonction booleanDisjonction = (BooleanDisjonction)theEObject;
-        T result = caseBooleanDisjonction(booleanDisjonction);
-        if (result == null) result = caseBooleanExpression(booleanDisjonction);
+        XBinaryOperation xBinaryOperation = (XBinaryOperation)theEObject;
+        T result = caseXBinaryOperation(xBinaryOperation);
+        if (result == null) result = caseXExpression(xBinaryOperation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.BOOLEAN_CONJONCTION:
+      case LilPackage.XUNARY_OPERATION:
       {
-        BooleanConjonction booleanConjonction = (BooleanConjonction)theEObject;
-        T result = caseBooleanConjonction(booleanConjonction);
-        if (result == null) result = caseBooleanExpression(booleanConjonction);
+        XUnaryOperation xUnaryOperation = (XUnaryOperation)theEObject;
+        T result = caseXUnaryOperation(xUnaryOperation);
+        if (result == null) result = caseXExpression(xUnaryOperation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.BOOLEAN_NEGATION:
+      case LilPackage.XIF_EXPRESSION:
       {
-        BooleanNegation booleanNegation = (BooleanNegation)theEObject;
-        T result = caseBooleanNegation(booleanNegation);
-        if (result == null) result = caseBooleanExpression(booleanNegation);
+        XIfExpression xIfExpression = (XIfExpression)theEObject;
+        T result = caseXIfExpression(xIfExpression);
+        if (result == null) result = caseXExpression(xIfExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.BOOLEAN_LITERAL:
+      case LilPackage.XSWITCH_EXPRESSION:
       {
-        BooleanLiteral booleanLiteral = (BooleanLiteral)theEObject;
-        T result = caseBooleanLiteral(booleanLiteral);
-        if (result == null) result = caseBooleanExpression(booleanLiteral);
+        XSwitchExpression xSwitchExpression = (XSwitchExpression)theEObject;
+        T result = caseXSwitchExpression(xSwitchExpression);
+        if (result == null) result = caseXExpression(xSwitchExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.BOOLEAN_NUMBER_COMPARISON:
+      case LilPackage.XFOR_EACH_EXPRESSION:
       {
-        BooleanNumberComparison booleanNumberComparison = (BooleanNumberComparison)theEObject;
-        T result = caseBooleanNumberComparison(booleanNumberComparison);
-        if (result == null) result = caseBooleanExpression(booleanNumberComparison);
+        XForEachExpression xForEachExpression = (XForEachExpression)theEObject;
+        T result = caseXForEachExpression(xForEachExpression);
+        if (result == null) result = caseXExpression(xForEachExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.NUMBER_IF_EXPRESSION:
+      case LilPackage.XFUNCTION_CALL_EXPRESSION:
       {
-        NumberIfExpression numberIfExpression = (NumberIfExpression)theEObject;
-        T result = caseNumberIfExpression(numberIfExpression);
-        if (result == null) result = caseNumberExpression(numberIfExpression);
-        if (result == null) result = caseExpression(numberIfExpression);
+        XFunctionCallExpression xFunctionCallExpression = (XFunctionCallExpression)theEObject;
+        T result = caseXFunctionCallExpression(xFunctionCallExpression);
+        if (result == null) result = caseXExpression(xFunctionCallExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.NUMBER_SWITCH_EXPRESSION_NUMBER:
+      case LilPackage.XBOOLEAN_LITERAL:
       {
-        NumberSwitchExpressionNumber numberSwitchExpressionNumber = (NumberSwitchExpressionNumber)theEObject;
-        T result = caseNumberSwitchExpressionNumber(numberSwitchExpressionNumber);
-        if (result == null) result = caseNumberExpression(numberSwitchExpressionNumber);
-        if (result == null) result = caseExpression(numberSwitchExpressionNumber);
+        XBooleanLiteral xBooleanLiteral = (XBooleanLiteral)theEObject;
+        T result = caseXBooleanLiteral(xBooleanLiteral);
+        if (result == null) result = caseXExpression(xBooleanLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.NUMBER_SWITCH_EXPRESSION_TEXT:
+      case LilPackage.XNULL_LITERAL:
       {
-        NumberSwitchExpressionText numberSwitchExpressionText = (NumberSwitchExpressionText)theEObject;
-        T result = caseNumberSwitchExpressionText(numberSwitchExpressionText);
-        if (result == null) result = caseNumberExpression(numberSwitchExpressionText);
-        if (result == null) result = caseExpression(numberSwitchExpressionText);
+        XNullLiteral xNullLiteral = (XNullLiteral)theEObject;
+        T result = caseXNullLiteral(xNullLiteral);
+        if (result == null) result = caseXExpression(xNullLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.NUMBER_ADDITION:
+      case LilPackage.XNUMBER_LITERAL:
       {
-        NumberAddition numberAddition = (NumberAddition)theEObject;
-        T result = caseNumberAddition(numberAddition);
-        if (result == null) result = caseNumberExpression(numberAddition);
-        if (result == null) result = caseExpression(numberAddition);
+        XNumberLiteral xNumberLiteral = (XNumberLiteral)theEObject;
+        T result = caseXNumberLiteral(xNumberLiteral);
+        if (result == null) result = caseXExpression(xNumberLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.NUMBER_SUBSTRACTION:
+      case LilPackage.XSTRING_LITERAL:
       {
-        NumberSubstraction numberSubstraction = (NumberSubstraction)theEObject;
-        T result = caseNumberSubstraction(numberSubstraction);
-        if (result == null) result = caseNumberExpression(numberSubstraction);
-        if (result == null) result = caseExpression(numberSubstraction);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.NUMBER_MULTIPLICATION:
-      {
-        NumberMultiplication numberMultiplication = (NumberMultiplication)theEObject;
-        T result = caseNumberMultiplication(numberMultiplication);
-        if (result == null) result = caseNumberExpression(numberMultiplication);
-        if (result == null) result = caseExpression(numberMultiplication);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.NUMBER_DIVISION:
-      {
-        NumberDivision numberDivision = (NumberDivision)theEObject;
-        T result = caseNumberDivision(numberDivision);
-        if (result == null) result = caseNumberExpression(numberDivision);
-        if (result == null) result = caseExpression(numberDivision);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.NUMBER_MODULO:
-      {
-        NumberModulo numberModulo = (NumberModulo)theEObject;
-        T result = caseNumberModulo(numberModulo);
-        if (result == null) result = caseNumberExpression(numberModulo);
-        if (result == null) result = caseExpression(numberModulo);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.NUMBER_POWER:
-      {
-        NumberPower numberPower = (NumberPower)theEObject;
-        T result = caseNumberPower(numberPower);
-        if (result == null) result = caseNumberExpression(numberPower);
-        if (result == null) result = caseExpression(numberPower);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.NUMBER_OPPOSITION:
-      {
-        NumberOpposition numberOpposition = (NumberOpposition)theEObject;
-        T result = caseNumberOpposition(numberOpposition);
-        if (result == null) result = caseNumberExpression(numberOpposition);
-        if (result == null) result = caseExpression(numberOpposition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.NUMBER_LITERAL:
-      {
-        NumberLiteral numberLiteral = (NumberLiteral)theEObject;
-        T result = caseNumberLiteral(numberLiteral);
-        if (result == null) result = caseNumberExpression(numberLiteral);
-        if (result == null) result = caseExpression(numberLiteral);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.NUMBER_FUNCTION_EXPRESSION:
-      {
-        NumberFunctionExpression numberFunctionExpression = (NumberFunctionExpression)theEObject;
-        T result = caseNumberFunctionExpression(numberFunctionExpression);
-        if (result == null) result = caseNumberExpression(numberFunctionExpression);
-        if (result == null) result = caseExpression(numberFunctionExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.TEXT_JOIN:
-      {
-        TextJoin textJoin = (TextJoin)theEObject;
-        T result = caseTextJoin(textJoin);
-        if (result == null) result = caseTextExpression(textJoin);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.TEXT_LITERAL:
-      {
-        TextLiteral textLiteral = (TextLiteral)theEObject;
-        T result = caseTextLiteral(textLiteral);
-        if (result == null) result = caseTextExpression(textLiteral);
+        XStringLiteral xStringLiteral = (XStringLiteral)theEObject;
+        T result = caseXStringLiteral(xStringLiteral);
+        if (result == null) result = caseXExpression(xStringLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -515,7 +428,7 @@ public class LilSwitch<T> extends Switch<T>
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModel(Model object)
+  public T caseLilModel(LilModel object)
   {
     return null;
   }
@@ -905,22 +818,6 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExpression(Expression object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Data Type Compound Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -969,81 +866,81 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XExpression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XExpression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBooleanExpression(BooleanExpression object)
+  public T caseXExpression(XExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XCollection Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XCollection Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumberExpression(NumberExpression object)
+  public T caseXCollectionLiteral(XCollectionLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Switch Expression Number Case</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XSet Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Switch Expression Number Case</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XSet Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumberSwitchExpressionNumberCase(NumberSwitchExpressionNumberCase object)
+  public T caseXSetLiteral(XSetLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Switch Expression Text Case</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XList Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Switch Expression Text Case</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XList Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumberSwitchExpressionTextCase(NumberSwitchExpressionTextCase object)
+  public T caseXListLiteral(XListLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Text Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XCase Part</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XCase Part</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTextExpression(TextExpression object)
+  public T caseXCasePart(XCasePart object)
   {
     return null;
   }
@@ -1081,305 +978,161 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Disjonction</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XBinary Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Disjonction</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XBinary Operation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBooleanDisjonction(BooleanDisjonction object)
+  public T caseXBinaryOperation(XBinaryOperation object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Conjonction</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XUnary Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Conjonction</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XUnary Operation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBooleanConjonction(BooleanConjonction object)
+  public T caseXUnaryOperation(XUnaryOperation object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Negation</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XIf Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Negation</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XIf Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBooleanNegation(BooleanNegation object)
+  public T caseXIfExpression(XIfExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XSwitch Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XSwitch Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBooleanLiteral(BooleanLiteral object)
+  public T caseXSwitchExpression(XSwitchExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Number Comparison</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XFor Each Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Number Comparison</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XFor Each Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBooleanNumberComparison(BooleanNumberComparison object)
+  public T caseXForEachExpression(XForEachExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number If Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XFunction Call Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number If Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XFunction Call Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumberIfExpression(NumberIfExpression object)
+  public T caseXFunctionCallExpression(XFunctionCallExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Switch Expression Number</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XBoolean Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Switch Expression Number</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XBoolean Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumberSwitchExpressionNumber(NumberSwitchExpressionNumber object)
+  public T caseXBooleanLiteral(XBooleanLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Switch Expression Text</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XNull Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Switch Expression Text</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XNull Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumberSwitchExpressionText(NumberSwitchExpressionText object)
+  public T caseXNullLiteral(XNullLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Addition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XNumber Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Addition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XNumber Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumberAddition(NumberAddition object)
+  public T caseXNumberLiteral(XNumberLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Substraction</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>XString Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Substraction</em>'.
+   * @return the result of interpreting the object as an instance of '<em>XString Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumberSubstraction(NumberSubstraction object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Multiplication</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Multiplication</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNumberMultiplication(NumberMultiplication object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Division</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Division</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNumberDivision(NumberDivision object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Modulo</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Modulo</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNumberModulo(NumberModulo object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Power</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Power</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNumberPower(NumberPower object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Opposition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Opposition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNumberOpposition(NumberOpposition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Literal</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Literal</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNumberLiteral(NumberLiteral object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Number Function Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Number Function Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNumberFunctionExpression(NumberFunctionExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Text Join</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text Join</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTextJoin(TextJoin object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Text Literal</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text Literal</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTextLiteral(TextLiteral object)
+  public T caseXStringLiteral(XStringLiteral object)
   {
     return null;
   }

@@ -2,9 +2,9 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.BooleanExpression;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.WhenCause;
+import com.crubier.lil.lil.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -37,7 +37,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
    * @generated
    * @ordered
    */
-  protected BooleanExpression condition;
+  protected XExpression condition;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanExpression getCondition()
+  public XExpression getCondition()
   {
     return condition;
   }
@@ -75,9 +75,9 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCondition(BooleanExpression newCondition, NotificationChain msgs)
+  public NotificationChain basicSetCondition(XExpression newCondition, NotificationChain msgs)
   {
-    BooleanExpression oldCondition = condition;
+    XExpression oldCondition = condition;
     condition = newCondition;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCondition(BooleanExpression newCondition)
+  public void setCondition(XExpression newCondition)
   {
     if (newCondition != condition)
     {
@@ -151,7 +151,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
     switch (featureID)
     {
       case LilPackage.WHEN_CAUSE__CONDITION:
-        setCondition((BooleanExpression)newValue);
+        setCondition((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class WhenCauseImpl extends CauseImpl implements WhenCause
     switch (featureID)
     {
       case LilPackage.WHEN_CAUSE__CONDITION:
-        setCondition((BooleanExpression)null);
+        setCondition((XExpression)null);
         return;
     }
     super.eUnset(featureID);

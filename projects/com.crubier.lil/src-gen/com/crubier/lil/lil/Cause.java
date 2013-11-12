@@ -31,12 +31,12 @@ public interface Cause extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Guard</em>' containment reference.
-   * @see #setGuard(BooleanExpression)
+   * @see #setGuard(XExpression)
    * @see com.crubier.lil.lil.LilPackage#getCause_Guard()
    * @model containment="true"
    * @generated
    */
-  BooleanExpression getGuard();
+  XExpression getGuard();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.Cause#getGuard <em>Guard</em>}' containment reference.
@@ -46,6 +46,6 @@ public interface Cause extends EObject
    * @see #getGuard()
    * @generated
    */
-  void setGuard(BooleanExpression value);
+  void setGuard(XExpression value);
 
 } // Cause

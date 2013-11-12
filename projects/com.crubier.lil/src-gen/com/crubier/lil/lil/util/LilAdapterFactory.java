@@ -75,9 +75,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
     new LilSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseLilModel(LilModel object)
       {
-        return createModelAdapter();
+        return createLilModelAdapter();
       }
       @Override
       public Adapter caseInteractorDeclaration(InteractorDeclaration object)
@@ -200,11 +200,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createTriggerEffectAdapter();
       }
       @Override
-      public Adapter caseExpression(Expression object)
-      {
-        return createExpressionAdapter();
-      }
-      @Override
       public Adapter caseDataTypeCompoundDeclaration(DataTypeCompoundDeclaration object)
       {
         return createDataTypeCompoundDeclarationAdapter();
@@ -220,29 +215,29 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeAdapter();
       }
       @Override
-      public Adapter caseBooleanExpression(BooleanExpression object)
+      public Adapter caseXExpression(XExpression object)
       {
-        return createBooleanExpressionAdapter();
+        return createXExpressionAdapter();
       }
       @Override
-      public Adapter caseNumberExpression(NumberExpression object)
+      public Adapter caseXCollectionLiteral(XCollectionLiteral object)
       {
-        return createNumberExpressionAdapter();
+        return createXCollectionLiteralAdapter();
       }
       @Override
-      public Adapter caseNumberSwitchExpressionNumberCase(NumberSwitchExpressionNumberCase object)
+      public Adapter caseXSetLiteral(XSetLiteral object)
       {
-        return createNumberSwitchExpressionNumberCaseAdapter();
+        return createXSetLiteralAdapter();
       }
       @Override
-      public Adapter caseNumberSwitchExpressionTextCase(NumberSwitchExpressionTextCase object)
+      public Adapter caseXListLiteral(XListLiteral object)
       {
-        return createNumberSwitchExpressionTextCaseAdapter();
+        return createXListLiteralAdapter();
       }
       @Override
-      public Adapter caseTextExpression(TextExpression object)
+      public Adapter caseXCasePart(XCasePart object)
       {
-        return createTextExpressionAdapter();
+        return createXCasePartAdapter();
       }
       @Override
       public Adapter caseDataTypeCompound(DataTypeCompound object)
@@ -255,99 +250,54 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeBaseAdapter();
       }
       @Override
-      public Adapter caseBooleanDisjonction(BooleanDisjonction object)
+      public Adapter caseXBinaryOperation(XBinaryOperation object)
       {
-        return createBooleanDisjonctionAdapter();
+        return createXBinaryOperationAdapter();
       }
       @Override
-      public Adapter caseBooleanConjonction(BooleanConjonction object)
+      public Adapter caseXUnaryOperation(XUnaryOperation object)
       {
-        return createBooleanConjonctionAdapter();
+        return createXUnaryOperationAdapter();
       }
       @Override
-      public Adapter caseBooleanNegation(BooleanNegation object)
+      public Adapter caseXIfExpression(XIfExpression object)
       {
-        return createBooleanNegationAdapter();
+        return createXIfExpressionAdapter();
       }
       @Override
-      public Adapter caseBooleanLiteral(BooleanLiteral object)
+      public Adapter caseXSwitchExpression(XSwitchExpression object)
       {
-        return createBooleanLiteralAdapter();
+        return createXSwitchExpressionAdapter();
       }
       @Override
-      public Adapter caseBooleanNumberComparison(BooleanNumberComparison object)
+      public Adapter caseXForEachExpression(XForEachExpression object)
       {
-        return createBooleanNumberComparisonAdapter();
+        return createXForEachExpressionAdapter();
       }
       @Override
-      public Adapter caseNumberIfExpression(NumberIfExpression object)
+      public Adapter caseXFunctionCallExpression(XFunctionCallExpression object)
       {
-        return createNumberIfExpressionAdapter();
+        return createXFunctionCallExpressionAdapter();
       }
       @Override
-      public Adapter caseNumberSwitchExpressionNumber(NumberSwitchExpressionNumber object)
+      public Adapter caseXBooleanLiteral(XBooleanLiteral object)
       {
-        return createNumberSwitchExpressionNumberAdapter();
+        return createXBooleanLiteralAdapter();
       }
       @Override
-      public Adapter caseNumberSwitchExpressionText(NumberSwitchExpressionText object)
+      public Adapter caseXNullLiteral(XNullLiteral object)
       {
-        return createNumberSwitchExpressionTextAdapter();
+        return createXNullLiteralAdapter();
       }
       @Override
-      public Adapter caseNumberAddition(NumberAddition object)
+      public Adapter caseXNumberLiteral(XNumberLiteral object)
       {
-        return createNumberAdditionAdapter();
+        return createXNumberLiteralAdapter();
       }
       @Override
-      public Adapter caseNumberSubstraction(NumberSubstraction object)
+      public Adapter caseXStringLiteral(XStringLiteral object)
       {
-        return createNumberSubstractionAdapter();
-      }
-      @Override
-      public Adapter caseNumberMultiplication(NumberMultiplication object)
-      {
-        return createNumberMultiplicationAdapter();
-      }
-      @Override
-      public Adapter caseNumberDivision(NumberDivision object)
-      {
-        return createNumberDivisionAdapter();
-      }
-      @Override
-      public Adapter caseNumberModulo(NumberModulo object)
-      {
-        return createNumberModuloAdapter();
-      }
-      @Override
-      public Adapter caseNumberPower(NumberPower object)
-      {
-        return createNumberPowerAdapter();
-      }
-      @Override
-      public Adapter caseNumberOpposition(NumberOpposition object)
-      {
-        return createNumberOppositionAdapter();
-      }
-      @Override
-      public Adapter caseNumberLiteral(NumberLiteral object)
-      {
-        return createNumberLiteralAdapter();
-      }
-      @Override
-      public Adapter caseNumberFunctionExpression(NumberFunctionExpression object)
-      {
-        return createNumberFunctionExpressionAdapter();
-      }
-      @Override
-      public Adapter caseTextJoin(TextJoin object)
-      {
-        return createTextJoinAdapter();
-      }
-      @Override
-      public Adapter caseTextLiteral(TextLiteral object)
-      {
-        return createTextLiteralAdapter();
+        return createXStringLiteralAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -372,16 +322,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.LilModel <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.Model
+   * @see com.crubier.lil.lil.LilModel
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createLilModelAdapter()
   {
     return null;
   }
@@ -747,21 +697,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Expression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.Expression
-   * @generated
-   */
-  public Adapter createExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration <em>Data Type Compound Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -807,76 +742,76 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanExpression <em>Boolean Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XExpression <em>XExpression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.BooleanExpression
+   * @see com.crubier.lil.lil.XExpression
    * @generated
    */
-  public Adapter createBooleanExpressionAdapter()
+  public Adapter createXExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberExpression <em>Number Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XCollectionLiteral <em>XCollection Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberExpression
+   * @see com.crubier.lil.lil.XCollectionLiteral
    * @generated
    */
-  public Adapter createNumberExpressionAdapter()
+  public Adapter createXCollectionLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberSwitchExpressionNumberCase <em>Number Switch Expression Number Case</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XSetLiteral <em>XSet Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionNumberCase
+   * @see com.crubier.lil.lil.XSetLiteral
    * @generated
    */
-  public Adapter createNumberSwitchExpressionNumberCaseAdapter()
+  public Adapter createXSetLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberSwitchExpressionTextCase <em>Number Switch Expression Text Case</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XListLiteral <em>XList Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionTextCase
+   * @see com.crubier.lil.lil.XListLiteral
    * @generated
    */
-  public Adapter createNumberSwitchExpressionTextCaseAdapter()
+  public Adapter createXListLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.TextExpression <em>Text Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XCasePart <em>XCase Part</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.TextExpression
+   * @see com.crubier.lil.lil.XCasePart
    * @generated
    */
-  public Adapter createTextExpressionAdapter()
+  public Adapter createXCasePartAdapter()
   {
     return null;
   }
@@ -912,286 +847,151 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanDisjonction <em>Boolean Disjonction</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XBinaryOperation <em>XBinary Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.BooleanDisjonction
+   * @see com.crubier.lil.lil.XBinaryOperation
    * @generated
    */
-  public Adapter createBooleanDisjonctionAdapter()
+  public Adapter createXBinaryOperationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanConjonction <em>Boolean Conjonction</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XUnaryOperation <em>XUnary Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.BooleanConjonction
+   * @see com.crubier.lil.lil.XUnaryOperation
    * @generated
    */
-  public Adapter createBooleanConjonctionAdapter()
+  public Adapter createXUnaryOperationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanNegation <em>Boolean Negation</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XIfExpression <em>XIf Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.BooleanNegation
+   * @see com.crubier.lil.lil.XIfExpression
    * @generated
    */
-  public Adapter createBooleanNegationAdapter()
+  public Adapter createXIfExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanLiteral <em>Boolean Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XSwitchExpression <em>XSwitch Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.BooleanLiteral
+   * @see com.crubier.lil.lil.XSwitchExpression
    * @generated
    */
-  public Adapter createBooleanLiteralAdapter()
+  public Adapter createXSwitchExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanNumberComparison <em>Boolean Number Comparison</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XForEachExpression <em>XFor Each Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.BooleanNumberComparison
+   * @see com.crubier.lil.lil.XForEachExpression
    * @generated
    */
-  public Adapter createBooleanNumberComparisonAdapter()
+  public Adapter createXForEachExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberIfExpression <em>Number If Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XFunctionCallExpression <em>XFunction Call Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberIfExpression
+   * @see com.crubier.lil.lil.XFunctionCallExpression
    * @generated
    */
-  public Adapter createNumberIfExpressionAdapter()
+  public Adapter createXFunctionCallExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberSwitchExpressionNumber <em>Number Switch Expression Number</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XBooleanLiteral <em>XBoolean Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionNumber
+   * @see com.crubier.lil.lil.XBooleanLiteral
    * @generated
    */
-  public Adapter createNumberSwitchExpressionNumberAdapter()
+  public Adapter createXBooleanLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberSwitchExpressionText <em>Number Switch Expression Text</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XNullLiteral <em>XNull Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberSwitchExpressionText
+   * @see com.crubier.lil.lil.XNullLiteral
    * @generated
    */
-  public Adapter createNumberSwitchExpressionTextAdapter()
+  public Adapter createXNullLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberAddition <em>Number Addition</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XNumberLiteral <em>XNumber Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberAddition
+   * @see com.crubier.lil.lil.XNumberLiteral
    * @generated
    */
-  public Adapter createNumberAdditionAdapter()
+  public Adapter createXNumberLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberSubstraction <em>Number Substraction</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XStringLiteral <em>XString Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberSubstraction
+   * @see com.crubier.lil.lil.XStringLiteral
    * @generated
    */
-  public Adapter createNumberSubstractionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberMultiplication <em>Number Multiplication</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberMultiplication
-   * @generated
-   */
-  public Adapter createNumberMultiplicationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberDivision <em>Number Division</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberDivision
-   * @generated
-   */
-  public Adapter createNumberDivisionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberModulo <em>Number Modulo</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberModulo
-   * @generated
-   */
-  public Adapter createNumberModuloAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberPower <em>Number Power</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberPower
-   * @generated
-   */
-  public Adapter createNumberPowerAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberOpposition <em>Number Opposition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberOpposition
-   * @generated
-   */
-  public Adapter createNumberOppositionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberLiteral <em>Number Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberLiteral
-   * @generated
-   */
-  public Adapter createNumberLiteralAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberFunctionExpression <em>Number Function Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.NumberFunctionExpression
-   * @generated
-   */
-  public Adapter createNumberFunctionExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.TextJoin <em>Text Join</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.TextJoin
-   * @generated
-   */
-  public Adapter createTextJoinAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.TextLiteral <em>Text Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.TextLiteral
-   * @generated
-   */
-  public Adapter createTextLiteralAdapter()
+  public Adapter createXStringLiteralAdapter()
   {
     return null;
   }
