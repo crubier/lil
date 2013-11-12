@@ -35,8 +35,19 @@ In order to get started in developping the **lil** framework, you must comply wi
 
 2. Have a working installation of the latest release of [Xtext](http://www.eclipse.org/Xtext/) 
 
-
 ## Installation
+
+1. Clone this repository in your desktop
+
+2. Import by linking the 4 projects found in /projects into a fresh xtext workspace
+
+3. Build and launch using launch configurations stored in /projects/com.crubier.lil/launch
+
+4. Enjoy the samples found in /sample projects
+
+If this seems a bit abstract to you, if you are unsure about what to do exactly, feel free to follow the next chapter which will go through these steps in detail
+
+## Installation in detail
 
 Once you are ready to install the **lil** framework into (framework_path), do the following:
 
