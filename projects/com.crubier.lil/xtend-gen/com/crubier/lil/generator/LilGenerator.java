@@ -3,21 +3,13 @@
  */
 package com.crubier.lil.generator;
 
-import com.crubier.lil.lil.DataType;
-import com.crubier.lil.lil.DataTypeCompound;
-import com.crubier.lil.lil.Interactor;
-import com.crubier.lil.lil.Signal;
-import com.google.common.base.Objects;
-import com.google.common.collect.Iterables;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.ecore.EObject;
+import com.crubier.lil.generator.LilGeneratorC;
+import com.crubier.lil.generator.LilGeneratorFlattenedLil;
+import com.crubier.lil.generator.LilGeneratorJava;
+import javax.inject.Inject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
-import org.eclipse.xtext.xbase.lib.InputOutput;
-import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -26,86 +18,18 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
  */
 @SuppressWarnings("all")
 public class LilGenerator implements IGenerator {
+  @Inject
+  private LilGeneratorC GeneratorC;
+  
+  @Inject
+  private LilGeneratorJava GeneratorJava;
+  
+  @Inject
+  private LilGeneratorFlattenedLil GeneratorFlattenedLil;
+  
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
-    InputOutput.<String>println("generate code");
-    TreeIterator<EObject> _allContents = resource.getAllContents();
-    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
-    Iterable<Interactor> _filter = Iterables.<Interactor>filter(_iterable, Interactor.class);
-    for (final Interactor e : _filter) {
-      String _name = e.getName();
-      String _plus = ("c" + _name);
-      String _plus_1 = (_plus + ".c");
-      CharSequence _compile = this.compile(e);
-      fsa.generateFile(_plus_1, _compile);
-    }
-  }
-  
-  public CharSequence compile(final Interactor e) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("//lil framework generated this artifact automatically");
-    _builder.newLine();
-    _builder.append("public class ");
-    String _name = e.getName();
-    _builder.append(_name, "");
-    _builder.append(" {");
-    _builder.newLineIfNotEmpty();
-    {
-      EList<Signal> _signals = e.getSignals();
-      for(final Signal f : _signals) {
-        _builder.append("\t");
-        CharSequence _compile = this.compile(f);
-        _builder.append(_compile, "	");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence compile(final Signal s) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      String _mode = s.getMode();
-      boolean _equals = Objects.equal(_mode, "flow");
-      if (_equals) {
-        {
-          DataType _type = s.getType();
-          String _base = _type.getBase();
-          boolean _notEquals = (!Objects.equal(_base, null));
-          if (_notEquals) {
-            _builder.append(" ");
-            DataType _type_1 = s.getType();
-            String _base_1 = _type_1.getBase();
-            _builder.append(_base_1, "");
-            _builder.append(" ");
-            String _name = s.getName();
-            _builder.append(_name, "");
-            _builder.append(" ;");
-            _builder.newLineIfNotEmpty();
-          } else {
-            _builder.append(" ");
-            {
-              DataType _type_2 = s.getType();
-              DataTypeCompound _compound = _type_2.getCompound();
-              boolean _notEquals_1 = (!Objects.equal(_compound, null));
-              if (_notEquals_1) {
-                _builder.append(" ");
-                DataType _type_3 = s.getType();
-                DataTypeCompound _compound_1 = _type_3.getCompound();
-                _builder.append(_compound_1, "");
-                _builder.append(" ");
-                String _name_1 = s.getName();
-                _builder.append(_name_1, "");
-                _builder.append(" ;");
-              }
-            }
-          }
-        }
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    return _builder;
+    this.GeneratorFlattenedLil.doGenerate(resource, fsa);
+    this.GeneratorC.doGenerate(resource, fsa);
+    this.GeneratorJava.doGenerate(resource, fsa);
   }
 }

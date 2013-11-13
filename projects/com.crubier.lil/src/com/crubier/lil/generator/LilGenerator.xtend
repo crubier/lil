@@ -6,8 +6,7 @@ package com.crubier.lil.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
-import com.crubier.lil.lil.Interactor
-import com.crubier.lil.lil.Signal
+import javax.inject.Inject
 
 /**
  * Generates code from your model files on save.
@@ -16,33 +15,23 @@ import com.crubier.lil.lil.Signal
  */
 class LilGenerator implements IGenerator {
 	
+	@Inject
+	private LilGeneratorC GeneratorC;
+
+	@Inject
+	private LilGeneratorJava GeneratorJava;
+
+	@Inject
+	private LilGeneratorFlattenedLil GeneratorFlattenedLil;
+	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		println("generate code");
 		
-		for(e : resource.allContents.toIterable.filter(typeof(Interactor))) {
-			fsa.generateFile("java/"+e.name+".java",e.compile)
-		}
 		
-//		fsa.generateFile('gen.java', 'test :\n' + 
-//			resource.allContents.filter(typeof(InteractorDeclaration)).map[name].join(', '))
+		GeneratorFlattenedLil.doGenerate(resource,fsa)
+		GeneratorC.doGenerate(resource,fsa)
+		GeneratorJava.doGenerate(resource,fsa)
+
 	}
-	
-	def compile(Interactor e) '''
-		//lil framework generated this artifact automatically
-		public class «e.name» {
-			«FOR f:e.signals»
-				«f.compile»
-			«ENDFOR»
-		}
-		
-	'''
-	
-	def compile(Signal s) '''
-	«IF s.mode == "flow"»
-		«IF s.type.base!=null» «s.type.base» «s.name» ;
-		«ELSE» «IF s.type.compound!=null» «s.type.compound» «s.name» ;«ENDIF»«ENDIF»
-	«ENDIF»
-	'''
 	
 	
 }

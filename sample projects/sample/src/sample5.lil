@@ -27,7 +27,7 @@ interactor ControlPanel :
 	current: number flow 
 	
 	on init : 	always current = (if(1=="X") 1 else 2)
-	on increment : set val to theGauge = switch (6) case +1:false case 2:true default : false
+	on increment : set val to theGauge = switch (7) case +1:false case 2:true default : false
 	
 	
 	
