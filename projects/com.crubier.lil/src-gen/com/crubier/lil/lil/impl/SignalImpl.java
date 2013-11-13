@@ -4,8 +4,8 @@ package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.DataType;
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
-import com.crubier.lil.lil.SignalDeclaration;
 
 import java.util.Collection;
 
@@ -25,22 +25,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Signal Declaration</b></em>'.
+ * An implementation of the model object '<em><b>Signal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getType <em>Type</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getMode <em>Mode</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getSource <em>Source</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.SignalDeclarationImpl#getDestinations <em>Destinations</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getMode <em>Mode</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getDestinations <em>Destinations</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implements SignalDeclaration
+public class SignalImpl extends MinimalEObjectImpl.Container implements Signal
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -117,7 +117,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SignalDeclarationImpl()
+  protected SignalImpl()
   {
     super();
   }
@@ -130,7 +130,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return LilPackage.Literals.SIGNAL_DECLARATION;
+    return LilPackage.Literals.SIGNAL;
   }
 
   /**
@@ -153,7 +153,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL__NAME, oldName, name));
   }
 
   /**
@@ -177,7 +177,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
     type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -194,14 +194,14 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
     {
       NotificationChain msgs = null;
       if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL_DECLARATION__TYPE, null, msgs);
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL__TYPE, null, msgs);
       if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL_DECLARATION__TYPE, null, msgs);
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL__TYPE, null, msgs);
       msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL__TYPE, newType, newType));
   }
 
   /**
@@ -224,7 +224,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
     String oldMode = mode;
     mode = newMode;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__MODE, oldMode, mode));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL__MODE, oldMode, mode));
   }
 
   /**
@@ -248,7 +248,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
     source = newSource;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__SOURCE, oldSource, newSource);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL__SOURCE, oldSource, newSource);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -265,14 +265,14 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
     {
       NotificationChain msgs = null;
       if (source != null)
-        msgs = ((InternalEObject)source).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL_DECLARATION__SOURCE, null, msgs);
+        msgs = ((InternalEObject)source).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL__SOURCE, null, msgs);
       if (newSource != null)
-        msgs = ((InternalEObject)newSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL_DECLARATION__SOURCE, null, msgs);
+        msgs = ((InternalEObject)newSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL__SOURCE, null, msgs);
       msgs = basicSetSource(newSource, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_DECLARATION__SOURCE, newSource, newSource));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL__SOURCE, newSource, newSource));
   }
 
   /**
@@ -284,7 +284,7 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     if (destinations == null)
     {
-      destinations = new EObjectContainmentEList<SignalAlias>(SignalAlias.class, this, LilPackage.SIGNAL_DECLARATION__DESTINATIONS);
+      destinations = new EObjectContainmentEList<SignalAlias>(SignalAlias.class, this, LilPackage.SIGNAL__DESTINATIONS);
     }
     return destinations;
   }
@@ -299,11 +299,11 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LilPackage.SIGNAL_DECLARATION__TYPE:
+      case LilPackage.SIGNAL__TYPE:
         return basicSetType(null, msgs);
-      case LilPackage.SIGNAL_DECLARATION__SOURCE:
+      case LilPackage.SIGNAL__SOURCE:
         return basicSetSource(null, msgs);
-      case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
+      case LilPackage.SIGNAL__DESTINATIONS:
         return ((InternalEList<?>)getDestinations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -319,15 +319,15 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LilPackage.SIGNAL_DECLARATION__NAME:
+      case LilPackage.SIGNAL__NAME:
         return getName();
-      case LilPackage.SIGNAL_DECLARATION__TYPE:
+      case LilPackage.SIGNAL__TYPE:
         return getType();
-      case LilPackage.SIGNAL_DECLARATION__MODE:
+      case LilPackage.SIGNAL__MODE:
         return getMode();
-      case LilPackage.SIGNAL_DECLARATION__SOURCE:
+      case LilPackage.SIGNAL__SOURCE:
         return getSource();
-      case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
+      case LilPackage.SIGNAL__DESTINATIONS:
         return getDestinations();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -344,19 +344,19 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LilPackage.SIGNAL_DECLARATION__NAME:
+      case LilPackage.SIGNAL__NAME:
         setName((String)newValue);
         return;
-      case LilPackage.SIGNAL_DECLARATION__TYPE:
+      case LilPackage.SIGNAL__TYPE:
         setType((DataType)newValue);
         return;
-      case LilPackage.SIGNAL_DECLARATION__MODE:
+      case LilPackage.SIGNAL__MODE:
         setMode((String)newValue);
         return;
-      case LilPackage.SIGNAL_DECLARATION__SOURCE:
+      case LilPackage.SIGNAL__SOURCE:
         setSource((SignalAlias)newValue);
         return;
-      case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
+      case LilPackage.SIGNAL__DESTINATIONS:
         getDestinations().clear();
         getDestinations().addAll((Collection<? extends SignalAlias>)newValue);
         return;
@@ -374,19 +374,19 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LilPackage.SIGNAL_DECLARATION__NAME:
+      case LilPackage.SIGNAL__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case LilPackage.SIGNAL_DECLARATION__TYPE:
+      case LilPackage.SIGNAL__TYPE:
         setType((DataType)null);
         return;
-      case LilPackage.SIGNAL_DECLARATION__MODE:
+      case LilPackage.SIGNAL__MODE:
         setMode(MODE_EDEFAULT);
         return;
-      case LilPackage.SIGNAL_DECLARATION__SOURCE:
+      case LilPackage.SIGNAL__SOURCE:
         setSource((SignalAlias)null);
         return;
-      case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
+      case LilPackage.SIGNAL__DESTINATIONS:
         getDestinations().clear();
         return;
     }
@@ -403,15 +403,15 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case LilPackage.SIGNAL_DECLARATION__NAME:
+      case LilPackage.SIGNAL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LilPackage.SIGNAL_DECLARATION__TYPE:
+      case LilPackage.SIGNAL__TYPE:
         return type != null;
-      case LilPackage.SIGNAL_DECLARATION__MODE:
+      case LilPackage.SIGNAL__MODE:
         return MODE_EDEFAULT == null ? mode != null : !MODE_EDEFAULT.equals(mode);
-      case LilPackage.SIGNAL_DECLARATION__SOURCE:
+      case LilPackage.SIGNAL__SOURCE:
         return source != null;
-      case LilPackage.SIGNAL_DECLARATION__DESTINATIONS:
+      case LilPackage.SIGNAL__DESTINATIONS:
         return destinations != null && !destinations.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -436,4 +436,4 @@ public class SignalDeclarationImpl extends MinimalEObjectImpl.Container implemen
     return result.toString();
   }
 
-} //SignalDeclarationImpl
+} //SignalImpl

@@ -4,8 +4,8 @@ package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.AccessibleEntity;
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
-import com.crubier.lil.lil.SignalDeclaration;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -50,7 +50,7 @@ public class SignalAliasImpl extends MinimalEObjectImpl.Container implements Sig
    * @generated
    * @ordered
    */
-  protected SignalDeclaration alias;
+  protected Signal alias;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,12 +126,12 @@ public class SignalAliasImpl extends MinimalEObjectImpl.Container implements Sig
    * <!-- end-user-doc -->
    * @generated
    */
-  public SignalDeclaration getAlias()
+  public Signal getAlias()
   {
     if (alias != null && alias.eIsProxy())
     {
       InternalEObject oldAlias = (InternalEObject)alias;
-      alias = (SignalDeclaration)eResolveProxy(oldAlias);
+      alias = (Signal)eResolveProxy(oldAlias);
       if (alias != oldAlias)
       {
         if (eNotificationRequired())
@@ -146,7 +146,7 @@ public class SignalAliasImpl extends MinimalEObjectImpl.Container implements Sig
    * <!-- end-user-doc -->
    * @generated
    */
-  public SignalDeclaration basicGetAlias()
+  public Signal basicGetAlias()
   {
     return alias;
   }
@@ -156,9 +156,9 @@ public class SignalAliasImpl extends MinimalEObjectImpl.Container implements Sig
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAlias(SignalDeclaration newAlias)
+  public void setAlias(Signal newAlias)
   {
-    SignalDeclaration oldAlias = alias;
+    Signal oldAlias = alias;
     alias = newAlias;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_ALIAS__ALIAS, oldAlias, alias));
@@ -213,7 +213,7 @@ public class SignalAliasImpl extends MinimalEObjectImpl.Container implements Sig
         setSource((AccessibleEntity)newValue);
         return;
       case LilPackage.SIGNAL_ALIAS__ALIAS:
-        setAlias((SignalDeclaration)newValue);
+        setAlias((Signal)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -233,7 +233,7 @@ public class SignalAliasImpl extends MinimalEObjectImpl.Container implements Sig
         setSource((AccessibleEntity)null);
         return;
       case LilPackage.SIGNAL_ALIAS__ALIAS:
-        setAlias((SignalDeclaration)null);
+        setAlias((Signal)null);
         return;
     }
     super.eUnset(featureID);

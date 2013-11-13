@@ -8,25 +8,25 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Signal Declaration</b></em>'.
+ * A representation of the model object '<em><b>Signal</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getName <em>Name</em>}</li>
- *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getType <em>Type</em>}</li>
- *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getMode <em>Mode</em>}</li>
- *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getSource <em>Source</em>}</li>
- *   <li>{@link com.crubier.lil.lil.SignalDeclaration#getDestinations <em>Destinations</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Signal#getName <em>Name</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Signal#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Signal#getMode <em>Mode</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Signal#getSource <em>Source</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Signal#getDestinations <em>Destinations</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.crubier.lil.lil.LilPackage#getSignalDeclaration()
+ * @see com.crubier.lil.lil.LilPackage#getSignal()
  * @model
  * @generated
  */
-public interface SignalDeclaration extends EObject
+public interface Signal extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -38,14 +38,14 @@ public interface SignalDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.crubier.lil.lil.LilPackage#getSignalDeclaration_Name()
+   * @see com.crubier.lil.lil.LilPackage#getSignal_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.SignalDeclaration#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.crubier.lil.lil.Signal#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -64,14 +64,14 @@ public interface SignalDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' containment reference.
    * @see #setType(DataType)
-   * @see com.crubier.lil.lil.LilPackage#getSignalDeclaration_Type()
+   * @see com.crubier.lil.lil.LilPackage#getSignal_Type()
    * @model containment="true"
    * @generated
    */
   DataType getType();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.SignalDeclaration#getType <em>Type</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.Signal#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' containment reference.
@@ -90,14 +90,14 @@ public interface SignalDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Mode</em>' attribute.
    * @see #setMode(String)
-   * @see com.crubier.lil.lil.LilPackage#getSignalDeclaration_Mode()
+   * @see com.crubier.lil.lil.LilPackage#getSignal_Mode()
    * @model
    * @generated
    */
   String getMode();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.SignalDeclaration#getMode <em>Mode</em>}' attribute.
+   * Sets the value of the '{@link com.crubier.lil.lil.Signal#getMode <em>Mode</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Mode</em>' attribute.
@@ -116,14 +116,14 @@ public interface SignalDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source</em>' containment reference.
    * @see #setSource(SignalAlias)
-   * @see com.crubier.lil.lil.LilPackage#getSignalDeclaration_Source()
+   * @see com.crubier.lil.lil.LilPackage#getSignal_Source()
    * @model containment="true"
    * @generated
    */
   SignalAlias getSource();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.SignalDeclaration#getSource <em>Source</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.Signal#getSource <em>Source</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Source</em>' containment reference.
@@ -142,10 +142,10 @@ public interface SignalDeclaration extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Destinations</em>' containment reference list.
-   * @see com.crubier.lil.lil.LilPackage#getSignalDeclaration_Destinations()
+   * @see com.crubier.lil.lil.LilPackage#getSignal_Destinations()
    * @model containment="true"
    * @generated
    */
   EList<SignalAlias> getDestinations();
 
-} // SignalDeclaration
+} // Signal

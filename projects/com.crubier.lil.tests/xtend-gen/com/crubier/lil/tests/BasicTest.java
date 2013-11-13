@@ -1,7 +1,7 @@
 package com.crubier.lil.tests;
 
 import com.crubier.lil.LilInjectorProvider;
-import com.crubier.lil.lil.InteractorDeclaration;
+import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilModel;
 import javax.inject.Inject;
 import org.eclipse.emf.common.util.EList;
@@ -26,9 +26,9 @@ public class BasicTest {
     try {
       final LilModel model = this.parser.parse(
         "\n\t\t\t\tinteractor test1234testInteractor :\n\n\t\t\t");
-      EList<InteractorDeclaration> _interactors = model.getInteractors();
-      InteractorDeclaration _head = IterableExtensions.<InteractorDeclaration>head(_interactors);
-      final InteractorDeclaration entity = ((InteractorDeclaration) _head);
+      EList<Interactor> _interactors = model.getInteractors();
+      Interactor _head = IterableExtensions.<Interactor>head(_interactors);
+      final Interactor entity = ((Interactor) _head);
       String _name = entity.getName();
       Assert.assertEquals(_name, "test1234testInteractor");
     } catch (Throwable _e) {

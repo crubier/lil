@@ -3,48 +3,48 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="lil" nsURI="http://www.crubier.com/lil/Lil" nsPrefix="lil">
   <eClassifiers xsi:type="ecore:EClass" name="LilModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interactors" upperBound="-1"
-        eType="#//InteractorDeclaration" containment="true"/>
+        eType="#//Interactor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
-        eType="#//DataTypeCompoundDeclaration" containment="true"/>
+        eType="#//DataTypeCompound" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="Interactor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
-        eType="#//EntityDeclaration" containment="true"/>
+        eType="#//Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="signals" upperBound="-1"
-        eType="#//SignalDeclaration" containment="true"/>
+        eType="#//Signal" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviors" upperBound="-1"
         eType="#//BehaviorDeclaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AccessibleEntity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="generic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specific" eType="#//EntityDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specific" eType="#//Entity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EntityDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActorDeclaration" eSuperTypes="#//EntityDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//Entity"/>
   <eClassifiers xsi:type="ecore:EClass" name="ActorAlias">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//ActorDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//ActorDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Actor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//Actor"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentDeclaration" eSuperTypes="#//EntityDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interactor" eType="#//InteractorDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactor" eType="#//Interactor"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="aliases" upperBound="-1"
         eType="#//ActorAlias" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SignalReception">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//SignalDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//Signal"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//SignalAlias"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SignalEmission">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//SignalDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//Signal"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//SignalAlias"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SignalDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="Signal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"
         containment="true"/>
@@ -57,10 +57,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="SignalAlias">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//AccessibleEntity"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//SignalDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//Signal"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataTypeCompoundDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="DataType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="base" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compound" eType="#//DataTypeCompound"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTypeCompound">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//DataTypeCompoundField" containment="true"/>
@@ -109,12 +112,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="then" eType="#//XExpression"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataTypeCompound" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataTypeCompoundDeclaration"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataTypeBase" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XBinaryOperation" eSuperTypes="#//XExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftOperand" eType="#//XExpression"

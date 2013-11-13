@@ -3,8 +3,8 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
-import com.crubier.lil.lil.SignalDeclaration;
 import com.crubier.lil.lil.SignalEmission;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -40,7 +40,7 @@ public class SignalEmissionImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected SignalDeclaration instance;
+  protected Signal instance;
 
   /**
    * The cached value of the '{@link #getDestination() <em>Destination</em>}' containment reference.
@@ -78,12 +78,12 @@ public class SignalEmissionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public SignalDeclaration getInstance()
+  public Signal getInstance()
   {
     if (instance != null && instance.eIsProxy())
     {
       InternalEObject oldInstance = (InternalEObject)instance;
-      instance = (SignalDeclaration)eResolveProxy(oldInstance);
+      instance = (Signal)eResolveProxy(oldInstance);
       if (instance != oldInstance)
       {
         if (eNotificationRequired())
@@ -98,7 +98,7 @@ public class SignalEmissionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public SignalDeclaration basicGetInstance()
+  public Signal basicGetInstance()
   {
     return instance;
   }
@@ -108,9 +108,9 @@ public class SignalEmissionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInstance(SignalDeclaration newInstance)
+  public void setInstance(Signal newInstance)
   {
-    SignalDeclaration oldInstance = instance;
+    Signal oldInstance = instance;
     instance = newInstance;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_EMISSION__INSTANCE, oldInstance, instance));
@@ -210,7 +210,7 @@ public class SignalEmissionImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case LilPackage.SIGNAL_EMISSION__INSTANCE:
-        setInstance((SignalDeclaration)newValue);
+        setInstance((Signal)newValue);
         return;
       case LilPackage.SIGNAL_EMISSION__DESTINATION:
         setDestination((SignalAlias)newValue);
@@ -230,7 +230,7 @@ public class SignalEmissionImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case LilPackage.SIGNAL_EMISSION__INSTANCE:
-        setInstance((SignalDeclaration)null);
+        setInstance((Signal)null);
         return;
       case LilPackage.SIGNAL_EMISSION__DESTINATION:
         setDestination((SignalAlias)null);

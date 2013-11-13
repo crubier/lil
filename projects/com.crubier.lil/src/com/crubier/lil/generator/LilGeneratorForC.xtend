@@ -20,7 +20,7 @@ class LilGenerator implements IGenerator {
 		println("generate code");
 		
 		for(e : resource.allContents.toIterable.filter(typeof(Interactor))) {
-			fsa.generateFile("java/"+e.name+".java",e.compile)
+			fsa.generateFile("c"+e.name+".c",e.compile)
 		}
 		
 //		fsa.generateFile('gen.java', 'test :\n' + 

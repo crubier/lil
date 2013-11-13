@@ -3,7 +3,7 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.AccessibleEntity;
-import com.crubier.lil.lil.EntityDeclaration;
+import com.crubier.lil.lil.Entity;
 import com.crubier.lil.lil.LilPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -58,7 +58,7 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected EntityDeclaration specific;
+  protected Entity specific;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,12 +109,12 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EntityDeclaration getSpecific()
+  public Entity getSpecific()
   {
     if (specific != null && specific.eIsProxy())
     {
       InternalEObject oldSpecific = (InternalEObject)specific;
-      specific = (EntityDeclaration)eResolveProxy(oldSpecific);
+      specific = (Entity)eResolveProxy(oldSpecific);
       if (specific != oldSpecific)
       {
         if (eNotificationRequired())
@@ -129,7 +129,7 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EntityDeclaration basicGetSpecific()
+  public Entity basicGetSpecific()
   {
     return specific;
   }
@@ -139,9 +139,9 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSpecific(EntityDeclaration newSpecific)
+  public void setSpecific(Entity newSpecific)
   {
-    EntityDeclaration oldSpecific = specific;
+    Entity oldSpecific = specific;
     specific = newSpecific;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.ACCESSIBLE_ENTITY__SPECIFIC, oldSpecific, specific));
@@ -180,7 +180,7 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
         setGeneric((String)newValue);
         return;
       case LilPackage.ACCESSIBLE_ENTITY__SPECIFIC:
-        setSpecific((EntityDeclaration)newValue);
+        setSpecific((Entity)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -200,7 +200,7 @@ public class AccessibleEntityImpl extends MinimalEObjectImpl.Container implement
         setGeneric(GENERIC_EDEFAULT);
         return;
       case LilPackage.ACCESSIBLE_ENTITY__SPECIFIC:
-        setSpecific((EntityDeclaration)null);
+        setSpecific((Entity)null);
         return;
     }
     super.eUnset(featureID);

@@ -58,12 +58,12 @@ public interface AccessibleEntity extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Specific</em>' reference.
-   * @see #setSpecific(EntityDeclaration)
+   * @see #setSpecific(Entity)
    * @see com.crubier.lil.lil.LilPackage#getAccessibleEntity_Specific()
    * @model
    * @generated
    */
-  EntityDeclaration getSpecific();
+  Entity getSpecific();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.AccessibleEntity#getSpecific <em>Specific</em>}' reference.
@@ -73,6 +73,6 @@ public interface AccessibleEntity extends EObject
    * @see #getSpecific()
    * @generated
    */
-  void setSpecific(EntityDeclaration value);
+  void setSpecific(Entity value);
 
 } // AccessibleEntity

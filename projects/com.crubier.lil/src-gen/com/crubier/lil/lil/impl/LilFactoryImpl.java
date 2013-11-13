@@ -65,18 +65,18 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
     switch (eClass.getClassifierID())
     {
       case LilPackage.LIL_MODEL: return createLilModel();
-      case LilPackage.INTERACTOR_DECLARATION: return createInteractorDeclaration();
+      case LilPackage.INTERACTOR: return createInteractor();
       case LilPackage.ACCESSIBLE_ENTITY: return createAccessibleEntity();
-      case LilPackage.ENTITY_DECLARATION: return createEntityDeclaration();
-      case LilPackage.ACTOR_DECLARATION: return createActorDeclaration();
+      case LilPackage.ENTITY: return createEntity();
+      case LilPackage.ACTOR: return createActor();
       case LilPackage.ACTOR_ALIAS: return createActorAlias();
-      case LilPackage.COMPONENT_DECLARATION: return createComponentDeclaration();
+      case LilPackage.COMPONENT: return createComponent();
       case LilPackage.SIGNAL_RECEPTION: return createSignalReception();
       case LilPackage.SIGNAL_EMISSION: return createSignalEmission();
-      case LilPackage.SIGNAL_DECLARATION: return createSignalDeclaration();
+      case LilPackage.SIGNAL: return createSignal();
       case LilPackage.SIGNAL_ALIAS: return createSignalAlias();
       case LilPackage.DATA_TYPE: return createDataType();
-      case LilPackage.DATA_TYPE_COMPOUND_DECLARATION: return createDataTypeCompoundDeclaration();
+      case LilPackage.DATA_TYPE_COMPOUND: return createDataTypeCompound();
       case LilPackage.DATA_TYPE_COMPOUND_FIELD: return createDataTypeCompoundField();
       case LilPackage.BEHAVIOR_DECLARATION: return createBehaviorDeclaration();
       case LilPackage.CAUSE: return createCause();
@@ -91,8 +91,6 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.XSET_LITERAL: return createXSetLiteral();
       case LilPackage.XLIST_LITERAL: return createXListLiteral();
       case LilPackage.XCASE_PART: return createXCasePart();
-      case LilPackage.DATA_TYPE_COMPOUND: return createDataTypeCompound();
-      case LilPackage.DATA_TYPE_BASE: return createDataTypeBase();
       case LilPackage.XBINARY_OPERATION: return createXBinaryOperation();
       case LilPackage.XUNARY_OPERATION: return createXUnaryOperation();
       case LilPackage.XIF_EXPRESSION: return createXIfExpression();
@@ -124,10 +122,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorDeclaration createInteractorDeclaration()
+  public Interactor createInteractor()
   {
-    InteractorDeclarationImpl interactorDeclaration = new InteractorDeclarationImpl();
-    return interactorDeclaration;
+    InteractorImpl interactor = new InteractorImpl();
+    return interactor;
   }
 
   /**
@@ -146,10 +144,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public EntityDeclaration createEntityDeclaration()
+  public Entity createEntity()
   {
-    EntityDeclarationImpl entityDeclaration = new EntityDeclarationImpl();
-    return entityDeclaration;
+    EntityImpl entity = new EntityImpl();
+    return entity;
   }
 
   /**
@@ -157,10 +155,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ActorDeclaration createActorDeclaration()
+  public Actor createActor()
   {
-    ActorDeclarationImpl actorDeclaration = new ActorDeclarationImpl();
-    return actorDeclaration;
+    ActorImpl actor = new ActorImpl();
+    return actor;
   }
 
   /**
@@ -179,10 +177,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComponentDeclaration createComponentDeclaration()
+  public Component createComponent()
   {
-    ComponentDeclarationImpl componentDeclaration = new ComponentDeclarationImpl();
-    return componentDeclaration;
+    ComponentImpl component = new ComponentImpl();
+    return component;
   }
 
   /**
@@ -212,10 +210,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public SignalDeclaration createSignalDeclaration()
+  public Signal createSignal()
   {
-    SignalDeclarationImpl signalDeclaration = new SignalDeclarationImpl();
-    return signalDeclaration;
+    SignalImpl signal = new SignalImpl();
+    return signal;
   }
 
   /**
@@ -245,10 +243,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataTypeCompoundDeclaration createDataTypeCompoundDeclaration()
+  public DataTypeCompound createDataTypeCompound()
   {
-    DataTypeCompoundDeclarationImpl dataTypeCompoundDeclaration = new DataTypeCompoundDeclarationImpl();
-    return dataTypeCompoundDeclaration;
+    DataTypeCompoundImpl dataTypeCompound = new DataTypeCompoundImpl();
+    return dataTypeCompound;
   }
 
   /**
@@ -403,28 +401,6 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     XCasePartImpl xCasePart = new XCasePartImpl();
     return xCasePart;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DataTypeCompound createDataTypeCompound()
-  {
-    DataTypeCompoundImpl dataTypeCompound = new DataTypeCompoundImpl();
-    return dataTypeCompound;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DataTypeBase createDataTypeBase()
-  {
-    DataTypeBaseImpl dataTypeBase = new DataTypeBaseImpl();
-    return dataTypeBase;
   }
 
   /**

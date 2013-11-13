@@ -2,8 +2,8 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.DataTypeCompoundDeclaration;
-import com.crubier.lil.lil.InteractorDeclaration;
+import com.crubier.lil.lil.DataTypeCompound;
+import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilModel;
 import com.crubier.lil.lil.LilPackage;
 
@@ -45,7 +45,7 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
    * @generated
    * @ordered
    */
-  protected EList<InteractorDeclaration> interactors;
+  protected EList<Interactor> interactors;
 
   /**
    * The cached value of the '{@link #getDataTypes() <em>Data Types</em>}' containment reference list.
@@ -55,7 +55,7 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
    * @generated
    * @ordered
    */
-  protected EList<DataTypeCompoundDeclaration> dataTypes;
+  protected EList<DataTypeCompound> dataTypes;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,11 +83,11 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<InteractorDeclaration> getInteractors()
+  public EList<Interactor> getInteractors()
   {
     if (interactors == null)
     {
-      interactors = new EObjectContainmentEList<InteractorDeclaration>(InteractorDeclaration.class, this, LilPackage.LIL_MODEL__INTERACTORS);
+      interactors = new EObjectContainmentEList<Interactor>(Interactor.class, this, LilPackage.LIL_MODEL__INTERACTORS);
     }
     return interactors;
   }
@@ -97,11 +97,11 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DataTypeCompoundDeclaration> getDataTypes()
+  public EList<DataTypeCompound> getDataTypes()
   {
     if (dataTypes == null)
     {
-      dataTypes = new EObjectContainmentEList<DataTypeCompoundDeclaration>(DataTypeCompoundDeclaration.class, this, LilPackage.LIL_MODEL__DATA_TYPES);
+      dataTypes = new EObjectContainmentEList<DataTypeCompound>(DataTypeCompound.class, this, LilPackage.LIL_MODEL__DATA_TYPES);
     }
     return dataTypes;
   }
@@ -155,11 +155,11 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
     {
       case LilPackage.LIL_MODEL__INTERACTORS:
         getInteractors().clear();
-        getInteractors().addAll((Collection<? extends InteractorDeclaration>)newValue);
+        getInteractors().addAll((Collection<? extends Interactor>)newValue);
         return;
       case LilPackage.LIL_MODEL__DATA_TYPES:
         getDataTypes().clear();
-        getDataTypes().addAll((Collection<? extends DataTypeCompoundDeclaration>)newValue);
+        getDataTypes().addAll((Collection<? extends DataTypeCompound>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

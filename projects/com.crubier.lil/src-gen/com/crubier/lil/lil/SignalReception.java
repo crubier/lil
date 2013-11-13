@@ -33,12 +33,12 @@ public interface SignalReception extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Instance</em>' reference.
-   * @see #setInstance(SignalDeclaration)
+   * @see #setInstance(Signal)
    * @see com.crubier.lil.lil.LilPackage#getSignalReception_Instance()
    * @model
    * @generated
    */
-  SignalDeclaration getInstance();
+  Signal getInstance();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.SignalReception#getInstance <em>Instance</em>}' reference.
@@ -48,7 +48,7 @@ public interface SignalReception extends EObject
    * @see #getInstance()
    * @generated
    */
-  void setInstance(SignalDeclaration value);
+  void setInstance(Signal value);
 
   /**
    * Returns the value of the '<em><b>Source</b></em>' containment reference.

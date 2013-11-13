@@ -3,15 +3,24 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.DataTypeCompound;
-import com.crubier.lil.lil.DataTypeCompoundDeclaration;
+import com.crubier.lil.lil.DataTypeCompoundField;
 import com.crubier.lil.lil.LilPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,23 +29,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.DataTypeCompoundImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.DataTypeCompoundImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.DataTypeCompoundImpl#getFields <em>Fields</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DataTypeCompoundImpl extends DataTypeImpl implements DataTypeCompound
+public class DataTypeCompoundImpl extends MinimalEObjectImpl.Container implements DataTypeCompound
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected DataTypeCompoundDeclaration type;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFields()
+   * @generated
+   * @ordered
+   */
+  protected EList<DataTypeCompoundField> fields;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,19 +94,9 @@ public class DataTypeCompoundImpl extends DataTypeImpl implements DataTypeCompou
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataTypeCompoundDeclaration getType()
+  public String getName()
   {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (DataTypeCompoundDeclaration)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilPackage.DATA_TYPE_COMPOUND__TYPE, oldType, type));
-      }
-    }
-    return type;
+    return name;
   }
 
   /**
@@ -84,22 +104,42 @@ public class DataTypeCompoundImpl extends DataTypeImpl implements DataTypeCompou
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataTypeCompoundDeclaration basicGetType()
+  public void setName(String newName)
   {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(DataTypeCompoundDeclaration newType)
-  {
-    DataTypeCompoundDeclaration oldType = type;
-    type = newType;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.DATA_TYPE_COMPOUND__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.DATA_TYPE_COMPOUND__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<DataTypeCompoundField> getFields()
+  {
+    if (fields == null)
+    {
+      fields = new EObjectContainmentEList<DataTypeCompoundField>(DataTypeCompoundField.class, this, LilPackage.DATA_TYPE_COMPOUND__FIELDS);
+    }
+    return fields;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LilPackage.DATA_TYPE_COMPOUND__FIELDS:
+        return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -112,9 +152,10 @@ public class DataTypeCompoundImpl extends DataTypeImpl implements DataTypeCompou
   {
     switch (featureID)
     {
-      case LilPackage.DATA_TYPE_COMPOUND__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+      case LilPackage.DATA_TYPE_COMPOUND__NAME:
+        return getName();
+      case LilPackage.DATA_TYPE_COMPOUND__FIELDS:
+        return getFields();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,13 +165,18 @@ public class DataTypeCompoundImpl extends DataTypeImpl implements DataTypeCompou
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case LilPackage.DATA_TYPE_COMPOUND__TYPE:
-        setType((DataTypeCompoundDeclaration)newValue);
+      case LilPackage.DATA_TYPE_COMPOUND__NAME:
+        setName((String)newValue);
+        return;
+      case LilPackage.DATA_TYPE_COMPOUND__FIELDS:
+        getFields().clear();
+        getFields().addAll((Collection<? extends DataTypeCompoundField>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -146,8 +192,11 @@ public class DataTypeCompoundImpl extends DataTypeImpl implements DataTypeCompou
   {
     switch (featureID)
     {
-      case LilPackage.DATA_TYPE_COMPOUND__TYPE:
-        setType((DataTypeCompoundDeclaration)null);
+      case LilPackage.DATA_TYPE_COMPOUND__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case LilPackage.DATA_TYPE_COMPOUND__FIELDS:
+        getFields().clear();
         return;
     }
     super.eUnset(featureID);
@@ -163,10 +212,29 @@ public class DataTypeCompoundImpl extends DataTypeImpl implements DataTypeCompou
   {
     switch (featureID)
     {
-      case LilPackage.DATA_TYPE_COMPOUND__TYPE:
-        return type != null;
+      case LilPackage.DATA_TYPE_COMPOUND__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case LilPackage.DATA_TYPE_COMPOUND__FIELDS:
+        return fields != null && !fields.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //DataTypeCompoundImpl

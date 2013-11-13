@@ -1,22 +1,21 @@
 package com.crubier.lil.serializer;
 
 import com.crubier.lil.lil.AccessibleEntity;
+import com.crubier.lil.lil.Actor;
 import com.crubier.lil.lil.ActorAlias;
-import com.crubier.lil.lil.ActorDeclaration;
 import com.crubier.lil.lil.AlwaysEffect;
 import com.crubier.lil.lil.BehaviorDeclaration;
-import com.crubier.lil.lil.ComponentDeclaration;
-import com.crubier.lil.lil.DataTypeBase;
+import com.crubier.lil.lil.Component;
+import com.crubier.lil.lil.DataType;
 import com.crubier.lil.lil.DataTypeCompound;
-import com.crubier.lil.lil.DataTypeCompoundDeclaration;
 import com.crubier.lil.lil.DataTypeCompoundField;
-import com.crubier.lil.lil.InteractorDeclaration;
+import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilModel;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.OnCause;
 import com.crubier.lil.lil.SetEffect;
+import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
-import com.crubier.lil.lil.SignalDeclaration;
 import com.crubier.lil.lil.SignalEmission;
 import com.crubier.lil.lil.SignalReception;
 import com.crubier.lil.lil.TriggerEffect;
@@ -63,16 +62,16 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.ACTOR_ALIAS:
-				if(context == grammarAccess.getActorAliasRule()) {
-					sequence_ActorAlias(context, (ActorAlias) semanticObject); 
+			case LilPackage.ACTOR:
+				if(context == grammarAccess.getActorRule() ||
+				   context == grammarAccess.getEntityRule()) {
+					sequence_Actor(context, (Actor) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.ACTOR_DECLARATION:
-				if(context == grammarAccess.getActorDeclarationRule() ||
-				   context == grammarAccess.getEntityDeclarationRule()) {
-					sequence_ActorDeclaration(context, (ActorDeclaration) semanticObject); 
+			case LilPackage.ACTOR_ALIAS:
+				if(context == grammarAccess.getActorAliasRule()) {
+					sequence_ActorAlias(context, (ActorAlias) semanticObject); 
 					return; 
 				}
 				else break;
@@ -89,28 +88,22 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.COMPONENT_DECLARATION:
-				if(context == grammarAccess.getComponentDeclarationRule() ||
-				   context == grammarAccess.getEntityDeclarationRule()) {
-					sequence_ComponentDeclaration(context, (ComponentDeclaration) semanticObject); 
+			case LilPackage.COMPONENT:
+				if(context == grammarAccess.getComponentRule() ||
+				   context == grammarAccess.getEntityRule()) {
+					sequence_Component(context, (Component) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_TYPE_BASE:
+			case LilPackage.DATA_TYPE:
 				if(context == grammarAccess.getDataTypeRule()) {
-					sequence_DataType(context, (DataTypeBase) semanticObject); 
+					sequence_DataType(context, (DataType) semanticObject); 
 					return; 
 				}
 				else break;
 			case LilPackage.DATA_TYPE_COMPOUND:
-				if(context == grammarAccess.getDataTypeRule()) {
-					sequence_DataType(context, (DataTypeCompound) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.DATA_TYPE_COMPOUND_DECLARATION:
-				if(context == grammarAccess.getDataTypeCompoundDeclarationRule()) {
-					sequence_DataTypeCompoundDeclaration(context, (DataTypeCompoundDeclaration) semanticObject); 
+				if(context == grammarAccess.getDataTypeCompoundRule()) {
+					sequence_DataTypeCompound(context, (DataTypeCompound) semanticObject); 
 					return; 
 				}
 				else break;
@@ -120,9 +113,9 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.INTERACTOR_DECLARATION:
-				if(context == grammarAccess.getInteractorDeclarationRule()) {
-					sequence_InteractorDeclaration(context, (InteractorDeclaration) semanticObject); 
+			case LilPackage.INTERACTOR:
+				if(context == grammarAccess.getInteractorRule()) {
+					sequence_Interactor(context, (Interactor) semanticObject); 
 					return; 
 				}
 				else break;
@@ -146,15 +139,15 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.SIGNAL_ALIAS:
-				if(context == grammarAccess.getSignalAliasRule()) {
-					sequence_SignalAlias(context, (SignalAlias) semanticObject); 
+			case LilPackage.SIGNAL:
+				if(context == grammarAccess.getSignalRule()) {
+					sequence_Signal(context, (Signal) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.SIGNAL_DECLARATION:
-				if(context == grammarAccess.getSignalDeclarationRule()) {
-					sequence_SignalDeclaration(context, (SignalDeclaration) semanticObject); 
+			case LilPackage.SIGNAL_ALIAS:
+				if(context == grammarAccess.getSignalAliasRule()) {
+					sequence_SignalAlias(context, (SignalAlias) semanticObject); 
 					return; 
 				}
 				else break;
@@ -490,7 +483,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (generic=GenericEntity | specific=[EntityDeclaration|ID])
+	 *     (generic=GenericEntity | specific=[Entity|ID])
 	 */
 	protected void sequence_AccessibleEntity(EObject context, AccessibleEntity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -499,7 +492,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (source=[ActorDeclaration|ID] alias=[ActorDeclaration|ID])
+	 *     (source=[Actor|ID] alias=[Actor|ID])
 	 */
 	protected void sequence_ActorAlias(EObject context, ActorAlias semanticObject) {
 		if(errorAcceptor != null) {
@@ -510,8 +503,8 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActorAliasAccess().getSourceActorDeclarationIDTerminalRuleCall_0_0_1(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getActorAliasAccess().getAliasActorDeclarationIDTerminalRuleCall_2_0_1(), semanticObject.getAlias());
+		feeder.accept(grammarAccess.getActorAliasAccess().getSourceActorIDTerminalRuleCall_0_0_1(), semanticObject.getSource());
+		feeder.accept(grammarAccess.getActorAliasAccess().getAliasActorIDTerminalRuleCall_2_0_1(), semanticObject.getAlias());
 		feeder.finish();
 	}
 	
@@ -520,14 +513,14 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_ActorDeclaration(EObject context, ActorDeclaration semanticObject) {
+	protected void sequence_Actor(EObject context, Actor semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ENTITY_DECLARATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ENTITY_DECLARATION__NAME));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ENTITY__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActorDeclarationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getActorAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -562,18 +555,9 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID interactor=[InteractorDeclaration|ID] (aliases+=ActorAlias aliases+=ActorAlias*)?)
+	 *     (name=ID interactor=[Interactor|ID] (aliases+=ActorAlias aliases+=ActorAlias*)?)
 	 */
-	protected void sequence_ComponentDeclaration(EObject context, ComponentDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID fields+=DataTypeCompoundField*)
-	 */
-	protected void sequence_DataTypeCompoundDeclaration(EObject context, DataTypeCompoundDeclaration semanticObject) {
+	protected void sequence_Component(EObject context, Component semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -599,48 +583,34 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     type=DataTypeBase
+	 *     (name=ID fields+=DataTypeCompoundField*)
 	 */
-	protected void sequence_DataType(EObject context, DataTypeBase semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_BASE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_BASE__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataTypeAccess().getTypeDataTypeBaseParserRuleCall_1_1_0(), semanticObject.getType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     type=[DataTypeCompoundDeclaration|ID]
-	 */
-	protected void sequence_DataType(EObject context, DataTypeCompound semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataTypeAccess().getTypeDataTypeCompoundDeclarationIDTerminalRuleCall_0_1_0_1(), semanticObject.getType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID (entities+=EntityDeclaration | signals+=SignalDeclaration | behaviors+=BehaviorDeclaration)*)
-	 */
-	protected void sequence_InteractorDeclaration(EObject context, InteractorDeclaration semanticObject) {
+	protected void sequence_DataTypeCompound(EObject context, DataTypeCompound semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (interactors+=InteractorDeclaration | dataTypes+=DataTypeCompoundDeclaration)*
+	 *     (base=DataTypeBase | compound=[DataTypeCompound|ID])
+	 */
+	protected void sequence_DataType(EObject context, DataType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (entities+=Entity | signals+=Signal | behaviors+=BehaviorDeclaration)*)
+	 */
+	protected void sequence_Interactor(EObject context, Interactor semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (interactors+=Interactor | dataTypes+=DataTypeCompound)*
 	 */
 	protected void sequence_LilModel(EObject context, LilModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -677,7 +647,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (source=AccessibleEntity alias=[SignalDeclaration|ID]?)
+	 *     (source=AccessibleEntity alias=[Signal|ID]?)
 	 */
 	protected void sequence_SignalAlias(EObject context, SignalAlias semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -686,16 +656,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=DataType mode=SignalMode source=SignalAlias? destinations+=SignalAlias*)
-	 */
-	protected void sequence_SignalDeclaration(EObject context, SignalDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (instance=[SignalDeclaration|ID] destination=SignalAlias?)
+	 *     (instance=[Signal|ID] destination=SignalAlias?)
 	 */
 	protected void sequence_SignalEmission(EObject context, SignalEmission semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -704,9 +665,18 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((instance=[SignalDeclaration|ID] source=SignalAlias?) | init?='init')
+	 *     ((instance=[Signal|ID] source=SignalAlias?) | init?='init')
 	 */
 	protected void sequence_SignalReception(EObject context, SignalReception semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID type=DataType mode=SignalMode source=SignalAlias? destinations+=SignalAlias*)
+	 */
+	protected void sequence_Signal(EObject context, Signal semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

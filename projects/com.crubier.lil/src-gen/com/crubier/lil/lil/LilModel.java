@@ -27,7 +27,7 @@ public interface LilModel extends EObject
 {
   /**
    * Returns the value of the '<em><b>Interactors</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.InteractorDeclaration}.
+   * The list contents are of type {@link com.crubier.lil.lil.Interactor}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Interactors</em>' containment reference list isn't clear,
@@ -39,11 +39,11 @@ public interface LilModel extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<InteractorDeclaration> getInteractors();
+  EList<Interactor> getInteractors();
 
   /**
    * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.DataTypeCompoundDeclaration}.
+   * The list contents are of type {@link com.crubier.lil.lil.DataTypeCompound}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Data Types</em>' containment reference list isn't clear,
@@ -55,6 +55,6 @@ public interface LilModel extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<DataTypeCompoundDeclaration> getDataTypes();
+  EList<DataTypeCompound> getDataTypes();
 
 } // LilModel

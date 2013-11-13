@@ -3,7 +3,10 @@
  */
 package com.crubier.lil.validation;
 
+import com.crubier.lil.lil.Interactor;
+import com.crubier.lil.lil.LilPackage.Literals;
 import com.crubier.lil.validation.AbstractLilValidator;
+import org.eclipse.xtext.validation.Check;
 
 /**
  * Custom validation rules.
@@ -12,4 +15,16 @@ import com.crubier.lil.validation.AbstractLilValidator;
  */
 @SuppressWarnings("all")
 public class LilValidator extends AbstractLilValidator {
+  public final static String INVALID_NAME = "invalidName";
+  
+  @Check
+  public void checkGreetingStartsWithCapital(final Interactor interactor) {
+    String _name = interactor.getName();
+    char _charAt = _name.charAt(0);
+    boolean _isUpperCase = Character.isUpperCase(_charAt);
+    boolean _not = (!_isUpperCase);
+    if (_not) {
+      this.warning("Name should start with a capital", Literals.INTERACTOR__NAME, LilValidator.INVALID_NAME);
+    }
+  }
 }

@@ -32,13 +32,13 @@ public interface LilFactory extends EFactory
   LilModel createLilModel();
 
   /**
-   * Returns a new object of class '<em>Interactor Declaration</em>'.
+   * Returns a new object of class '<em>Interactor</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Declaration</em>'.
+   * @return a new object of class '<em>Interactor</em>'.
    * @generated
    */
-  InteractorDeclaration createInteractorDeclaration();
+  Interactor createInteractor();
 
   /**
    * Returns a new object of class '<em>Accessible Entity</em>'.
@@ -50,22 +50,22 @@ public interface LilFactory extends EFactory
   AccessibleEntity createAccessibleEntity();
 
   /**
-   * Returns a new object of class '<em>Entity Declaration</em>'.
+   * Returns a new object of class '<em>Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entity Declaration</em>'.
+   * @return a new object of class '<em>Entity</em>'.
    * @generated
    */
-  EntityDeclaration createEntityDeclaration();
+  Entity createEntity();
 
   /**
-   * Returns a new object of class '<em>Actor Declaration</em>'.
+   * Returns a new object of class '<em>Actor</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Actor Declaration</em>'.
+   * @return a new object of class '<em>Actor</em>'.
    * @generated
    */
-  ActorDeclaration createActorDeclaration();
+  Actor createActor();
 
   /**
    * Returns a new object of class '<em>Actor Alias</em>'.
@@ -77,13 +77,13 @@ public interface LilFactory extends EFactory
   ActorAlias createActorAlias();
 
   /**
-   * Returns a new object of class '<em>Component Declaration</em>'.
+   * Returns a new object of class '<em>Component</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component Declaration</em>'.
+   * @return a new object of class '<em>Component</em>'.
    * @generated
    */
-  ComponentDeclaration createComponentDeclaration();
+  Component createComponent();
 
   /**
    * Returns a new object of class '<em>Signal Reception</em>'.
@@ -104,13 +104,13 @@ public interface LilFactory extends EFactory
   SignalEmission createSignalEmission();
 
   /**
-   * Returns a new object of class '<em>Signal Declaration</em>'.
+   * Returns a new object of class '<em>Signal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Signal Declaration</em>'.
+   * @return a new object of class '<em>Signal</em>'.
    * @generated
    */
-  SignalDeclaration createSignalDeclaration();
+  Signal createSignal();
 
   /**
    * Returns a new object of class '<em>Signal Alias</em>'.
@@ -131,13 +131,13 @@ public interface LilFactory extends EFactory
   DataType createDataType();
 
   /**
-   * Returns a new object of class '<em>Data Type Compound Declaration</em>'.
+   * Returns a new object of class '<em>Data Type Compound</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Compound Declaration</em>'.
+   * @return a new object of class '<em>Data Type Compound</em>'.
    * @generated
    */
-  DataTypeCompoundDeclaration createDataTypeCompoundDeclaration();
+  DataTypeCompound createDataTypeCompound();
 
   /**
    * Returns a new object of class '<em>Data Type Compound Field</em>'.
@@ -264,24 +264,6 @@ public interface LilFactory extends EFactory
    * @generated
    */
   XCasePart createXCasePart();
-
-  /**
-   * Returns a new object of class '<em>Data Type Compound</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Compound</em>'.
-   * @generated
-   */
-  DataTypeCompound createDataTypeCompound();
-
-  /**
-   * Returns a new object of class '<em>Data Type Base</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Base</em>'.
-   * @generated
-   */
-  DataTypeBase createDataTypeBase();
 
   /**
    * Returns a new object of class '<em>XBinary Operation</em>'.

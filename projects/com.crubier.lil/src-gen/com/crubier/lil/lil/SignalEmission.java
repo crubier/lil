@@ -32,12 +32,12 @@ public interface SignalEmission extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Instance</em>' reference.
-   * @see #setInstance(SignalDeclaration)
+   * @see #setInstance(Signal)
    * @see com.crubier.lil.lil.LilPackage#getSignalEmission_Instance()
    * @model
    * @generated
    */
-  SignalDeclaration getInstance();
+  Signal getInstance();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.SignalEmission#getInstance <em>Instance</em>}' reference.
@@ -47,7 +47,7 @@ public interface SignalEmission extends EObject
    * @see #getInstance()
    * @generated
    */
-  void setInstance(SignalDeclaration value);
+  void setInstance(Signal value);
 
   /**
    * Returns the value of the '<em><b>Destination</b></em>' containment reference.

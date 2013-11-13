@@ -80,9 +80,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createLilModelAdapter();
       }
       @Override
-      public Adapter caseInteractorDeclaration(InteractorDeclaration object)
+      public Adapter caseInteractor(Interactor object)
       {
-        return createInteractorDeclarationAdapter();
+        return createInteractorAdapter();
       }
       @Override
       public Adapter caseAccessibleEntity(AccessibleEntity object)
@@ -90,14 +90,14 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createAccessibleEntityAdapter();
       }
       @Override
-      public Adapter caseEntityDeclaration(EntityDeclaration object)
+      public Adapter caseEntity(Entity object)
       {
-        return createEntityDeclarationAdapter();
+        return createEntityAdapter();
       }
       @Override
-      public Adapter caseActorDeclaration(ActorDeclaration object)
+      public Adapter caseActor(Actor object)
       {
-        return createActorDeclarationAdapter();
+        return createActorAdapter();
       }
       @Override
       public Adapter caseActorAlias(ActorAlias object)
@@ -105,9 +105,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createActorAliasAdapter();
       }
       @Override
-      public Adapter caseComponentDeclaration(ComponentDeclaration object)
+      public Adapter caseComponent(Component object)
       {
-        return createComponentDeclarationAdapter();
+        return createComponentAdapter();
       }
       @Override
       public Adapter caseSignalReception(SignalReception object)
@@ -120,9 +120,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createSignalEmissionAdapter();
       }
       @Override
-      public Adapter caseSignalDeclaration(SignalDeclaration object)
+      public Adapter caseSignal(Signal object)
       {
-        return createSignalDeclarationAdapter();
+        return createSignalAdapter();
       }
       @Override
       public Adapter caseSignalAlias(SignalAlias object)
@@ -135,9 +135,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeAdapter();
       }
       @Override
-      public Adapter caseDataTypeCompoundDeclaration(DataTypeCompoundDeclaration object)
+      public Adapter caseDataTypeCompound(DataTypeCompound object)
       {
-        return createDataTypeCompoundDeclarationAdapter();
+        return createDataTypeCompoundAdapter();
       }
       @Override
       public Adapter caseDataTypeCompoundField(DataTypeCompoundField object)
@@ -208,16 +208,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
       public Adapter caseXCasePart(XCasePart object)
       {
         return createXCasePartAdapter();
-      }
-      @Override
-      public Adapter caseDataTypeCompound(DataTypeCompound object)
-      {
-        return createDataTypeCompoundAdapter();
-      }
-      @Override
-      public Adapter caseDataTypeBase(DataTypeBase object)
-      {
-        return createDataTypeBaseAdapter();
       }
       @Override
       public Adapter caseXBinaryOperation(XBinaryOperation object)
@@ -307,16 +297,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDeclaration <em>Interactor Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Interactor <em>Interactor</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorDeclaration
+   * @see com.crubier.lil.lil.Interactor
    * @generated
    */
-  public Adapter createInteractorDeclarationAdapter()
+  public Adapter createInteractorAdapter()
   {
     return null;
   }
@@ -337,31 +327,31 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.EntityDeclaration <em>Entity Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Entity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.EntityDeclaration
+   * @see com.crubier.lil.lil.Entity
    * @generated
    */
-  public Adapter createEntityDeclarationAdapter()
+  public Adapter createEntityAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorDeclaration <em>Actor Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Actor <em>Actor</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.ActorDeclaration
+   * @see com.crubier.lil.lil.Actor
    * @generated
    */
-  public Adapter createActorDeclarationAdapter()
+  public Adapter createActorAdapter()
   {
     return null;
   }
@@ -382,16 +372,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ComponentDeclaration <em>Component Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Component <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.ComponentDeclaration
+   * @see com.crubier.lil.lil.Component
    * @generated
    */
-  public Adapter createComponentDeclarationAdapter()
+  public Adapter createComponentAdapter()
   {
     return null;
   }
@@ -427,16 +417,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.SignalDeclaration <em>Signal Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Signal <em>Signal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.SignalDeclaration
+   * @see com.crubier.lil.lil.Signal
    * @generated
    */
-  public Adapter createSignalDeclarationAdapter()
+  public Adapter createSignalAdapter()
   {
     return null;
   }
@@ -472,16 +462,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompoundDeclaration <em>Data Type Compound Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompound <em>Data Type Compound</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataTypeCompoundDeclaration
+   * @see com.crubier.lil.lil.DataTypeCompound
    * @generated
    */
-  public Adapter createDataTypeCompoundDeclarationAdapter()
+  public Adapter createDataTypeCompoundAdapter()
   {
     return null;
   }
@@ -692,36 +682,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createXCasePartAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompound <em>Data Type Compound</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.DataTypeCompound
-   * @generated
-   */
-  public Adapter createDataTypeCompoundAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeBase <em>Data Type Base</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.DataTypeBase
-   * @generated
-   */
-  public Adapter createDataTypeBaseAdapter()
   {
     return null;
   }

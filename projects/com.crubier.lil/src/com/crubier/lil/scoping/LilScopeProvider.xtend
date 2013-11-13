@@ -8,9 +8,9 @@ import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
 import org.eclipse.xtext.scoping.Scopes
-import com.crubier.lil.lil.InteractorDeclaration
+import com.crubier.lil.lil.Interactor
 import org.eclipse.emf.ecore.EObject
-import com.crubier.lil.lil.ComponentDeclaration
+import com.crubier.lil.lil.Component
 
 /**
  * This class contains custom scoping description.
@@ -26,14 +26,14 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
   	 def public IScope scope_SignalEmission_instance(SignalEmission flowemission, EReference ref) {
         if(flowemission.destination == null) {
         	var EObject temp = flowemission;
-        	while(!(temp instanceof InteractorDeclaration)) {
+        	while(!(temp instanceof Interactor)) {
         		temp =temp.eContainer;
         	}
         	Scopes.scopeFor(temp.eContents);
         }
         else {
-        	println((flowemission.destination.source.specific as ComponentDeclaration).interactor.eContents);
-        	Scopes.scopeFor((flowemission.destination.source.specific as ComponentDeclaration).interactor.eContents);
+        	println((flowemission.destination.source.specific as Component).interactor.eContents);
+        	Scopes.scopeFor((flowemission.destination.source.specific as Component).interactor.eContents);
         }
     }
 

@@ -4,9 +4,9 @@
 package com.crubier.lil.scoping;
 
 import com.crubier.lil.lil.AccessibleEntity;
-import com.crubier.lil.lil.ComponentDeclaration;
-import com.crubier.lil.lil.EntityDeclaration;
-import com.crubier.lil.lil.InteractorDeclaration;
+import com.crubier.lil.lil.Component;
+import com.crubier.lil.lil.Entity;
+import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.SignalAlias;
 import com.crubier.lil.lil.SignalEmission;
 import com.google.common.base.Objects;
@@ -34,12 +34,12 @@ public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
       IScope _xblockexpression = null;
       {
         EObject temp = flowemission;
-        boolean _not = (!(temp instanceof InteractorDeclaration));
+        boolean _not = (!(temp instanceof Interactor));
         boolean _while = _not;
         while (_while) {
           EObject _eContainer = temp.eContainer();
           temp = _eContainer;
-          boolean _not_1 = (!(temp instanceof InteractorDeclaration));
+          boolean _not_1 = (!(temp instanceof Interactor));
           _while = _not_1;
         }
         EList<EObject> _eContents = temp.eContents();
@@ -52,14 +52,14 @@ public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
       {
         SignalAlias _destination_1 = flowemission.getDestination();
         AccessibleEntity _source = _destination_1.getSource();
-        EntityDeclaration _specific = _source.getSpecific();
-        InteractorDeclaration _interactor = ((ComponentDeclaration) _specific).getInteractor();
+        Entity _specific = _source.getSpecific();
+        Interactor _interactor = ((Component) _specific).getInteractor();
         EList<EObject> _eContents = _interactor.eContents();
         InputOutput.<EList<EObject>>println(_eContents);
         SignalAlias _destination_2 = flowemission.getDestination();
         AccessibleEntity _source_1 = _destination_2.getSource();
-        EntityDeclaration _specific_1 = _source_1.getSpecific();
-        InteractorDeclaration _interactor_1 = ((ComponentDeclaration) _specific_1).getInteractor();
+        Entity _specific_1 = _source_1.getSpecific();
+        Interactor _interactor_1 = ((Component) _specific_1).getInteractor();
         EList<EObject> _eContents_1 = _interactor_1.eContents();
         IScope _scopeFor = Scopes.scopeFor(_eContents_1);
         _xblockexpression_1 = (_scopeFor);

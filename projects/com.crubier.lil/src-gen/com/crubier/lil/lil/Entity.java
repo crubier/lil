@@ -6,21 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Entity Declaration</b></em>'.
+ * A representation of the model object '<em><b>Entity</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.EntityDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Entity#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.crubier.lil.lil.LilPackage#getEntityDeclaration()
+ * @see com.crubier.lil.lil.LilPackage#getEntity()
  * @model
  * @generated
  */
-public interface EntityDeclaration extends EObject
+public interface Entity extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface EntityDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.crubier.lil.lil.LilPackage#getEntityDeclaration_Name()
+   * @see com.crubier.lil.lil.LilPackage#getEntity_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.EntityDeclaration#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.crubier.lil.lil.Entity#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -48,4 +48,4 @@ public interface EntityDeclaration extends EObject
    */
   void setName(String value);
 
-} // EntityDeclaration
+} // Entity

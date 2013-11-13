@@ -3,8 +3,8 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.ActorAlias;
-import com.crubier.lil.lil.ComponentDeclaration;
-import com.crubier.lil.lil.InteractorDeclaration;
+import com.crubier.lil.lil.Component;
+import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilPackage;
 
 import java.util.Collection;
@@ -24,19 +24,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component Declaration</b></em>'.
+ * An implementation of the model object '<em><b>Component</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.ComponentDeclarationImpl#getInteractor <em>Interactor</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.ComponentDeclarationImpl#getAliases <em>Aliases</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.ComponentImpl#getInteractor <em>Interactor</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.ComponentImpl#getAliases <em>Aliases</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentDeclarationImpl extends EntityDeclarationImpl implements ComponentDeclaration
+public class ComponentImpl extends EntityImpl implements Component
 {
   /**
    * The cached value of the '{@link #getInteractor() <em>Interactor</em>}' reference.
@@ -46,7 +46,7 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
    * @generated
    * @ordered
    */
-  protected InteractorDeclaration interactor;
+  protected Interactor interactor;
 
   /**
    * The cached value of the '{@link #getAliases() <em>Aliases</em>}' containment reference list.
@@ -63,7 +63,7 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ComponentDeclarationImpl()
+  protected ComponentImpl()
   {
     super();
   }
@@ -76,7 +76,7 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
   @Override
   protected EClass eStaticClass()
   {
-    return LilPackage.Literals.COMPONENT_DECLARATION;
+    return LilPackage.Literals.COMPONENT;
   }
 
   /**
@@ -84,16 +84,16 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorDeclaration getInteractor()
+  public Interactor getInteractor()
   {
     if (interactor != null && interactor.eIsProxy())
     {
       InternalEObject oldInteractor = (InternalEObject)interactor;
-      interactor = (InteractorDeclaration)eResolveProxy(oldInteractor);
+      interactor = (Interactor)eResolveProxy(oldInteractor);
       if (interactor != oldInteractor)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilPackage.COMPONENT_DECLARATION__INTERACTOR, oldInteractor, interactor));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilPackage.COMPONENT__INTERACTOR, oldInteractor, interactor));
       }
     }
     return interactor;
@@ -104,7 +104,7 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorDeclaration basicGetInteractor()
+  public Interactor basicGetInteractor()
   {
     return interactor;
   }
@@ -114,12 +114,12 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInteractor(InteractorDeclaration newInteractor)
+  public void setInteractor(Interactor newInteractor)
   {
-    InteractorDeclaration oldInteractor = interactor;
+    Interactor oldInteractor = interactor;
     interactor = newInteractor;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.COMPONENT_DECLARATION__INTERACTOR, oldInteractor, interactor));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.COMPONENT__INTERACTOR, oldInteractor, interactor));
   }
 
   /**
@@ -131,7 +131,7 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
   {
     if (aliases == null)
     {
-      aliases = new EObjectContainmentEList<ActorAlias>(ActorAlias.class, this, LilPackage.COMPONENT_DECLARATION__ALIASES);
+      aliases = new EObjectContainmentEList<ActorAlias>(ActorAlias.class, this, LilPackage.COMPONENT__ALIASES);
     }
     return aliases;
   }
@@ -146,7 +146,7 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
   {
     switch (featureID)
     {
-      case LilPackage.COMPONENT_DECLARATION__ALIASES:
+      case LilPackage.COMPONENT__ALIASES:
         return ((InternalEList<?>)getAliases()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -162,10 +162,10 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
   {
     switch (featureID)
     {
-      case LilPackage.COMPONENT_DECLARATION__INTERACTOR:
+      case LilPackage.COMPONENT__INTERACTOR:
         if (resolve) return getInteractor();
         return basicGetInteractor();
-      case LilPackage.COMPONENT_DECLARATION__ALIASES:
+      case LilPackage.COMPONENT__ALIASES:
         return getAliases();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -182,10 +182,10 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
   {
     switch (featureID)
     {
-      case LilPackage.COMPONENT_DECLARATION__INTERACTOR:
-        setInteractor((InteractorDeclaration)newValue);
+      case LilPackage.COMPONENT__INTERACTOR:
+        setInteractor((Interactor)newValue);
         return;
-      case LilPackage.COMPONENT_DECLARATION__ALIASES:
+      case LilPackage.COMPONENT__ALIASES:
         getAliases().clear();
         getAliases().addAll((Collection<? extends ActorAlias>)newValue);
         return;
@@ -203,10 +203,10 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
   {
     switch (featureID)
     {
-      case LilPackage.COMPONENT_DECLARATION__INTERACTOR:
-        setInteractor((InteractorDeclaration)null);
+      case LilPackage.COMPONENT__INTERACTOR:
+        setInteractor((Interactor)null);
         return;
-      case LilPackage.COMPONENT_DECLARATION__ALIASES:
+      case LilPackage.COMPONENT__ALIASES:
         getAliases().clear();
         return;
     }
@@ -223,12 +223,12 @@ public class ComponentDeclarationImpl extends EntityDeclarationImpl implements C
   {
     switch (featureID)
     {
-      case LilPackage.COMPONENT_DECLARATION__INTERACTOR:
+      case LilPackage.COMPONENT__INTERACTOR:
         return interactor != null;
-      case LilPackage.COMPONENT_DECLARATION__ALIASES:
+      case LilPackage.COMPONENT__ALIASES:
         return aliases != null && !aliases.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ComponentDeclarationImpl
+} //ComponentImpl

@@ -9,7 +9,7 @@ import static org.junit.Assert.*
 import javax.inject.Inject
 import org.junit.Test
 import com.crubier.lil.lil.LilModel
-import com.crubier.lil.lil.InteractorDeclaration
+import com.crubier.lil.lil.Interactor
 
 @InjectWith(LilInjectorProvider)
 @RunWith(XtextRunner)
@@ -25,7 +25,7 @@ class BasicTest {
 
 			"
 		)
-		val entity = model.interactors.head as InteractorDeclaration
+		val entity = model.interactors.head as Interactor
 		assertEquals(entity.name,"test1234testInteractor");
 	}
 	

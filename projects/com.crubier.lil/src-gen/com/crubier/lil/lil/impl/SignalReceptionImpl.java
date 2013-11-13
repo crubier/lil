@@ -3,8 +3,8 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
-import com.crubier.lil.lil.SignalDeclaration;
 import com.crubier.lil.lil.SignalReception;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -41,7 +41,7 @@ public class SignalReceptionImpl extends MinimalEObjectImpl.Container implements
    * @generated
    * @ordered
    */
-  protected SignalDeclaration instance;
+  protected Signal instance;
 
   /**
    * The cached value of the '{@link #getSource() <em>Source</em>}' containment reference.
@@ -99,12 +99,12 @@ public class SignalReceptionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public SignalDeclaration getInstance()
+  public Signal getInstance()
   {
     if (instance != null && instance.eIsProxy())
     {
       InternalEObject oldInstance = (InternalEObject)instance;
-      instance = (SignalDeclaration)eResolveProxy(oldInstance);
+      instance = (Signal)eResolveProxy(oldInstance);
       if (instance != oldInstance)
       {
         if (eNotificationRequired())
@@ -119,7 +119,7 @@ public class SignalReceptionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public SignalDeclaration basicGetInstance()
+  public Signal basicGetInstance()
   {
     return instance;
   }
@@ -129,9 +129,9 @@ public class SignalReceptionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInstance(SignalDeclaration newInstance)
+  public void setInstance(Signal newInstance)
   {
-    SignalDeclaration oldInstance = instance;
+    Signal oldInstance = instance;
     instance = newInstance;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL_RECEPTION__INSTANCE, oldInstance, instance));
@@ -256,7 +256,7 @@ public class SignalReceptionImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case LilPackage.SIGNAL_RECEPTION__INSTANCE:
-        setInstance((SignalDeclaration)newValue);
+        setInstance((Signal)newValue);
         return;
       case LilPackage.SIGNAL_RECEPTION__SOURCE:
         setSource((SignalAlias)newValue);
@@ -279,7 +279,7 @@ public class SignalReceptionImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case LilPackage.SIGNAL_RECEPTION__INSTANCE:
-        setInstance((SignalDeclaration)null);
+        setInstance((Signal)null);
         return;
       case LilPackage.SIGNAL_RECEPTION__SOURCE:
         setSource((SignalAlias)null);

@@ -25,10 +25,9 @@ interactor ControlPanel :
 	x: number flow from system
 	y: number flow from system
 	current: number flow 
-
 	
-	on init : 	always current = if(false) "yes" else (-5 * 3) + (2 ~ (5 + 2)) <3 <3
-	on increment : set val to theGauge = switch (5) case +1:false case 2:true default : false
+	on init : 	always current = (if(1=="X") 1 else 2)
+	on increment : set val to theGauge = switch (6) case +1:false case 2:true default : false
 	
 	
 	

@@ -3,27 +3,25 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.AccessibleEntity;
+import com.crubier.lil.lil.Actor;
 import com.crubier.lil.lil.ActorAlias;
-import com.crubier.lil.lil.ActorDeclaration;
 import com.crubier.lil.lil.AlwaysEffect;
 import com.crubier.lil.lil.BehaviorDeclaration;
 import com.crubier.lil.lil.Cause;
-import com.crubier.lil.lil.ComponentDeclaration;
+import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.DataType;
-import com.crubier.lil.lil.DataTypeBase;
 import com.crubier.lil.lil.DataTypeCompound;
-import com.crubier.lil.lil.DataTypeCompoundDeclaration;
 import com.crubier.lil.lil.DataTypeCompoundField;
 import com.crubier.lil.lil.Effect;
-import com.crubier.lil.lil.EntityDeclaration;
-import com.crubier.lil.lil.InteractorDeclaration;
+import com.crubier.lil.lil.Entity;
+import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilFactory;
 import com.crubier.lil.lil.LilModel;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.OnCause;
 import com.crubier.lil.lil.SetEffect;
+import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
-import com.crubier.lil.lil.SignalDeclaration;
 import com.crubier.lil.lil.SignalEmission;
 import com.crubier.lil.lil.SignalReception;
 import com.crubier.lil.lil.TriggerEffect;
@@ -71,7 +69,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass interactorDeclarationEClass = null;
+  private EClass interactorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,14 +83,14 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass entityDeclarationEClass = null;
+  private EClass entityEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actorDeclarationEClass = null;
+  private EClass actorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -106,7 +104,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass componentDeclarationEClass = null;
+  private EClass componentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,7 +125,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass signalDeclarationEClass = null;
+  private EClass signalEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -148,7 +146,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dataTypeCompoundDeclarationEClass = null;
+  private EClass dataTypeCompoundEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -247,20 +245,6 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * @generated
    */
   private EClass xCasePartEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass dataTypeCompoundEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass dataTypeBaseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -430,9 +414,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getInteractorDeclaration()
+  public EClass getInteractor()
   {
-    return interactorDeclarationEClass;
+    return interactorEClass;
   }
 
   /**
@@ -440,9 +424,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInteractorDeclaration_Name()
+  public EAttribute getInteractor_Name()
   {
-    return (EAttribute)interactorDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)interactorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -450,9 +434,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInteractorDeclaration_Entities()
+  public EReference getInteractor_Entities()
   {
-    return (EReference)interactorDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)interactorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -460,9 +444,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInteractorDeclaration_Signals()
+  public EReference getInteractor_Signals()
   {
-    return (EReference)interactorDeclarationEClass.getEStructuralFeatures().get(2);
+    return (EReference)interactorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -470,9 +454,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInteractorDeclaration_Behaviors()
+  public EReference getInteractor_Behaviors()
   {
-    return (EReference)interactorDeclarationEClass.getEStructuralFeatures().get(3);
+    return (EReference)interactorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -510,9 +494,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEntityDeclaration()
+  public EClass getEntity()
   {
-    return entityDeclarationEClass;
+    return entityEClass;
   }
 
   /**
@@ -520,9 +504,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEntityDeclaration_Name()
+  public EAttribute getEntity_Name()
   {
-    return (EAttribute)entityDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -530,9 +514,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getActorDeclaration()
+  public EClass getActor()
   {
-    return actorDeclarationEClass;
+    return actorEClass;
   }
 
   /**
@@ -570,9 +554,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getComponentDeclaration()
+  public EClass getComponent()
   {
-    return componentDeclarationEClass;
+    return componentEClass;
   }
 
   /**
@@ -580,9 +564,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponentDeclaration_Interactor()
+  public EReference getComponent_Interactor()
   {
-    return (EReference)componentDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EReference)componentEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -590,9 +574,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponentDeclaration_Aliases()
+  public EReference getComponent_Aliases()
   {
-    return (EReference)componentDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)componentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -670,9 +654,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSignalDeclaration()
+  public EClass getSignal()
   {
-    return signalDeclarationEClass;
+    return signalEClass;
   }
 
   /**
@@ -680,9 +664,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSignalDeclaration_Name()
+  public EAttribute getSignal_Name()
   {
-    return (EAttribute)signalDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)signalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -690,9 +674,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSignalDeclaration_Type()
+  public EReference getSignal_Type()
   {
-    return (EReference)signalDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)signalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -700,9 +684,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSignalDeclaration_Mode()
+  public EAttribute getSignal_Mode()
   {
-    return (EAttribute)signalDeclarationEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)signalEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -710,9 +694,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSignalDeclaration_Source()
+  public EReference getSignal_Source()
   {
-    return (EReference)signalDeclarationEClass.getEStructuralFeatures().get(3);
+    return (EReference)signalEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -720,9 +704,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSignalDeclaration_Destinations()
+  public EReference getSignal_Destinations()
   {
-    return (EReference)signalDeclarationEClass.getEStructuralFeatures().get(4);
+    return (EReference)signalEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -770,9 +754,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDataTypeCompoundDeclaration()
+  public EAttribute getDataType_Base()
   {
-    return dataTypeCompoundDeclarationEClass;
+    return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -780,9 +764,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDataTypeCompoundDeclaration_Name()
+  public EReference getDataType_Compound()
   {
-    return (EAttribute)dataTypeCompoundDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EReference)dataTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -790,9 +774,29 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDataTypeCompoundDeclaration_Fields()
+  public EClass getDataTypeCompound()
   {
-    return (EReference)dataTypeCompoundDeclarationEClass.getEStructuralFeatures().get(1);
+    return dataTypeCompoundEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDataTypeCompound_Name()
+  {
+    return (EAttribute)dataTypeCompoundEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDataTypeCompound_Fields()
+  {
+    return (EReference)dataTypeCompoundEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1053,46 +1057,6 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
   public EReference getXCasePart_Then()
   {
     return (EReference)xCasePartEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDataTypeCompound()
-  {
-    return dataTypeCompoundEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDataTypeCompound_Type()
-  {
-    return (EReference)dataTypeCompoundEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDataTypeBase()
-  {
-    return dataTypeBaseEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getDataTypeBase_Type()
-  {
-    return (EAttribute)dataTypeBaseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1409,28 +1373,28 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEReference(lilModelEClass, LIL_MODEL__INTERACTORS);
     createEReference(lilModelEClass, LIL_MODEL__DATA_TYPES);
 
-    interactorDeclarationEClass = createEClass(INTERACTOR_DECLARATION);
-    createEAttribute(interactorDeclarationEClass, INTERACTOR_DECLARATION__NAME);
-    createEReference(interactorDeclarationEClass, INTERACTOR_DECLARATION__ENTITIES);
-    createEReference(interactorDeclarationEClass, INTERACTOR_DECLARATION__SIGNALS);
-    createEReference(interactorDeclarationEClass, INTERACTOR_DECLARATION__BEHAVIORS);
+    interactorEClass = createEClass(INTERACTOR);
+    createEAttribute(interactorEClass, INTERACTOR__NAME);
+    createEReference(interactorEClass, INTERACTOR__ENTITIES);
+    createEReference(interactorEClass, INTERACTOR__SIGNALS);
+    createEReference(interactorEClass, INTERACTOR__BEHAVIORS);
 
     accessibleEntityEClass = createEClass(ACCESSIBLE_ENTITY);
     createEAttribute(accessibleEntityEClass, ACCESSIBLE_ENTITY__GENERIC);
     createEReference(accessibleEntityEClass, ACCESSIBLE_ENTITY__SPECIFIC);
 
-    entityDeclarationEClass = createEClass(ENTITY_DECLARATION);
-    createEAttribute(entityDeclarationEClass, ENTITY_DECLARATION__NAME);
+    entityEClass = createEClass(ENTITY);
+    createEAttribute(entityEClass, ENTITY__NAME);
 
-    actorDeclarationEClass = createEClass(ACTOR_DECLARATION);
+    actorEClass = createEClass(ACTOR);
 
     actorAliasEClass = createEClass(ACTOR_ALIAS);
     createEReference(actorAliasEClass, ACTOR_ALIAS__SOURCE);
     createEReference(actorAliasEClass, ACTOR_ALIAS__ALIAS);
 
-    componentDeclarationEClass = createEClass(COMPONENT_DECLARATION);
-    createEReference(componentDeclarationEClass, COMPONENT_DECLARATION__INTERACTOR);
-    createEReference(componentDeclarationEClass, COMPONENT_DECLARATION__ALIASES);
+    componentEClass = createEClass(COMPONENT);
+    createEReference(componentEClass, COMPONENT__INTERACTOR);
+    createEReference(componentEClass, COMPONENT__ALIASES);
 
     signalReceptionEClass = createEClass(SIGNAL_RECEPTION);
     createEReference(signalReceptionEClass, SIGNAL_RECEPTION__INSTANCE);
@@ -1441,22 +1405,24 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEReference(signalEmissionEClass, SIGNAL_EMISSION__INSTANCE);
     createEReference(signalEmissionEClass, SIGNAL_EMISSION__DESTINATION);
 
-    signalDeclarationEClass = createEClass(SIGNAL_DECLARATION);
-    createEAttribute(signalDeclarationEClass, SIGNAL_DECLARATION__NAME);
-    createEReference(signalDeclarationEClass, SIGNAL_DECLARATION__TYPE);
-    createEAttribute(signalDeclarationEClass, SIGNAL_DECLARATION__MODE);
-    createEReference(signalDeclarationEClass, SIGNAL_DECLARATION__SOURCE);
-    createEReference(signalDeclarationEClass, SIGNAL_DECLARATION__DESTINATIONS);
+    signalEClass = createEClass(SIGNAL);
+    createEAttribute(signalEClass, SIGNAL__NAME);
+    createEReference(signalEClass, SIGNAL__TYPE);
+    createEAttribute(signalEClass, SIGNAL__MODE);
+    createEReference(signalEClass, SIGNAL__SOURCE);
+    createEReference(signalEClass, SIGNAL__DESTINATIONS);
 
     signalAliasEClass = createEClass(SIGNAL_ALIAS);
     createEReference(signalAliasEClass, SIGNAL_ALIAS__SOURCE);
     createEReference(signalAliasEClass, SIGNAL_ALIAS__ALIAS);
 
     dataTypeEClass = createEClass(DATA_TYPE);
+    createEAttribute(dataTypeEClass, DATA_TYPE__BASE);
+    createEReference(dataTypeEClass, DATA_TYPE__COMPOUND);
 
-    dataTypeCompoundDeclarationEClass = createEClass(DATA_TYPE_COMPOUND_DECLARATION);
-    createEAttribute(dataTypeCompoundDeclarationEClass, DATA_TYPE_COMPOUND_DECLARATION__NAME);
-    createEReference(dataTypeCompoundDeclarationEClass, DATA_TYPE_COMPOUND_DECLARATION__FIELDS);
+    dataTypeCompoundEClass = createEClass(DATA_TYPE_COMPOUND);
+    createEAttribute(dataTypeCompoundEClass, DATA_TYPE_COMPOUND__NAME);
+    createEReference(dataTypeCompoundEClass, DATA_TYPE_COMPOUND__FIELDS);
 
     dataTypeCompoundFieldEClass = createEClass(DATA_TYPE_COMPOUND_FIELD);
     createEAttribute(dataTypeCompoundFieldEClass, DATA_TYPE_COMPOUND_FIELD__NAME);
@@ -1497,12 +1463,6 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     xCasePartEClass = createEClass(XCASE_PART);
     createEReference(xCasePartEClass, XCASE_PART__CASE);
     createEReference(xCasePartEClass, XCASE_PART__THEN);
-
-    dataTypeCompoundEClass = createEClass(DATA_TYPE_COMPOUND);
-    createEReference(dataTypeCompoundEClass, DATA_TYPE_COMPOUND__TYPE);
-
-    dataTypeBaseEClass = createEClass(DATA_TYPE_BASE);
-    createEAttribute(dataTypeBaseEClass, DATA_TYPE_BASE__TYPE);
 
     xBinaryOperationEClass = createEClass(XBINARY_OPERATION);
     createEReference(xBinaryOperationEClass, XBINARY_OPERATION__LEFT_OPERAND);
@@ -1572,8 +1532,8 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    actorDeclarationEClass.getESuperTypes().add(this.getEntityDeclaration());
-    componentDeclarationEClass.getESuperTypes().add(this.getEntityDeclaration());
+    actorEClass.getESuperTypes().add(this.getEntity());
+    componentEClass.getESuperTypes().add(this.getEntity());
     onCauseEClass.getESuperTypes().add(this.getCause());
     whenCauseEClass.getESuperTypes().add(this.getCause());
     alwaysEffectEClass.getESuperTypes().add(this.getEffect());
@@ -1582,8 +1542,6 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     xCollectionLiteralEClass.getESuperTypes().add(this.getXExpression());
     xSetLiteralEClass.getESuperTypes().add(this.getXCollectionLiteral());
     xListLiteralEClass.getESuperTypes().add(this.getXCollectionLiteral());
-    dataTypeCompoundEClass.getESuperTypes().add(this.getDataType());
-    dataTypeBaseEClass.getESuperTypes().add(this.getDataType());
     xBinaryOperationEClass.getESuperTypes().add(this.getXExpression());
     xUnaryOperationEClass.getESuperTypes().add(this.getXExpression());
     xIfExpressionEClass.getESuperTypes().add(this.getXExpression());
@@ -1597,57 +1555,59 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(lilModelEClass, LilModel.class, "LilModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLilModel_Interactors(), this.getInteractorDeclaration(), null, "interactors", null, 0, -1, LilModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLilModel_DataTypes(), this.getDataTypeCompoundDeclaration(), null, "dataTypes", null, 0, -1, LilModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLilModel_Interactors(), this.getInteractor(), null, "interactors", null, 0, -1, LilModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLilModel_DataTypes(), this.getDataTypeCompound(), null, "dataTypes", null, 0, -1, LilModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(interactorDeclarationEClass, InteractorDeclaration.class, "InteractorDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInteractorDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, InteractorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInteractorDeclaration_Entities(), this.getEntityDeclaration(), null, "entities", null, 0, -1, InteractorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInteractorDeclaration_Signals(), this.getSignalDeclaration(), null, "signals", null, 0, -1, InteractorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInteractorDeclaration_Behaviors(), this.getBehaviorDeclaration(), null, "behaviors", null, 0, -1, InteractorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(interactorEClass, Interactor.class, "Interactor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInteractor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Interactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInteractor_Entities(), this.getEntity(), null, "entities", null, 0, -1, Interactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInteractor_Signals(), this.getSignal(), null, "signals", null, 0, -1, Interactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInteractor_Behaviors(), this.getBehaviorDeclaration(), null, "behaviors", null, 0, -1, Interactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(accessibleEntityEClass, AccessibleEntity.class, "AccessibleEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAccessibleEntity_Generic(), ecorePackage.getEString(), "generic", null, 0, 1, AccessibleEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAccessibleEntity_Specific(), this.getEntityDeclaration(), null, "specific", null, 0, 1, AccessibleEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAccessibleEntity_Specific(), this.getEntity(), null, "specific", null, 0, 1, AccessibleEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(entityDeclarationEClass, EntityDeclaration.class, "EntityDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEntityDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, EntityDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(actorDeclarationEClass, ActorDeclaration.class, "ActorDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(actorAliasEClass, ActorAlias.class, "ActorAlias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getActorAlias_Source(), this.getActorDeclaration(), null, "source", null, 0, 1, ActorAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActorAlias_Alias(), this.getActorDeclaration(), null, "alias", null, 0, 1, ActorAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActorAlias_Source(), this.getActor(), null, "source", null, 0, 1, ActorAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActorAlias_Alias(), this.getActor(), null, "alias", null, 0, 1, ActorAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(componentDeclarationEClass, ComponentDeclaration.class, "ComponentDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComponentDeclaration_Interactor(), this.getInteractorDeclaration(), null, "interactor", null, 0, 1, ComponentDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponentDeclaration_Aliases(), this.getActorAlias(), null, "aliases", null, 0, -1, ComponentDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComponent_Interactor(), this.getInteractor(), null, "interactor", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_Aliases(), this.getActorAlias(), null, "aliases", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(signalReceptionEClass, SignalReception.class, "SignalReception", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSignalReception_Instance(), this.getSignalDeclaration(), null, "instance", null, 0, 1, SignalReception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSignalReception_Instance(), this.getSignal(), null, "instance", null, 0, 1, SignalReception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSignalReception_Source(), this.getSignalAlias(), null, "source", null, 0, 1, SignalReception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSignalReception_Init(), ecorePackage.getEBoolean(), "init", null, 0, 1, SignalReception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(signalEmissionEClass, SignalEmission.class, "SignalEmission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSignalEmission_Instance(), this.getSignalDeclaration(), null, "instance", null, 0, 1, SignalEmission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSignalEmission_Instance(), this.getSignal(), null, "instance", null, 0, 1, SignalEmission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSignalEmission_Destination(), this.getSignalAlias(), null, "destination", null, 0, 1, SignalEmission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(signalDeclarationEClass, SignalDeclaration.class, "SignalDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSignalDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSignalDeclaration_Type(), this.getDataType(), null, "type", null, 0, 1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSignalDeclaration_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSignalDeclaration_Source(), this.getSignalAlias(), null, "source", null, 0, 1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSignalDeclaration_Destinations(), this.getSignalAlias(), null, "destinations", null, 0, -1, SignalDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(signalEClass, Signal.class, "Signal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSignal_Name(), ecorePackage.getEString(), "name", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSignal_Type(), this.getDataType(), null, "type", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSignal_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSignal_Source(), this.getSignalAlias(), null, "source", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSignal_Destinations(), this.getSignalAlias(), null, "destinations", null, 0, -1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(signalAliasEClass, SignalAlias.class, "SignalAlias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSignalAlias_Source(), this.getAccessibleEntity(), null, "source", null, 0, 1, SignalAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSignalAlias_Alias(), this.getSignalDeclaration(), null, "alias", null, 0, 1, SignalAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSignalAlias_Alias(), this.getSignal(), null, "alias", null, 0, 1, SignalAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDataType_Base(), ecorePackage.getEString(), "base", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDataType_Compound(), this.getDataTypeCompound(), null, "compound", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(dataTypeCompoundDeclarationEClass, DataTypeCompoundDeclaration.class, "DataTypeCompoundDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDataTypeCompoundDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataTypeCompoundDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDataTypeCompoundDeclaration_Fields(), this.getDataTypeCompoundField(), null, "fields", null, 0, -1, DataTypeCompoundDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(dataTypeCompoundEClass, DataTypeCompound.class, "DataTypeCompound", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDataTypeCompound_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataTypeCompound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDataTypeCompound_Fields(), this.getDataTypeCompoundField(), null, "fields", null, 0, -1, DataTypeCompound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeCompoundFieldEClass, DataTypeCompoundField.class, "DataTypeCompoundField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDataTypeCompoundField_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataTypeCompoundField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1688,12 +1648,6 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEClass(xCasePartEClass, XCasePart.class, "XCasePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXCasePart_Case(), this.getXExpression(), null, "case", null, 0, 1, XCasePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXCasePart_Then(), this.getXExpression(), null, "then", null, 0, 1, XCasePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dataTypeCompoundEClass, DataTypeCompound.class, "DataTypeCompound", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDataTypeCompound_Type(), this.getDataTypeCompoundDeclaration(), null, "type", null, 0, 1, DataTypeCompound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dataTypeBaseEClass, DataTypeBase.class, "DataTypeBase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDataTypeBase_Type(), ecorePackage.getEString(), "type", null, 0, 1, DataTypeBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xBinaryOperationEClass, XBinaryOperation.class, "XBinaryOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXBinaryOperation_LeftOperand(), this.getXExpression(), null, "leftOperand", null, 0, 1, XBinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

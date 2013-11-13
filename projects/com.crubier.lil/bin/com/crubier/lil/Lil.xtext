@@ -8,63 +8,62 @@ generate lil "http://www.crubier.com/lil/Lil"
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Model
 LilModel:
-	((interactors+=InteractorDeclaration) | (dataTypes+=DataTypeCompoundDeclaration))*;
+	((interactors+=Interactor) | (dataTypes+=DataTypeCompound))*;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Interactor
-InteractorDeclaration:
+Interactor:
 	'interactor' name=ID ':'
-	((entities+=EntityDeclaration) | (signals+=SignalDeclaration) | (behaviors+=BehaviorDeclaration))*;
+	((entities+=Entity) | (signals+=Signal) | (behaviors+=BehaviorDeclaration))*;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Entities
 AccessibleEntity:
-	generic=GenericEntity | specific=[EntityDeclaration];
+	generic=GenericEntity | specific=[Entity];
 	
 GenericEntity:
 	'any' | 'self' | 'other' | 'parent' | 'child' | 'all' | 'actors'
 ;
 
-EntityDeclaration:
-	ActorDeclaration | ComponentDeclaration;
+Entity:
+	Actor | Component;
 
-ActorDeclaration:
+Actor:
 	name=ID ':' 'actor'  ;
 
 ActorAlias:
-	source=[ActorDeclaration] 'as' alias=[ActorDeclaration];
+	source=[Actor] 'as' alias=[Actor];
 
-ComponentDeclaration:
-	name=ID ':' interactor=[InteractorDeclaration] ( 'with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
+Component:
+	name=ID ':' interactor=[Interactor] ( 'with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Signals
 
 SignalReception:
-	(instance=[SignalDeclaration] ('from' source=SignalAlias)? )| 
+	(instance=[Signal] ('from' source=SignalAlias)? ) | 
 	(init?='init');
 	
 SignalEmission:
-	(instance=[SignalDeclaration] ('to' destination=SignalAlias)?);
+	(instance=[Signal] ('to' destination=SignalAlias)?);
 
-SignalDeclaration:
+Signal:
 	name=ID ':'  type=DataType mode=SignalMode ('from' source=SignalAlias)? ('to' destinations+=SignalAlias)*;
 
 SignalAlias:
-	source=AccessibleEntity ('as' alias=[SignalDeclaration])?;
+	source=AccessibleEntity ('as' alias=[Signal])?;
 	
 SignalMode:
 	'event' | 'flow';
 
 DataType:
-	({DataTypeCompound} type=[DataTypeCompoundDeclaration]) | 
-	({DataTypeBase} type=DataTypeBase);
+	base=DataTypeBase | compound=[DataTypeCompound];
 
 DataTypeBase:
 	'void' | 'symbol' | 'number' | 'text' | 'time' | 'reference';
 
-DataTypeCompoundDeclaration:
+DataTypeCompound:
 	'structure' name=ID ':'
 	(fields+=DataTypeCompoundField)*;
 
@@ -139,7 +138,7 @@ XOtherOperatorExpression returns XExpression:
 	XAdditiveExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOther) rightOperand=XAdditiveExpression)*;
 
 OpOther:
-	  '~' ;
+	  '<>' | '?:' ; //String join and groovy elvis operator for null checking
 
 XAdditiveExpression returns XExpression:
 	XMultiplicativeExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAdd) rightOperand=XMultiplicativeExpression)*;

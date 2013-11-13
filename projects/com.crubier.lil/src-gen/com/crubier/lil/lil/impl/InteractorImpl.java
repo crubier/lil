@@ -3,10 +3,10 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.BehaviorDeclaration;
-import com.crubier.lil.lil.EntityDeclaration;
-import com.crubier.lil.lil.InteractorDeclaration;
+import com.crubier.lil.lil.Entity;
+import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilPackage;
-import com.crubier.lil.lil.SignalDeclaration;
+import com.crubier.lil.lil.Signal;
 
 import java.util.Collection;
 
@@ -26,21 +26,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Interactor Declaration</b></em>'.
+ * An implementation of the model object '<em><b>Interactor</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.InteractorDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.InteractorDeclarationImpl#getEntities <em>Entities</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.InteractorDeclarationImpl#getSignals <em>Signals</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.InteractorDeclarationImpl#getBehaviors <em>Behaviors</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.InteractorImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.InteractorImpl#getEntities <em>Entities</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.InteractorImpl#getSignals <em>Signals</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.InteractorImpl#getBehaviors <em>Behaviors</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container implements InteractorDeclaration
+public class InteractorImpl extends MinimalEObjectImpl.Container implements Interactor
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -70,7 +70,7 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
    * @generated
    * @ordered
    */
-  protected EList<EntityDeclaration> entities;
+  protected EList<Entity> entities;
 
   /**
    * The cached value of the '{@link #getSignals() <em>Signals</em>}' containment reference list.
@@ -80,7 +80,7 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
    * @generated
    * @ordered
    */
-  protected EList<SignalDeclaration> signals;
+  protected EList<Signal> signals;
 
   /**
    * The cached value of the '{@link #getBehaviors() <em>Behaviors</em>}' containment reference list.
@@ -97,7 +97,7 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InteractorDeclarationImpl()
+  protected InteractorImpl()
   {
     super();
   }
@@ -110,7 +110,7 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return LilPackage.Literals.INTERACTOR_DECLARATION;
+    return LilPackage.Literals.INTERACTOR;
   }
 
   /**
@@ -133,7 +133,7 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.INTERACTOR_DECLARATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.INTERACTOR__NAME, oldName, name));
   }
 
   /**
@@ -141,11 +141,11 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EntityDeclaration> getEntities()
+  public EList<Entity> getEntities()
   {
     if (entities == null)
     {
-      entities = new EObjectContainmentEList<EntityDeclaration>(EntityDeclaration.class, this, LilPackage.INTERACTOR_DECLARATION__ENTITIES);
+      entities = new EObjectContainmentEList<Entity>(Entity.class, this, LilPackage.INTERACTOR__ENTITIES);
     }
     return entities;
   }
@@ -155,11 +155,11 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<SignalDeclaration> getSignals()
+  public EList<Signal> getSignals()
   {
     if (signals == null)
     {
-      signals = new EObjectContainmentEList<SignalDeclaration>(SignalDeclaration.class, this, LilPackage.INTERACTOR_DECLARATION__SIGNALS);
+      signals = new EObjectContainmentEList<Signal>(Signal.class, this, LilPackage.INTERACTOR__SIGNALS);
     }
     return signals;
   }
@@ -173,7 +173,7 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     if (behaviors == null)
     {
-      behaviors = new EObjectContainmentEList<BehaviorDeclaration>(BehaviorDeclaration.class, this, LilPackage.INTERACTOR_DECLARATION__BEHAVIORS);
+      behaviors = new EObjectContainmentEList<BehaviorDeclaration>(BehaviorDeclaration.class, this, LilPackage.INTERACTOR__BEHAVIORS);
     }
     return behaviors;
   }
@@ -188,11 +188,11 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_DECLARATION__ENTITIES:
+      case LilPackage.INTERACTOR__ENTITIES:
         return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
-      case LilPackage.INTERACTOR_DECLARATION__SIGNALS:
+      case LilPackage.INTERACTOR__SIGNALS:
         return ((InternalEList<?>)getSignals()).basicRemove(otherEnd, msgs);
-      case LilPackage.INTERACTOR_DECLARATION__BEHAVIORS:
+      case LilPackage.INTERACTOR__BEHAVIORS:
         return ((InternalEList<?>)getBehaviors()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -208,13 +208,13 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_DECLARATION__NAME:
+      case LilPackage.INTERACTOR__NAME:
         return getName();
-      case LilPackage.INTERACTOR_DECLARATION__ENTITIES:
+      case LilPackage.INTERACTOR__ENTITIES:
         return getEntities();
-      case LilPackage.INTERACTOR_DECLARATION__SIGNALS:
+      case LilPackage.INTERACTOR__SIGNALS:
         return getSignals();
-      case LilPackage.INTERACTOR_DECLARATION__BEHAVIORS:
+      case LilPackage.INTERACTOR__BEHAVIORS:
         return getBehaviors();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -231,18 +231,18 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_DECLARATION__NAME:
+      case LilPackage.INTERACTOR__NAME:
         setName((String)newValue);
         return;
-      case LilPackage.INTERACTOR_DECLARATION__ENTITIES:
+      case LilPackage.INTERACTOR__ENTITIES:
         getEntities().clear();
-        getEntities().addAll((Collection<? extends EntityDeclaration>)newValue);
+        getEntities().addAll((Collection<? extends Entity>)newValue);
         return;
-      case LilPackage.INTERACTOR_DECLARATION__SIGNALS:
+      case LilPackage.INTERACTOR__SIGNALS:
         getSignals().clear();
-        getSignals().addAll((Collection<? extends SignalDeclaration>)newValue);
+        getSignals().addAll((Collection<? extends Signal>)newValue);
         return;
-      case LilPackage.INTERACTOR_DECLARATION__BEHAVIORS:
+      case LilPackage.INTERACTOR__BEHAVIORS:
         getBehaviors().clear();
         getBehaviors().addAll((Collection<? extends BehaviorDeclaration>)newValue);
         return;
@@ -260,16 +260,16 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_DECLARATION__NAME:
+      case LilPackage.INTERACTOR__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case LilPackage.INTERACTOR_DECLARATION__ENTITIES:
+      case LilPackage.INTERACTOR__ENTITIES:
         getEntities().clear();
         return;
-      case LilPackage.INTERACTOR_DECLARATION__SIGNALS:
+      case LilPackage.INTERACTOR__SIGNALS:
         getSignals().clear();
         return;
-      case LilPackage.INTERACTOR_DECLARATION__BEHAVIORS:
+      case LilPackage.INTERACTOR__BEHAVIORS:
         getBehaviors().clear();
         return;
     }
@@ -286,13 +286,13 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_DECLARATION__NAME:
+      case LilPackage.INTERACTOR__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LilPackage.INTERACTOR_DECLARATION__ENTITIES:
+      case LilPackage.INTERACTOR__ENTITIES:
         return entities != null && !entities.isEmpty();
-      case LilPackage.INTERACTOR_DECLARATION__SIGNALS:
+      case LilPackage.INTERACTOR__SIGNALS:
         return signals != null && !signals.isEmpty();
-      case LilPackage.INTERACTOR_DECLARATION__BEHAVIORS:
+      case LilPackage.INTERACTOR__BEHAVIORS:
         return behaviors != null && !behaviors.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -315,4 +315,4 @@ public class InteractorDeclarationImpl extends MinimalEObjectImpl.Container impl
     return result.toString();
   }
 
-} //InteractorDeclarationImpl
+} //InteractorImpl

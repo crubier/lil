@@ -58,12 +58,12 @@ public interface SignalAlias extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Alias</em>' reference.
-   * @see #setAlias(SignalDeclaration)
+   * @see #setAlias(Signal)
    * @see com.crubier.lil.lil.LilPackage#getSignalAlias_Alias()
    * @model
    * @generated
    */
-  SignalDeclaration getAlias();
+  Signal getAlias();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.SignalAlias#getAlias <em>Alias</em>}' reference.
@@ -73,6 +73,6 @@ public interface SignalAlias extends EObject
    * @see #getAlias()
    * @generated
    */
-  void setAlias(SignalDeclaration value);
+  void setAlias(Signal value);
 
 } // SignalAlias
