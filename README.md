@@ -118,6 +118,9 @@ Once you are ready to install the **lil** framework into (framework_path), do th
 
 # Some interesting links
 
-http://www.infoq.com/presentations/S4-Declarative-DSL-UI
-http://www.openxava.org
+- http://www.infoq.com/presentations/S4-Declarative-DSL-UI
+
+- http://www.openxava.org
+
+- http://statecharts.org
 
