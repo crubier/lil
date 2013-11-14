@@ -7,10 +7,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
 import com.crubier.lil.lil.Interactor
-import org.eclipse.xtext.parsetree.reconstr.Serializer
-import org.eclipse.xtext.naming.IQualifiedNameProvider
-import org.eclipse.xtext.xbase.compiler.TypeReferenceSerializer
 import com.google.inject.Inject
+import org.eclipse.xtext.serializer.ISerializer
 
 /**
  * Generates code from your model files on save.
@@ -19,21 +17,15 @@ import com.google.inject.Inject
  */
 class LilGeneratorFlattenedLil implements IGenerator {
 	
-//	@Inject extension Serializer serializer;
-	
-	 @Inject extension Serializer
-	
-	
-	
-//	Injector injector = Guice.createInjector(new com.crubier.lil.LilRuntimeModule());  
-//	Serializer serializer = injector.getInstance(Serializer);  
+	@Inject extension ISerializer;
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+	
 		println("generate flattened lil code");
 		
 		for(e : resource.allContents.toIterable.filter(typeof(Interactor))) {
 			
-			fsa.generateFile("flattenedLil/"+e.name+".c",serialize(e))
+			fsa.generateFile("flat/"+e.name+".lil",serialize(e))
 		}
 		
 //		fsa.generateFile('gen.java', 'test :\n' + 

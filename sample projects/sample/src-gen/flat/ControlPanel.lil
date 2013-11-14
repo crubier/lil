@@ -1,12 +1,4 @@
-structure person :
-	name : text
-	surname : text
-	birthdate : text
-	sex : symbol
-	
-interactor Gauge :
-	user : actor
-	val : number flow from parent to user
+
 	
 	
 interactor ControlPanel :
@@ -29,9 +21,3 @@ interactor ControlPanel :
 	on init : 	always current = (if(1=="XorY") 1 else 2)
 				set x = 5
 	on increment : set val to theGauge = switch (7) case +1:false case 2:true default : false
-	
-	
-	
-	
-	
-	

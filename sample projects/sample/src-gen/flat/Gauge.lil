@@ -1,0 +1,5 @@
+
+	
+interactor Gauge :
+	user : actor
+	val : number flow from parent to user

@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
-import org.eclipse.xtext.parsetree.reconstr.Serializer;
+import org.eclipse.xtext.serializer.ISerializer;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
@@ -25,7 +25,7 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 public class LilGeneratorFlattenedLil implements IGenerator {
   @Inject
   @Extension
-  private Serializer _serializer;
+  private ISerializer _iSerializer;
   
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
     InputOutput.<String>println("generate flattened lil code");
@@ -34,9 +34,9 @@ public class LilGeneratorFlattenedLil implements IGenerator {
     Iterable<Interactor> _filter = Iterables.<Interactor>filter(_iterable, Interactor.class);
     for (final Interactor e : _filter) {
       String _name = e.getName();
-      String _plus = ("flattenedLil/" + _name);
-      String _plus_1 = (_plus + ".c");
-      String _serialize = this._serializer.serialize(e);
+      String _plus = ("flat/" + _name);
+      String _plus_1 = (_plus + ".lil");
+      String _serialize = this._iSerializer.serialize(e);
       fsa.generateFile(_plus_1, _serialize);
     }
   }
