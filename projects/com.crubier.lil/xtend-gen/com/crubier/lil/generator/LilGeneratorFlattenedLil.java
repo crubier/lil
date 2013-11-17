@@ -17,8 +17,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
@@ -29,7 +27,6 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -44,22 +41,6 @@ public class LilGeneratorFlattenedLil implements IGenerator {
   
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
     InputOutput.<String>println("generate flattened lil code");
-    TreeIterator<EObject> _allContents = resource.getAllContents();
-    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
-    Iterable<Interactor> _filter = Iterables.<Interactor>filter(_iterable, Interactor.class);
-    for (final Interactor e : _filter) {
-      {
-        final Component root = LilFactory.eINSTANCE.createComponent();
-        root.setInteractor(e);
-        root.setName("main");
-        String _name = e.getName();
-        String _plus = ("flat/" + _name);
-        String _plus_1 = (_plus + ".lil");
-        Interactor _flatten = this.flatten(root);
-        String _serialize = this._iSerializer.serialize(_flatten);
-        fsa.generateFile(_plus_1, _serialize);
-      }
-    }
   }
   
   /**

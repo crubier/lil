@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.crubier.lil.lil.Signal#getName <em>Name</em>}</li>
  *   <li>{@link com.crubier.lil.lil.Signal#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Signal#getDefinitionSet <em>Definition Set</em>}</li>
  *   <li>{@link com.crubier.lil.lil.Signal#getMode <em>Mode</em>}</li>
  *   <li>{@link com.crubier.lil.lil.Signal#getSource <em>Source</em>}</li>
  *   <li>{@link com.crubier.lil.lil.Signal#getDestinations <em>Destinations</em>}</li>
@@ -79,6 +80,32 @@ public interface Signal extends EObject
    * @generated
    */
   void setType(DataType value);
+
+  /**
+   * Returns the value of the '<em><b>Definition Set</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Definition Set</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Definition Set</em>' containment reference.
+   * @see #setDefinitionSet(DefinitionSet)
+   * @see com.crubier.lil.lil.LilPackage#getSignal_DefinitionSet()
+   * @model containment="true"
+   * @generated
+   */
+  DefinitionSet getDefinitionSet();
+
+  /**
+   * Sets the value of the '{@link com.crubier.lil.lil.Signal#getDefinitionSet <em>Definition Set</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Definition Set</em>' containment reference.
+   * @see #getDefinitionSet()
+   * @generated
+   */
+  void setDefinitionSet(DefinitionSet value);
 
   /**
    * Returns the value of the '<em><b>Mode</b></em>' attribute.

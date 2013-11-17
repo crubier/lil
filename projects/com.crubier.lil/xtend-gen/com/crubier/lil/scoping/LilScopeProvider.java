@@ -5,11 +5,16 @@ package com.crubier.lil.scoping;
 
 import com.crubier.lil.lil.AccessibleEntity;
 import com.crubier.lil.lil.Component;
+import com.crubier.lil.lil.DefinitionSet;
 import com.crubier.lil.lil.Entity;
 import com.crubier.lil.lil.Interactor;
+import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
 import com.crubier.lil.lil.SignalEmission;
+import com.crubier.lil.lil.XEnumElement;
+import com.crubier.lil.lil.XEnumLiteral;
 import com.google.common.base.Objects;
+import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -26,35 +31,60 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 @SuppressWarnings("all")
 public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
   public IScope scope_SignalEmission_instance(final SignalEmission flowemission, final EReference ref) {
-    IScope _xifexpression = null;
     SignalAlias _destination = flowemission.getDestination();
     boolean _equals = Objects.equal(_destination, null);
     if (_equals) {
-      IScope _xblockexpression = null;
-      {
-        EObject temp = flowemission;
-        boolean _not = (!(temp instanceof Interactor));
-        boolean _while = _not;
-        while (_while) {
-          EObject _eContainer = temp.eContainer();
-          temp = _eContainer;
-          boolean _not_1 = (!(temp instanceof Interactor));
-          _while = _not_1;
-        }
-        EList<EObject> _eContents = temp.eContents();
-        IScope _scopeFor = Scopes.scopeFor(_eContents);
-        _xblockexpression = (_scopeFor);
+      EObject temp = flowemission;
+      boolean _not = (!(temp instanceof Interactor));
+      boolean _while = _not;
+      while (_while) {
+        EObject _eContainer = temp.eContainer();
+        temp = _eContainer;
+        boolean _not_1 = (!(temp instanceof Interactor));
+        _while = _not_1;
       }
-      _xifexpression = _xblockexpression;
+      EList<EObject> _eContents = temp.eContents();
+      return Scopes.scopeFor(_eContents);
     } else {
       SignalAlias _destination_1 = flowemission.getDestination();
       AccessibleEntity _source = _destination_1.getSource();
       Entity _specific = _source.getSpecific();
       Interactor _interactor = ((Component) _specific).getInteractor();
-      EList<EObject> _eContents = _interactor.eContents();
-      IScope _scopeFor = Scopes.scopeFor(_eContents);
-      _xifexpression = _scopeFor;
+      EList<EObject> _eContents_1 = _interactor.eContents();
+      return Scopes.scopeFor(_eContents_1);
     }
-    return _xifexpression;
+  }
+  
+  public IScope scope_XEnumLiteral_element(final XEnumLiteral literal, final EReference ref) {
+    EObject object = literal;
+    boolean _not = (!(object instanceof Interactor));
+    boolean _while = _not;
+    while (_while) {
+      EObject _eContainer = object.eContainer();
+      object = _eContainer;
+      boolean _not_1 = (!(object instanceof Interactor));
+      _while = _not_1;
+    }
+    HashSet<XEnumElement> _hashSet = new HashSet<XEnumElement>();
+    final HashSet<XEnumElement> elements = _hashSet;
+    final Interactor interactor = ((Interactor) object);
+    EList<Signal> _signals = interactor.getSignals();
+    for (final Signal s : _signals) {
+      DefinitionSet _definitionSet = null;
+      if (s!=null) {
+        _definitionSet=s.getDefinitionSet();
+      }
+      EList<XEnumElement> _elements = null;
+      if (_definitionSet!=null) {
+        _elements=_definitionSet.getElements();
+      }
+      boolean _notEquals = (!Objects.equal(_elements, null));
+      if (_notEquals) {
+        DefinitionSet _definitionSet_1 = s.getDefinitionSet();
+        EList<XEnumElement> _elements_1 = _definitionSet_1.getElements();
+        elements.addAll(_elements_1);
+      }
+    }
+    return Scopes.scopeFor(elements);
   }
 }

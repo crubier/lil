@@ -74,6 +74,7 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.SIGNAL_RECEPTION: return createSignalReception();
       case LilPackage.SIGNAL_EMISSION: return createSignalEmission();
       case LilPackage.SIGNAL: return createSignal();
+      case LilPackage.DEFINITION_SET: return createDefinitionSet();
       case LilPackage.SIGNAL_ALIAS: return createSignalAlias();
       case LilPackage.DATA_TYPE: return createDataType();
       case LilPackage.DATA_TYPE_COMPOUND: return createDataTypeCompound();
@@ -91,8 +92,11 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.XSET_LITERAL: return createXSetLiteral();
       case LilPackage.XLIST_LITERAL: return createXListLiteral();
       case LilPackage.XCASE_PART: return createXCasePart();
+      case LilPackage.XENUM_ELEMENT: return createXEnumElement();
       case LilPackage.XBINARY_OPERATION: return createXBinaryOperation();
       case LilPackage.XUNARY_OPERATION: return createXUnaryOperation();
+      case LilPackage.XENUM_LITERAL: return createXEnumLiteral();
+      case LilPackage.XSIGNAL_LITERAL: return createXSignalLiteral();
       case LilPackage.XIF_EXPRESSION: return createXIfExpression();
       case LilPackage.XSWITCH_EXPRESSION: return createXSwitchExpression();
       case LilPackage.XFOR_EACH_EXPRESSION: return createXForEachExpression();
@@ -214,6 +218,17 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     SignalImpl signal = new SignalImpl();
     return signal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DefinitionSet createDefinitionSet()
+  {
+    DefinitionSetImpl definitionSet = new DefinitionSetImpl();
+    return definitionSet;
   }
 
   /**
@@ -408,6 +423,17 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public XEnumElement createXEnumElement()
+  {
+    XEnumElementImpl xEnumElement = new XEnumElementImpl();
+    return xEnumElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XBinaryOperation createXBinaryOperation()
   {
     XBinaryOperationImpl xBinaryOperation = new XBinaryOperationImpl();
@@ -423,6 +449,28 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     XUnaryOperationImpl xUnaryOperation = new XUnaryOperationImpl();
     return xUnaryOperation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XEnumLiteral createXEnumLiteral()
+  {
+    XEnumLiteralImpl xEnumLiteral = new XEnumLiteralImpl();
+    return xEnumLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public XSignalLiteral createXSignalLiteral()
+  {
+    XSignalLiteralImpl xSignalLiteral = new XSignalLiteralImpl();
+    return xSignalLiteral;
   }
 
   /**

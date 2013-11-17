@@ -34,14 +34,14 @@ class LilGeneratorFlattenedLil implements IGenerator {
 	
 		println("generate flattened lil code");
 		
-		for(e : resource.allContents.toIterable.filter(typeof(Interactor))) {
-			
-			val root = LilFactory.eINSTANCE.createComponent
-			root.interactor = e
-			root.name = "main"
-			
-			fsa.generateFile("flat/"+e.name+".lil",serialize(flatten(root)))
-		}
+//		for(e : resource.allContents.toIterable.filter(typeof(Interactor))) {
+//			
+//			val root = LilFactory.eINSTANCE.createComponent
+//			root.interactor = e
+//			root.name = "main"
+//			
+//			fsa.generateFile("flat/"+e.name+".lil",serialize(flatten(root)))
+//		}
 
 	}
 	

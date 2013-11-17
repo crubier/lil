@@ -439,22 +439,28 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeDataTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Assignment cModeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cModeSignalModeParserRuleCall_3_0 = (RuleCall)cModeAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cFromKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cSourceAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cSourceSignalAliasParserRuleCall_4_1_0 = (RuleCall)cSourceAssignment_4_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cInKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cDefinitionSetAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cDefinitionSetDefinitionSetParserRuleCall_3_1_0 = (RuleCall)cDefinitionSetAssignment_3_1.eContents().get(0);
+		private final Assignment cModeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cModeSignalModeParserRuleCall_4_0 = (RuleCall)cModeAssignment_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cToKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cDestinationsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cDestinationsSignalAliasParserRuleCall_5_1_0 = (RuleCall)cDestinationsAssignment_5_1.eContents().get(0);
+		private final Keyword cFromKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cSourceAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cSourceSignalAliasParserRuleCall_5_1_0 = (RuleCall)cSourceAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cToKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cDestinationsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cDestinationsSignalAliasParserRuleCall_6_1_0 = (RuleCall)cDestinationsAssignment_6_1.eContents().get(0);
 		
 		//Signal:
-		//	name=ID ":" type=DataType mode=SignalMode ("from" source=SignalAlias)? ("to" destinations+=SignalAlias)*;
+		//	name=ID ":" type=DataType ("in" definitionSet=DefinitionSet)? mode=SignalMode ("from" source=SignalAlias)? ("to"
+		//	destinations+=SignalAlias)*;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID ":" type=DataType mode=SignalMode ("from" source=SignalAlias)? ("to" destinations+=SignalAlias)*
+		//name=ID ":" type=DataType ("in" definitionSet=DefinitionSet)? mode=SignalMode ("from" source=SignalAlias)? ("to"
+		//destinations+=SignalAlias)*
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -472,35 +478,91 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//DataType
 		public RuleCall getTypeDataTypeParserRuleCall_2_0() { return cTypeDataTypeParserRuleCall_2_0; }
 
+		//("in" definitionSet=DefinitionSet)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"in"
+		public Keyword getInKeyword_3_0() { return cInKeyword_3_0; }
+
+		//definitionSet=DefinitionSet
+		public Assignment getDefinitionSetAssignment_3_1() { return cDefinitionSetAssignment_3_1; }
+
+		//DefinitionSet
+		public RuleCall getDefinitionSetDefinitionSetParserRuleCall_3_1_0() { return cDefinitionSetDefinitionSetParserRuleCall_3_1_0; }
+
 		//mode=SignalMode
-		public Assignment getModeAssignment_3() { return cModeAssignment_3; }
+		public Assignment getModeAssignment_4() { return cModeAssignment_4; }
 
 		//SignalMode
-		public RuleCall getModeSignalModeParserRuleCall_3_0() { return cModeSignalModeParserRuleCall_3_0; }
+		public RuleCall getModeSignalModeParserRuleCall_4_0() { return cModeSignalModeParserRuleCall_4_0; }
 
 		//("from" source=SignalAlias)?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//"from"
-		public Keyword getFromKeyword_4_0() { return cFromKeyword_4_0; }
-
-		//source=SignalAlias
-		public Assignment getSourceAssignment_4_1() { return cSourceAssignment_4_1; }
-
-		//SignalAlias
-		public RuleCall getSourceSignalAliasParserRuleCall_4_1_0() { return cSourceSignalAliasParserRuleCall_4_1_0; }
-
-		//("to" destinations+=SignalAlias)*
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"to"
-		public Keyword getToKeyword_5_0() { return cToKeyword_5_0; }
+		//"from"
+		public Keyword getFromKeyword_5_0() { return cFromKeyword_5_0; }
 
-		//destinations+=SignalAlias
-		public Assignment getDestinationsAssignment_5_1() { return cDestinationsAssignment_5_1; }
+		//source=SignalAlias
+		public Assignment getSourceAssignment_5_1() { return cSourceAssignment_5_1; }
 
 		//SignalAlias
-		public RuleCall getDestinationsSignalAliasParserRuleCall_5_1_0() { return cDestinationsSignalAliasParserRuleCall_5_1_0; }
+		public RuleCall getSourceSignalAliasParserRuleCall_5_1_0() { return cSourceSignalAliasParserRuleCall_5_1_0; }
+
+		//("to" destinations+=SignalAlias)*
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"to"
+		public Keyword getToKeyword_6_0() { return cToKeyword_6_0; }
+
+		//destinations+=SignalAlias
+		public Assignment getDestinationsAssignment_6_1() { return cDestinationsAssignment_6_1; }
+
+		//SignalAlias
+		public RuleCall getDestinationsSignalAliasParserRuleCall_6_1_0() { return cDestinationsSignalAliasParserRuleCall_6_1_0; }
+	}
+
+	public class DefinitionSetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DefinitionSet");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementsXEnumElementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cElementsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cElementsXEnumElementParserRuleCall_2_1_0 = (RuleCall)cElementsAssignment_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//DefinitionSet:
+		//	"{" elements+=XEnumElement ("," elements+=XEnumElement)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"{" elements+=XEnumElement ("," elements+=XEnumElement)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+
+		//elements+=XEnumElement
+		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+
+		//XEnumElement
+		public RuleCall getElementsXEnumElementParserRuleCall_1_0() { return cElementsXEnumElementParserRuleCall_1_0; }
+
+		//("," elements+=XEnumElement)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//elements+=XEnumElement
+		public Assignment getElementsAssignment_2_1() { return cElementsAssignment_2_1; }
+
+		//XEnumElement
+		public RuleCall getElementsXEnumElementParserRuleCall_2_1_0() { return cElementsXEnumElementParserRuleCall_2_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
 	public class SignalAliasElements extends AbstractParserRuleElementFinder {
@@ -1570,12 +1632,25 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cXNumberLiteralParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cXNullLiteralParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cXStringLiteralParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Action cXEnumLiteralAction_5_0 = (Action)cGroup_5.eContents().get(0);
+		private final Keyword cNumberSignKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cElementAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final CrossReference cElementXEnumElementCrossReference_5_2_0 = (CrossReference)cElementAssignment_5_2.eContents().get(0);
+		private final RuleCall cElementXEnumElementIDTerminalRuleCall_5_2_0_1 = (RuleCall)cElementXEnumElementCrossReference_5_2_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
+		private final Action cXSignalLiteralAction_6_0 = (Action)cGroup_6.eContents().get(0);
+		private final Assignment cSignalAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final CrossReference cSignalSignalCrossReference_6_1_0 = (CrossReference)cSignalAssignment_6_1.eContents().get(0);
+		private final RuleCall cSignalSignalIDTerminalRuleCall_6_1_0_1 = (RuleCall)cSignalSignalCrossReference_6_1_0.eContents().get(1);
 		
 		//XLiteral returns XExpression:
-		//	XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral;
+		//	XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral | {XEnumLiteral} "#"
+		//	element=[XEnumElement] | {XSignalLiteral} signal=[Signal];
 		public ParserRule getRule() { return rule; }
 
-		//XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral
+		//XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral | {XEnumLiteral} "#"
+		//element=[XEnumElement] | {XSignalLiteral} signal=[Signal]
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//XCollectionLiteral
@@ -1592,6 +1667,39 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 		//XStringLiteral
 		public RuleCall getXStringLiteralParserRuleCall_4() { return cXStringLiteralParserRuleCall_4; }
+
+		//{XEnumLiteral} "#" element=[XEnumElement]
+		public Group getGroup_5() { return cGroup_5; }
+
+		//{XEnumLiteral}
+		public Action getXEnumLiteralAction_5_0() { return cXEnumLiteralAction_5_0; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_5_1() { return cNumberSignKeyword_5_1; }
+
+		//element=[XEnumElement]
+		public Assignment getElementAssignment_5_2() { return cElementAssignment_5_2; }
+
+		//[XEnumElement]
+		public CrossReference getElementXEnumElementCrossReference_5_2_0() { return cElementXEnumElementCrossReference_5_2_0; }
+
+		//ID
+		public RuleCall getElementXEnumElementIDTerminalRuleCall_5_2_0_1() { return cElementXEnumElementIDTerminalRuleCall_5_2_0_1; }
+
+		//{XSignalLiteral} signal=[Signal]
+		public Group getGroup_6() { return cGroup_6; }
+
+		//{XSignalLiteral}
+		public Action getXSignalLiteralAction_6_0() { return cXSignalLiteralAction_6_0; }
+
+		//signal=[Signal]
+		public Assignment getSignalAssignment_6_1() { return cSignalAssignment_6_1; }
+
+		//[Signal]
+		public CrossReference getSignalSignalCrossReference_6_1_0() { return cSignalSignalCrossReference_6_1_0; }
+
+		//ID
+		public RuleCall getSignalSignalIDTerminalRuleCall_6_1_0_1() { return cSignalSignalIDTerminalRuleCall_6_1_0_1; }
 	}
 
 	public class XCollectionLiteralElements extends AbstractParserRuleElementFinder {
@@ -1618,7 +1726,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XSetLiteral");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cXSetLiteralAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cCommercialAtLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cElementsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
 		private final RuleCall cElementsXExpressionParserRuleCall_2_0_0 = (RuleCall)cElementsAssignment_2_0.eContents().get(0);
@@ -1629,17 +1737,17 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//XSetLiteral:
-		//	{XSetLiteral} "@{" (elements+=XExpression ("," elements+=XExpression)*)? "}";
+		//	{XSetLiteral} "{" (elements+=XExpression ("," elements+=XExpression)*)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{XSetLiteral} "@{" (elements+=XExpression ("," elements+=XExpression)*)? "}"
+		//{XSetLiteral} "{" (elements+=XExpression ("," elements+=XExpression)*)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{XSetLiteral}
 		public Action getXSetLiteralAction_0() { return cXSetLiteralAction_0; }
 
-		//"@{"
-		public Keyword getCommercialAtLeftCurlyBracketKeyword_1() { return cCommercialAtLeftCurlyBracketKeyword_1; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
 		//(elements+=XExpression ("," elements+=XExpression)*)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -1670,7 +1778,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XListLiteral");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cXListLiteralAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cCommercialAtLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cElementsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
 		private final RuleCall cElementsXExpressionParserRuleCall_2_0_0 = (RuleCall)cElementsAssignment_2_0.eContents().get(0);
@@ -1681,17 +1789,17 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//XListLiteral:
-		//	{XListLiteral} "@[" (elements+=XExpression ("," elements+=XExpression)*)? "]";
+		//	{XListLiteral} "[" (elements+=XExpression ("," elements+=XExpression)*)? "]";
 		public ParserRule getRule() { return rule; }
 
-		//{XListLiteral} "@[" (elements+=XExpression ("," elements+=XExpression)*)? "]"
+		//{XListLiteral} "[" (elements+=XExpression ("," elements+=XExpression)*)? "]"
 		public Group getGroup() { return cGroup; }
 
 		//{XListLiteral}
 		public Action getXListLiteralAction_0() { return cXListLiteralAction_0; }
 
-		//"@["
-		public Keyword getCommercialAtLeftSquareBracketKeyword_1() { return cCommercialAtLeftSquareBracketKeyword_1; }
+		//"["
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 
 		//(elements+=XExpression ("," elements+=XExpression)*)?
 		public Group getGroup_2() { return cGroup_2; }
@@ -1820,10 +1928,10 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefaultXExpressionParserRuleCall_6_2_0 = (RuleCall)cDefaultAssignment_6_2.eContents().get(0);
 		
 		//XSwitchExpression returns XExpression:
-		//	{XSwitchExpression} "switch" "(" switch=XExpression => ")" cases+=XCasePart+ ("default" ":" default=XExpression);
+		//	{XSwitchExpression} "switch" "(" switch=XExpression => ")" => cases+=XCasePart+ ("default" ":" default=XExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//{XSwitchExpression} "switch" "(" switch=XExpression => ")" cases+=XCasePart+ ("default" ":" default=XExpression)
+		//{XSwitchExpression} "switch" "(" switch=XExpression => ")" => cases+=XCasePart+ ("default" ":" default=XExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//{XSwitchExpression}
@@ -1844,13 +1952,13 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//=> ")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 
-		//cases+=XCasePart+
+		//=> cases+=XCasePart+
 		public Assignment getCasesAssignment_5() { return cCasesAssignment_5; }
 
 		//XCasePart
 		public RuleCall getCasesXCasePartParserRuleCall_5_0() { return cCasesXCasePartParserRuleCall_5_0; }
 
-		//=> "default" ":" default=XExpression
+		//(=> "default" ":" default=XExpression)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//=> "default"
@@ -2018,47 +2126,48 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMathAtanhKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
 		private final Keyword cMathAtan2Keyword_7 = (Keyword)cAlternatives.eContents().get(7);
 		private final Keyword cMathCeilKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
-		private final Keyword cMathCosKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
-		private final Keyword cMathCoshKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
-		private final Keyword cMathExpKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
-		private final Keyword cMathFloorKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
-		private final Keyword cMathFroundKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
-		private final Keyword cMathHypotKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
-		private final Keyword cMathLogKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
-		private final Keyword cMathLog10Keyword_16 = (Keyword)cAlternatives.eContents().get(16);
-		private final Keyword cMathLog2Keyword_17 = (Keyword)cAlternatives.eContents().get(17);
-		private final Keyword cMathMaxKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
-		private final Keyword cMathMinKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
-		private final Keyword cMathPowKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
-		private final Keyword cMathRandomKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
-		private final Keyword cMathRoundKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
-		private final Keyword cMathSignKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
-		private final Keyword cMathSinKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
-		private final Keyword cMathSinhKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
-		private final Keyword cMathSqrtKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
-		private final Keyword cMathTanKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
-		private final Keyword cMathTanhKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
-		private final Keyword cMathTruncKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
-		private final Keyword cSetOrderbyKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
-		private final Keyword cSetAddKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
-		private final Keyword cSetFindKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
-		private final Keyword cSetChangeKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
-		private final Keyword cSetRemoveKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cMathClipKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cMathCosKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cMathCoshKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cMathExpKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cMathFloorKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cMathFroundKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		private final Keyword cMathHypotKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
+		private final Keyword cMathLogKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
+		private final Keyword cMathLog10Keyword_17 = (Keyword)cAlternatives.eContents().get(17);
+		private final Keyword cMathLog2Keyword_18 = (Keyword)cAlternatives.eContents().get(18);
+		private final Keyword cMathMaxKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
+		private final Keyword cMathMinKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cMathPowKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
+		private final Keyword cMathRandomKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
+		private final Keyword cMathRoundKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
+		private final Keyword cMathSignKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
+		private final Keyword cMathSinKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
+		private final Keyword cMathSinhKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
+		private final Keyword cMathSqrtKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
+		private final Keyword cMathTanKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
+		private final Keyword cMathTanhKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
+		private final Keyword cMathTruncKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
+		private final Keyword cSetOrderbyKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
+		private final Keyword cSetAddKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
+		private final Keyword cSetFindKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
+		private final Keyword cSetChangeKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cSetRemoveKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
 		
 		////Same functions as c math.*
 		//BuiltInFunction:
 		//	"Math.abs" | "Math.acos" | "Math.acosh" | "Math.asin" | "Math.asinh" | "Math.atan" | "Math.atanh" | "Math.atan2" |
-		//	"Math.ceil" | "Math.cos" | "Math.cosh" | "Math.exp" | "Math.floor" | "Math.fround" | "Math.hypot" | "Math.log" |
-		//	"Math.log10" | "Math.log2" | "Math.max" | "Math.min" | "Math.pow" | "Math.random" | "Math.round" | "Math.sign" |
-		//	"Math.sin" | "Math.sinh" | "Math.sqrt" | "Math.tan" | "Math.tanh" | "Math.trunc" | "Set.orderby" | "Set.add" |
-		//	"Set.find" | "Set.change" | "Set.remove";
+		//	"Math.ceil" | "Math.clip" | "Math.cos" | "Math.cosh" | "Math.exp" | "Math.floor" | "Math.fround" | "Math.hypot" |
+		//	"Math.log" | "Math.log10" | "Math.log2" | "Math.max" | "Math.min" | "Math.pow" | "Math.random" | "Math.round" |
+		//	"Math.sign" | "Math.sin" | "Math.sinh" | "Math.sqrt" | "Math.tan" | "Math.tanh" | "Math.trunc" | "Set.orderby" |
+		//	"Set.add" | "Set.find" | "Set.change" | "Set.remove";
 		public ParserRule getRule() { return rule; }
 
 		//"Math.abs" | "Math.acos" | "Math.acosh" | "Math.asin" | "Math.asinh" | "Math.atan" | "Math.atanh" | "Math.atan2" |
-		//"Math.ceil" | "Math.cos" | "Math.cosh" | "Math.exp" | "Math.floor" | "Math.fround" | "Math.hypot" | "Math.log" |
-		//"Math.log10" | "Math.log2" | "Math.max" | "Math.min" | "Math.pow" | "Math.random" | "Math.round" | "Math.sign" |
-		//"Math.sin" | "Math.sinh" | "Math.sqrt" | "Math.tan" | "Math.tanh" | "Math.trunc" | "Set.orderby" | "Set.add" |
-		//"Set.find" | "Set.change" | "Set.remove"
+		//"Math.ceil" | "Math.clip" | "Math.cos" | "Math.cosh" | "Math.exp" | "Math.floor" | "Math.fround" | "Math.hypot" |
+		//"Math.log" | "Math.log10" | "Math.log2" | "Math.max" | "Math.min" | "Math.pow" | "Math.random" | "Math.round" |
+		//"Math.sign" | "Math.sin" | "Math.sinh" | "Math.sqrt" | "Math.tan" | "Math.tanh" | "Math.trunc" | "Set.orderby" |
+		//"Set.add" | "Set.find" | "Set.change" | "Set.remove"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"Math.abs"
@@ -2088,83 +2197,86 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//"Math.ceil"
 		public Keyword getMathCeilKeyword_8() { return cMathCeilKeyword_8; }
 
+		//"Math.clip"
+		public Keyword getMathClipKeyword_9() { return cMathClipKeyword_9; }
+
 		//"Math.cos"
-		public Keyword getMathCosKeyword_9() { return cMathCosKeyword_9; }
+		public Keyword getMathCosKeyword_10() { return cMathCosKeyword_10; }
 
 		//"Math.cosh"
-		public Keyword getMathCoshKeyword_10() { return cMathCoshKeyword_10; }
+		public Keyword getMathCoshKeyword_11() { return cMathCoshKeyword_11; }
 
 		//"Math.exp"
-		public Keyword getMathExpKeyword_11() { return cMathExpKeyword_11; }
+		public Keyword getMathExpKeyword_12() { return cMathExpKeyword_12; }
 
 		//"Math.floor"
-		public Keyword getMathFloorKeyword_12() { return cMathFloorKeyword_12; }
+		public Keyword getMathFloorKeyword_13() { return cMathFloorKeyword_13; }
 
 		//"Math.fround"
-		public Keyword getMathFroundKeyword_13() { return cMathFroundKeyword_13; }
+		public Keyword getMathFroundKeyword_14() { return cMathFroundKeyword_14; }
 
 		//"Math.hypot"
-		public Keyword getMathHypotKeyword_14() { return cMathHypotKeyword_14; }
+		public Keyword getMathHypotKeyword_15() { return cMathHypotKeyword_15; }
 
 		//"Math.log"
-		public Keyword getMathLogKeyword_15() { return cMathLogKeyword_15; }
+		public Keyword getMathLogKeyword_16() { return cMathLogKeyword_16; }
 
 		//"Math.log10"
-		public Keyword getMathLog10Keyword_16() { return cMathLog10Keyword_16; }
+		public Keyword getMathLog10Keyword_17() { return cMathLog10Keyword_17; }
 
 		//"Math.log2"
-		public Keyword getMathLog2Keyword_17() { return cMathLog2Keyword_17; }
+		public Keyword getMathLog2Keyword_18() { return cMathLog2Keyword_18; }
 
 		//"Math.max"
-		public Keyword getMathMaxKeyword_18() { return cMathMaxKeyword_18; }
+		public Keyword getMathMaxKeyword_19() { return cMathMaxKeyword_19; }
 
 		//"Math.min"
-		public Keyword getMathMinKeyword_19() { return cMathMinKeyword_19; }
+		public Keyword getMathMinKeyword_20() { return cMathMinKeyword_20; }
 
 		//"Math.pow"
-		public Keyword getMathPowKeyword_20() { return cMathPowKeyword_20; }
+		public Keyword getMathPowKeyword_21() { return cMathPowKeyword_21; }
 
 		//"Math.random"
-		public Keyword getMathRandomKeyword_21() { return cMathRandomKeyword_21; }
+		public Keyword getMathRandomKeyword_22() { return cMathRandomKeyword_22; }
 
 		//"Math.round"
-		public Keyword getMathRoundKeyword_22() { return cMathRoundKeyword_22; }
+		public Keyword getMathRoundKeyword_23() { return cMathRoundKeyword_23; }
 
 		//"Math.sign"
-		public Keyword getMathSignKeyword_23() { return cMathSignKeyword_23; }
+		public Keyword getMathSignKeyword_24() { return cMathSignKeyword_24; }
 
 		//"Math.sin"
-		public Keyword getMathSinKeyword_24() { return cMathSinKeyword_24; }
+		public Keyword getMathSinKeyword_25() { return cMathSinKeyword_25; }
 
 		//"Math.sinh"
-		public Keyword getMathSinhKeyword_25() { return cMathSinhKeyword_25; }
+		public Keyword getMathSinhKeyword_26() { return cMathSinhKeyword_26; }
 
 		//"Math.sqrt"
-		public Keyword getMathSqrtKeyword_26() { return cMathSqrtKeyword_26; }
+		public Keyword getMathSqrtKeyword_27() { return cMathSqrtKeyword_27; }
 
 		//"Math.tan"
-		public Keyword getMathTanKeyword_27() { return cMathTanKeyword_27; }
+		public Keyword getMathTanKeyword_28() { return cMathTanKeyword_28; }
 
 		//"Math.tanh"
-		public Keyword getMathTanhKeyword_28() { return cMathTanhKeyword_28; }
+		public Keyword getMathTanhKeyword_29() { return cMathTanhKeyword_29; }
 
 		//"Math.trunc"
-		public Keyword getMathTruncKeyword_29() { return cMathTruncKeyword_29; }
+		public Keyword getMathTruncKeyword_30() { return cMathTruncKeyword_30; }
 
 		//"Set.orderby"
-		public Keyword getSetOrderbyKeyword_30() { return cSetOrderbyKeyword_30; }
+		public Keyword getSetOrderbyKeyword_31() { return cSetOrderbyKeyword_31; }
 
 		//"Set.add"
-		public Keyword getSetAddKeyword_31() { return cSetAddKeyword_31; }
+		public Keyword getSetAddKeyword_32() { return cSetAddKeyword_32; }
 
 		//"Set.find"
-		public Keyword getSetFindKeyword_32() { return cSetFindKeyword_32; }
+		public Keyword getSetFindKeyword_33() { return cSetFindKeyword_33; }
 
 		//"Set.change"
-		public Keyword getSetChangeKeyword_33() { return cSetChangeKeyword_33; }
+		public Keyword getSetChangeKeyword_34() { return cSetChangeKeyword_34; }
 
 		//"Set.remove"
-		public Keyword getSetRemoveKeyword_34() { return cSetRemoveKeyword_34; }
+		public Keyword getSetRemoveKeyword_35() { return cSetRemoveKeyword_35; }
 	}
 
 	public class XBooleanLiteralElements extends AbstractParserRuleElementFinder {
@@ -2270,6 +2382,34 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 	}
 
+	public class XEnumElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "XEnumElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cXEnumLiteralAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cNumberSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//XEnumElement:
+		//	{XEnumLiteral} "#" name=ID;
+		public ParserRule getRule() { return rule; }
+
+		//{XEnumLiteral} "#" name=ID
+		public Group getGroup() { return cGroup; }
+
+		//{XEnumLiteral}
+		public Action getXEnumLiteralAction_0() { return cXEnumLiteralAction_0; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_1() { return cNumberSignKeyword_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+	}
+
 	public class NUMBERElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2313,6 +2453,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	private SignalReceptionElements pSignalReception;
 	private SignalEmissionElements pSignalEmission;
 	private SignalElements pSignal;
+	private DefinitionSetElements pDefinitionSet;
 	private SignalAliasElements pSignalAlias;
 	private SignalModeElements pSignalMode;
 	private DataTypeElements pDataType;
@@ -2360,6 +2501,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	private XNullLiteralElements pXNullLiteral;
 	private XNumberLiteralElements pXNumberLiteral;
 	private XStringLiteralElements pXStringLiteral;
+	private XEnumElementElements pXEnumElement;
 	private NUMBERElements pNUMBER;
 	private TerminalRule tID;
 	private TerminalRule tINT;
@@ -2510,13 +2652,24 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Signal:
-	//	name=ID ":" type=DataType mode=SignalMode ("from" source=SignalAlias)? ("to" destinations+=SignalAlias)*;
+	//	name=ID ":" type=DataType ("in" definitionSet=DefinitionSet)? mode=SignalMode ("from" source=SignalAlias)? ("to"
+	//	destinations+=SignalAlias)*;
 	public SignalElements getSignalAccess() {
 		return (pSignal != null) ? pSignal : (pSignal = new SignalElements());
 	}
 	
 	public ParserRule getSignalRule() {
 		return getSignalAccess().getRule();
+	}
+
+	//DefinitionSet:
+	//	"{" elements+=XEnumElement ("," elements+=XEnumElement)* "}";
+	public DefinitionSetElements getDefinitionSetAccess() {
+		return (pDefinitionSet != null) ? pDefinitionSet : (pDefinitionSet = new DefinitionSetElements());
+	}
+	
+	public ParserRule getDefinitionSetRule() {
+		return getDefinitionSetAccess().getRule();
 	}
 
 	//SignalAlias:
@@ -2852,7 +3005,8 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XLiteral returns XExpression:
-	//	XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral;
+	//	XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral | {XEnumLiteral} "#"
+	//	element=[XEnumElement] | {XSignalLiteral} signal=[Signal];
 	public XLiteralElements getXLiteralAccess() {
 		return (pXLiteral != null) ? pXLiteral : (pXLiteral = new XLiteralElements());
 	}
@@ -2872,7 +3026,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XSetLiteral:
-	//	{XSetLiteral} "@{" (elements+=XExpression ("," elements+=XExpression)*)? "}";
+	//	{XSetLiteral} "{" (elements+=XExpression ("," elements+=XExpression)*)? "}";
 	public XSetLiteralElements getXSetLiteralAccess() {
 		return (pXSetLiteral != null) ? pXSetLiteral : (pXSetLiteral = new XSetLiteralElements());
 	}
@@ -2882,7 +3036,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XListLiteral:
-	//	{XListLiteral} "@[" (elements+=XExpression ("," elements+=XExpression)*)? "]";
+	//	{XListLiteral} "[" (elements+=XExpression ("," elements+=XExpression)*)? "]";
 	public XListLiteralElements getXListLiteralAccess() {
 		return (pXListLiteral != null) ? pXListLiteral : (pXListLiteral = new XListLiteralElements());
 	}
@@ -2912,7 +3066,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XSwitchExpression returns XExpression:
-	//	{XSwitchExpression} "switch" "(" switch=XExpression => ")" cases+=XCasePart+ ("default" ":" default=XExpression);
+	//	{XSwitchExpression} "switch" "(" switch=XExpression => ")" => cases+=XCasePart+ ("default" ":" default=XExpression)?;
 	public XSwitchExpressionElements getXSwitchExpressionAccess() {
 		return (pXSwitchExpression != null) ? pXSwitchExpression : (pXSwitchExpression = new XSwitchExpressionElements());
 	}
@@ -2954,10 +3108,10 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	////Same functions as c math.*
 	//BuiltInFunction:
 	//	"Math.abs" | "Math.acos" | "Math.acosh" | "Math.asin" | "Math.asinh" | "Math.atan" | "Math.atanh" | "Math.atan2" |
-	//	"Math.ceil" | "Math.cos" | "Math.cosh" | "Math.exp" | "Math.floor" | "Math.fround" | "Math.hypot" | "Math.log" |
-	//	"Math.log10" | "Math.log2" | "Math.max" | "Math.min" | "Math.pow" | "Math.random" | "Math.round" | "Math.sign" |
-	//	"Math.sin" | "Math.sinh" | "Math.sqrt" | "Math.tan" | "Math.tanh" | "Math.trunc" | "Set.orderby" | "Set.add" |
-	//	"Set.find" | "Set.change" | "Set.remove";
+	//	"Math.ceil" | "Math.clip" | "Math.cos" | "Math.cosh" | "Math.exp" | "Math.floor" | "Math.fround" | "Math.hypot" |
+	//	"Math.log" | "Math.log10" | "Math.log2" | "Math.max" | "Math.min" | "Math.pow" | "Math.random" | "Math.round" |
+	//	"Math.sign" | "Math.sin" | "Math.sinh" | "Math.sqrt" | "Math.tan" | "Math.tanh" | "Math.trunc" | "Set.orderby" |
+	//	"Set.add" | "Set.find" | "Set.change" | "Set.remove";
 	public BuiltInFunctionElements getBuiltInFunctionAccess() {
 		return (pBuiltInFunction != null) ? pBuiltInFunction : (pBuiltInFunction = new BuiltInFunctionElements());
 	}
@@ -3007,6 +3161,16 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getXStringLiteralRule() {
 		return getXStringLiteralAccess().getRule();
+	}
+
+	//XEnumElement:
+	//	{XEnumLiteral} "#" name=ID;
+	public XEnumElementElements getXEnumElementAccess() {
+		return (pXEnumElement != null) ? pXEnumElement : (pXEnumElement = new XEnumElementElements());
+	}
+	
+	public ParserRule getXEnumElementRule() {
+		return getXEnumElementAccess().getRule();
 	}
 
 	////QualifiedName:

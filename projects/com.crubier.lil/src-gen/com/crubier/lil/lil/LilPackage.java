@@ -436,13 +436,22 @@ public interface LilPackage extends EPackage
   int SIGNAL__TYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Definition Set</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIGNAL__DEFINITION_SET = 2;
+
+  /**
    * The feature id for the '<em><b>Mode</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIGNAL__MODE = 2;
+  int SIGNAL__MODE = 3;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -451,7 +460,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIGNAL__SOURCE = 3;
+  int SIGNAL__SOURCE = 4;
 
   /**
    * The feature id for the '<em><b>Destinations</b></em>' containment reference list.
@@ -460,7 +469,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIGNAL__DESTINATIONS = 4;
+  int SIGNAL__DESTINATIONS = 5;
 
   /**
    * The number of structural features of the '<em>Signal</em>' class.
@@ -469,7 +478,35 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIGNAL_FEATURE_COUNT = 5;
+  int SIGNAL_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.DefinitionSetImpl <em>Definition Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.DefinitionSetImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDefinitionSet()
+   * @generated
+   */
+  int DEFINITION_SET = 10;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINITION_SET__ELEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Definition Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINITION_SET_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.SignalAliasImpl <em>Signal Alias</em>}' class.
@@ -479,7 +516,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getSignalAlias()
    * @generated
    */
-  int SIGNAL_ALIAS = 10;
+  int SIGNAL_ALIAS = 11;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' containment reference.
@@ -516,7 +553,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 11;
+  int DATA_TYPE = 12;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' attribute.
@@ -553,7 +590,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompound()
    * @generated
    */
-  int DATA_TYPE_COMPOUND = 12;
+  int DATA_TYPE_COMPOUND = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -590,7 +627,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCompoundField()
    * @generated
    */
-  int DATA_TYPE_COMPOUND_FIELD = 13;
+  int DATA_TYPE_COMPOUND_FIELD = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -627,7 +664,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getBehavior()
    * @generated
    */
-  int BEHAVIOR = 14;
+  int BEHAVIOR = 15;
 
   /**
    * The feature id for the '<em><b>Cause</b></em>' containment reference.
@@ -664,7 +701,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getCause()
    * @generated
    */
-  int CAUSE = 15;
+  int CAUSE = 16;
 
   /**
    * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -692,7 +729,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getOnCause()
    * @generated
    */
-  int ON_CAUSE = 16;
+  int ON_CAUSE = 17;
 
   /**
    * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -729,7 +766,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getWhenCause()
    * @generated
    */
-  int WHEN_CAUSE = 17;
+  int WHEN_CAUSE = 18;
 
   /**
    * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -766,7 +803,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getEffect()
    * @generated
    */
-  int EFFECT = 18;
+  int EFFECT = 19;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -803,7 +840,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getAlwaysEffect()
    * @generated
    */
-  int ALWAYS_EFFECT = 19;
+  int ALWAYS_EFFECT = 20;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -840,7 +877,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getSetEffect()
    * @generated
    */
-  int SET_EFFECT = 20;
+  int SET_EFFECT = 21;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -877,7 +914,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getTriggerEffect()
    * @generated
    */
-  int TRIGGER_EFFECT = 21;
+  int TRIGGER_EFFECT = 22;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -914,7 +951,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXExpression()
    * @generated
    */
-  int XEXPRESSION = 22;
+  int XEXPRESSION = 23;
 
   /**
    * The number of structural features of the '<em>XExpression</em>' class.
@@ -933,7 +970,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXCollectionLiteral()
    * @generated
    */
-  int XCOLLECTION_LITERAL = 23;
+  int XCOLLECTION_LITERAL = 24;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -961,7 +998,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSetLiteral()
    * @generated
    */
-  int XSET_LITERAL = 24;
+  int XSET_LITERAL = 25;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -989,7 +1026,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXListLiteral()
    * @generated
    */
-  int XLIST_LITERAL = 25;
+  int XLIST_LITERAL = 26;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1017,7 +1054,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXCasePart()
    * @generated
    */
-  int XCASE_PART = 26;
+  int XCASE_PART = 27;
 
   /**
    * The feature id for the '<em><b>Case</b></em>' containment reference.
@@ -1047,6 +1084,25 @@ public interface LilPackage extends EPackage
   int XCASE_PART_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XEnumElementImpl <em>XEnum Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.XEnumElementImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXEnumElement()
+   * @generated
+   */
+  int XENUM_ELEMENT = 28;
+
+  /**
+   * The number of structural features of the '<em>XEnum Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XENUM_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.XBinaryOperationImpl <em>XBinary Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1054,7 +1110,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBinaryOperation()
    * @generated
    */
-  int XBINARY_OPERATION = 27;
+  int XBINARY_OPERATION = 29;
 
   /**
    * The feature id for the '<em><b>Left Operand</b></em>' containment reference.
@@ -1100,7 +1156,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXUnaryOperation()
    * @generated
    */
-  int XUNARY_OPERATION = 28;
+  int XUNARY_OPERATION = 30;
 
   /**
    * The feature id for the '<em><b>Feature</b></em>' attribute.
@@ -1130,6 +1186,71 @@ public interface LilPackage extends EPackage
   int XUNARY_OPERATION_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XEnumLiteralImpl <em>XEnum Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.XEnumLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXEnumLiteral()
+   * @generated
+   */
+  int XENUM_LITERAL = 31;
+
+  /**
+   * The feature id for the '<em><b>Element</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XENUM_LITERAL__ELEMENT = XEXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XENUM_LITERAL__NAME = XEXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>XEnum Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XENUM_LITERAL_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.XSignalLiteralImpl <em>XSignal Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.XSignalLiteralImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSignalLiteral()
+   * @generated
+   */
+  int XSIGNAL_LITERAL = 32;
+
+  /**
+   * The feature id for the '<em><b>Signal</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSIGNAL_LITERAL__SIGNAL = XEXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>XSignal Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int XSIGNAL_LITERAL_FEATURE_COUNT = XEXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.XIfExpressionImpl <em>XIf Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1137,7 +1258,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXIfExpression()
    * @generated
    */
-  int XIF_EXPRESSION = 29;
+  int XIF_EXPRESSION = 33;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -1183,7 +1304,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSwitchExpression()
    * @generated
    */
-  int XSWITCH_EXPRESSION = 30;
+  int XSWITCH_EXPRESSION = 34;
 
   /**
    * The feature id for the '<em><b>Switch</b></em>' containment reference.
@@ -1229,7 +1350,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXForEachExpression()
    * @generated
    */
-  int XFOR_EACH_EXPRESSION = 31;
+  int XFOR_EACH_EXPRESSION = 35;
 
   /**
    * The feature id for the '<em><b>For Expression</b></em>' containment reference.
@@ -1266,7 +1387,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXFunctionCallExpression()
    * @generated
    */
-  int XFUNCTION_CALL_EXPRESSION = 32;
+  int XFUNCTION_CALL_EXPRESSION = 36;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -1303,7 +1424,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBooleanLiteral()
    * @generated
    */
-  int XBOOLEAN_LITERAL = 33;
+  int XBOOLEAN_LITERAL = 37;
 
   /**
    * The feature id for the '<em><b>Is True</b></em>' attribute.
@@ -1331,7 +1452,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNullLiteral()
    * @generated
    */
-  int XNULL_LITERAL = 34;
+  int XNULL_LITERAL = 38;
 
   /**
    * The number of structural features of the '<em>XNull Literal</em>' class.
@@ -1350,7 +1471,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNumberLiteral()
    * @generated
    */
-  int XNUMBER_LITERAL = 35;
+  int XNUMBER_LITERAL = 39;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1378,7 +1499,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXStringLiteral()
    * @generated
    */
-  int XSTRING_LITERAL = 36;
+  int XSTRING_LITERAL = 40;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1720,6 +1841,17 @@ public interface LilPackage extends EPackage
   EReference getSignal_Type();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.Signal#getDefinitionSet <em>Definition Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Definition Set</em>'.
+   * @see com.crubier.lil.lil.Signal#getDefinitionSet()
+   * @see #getSignal()
+   * @generated
+   */
+  EReference getSignal_DefinitionSet();
+
+  /**
    * Returns the meta object for the attribute '{@link com.crubier.lil.lil.Signal#getMode <em>Mode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1751,6 +1883,27 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EReference getSignal_Destinations();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.DefinitionSet <em>Definition Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Definition Set</em>'.
+   * @see com.crubier.lil.lil.DefinitionSet
+   * @generated
+   */
+  EClass getDefinitionSet();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.DefinitionSet#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see com.crubier.lil.lil.DefinitionSet#getElements()
+   * @see #getDefinitionSet()
+   * @generated
+   */
+  EReference getDefinitionSet_Elements();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.SignalAlias <em>Signal Alias</em>}'.
@@ -2121,6 +2274,16 @@ public interface LilPackage extends EPackage
   EReference getXCasePart_Then();
 
   /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XEnumElement <em>XEnum Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XEnum Element</em>'.
+   * @see com.crubier.lil.lil.XEnumElement
+   * @generated
+   */
+  EClass getXEnumElement();
+
+  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.XBinaryOperation <em>XBinary Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2194,6 +2357,59 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EReference getXUnaryOperation_Operand();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XEnumLiteral <em>XEnum Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XEnum Literal</em>'.
+   * @see com.crubier.lil.lil.XEnumLiteral
+   * @generated
+   */
+  EClass getXEnumLiteral();
+
+  /**
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.XEnumLiteral#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Element</em>'.
+   * @see com.crubier.lil.lil.XEnumLiteral#getElement()
+   * @see #getXEnumLiteral()
+   * @generated
+   */
+  EReference getXEnumLiteral_Element();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.XEnumLiteral#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.crubier.lil.lil.XEnumLiteral#getName()
+   * @see #getXEnumLiteral()
+   * @generated
+   */
+  EAttribute getXEnumLiteral_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.XSignalLiteral <em>XSignal Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>XSignal Literal</em>'.
+   * @see com.crubier.lil.lil.XSignalLiteral
+   * @generated
+   */
+  EClass getXSignalLiteral();
+
+  /**
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.XSignalLiteral#getSignal <em>Signal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Signal</em>'.
+   * @see com.crubier.lil.lil.XSignalLiteral#getSignal()
+   * @see #getXSignalLiteral()
+   * @generated
+   */
+  EReference getXSignalLiteral_Signal();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.XIfExpression <em>XIf Expression</em>}'.
@@ -2702,6 +2918,14 @@ public interface LilPackage extends EPackage
     EReference SIGNAL__TYPE = eINSTANCE.getSignal_Type();
 
     /**
+     * The meta object literal for the '<em><b>Definition Set</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIGNAL__DEFINITION_SET = eINSTANCE.getSignal_DefinitionSet();
+
+    /**
      * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2724,6 +2948,24 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EReference SIGNAL__DESTINATIONS = eINSTANCE.getSignal_Destinations();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DefinitionSetImpl <em>Definition Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.DefinitionSetImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDefinitionSet()
+     * @generated
+     */
+    EClass DEFINITION_SET = eINSTANCE.getDefinitionSet();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFINITION_SET__ELEMENTS = eINSTANCE.getDefinitionSet_Elements();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.SignalAliasImpl <em>Signal Alias</em>}' class.
@@ -3040,6 +3282,16 @@ public interface LilPackage extends EPackage
     EReference XCASE_PART__THEN = eINSTANCE.getXCasePart_Then();
 
     /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XEnumElementImpl <em>XEnum Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.XEnumElementImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXEnumElement()
+     * @generated
+     */
+    EClass XENUM_ELEMENT = eINSTANCE.getXEnumElement();
+
+    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.XBinaryOperationImpl <em>XBinary Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3098,6 +3350,50 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EReference XUNARY_OPERATION__OPERAND = eINSTANCE.getXUnaryOperation_Operand();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XEnumLiteralImpl <em>XEnum Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.XEnumLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXEnumLiteral()
+     * @generated
+     */
+    EClass XENUM_LITERAL = eINSTANCE.getXEnumLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Element</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XENUM_LITERAL__ELEMENT = eINSTANCE.getXEnumLiteral_Element();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XENUM_LITERAL__NAME = eINSTANCE.getXEnumLiteral_Name();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.XSignalLiteralImpl <em>XSignal Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.XSignalLiteralImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSignalLiteral()
+     * @generated
+     */
+    EClass XSIGNAL_LITERAL = eINSTANCE.getXSignalLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Signal</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference XSIGNAL_LITERAL__SIGNAL = eINSTANCE.getXSignalLiteral_Signal();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.XIfExpressionImpl <em>XIf Expression</em>}' class.

@@ -71,8 +71,11 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSignalEmissionAccess().getGroup(), "rule__SignalEmission__Group__0");
 					put(grammarAccess.getSignalEmissionAccess().getGroup_1(), "rule__SignalEmission__Group_1__0");
 					put(grammarAccess.getSignalAccess().getGroup(), "rule__Signal__Group__0");
-					put(grammarAccess.getSignalAccess().getGroup_4(), "rule__Signal__Group_4__0");
+					put(grammarAccess.getSignalAccess().getGroup_3(), "rule__Signal__Group_3__0");
 					put(grammarAccess.getSignalAccess().getGroup_5(), "rule__Signal__Group_5__0");
+					put(grammarAccess.getSignalAccess().getGroup_6(), "rule__Signal__Group_6__0");
+					put(grammarAccess.getDefinitionSetAccess().getGroup(), "rule__DefinitionSet__Group__0");
+					put(grammarAccess.getDefinitionSetAccess().getGroup_2(), "rule__DefinitionSet__Group_2__0");
 					put(grammarAccess.getSignalAliasAccess().getGroup(), "rule__SignalAlias__Group__0");
 					put(grammarAccess.getSignalAliasAccess().getGroup_1(), "rule__SignalAlias__Group_1__0");
 					put(grammarAccess.getDataTypeCompoundAccess().getGroup(), "rule__DataTypeCompound__Group__0");
@@ -114,6 +117,8 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXMultiplicativeExpressionAccess().getGroup_1_0(), "rule__XMultiplicativeExpression__Group_1_0__0");
 					put(grammarAccess.getXMultiplicativeExpressionAccess().getGroup_1_0_0(), "rule__XMultiplicativeExpression__Group_1_0_0__0");
 					put(grammarAccess.getXUnaryOperationAccess().getGroup_0(), "rule__XUnaryOperation__Group_0__0");
+					put(grammarAccess.getXLiteralAccess().getGroup_5(), "rule__XLiteral__Group_5__0");
+					put(grammarAccess.getXLiteralAccess().getGroup_6(), "rule__XLiteral__Group_6__0");
 					put(grammarAccess.getXSetLiteralAccess().getGroup(), "rule__XSetLiteral__Group__0");
 					put(grammarAccess.getXSetLiteralAccess().getGroup_2(), "rule__XSetLiteral__Group_2__0");
 					put(grammarAccess.getXSetLiteralAccess().getGroup_2_1(), "rule__XSetLiteral__Group_2_1__0");
@@ -133,6 +138,7 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXNullLiteralAccess().getGroup(), "rule__XNullLiteral__Group__0");
 					put(grammarAccess.getXNumberLiteralAccess().getGroup(), "rule__XNumberLiteral__Group__0");
 					put(grammarAccess.getXStringLiteralAccess().getGroup(), "rule__XStringLiteral__Group__0");
+					put(grammarAccess.getXEnumElementAccess().getGroup(), "rule__XEnumElement__Group__0");
 					put(grammarAccess.getNUMBERAccess().getGroup(), "rule__NUMBER__Group__0");
 					put(grammarAccess.getNUMBERAccess().getGroup_1(), "rule__NUMBER__Group_1__0");
 					put(grammarAccess.getLilModelAccess().getInteractorsAssignment_0(), "rule__LilModel__InteractorsAssignment_0");
@@ -157,9 +163,12 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSignalEmissionAccess().getDestinationAssignment_1_1(), "rule__SignalEmission__DestinationAssignment_1_1");
 					put(grammarAccess.getSignalAccess().getNameAssignment_0(), "rule__Signal__NameAssignment_0");
 					put(grammarAccess.getSignalAccess().getTypeAssignment_2(), "rule__Signal__TypeAssignment_2");
-					put(grammarAccess.getSignalAccess().getModeAssignment_3(), "rule__Signal__ModeAssignment_3");
-					put(grammarAccess.getSignalAccess().getSourceAssignment_4_1(), "rule__Signal__SourceAssignment_4_1");
-					put(grammarAccess.getSignalAccess().getDestinationsAssignment_5_1(), "rule__Signal__DestinationsAssignment_5_1");
+					put(grammarAccess.getSignalAccess().getDefinitionSetAssignment_3_1(), "rule__Signal__DefinitionSetAssignment_3_1");
+					put(grammarAccess.getSignalAccess().getModeAssignment_4(), "rule__Signal__ModeAssignment_4");
+					put(grammarAccess.getSignalAccess().getSourceAssignment_5_1(), "rule__Signal__SourceAssignment_5_1");
+					put(grammarAccess.getSignalAccess().getDestinationsAssignment_6_1(), "rule__Signal__DestinationsAssignment_6_1");
+					put(grammarAccess.getDefinitionSetAccess().getElementsAssignment_1(), "rule__DefinitionSet__ElementsAssignment_1");
+					put(grammarAccess.getDefinitionSetAccess().getElementsAssignment_2_1(), "rule__DefinitionSet__ElementsAssignment_2_1");
 					put(grammarAccess.getSignalAliasAccess().getSourceAssignment_0(), "rule__SignalAlias__SourceAssignment_0");
 					put(grammarAccess.getSignalAliasAccess().getAliasAssignment_1_1(), "rule__SignalAlias__AliasAssignment_1_1");
 					put(grammarAccess.getDataTypeAccess().getBaseAssignment_0(), "rule__DataType__BaseAssignment_0");
@@ -196,6 +205,8 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXMultiplicativeExpressionAccess().getRightOperandAssignment_1_1(), "rule__XMultiplicativeExpression__RightOperandAssignment_1_1");
 					put(grammarAccess.getXUnaryOperationAccess().getFeatureAssignment_0_1(), "rule__XUnaryOperation__FeatureAssignment_0_1");
 					put(grammarAccess.getXUnaryOperationAccess().getOperandAssignment_0_2(), "rule__XUnaryOperation__OperandAssignment_0_2");
+					put(grammarAccess.getXLiteralAccess().getElementAssignment_5_2(), "rule__XLiteral__ElementAssignment_5_2");
+					put(grammarAccess.getXLiteralAccess().getSignalAssignment_6_1(), "rule__XLiteral__SignalAssignment_6_1");
 					put(grammarAccess.getXSetLiteralAccess().getElementsAssignment_2_0(), "rule__XSetLiteral__ElementsAssignment_2_0");
 					put(grammarAccess.getXSetLiteralAccess().getElementsAssignment_2_1_1(), "rule__XSetLiteral__ElementsAssignment_2_1_1");
 					put(grammarAccess.getXListLiteralAccess().getElementsAssignment_2_0(), "rule__XListLiteral__ElementsAssignment_2_0");
@@ -216,6 +227,7 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXBooleanLiteralAccess().getIsTrueAssignment_1_1(), "rule__XBooleanLiteral__IsTrueAssignment_1_1");
 					put(grammarAccess.getXNumberLiteralAccess().getValueAssignment_1(), "rule__XNumberLiteral__ValueAssignment_1");
 					put(grammarAccess.getXStringLiteralAccess().getValueAssignment_1(), "rule__XStringLiteral__ValueAssignment_1");
+					put(grammarAccess.getXEnumElementAccess().getNameAssignment_2(), "rule__XEnumElement__NameAssignment_2");
 				}
 			};
 		}

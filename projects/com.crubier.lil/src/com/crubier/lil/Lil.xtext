@@ -49,7 +49,10 @@ SignalEmission:
 	(instance=[Signal] ('to' destination=SignalAlias)?);
 
 Signal:
-	name=ID ':'  type=DataType mode=SignalMode ('from' source=SignalAlias)? ('to' destinations+=SignalAlias)*;
+	name=ID ':'  type=DataType ('in' definitionSet=DefinitionSet)? mode=SignalMode ('from' source=SignalAlias)? ('to' destinations+=SignalAlias)*;
+
+DefinitionSet:
+	'{' elements+=XEnumElement (',' elements+=XEnumElement)* '}';
 
 SignalAlias:
 	source=AccessibleEntity ('as' alias=[Signal])?;
@@ -162,16 +165,16 @@ XPrimaryExpression returns XExpression:
 	XSwitchExpression | XIfExpression | XLiteral | XForEachExpression | XFunctionCallExpression | XParenthesizedExpression;
 
 XLiteral returns XExpression:
-	XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral;
+	XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral | ({XEnumLiteral} '#'element=[XEnumElement] )| {XSignalLiteral} signal=[Signal];
 
 XCollectionLiteral:
 	XSetLiteral | XListLiteral;
 
 XSetLiteral:
-	{XSetLiteral} '@{' (elements+=XExpression (',' elements+=XExpression )*)? '}';
+	{XSetLiteral} '{' (elements+=XExpression (',' elements+=XExpression )*)? '}';
 
 XListLiteral:
-	{XListLiteral} '@[' (elements+=XExpression (',' elements+=XExpression )*)? ']';
+	{XListLiteral} '[' (elements+=XExpression (',' elements+=XExpression )*)? ']';
 
 XParenthesizedExpression returns XExpression:
 	'(' XExpression ')';
@@ -185,8 +188,8 @@ XIfExpression returns XExpression:
 XSwitchExpression returns XExpression:
 	{XSwitchExpression}
 	'switch' '(' switch=XExpression =>')' 
-	 (cases+=XCasePart)+
-	 (=>'default' ':' default=XExpression );
+	 (=> cases+=XCasePart)+
+	 (=>'default' ':' default=XExpression )?;
 
 XCasePart:
 	'case' case=XExpression ':' then=XExpression ;
@@ -202,7 +205,7 @@ XFunctionCallExpression returns XExpression:
 
 BuiltInFunction : //Same functions as c math.*
 'Math.abs'|'Math.acos'|'Math.acosh' |'Math.asin'|'Math.asinh' |'Math.atan'|'Math.atanh' |'Math.atan2' |
-'Math.ceil'|'Math.cos'|'Math.cosh' |'Math.exp'|'Math.floor'|'Math.fround' |'Math.hypot' |'Math.log'|
+'Math.ceil'|'Math.clip'|'Math.cos'|'Math.cosh' |'Math.exp'|'Math.floor'|'Math.fround' |'Math.hypot' |'Math.log'|
 'Math.log10' |'Math.log2' |'Math.max'|'Math.min'|'Math.pow'|'Math.random'|'Math.round'|'Math.sign'|
 'Math.sin'|'Math.sinh'|'Math.sqrt'|'Math.tan'|'Math.tanh'|'Math.trunc'|
 'Set.orderby'|'Set.add'|'Set.find'|'Set.change'|'Set.remove';
@@ -222,6 +225,9 @@ XNumberLiteral returns XExpression :
 
 XStringLiteral returns XExpression:
 	{XStringLiteral} value=STRING;
+
+XEnumElement :
+	{XEnumLiteral} '#'name=ID;
 
 //QualifiedName:
 //  ValidID (=>'.' ValidID)*;

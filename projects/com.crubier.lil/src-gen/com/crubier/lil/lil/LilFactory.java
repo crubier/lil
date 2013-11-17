@@ -113,6 +113,15 @@ public interface LilFactory extends EFactory
   Signal createSignal();
 
   /**
+   * Returns a new object of class '<em>Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Definition Set</em>'.
+   * @generated
+   */
+  DefinitionSet createDefinitionSet();
+
+  /**
    * Returns a new object of class '<em>Signal Alias</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -266,6 +275,15 @@ public interface LilFactory extends EFactory
   XCasePart createXCasePart();
 
   /**
+   * Returns a new object of class '<em>XEnum Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XEnum Element</em>'.
+   * @generated
+   */
+  XEnumElement createXEnumElement();
+
+  /**
    * Returns a new object of class '<em>XBinary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -282,6 +300,24 @@ public interface LilFactory extends EFactory
    * @generated
    */
   XUnaryOperation createXUnaryOperation();
+
+  /**
+   * Returns a new object of class '<em>XEnum Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XEnum Literal</em>'.
+   * @generated
+   */
+  XEnumLiteral createXEnumLiteral();
+
+  /**
+   * Returns a new object of class '<em>XSignal Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>XSignal Literal</em>'.
+   * @generated
+   */
+  XSignalLiteral createXSignalLiteral();
 
   /**
    * Returns a new object of class '<em>XIf Expression</em>'.

@@ -12,6 +12,7 @@ import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.DataType;
 import com.crubier.lil.lil.DataTypeCompound;
 import com.crubier.lil.lil.DataTypeCompoundField;
+import com.crubier.lil.lil.DefinitionSet;
 import com.crubier.lil.lil.Effect;
 import com.crubier.lil.lil.Entity;
 import com.crubier.lil.lil.Interactor;
@@ -30,6 +31,8 @@ import com.crubier.lil.lil.XBinaryOperation;
 import com.crubier.lil.lil.XBooleanLiteral;
 import com.crubier.lil.lil.XCasePart;
 import com.crubier.lil.lil.XCollectionLiteral;
+import com.crubier.lil.lil.XEnumElement;
+import com.crubier.lil.lil.XEnumLiteral;
 import com.crubier.lil.lil.XExpression;
 import com.crubier.lil.lil.XForEachExpression;
 import com.crubier.lil.lil.XFunctionCallExpression;
@@ -38,6 +41,7 @@ import com.crubier.lil.lil.XListLiteral;
 import com.crubier.lil.lil.XNullLiteral;
 import com.crubier.lil.lil.XNumberLiteral;
 import com.crubier.lil.lil.XSetLiteral;
+import com.crubier.lil.lil.XSignalLiteral;
 import com.crubier.lil.lil.XStringLiteral;
 import com.crubier.lil.lil.XSwitchExpression;
 import com.crubier.lil.lil.XUnaryOperation;
@@ -126,6 +130,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * @generated
    */
   private EClass signalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass definitionSetEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -251,6 +262,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass xEnumElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass xBinaryOperationEClass = null;
 
   /**
@@ -259,6 +277,20 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * @generated
    */
   private EClass xUnaryOperationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass xEnumLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass xSignalLiteralEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -684,9 +716,19 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getSignal_DefinitionSet()
+  {
+    return (EReference)signalEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getSignal_Mode()
   {
-    return (EAttribute)signalEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)signalEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -696,7 +738,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    */
   public EReference getSignal_Source()
   {
-    return (EReference)signalEClass.getEStructuralFeatures().get(3);
+    return (EReference)signalEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -706,7 +748,27 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    */
   public EReference getSignal_Destinations()
   {
-    return (EReference)signalEClass.getEStructuralFeatures().get(4);
+    return (EReference)signalEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDefinitionSet()
+  {
+    return definitionSetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDefinitionSet_Elements()
+  {
+    return (EReference)definitionSetEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1064,6 +1126,16 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getXEnumElement()
+  {
+    return xEnumElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getXBinaryOperation()
   {
     return xBinaryOperationEClass;
@@ -1127,6 +1199,56 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
   public EReference getXUnaryOperation_Operand()
   {
     return (EReference)xUnaryOperationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getXEnumLiteral()
+  {
+    return xEnumLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXEnumLiteral_Element()
+  {
+    return (EReference)xEnumLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getXEnumLiteral_Name()
+  {
+    return (EAttribute)xEnumLiteralEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getXSignalLiteral()
+  {
+    return xSignalLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getXSignalLiteral_Signal()
+  {
+    return (EReference)xSignalLiteralEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1408,9 +1530,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     signalEClass = createEClass(SIGNAL);
     createEAttribute(signalEClass, SIGNAL__NAME);
     createEReference(signalEClass, SIGNAL__TYPE);
+    createEReference(signalEClass, SIGNAL__DEFINITION_SET);
     createEAttribute(signalEClass, SIGNAL__MODE);
     createEReference(signalEClass, SIGNAL__SOURCE);
     createEReference(signalEClass, SIGNAL__DESTINATIONS);
+
+    definitionSetEClass = createEClass(DEFINITION_SET);
+    createEReference(definitionSetEClass, DEFINITION_SET__ELEMENTS);
 
     signalAliasEClass = createEClass(SIGNAL_ALIAS);
     createEReference(signalAliasEClass, SIGNAL_ALIAS__SOURCE);
@@ -1464,6 +1590,8 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEReference(xCasePartEClass, XCASE_PART__CASE);
     createEReference(xCasePartEClass, XCASE_PART__THEN);
 
+    xEnumElementEClass = createEClass(XENUM_ELEMENT);
+
     xBinaryOperationEClass = createEClass(XBINARY_OPERATION);
     createEReference(xBinaryOperationEClass, XBINARY_OPERATION__LEFT_OPERAND);
     createEAttribute(xBinaryOperationEClass, XBINARY_OPERATION__FEATURE);
@@ -1472,6 +1600,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     xUnaryOperationEClass = createEClass(XUNARY_OPERATION);
     createEAttribute(xUnaryOperationEClass, XUNARY_OPERATION__FEATURE);
     createEReference(xUnaryOperationEClass, XUNARY_OPERATION__OPERAND);
+
+    xEnumLiteralEClass = createEClass(XENUM_LITERAL);
+    createEReference(xEnumLiteralEClass, XENUM_LITERAL__ELEMENT);
+    createEAttribute(xEnumLiteralEClass, XENUM_LITERAL__NAME);
+
+    xSignalLiteralEClass = createEClass(XSIGNAL_LITERAL);
+    createEReference(xSignalLiteralEClass, XSIGNAL_LITERAL__SIGNAL);
 
     xIfExpressionEClass = createEClass(XIF_EXPRESSION);
     createEReference(xIfExpressionEClass, XIF_EXPRESSION__IF);
@@ -1544,6 +1679,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     xListLiteralEClass.getESuperTypes().add(this.getXCollectionLiteral());
     xBinaryOperationEClass.getESuperTypes().add(this.getXExpression());
     xUnaryOperationEClass.getESuperTypes().add(this.getXExpression());
+    xEnumLiteralEClass.getESuperTypes().add(this.getXExpression());
+    xEnumLiteralEClass.getESuperTypes().add(this.getXEnumElement());
+    xSignalLiteralEClass.getESuperTypes().add(this.getXExpression());
     xIfExpressionEClass.getESuperTypes().add(this.getXExpression());
     xSwitchExpressionEClass.getESuperTypes().add(this.getXExpression());
     xForEachExpressionEClass.getESuperTypes().add(this.getXExpression());
@@ -1593,9 +1731,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEClass(signalEClass, Signal.class, "Signal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSignal_Name(), ecorePackage.getEString(), "name", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSignal_Type(), this.getDataType(), null, "type", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSignal_DefinitionSet(), this.getDefinitionSet(), null, "definitionSet", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSignal_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSignal_Source(), this.getSignalAlias(), null, "source", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSignal_Destinations(), this.getSignalAlias(), null, "destinations", null, 0, -1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(definitionSetEClass, DefinitionSet.class, "DefinitionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDefinitionSet_Elements(), this.getXEnumElement(), null, "elements", null, 0, -1, DefinitionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(signalAliasEClass, SignalAlias.class, "SignalAlias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSignalAlias_Source(), this.getAccessibleEntity(), null, "source", null, 0, 1, SignalAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1649,6 +1791,8 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEReference(getXCasePart_Case(), this.getXExpression(), null, "case", null, 0, 1, XCasePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXCasePart_Then(), this.getXExpression(), null, "then", null, 0, 1, XCasePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(xEnumElementEClass, XEnumElement.class, "XEnumElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(xBinaryOperationEClass, XBinaryOperation.class, "XBinaryOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXBinaryOperation_LeftOperand(), this.getXExpression(), null, "leftOperand", null, 0, 1, XBinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXBinaryOperation_Feature(), ecorePackage.getEString(), "feature", null, 0, 1, XBinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1657,6 +1801,13 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEClass(xUnaryOperationEClass, XUnaryOperation.class, "XUnaryOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getXUnaryOperation_Feature(), ecorePackage.getEString(), "feature", null, 0, 1, XUnaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getXUnaryOperation_Operand(), this.getXExpression(), null, "operand", null, 0, 1, XUnaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(xEnumLiteralEClass, XEnumLiteral.class, "XEnumLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getXEnumLiteral_Element(), this.getXEnumElement(), null, "element", null, 0, 1, XEnumLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getXEnumLiteral_Name(), ecorePackage.getEString(), "name", null, 0, 1, XEnumLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(xSignalLiteralEClass, XSignalLiteral.class, "XSignalLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getXSignalLiteral_Signal(), this.getSignal(), null, "signal", null, 0, 1, XSignalLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xIfExpressionEClass, XIfExpression.class, "XIfExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXIfExpression_If(), this.getXExpression(), null, "if", null, 0, 1, XIfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

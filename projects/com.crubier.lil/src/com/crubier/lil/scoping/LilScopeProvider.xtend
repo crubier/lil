@@ -11,6 +11,11 @@ import org.eclipse.xtext.scoping.Scopes
 import com.crubier.lil.lil.Interactor
 import org.eclipse.emf.ecore.EObject
 import com.crubier.lil.lil.Component
+import com.crubier.lil.lil.XEnumLiteral
+import com.crubier.lil.lil.LilModel
+import java.util.HashSet
+import com.crubier.lil.lil.XEnumElement
+import com.crubier.lil.lil.DefinitionSet
 
 /**
  * This class contains custom scoping description.
@@ -20,21 +25,41 @@ import com.crubier.lil.lil.Component
  *
  */
 class LilScopeProvider extends AbstractDeclarativeScopeProvider {
-	
-	
+
 	// flow emission instance scope : either a signal defined in this interactor, or a signal defined in the interactor specified by the "to <destination>" statement
-  	 def public IScope scope_SignalEmission_instance(SignalEmission flowemission, EReference ref) {
-        if(flowemission.destination == null) {
-        	var EObject temp = flowemission;
-        	while(!(temp instanceof Interactor)) {
-        		temp =temp.eContainer;
-        	}
-        	Scopes.scopeFor(temp.eContents);
-        }
-        else {
-//        	println((flowemission.destination.source.specific as Component).interactor.eContents);
-        	Scopes.scopeFor((flowemission.destination.source.specific as Component).interactor.eContents);
-        }
-    }
+	def public IScope scope_SignalEmission_instance(SignalEmission flowemission, EReference ref) {
+		if (flowemission.destination == null) {
+			var EObject temp = flowemission;
+			while (!(temp instanceof Interactor)) {
+				temp = temp.eContainer;
+			}
+			return Scopes.scopeFor(temp.eContents);
+		} else {
+
+			//        	println((flowemission.destination.source.specific as Component).interactor.eContents);
+			return Scopes.scopeFor((flowemission.destination.source.specific as Component).interactor.eContents);
+		}
+	}
+
+	// flow emission instance scope : either a signal defined in this interactor, or a signal defined in the interactor specified by the "to <destination>" statement
+	def public IScope scope_XEnumLiteral_element(XEnumLiteral literal, EReference ref) {
+
+		
+		var EObject object = literal;
+		while (!(object instanceof Interactor)) {
+			object = object.eContainer;
+		}
+
+		val elements = new HashSet<XEnumElement>
+		val interactor = object as Interactor
+		
+
+		for (s : interactor.signals) {
+				if (s?.definitionSet?.elements != null)
+					elements.addAll(s.definitionSet.elements)
+		}
+		
+		return Scopes.scopeFor(elements);
+	}
 
 }

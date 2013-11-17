@@ -3,6 +3,7 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.DataType;
+import com.crubier.lil.lil.DefinitionSet;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getDefinitionSet <em>Definition Set</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getMode <em>Mode</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getSource <em>Source</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.SignalImpl#getDestinations <em>Destinations</em>}</li>
@@ -71,6 +73,16 @@ public class SignalImpl extends MinimalEObjectImpl.Container implements Signal
    * @ordered
    */
   protected DataType type;
+
+  /**
+   * The cached value of the '{@link #getDefinitionSet() <em>Definition Set</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDefinitionSet()
+   * @generated
+   * @ordered
+   */
+  protected DefinitionSet definitionSet;
 
   /**
    * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
@@ -209,6 +221,54 @@ public class SignalImpl extends MinimalEObjectImpl.Container implements Signal
    * <!-- end-user-doc -->
    * @generated
    */
+  public DefinitionSet getDefinitionSet()
+  {
+    return definitionSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDefinitionSet(DefinitionSet newDefinitionSet, NotificationChain msgs)
+  {
+    DefinitionSet oldDefinitionSet = definitionSet;
+    definitionSet = newDefinitionSet;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL__DEFINITION_SET, oldDefinitionSet, newDefinitionSet);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDefinitionSet(DefinitionSet newDefinitionSet)
+  {
+    if (newDefinitionSet != definitionSet)
+    {
+      NotificationChain msgs = null;
+      if (definitionSet != null)
+        msgs = ((InternalEObject)definitionSet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL__DEFINITION_SET, null, msgs);
+      if (newDefinitionSet != null)
+        msgs = ((InternalEObject)newDefinitionSet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.SIGNAL__DEFINITION_SET, null, msgs);
+      msgs = basicSetDefinitionSet(newDefinitionSet, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.SIGNAL__DEFINITION_SET, newDefinitionSet, newDefinitionSet));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getMode()
   {
     return mode;
@@ -301,6 +361,8 @@ public class SignalImpl extends MinimalEObjectImpl.Container implements Signal
     {
       case LilPackage.SIGNAL__TYPE:
         return basicSetType(null, msgs);
+      case LilPackage.SIGNAL__DEFINITION_SET:
+        return basicSetDefinitionSet(null, msgs);
       case LilPackage.SIGNAL__SOURCE:
         return basicSetSource(null, msgs);
       case LilPackage.SIGNAL__DESTINATIONS:
@@ -323,6 +385,8 @@ public class SignalImpl extends MinimalEObjectImpl.Container implements Signal
         return getName();
       case LilPackage.SIGNAL__TYPE:
         return getType();
+      case LilPackage.SIGNAL__DEFINITION_SET:
+        return getDefinitionSet();
       case LilPackage.SIGNAL__MODE:
         return getMode();
       case LilPackage.SIGNAL__SOURCE:
@@ -349,6 +413,9 @@ public class SignalImpl extends MinimalEObjectImpl.Container implements Signal
         return;
       case LilPackage.SIGNAL__TYPE:
         setType((DataType)newValue);
+        return;
+      case LilPackage.SIGNAL__DEFINITION_SET:
+        setDefinitionSet((DefinitionSet)newValue);
         return;
       case LilPackage.SIGNAL__MODE:
         setMode((String)newValue);
@@ -380,6 +447,9 @@ public class SignalImpl extends MinimalEObjectImpl.Container implements Signal
       case LilPackage.SIGNAL__TYPE:
         setType((DataType)null);
         return;
+      case LilPackage.SIGNAL__DEFINITION_SET:
+        setDefinitionSet((DefinitionSet)null);
+        return;
       case LilPackage.SIGNAL__MODE:
         setMode(MODE_EDEFAULT);
         return;
@@ -407,6 +477,8 @@ public class SignalImpl extends MinimalEObjectImpl.Container implements Signal
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LilPackage.SIGNAL__TYPE:
         return type != null;
+      case LilPackage.SIGNAL__DEFINITION_SET:
+        return definitionSet != null;
       case LilPackage.SIGNAL__MODE:
         return MODE_EDEFAULT == null ? mode != null : !MODE_EDEFAULT.equals(mode);
       case LilPackage.SIGNAL__SOURCE:

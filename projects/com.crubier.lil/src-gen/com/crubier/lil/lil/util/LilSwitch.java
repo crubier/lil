@@ -144,6 +144,13 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilPackage.DEFINITION_SET:
+      {
+        DefinitionSet definitionSet = (DefinitionSet)theEObject;
+        T result = caseDefinitionSet(definitionSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilPackage.SIGNAL_ALIAS:
       {
         SignalAlias signalAlias = (SignalAlias)theEObject;
@@ -273,6 +280,13 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilPackage.XENUM_ELEMENT:
+      {
+        XEnumElement xEnumElement = (XEnumElement)theEObject;
+        T result = caseXEnumElement(xEnumElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilPackage.XBINARY_OPERATION:
       {
         XBinaryOperation xBinaryOperation = (XBinaryOperation)theEObject;
@@ -286,6 +300,23 @@ public class LilSwitch<T> extends Switch<T>
         XUnaryOperation xUnaryOperation = (XUnaryOperation)theEObject;
         T result = caseXUnaryOperation(xUnaryOperation);
         if (result == null) result = caseXExpression(xUnaryOperation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.XENUM_LITERAL:
+      {
+        XEnumLiteral xEnumLiteral = (XEnumLiteral)theEObject;
+        T result = caseXEnumLiteral(xEnumLiteral);
+        if (result == null) result = caseXExpression(xEnumLiteral);
+        if (result == null) result = caseXEnumElement(xEnumLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.XSIGNAL_LITERAL:
+      {
+        XSignalLiteral xSignalLiteral = (XSignalLiteral)theEObject;
+        T result = caseXSignalLiteral(xSignalLiteral);
+        if (result == null) result = caseXExpression(xSignalLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -513,6 +544,22 @@ public class LilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSignal(Signal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Definition Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefinitionSet(DefinitionSet object)
   {
     return null;
   }
@@ -790,6 +837,22 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>XEnum Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XEnum Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXEnumElement(XEnumElement object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>XBinary Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -817,6 +880,38 @@ public class LilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXUnaryOperation(XUnaryOperation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XEnum Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XEnum Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXEnumLiteral(XEnumLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>XSignal Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>XSignal Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseXSignalLiteral(XSignalLiteral object)
   {
     return null;
   }

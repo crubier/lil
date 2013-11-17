@@ -9,6 +9,7 @@ import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.DataType;
 import com.crubier.lil.lil.DataTypeCompound;
 import com.crubier.lil.lil.DataTypeCompoundField;
+import com.crubier.lil.lil.DefinitionSet;
 import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilModel;
 import com.crubier.lil.lil.LilPackage;
@@ -23,6 +24,7 @@ import com.crubier.lil.lil.WhenCause;
 import com.crubier.lil.lil.XBinaryOperation;
 import com.crubier.lil.lil.XBooleanLiteral;
 import com.crubier.lil.lil.XCasePart;
+import com.crubier.lil.lil.XEnumLiteral;
 import com.crubier.lil.lil.XForEachExpression;
 import com.crubier.lil.lil.XFunctionCallExpression;
 import com.crubier.lil.lil.XIfExpression;
@@ -30,6 +32,7 @@ import com.crubier.lil.lil.XListLiteral;
 import com.crubier.lil.lil.XNullLiteral;
 import com.crubier.lil.lil.XNumberLiteral;
 import com.crubier.lil.lil.XSetLiteral;
+import com.crubier.lil.lil.XSignalLiteral;
 import com.crubier.lil.lil.XStringLiteral;
 import com.crubier.lil.lil.XSwitchExpression;
 import com.crubier.lil.lil.XUnaryOperation;
@@ -110,6 +113,12 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.DATA_TYPE_COMPOUND_FIELD:
 				if(context == grammarAccess.getDataTypeCompoundFieldRule()) {
 					sequence_DataTypeCompoundField(context, (DataTypeCompoundField) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DEFINITION_SET:
+				if(context == grammarAccess.getDefinitionSetRule()) {
+					sequence_DefinitionSet(context, (DefinitionSet) semanticObject); 
 					return; 
 				}
 				else break;
@@ -228,6 +237,34 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.XCASE_PART:
 				if(context == grammarAccess.getXCasePartRule()) {
 					sequence_XCasePart(context, (XCasePart) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.XENUM_LITERAL:
+				if(context == grammarAccess.getXEnumElementRule()) {
+					sequence_XEnumElement(context, (XEnumLiteral) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getXAdditiveExpressionRule() ||
+				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
+				   context == grammarAccess.getXLiteralRule() ||
+				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
+				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
+				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
+				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXUnaryOperationRule()) {
+					sequence_XLiteral(context, (XEnumLiteral) semanticObject); 
 					return; 
 				}
 				else break;
@@ -402,6 +439,30 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getXSetLiteralRule() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
 					sequence_XSetLiteral(context, (XSetLiteral) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.XSIGNAL_LITERAL:
+				if(context == grammarAccess.getXAdditiveExpressionRule() ||
+				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAndExpressionRule() ||
+				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXEqualityExpressionRule() ||
+				   context == grammarAccess.getXEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXExpressionRule() ||
+				   context == grammarAccess.getXLiteralRule() ||
+				   context == grammarAccess.getXMultiplicativeExpressionRule() ||
+				   context == grammarAccess.getXMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOrExpressionRule() ||
+				   context == grammarAccess.getXOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXOtherOperatorExpressionRule() ||
+				   context == grammarAccess.getXOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXParenthesizedExpressionRule() ||
+				   context == grammarAccess.getXPrimaryExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionRule() ||
+				   context == grammarAccess.getXRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXUnaryOperationRule()) {
+					sequence_XLiteral(context, (XSignalLiteral) semanticObject); 
 					return; 
 				}
 				else break;
@@ -601,6 +662,15 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (elements+=XEnumElement elements+=XEnumElement*)
+	 */
+	protected void sequence_DefinitionSet(EObject context, DefinitionSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID (entities+=Entity | signals+=Signal | behaviors+=Behavior)*)
 	 */
 	protected void sequence_Interactor(EObject context, Interactor semanticObject) {
@@ -674,7 +744,14 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=DataType mode=SignalMode source=SignalAlias? destinations+=SignalAlias*)
+	 *     (
+	 *         name=ID 
+	 *         type=DataType 
+	 *         definitionSet=DefinitionSet? 
+	 *         mode=SignalMode 
+	 *         source=SignalAlias? 
+	 *         destinations+=SignalAlias*
+	 *     )
 	 */
 	protected void sequence_Signal(EObject context, Signal semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -756,6 +833,15 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_XEnumElement(EObject context, XEnumLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (forExpression=XExpression eachExpression=XExpression)
 	 */
 	protected void sequence_XForEachExpression(EObject context, XForEachExpression semanticObject) {
@@ -815,6 +901,31 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     element=[XEnumElement|ID]
+	 */
+	protected void sequence_XLiteral(EObject context, XEnumLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     signal=[Signal|ID]
+	 */
+	protected void sequence_XLiteral(EObject context, XSignalLiteral semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.XSIGNAL_LITERAL__SIGNAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.XSIGNAL_LITERAL__SIGNAL));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getXLiteralAccess().getSignalSignalIDTerminalRuleCall_6_1_0_1(), semanticObject.getSignal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     {XNullLiteral}
 	 */
 	protected void sequence_XNullLiteral(EObject context, XNullLiteral semanticObject) {
@@ -865,7 +976,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (switch=XExpression cases+=XCasePart+ default=XExpression)
+	 *     (switch=XExpression cases+=XCasePart+ default=XExpression?)
 	 */
 	protected void sequence_XSwitchExpression(EObject context, XSwitchExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

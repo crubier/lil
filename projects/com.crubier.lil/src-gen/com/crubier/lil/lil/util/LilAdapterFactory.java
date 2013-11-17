@@ -125,6 +125,11 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createSignalAdapter();
       }
       @Override
+      public Adapter caseDefinitionSet(DefinitionSet object)
+      {
+        return createDefinitionSetAdapter();
+      }
+      @Override
       public Adapter caseSignalAlias(SignalAlias object)
       {
         return createSignalAliasAdapter();
@@ -210,6 +215,11 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createXCasePartAdapter();
       }
       @Override
+      public Adapter caseXEnumElement(XEnumElement object)
+      {
+        return createXEnumElementAdapter();
+      }
+      @Override
       public Adapter caseXBinaryOperation(XBinaryOperation object)
       {
         return createXBinaryOperationAdapter();
@@ -218,6 +228,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
       public Adapter caseXUnaryOperation(XUnaryOperation object)
       {
         return createXUnaryOperationAdapter();
+      }
+      @Override
+      public Adapter caseXEnumLiteral(XEnumLiteral object)
+      {
+        return createXEnumLiteralAdapter();
+      }
+      @Override
+      public Adapter caseXSignalLiteral(XSignalLiteral object)
+      {
+        return createXSignalLiteralAdapter();
       }
       @Override
       public Adapter caseXIfExpression(XIfExpression object)
@@ -427,6 +447,21 @@ public class LilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSignalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DefinitionSet <em>Definition Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DefinitionSet
+   * @generated
+   */
+  public Adapter createDefinitionSetAdapter()
   {
     return null;
   }
@@ -687,6 +722,21 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XEnumElement <em>XEnum Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.XEnumElement
+   * @generated
+   */
+  public Adapter createXEnumElementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XBinaryOperation <em>XBinary Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -712,6 +762,36 @@ public class LilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createXUnaryOperationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XEnumLiteral <em>XEnum Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.XEnumLiteral
+   * @generated
+   */
+  public Adapter createXEnumLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XSignalLiteral <em>XSignal Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.XSignalLiteral
+   * @generated
+   */
+  public Adapter createXSignalLiteralAdapter()
   {
     return null;
   }

@@ -48,11 +48,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definitionSet" eType="#//DefinitionSet"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//SignalAlias"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destinations" upperBound="-1"
         eType="#//SignalAlias" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//XEnumElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SignalAlias">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//AccessibleEntity"
@@ -113,6 +119,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="then" eType="#//XExpression"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XEnumElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="XBinaryOperation" eSuperTypes="#//XExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftOperand" eType="#//XExpression"
         containment="true"/>
@@ -124,6 +131,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="feature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="#//XExpression"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XEnumLiteral" eSuperTypes="#//XExpression #//XEnumElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//XEnumElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XSignalLiteral" eSuperTypes="#//XExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signal" eType="#//Signal"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XIfExpression" eSuperTypes="#//XExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="if" eType="#//XExpression"
