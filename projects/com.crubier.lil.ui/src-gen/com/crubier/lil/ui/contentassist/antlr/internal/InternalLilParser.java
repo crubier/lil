@@ -1633,25 +1633,25 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleDataTypeCompoundField"
 
 
-    // $ANTLR start "entryRuleBehaviorDeclaration"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:537:1: entryRuleBehaviorDeclaration : ruleBehaviorDeclaration EOF ;
-    public final void entryRuleBehaviorDeclaration() throws RecognitionException {
+    // $ANTLR start "entryRuleBehavior"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:537:1: entryRuleBehavior : ruleBehavior EOF ;
+    public final void entryRuleBehavior() throws RecognitionException {
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:538:1: ( ruleBehaviorDeclaration EOF )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:539:1: ruleBehaviorDeclaration EOF
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:538:1: ( ruleBehavior EOF )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:539:1: ruleBehavior EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorDeclarationRule()); 
+               before(grammarAccess.getBehaviorRule()); 
             }
-            pushFollow(FOLLOW_ruleBehaviorDeclaration_in_entryRuleBehaviorDeclaration1088);
-            ruleBehaviorDeclaration();
+            pushFollow(FOLLOW_ruleBehavior_in_entryRuleBehavior1088);
+            ruleBehavior();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorDeclarationRule()); 
+               after(grammarAccess.getBehaviorRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBehaviorDeclaration1095); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBehavior1095); if (state.failed) return ;
 
             }
 
@@ -1664,30 +1664,30 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleBehaviorDeclaration"
+    // $ANTLR end "entryRuleBehavior"
 
 
-    // $ANTLR start "ruleBehaviorDeclaration"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:546:1: ruleBehaviorDeclaration : ( ( rule__BehaviorDeclaration__Group__0 ) ) ;
-    public final void ruleBehaviorDeclaration() throws RecognitionException {
+    // $ANTLR start "ruleBehavior"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:546:1: ruleBehavior : ( ( rule__Behavior__Group__0 ) ) ;
+    public final void ruleBehavior() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:550:2: ( ( ( rule__BehaviorDeclaration__Group__0 ) ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:551:1: ( ( rule__BehaviorDeclaration__Group__0 ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:550:2: ( ( ( rule__Behavior__Group__0 ) ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:551:1: ( ( rule__Behavior__Group__0 ) )
             {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:551:1: ( ( rule__BehaviorDeclaration__Group__0 ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:552:1: ( rule__BehaviorDeclaration__Group__0 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:551:1: ( ( rule__Behavior__Group__0 ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:552:1: ( rule__Behavior__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorDeclarationAccess().getGroup()); 
+               before(grammarAccess.getBehaviorAccess().getGroup()); 
             }
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:553:1: ( rule__BehaviorDeclaration__Group__0 )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:553:2: rule__BehaviorDeclaration__Group__0
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:553:1: ( rule__Behavior__Group__0 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:553:2: rule__Behavior__Group__0
             {
-            pushFollow(FOLLOW_rule__BehaviorDeclaration__Group__0_in_ruleBehaviorDeclaration1121);
-            rule__BehaviorDeclaration__Group__0();
+            pushFollow(FOLLOW_rule__Behavior__Group__0_in_ruleBehavior1121);
+            rule__Behavior__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1695,7 +1695,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorDeclarationAccess().getGroup()); 
+               after(grammarAccess.getBehaviorAccess().getGroup()); 
             }
 
             }
@@ -1715,7 +1715,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleBehaviorDeclaration"
+    // $ANTLR end "ruleBehavior"
 
 
     // $ANTLR start "entryRuleCause"
@@ -10012,26 +10012,26 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group_3__1__Impl"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3174:1: rule__Component__Group_3__1__Impl : ( ( rule__Component__AliasesAssignment_3_1 ) ) ;
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3174:1: rule__Component__Group_3__1__Impl : ( ( rule__Component__ActorsAssignment_3_1 ) ) ;
     public final void rule__Component__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3178:1: ( ( ( rule__Component__AliasesAssignment_3_1 ) ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3179:1: ( ( rule__Component__AliasesAssignment_3_1 ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3178:1: ( ( ( rule__Component__ActorsAssignment_3_1 ) ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3179:1: ( ( rule__Component__ActorsAssignment_3_1 ) )
             {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3179:1: ( ( rule__Component__AliasesAssignment_3_1 ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3180:1: ( rule__Component__AliasesAssignment_3_1 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3179:1: ( ( rule__Component__ActorsAssignment_3_1 ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3180:1: ( rule__Component__ActorsAssignment_3_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getComponentAccess().getAliasesAssignment_3_1()); 
+               before(grammarAccess.getComponentAccess().getActorsAssignment_3_1()); 
             }
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3181:1: ( rule__Component__AliasesAssignment_3_1 )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3181:2: rule__Component__AliasesAssignment_3_1
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3181:1: ( rule__Component__ActorsAssignment_3_1 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3181:2: rule__Component__ActorsAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Component__AliasesAssignment_3_1_in_rule__Component__Group_3__1__Impl6856);
-            rule__Component__AliasesAssignment_3_1();
+            pushFollow(FOLLOW_rule__Component__ActorsAssignment_3_1_in_rule__Component__Group_3__1__Impl6856);
+            rule__Component__ActorsAssignment_3_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10039,7 +10039,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getComponentAccess().getAliasesAssignment_3_1()); 
+               after(grammarAccess.getComponentAccess().getActorsAssignment_3_1()); 
             }
 
             }
@@ -10277,26 +10277,26 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Component__Group_3_2__1__Impl"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3267:1: rule__Component__Group_3_2__1__Impl : ( ( rule__Component__AliasesAssignment_3_2_1 ) ) ;
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3267:1: rule__Component__Group_3_2__1__Impl : ( ( rule__Component__ActorsAssignment_3_2_1 ) ) ;
     public final void rule__Component__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3271:1: ( ( ( rule__Component__AliasesAssignment_3_2_1 ) ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3272:1: ( ( rule__Component__AliasesAssignment_3_2_1 ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3271:1: ( ( ( rule__Component__ActorsAssignment_3_2_1 ) ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3272:1: ( ( rule__Component__ActorsAssignment_3_2_1 ) )
             {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3272:1: ( ( rule__Component__AliasesAssignment_3_2_1 ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3273:1: ( rule__Component__AliasesAssignment_3_2_1 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3272:1: ( ( rule__Component__ActorsAssignment_3_2_1 ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3273:1: ( rule__Component__ActorsAssignment_3_2_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getComponentAccess().getAliasesAssignment_3_2_1()); 
+               before(grammarAccess.getComponentAccess().getActorsAssignment_3_2_1()); 
             }
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3274:1: ( rule__Component__AliasesAssignment_3_2_1 )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3274:2: rule__Component__AliasesAssignment_3_2_1
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3274:1: ( rule__Component__ActorsAssignment_3_2_1 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:3274:2: rule__Component__ActorsAssignment_3_2_1
             {
-            pushFollow(FOLLOW_rule__Component__AliasesAssignment_3_2_1_in_rule__Component__Group_3_2__1__Impl7039);
-            rule__Component__AliasesAssignment_3_2_1();
+            pushFollow(FOLLOW_rule__Component__ActorsAssignment_3_2_1_in_rule__Component__Group_3_2__1__Impl7039);
+            rule__Component__ActorsAssignment_3_2_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -10304,7 +10304,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getComponentAccess().getAliasesAssignment_3_2_1()); 
+               after(grammarAccess.getComponentAccess().getActorsAssignment_3_2_1()); 
             }
 
             }
@@ -12843,23 +12843,23 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DataTypeCompoundField__Group__2__Impl"
 
 
-    // $ANTLR start "rule__BehaviorDeclaration__Group__0"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4194:1: rule__BehaviorDeclaration__Group__0 : rule__BehaviorDeclaration__Group__0__Impl rule__BehaviorDeclaration__Group__1 ;
-    public final void rule__BehaviorDeclaration__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Behavior__Group__0"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4194:1: rule__Behavior__Group__0 : rule__Behavior__Group__0__Impl rule__Behavior__Group__1 ;
+    public final void rule__Behavior__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4198:1: ( rule__BehaviorDeclaration__Group__0__Impl rule__BehaviorDeclaration__Group__1 )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4199:2: rule__BehaviorDeclaration__Group__0__Impl rule__BehaviorDeclaration__Group__1
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4198:1: ( rule__Behavior__Group__0__Impl rule__Behavior__Group__1 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4199:2: rule__Behavior__Group__0__Impl rule__Behavior__Group__1
             {
-            pushFollow(FOLLOW_rule__BehaviorDeclaration__Group__0__Impl_in_rule__BehaviorDeclaration__Group__08862);
-            rule__BehaviorDeclaration__Group__0__Impl();
+            pushFollow(FOLLOW_rule__Behavior__Group__0__Impl_in_rule__Behavior__Group__08862);
+            rule__Behavior__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__BehaviorDeclaration__Group__1_in_rule__BehaviorDeclaration__Group__08865);
-            rule__BehaviorDeclaration__Group__1();
+            pushFollow(FOLLOW_rule__Behavior__Group__1_in_rule__Behavior__Group__08865);
+            rule__Behavior__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -12878,30 +12878,30 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BehaviorDeclaration__Group__0"
+    // $ANTLR end "rule__Behavior__Group__0"
 
 
-    // $ANTLR start "rule__BehaviorDeclaration__Group__0__Impl"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4206:1: rule__BehaviorDeclaration__Group__0__Impl : ( ( rule__BehaviorDeclaration__CauseAssignment_0 ) ) ;
-    public final void rule__BehaviorDeclaration__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Behavior__Group__0__Impl"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4206:1: rule__Behavior__Group__0__Impl : ( ( rule__Behavior__CauseAssignment_0 ) ) ;
+    public final void rule__Behavior__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4210:1: ( ( ( rule__BehaviorDeclaration__CauseAssignment_0 ) ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4211:1: ( ( rule__BehaviorDeclaration__CauseAssignment_0 ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4210:1: ( ( ( rule__Behavior__CauseAssignment_0 ) ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4211:1: ( ( rule__Behavior__CauseAssignment_0 ) )
             {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4211:1: ( ( rule__BehaviorDeclaration__CauseAssignment_0 ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4212:1: ( rule__BehaviorDeclaration__CauseAssignment_0 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4211:1: ( ( rule__Behavior__CauseAssignment_0 ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4212:1: ( rule__Behavior__CauseAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorDeclarationAccess().getCauseAssignment_0()); 
+               before(grammarAccess.getBehaviorAccess().getCauseAssignment_0()); 
             }
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4213:1: ( rule__BehaviorDeclaration__CauseAssignment_0 )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4213:2: rule__BehaviorDeclaration__CauseAssignment_0
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4213:1: ( rule__Behavior__CauseAssignment_0 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4213:2: rule__Behavior__CauseAssignment_0
             {
-            pushFollow(FOLLOW_rule__BehaviorDeclaration__CauseAssignment_0_in_rule__BehaviorDeclaration__Group__0__Impl8892);
-            rule__BehaviorDeclaration__CauseAssignment_0();
+            pushFollow(FOLLOW_rule__Behavior__CauseAssignment_0_in_rule__Behavior__Group__0__Impl8892);
+            rule__Behavior__CauseAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -12909,7 +12909,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorDeclarationAccess().getCauseAssignment_0()); 
+               after(grammarAccess.getBehaviorAccess().getCauseAssignment_0()); 
             }
 
             }
@@ -12929,26 +12929,26 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BehaviorDeclaration__Group__0__Impl"
+    // $ANTLR end "rule__Behavior__Group__0__Impl"
 
 
-    // $ANTLR start "rule__BehaviorDeclaration__Group__1"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4223:1: rule__BehaviorDeclaration__Group__1 : rule__BehaviorDeclaration__Group__1__Impl rule__BehaviorDeclaration__Group__2 ;
-    public final void rule__BehaviorDeclaration__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Behavior__Group__1"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4223:1: rule__Behavior__Group__1 : rule__Behavior__Group__1__Impl rule__Behavior__Group__2 ;
+    public final void rule__Behavior__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4227:1: ( rule__BehaviorDeclaration__Group__1__Impl rule__BehaviorDeclaration__Group__2 )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4228:2: rule__BehaviorDeclaration__Group__1__Impl rule__BehaviorDeclaration__Group__2
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4227:1: ( rule__Behavior__Group__1__Impl rule__Behavior__Group__2 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4228:2: rule__Behavior__Group__1__Impl rule__Behavior__Group__2
             {
-            pushFollow(FOLLOW_rule__BehaviorDeclaration__Group__1__Impl_in_rule__BehaviorDeclaration__Group__18922);
-            rule__BehaviorDeclaration__Group__1__Impl();
+            pushFollow(FOLLOW_rule__Behavior__Group__1__Impl_in_rule__Behavior__Group__18922);
+            rule__Behavior__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__BehaviorDeclaration__Group__2_in_rule__BehaviorDeclaration__Group__18925);
-            rule__BehaviorDeclaration__Group__2();
+            pushFollow(FOLLOW_rule__Behavior__Group__2_in_rule__Behavior__Group__18925);
+            rule__Behavior__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -12967,12 +12967,12 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BehaviorDeclaration__Group__1"
+    // $ANTLR end "rule__Behavior__Group__1"
 
 
-    // $ANTLR start "rule__BehaviorDeclaration__Group__1__Impl"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4235:1: rule__BehaviorDeclaration__Group__1__Impl : ( ':' ) ;
-    public final void rule__BehaviorDeclaration__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Behavior__Group__1__Impl"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4235:1: rule__Behavior__Group__1__Impl : ( ':' ) ;
+    public final void rule__Behavior__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -12984,11 +12984,11 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4241:1: ':'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorDeclarationAccess().getColonKeyword_1()); 
+               before(grammarAccess.getBehaviorAccess().getColonKeyword_1()); 
             }
-            match(input,79,FOLLOW_79_in_rule__BehaviorDeclaration__Group__1__Impl8953); if (state.failed) return ;
+            match(input,79,FOLLOW_79_in_rule__Behavior__Group__1__Impl8953); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorDeclarationAccess().getColonKeyword_1()); 
+               after(grammarAccess.getBehaviorAccess().getColonKeyword_1()); 
             }
 
             }
@@ -13008,21 +13008,21 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BehaviorDeclaration__Group__1__Impl"
+    // $ANTLR end "rule__Behavior__Group__1__Impl"
 
 
-    // $ANTLR start "rule__BehaviorDeclaration__Group__2"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4254:1: rule__BehaviorDeclaration__Group__2 : rule__BehaviorDeclaration__Group__2__Impl ;
-    public final void rule__BehaviorDeclaration__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Behavior__Group__2"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4254:1: rule__Behavior__Group__2 : rule__Behavior__Group__2__Impl ;
+    public final void rule__Behavior__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4258:1: ( rule__BehaviorDeclaration__Group__2__Impl )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4259:2: rule__BehaviorDeclaration__Group__2__Impl
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4258:1: ( rule__Behavior__Group__2__Impl )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4259:2: rule__Behavior__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__BehaviorDeclaration__Group__2__Impl_in_rule__BehaviorDeclaration__Group__28984);
-            rule__BehaviorDeclaration__Group__2__Impl();
+            pushFollow(FOLLOW_rule__Behavior__Group__2__Impl_in_rule__Behavior__Group__28984);
+            rule__Behavior__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -13041,33 +13041,33 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BehaviorDeclaration__Group__2"
+    // $ANTLR end "rule__Behavior__Group__2"
 
 
-    // $ANTLR start "rule__BehaviorDeclaration__Group__2__Impl"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4265:1: rule__BehaviorDeclaration__Group__2__Impl : ( ( ( rule__BehaviorDeclaration__EffectsAssignment_2 ) ) ( ( rule__BehaviorDeclaration__EffectsAssignment_2 )* ) ) ;
-    public final void rule__BehaviorDeclaration__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Behavior__Group__2__Impl"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4265:1: rule__Behavior__Group__2__Impl : ( ( ( rule__Behavior__EffectsAssignment_2 ) ) ( ( rule__Behavior__EffectsAssignment_2 )* ) ) ;
+    public final void rule__Behavior__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4269:1: ( ( ( ( rule__BehaviorDeclaration__EffectsAssignment_2 ) ) ( ( rule__BehaviorDeclaration__EffectsAssignment_2 )* ) ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4270:1: ( ( ( rule__BehaviorDeclaration__EffectsAssignment_2 ) ) ( ( rule__BehaviorDeclaration__EffectsAssignment_2 )* ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4269:1: ( ( ( ( rule__Behavior__EffectsAssignment_2 ) ) ( ( rule__Behavior__EffectsAssignment_2 )* ) ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4270:1: ( ( ( rule__Behavior__EffectsAssignment_2 ) ) ( ( rule__Behavior__EffectsAssignment_2 )* ) )
             {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4270:1: ( ( ( rule__BehaviorDeclaration__EffectsAssignment_2 ) ) ( ( rule__BehaviorDeclaration__EffectsAssignment_2 )* ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4271:1: ( ( rule__BehaviorDeclaration__EffectsAssignment_2 ) ) ( ( rule__BehaviorDeclaration__EffectsAssignment_2 )* )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4270:1: ( ( ( rule__Behavior__EffectsAssignment_2 ) ) ( ( rule__Behavior__EffectsAssignment_2 )* ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4271:1: ( ( rule__Behavior__EffectsAssignment_2 ) ) ( ( rule__Behavior__EffectsAssignment_2 )* )
             {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4271:1: ( ( rule__BehaviorDeclaration__EffectsAssignment_2 ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4272:1: ( rule__BehaviorDeclaration__EffectsAssignment_2 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4271:1: ( ( rule__Behavior__EffectsAssignment_2 ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4272:1: ( rule__Behavior__EffectsAssignment_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorDeclarationAccess().getEffectsAssignment_2()); 
+               before(grammarAccess.getBehaviorAccess().getEffectsAssignment_2()); 
             }
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4273:1: ( rule__BehaviorDeclaration__EffectsAssignment_2 )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4273:2: rule__BehaviorDeclaration__EffectsAssignment_2
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4273:1: ( rule__Behavior__EffectsAssignment_2 )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4273:2: rule__Behavior__EffectsAssignment_2
             {
-            pushFollow(FOLLOW_rule__BehaviorDeclaration__EffectsAssignment_2_in_rule__BehaviorDeclaration__Group__2__Impl9013);
-            rule__BehaviorDeclaration__EffectsAssignment_2();
+            pushFollow(FOLLOW_rule__Behavior__EffectsAssignment_2_in_rule__Behavior__Group__2__Impl9013);
+            rule__Behavior__EffectsAssignment_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -13075,18 +13075,18 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorDeclarationAccess().getEffectsAssignment_2()); 
+               after(grammarAccess.getBehaviorAccess().getEffectsAssignment_2()); 
             }
 
             }
 
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4276:1: ( ( rule__BehaviorDeclaration__EffectsAssignment_2 )* )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4277:1: ( rule__BehaviorDeclaration__EffectsAssignment_2 )*
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4276:1: ( ( rule__Behavior__EffectsAssignment_2 )* )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4277:1: ( rule__Behavior__EffectsAssignment_2 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorDeclarationAccess().getEffectsAssignment_2()); 
+               before(grammarAccess.getBehaviorAccess().getEffectsAssignment_2()); 
             }
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4278:1: ( rule__BehaviorDeclaration__EffectsAssignment_2 )*
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4278:1: ( rule__Behavior__EffectsAssignment_2 )*
             loop34:
             do {
                 int alt34=2;
@@ -13099,10 +13099,10 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
 
                 switch (alt34) {
             	case 1 :
-            	    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4278:2: rule__BehaviorDeclaration__EffectsAssignment_2
+            	    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:4278:2: rule__Behavior__EffectsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__BehaviorDeclaration__EffectsAssignment_2_in_rule__BehaviorDeclaration__Group__2__Impl9025);
-            	    rule__BehaviorDeclaration__EffectsAssignment_2();
+            	    pushFollow(FOLLOW_rule__Behavior__EffectsAssignment_2_in_rule__Behavior__Group__2__Impl9025);
+            	    rule__Behavior__EffectsAssignment_2();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -13116,7 +13116,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorDeclarationAccess().getEffectsAssignment_2()); 
+               after(grammarAccess.getBehaviorAccess().getEffectsAssignment_2()); 
             }
 
             }
@@ -13139,7 +13139,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BehaviorDeclaration__Group__2__Impl"
+    // $ANTLR end "rule__Behavior__Group__2__Impl"
 
 
     // $ANTLR start "rule__OnCause__Group__0"
@@ -25623,28 +25623,28 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Interactor__BehaviorsAssignment_3_2"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8866:1: rule__Interactor__BehaviorsAssignment_3_2 : ( ruleBehaviorDeclaration ) ;
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8866:1: rule__Interactor__BehaviorsAssignment_3_2 : ( ruleBehavior ) ;
     public final void rule__Interactor__BehaviorsAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8870:1: ( ( ruleBehaviorDeclaration ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8871:1: ( ruleBehaviorDeclaration )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8870:1: ( ( ruleBehavior ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8871:1: ( ruleBehavior )
             {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8871:1: ( ruleBehaviorDeclaration )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8872:1: ruleBehaviorDeclaration
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8871:1: ( ruleBehavior )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:8872:1: ruleBehavior
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getInteractorAccess().getBehaviorsBehaviorDeclarationParserRuleCall_3_2_0()); 
+               before(grammarAccess.getInteractorAccess().getBehaviorsBehaviorParserRuleCall_3_2_0()); 
             }
-            pushFollow(FOLLOW_ruleBehaviorDeclaration_in_rule__Interactor__BehaviorsAssignment_3_218044);
-            ruleBehaviorDeclaration();
+            pushFollow(FOLLOW_ruleBehavior_in_rule__Interactor__BehaviorsAssignment_3_218044);
+            ruleBehavior();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getInteractorAccess().getBehaviorsBehaviorDeclarationParserRuleCall_3_2_0()); 
+               after(grammarAccess.getInteractorAccess().getBehaviorsBehaviorParserRuleCall_3_2_0()); 
             }
 
             }
@@ -26006,9 +26006,9 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Component__InteractorAssignment_2"
 
 
-    // $ANTLR start "rule__Component__AliasesAssignment_3_1"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9002:1: rule__Component__AliasesAssignment_3_1 : ( ruleActorAlias ) ;
-    public final void rule__Component__AliasesAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Component__ActorsAssignment_3_1"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9002:1: rule__Component__ActorsAssignment_3_1 : ( ruleActorAlias ) ;
+    public final void rule__Component__ActorsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -26020,15 +26020,15 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9008:1: ruleActorAlias
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getComponentAccess().getAliasesActorAliasParserRuleCall_3_1_0()); 
+               before(grammarAccess.getComponentAccess().getActorsActorAliasParserRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_ruleActorAlias_in_rule__Component__AliasesAssignment_3_118324);
+            pushFollow(FOLLOW_ruleActorAlias_in_rule__Component__ActorsAssignment_3_118324);
             ruleActorAlias();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getComponentAccess().getAliasesActorAliasParserRuleCall_3_1_0()); 
+               after(grammarAccess.getComponentAccess().getActorsActorAliasParserRuleCall_3_1_0()); 
             }
 
             }
@@ -26048,12 +26048,12 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Component__AliasesAssignment_3_1"
+    // $ANTLR end "rule__Component__ActorsAssignment_3_1"
 
 
-    // $ANTLR start "rule__Component__AliasesAssignment_3_2_1"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9017:1: rule__Component__AliasesAssignment_3_2_1 : ( ruleActorAlias ) ;
-    public final void rule__Component__AliasesAssignment_3_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Component__ActorsAssignment_3_2_1"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9017:1: rule__Component__ActorsAssignment_3_2_1 : ( ruleActorAlias ) ;
+    public final void rule__Component__ActorsAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -26065,15 +26065,15 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9023:1: ruleActorAlias
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getComponentAccess().getAliasesActorAliasParserRuleCall_3_2_1_0()); 
+               before(grammarAccess.getComponentAccess().getActorsActorAliasParserRuleCall_3_2_1_0()); 
             }
-            pushFollow(FOLLOW_ruleActorAlias_in_rule__Component__AliasesAssignment_3_2_118355);
+            pushFollow(FOLLOW_ruleActorAlias_in_rule__Component__ActorsAssignment_3_2_118355);
             ruleActorAlias();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getComponentAccess().getAliasesActorAliasParserRuleCall_3_2_1_0()); 
+               after(grammarAccess.getComponentAccess().getActorsActorAliasParserRuleCall_3_2_1_0()); 
             }
 
             }
@@ -26093,7 +26093,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Component__AliasesAssignment_3_2_1"
+    // $ANTLR end "rule__Component__ActorsAssignment_3_2_1"
 
 
     // $ANTLR start "rule__SignalReception__InstanceAssignment_0_0"
@@ -26934,9 +26934,9 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DataTypeCompoundField__TypeAssignment_2"
 
 
-    // $ANTLR start "rule__BehaviorDeclaration__CauseAssignment_0"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9326:1: rule__BehaviorDeclaration__CauseAssignment_0 : ( ruleCause ) ;
-    public final void rule__BehaviorDeclaration__CauseAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__Behavior__CauseAssignment_0"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9326:1: rule__Behavior__CauseAssignment_0 : ( ruleCause ) ;
+    public final void rule__Behavior__CauseAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -26948,15 +26948,15 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9332:1: ruleCause
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorDeclarationAccess().getCauseCauseParserRuleCall_0_0()); 
+               before(grammarAccess.getBehaviorAccess().getCauseCauseParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleCause_in_rule__BehaviorDeclaration__CauseAssignment_018989);
+            pushFollow(FOLLOW_ruleCause_in_rule__Behavior__CauseAssignment_018989);
             ruleCause();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorDeclarationAccess().getCauseCauseParserRuleCall_0_0()); 
+               after(grammarAccess.getBehaviorAccess().getCauseCauseParserRuleCall_0_0()); 
             }
 
             }
@@ -26976,12 +26976,12 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BehaviorDeclaration__CauseAssignment_0"
+    // $ANTLR end "rule__Behavior__CauseAssignment_0"
 
 
-    // $ANTLR start "rule__BehaviorDeclaration__EffectsAssignment_2"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9341:1: rule__BehaviorDeclaration__EffectsAssignment_2 : ( ruleEffect ) ;
-    public final void rule__BehaviorDeclaration__EffectsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Behavior__EffectsAssignment_2"
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9341:1: rule__Behavior__EffectsAssignment_2 : ( ruleEffect ) ;
+    public final void rule__Behavior__EffectsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -26993,15 +26993,15 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
             // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:9347:1: ruleEffect
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorDeclarationAccess().getEffectsEffectParserRuleCall_2_0()); 
+               before(grammarAccess.getBehaviorAccess().getEffectsEffectParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleEffect_in_rule__BehaviorDeclaration__EffectsAssignment_219020);
+            pushFollow(FOLLOW_ruleEffect_in_rule__Behavior__EffectsAssignment_219020);
             ruleEffect();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorDeclarationAccess().getEffectsEffectParserRuleCall_2_0()); 
+               after(grammarAccess.getBehaviorAccess().getEffectsEffectParserRuleCall_2_0()); 
             }
 
             }
@@ -27021,7 +27021,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BehaviorDeclaration__EffectsAssignment_2"
+    // $ANTLR end "rule__Behavior__EffectsAssignment_2"
 
 
     // $ANTLR start "rule__OnCause__EventAssignment_1"
@@ -29357,9 +29357,9 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleDataTypeCompoundField_in_entryRuleDataTypeCompoundField1028 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDataTypeCompoundField1035 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DataTypeCompoundField__Group__0_in_ruleDataTypeCompoundField1061 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBehaviorDeclaration_in_entryRuleBehaviorDeclaration1088 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBehaviorDeclaration1095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BehaviorDeclaration__Group__0_in_ruleBehaviorDeclaration1121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBehavior_in_entryRuleBehavior1088 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBehavior1095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Behavior__Group__0_in_ruleBehavior1121 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCause_in_entryRuleCause1148 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCause1155 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Cause__Alternatives_in_ruleCause1181 = new BitSet(new long[]{0x0000000000000002L});
@@ -29627,14 +29627,14 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_82_in_rule__Component__Group_3__0__Impl6795 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Component__Group_3__1__Impl_in_rule__Component__Group_3__16826 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
     public static final BitSet FOLLOW_rule__Component__Group_3__2_in_rule__Component__Group_3__16829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Component__AliasesAssignment_3_1_in_rule__Component__Group_3__1__Impl6856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Component__ActorsAssignment_3_1_in_rule__Component__Group_3__1__Impl6856 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Component__Group_3__2__Impl_in_rule__Component__Group_3__26886 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Component__Group_3_2__0_in_rule__Component__Group_3__2__Impl6913 = new BitSet(new long[]{0x0000000000000002L,0x0000000000080000L});
     public static final BitSet FOLLOW_rule__Component__Group_3_2__0__Impl_in_rule__Component__Group_3_2__06950 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__Component__Group_3_2__1_in_rule__Component__Group_3_2__06953 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_83_in_rule__Component__Group_3_2__0__Impl6981 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Component__Group_3_2__1__Impl_in_rule__Component__Group_3_2__17012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Component__AliasesAssignment_3_2_1_in_rule__Component__Group_3_2__1__Impl7039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Component__ActorsAssignment_3_2_1_in_rule__Component__Group_3_2__1__Impl7039 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SignalReception__Group_0__0__Impl_in_rule__SignalReception__Group_0__07073 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
     public static final BitSet FOLLOW_rule__SignalReception__Group_0__1_in_rule__SignalReception__Group_0__07076 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SignalReception__InstanceAssignment_0_0_in_rule__SignalReception__Group_0__0__Impl7103 = new BitSet(new long[]{0x0000000000000002L});
@@ -29711,15 +29711,15 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_79_in_rule__DataTypeCompoundField__Group__1__Impl8768 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DataTypeCompoundField__Group__2__Impl_in_rule__DataTypeCompoundField__Group__28799 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DataTypeCompoundField__TypeAssignment_2_in_rule__DataTypeCompoundField__Group__2__Impl8826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BehaviorDeclaration__Group__0__Impl_in_rule__BehaviorDeclaration__Group__08862 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__BehaviorDeclaration__Group__1_in_rule__BehaviorDeclaration__Group__08865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BehaviorDeclaration__CauseAssignment_0_in_rule__BehaviorDeclaration__Group__0__Impl8892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BehaviorDeclaration__Group__1__Impl_in_rule__BehaviorDeclaration__Group__18922 = new BitSet(new long[]{0x0000000000000000L,0x0000000034000000L});
-    public static final BitSet FOLLOW_rule__BehaviorDeclaration__Group__2_in_rule__BehaviorDeclaration__Group__18925 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_rule__BehaviorDeclaration__Group__1__Impl8953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BehaviorDeclaration__Group__2__Impl_in_rule__BehaviorDeclaration__Group__28984 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BehaviorDeclaration__EffectsAssignment_2_in_rule__BehaviorDeclaration__Group__2__Impl9013 = new BitSet(new long[]{0x0000000000000002L,0x0000000034000000L});
-    public static final BitSet FOLLOW_rule__BehaviorDeclaration__EffectsAssignment_2_in_rule__BehaviorDeclaration__Group__2__Impl9025 = new BitSet(new long[]{0x0000000000000002L,0x0000000034000000L});
+    public static final BitSet FOLLOW_rule__Behavior__Group__0__Impl_in_rule__Behavior__Group__08862 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Behavior__Group__1_in_rule__Behavior__Group__08865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Behavior__CauseAssignment_0_in_rule__Behavior__Group__0__Impl8892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Behavior__Group__1__Impl_in_rule__Behavior__Group__18922 = new BitSet(new long[]{0x0000000000000000L,0x0000000034000000L});
+    public static final BitSet FOLLOW_rule__Behavior__Group__2_in_rule__Behavior__Group__18925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_rule__Behavior__Group__1__Impl8953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Behavior__Group__2__Impl_in_rule__Behavior__Group__28984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Behavior__EffectsAssignment_2_in_rule__Behavior__Group__2__Impl9013 = new BitSet(new long[]{0x0000000000000002L,0x0000000034000000L});
+    public static final BitSet FOLLOW_rule__Behavior__EffectsAssignment_2_in_rule__Behavior__Group__2__Impl9025 = new BitSet(new long[]{0x0000000000000002L,0x0000000034000000L});
     public static final BitSet FOLLOW_rule__OnCause__Group__0__Impl_in_rule__OnCause__Group__09064 = new BitSet(new long[]{0x0000000000000020L,0x0000100000000000L});
     public static final BitSet FOLLOW_rule__OnCause__Group__1_in_rule__OnCause__Group__09067 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_87_in_rule__OnCause__Group__0__Impl9095 = new BitSet(new long[]{0x0000000000000002L});
@@ -30080,7 +30080,7 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__Interactor__NameAssignment_117951 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEntity_in_rule__Interactor__EntitiesAssignment_3_017982 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSignal_in_rule__Interactor__SignalsAssignment_3_118013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBehaviorDeclaration_in_rule__Interactor__BehaviorsAssignment_3_218044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBehavior_in_rule__Interactor__BehaviorsAssignment_3_218044 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleGenericEntity_in_rule__AccessibleEntity__GenericAssignment_018075 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__AccessibleEntity__SpecificAssignment_118110 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Actor__NameAssignment_018145 = new BitSet(new long[]{0x0000000000000002L});
@@ -30088,8 +30088,8 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__ActorAlias__AliasAssignment_218219 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Component__NameAssignment_018254 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Component__InteractorAssignment_218289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActorAlias_in_rule__Component__AliasesAssignment_3_118324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActorAlias_in_rule__Component__AliasesAssignment_3_2_118355 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActorAlias_in_rule__Component__ActorsAssignment_3_118324 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActorAlias_in_rule__Component__ActorsAssignment_3_2_118355 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__SignalReception__InstanceAssignment_0_018390 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSignalAlias_in_rule__SignalReception__SourceAssignment_0_1_118425 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_108_in_rule__SignalReception__InitAssignment_118461 = new BitSet(new long[]{0x0000000000000002L});
@@ -30108,8 +30108,8 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleDataTypeCompoundField_in_rule__DataTypeCompound__FieldsAssignment_318896 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__DataTypeCompoundField__NameAssignment_018927 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDataType_in_rule__DataTypeCompoundField__TypeAssignment_218958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCause_in_rule__BehaviorDeclaration__CauseAssignment_018989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEffect_in_rule__BehaviorDeclaration__EffectsAssignment_219020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCause_in_rule__Behavior__CauseAssignment_018989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEffect_in_rule__Behavior__EffectsAssignment_219020 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSignalReception_in_rule__OnCause__EventAssignment_119051 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__OnCause__GuardAssignment_2_119082 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_rule__WhenCause__ConditionAssignment_119113 = new BitSet(new long[]{0x0000000000000002L});

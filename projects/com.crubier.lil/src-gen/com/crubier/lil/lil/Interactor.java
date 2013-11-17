@@ -87,7 +87,7 @@ public interface Interactor extends EObject
 
   /**
    * Returns the value of the '<em><b>Behaviors</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.BehaviorDeclaration}.
+   * The list contents are of type {@link com.crubier.lil.lil.Behavior}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Behaviors</em>' containment reference list isn't clear,
@@ -99,6 +99,6 @@ public interface Interactor extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<BehaviorDeclaration> getBehaviors();
+  EList<Behavior> getBehaviors();
 
 } // Interactor

@@ -3,17 +3,32 @@
  */
 package com.crubier.lil.generator;
 
+import com.crubier.lil.lil.Actor;
+import com.crubier.lil.lil.Behavior;
+import com.crubier.lil.lil.Component;
+import com.crubier.lil.lil.Entity;
 import com.crubier.lil.lil.Interactor;
+import com.crubier.lil.lil.LilFactory;
+import com.crubier.lil.lil.Signal;
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.serializer.ISerializer;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
@@ -33,11 +48,150 @@ public class LilGeneratorFlattenedLil implements IGenerator {
     Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
     Iterable<Interactor> _filter = Iterables.<Interactor>filter(_iterable, Interactor.class);
     for (final Interactor e : _filter) {
-      String _name = e.getName();
-      String _plus = ("flat/" + _name);
-      String _plus_1 = (_plus + ".lil");
-      String _serialize = this._iSerializer.serialize(e);
-      fsa.generateFile(_plus_1, _serialize);
+      {
+        final Component root = LilFactory.eINSTANCE.createComponent();
+        root.setInteractor(e);
+        root.setName("main");
+        String _name = e.getName();
+        String _plus = ("flat/" + _name);
+        String _plus_1 = (_plus + ".lil");
+        Interactor _flatten = this.flatten(root);
+        String _serialize = this._iSerializer.serialize(_flatten);
+        fsa.generateFile(_plus_1, _serialize);
+      }
     }
+  }
+  
+  /**
+   * Flattens an interactor recursively
+   */
+  public Interactor flatten(final Component component) {
+    final Interactor interactor = component.getInteractor();
+    final String prefix = component.getName();
+    EList<Entity> _entities = interactor.getEntities();
+    Set<Entity> _set = IterableExtensions.<Entity>toSet(_entities);
+    final Iterable<Actor> actors = Iterables.<Actor>filter(_set, Actor.class);
+    EList<Entity> _entities_1 = interactor.getEntities();
+    Set<Entity> _set_1 = IterableExtensions.<Entity>toSet(_entities_1);
+    final Iterable<Component> components = Iterables.<Component>filter(_set_1, Component.class);
+    EList<Behavior> _behaviors = interactor.getBehaviors();
+    final Set<Behavior> behaviors = IterableExtensions.<Behavior>toSet(_behaviors);
+    EList<Signal> _signals = interactor.getSignals();
+    final Set<Signal> signals = IterableExtensions.<Signal>toSet(_signals);
+    final Interactor result = LilFactory.eINSTANCE.createInteractor();
+    ArrayList<Component> _arrayList = new ArrayList<Component>();
+    final ArrayList<Component> flatComponents = _arrayList;
+    for (final Component c : components) {
+    }
+    return result;
+  }
+  
+  /**
+   * merge two interactors
+   * pre condition : the interactors must NOT be compound, they must not have any sub components
+   */
+  public Interactor merge(final Interactor l1, final Interactor l2) {
+    try {
+      final Interactor result = LilFactory.eINSTANCE.createInteractor();
+      EList<Entity> _entities = result.getEntities();
+      _entities.clear();
+      HashSet<Entity> _hashSet = new HashSet<Entity>();
+      final HashSet<Entity> entities = _hashSet;
+      EList<Entity> _entities_1 = l1.getEntities();
+      entities.addAll(_entities_1);
+      EList<Entity> _entities_2 = l2.getEntities();
+      entities.addAll(_entities_2);
+      Iterable<Component> _filter = Iterables.<Component>filter(entities, Component.class);
+      int _size = IterableExtensions.size(_filter);
+      boolean _greaterThan = (_size > 0);
+      if (_greaterThan) {
+        Exception _exception = new Exception("Impossible to merge compound interactors");
+        throw _exception;
+      } else {
+        EList<Entity> _entities_3 = result.getEntities();
+        _entities_3.addAll(entities);
+      }
+      EList<Signal> _signals = result.getSignals();
+      _signals.clear();
+      HashSet<Signal> _hashSet_1 = new HashSet<Signal>();
+      final HashSet<Signal> signals = _hashSet_1;
+      EList<Signal> _signals_1 = l1.getSignals();
+      signals.addAll(_signals_1);
+      EList<Signal> _signals_2 = l2.getSignals();
+      signals.addAll(_signals_2);
+      final Function1<Signal,Boolean> _function = new Function1<Signal,Boolean>() {
+        public Boolean apply(final Signal it) {
+          boolean _xblockexpression = false;
+          {
+            final Signal first = it;
+            final Function1<Signal,Boolean> _function = new Function1<Signal,Boolean>() {
+              public Boolean apply(final Signal it) {
+                boolean _xblockexpression = false;
+                {
+                  final Signal second = it;
+                  String _name = second.getName();
+                  String _lowerCase = _name.toLowerCase();
+                  String _name_1 = first.getName();
+                  String _lowerCase_1 = _name_1.toLowerCase();
+                  boolean _equals = Objects.equal(_lowerCase, _lowerCase_1);
+                  _xblockexpression = (_equals);
+                }
+                return Boolean.valueOf(_xblockexpression);
+              }
+            };
+            boolean _exists = IterableExtensions.<Signal>exists(signals, _function);
+            _xblockexpression = (_exists);
+          }
+          return Boolean.valueOf(_xblockexpression);
+        }
+      };
+      boolean _exists = IterableExtensions.<Signal>exists(signals, _function);
+      if (_exists) {
+        Exception _exception_1 = new Exception("Impossible to merge interactors containing signals with identical names");
+        throw _exception_1;
+      } else {
+        EList<Signal> _signals_3 = result.getSignals();
+        _signals_3.addAll(signals);
+      }
+      EList<Behavior> _behaviors = result.getBehaviors();
+      _behaviors.clear();
+      HashSet<Behavior> _hashSet_2 = new HashSet<Behavior>();
+      final HashSet<Behavior> behaviors = _hashSet_2;
+      EList<Behavior> _behaviors_1 = l1.getBehaviors();
+      behaviors.addAll(_behaviors_1);
+      EList<Behavior> _behaviors_2 = l2.getBehaviors();
+      behaviors.addAll(_behaviors_2);
+      EList<Behavior> _behaviors_3 = result.getBehaviors();
+      _behaviors_3.addAll(behaviors);
+      return result;
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * merge any number of interactors
+   */
+  public HashSet<Interactor> merge(final Set<Interactor> l) {
+    HashSet<Interactor> _hashSet = new HashSet<Interactor>();
+    final HashSet<Interactor> result = _hashSet;
+    int _length = ((Object[])Conversions.unwrapArray(l, Object.class)).length;
+    boolean _greaterThan = (_length > 1);
+    if (_greaterThan) {
+      Interactor _get = ((Interactor[])Conversions.unwrapArray(l, Interactor.class))[0];
+      Interactor _get_1 = ((Interactor[])Conversions.unwrapArray(l, Interactor.class))[1];
+      Interactor _merge = this.merge(_get, _get_1);
+      result.add(_merge);
+      Iterable<Interactor> _drop = IterableExtensions.<Interactor>drop(l, 2);
+      Iterables.<Interactor>addAll(result, _drop);
+    } else {
+      int _length_1 = ((Object[])Conversions.unwrapArray(l, Object.class)).length;
+      boolean _equals = (_length_1 == 1);
+      if (_equals) {
+        Interactor _get_2 = ((Interactor[])Conversions.unwrapArray(l, Interactor.class))[0];
+        result.add(_get_2);
+      }
+    }
+    return result;
   }
 }

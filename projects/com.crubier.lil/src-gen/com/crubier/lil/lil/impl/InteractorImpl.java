@@ -2,7 +2,7 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.BehaviorDeclaration;
+import com.crubier.lil.lil.Behavior;
 import com.crubier.lil.lil.Entity;
 import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilPackage;
@@ -90,7 +90,7 @@ public class InteractorImpl extends MinimalEObjectImpl.Container implements Inte
    * @generated
    * @ordered
    */
-  protected EList<BehaviorDeclaration> behaviors;
+  protected EList<Behavior> behaviors;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,11 +169,11 @@ public class InteractorImpl extends MinimalEObjectImpl.Container implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<BehaviorDeclaration> getBehaviors()
+  public EList<Behavior> getBehaviors()
   {
     if (behaviors == null)
     {
-      behaviors = new EObjectContainmentEList<BehaviorDeclaration>(BehaviorDeclaration.class, this, LilPackage.INTERACTOR__BEHAVIORS);
+      behaviors = new EObjectContainmentEList<Behavior>(Behavior.class, this, LilPackage.INTERACTOR__BEHAVIORS);
     }
     return behaviors;
   }
@@ -244,7 +244,7 @@ public class InteractorImpl extends MinimalEObjectImpl.Container implements Inte
         return;
       case LilPackage.INTERACTOR__BEHAVIORS:
         getBehaviors().clear();
-        getBehaviors().addAll((Collection<? extends BehaviorDeclaration>)newValue);
+        getBehaviors().addAll((Collection<? extends Behavior>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

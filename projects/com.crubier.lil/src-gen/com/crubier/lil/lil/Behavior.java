@@ -8,22 +8,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Behavior Declaration</b></em>'.
+ * A representation of the model object '<em><b>Behavior</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.BehaviorDeclaration#getCause <em>Cause</em>}</li>
- *   <li>{@link com.crubier.lil.lil.BehaviorDeclaration#getEffects <em>Effects</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Behavior#getCause <em>Cause</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Behavior#getEffects <em>Effects</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.crubier.lil.lil.LilPackage#getBehaviorDeclaration()
+ * @see com.crubier.lil.lil.LilPackage#getBehavior()
  * @model
  * @generated
  */
-public interface BehaviorDeclaration extends EObject
+public interface Behavior extends EObject
 {
   /**
    * Returns the value of the '<em><b>Cause</b></em>' containment reference.
@@ -35,14 +35,14 @@ public interface BehaviorDeclaration extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Cause</em>' containment reference.
    * @see #setCause(Cause)
-   * @see com.crubier.lil.lil.LilPackage#getBehaviorDeclaration_Cause()
+   * @see com.crubier.lil.lil.LilPackage#getBehavior_Cause()
    * @model containment="true"
    * @generated
    */
   Cause getCause();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.BehaviorDeclaration#getCause <em>Cause</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.Behavior#getCause <em>Cause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Cause</em>' containment reference.
@@ -61,10 +61,10 @@ public interface BehaviorDeclaration extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Effects</em>' containment reference list.
-   * @see com.crubier.lil.lil.LilPackage#getBehaviorDeclaration_Effects()
+   * @see com.crubier.lil.lil.LilPackage#getBehavior_Effects()
    * @model containment="true"
    * @generated
    */
   EList<Effect> getEffects();
 
-} // BehaviorDeclaration
+} // Behavior

@@ -32,7 +32,7 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
         	Scopes.scopeFor(temp.eContents);
         }
         else {
-        	println((flowemission.destination.source.specific as Component).interactor.eContents);
+//        	println((flowemission.destination.source.specific as Component).interactor.eContents);
         	Scopes.scopeFor((flowemission.destination.source.specific as Component).interactor.eContents);
         }
     }

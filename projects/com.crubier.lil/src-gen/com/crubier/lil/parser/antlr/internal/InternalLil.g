@@ -202,9 +202,9 @@ ruleInteractor returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInteractorAccess().getBehaviorsBehaviorDeclarationParserRuleCall_3_2_0()); 
+	        newCompositeNode(grammarAccess.getInteractorAccess().getBehaviorsBehaviorParserRuleCall_3_2_0()); 
 	    }
-		lv_behaviors_5_0=ruleBehaviorDeclaration		{
+		lv_behaviors_5_0=ruleBehavior		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInteractorRule());
 	        }
@@ -212,7 +212,7 @@ ruleInteractor returns [EObject current=null]
        			$current, 
        			"behaviors",
         		lv_behaviors_5_0, 
-        		"BehaviorDeclaration");
+        		"Behavior");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -540,16 +540,16 @@ ruleComponent returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComponentAccess().getAliasesActorAliasParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getComponentAccess().getActorsActorAliasParserRuleCall_3_1_0()); 
 	    }
-		lv_aliases_4_0=ruleActorAlias		{
+		lv_actors_4_0=ruleActorAlias		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getComponentRule());
 	        }
        		add(
        			$current, 
-       			"aliases",
-        		lv_aliases_4_0, 
+       			"actors",
+        		lv_actors_4_0, 
         		"ActorAlias");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -562,16 +562,16 @@ ruleComponent returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComponentAccess().getAliasesActorAliasParserRuleCall_3_2_1_0()); 
+	        newCompositeNode(grammarAccess.getComponentAccess().getActorsActorAliasParserRuleCall_3_2_1_0()); 
 	    }
-		lv_aliases_6_0=ruleActorAlias		{
+		lv_actors_6_0=ruleActorAlias		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getComponentRule());
 	        }
        		add(
        			$current, 
-       			"aliases",
-        		lv_aliases_6_0, 
+       			"actors",
+        		lv_actors_6_0, 
         		"ActorAlias");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1166,28 +1166,28 @@ ruleDataTypeCompoundField returns [EObject current=null]
 
 
 
-// Entry rule entryRuleBehaviorDeclaration
-entryRuleBehaviorDeclaration returns [EObject current=null] 
+// Entry rule entryRuleBehavior
+entryRuleBehavior returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getBehaviorDeclarationRule()); }
-	 iv_ruleBehaviorDeclaration=ruleBehaviorDeclaration 
-	 { $current=$iv_ruleBehaviorDeclaration.current; } 
+	{ newCompositeNode(grammarAccess.getBehaviorRule()); }
+	 iv_ruleBehavior=ruleBehavior 
+	 { $current=$iv_ruleBehavior.current; } 
 	 EOF 
 ;
 
-// Rule BehaviorDeclaration
-ruleBehaviorDeclaration returns [EObject current=null] 
+// Rule Behavior
+ruleBehavior returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBehaviorDeclarationAccess().getCauseCauseParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getBehaviorAccess().getCauseCauseParserRuleCall_0_0()); 
 	    }
 		lv_cause_0_0=ruleCause		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBehaviorDeclarationRule());
+	            $current = createModelElementForParent(grammarAccess.getBehaviorRule());
 	        }
        		set(
        			$current, 
@@ -1200,16 +1200,16 @@ ruleBehaviorDeclaration returns [EObject current=null]
 )
 )	otherlv_1=':' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getBehaviorDeclarationAccess().getColonKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getBehaviorAccess().getColonKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBehaviorDeclarationAccess().getEffectsEffectParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getBehaviorAccess().getEffectsEffectParserRuleCall_2_0()); 
 	    }
 		lv_effects_2_0=ruleEffect		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBehaviorDeclarationRule());
+	            $current = createModelElementForParent(grammarAccess.getBehaviorRule());
 	        }
        		add(
        			$current, 

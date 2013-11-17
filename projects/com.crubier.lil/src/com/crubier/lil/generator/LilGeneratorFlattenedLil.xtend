@@ -9,6 +9,15 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import com.crubier.lil.lil.Interactor
 import com.google.inject.Inject
 import org.eclipse.xtext.serializer.ISerializer
+import com.crubier.lil.lil.Component
+import com.crubier.lil.lil.LilFactory
+import com.crubier.lil.lil.Actor
+import com.crubier.lil.lil.Signal
+import java.util.ArrayList
+import java.util.HashSet
+import com.crubier.lil.lil.Entity
+import com.crubier.lil.lil.Behavior
+import java.util.Set
 
 /**
  * Generates code from your model files on save.
@@ -19,18 +28,113 @@ class LilGeneratorFlattenedLil implements IGenerator {
 	
 	@Inject extension ISerializer;
 	
+
+	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 	
 		println("generate flattened lil code");
 		
 		for(e : resource.allContents.toIterable.filter(typeof(Interactor))) {
 			
-			fsa.generateFile("flat/"+e.name+".lil",serialize(e))
+			val root = LilFactory.eINSTANCE.createComponent
+			root.interactor = e
+			root.name = "main"
+			
+			fsa.generateFile("flat/"+e.name+".lil",serialize(flatten(root)))
+		}
+
+	}
+	
+	/**
+	 * Flattens an interactor recursively
+	 */
+	def flatten(Component component) {
+		val interactor = component.interactor
+		val prefix = component.name;
+		
+		
+		val actors = interactor.entities.toSet.filter(typeof(Actor))
+		val components = interactor.entities.toSet.filter(typeof(Component))
+		val behaviors = interactor.behaviors.toSet
+		val signals = interactor.signals.toSet
+		
+		val result = LilFactory.eINSTANCE.createInteractor
+		
+		val flatComponents = new ArrayList<Component>
+		for (c:components) {
+			
 		}
 		
-//		fsa.generateFile('gen.java', 'test :\n' + 
-//			resource.allContents.filter(typeof(InteractorDeclaration)).map[name].join(', '))
+		
+		
+//		for( s : signals) {
+//			val signal = LilFactory.eINSTANCE.createSignal;
+//			signal.name = toString(prefix)+s.name.toLowerCase.toFirstUpper;
+//			println("name : " + (signal.name));
+//		}
+		
+		return result
 	}
+	
+	/**
+	 * merge two interactors
+	 * pre condition : the interactors must NOT be compound, they must not have any sub components
+	 */
+	def merge (Interactor l1, Interactor l2) {
+		val result = LilFactory.eINSTANCE.createInteractor
+		
+		//Merge entities
+		result.entities.clear					
+		val entities = new HashSet<Entity>
+		entities.addAll(l1.entities)
+		entities.addAll(l2.entities)
+		if(entities.filter(typeof(Component)).size >0) throw new Exception("Impossible to merge compound interactors") 
+		else result.entities.addAll(entities)
+		
+		//Merge signals
+		result.signals.clear
+		val signals = new HashSet<Signal>
+		signals.addAll(l1.signals)
+		signals.addAll(l2.signals)
+		if(signals.exists[val first=it signals.exists[val second=it second.name.toLowerCase == first.name.toLowerCase]]) throw new Exception("Impossible to merge interactors containing signals with identical names")
+		else result.signals.addAll(signals)
+		
+		//Merge behaviors
+		result.behaviors.clear
+		val behaviors = new HashSet<Behavior>
+		behaviors.addAll(l1.behaviors)
+		behaviors.addAll(l2.behaviors)
+		result.behaviors.addAll(behaviors)
+		
+		return result
+	}
+	
+	/**
+	 * merge any number of interactors
+	 */
+	def merge (Set<Interactor> l) {
+		val result = new HashSet<Interactor>
+		
+		if(l.length >1) {
+			result.add(merge(l.get(0),l.get(1)))
+			result.addAll(l.drop(2))
+		}
+		else if (l.length==1) {
+			result.add(l.get(0))
+		}
+		
+		return result
+	}
+	
+	
+//	def toString(List<String> prefix) {
+//		var res = "";
+//		for(String s : prefix) {
+//			res= res + s.toLowerCase().toFirstUpper();
+//		}
+//		return res;
+//	}
+	
 	
 	
 	

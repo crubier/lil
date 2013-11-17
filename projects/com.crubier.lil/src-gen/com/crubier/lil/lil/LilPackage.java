@@ -307,13 +307,13 @@ public interface LilPackage extends EPackage
   int COMPONENT__INTERACTOR = ENTITY_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Aliases</b></em>' containment reference list.
+   * The feature id for the '<em><b>Actors</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__ALIASES = ENTITY_FEATURE_COUNT + 1;
+  int COMPONENT__ACTORS = ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Component</em>' class.
@@ -620,14 +620,14 @@ public interface LilPackage extends EPackage
   int DATA_TYPE_COMPOUND_FIELD_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.BehaviorDeclarationImpl <em>Behavior Declaration</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.BehaviorImpl <em>Behavior</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.BehaviorDeclarationImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBehaviorDeclaration()
+   * @see com.crubier.lil.lil.impl.BehaviorImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getBehavior()
    * @generated
    */
-  int BEHAVIOR_DECLARATION = 14;
+  int BEHAVIOR = 14;
 
   /**
    * The feature id for the '<em><b>Cause</b></em>' containment reference.
@@ -636,7 +636,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BEHAVIOR_DECLARATION__CAUSE = 0;
+  int BEHAVIOR__CAUSE = 0;
 
   /**
    * The feature id for the '<em><b>Effects</b></em>' containment reference list.
@@ -645,16 +645,16 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BEHAVIOR_DECLARATION__EFFECTS = 1;
+  int BEHAVIOR__EFFECTS = 1;
 
   /**
-   * The number of structural features of the '<em>Behavior Declaration</em>' class.
+   * The number of structural features of the '<em>Behavior</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BEHAVIOR_DECLARATION_FEATURE_COUNT = 2;
+  int BEHAVIOR_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.CauseImpl <em>Cause</em>}' class.
@@ -1602,15 +1602,15 @@ public interface LilPackage extends EPackage
   EReference getComponent_Interactor();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.Component#getAliases <em>Aliases</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.Component#getActors <em>Actors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Aliases</em>'.
-   * @see com.crubier.lil.lil.Component#getAliases()
+   * @return the meta object for the containment reference list '<em>Actors</em>'.
+   * @see com.crubier.lil.lil.Component#getActors()
    * @see #getComponent()
    * @generated
    */
-  EReference getComponent_Aliases();
+  EReference getComponent_Actors();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.SignalReception <em>Signal Reception</em>}'.
@@ -1881,36 +1881,36 @@ public interface LilPackage extends EPackage
   EReference getDataTypeCompoundField_Type();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.BehaviorDeclaration <em>Behavior Declaration</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.Behavior <em>Behavior</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Behavior Declaration</em>'.
-   * @see com.crubier.lil.lil.BehaviorDeclaration
+   * @return the meta object for class '<em>Behavior</em>'.
+   * @see com.crubier.lil.lil.Behavior
    * @generated
    */
-  EClass getBehaviorDeclaration();
+  EClass getBehavior();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.BehaviorDeclaration#getCause <em>Cause</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.Behavior#getCause <em>Cause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Cause</em>'.
-   * @see com.crubier.lil.lil.BehaviorDeclaration#getCause()
-   * @see #getBehaviorDeclaration()
+   * @see com.crubier.lil.lil.Behavior#getCause()
+   * @see #getBehavior()
    * @generated
    */
-  EReference getBehaviorDeclaration_Cause();
+  EReference getBehavior_Cause();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.BehaviorDeclaration#getEffects <em>Effects</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.Behavior#getEffects <em>Effects</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Effects</em>'.
-   * @see com.crubier.lil.lil.BehaviorDeclaration#getEffects()
-   * @see #getBehaviorDeclaration()
+   * @see com.crubier.lil.lil.Behavior#getEffects()
+   * @see #getBehavior()
    * @generated
    */
-  EReference getBehaviorDeclaration_Effects();
+  EReference getBehavior_Effects();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.Cause <em>Cause</em>}'.
@@ -2608,12 +2608,12 @@ public interface LilPackage extends EPackage
     EReference COMPONENT__INTERACTOR = eINSTANCE.getComponent_Interactor();
 
     /**
-     * The meta object literal for the '<em><b>Aliases</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Actors</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__ALIASES = eINSTANCE.getComponent_Aliases();
+    EReference COMPONENT__ACTORS = eINSTANCE.getComponent_Actors();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.SignalReceptionImpl <em>Signal Reception</em>}' class.
@@ -2830,14 +2830,14 @@ public interface LilPackage extends EPackage
     EReference DATA_TYPE_COMPOUND_FIELD__TYPE = eINSTANCE.getDataTypeCompoundField_Type();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.BehaviorDeclarationImpl <em>Behavior Declaration</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.BehaviorImpl <em>Behavior</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.BehaviorDeclarationImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getBehaviorDeclaration()
+     * @see com.crubier.lil.lil.impl.BehaviorImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getBehavior()
      * @generated
      */
-    EClass BEHAVIOR_DECLARATION = eINSTANCE.getBehaviorDeclaration();
+    EClass BEHAVIOR = eINSTANCE.getBehavior();
 
     /**
      * The meta object literal for the '<em><b>Cause</b></em>' containment reference feature.
@@ -2845,7 +2845,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BEHAVIOR_DECLARATION__CAUSE = eINSTANCE.getBehaviorDeclaration_Cause();
+    EReference BEHAVIOR__CAUSE = eINSTANCE.getBehavior_Cause();
 
     /**
      * The meta object literal for the '<em><b>Effects</b></em>' containment reference list feature.
@@ -2853,7 +2853,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BEHAVIOR_DECLARATION__EFFECTS = eINSTANCE.getBehaviorDeclaration_Effects();
+    EReference BEHAVIOR__EFFECTS = eINSTANCE.getBehavior_Effects();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.CauseImpl <em>Cause</em>}' class.

@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.crubier.lil.lil.Component#getInteractor <em>Interactor</em>}</li>
- *   <li>{@link com.crubier.lil.lil.Component#getAliases <em>Aliases</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.Component#getActors <em>Actors</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,19 +50,19 @@ public interface Component extends Entity
   void setInteractor(Interactor value);
 
   /**
-   * Returns the value of the '<em><b>Aliases</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Actors</b></em>' containment reference list.
    * The list contents are of type {@link com.crubier.lil.lil.ActorAlias}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Aliases</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Actors</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Aliases</em>' containment reference list.
-   * @see com.crubier.lil.lil.LilPackage#getComponent_Aliases()
+   * @return the value of the '<em>Actors</em>' containment reference list.
+   * @see com.crubier.lil.lil.LilPackage#getComponent_Actors()
    * @model containment="true"
    * @generated
    */
-  EList<ActorAlias> getAliases();
+  EList<ActorAlias> getActors();
 
 } // Component

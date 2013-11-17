@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 /**
  * This class contains custom scoping description.
@@ -48,23 +47,13 @@ public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
       }
       _xifexpression = _xblockexpression;
     } else {
-      IScope _xblockexpression_1 = null;
-      {
-        SignalAlias _destination_1 = flowemission.getDestination();
-        AccessibleEntity _source = _destination_1.getSource();
-        Entity _specific = _source.getSpecific();
-        Interactor _interactor = ((Component) _specific).getInteractor();
-        EList<EObject> _eContents = _interactor.eContents();
-        InputOutput.<EList<EObject>>println(_eContents);
-        SignalAlias _destination_2 = flowemission.getDestination();
-        AccessibleEntity _source_1 = _destination_2.getSource();
-        Entity _specific_1 = _source_1.getSpecific();
-        Interactor _interactor_1 = ((Component) _specific_1).getInteractor();
-        EList<EObject> _eContents_1 = _interactor_1.eContents();
-        IScope _scopeFor = Scopes.scopeFor(_eContents_1);
-        _xblockexpression_1 = (_scopeFor);
-      }
-      _xifexpression = _xblockexpression_1;
+      SignalAlias _destination_1 = flowemission.getDestination();
+      AccessibleEntity _source = _destination_1.getSource();
+      Entity _specific = _source.getSpecific();
+      Interactor _interactor = ((Component) _specific).getInteractor();
+      EList<EObject> _eContents = _interactor.eContents();
+      IScope _scopeFor = Scopes.scopeFor(_eContents);
+      _xifexpression = _scopeFor;
     }
     return _xifexpression;
   }

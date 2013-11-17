@@ -15,7 +15,7 @@ LilModel:
 //Interactor
 Interactor:
 	'interactor' name=ID ':'
-	((entities+=Entity) | (signals+=Signal) | (behaviors+=BehaviorDeclaration))*;
+	((entities+=Entity) | (signals+=Signal) | (behaviors+=Behavior))*;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Entities
@@ -36,7 +36,7 @@ ActorAlias:
 	source=[Actor] 'as' alias=[Actor];
 
 Component:
-	name=ID ':' interactor=[Interactor] ( 'with' aliases+=ActorAlias (',' aliases+=ActorAlias)*)? ;
+	name=ID ':' interactor=[Interactor] ( 'with' actors+=ActorAlias (',' actors+=ActorAlias)*)? ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Signals
@@ -72,7 +72,7 @@ DataTypeCompoundField:
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Behaviors
-BehaviorDeclaration:
+Behavior:
 	cause=Cause ':' (effects+=Effect)+;
 
 Cause:

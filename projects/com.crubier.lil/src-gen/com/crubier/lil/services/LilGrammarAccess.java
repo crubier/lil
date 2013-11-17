@@ -61,16 +61,16 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSignalsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
 		private final RuleCall cSignalsSignalParserRuleCall_3_1_0 = (RuleCall)cSignalsAssignment_3_1.eContents().get(0);
 		private final Assignment cBehaviorsAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
-		private final RuleCall cBehaviorsBehaviorDeclarationParserRuleCall_3_2_0 = (RuleCall)cBehaviorsAssignment_3_2.eContents().get(0);
+		private final RuleCall cBehaviorsBehaviorParserRuleCall_3_2_0 = (RuleCall)cBehaviorsAssignment_3_2.eContents().get(0);
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		////Interactor
 		//Interactor:
-		//	"interactor" name=ID ":" (entities+=Entity | signals+=Signal | behaviors+=BehaviorDeclaration)*;
+		//	"interactor" name=ID ":" (entities+=Entity | signals+=Signal | behaviors+=Behavior)*;
 		public ParserRule getRule() { return rule; }
 
-		//"interactor" name=ID ":" (entities+=Entity | signals+=Signal | behaviors+=BehaviorDeclaration)*
+		//"interactor" name=ID ":" (entities+=Entity | signals+=Signal | behaviors+=Behavior)*
 		public Group getGroup() { return cGroup; }
 
 		//"interactor"
@@ -85,7 +85,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//(entities+=Entity | signals+=Signal | behaviors+=BehaviorDeclaration)*
+		//(entities+=Entity | signals+=Signal | behaviors+=Behavior)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
 		//entities+=Entity
@@ -100,11 +100,11 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//Signal
 		public RuleCall getSignalsSignalParserRuleCall_3_1_0() { return cSignalsSignalParserRuleCall_3_1_0; }
 
-		//behaviors+=BehaviorDeclaration
+		//behaviors+=Behavior
 		public Assignment getBehaviorsAssignment_3_2() { return cBehaviorsAssignment_3_2; }
 
-		//BehaviorDeclaration
-		public RuleCall getBehaviorsBehaviorDeclarationParserRuleCall_3_2_0() { return cBehaviorsBehaviorDeclarationParserRuleCall_3_2_0; }
+		//Behavior
+		public RuleCall getBehaviorsBehaviorParserRuleCall_3_2_0() { return cBehaviorsBehaviorParserRuleCall_3_2_0; }
 	}
 
 	public class AccessibleEntityElements extends AbstractParserRuleElementFinder {
@@ -280,18 +280,18 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInteractorInteractorIDTerminalRuleCall_2_0_1 = (RuleCall)cInteractorInteractorCrossReference_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cWithKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cAliasesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cAliasesActorAliasParserRuleCall_3_1_0 = (RuleCall)cAliasesAssignment_3_1.eContents().get(0);
+		private final Assignment cActorsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cActorsActorAliasParserRuleCall_3_1_0 = (RuleCall)cActorsAssignment_3_1.eContents().get(0);
 		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
 		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
-		private final Assignment cAliasesAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final RuleCall cAliasesActorAliasParserRuleCall_3_2_1_0 = (RuleCall)cAliasesAssignment_3_2_1.eContents().get(0);
+		private final Assignment cActorsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cActorsActorAliasParserRuleCall_3_2_1_0 = (RuleCall)cActorsAssignment_3_2_1.eContents().get(0);
 		
 		//Component:
-		//	name=ID ":" interactor=[Interactor] ("with" aliases+=ActorAlias ("," aliases+=ActorAlias)*)?;
+		//	name=ID ":" interactor=[Interactor] ("with" actors+=ActorAlias ("," actors+=ActorAlias)*)?;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID ":" interactor=[Interactor] ("with" aliases+=ActorAlias ("," aliases+=ActorAlias)*)?
+		//name=ID ":" interactor=[Interactor] ("with" actors+=ActorAlias ("," actors+=ActorAlias)*)?
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -312,29 +312,29 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getInteractorInteractorIDTerminalRuleCall_2_0_1() { return cInteractorInteractorIDTerminalRuleCall_2_0_1; }
 
-		//("with" aliases+=ActorAlias ("," aliases+=ActorAlias)*)?
+		//("with" actors+=ActorAlias ("," actors+=ActorAlias)*)?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"with"
 		public Keyword getWithKeyword_3_0() { return cWithKeyword_3_0; }
 
-		//aliases+=ActorAlias
-		public Assignment getAliasesAssignment_3_1() { return cAliasesAssignment_3_1; }
+		//actors+=ActorAlias
+		public Assignment getActorsAssignment_3_1() { return cActorsAssignment_3_1; }
 
 		//ActorAlias
-		public RuleCall getAliasesActorAliasParserRuleCall_3_1_0() { return cAliasesActorAliasParserRuleCall_3_1_0; }
+		public RuleCall getActorsActorAliasParserRuleCall_3_1_0() { return cActorsActorAliasParserRuleCall_3_1_0; }
 
-		//("," aliases+=ActorAlias)*
+		//("," actors+=ActorAlias)*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
 		//","
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
-		//aliases+=ActorAlias
-		public Assignment getAliasesAssignment_3_2_1() { return cAliasesAssignment_3_2_1; }
+		//actors+=ActorAlias
+		public Assignment getActorsAssignment_3_2_1() { return cActorsAssignment_3_2_1; }
 
 		//ActorAlias
-		public RuleCall getAliasesActorAliasParserRuleCall_3_2_1_0() { return cAliasesActorAliasParserRuleCall_3_2_1_0; }
+		public RuleCall getActorsActorAliasParserRuleCall_3_2_1_0() { return cActorsActorAliasParserRuleCall_3_2_1_0; }
 	}
 
 	public class SignalReceptionElements extends AbstractParserRuleElementFinder {
@@ -699,8 +699,8 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getTypeDataTypeParserRuleCall_2_0() { return cTypeDataTypeParserRuleCall_2_0; }
 	}
 
-	public class BehaviorDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BehaviorDeclaration");
+	public class BehaviorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Behavior");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cCauseAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cCauseCauseParserRuleCall_0_0 = (RuleCall)cCauseAssignment_0.eContents().get(0);
@@ -710,7 +710,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		////Behaviors
-		//BehaviorDeclaration:
+		//Behavior:
 		//	cause=Cause ":" effects+=Effect+;
 		public ParserRule getRule() { return rule; }
 
@@ -2319,7 +2319,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	private DataTypeBaseElements pDataTypeBase;
 	private DataTypeCompoundElements pDataTypeCompound;
 	private DataTypeCompoundFieldElements pDataTypeCompoundField;
-	private BehaviorDeclarationElements pBehaviorDeclaration;
+	private BehaviorElements pBehavior;
 	private CauseElements pCause;
 	private OnCauseElements pOnCause;
 	private WhenCauseElements pWhenCause;
@@ -2416,7 +2416,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////Interactor
 	//Interactor:
-	//	"interactor" name=ID ":" (entities+=Entity | signals+=Signal | behaviors+=BehaviorDeclaration)*;
+	//	"interactor" name=ID ":" (entities+=Entity | signals+=Signal | behaviors+=Behavior)*;
 	public InteractorElements getInteractorAccess() {
 		return (pInteractor != null) ? pInteractor : (pInteractor = new InteractorElements());
 	}
@@ -2478,7 +2478,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Component:
-	//	name=ID ":" interactor=[Interactor] ("with" aliases+=ActorAlias ("," aliases+=ActorAlias)*)?;
+	//	name=ID ":" interactor=[Interactor] ("with" actors+=ActorAlias ("," actors+=ActorAlias)*)?;
 	public ComponentElements getComponentAccess() {
 		return (pComponent != null) ? pComponent : (pComponent = new ComponentElements());
 	}
@@ -2581,14 +2581,14 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////Behaviors
-	//BehaviorDeclaration:
+	//Behavior:
 	//	cause=Cause ":" effects+=Effect+;
-	public BehaviorDeclarationElements getBehaviorDeclarationAccess() {
-		return (pBehaviorDeclaration != null) ? pBehaviorDeclaration : (pBehaviorDeclaration = new BehaviorDeclarationElements());
+	public BehaviorElements getBehaviorAccess() {
+		return (pBehavior != null) ? pBehavior : (pBehavior = new BehaviorElements());
 	}
 	
-	public ParserRule getBehaviorDeclarationRule() {
-		return getBehaviorDeclarationAccess().getRule();
+	public ParserRule getBehaviorRule() {
+		return getBehaviorAccess().getRule();
 	}
 
 	//Cause:

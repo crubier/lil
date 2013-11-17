@@ -389,7 +389,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteractor"
-    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:134:1: ruleInteractor returns [EObject current=null] : (otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehaviorDeclaration ) ) )* ) ;
+    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:134:1: ruleInteractor returns [EObject current=null] : (otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehavior ) ) )* ) ;
     public final EObject ruleInteractor() throws RecognitionException {
         EObject current = null;
 
@@ -406,11 +406,11 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:137:28: ( (otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehaviorDeclaration ) ) )* ) )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:138:1: (otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehaviorDeclaration ) ) )* )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:137:28: ( (otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehavior ) ) )* ) )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:138:1: (otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehavior ) ) )* )
             {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:138:1: (otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehaviorDeclaration ) ) )* )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:138:3: otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehaviorDeclaration ) ) )*
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:138:1: (otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehavior ) ) )* )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:138:3: otherlv_0= 'interactor' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehavior ) ) )*
             {
             otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleInteractor242); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -454,7 +454,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_2, grammarAccess.getInteractorAccess().getColonKeyword_2());
                   
             }
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:164:1: ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehaviorDeclaration ) ) )*
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:164:1: ( ( (lv_entities_3_0= ruleEntity ) ) | ( (lv_signals_4_0= ruleSignal ) ) | ( (lv_behaviors_5_0= ruleBehavior ) ) )*
             loop2:
             do {
                 int alt2=4;
@@ -590,21 +590,21 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:202:6: ( (lv_behaviors_5_0= ruleBehaviorDeclaration ) )
+            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:202:6: ( (lv_behaviors_5_0= ruleBehavior ) )
             	    {
-            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:202:6: ( (lv_behaviors_5_0= ruleBehaviorDeclaration ) )
-            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:203:1: (lv_behaviors_5_0= ruleBehaviorDeclaration )
+            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:202:6: ( (lv_behaviors_5_0= ruleBehavior ) )
+            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:203:1: (lv_behaviors_5_0= ruleBehavior )
             	    {
-            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:203:1: (lv_behaviors_5_0= ruleBehaviorDeclaration )
-            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:204:3: lv_behaviors_5_0= ruleBehaviorDeclaration
+            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:203:1: (lv_behaviors_5_0= ruleBehavior )
+            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:204:3: lv_behaviors_5_0= ruleBehavior
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getInteractorAccess().getBehaviorsBehaviorDeclarationParserRuleCall_3_2_0()); 
+            	      	        newCompositeNode(grammarAccess.getInteractorAccess().getBehaviorsBehaviorParserRuleCall_3_2_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleBehaviorDeclaration_in_ruleInteractor352);
-            	    lv_behaviors_5_0=ruleBehaviorDeclaration();
+            	    pushFollow(FOLLOW_ruleBehavior_in_ruleInteractor352);
+            	    lv_behaviors_5_0=ruleBehavior();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -617,7 +617,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
             	             			current, 
             	             			"behaviors",
             	              		lv_behaviors_5_0, 
-            	              		"BehaviorDeclaration");
+            	              		"Behavior");
             	      	        afterParserOrEnumRuleCall();
             	      	    
             	    }
@@ -1499,7 +1499,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComponent"
-    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:497:1: ruleComponent returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_aliases_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_aliases_6_0= ruleActorAlias ) ) )* )? ) ;
+    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:497:1: ruleComponent returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_actors_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_actors_6_0= ruleActorAlias ) ) )* )? ) ;
     public final EObject ruleComponent() throws RecognitionException {
         EObject current = null;
 
@@ -1508,19 +1508,19 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
-        EObject lv_aliases_4_0 = null;
+        EObject lv_actors_4_0 = null;
 
-        EObject lv_aliases_6_0 = null;
+        EObject lv_actors_6_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:500:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_aliases_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_aliases_6_0= ruleActorAlias ) ) )* )? ) )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:501:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_aliases_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_aliases_6_0= ruleActorAlias ) ) )* )? )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:500:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_actors_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_actors_6_0= ruleActorAlias ) ) )* )? ) )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:501:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_actors_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_actors_6_0= ruleActorAlias ) ) )* )? )
             {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:501:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_aliases_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_aliases_6_0= ruleActorAlias ) ) )* )? )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:501:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_aliases_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_aliases_6_0= ruleActorAlias ) ) )* )?
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:501:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_actors_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_actors_6_0= ruleActorAlias ) ) )* )? )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:501:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (otherlv_2= RULE_ID ) ) (otherlv_3= 'with' ( (lv_actors_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_actors_6_0= ruleActorAlias ) ) )* )?
             {
             // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:501:2: ( (lv_name_0_0= RULE_ID ) )
             // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:502:1: (lv_name_0_0= RULE_ID )
@@ -1583,7 +1583,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:536:2: (otherlv_3= 'with' ( (lv_aliases_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_aliases_6_0= ruleActorAlias ) ) )* )?
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:536:2: (otherlv_3= 'with' ( (lv_actors_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_actors_6_0= ruleActorAlias ) ) )* )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1592,7 +1592,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
             }
             switch (alt7) {
                 case 1 :
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:536:4: otherlv_3= 'with' ( (lv_aliases_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_aliases_6_0= ruleActorAlias ) ) )*
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:536:4: otherlv_3= 'with' ( (lv_actors_4_0= ruleActorAlias ) ) (otherlv_5= ',' ( (lv_actors_6_0= ruleActorAlias ) ) )*
                     {
                     otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleComponent1173); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1600,19 +1600,19 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_3, grammarAccess.getComponentAccess().getWithKeyword_3_0());
                           
                     }
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:540:1: ( (lv_aliases_4_0= ruleActorAlias ) )
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:541:1: (lv_aliases_4_0= ruleActorAlias )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:540:1: ( (lv_actors_4_0= ruleActorAlias ) )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:541:1: (lv_actors_4_0= ruleActorAlias )
                     {
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:541:1: (lv_aliases_4_0= ruleActorAlias )
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:542:3: lv_aliases_4_0= ruleActorAlias
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:541:1: (lv_actors_4_0= ruleActorAlias )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:542:3: lv_actors_4_0= ruleActorAlias
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getComponentAccess().getAliasesActorAliasParserRuleCall_3_1_0()); 
+                      	        newCompositeNode(grammarAccess.getComponentAccess().getActorsActorAliasParserRuleCall_3_1_0()); 
                       	    
                     }
                     pushFollow(FOLLOW_ruleActorAlias_in_ruleComponent1194);
-                    lv_aliases_4_0=ruleActorAlias();
+                    lv_actors_4_0=ruleActorAlias();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -1623,8 +1623,8 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                       	        }
                              		add(
                              			current, 
-                             			"aliases",
-                              		lv_aliases_4_0, 
+                             			"actors",
+                              		lv_actors_4_0, 
                               		"ActorAlias");
                       	        afterParserOrEnumRuleCall();
                       	    
@@ -1635,7 +1635,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:558:2: (otherlv_5= ',' ( (lv_aliases_6_0= ruleActorAlias ) ) )*
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:558:2: (otherlv_5= ',' ( (lv_actors_6_0= ruleActorAlias ) ) )*
                     loop6:
                     do {
                         int alt6=2;
@@ -1648,7 +1648,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:558:4: otherlv_5= ',' ( (lv_aliases_6_0= ruleActorAlias ) )
+                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:558:4: otherlv_5= ',' ( (lv_actors_6_0= ruleActorAlias ) )
                     	    {
                     	    otherlv_5=(Token)match(input,23,FOLLOW_23_in_ruleComponent1207); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -1656,19 +1656,19 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                     	          	newLeafNode(otherlv_5, grammarAccess.getComponentAccess().getCommaKeyword_3_2_0());
                     	          
                     	    }
-                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:562:1: ( (lv_aliases_6_0= ruleActorAlias ) )
-                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:563:1: (lv_aliases_6_0= ruleActorAlias )
+                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:562:1: ( (lv_actors_6_0= ruleActorAlias ) )
+                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:563:1: (lv_actors_6_0= ruleActorAlias )
                     	    {
-                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:563:1: (lv_aliases_6_0= ruleActorAlias )
-                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:564:3: lv_aliases_6_0= ruleActorAlias
+                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:563:1: (lv_actors_6_0= ruleActorAlias )
+                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:564:3: lv_actors_6_0= ruleActorAlias
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
-                    	      	        newCompositeNode(grammarAccess.getComponentAccess().getAliasesActorAliasParserRuleCall_3_2_1_0()); 
+                    	      	        newCompositeNode(grammarAccess.getComponentAccess().getActorsActorAliasParserRuleCall_3_2_1_0()); 
                     	      	    
                     	    }
                     	    pushFollow(FOLLOW_ruleActorAlias_in_ruleComponent1228);
-                    	    lv_aliases_6_0=ruleActorAlias();
+                    	    lv_actors_6_0=ruleActorAlias();
 
                     	    state._fsp--;
                     	    if (state.failed) return current;
@@ -1679,8 +1679,8 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                     	      	        }
                     	             		add(
                     	             			current, 
-                    	             			"aliases",
-                    	              		lv_aliases_6_0, 
+                    	             			"actors",
+                    	              		lv_actors_6_0, 
                     	              		"ActorAlias");
                     	      	        afterParserOrEnumRuleCall();
                     	      	    
@@ -3408,30 +3408,30 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleDataTypeCompoundField"
 
 
-    // $ANTLR start "entryRuleBehaviorDeclaration"
-    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1170:1: entryRuleBehaviorDeclaration returns [EObject current=null] : iv_ruleBehaviorDeclaration= ruleBehaviorDeclaration EOF ;
-    public final EObject entryRuleBehaviorDeclaration() throws RecognitionException {
+    // $ANTLR start "entryRuleBehavior"
+    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1170:1: entryRuleBehavior returns [EObject current=null] : iv_ruleBehavior= ruleBehavior EOF ;
+    public final EObject entryRuleBehavior() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleBehaviorDeclaration = null;
+        EObject iv_ruleBehavior = null;
 
 
         try {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1171:2: (iv_ruleBehaviorDeclaration= ruleBehaviorDeclaration EOF )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1172:2: iv_ruleBehaviorDeclaration= ruleBehaviorDeclaration EOF
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1171:2: (iv_ruleBehavior= ruleBehavior EOF )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1172:2: iv_ruleBehavior= ruleBehavior EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getBehaviorDeclarationRule()); 
+               newCompositeNode(grammarAccess.getBehaviorRule()); 
             }
-            pushFollow(FOLLOW_ruleBehaviorDeclaration_in_entryRuleBehaviorDeclaration2584);
-            iv_ruleBehaviorDeclaration=ruleBehaviorDeclaration();
+            pushFollow(FOLLOW_ruleBehavior_in_entryRuleBehavior2584);
+            iv_ruleBehavior=ruleBehavior();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleBehaviorDeclaration; 
+               current =iv_ruleBehavior; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBehaviorDeclaration2594); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBehavior2594); if (state.failed) return current;
 
             }
 
@@ -3445,12 +3445,12 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleBehaviorDeclaration"
+    // $ANTLR end "entryRuleBehavior"
 
 
-    // $ANTLR start "ruleBehaviorDeclaration"
-    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1179:1: ruleBehaviorDeclaration returns [EObject current=null] : ( ( (lv_cause_0_0= ruleCause ) ) otherlv_1= ':' ( (lv_effects_2_0= ruleEffect ) )+ ) ;
-    public final EObject ruleBehaviorDeclaration() throws RecognitionException {
+    // $ANTLR start "ruleBehavior"
+    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1179:1: ruleBehavior returns [EObject current=null] : ( ( (lv_cause_0_0= ruleCause ) ) otherlv_1= ':' ( (lv_effects_2_0= ruleEffect ) )+ ) ;
+    public final EObject ruleBehavior() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -3476,10 +3476,10 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getBehaviorDeclarationAccess().getCauseCauseParserRuleCall_0_0()); 
+              	        newCompositeNode(grammarAccess.getBehaviorAccess().getCauseCauseParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleCause_in_ruleBehaviorDeclaration2640);
+            pushFollow(FOLLOW_ruleCause_in_ruleBehavior2640);
             lv_cause_0_0=ruleCause();
 
             state._fsp--;
@@ -3487,7 +3487,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getBehaviorDeclarationRule());
+              	            current = createModelElementForParent(grammarAccess.getBehaviorRule());
               	        }
                      		set(
                      			current, 
@@ -3503,10 +3503,10 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleBehaviorDeclaration2652); if (state.failed) return current;
+            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleBehavior2652); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_1, grammarAccess.getBehaviorDeclarationAccess().getColonKeyword_1());
+                  	newLeafNode(otherlv_1, grammarAccess.getBehaviorAccess().getColonKeyword_1());
                   
             }
             // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1205:1: ( (lv_effects_2_0= ruleEffect ) )+
@@ -3530,10 +3530,10 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getBehaviorDeclarationAccess().getEffectsEffectParserRuleCall_2_0()); 
+            	      	        newCompositeNode(grammarAccess.getBehaviorAccess().getEffectsEffectParserRuleCall_2_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleEffect_in_ruleBehaviorDeclaration2673);
+            	    pushFollow(FOLLOW_ruleEffect_in_ruleBehavior2673);
             	    lv_effects_2_0=ruleEffect();
 
             	    state._fsp--;
@@ -3541,7 +3541,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
             	    if ( state.backtracking==0 ) {
 
             	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getBehaviorDeclarationRule());
+            	      	            current = createModelElementForParent(grammarAccess.getBehaviorRule());
             	      	        }
             	             		add(
             	             			current, 
@@ -3587,7 +3587,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleBehaviorDeclaration"
+    // $ANTLR end "ruleBehavior"
 
 
     // $ANTLR start "entryRuleCause"
@@ -11799,7 +11799,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_12_in_ruleInteractor276 = new BitSet(new long[]{0x0000005000000012L});
     public static final BitSet FOLLOW_ruleEntity_in_ruleInteractor298 = new BitSet(new long[]{0x0000005000000012L});
     public static final BitSet FOLLOW_ruleSignal_in_ruleInteractor325 = new BitSet(new long[]{0x0000005000000012L});
-    public static final BitSet FOLLOW_ruleBehaviorDeclaration_in_ruleInteractor352 = new BitSet(new long[]{0x0000005000000012L});
+    public static final BitSet FOLLOW_ruleBehavior_in_ruleInteractor352 = new BitSet(new long[]{0x0000005000000012L});
     public static final BitSet FOLLOW_ruleAccessibleEntity_in_entryRuleAccessibleEntity390 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAccessibleEntity400 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleGenericEntity_in_ruleAccessibleEntity446 = new BitSet(new long[]{0x0000000000000002L});
@@ -11889,11 +11889,11 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleDataTypeCompoundField2510 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_12_in_ruleDataTypeCompoundField2527 = new BitSet(new long[]{0x00000007E0000010L});
     public static final BitSet FOLLOW_ruleDataType_in_ruleDataTypeCompoundField2548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBehaviorDeclaration_in_entryRuleBehaviorDeclaration2584 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBehaviorDeclaration2594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCause_in_ruleBehaviorDeclaration2640 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleBehaviorDeclaration2652 = new BitSet(new long[]{0x0000068000000000L});
-    public static final BitSet FOLLOW_ruleEffect_in_ruleBehaviorDeclaration2673 = new BitSet(new long[]{0x0000068000000002L});
+    public static final BitSet FOLLOW_ruleBehavior_in_entryRuleBehavior2584 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBehavior2594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCause_in_ruleBehavior2640 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleBehavior2652 = new BitSet(new long[]{0x0000068000000000L});
+    public static final BitSet FOLLOW_ruleEffect_in_ruleBehavior2673 = new BitSet(new long[]{0x0000068000000002L});
     public static final BitSet FOLLOW_ruleCause_in_entryRuleCause2710 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCause2720 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOnCause_in_ruleCause2767 = new BitSet(new long[]{0x0000000000000002L});

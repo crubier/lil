@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.crubier.lil.lil.impl.ComponentImpl#getInteractor <em>Interactor</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.ComponentImpl#getAliases <em>Aliases</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.ComponentImpl#getActors <em>Actors</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,14 +49,14 @@ public class ComponentImpl extends EntityImpl implements Component
   protected Interactor interactor;
 
   /**
-   * The cached value of the '{@link #getAliases() <em>Aliases</em>}' containment reference list.
+   * The cached value of the '{@link #getActors() <em>Actors</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAliases()
+   * @see #getActors()
    * @generated
    * @ordered
    */
-  protected EList<ActorAlias> aliases;
+  protected EList<ActorAlias> actors;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,13 +127,13 @@ public class ComponentImpl extends EntityImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ActorAlias> getAliases()
+  public EList<ActorAlias> getActors()
   {
-    if (aliases == null)
+    if (actors == null)
     {
-      aliases = new EObjectContainmentEList<ActorAlias>(ActorAlias.class, this, LilPackage.COMPONENT__ALIASES);
+      actors = new EObjectContainmentEList<ActorAlias>(ActorAlias.class, this, LilPackage.COMPONENT__ACTORS);
     }
-    return aliases;
+    return actors;
   }
 
   /**
@@ -146,8 +146,8 @@ public class ComponentImpl extends EntityImpl implements Component
   {
     switch (featureID)
     {
-      case LilPackage.COMPONENT__ALIASES:
-        return ((InternalEList<?>)getAliases()).basicRemove(otherEnd, msgs);
+      case LilPackage.COMPONENT__ACTORS:
+        return ((InternalEList<?>)getActors()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -165,8 +165,8 @@ public class ComponentImpl extends EntityImpl implements Component
       case LilPackage.COMPONENT__INTERACTOR:
         if (resolve) return getInteractor();
         return basicGetInteractor();
-      case LilPackage.COMPONENT__ALIASES:
-        return getAliases();
+      case LilPackage.COMPONENT__ACTORS:
+        return getActors();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -185,9 +185,9 @@ public class ComponentImpl extends EntityImpl implements Component
       case LilPackage.COMPONENT__INTERACTOR:
         setInteractor((Interactor)newValue);
         return;
-      case LilPackage.COMPONENT__ALIASES:
-        getAliases().clear();
-        getAliases().addAll((Collection<? extends ActorAlias>)newValue);
+      case LilPackage.COMPONENT__ACTORS:
+        getActors().clear();
+        getActors().addAll((Collection<? extends ActorAlias>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -206,8 +206,8 @@ public class ComponentImpl extends EntityImpl implements Component
       case LilPackage.COMPONENT__INTERACTOR:
         setInteractor((Interactor)null);
         return;
-      case LilPackage.COMPONENT__ALIASES:
-        getAliases().clear();
+      case LilPackage.COMPONENT__ACTORS:
+        getActors().clear();
         return;
     }
     super.eUnset(featureID);
@@ -225,8 +225,8 @@ public class ComponentImpl extends EntityImpl implements Component
     {
       case LilPackage.COMPONENT__INTERACTOR:
         return interactor != null;
-      case LilPackage.COMPONENT__ALIASES:
-        return aliases != null && !aliases.isEmpty();
+      case LilPackage.COMPONENT__ACTORS:
+        return actors != null && !actors.isEmpty();
     }
     return super.eIsSet(featureID);
   }

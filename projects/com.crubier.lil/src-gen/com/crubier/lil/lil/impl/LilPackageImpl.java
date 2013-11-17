@@ -6,7 +6,7 @@ import com.crubier.lil.lil.AccessibleEntity;
 import com.crubier.lil.lil.Actor;
 import com.crubier.lil.lil.ActorAlias;
 import com.crubier.lil.lil.AlwaysEffect;
-import com.crubier.lil.lil.BehaviorDeclaration;
+import com.crubier.lil.lil.Behavior;
 import com.crubier.lil.lil.Cause;
 import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.DataType;
@@ -160,7 +160,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass behaviorDeclarationEClass = null;
+  private EClass behaviorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -574,7 +574,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Aliases()
+  public EReference getComponent_Actors()
   {
     return (EReference)componentEClass.getEStructuralFeatures().get(1);
   }
@@ -834,9 +834,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBehaviorDeclaration()
+  public EClass getBehavior()
   {
-    return behaviorDeclarationEClass;
+    return behaviorEClass;
   }
 
   /**
@@ -844,9 +844,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBehaviorDeclaration_Cause()
+  public EReference getBehavior_Cause()
   {
-    return (EReference)behaviorDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EReference)behaviorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -854,9 +854,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBehaviorDeclaration_Effects()
+  public EReference getBehavior_Effects()
   {
-    return (EReference)behaviorDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)behaviorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1394,7 +1394,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
 
     componentEClass = createEClass(COMPONENT);
     createEReference(componentEClass, COMPONENT__INTERACTOR);
-    createEReference(componentEClass, COMPONENT__ALIASES);
+    createEReference(componentEClass, COMPONENT__ACTORS);
 
     signalReceptionEClass = createEClass(SIGNAL_RECEPTION);
     createEReference(signalReceptionEClass, SIGNAL_RECEPTION__INSTANCE);
@@ -1428,9 +1428,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEAttribute(dataTypeCompoundFieldEClass, DATA_TYPE_COMPOUND_FIELD__NAME);
     createEReference(dataTypeCompoundFieldEClass, DATA_TYPE_COMPOUND_FIELD__TYPE);
 
-    behaviorDeclarationEClass = createEClass(BEHAVIOR_DECLARATION);
-    createEReference(behaviorDeclarationEClass, BEHAVIOR_DECLARATION__CAUSE);
-    createEReference(behaviorDeclarationEClass, BEHAVIOR_DECLARATION__EFFECTS);
+    behaviorEClass = createEClass(BEHAVIOR);
+    createEReference(behaviorEClass, BEHAVIOR__CAUSE);
+    createEReference(behaviorEClass, BEHAVIOR__EFFECTS);
 
     causeEClass = createEClass(CAUSE);
     createEReference(causeEClass, CAUSE__GUARD);
@@ -1562,7 +1562,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEAttribute(getInteractor_Name(), ecorePackage.getEString(), "name", null, 0, 1, Interactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInteractor_Entities(), this.getEntity(), null, "entities", null, 0, -1, Interactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInteractor_Signals(), this.getSignal(), null, "signals", null, 0, -1, Interactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInteractor_Behaviors(), this.getBehaviorDeclaration(), null, "behaviors", null, 0, -1, Interactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInteractor_Behaviors(), this.getBehavior(), null, "behaviors", null, 0, -1, Interactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(accessibleEntityEClass, AccessibleEntity.class, "AccessibleEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAccessibleEntity_Generic(), ecorePackage.getEString(), "generic", null, 0, 1, AccessibleEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1579,7 +1579,7 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
 
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComponent_Interactor(), this.getInteractor(), null, "interactor", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Aliases(), this.getActorAlias(), null, "aliases", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_Actors(), this.getActorAlias(), null, "actors", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(signalReceptionEClass, SignalReception.class, "SignalReception", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSignalReception_Instance(), this.getSignal(), null, "instance", null, 0, 1, SignalReception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1613,9 +1613,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEAttribute(getDataTypeCompoundField_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataTypeCompoundField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDataTypeCompoundField_Type(), this.getDataType(), null, "type", null, 0, 1, DataTypeCompoundField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(behaviorDeclarationEClass, BehaviorDeclaration.class, "BehaviorDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBehaviorDeclaration_Cause(), this.getCause(), null, "cause", null, 0, 1, BehaviorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBehaviorDeclaration_Effects(), this.getEffect(), null, "effects", null, 0, -1, BehaviorDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(behaviorEClass, Behavior.class, "Behavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBehavior_Cause(), this.getCause(), null, "cause", null, 0, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBehavior_Effects(), this.getEffect(), null, "effects", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(causeEClass, Cause.class, "Cause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCause_Guard(), this.getXExpression(), null, "guard", null, 0, 1, Cause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -26,7 +26,7 @@ interactor ControlPanel :
 	y: number flow from system
 	current: number flow 
 	
-	on init : 	always current = (if(1=="XorY") 1 else 2)
+	on init : 	always current = (if(1=="") 1 else 2)
 				set x = 5
 	on increment : set val to theGauge = switch (7) case +1:false case 2:true default : false
 	

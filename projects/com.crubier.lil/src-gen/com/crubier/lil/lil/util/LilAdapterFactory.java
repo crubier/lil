@@ -145,9 +145,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeCompoundFieldAdapter();
       }
       @Override
-      public Adapter caseBehaviorDeclaration(BehaviorDeclaration object)
+      public Adapter caseBehavior(Behavior object)
       {
-        return createBehaviorDeclarationAdapter();
+        return createBehaviorAdapter();
       }
       @Override
       public Adapter caseCause(Cause object)
@@ -492,16 +492,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BehaviorDeclaration <em>Behavior Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Behavior <em>Behavior</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.BehaviorDeclaration
+   * @see com.crubier.lil.lil.Behavior
    * @generated
    */
-  public Adapter createBehaviorDeclarationAdapter()
+  public Adapter createBehaviorAdapter()
   {
     return null;
   }

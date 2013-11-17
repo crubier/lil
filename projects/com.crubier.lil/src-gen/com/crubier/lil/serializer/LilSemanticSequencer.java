@@ -4,7 +4,7 @@ import com.crubier.lil.lil.AccessibleEntity;
 import com.crubier.lil.lil.Actor;
 import com.crubier.lil.lil.ActorAlias;
 import com.crubier.lil.lil.AlwaysEffect;
-import com.crubier.lil.lil.BehaviorDeclaration;
+import com.crubier.lil.lil.Behavior;
 import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.DataType;
 import com.crubier.lil.lil.DataTypeCompound;
@@ -82,9 +82,9 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.BEHAVIOR_DECLARATION:
-				if(context == grammarAccess.getBehaviorDeclarationRule()) {
-					sequence_BehaviorDeclaration(context, (BehaviorDeclaration) semanticObject); 
+			case LilPackage.BEHAVIOR:
+				if(context == grammarAccess.getBehaviorRule()) {
+					sequence_Behavior(context, (Behavior) semanticObject); 
 					return; 
 				}
 				else break;
@@ -548,14 +548,14 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (cause=Cause effects+=Effect+)
 	 */
-	protected void sequence_BehaviorDeclaration(EObject context, BehaviorDeclaration semanticObject) {
+	protected void sequence_Behavior(EObject context, Behavior semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID interactor=[Interactor|ID] (aliases+=ActorAlias aliases+=ActorAlias*)?)
+	 *     (name=ID interactor=[Interactor|ID] (actors+=ActorAlias actors+=ActorAlias*)?)
 	 */
 	protected void sequence_Component(EObject context, Component semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -601,7 +601,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (entities+=Entity | signals+=Signal | behaviors+=BehaviorDeclaration)*)
+	 *     (name=ID (entities+=Entity | signals+=Signal | behaviors+=Behavior)*)
 	 */
 	protected void sequence_Interactor(EObject context, Interactor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

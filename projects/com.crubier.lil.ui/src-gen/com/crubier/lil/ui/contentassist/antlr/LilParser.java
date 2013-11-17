@@ -77,7 +77,7 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSignalAliasAccess().getGroup_1(), "rule__SignalAlias__Group_1__0");
 					put(grammarAccess.getDataTypeCompoundAccess().getGroup(), "rule__DataTypeCompound__Group__0");
 					put(grammarAccess.getDataTypeCompoundFieldAccess().getGroup(), "rule__DataTypeCompoundField__Group__0");
-					put(grammarAccess.getBehaviorDeclarationAccess().getGroup(), "rule__BehaviorDeclaration__Group__0");
+					put(grammarAccess.getBehaviorAccess().getGroup(), "rule__Behavior__Group__0");
 					put(grammarAccess.getOnCauseAccess().getGroup(), "rule__OnCause__Group__0");
 					put(grammarAccess.getOnCauseAccess().getGroup_2(), "rule__OnCause__Group_2__0");
 					put(grammarAccess.getWhenCauseAccess().getGroup(), "rule__WhenCause__Group__0");
@@ -148,8 +148,8 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActorAliasAccess().getAliasAssignment_2(), "rule__ActorAlias__AliasAssignment_2");
 					put(grammarAccess.getComponentAccess().getNameAssignment_0(), "rule__Component__NameAssignment_0");
 					put(grammarAccess.getComponentAccess().getInteractorAssignment_2(), "rule__Component__InteractorAssignment_2");
-					put(grammarAccess.getComponentAccess().getAliasesAssignment_3_1(), "rule__Component__AliasesAssignment_3_1");
-					put(grammarAccess.getComponentAccess().getAliasesAssignment_3_2_1(), "rule__Component__AliasesAssignment_3_2_1");
+					put(grammarAccess.getComponentAccess().getActorsAssignment_3_1(), "rule__Component__ActorsAssignment_3_1");
+					put(grammarAccess.getComponentAccess().getActorsAssignment_3_2_1(), "rule__Component__ActorsAssignment_3_2_1");
 					put(grammarAccess.getSignalReceptionAccess().getInstanceAssignment_0_0(), "rule__SignalReception__InstanceAssignment_0_0");
 					put(grammarAccess.getSignalReceptionAccess().getSourceAssignment_0_1_1(), "rule__SignalReception__SourceAssignment_0_1_1");
 					put(grammarAccess.getSignalReceptionAccess().getInitAssignment_1(), "rule__SignalReception__InitAssignment_1");
@@ -168,8 +168,8 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataTypeCompoundAccess().getFieldsAssignment_3(), "rule__DataTypeCompound__FieldsAssignment_3");
 					put(grammarAccess.getDataTypeCompoundFieldAccess().getNameAssignment_0(), "rule__DataTypeCompoundField__NameAssignment_0");
 					put(grammarAccess.getDataTypeCompoundFieldAccess().getTypeAssignment_2(), "rule__DataTypeCompoundField__TypeAssignment_2");
-					put(grammarAccess.getBehaviorDeclarationAccess().getCauseAssignment_0(), "rule__BehaviorDeclaration__CauseAssignment_0");
-					put(grammarAccess.getBehaviorDeclarationAccess().getEffectsAssignment_2(), "rule__BehaviorDeclaration__EffectsAssignment_2");
+					put(grammarAccess.getBehaviorAccess().getCauseAssignment_0(), "rule__Behavior__CauseAssignment_0");
+					put(grammarAccess.getBehaviorAccess().getEffectsAssignment_2(), "rule__Behavior__EffectsAssignment_2");
 					put(grammarAccess.getOnCauseAccess().getEventAssignment_1(), "rule__OnCause__EventAssignment_1");
 					put(grammarAccess.getOnCauseAccess().getGuardAssignment_2_1(), "rule__OnCause__GuardAssignment_2_1");
 					put(grammarAccess.getWhenCauseAccess().getConditionAssignment_1(), "rule__WhenCause__ConditionAssignment_1");

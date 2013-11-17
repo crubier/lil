@@ -78,7 +78,7 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.DATA_TYPE: return createDataType();
       case LilPackage.DATA_TYPE_COMPOUND: return createDataTypeCompound();
       case LilPackage.DATA_TYPE_COMPOUND_FIELD: return createDataTypeCompoundField();
-      case LilPackage.BEHAVIOR_DECLARATION: return createBehaviorDeclaration();
+      case LilPackage.BEHAVIOR: return createBehavior();
       case LilPackage.CAUSE: return createCause();
       case LilPackage.ON_CAUSE: return createOnCause();
       case LilPackage.WHEN_CAUSE: return createWhenCause();
@@ -265,10 +265,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BehaviorDeclaration createBehaviorDeclaration()
+  public Behavior createBehavior()
   {
-    BehaviorDeclarationImpl behaviorDeclaration = new BehaviorDeclarationImpl();
-    return behaviorDeclaration;
+    BehaviorImpl behavior = new BehaviorImpl();
+    return behavior;
   }
 
   /**

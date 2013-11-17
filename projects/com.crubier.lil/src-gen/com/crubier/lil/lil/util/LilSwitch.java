@@ -172,10 +172,10 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.BEHAVIOR_DECLARATION:
+      case LilPackage.BEHAVIOR:
       {
-        BehaviorDeclaration behaviorDeclaration = (BehaviorDeclaration)theEObject;
-        T result = caseBehaviorDeclaration(behaviorDeclaration);
+        Behavior behavior = (Behavior)theEObject;
+        T result = caseBehavior(behavior);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -582,17 +582,17 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Behavior Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Behavior</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Behavior Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Behavior</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBehaviorDeclaration(BehaviorDeclaration object)
+  public T caseBehavior(Behavior object)
   {
     return null;
   }

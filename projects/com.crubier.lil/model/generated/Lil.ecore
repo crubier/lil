@@ -14,7 +14,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="signals" upperBound="-1"
         eType="#//Signal" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviors" upperBound="-1"
-        eType="#//BehaviorDeclaration" containment="true"/>
+        eType="#//Behavior" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AccessibleEntity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="generic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -30,7 +30,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interactor" eType="#//Interactor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="aliases" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
         eType="#//ActorAlias" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SignalReception">
@@ -73,7 +73,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BehaviorDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="Behavior">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cause" eType="#//Cause"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="effects" upperBound="-1"

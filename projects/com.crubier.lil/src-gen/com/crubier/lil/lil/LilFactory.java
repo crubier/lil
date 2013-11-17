@@ -149,13 +149,13 @@ public interface LilFactory extends EFactory
   DataTypeCompoundField createDataTypeCompoundField();
 
   /**
-   * Returns a new object of class '<em>Behavior Declaration</em>'.
+   * Returns a new object of class '<em>Behavior</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Behavior Declaration</em>'.
+   * @return a new object of class '<em>Behavior</em>'.
    * @generated
    */
-  BehaviorDeclaration createBehaviorDeclaration();
+  Behavior createBehavior();
 
   /**
    * Returns a new object of class '<em>Cause</em>'.

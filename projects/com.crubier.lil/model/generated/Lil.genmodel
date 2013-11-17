@@ -31,7 +31,7 @@
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//Component">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//Component/interactor"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Component/aliases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Component/actors"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//SignalReception">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalReception/instance"/>
@@ -65,9 +65,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeCompoundField/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompoundField/type"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//BehaviorDeclaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BehaviorDeclaration/cause"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//BehaviorDeclaration/effects"/>
+    <genClasses ecoreClass="Lil.ecore#//Behavior">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Behavior/cause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Behavior/effects"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//Cause">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Cause/guard"/>
