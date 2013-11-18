@@ -29805,28 +29805,28 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionSet__InfAssignment_2_2"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10365:1: rule__DefinitionSet__InfAssignment_2_2 : ( ruleXExpression ) ;
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10365:1: rule__DefinitionSet__InfAssignment_2_2 : ( ruleXNumberLiteral ) ;
     public final void rule__DefinitionSet__InfAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10369:1: ( ( ruleXExpression ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10370:1: ( ruleXExpression )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10369:1: ( ( ruleXNumberLiteral ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10370:1: ( ruleXNumberLiteral )
             {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10370:1: ( ruleXExpression )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10371:1: ruleXExpression
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10370:1: ( ruleXNumberLiteral )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10371:1: ruleXNumberLiteral
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getDefinitionSetAccess().getInfXExpressionParserRuleCall_2_2_0()); 
+               before(grammarAccess.getDefinitionSetAccess().getInfXNumberLiteralParserRuleCall_2_2_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__DefinitionSet__InfAssignment_2_221054);
-            ruleXExpression();
+            pushFollow(FOLLOW_ruleXNumberLiteral_in_rule__DefinitionSet__InfAssignment_2_221054);
+            ruleXNumberLiteral();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getDefinitionSetAccess().getInfXExpressionParserRuleCall_2_2_0()); 
+               after(grammarAccess.getDefinitionSetAccess().getInfXNumberLiteralParserRuleCall_2_2_0()); 
             }
 
             }
@@ -29850,28 +29850,28 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionSet__SupAssignment_2_4"
-    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10380:1: rule__DefinitionSet__SupAssignment_2_4 : ( ruleXExpression ) ;
+    // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10380:1: rule__DefinitionSet__SupAssignment_2_4 : ( ruleXNumberLiteral ) ;
     public final void rule__DefinitionSet__SupAssignment_2_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10384:1: ( ( ruleXExpression ) )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10385:1: ( ruleXExpression )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10384:1: ( ( ruleXNumberLiteral ) )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10385:1: ( ruleXNumberLiteral )
             {
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10385:1: ( ruleXExpression )
-            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10386:1: ruleXExpression
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10385:1: ( ruleXNumberLiteral )
+            // ../com.crubier.lil.ui/src-gen/com/crubier/lil/ui/contentassist/antlr/internal/InternalLil.g:10386:1: ruleXNumberLiteral
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getDefinitionSetAccess().getSupXExpressionParserRuleCall_2_4_0()); 
+               before(grammarAccess.getDefinitionSetAccess().getSupXNumberLiteralParserRuleCall_2_4_0()); 
             }
-            pushFollow(FOLLOW_ruleXExpression_in_rule__DefinitionSet__SupAssignment_2_421085);
-            ruleXExpression();
+            pushFollow(FOLLOW_ruleXNumberLiteral_in_rule__DefinitionSet__SupAssignment_2_421085);
+            ruleXNumberLiteral();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getDefinitionSetAccess().getSupXExpressionParserRuleCall_2_4_0()); 
+               after(grammarAccess.getDefinitionSetAccess().getSupXNumberLiteralParserRuleCall_2_4_0()); 
             }
 
             }
@@ -33273,13 +33273,13 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__DefinitionSet__ElementsAssignment_1_3_1_in_rule__DefinitionSet__Group_1_3__1__Impl9451 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__0__Impl_in_rule__DefinitionSet__Group_2__09485 = new BitSet(new long[]{0x0000000000000000L,0x0000000005000000L});
     public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__1_in_rule__DefinitionSet__Group_2__09488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__1__Impl_in_rule__DefinitionSet__Group_2__19546 = new BitSet(new long[]{0xFFFFFE3000000070L,0x0001293045007FFFL});
+    public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__1__Impl_in_rule__DefinitionSet__Group_2__19546 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__2_in_rule__DefinitionSet__Group_2__19549 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_90_in_rule__DefinitionSet__Group_2__1__Impl9577 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__2__Impl_in_rule__DefinitionSet__Group_2__29608 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
     public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__3_in_rule__DefinitionSet__Group_2__29611 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DefinitionSet__InfAssignment_2_2_in_rule__DefinitionSet__Group_2__2__Impl9638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__3__Impl_in_rule__DefinitionSet__Group_2__39668 = new BitSet(new long[]{0xFFFFFE3000000070L,0x0001293045007FFFL});
+    public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__3__Impl_in_rule__DefinitionSet__Group_2__39668 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__4_in_rule__DefinitionSet__Group_2__39671 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_84_in_rule__DefinitionSet__Group_2__3__Impl9699 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DefinitionSet__Group_2__4__Impl_in_rule__DefinitionSet__Group_2__49730 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
@@ -33728,8 +33728,8 @@ public class InternalLilParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleXEnumElement_in_rule__DefinitionSet__ElementsAssignment_0_3_120961 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXNumberLiteral_in_rule__DefinitionSet__ElementsAssignment_1_220992 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXNumberLiteral_in_rule__DefinitionSet__ElementsAssignment_1_3_121023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__DefinitionSet__InfAssignment_2_221054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpression_in_rule__DefinitionSet__SupAssignment_2_421085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXNumberLiteral_in_rule__DefinitionSet__InfAssignment_2_221054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXNumberLiteral_in_rule__DefinitionSet__SupAssignment_2_421085 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAccessibleEntity_in_rule__SignalAlias__SourceAssignment_021116 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__SignalAlias__AliasAssignment_1_121151 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDataTypeBase_in_rule__DataType__BaseAssignment_021186 = new BitSet(new long[]{0x0000000000000002L});

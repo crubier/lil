@@ -548,21 +548,21 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cNumberDefinitionIntervalAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Assignment cInfAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cInfXExpressionParserRuleCall_2_2_0 = (RuleCall)cInfAssignment_2_2.eContents().get(0);
+		private final RuleCall cInfXNumberLiteralParserRuleCall_2_2_0 = (RuleCall)cInfAssignment_2_2.eContents().get(0);
 		private final Keyword cCommaKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		private final Assignment cSupAssignment_2_4 = (Assignment)cGroup_2.eContents().get(4);
-		private final RuleCall cSupXExpressionParserRuleCall_2_4_0 = (RuleCall)cSupAssignment_2_4.eContents().get(0);
+		private final RuleCall cSupXNumberLiteralParserRuleCall_2_4_0 = (RuleCall)cSupAssignment_2_4.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
 		
 		//DefinitionSet:
 		//	{EnumDefinitionSet} "{" elements+=XEnumElement ("," elements+=XEnumElement)* "}" | {NumberDefinitionSet} "{"
-		//	elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}" | {NumberDefinitionInterval} "[" inf=XExpression ","
-		//	sup=XExpression "]";
+		//	elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}" | {NumberDefinitionInterval} "[" inf=XNumberLiteral ","
+		//	sup=XNumberLiteral "]";
 		public ParserRule getRule() { return rule; }
 
 		//{EnumDefinitionSet} "{" elements+=XEnumElement ("," elements+=XEnumElement)* "}" | {NumberDefinitionSet} "{"
-		//elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}" | {NumberDefinitionInterval} "[" inf=XExpression ","
-		//sup=XExpression "]"
+		//elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}" | {NumberDefinitionInterval} "[" inf=XNumberLiteral ","
+		//sup=XNumberLiteral "]"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{EnumDefinitionSet} "{" elements+=XEnumElement ("," elements+=XEnumElement)* "}"
@@ -625,7 +625,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
 
-		//{NumberDefinitionInterval} "[" inf=XExpression "," sup=XExpression "]"
+		//{NumberDefinitionInterval} "[" inf=XNumberLiteral "," sup=XNumberLiteral "]"
 		public Group getGroup_2() { return cGroup_2; }
 
 		//{NumberDefinitionInterval}
@@ -634,20 +634,20 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//"["
 		public Keyword getLeftSquareBracketKeyword_2_1() { return cLeftSquareBracketKeyword_2_1; }
 
-		//inf=XExpression
+		//inf=XNumberLiteral
 		public Assignment getInfAssignment_2_2() { return cInfAssignment_2_2; }
 
-		//XExpression
-		public RuleCall getInfXExpressionParserRuleCall_2_2_0() { return cInfXExpressionParserRuleCall_2_2_0; }
+		//XNumberLiteral
+		public RuleCall getInfXNumberLiteralParserRuleCall_2_2_0() { return cInfXNumberLiteralParserRuleCall_2_2_0; }
 
 		//","
 		public Keyword getCommaKeyword_2_3() { return cCommaKeyword_2_3; }
 
-		//sup=XExpression
+		//sup=XNumberLiteral
 		public Assignment getSupAssignment_2_4() { return cSupAssignment_2_4; }
 
-		//XExpression
-		public RuleCall getSupXExpressionParserRuleCall_2_4_0() { return cSupXExpressionParserRuleCall_2_4_0; }
+		//XNumberLiteral
+		public RuleCall getSupXNumberLiteralParserRuleCall_2_4_0() { return cSupXNumberLiteralParserRuleCall_2_4_0; }
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_2_5() { return cRightSquareBracketKeyword_2_5; }
@@ -2752,8 +2752,8 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 	//DefinitionSet:
 	//	{EnumDefinitionSet} "{" elements+=XEnumElement ("," elements+=XEnumElement)* "}" | {NumberDefinitionSet} "{"
-	//	elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}" | {NumberDefinitionInterval} "[" inf=XExpression ","
-	//	sup=XExpression "]";
+	//	elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}" | {NumberDefinitionInterval} "[" inf=XNumberLiteral ","
+	//	sup=XNumberLiteral "]";
 	public DefinitionSetElements getDefinitionSetAccess() {
 		return (pDefinitionSet != null) ? pDefinitionSet : (pDefinitionSet = new DefinitionSetElements());
 	}

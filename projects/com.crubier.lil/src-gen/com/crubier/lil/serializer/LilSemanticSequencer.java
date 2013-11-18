@@ -685,7 +685,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (inf=XExpression sup=XExpression)
+	 *     (inf=XNumberLiteral sup=XNumberLiteral)
 	 */
 	protected void sequence_DefinitionSet(EObject context, NumberDefinitionInterval semanticObject) {
 		if(errorAcceptor != null) {
@@ -696,8 +696,8 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDefinitionSetAccess().getInfXExpressionParserRuleCall_2_2_0(), semanticObject.getInf());
-		feeder.accept(grammarAccess.getDefinitionSetAccess().getSupXExpressionParserRuleCall_2_4_0(), semanticObject.getSup());
+		feeder.accept(grammarAccess.getDefinitionSetAccess().getInfXNumberLiteralParserRuleCall_2_2_0(), semanticObject.getInf());
+		feeder.accept(grammarAccess.getDefinitionSetAccess().getSupXNumberLiteralParserRuleCall_2_4_0(), semanticObject.getSup());
 		feeder.finish();
 	}
 	

@@ -994,9 +994,9 @@ ruleDefinitionSet returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDefinitionSetAccess().getInfXExpressionParserRuleCall_2_2_0()); 
+	        newCompositeNode(grammarAccess.getDefinitionSetAccess().getInfXNumberLiteralParserRuleCall_2_2_0()); 
 	    }
-		lv_inf_14_0=ruleXExpression		{
+		lv_inf_14_0=ruleXNumberLiteral		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDefinitionSetRule());
 	        }
@@ -1004,7 +1004,7 @@ ruleDefinitionSet returns [EObject current=null]
        			$current, 
        			"inf",
         		lv_inf_14_0, 
-        		"XExpression");
+        		"XNumberLiteral");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1016,9 +1016,9 @@ ruleDefinitionSet returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDefinitionSetAccess().getSupXExpressionParserRuleCall_2_4_0()); 
+	        newCompositeNode(grammarAccess.getDefinitionSetAccess().getSupXNumberLiteralParserRuleCall_2_4_0()); 
 	    }
-		lv_sup_16_0=ruleXExpression		{
+		lv_sup_16_0=ruleXNumberLiteral		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDefinitionSetRule());
 	        }
@@ -1026,7 +1026,7 @@ ruleDefinitionSet returns [EObject current=null]
        			$current, 
        			"sup",
         		lv_sup_16_0, 
-        		"XExpression");
+        		"XNumberLiteral");
 	        afterParserOrEnumRuleCall();
 	    }
 

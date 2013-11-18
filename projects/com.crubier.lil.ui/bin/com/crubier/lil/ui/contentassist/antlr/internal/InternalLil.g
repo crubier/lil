@@ -10368,8 +10368,8 @@ rule__DefinitionSet__InfAssignment_2_2
     }
 :
 (
-{ before(grammarAccess.getDefinitionSetAccess().getInfXExpressionParserRuleCall_2_2_0()); }
-	ruleXExpression{ after(grammarAccess.getDefinitionSetAccess().getInfXExpressionParserRuleCall_2_2_0()); }
+{ before(grammarAccess.getDefinitionSetAccess().getInfXNumberLiteralParserRuleCall_2_2_0()); }
+	ruleXNumberLiteral{ after(grammarAccess.getDefinitionSetAccess().getInfXNumberLiteralParserRuleCall_2_2_0()); }
 )
 
 ;
@@ -10383,8 +10383,8 @@ rule__DefinitionSet__SupAssignment_2_4
     }
 :
 (
-{ before(grammarAccess.getDefinitionSetAccess().getSupXExpressionParserRuleCall_2_4_0()); }
-	ruleXExpression{ after(grammarAccess.getDefinitionSetAccess().getSupXExpressionParserRuleCall_2_4_0()); }
+{ before(grammarAccess.getDefinitionSetAccess().getSupXNumberLiteralParserRuleCall_2_4_0()); }
+	ruleXNumberLiteral{ after(grammarAccess.getDefinitionSetAccess().getSupXNumberLiteralParserRuleCall_2_4_0()); }
 )
 
 ;

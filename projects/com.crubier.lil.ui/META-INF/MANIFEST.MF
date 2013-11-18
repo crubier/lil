@@ -23,8 +23,9 @@ Require-Bundle: com.crubier.lil;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: com.crubier.lil.ui.quickfix,
- com.crubier.lil.ui.contentassist,
+Export-Package: com.crubier.lil.ui.contentassist,
  com.crubier.lil.ui.contentassist.antlr,
- com.crubier.lil.ui.internal
+ com.crubier.lil.ui.internal,
+ com.crubier.lil.ui.quickfix,
+ com.crubier.lil.ui.syntaxcoloring
 Bundle-Activator: com.crubier.lil.ui.internal.LilActivator

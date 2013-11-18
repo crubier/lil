@@ -4,6 +4,11 @@
 package com.crubier.lil.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
+
+import com.crubier.lil.ui.syntaxcoloring.HighlightingCalculator;
+import com.crubier.lil.ui.syntaxcoloring.HighlightingConfiguration;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -12,4 +17,13 @@ public class LilUiModule extends com.crubier.lil.ui.AbstractLilUiModule {
 	public LilUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration () {
+		 return HighlightingConfiguration.class;
+		 }
+	
+		 public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator(){
+		 return HighlightingCalculator.class;
+		 }
+	
 }

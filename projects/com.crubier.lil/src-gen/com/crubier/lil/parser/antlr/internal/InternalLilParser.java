@@ -2539,7 +2539,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefinitionSet"
-    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:870:1: ruleDefinitionSet returns [EObject current=null] : ( ( () otherlv_1= '{' ( (lv_elements_2_0= ruleXEnumElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleXEnumElement ) ) )* otherlv_5= '}' ) | ( () otherlv_7= '{' ( (lv_elements_8_0= ruleXNumberLiteral ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleXNumberLiteral ) ) )* otherlv_11= '}' ) | ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXExpression ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXExpression ) ) otherlv_17= ']' ) ) ;
+    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:870:1: ruleDefinitionSet returns [EObject current=null] : ( ( () otherlv_1= '{' ( (lv_elements_2_0= ruleXEnumElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleXEnumElement ) ) )* otherlv_5= '}' ) | ( () otherlv_7= '{' ( (lv_elements_8_0= ruleXNumberLiteral ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleXNumberLiteral ) ) )* otherlv_11= '}' ) | ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXNumberLiteral ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXNumberLiteral ) ) otherlv_17= ']' ) ) ;
     public final EObject ruleDefinitionSet() throws RecognitionException {
         EObject current = null;
 
@@ -2568,10 +2568,10 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:873:28: ( ( ( () otherlv_1= '{' ( (lv_elements_2_0= ruleXEnumElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleXEnumElement ) ) )* otherlv_5= '}' ) | ( () otherlv_7= '{' ( (lv_elements_8_0= ruleXNumberLiteral ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleXNumberLiteral ) ) )* otherlv_11= '}' ) | ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXExpression ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXExpression ) ) otherlv_17= ']' ) ) )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:874:1: ( ( () otherlv_1= '{' ( (lv_elements_2_0= ruleXEnumElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleXEnumElement ) ) )* otherlv_5= '}' ) | ( () otherlv_7= '{' ( (lv_elements_8_0= ruleXNumberLiteral ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleXNumberLiteral ) ) )* otherlv_11= '}' ) | ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXExpression ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXExpression ) ) otherlv_17= ']' ) )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:873:28: ( ( ( () otherlv_1= '{' ( (lv_elements_2_0= ruleXEnumElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleXEnumElement ) ) )* otherlv_5= '}' ) | ( () otherlv_7= '{' ( (lv_elements_8_0= ruleXNumberLiteral ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleXNumberLiteral ) ) )* otherlv_11= '}' ) | ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXNumberLiteral ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXNumberLiteral ) ) otherlv_17= ']' ) ) )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:874:1: ( ( () otherlv_1= '{' ( (lv_elements_2_0= ruleXEnumElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleXEnumElement ) ) )* otherlv_5= '}' ) | ( () otherlv_7= '{' ( (lv_elements_8_0= ruleXNumberLiteral ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleXNumberLiteral ) ) )* otherlv_11= '}' ) | ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXNumberLiteral ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXNumberLiteral ) ) otherlv_17= ']' ) )
             {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:874:1: ( ( () otherlv_1= '{' ( (lv_elements_2_0= ruleXEnumElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleXEnumElement ) ) )* otherlv_5= '}' ) | ( () otherlv_7= '{' ( (lv_elements_8_0= ruleXNumberLiteral ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleXNumberLiteral ) ) )* otherlv_11= '}' ) | ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXExpression ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXExpression ) ) otherlv_17= ']' ) )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:874:1: ( ( () otherlv_1= '{' ( (lv_elements_2_0= ruleXEnumElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleXEnumElement ) ) )* otherlv_5= '}' ) | ( () otherlv_7= '{' ( (lv_elements_8_0= ruleXNumberLiteral ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleXNumberLiteral ) ) )* otherlv_11= '}' ) | ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXNumberLiteral ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXNumberLiteral ) ) otherlv_17= ']' ) )
             int alt16=3;
             int LA16_0 = input.LA(1);
 
@@ -2878,10 +2878,10 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:984:6: ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXExpression ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXExpression ) ) otherlv_17= ']' )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:984:6: ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXNumberLiteral ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXNumberLiteral ) ) otherlv_17= ']' )
                     {
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:984:6: ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXExpression ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXExpression ) ) otherlv_17= ']' )
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:984:7: () otherlv_13= '[' ( (lv_inf_14_0= ruleXExpression ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXExpression ) ) otherlv_17= ']'
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:984:6: ( () otherlv_13= '[' ( (lv_inf_14_0= ruleXNumberLiteral ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXNumberLiteral ) ) otherlv_17= ']' )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:984:7: () otherlv_13= '[' ( (lv_inf_14_0= ruleXNumberLiteral ) ) otherlv_15= ',' ( (lv_sup_16_0= ruleXNumberLiteral ) ) otherlv_17= ']'
                     {
                     // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:984:7: ()
                     // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:985:5: 
@@ -2902,19 +2902,19 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_13, grammarAccess.getDefinitionSetAccess().getLeftSquareBracketKeyword_2_1());
                           
                     }
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:994:1: ( (lv_inf_14_0= ruleXExpression ) )
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:995:1: (lv_inf_14_0= ruleXExpression )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:994:1: ( (lv_inf_14_0= ruleXNumberLiteral ) )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:995:1: (lv_inf_14_0= ruleXNumberLiteral )
                     {
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:995:1: (lv_inf_14_0= ruleXExpression )
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:996:3: lv_inf_14_0= ruleXExpression
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:995:1: (lv_inf_14_0= ruleXNumberLiteral )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:996:3: lv_inf_14_0= ruleXNumberLiteral
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getDefinitionSetAccess().getInfXExpressionParserRuleCall_2_2_0()); 
+                      	        newCompositeNode(grammarAccess.getDefinitionSetAccess().getInfXNumberLiteralParserRuleCall_2_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXExpression_in_ruleDefinitionSet2090);
-                    lv_inf_14_0=ruleXExpression();
+                    pushFollow(FOLLOW_ruleXNumberLiteral_in_ruleDefinitionSet2090);
+                    lv_inf_14_0=ruleXNumberLiteral();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -2927,7 +2927,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                              			current, 
                              			"inf",
                               		lv_inf_14_0, 
-                              		"XExpression");
+                              		"XNumberLiteral");
                       	        afterParserOrEnumRuleCall();
                       	    
                     }
@@ -2943,19 +2943,19 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_15, grammarAccess.getDefinitionSetAccess().getCommaKeyword_2_3());
                           
                     }
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1016:1: ( (lv_sup_16_0= ruleXExpression ) )
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1017:1: (lv_sup_16_0= ruleXExpression )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1016:1: ( (lv_sup_16_0= ruleXNumberLiteral ) )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1017:1: (lv_sup_16_0= ruleXNumberLiteral )
                     {
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1017:1: (lv_sup_16_0= ruleXExpression )
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1018:3: lv_sup_16_0= ruleXExpression
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1017:1: (lv_sup_16_0= ruleXNumberLiteral )
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1018:3: lv_sup_16_0= ruleXNumberLiteral
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getDefinitionSetAccess().getSupXExpressionParserRuleCall_2_4_0()); 
+                      	        newCompositeNode(grammarAccess.getDefinitionSetAccess().getSupXNumberLiteralParserRuleCall_2_4_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleXExpression_in_ruleDefinitionSet2123);
-                    lv_sup_16_0=ruleXExpression();
+                    pushFollow(FOLLOW_ruleXNumberLiteral_in_ruleDefinitionSet2123);
+                    lv_sup_16_0=ruleXNumberLiteral();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -2968,7 +2968,7 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
                              			current, 
                              			"sup",
                               		lv_sup_16_0, 
-                              		"XExpression");
+                              		"XNumberLiteral");
                       	        afterParserOrEnumRuleCall();
                       	    
                     }
@@ -12773,10 +12773,10 @@ public class InternalLilParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_23_in_ruleDefinitionSet2005 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_ruleXNumberLiteral_in_ruleDefinitionSet2026 = new BitSet(new long[]{0x0000000020800000L});
     public static final BitSet FOLLOW_29_in_ruleDefinitionSet2040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleDefinitionSet2069 = new BitSet(new long[]{0x8C00040050000070L,0x0000FFFFFFFFFE93L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleDefinitionSet2090 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleDefinitionSet2102 = new BitSet(new long[]{0x8C00040050000070L,0x0000FFFFFFFFFE93L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleDefinitionSet2123 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_30_in_ruleDefinitionSet2069 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleXNumberLiteral_in_ruleDefinitionSet2090 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleDefinitionSet2102 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleXNumberLiteral_in_ruleDefinitionSet2123 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_31_in_ruleDefinitionSet2135 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSignalAlias_in_entryRuleSignalAlias2172 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSignalAlias2182 = new BitSet(new long[]{0x0000000000000002L});
