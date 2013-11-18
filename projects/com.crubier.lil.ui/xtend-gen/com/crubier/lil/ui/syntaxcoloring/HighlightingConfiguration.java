@@ -17,14 +17,23 @@ public class HighlightingConfiguration implements IHighlightingConfiguration {
     InputOutput.<String>println("coloring");
     TextStyle _keywordTextStyle = this.keywordTextStyle();
     acceptor.acceptDefaultHighlighting(HighlightingConfiguration.KEYWORD_ID, "Keyword", _keywordTextStyle);
-    TextStyle _keywordTextStyle_1 = this.keywordTextStyle();
-    acceptor.acceptDefaultHighlighting(HighlightingConfiguration.COMMENT_ID, "Comment", _keywordTextStyle_1);
+    TextStyle _commentTextStyle = this.commentTextStyle();
+    acceptor.acceptDefaultHighlighting(HighlightingConfiguration.COMMENT_ID, "Comment", _commentTextStyle);
   }
   
   public TextStyle keywordTextStyle() {
     TextStyle _textStyle = new TextStyle();
     final TextStyle textStyle = _textStyle;
-    RGB _rGB = new RGB(127, 200, 85);
+    RGB _rGB = new RGB(127, 0, 85);
+    textStyle.setColor(_rGB);
+    textStyle.setStyle(SWT.BOLD);
+    return textStyle;
+  }
+  
+  public TextStyle commentTextStyle() {
+    TextStyle _textStyle = new TextStyle();
+    final TextStyle textStyle = _textStyle;
+    RGB _rGB = new RGB(31, 127, 31);
     textStyle.setColor(_rGB);
     textStyle.setStyle(SWT.BOLD);
     return textStyle;

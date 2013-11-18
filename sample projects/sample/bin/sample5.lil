@@ -1,8 +1,8 @@
 structure person :
 	name : text
 	surname : text
-	birthdate : text
-	sex : symbol
+	birthdate : time
+	
 	
 interactor Gauge :
 	user : actor
@@ -20,19 +20,12 @@ interactor ControlPanel :
 	increment : void event from user to system
 	decrement : void event from user to system
 	reset: void event from user to system
-	min: number in [0,100] flow from system
-	max: number in [0,100] flow from system
-	x: number in [0,100] flow from system
-	y: number in [0,100] flow from system
+	min: number flow from system
+	max: number flow from system
+	x: number flow from system
+	y: number flow from system
 	current: number in [0,100] flow 
 	
 	on init : 	always current = switch(selection) case #X : x case #Y : y
 				always val to theGauge = Math.clip(current,0,100)
-				
-	on increment : set val to theGauge = switch (7) case +1:false case 2:true default : false
-	
-	
-	
-	
-	
 	

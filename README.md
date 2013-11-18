@@ -13,6 +13,10 @@
 - Design of safety-critical human-machine interfaces
 - Ensuring non ambiguous formal specification of human-machine interfaces
 
+<p align="center">
+  <img src="docs/images/screenshot.png"/>
+</p>
+
 ## lil standard framework
 
 **lil framework** is a baseline framework designed to implement the **lil** specification canonically. It aims at enabling the following:

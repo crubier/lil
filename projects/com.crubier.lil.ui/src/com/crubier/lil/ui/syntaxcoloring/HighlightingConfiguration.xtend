@@ -58,12 +58,19 @@ class HighlightingConfiguration implements IHighlightingConfiguration {
   override configure(IHighlightingConfigurationAcceptor acceptor) {
   	println("coloring")
     acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword", keywordTextStyle());
-    acceptor.acceptDefaultHighlighting(COMMENT_ID, "Comment", keywordTextStyle())
+    acceptor.acceptDefaultHighlighting(COMMENT_ID, "Comment", commentTextStyle())
   }
   
   def keywordTextStyle() {
     val textStyle = new TextStyle();
-    textStyle.setColor(new RGB(127,200, 85));
+    textStyle.setColor(new RGB(127,0, 85));
+    textStyle.setStyle(SWT.BOLD);
+    return textStyle;
+  }
+  
+   def commentTextStyle() {
+    val textStyle = new TextStyle();
+    textStyle.setColor(new RGB(31,127, 31));
     textStyle.setStyle(SWT.BOLD);
     return textStyle;
   }
