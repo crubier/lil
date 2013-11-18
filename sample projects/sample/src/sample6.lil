@@ -1,0 +1,45 @@
+datatype Person : 
+	name : text
+	surname : text
+	birthdate : text
+	sex:symbol
+
+datatype EnginePower : 
+	number in [0,100]
+
+datatype XorYchoice : 
+	symbol in {#X,#Y}
+	
+	
+interactor Gauge :
+	user : actor
+	val : number in [0,100] flow from parent to user
+	
+	
+interactor ControlPanel :
+	user : actor
+	system : actor
+		
+	theGauge : Gauge
+	
+	selection : XorYchoice flow to user
+	select: XorYchoice event from user
+	increment : void event from user to system
+	decrement : void event from user to system
+	reset: void event from user to system
+	min: EnginePower flow from system
+	max: EnginePower flow from system
+	x: EnginePower flow from system
+	y: EnginePower flow from system
+	current: EnginePower flow 
+	
+	on init : 	always current = switch(selection) case #X : x case #Y : y
+				always val to theGauge = Math.clip(current,0,100)
+				
+	on increment : set val to theGauge = switch (7) case +1:false case 2:true default : false
+	
+	
+	
+	
+	
+	
