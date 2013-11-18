@@ -43,6 +43,7 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGenericEntityAccess().getAlternatives(), "rule__GenericEntity__Alternatives");
 					put(grammarAccess.getEntityAccess().getAlternatives(), "rule__Entity__Alternatives");
 					put(grammarAccess.getSignalReceptionAccess().getAlternatives(), "rule__SignalReception__Alternatives");
+					put(grammarAccess.getDefinitionSetAccess().getAlternatives(), "rule__DefinitionSet__Alternatives");
 					put(grammarAccess.getSignalModeAccess().getAlternatives(), "rule__SignalMode__Alternatives");
 					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 					put(grammarAccess.getDataTypeBaseAccess().getAlternatives(), "rule__DataTypeBase__Alternatives");
@@ -74,7 +75,10 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSignalAccess().getGroup_3(), "rule__Signal__Group_3__0");
 					put(grammarAccess.getSignalAccess().getGroup_5(), "rule__Signal__Group_5__0");
 					put(grammarAccess.getSignalAccess().getGroup_6(), "rule__Signal__Group_6__0");
-					put(grammarAccess.getDefinitionSetAccess().getGroup(), "rule__DefinitionSet__Group__0");
+					put(grammarAccess.getDefinitionSetAccess().getGroup_0(), "rule__DefinitionSet__Group_0__0");
+					put(grammarAccess.getDefinitionSetAccess().getGroup_0_3(), "rule__DefinitionSet__Group_0_3__0");
+					put(grammarAccess.getDefinitionSetAccess().getGroup_1(), "rule__DefinitionSet__Group_1__0");
+					put(grammarAccess.getDefinitionSetAccess().getGroup_1_3(), "rule__DefinitionSet__Group_1_3__0");
 					put(grammarAccess.getDefinitionSetAccess().getGroup_2(), "rule__DefinitionSet__Group_2__0");
 					put(grammarAccess.getSignalAliasAccess().getGroup(), "rule__SignalAlias__Group__0");
 					put(grammarAccess.getSignalAliasAccess().getGroup_1(), "rule__SignalAlias__Group_1__0");
@@ -167,8 +171,12 @@ public class LilParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSignalAccess().getModeAssignment_4(), "rule__Signal__ModeAssignment_4");
 					put(grammarAccess.getSignalAccess().getSourceAssignment_5_1(), "rule__Signal__SourceAssignment_5_1");
 					put(grammarAccess.getSignalAccess().getDestinationsAssignment_6_1(), "rule__Signal__DestinationsAssignment_6_1");
-					put(grammarAccess.getDefinitionSetAccess().getElementsAssignment_1(), "rule__DefinitionSet__ElementsAssignment_1");
-					put(grammarAccess.getDefinitionSetAccess().getElementsAssignment_2_1(), "rule__DefinitionSet__ElementsAssignment_2_1");
+					put(grammarAccess.getDefinitionSetAccess().getElementsAssignment_0_2(), "rule__DefinitionSet__ElementsAssignment_0_2");
+					put(grammarAccess.getDefinitionSetAccess().getElementsAssignment_0_3_1(), "rule__DefinitionSet__ElementsAssignment_0_3_1");
+					put(grammarAccess.getDefinitionSetAccess().getElementsAssignment_1_2(), "rule__DefinitionSet__ElementsAssignment_1_2");
+					put(grammarAccess.getDefinitionSetAccess().getElementsAssignment_1_3_1(), "rule__DefinitionSet__ElementsAssignment_1_3_1");
+					put(grammarAccess.getDefinitionSetAccess().getInfAssignment_2_2(), "rule__DefinitionSet__InfAssignment_2_2");
+					put(grammarAccess.getDefinitionSetAccess().getSupAssignment_2_4(), "rule__DefinitionSet__SupAssignment_2_4");
 					put(grammarAccess.getSignalAliasAccess().getSourceAssignment_0(), "rule__SignalAlias__SourceAssignment_0");
 					put(grammarAccess.getSignalAliasAccess().getAliasAssignment_1_1(), "rule__SignalAlias__AliasAssignment_1_1");
 					put(grammarAccess.getDataTypeAccess().getBaseAssignment_0(), "rule__DataType__BaseAssignment_0");

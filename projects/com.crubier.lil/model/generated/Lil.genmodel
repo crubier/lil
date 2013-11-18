@@ -50,9 +50,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Signal/source"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Signal/destinations"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//DefinitionSet">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DefinitionSet/elements"/>
-    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//DefinitionSet"/>
     <genClasses ecoreClass="Lil.ecore#//SignalAlias">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalAlias/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalAlias/alias"/>
@@ -100,6 +98,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XCasePart/then"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//XEnumElement"/>
+    <genClasses ecoreClass="Lil.ecore#//EnumDefinitionSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//EnumDefinitionSet/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//NumberDefinitionSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberDefinitionSet/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//NumberDefinitionInterval">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberDefinitionInterval/inf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberDefinitionInterval/sup"/>
+    </genClasses>
     <genClasses ecoreClass="Lil.ecore#//XBinaryOperation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XBinaryOperation/leftOperand"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//XBinaryOperation/feature"/>

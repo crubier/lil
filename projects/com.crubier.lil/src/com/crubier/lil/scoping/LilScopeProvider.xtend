@@ -16,6 +16,7 @@ import com.crubier.lil.lil.LilModel
 import java.util.HashSet
 import com.crubier.lil.lil.XEnumElement
 import com.crubier.lil.lil.DefinitionSet
+import com.crubier.lil.lil.EnumDefinitionSet
 
 /**
  * This class contains custom scoping description.
@@ -41,10 +42,8 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
 		}
 	}
 
-	// flow emission instance scope : either a signal defined in this interactor, or a signal defined in the interactor specified by the "to <destination>" statement
+	// enum literal scope is at the interactor level
 	def public IScope scope_XEnumLiteral_element(XEnumLiteral literal, EReference ref) {
-
-		
 		var EObject object = literal;
 		while (!(object instanceof Interactor)) {
 			object = object.eContainer;
@@ -52,13 +51,11 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
 
 		val elements = new HashSet<XEnumElement>
 		val interactor = object as Interactor
-		
-
 		for (s : interactor.signals) {
-				if (s?.definitionSet?.elements != null)
-					elements.addAll(s.definitionSet.elements)
+			if(s?.definitionSet instanceof EnumDefinitionSet)
+				if ((s?.definitionSet as EnumDefinitionSet)?.elements != null)
+					elements.addAll((s?.definitionSet as EnumDefinitionSet).elements)
 		}
-		
 		return Scopes.scopeFor(elements);
 	}
 

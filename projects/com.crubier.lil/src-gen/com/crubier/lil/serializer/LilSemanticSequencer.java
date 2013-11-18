@@ -9,10 +9,12 @@ import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.DataType;
 import com.crubier.lil.lil.DataTypeCompound;
 import com.crubier.lil.lil.DataTypeCompoundField;
-import com.crubier.lil.lil.DefinitionSet;
+import com.crubier.lil.lil.EnumDefinitionSet;
 import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilModel;
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.NumberDefinitionInterval;
+import com.crubier.lil.lil.NumberDefinitionSet;
 import com.crubier.lil.lil.OnCause;
 import com.crubier.lil.lil.SetEffect;
 import com.crubier.lil.lil.Signal;
@@ -116,9 +118,9 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.DEFINITION_SET:
+			case LilPackage.ENUM_DEFINITION_SET:
 				if(context == grammarAccess.getDefinitionSetRule()) {
-					sequence_DefinitionSet(context, (DefinitionSet) semanticObject); 
+					sequence_DefinitionSet(context, (EnumDefinitionSet) semanticObject); 
 					return; 
 				}
 				else break;
@@ -131,6 +133,18 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.LIL_MODEL:
 				if(context == grammarAccess.getLilModelRule()) {
 					sequence_LilModel(context, (LilModel) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.NUMBER_DEFINITION_INTERVAL:
+				if(context == grammarAccess.getDefinitionSetRule()) {
+					sequence_DefinitionSet(context, (NumberDefinitionInterval) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.NUMBER_DEFINITION_SET:
+				if(context == grammarAccess.getDefinitionSetRule()) {
+					sequence_DefinitionSet(context, (NumberDefinitionSet) semanticObject); 
 					return; 
 				}
 				else break;
@@ -664,7 +678,35 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (elements+=XEnumElement elements+=XEnumElement*)
 	 */
-	protected void sequence_DefinitionSet(EObject context, DefinitionSet semanticObject) {
+	protected void sequence_DefinitionSet(EObject context, EnumDefinitionSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (inf=XExpression sup=XExpression)
+	 */
+	protected void sequence_DefinitionSet(EObject context, NumberDefinitionInterval semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.NUMBER_DEFINITION_INTERVAL__INF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.NUMBER_DEFINITION_INTERVAL__INF));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.NUMBER_DEFINITION_INTERVAL__SUP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.NUMBER_DEFINITION_INTERVAL__SUP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDefinitionSetAccess().getInfXExpressionParserRuleCall_2_2_0(), semanticObject.getInf());
+		feeder.accept(grammarAccess.getDefinitionSetAccess().getSupXExpressionParserRuleCall_2_4_0(), semanticObject.getSup());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (elements+=XNumberLiteral elements+=XNumberLiteral*)
+	 */
+	protected void sequence_DefinitionSet(EObject context, NumberDefinitionSet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

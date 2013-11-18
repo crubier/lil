@@ -56,10 +56,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="destinations" upperBound="-1"
         eType="#//SignalAlias" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DefinitionSet">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//XEnumElement" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionSet"/>
   <eClassifiers xsi:type="ecore:EClass" name="SignalAlias">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//AccessibleEntity"
         containment="true"/>
@@ -120,6 +117,20 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XEnumElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumDefinitionSet" eSuperTypes="#//DefinitionSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//XEnumElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberDefinitionSet" eSuperTypes="#//DefinitionSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//XExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberDefinitionInterval" eSuperTypes="#//DefinitionSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inf" eType="#//XExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sup" eType="#//XExpression"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XBinaryOperation" eSuperTypes="#//XExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftOperand" eType="#//XExpression"
         containment="true"/>

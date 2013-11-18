@@ -284,6 +284,33 @@ public interface LilFactory extends EFactory
   XEnumElement createXEnumElement();
 
   /**
+   * Returns a new object of class '<em>Enum Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum Definition Set</em>'.
+   * @generated
+   */
+  EnumDefinitionSet createEnumDefinitionSet();
+
+  /**
+   * Returns a new object of class '<em>Number Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Definition Set</em>'.
+   * @generated
+   */
+  NumberDefinitionSet createNumberDefinitionSet();
+
+  /**
+   * Returns a new object of class '<em>Number Definition Interval</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Definition Interval</em>'.
+   * @generated
+   */
+  NumberDefinitionInterval createNumberDefinitionInterval();
+
+  /**
    * Returns a new object of class '<em>XBinary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

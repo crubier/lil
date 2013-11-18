@@ -6,7 +6,7 @@ structure person :
 	
 interactor Gauge :
 	user : actor
-	val : number flow from parent to user
+	val : number in [0,100] flow from parent to user
 	
 	
 interactor ControlPanel :
@@ -20,11 +20,11 @@ interactor ControlPanel :
 	increment : void event from user to system
 	decrement : void event from user to system
 	reset: void event from user to system
-	min: number flow from system
-	max: number flow from system
-	x: number flow from system
-	y: number flow from system
-	current: number flow 
+	min: number in [0,100] flow from system
+	max: number in [0,100] flow from system
+	x: number in [0,100] flow from system
+	y: number in [0,100] flow from system
+	current: number in [0,100] flow 
 	
 	on init : 	always current = switch(selection) case #X : x case #Y : y
 				always val to theGauge = Math.clip(current,0,100)

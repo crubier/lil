@@ -7,6 +7,7 @@ import com.crubier.lil.lil.AccessibleEntity;
 import com.crubier.lil.lil.Component;
 import com.crubier.lil.lil.DefinitionSet;
 import com.crubier.lil.lil.Entity;
+import com.crubier.lil.lil.EnumDefinitionSet;
 import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
@@ -74,15 +75,28 @@ public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
       if (s!=null) {
         _definitionSet=s.getDefinitionSet();
       }
-      EList<XEnumElement> _elements = null;
-      if (_definitionSet!=null) {
-        _elements=_definitionSet.getElements();
-      }
-      boolean _notEquals = (!Objects.equal(_elements, null));
-      if (_notEquals) {
-        DefinitionSet _definitionSet_1 = s.getDefinitionSet();
-        EList<XEnumElement> _elements_1 = _definitionSet_1.getElements();
-        elements.addAll(_elements_1);
+      if ((_definitionSet instanceof EnumDefinitionSet)) {
+        DefinitionSet _definitionSet_1 = null;
+        if (s!=null) {
+          _definitionSet_1=s.getDefinitionSet();
+        }
+        EList<XEnumElement> _elements = null;
+        DefinitionSet _definitionSet_2 = null;
+        if (s!=null) {
+          _definitionSet_1=s.getDefinitionSet();
+        }
+        if (((EnumDefinitionSet) _definitionSet_1)!=null) {
+          _elements=((EnumDefinitionSet) _definitionSet_1).getElements();
+        }
+        boolean _notEquals = (!Objects.equal(_elements, null));
+        if (_notEquals) {
+          DefinitionSet _definitionSet_3 = null;
+          if (s!=null) {
+            _definitionSet_3=s.getDefinitionSet();
+          }
+          EList<XEnumElement> _elements_1 = ((EnumDefinitionSet) _definitionSet_3).getElements();
+          elements.addAll(_elements_1);
+        }
       }
     }
     return Scopes.scopeFor(elements);

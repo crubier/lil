@@ -93,6 +93,9 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.XLIST_LITERAL: return createXListLiteral();
       case LilPackage.XCASE_PART: return createXCasePart();
       case LilPackage.XENUM_ELEMENT: return createXEnumElement();
+      case LilPackage.ENUM_DEFINITION_SET: return createEnumDefinitionSet();
+      case LilPackage.NUMBER_DEFINITION_SET: return createNumberDefinitionSet();
+      case LilPackage.NUMBER_DEFINITION_INTERVAL: return createNumberDefinitionInterval();
       case LilPackage.XBINARY_OPERATION: return createXBinaryOperation();
       case LilPackage.XUNARY_OPERATION: return createXUnaryOperation();
       case LilPackage.XENUM_LITERAL: return createXEnumLiteral();
@@ -427,6 +430,39 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     XEnumElementImpl xEnumElement = new XEnumElementImpl();
     return xEnumElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumDefinitionSet createEnumDefinitionSet()
+  {
+    EnumDefinitionSetImpl enumDefinitionSet = new EnumDefinitionSetImpl();
+    return enumDefinitionSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumberDefinitionSet createNumberDefinitionSet()
+  {
+    NumberDefinitionSetImpl numberDefinitionSet = new NumberDefinitionSetImpl();
+    return numberDefinitionSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumberDefinitionInterval createNumberDefinitionInterval()
+  {
+    NumberDefinitionIntervalImpl numberDefinitionInterval = new NumberDefinitionIntervalImpl();
+    return numberDefinitionInterval;
   }
 
   /**

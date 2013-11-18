@@ -287,6 +287,30 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilPackage.ENUM_DEFINITION_SET:
+      {
+        EnumDefinitionSet enumDefinitionSet = (EnumDefinitionSet)theEObject;
+        T result = caseEnumDefinitionSet(enumDefinitionSet);
+        if (result == null) result = caseDefinitionSet(enumDefinitionSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.NUMBER_DEFINITION_SET:
+      {
+        NumberDefinitionSet numberDefinitionSet = (NumberDefinitionSet)theEObject;
+        T result = caseNumberDefinitionSet(numberDefinitionSet);
+        if (result == null) result = caseDefinitionSet(numberDefinitionSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.NUMBER_DEFINITION_INTERVAL:
+      {
+        NumberDefinitionInterval numberDefinitionInterval = (NumberDefinitionInterval)theEObject;
+        T result = caseNumberDefinitionInterval(numberDefinitionInterval);
+        if (result == null) result = caseDefinitionSet(numberDefinitionInterval);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilPackage.XBINARY_OPERATION:
       {
         XBinaryOperation xBinaryOperation = (XBinaryOperation)theEObject;
@@ -848,6 +872,54 @@ public class LilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXEnumElement(XEnumElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enum Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enum Definition Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumDefinitionSet(EnumDefinitionSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number Definition Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberDefinitionSet(NumberDefinitionSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number Definition Interval</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number Definition Interval</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberDefinitionInterval(NumberDefinitionInterval object)
   {
     return null;
   }

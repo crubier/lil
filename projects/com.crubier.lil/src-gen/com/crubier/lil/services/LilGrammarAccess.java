@@ -523,46 +523,134 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class DefinitionSetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DefinitionSet");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementsXEnumElementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cElementsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cElementsXEnumElementParserRuleCall_2_1_0 = (RuleCall)cElementsAssignment_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cEnumDefinitionSetAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cElementsAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cElementsXEnumElementParserRuleCall_0_2_0 = (RuleCall)cElementsAssignment_0_2.eContents().get(0);
+		private final Group cGroup_0_3 = (Group)cGroup_0.eContents().get(3);
+		private final Keyword cCommaKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
+		private final Assignment cElementsAssignment_0_3_1 = (Assignment)cGroup_0_3.eContents().get(1);
+		private final RuleCall cElementsXEnumElementParserRuleCall_0_3_1_0 = (RuleCall)cElementsAssignment_0_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cNumberDefinitionSetAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cElementsAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cElementsXNumberLiteralParserRuleCall_1_2_0 = (RuleCall)cElementsAssignment_1_2.eContents().get(0);
+		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
+		private final Keyword cCommaKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
+		private final Assignment cElementsAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
+		private final RuleCall cElementsXNumberLiteralParserRuleCall_1_3_1_0 = (RuleCall)cElementsAssignment_1_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cNumberDefinitionIntervalAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cInfAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cInfXExpressionParserRuleCall_2_2_0 = (RuleCall)cInfAssignment_2_2.eContents().get(0);
+		private final Keyword cCommaKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		private final Assignment cSupAssignment_2_4 = (Assignment)cGroup_2.eContents().get(4);
+		private final RuleCall cSupXExpressionParserRuleCall_2_4_0 = (RuleCall)cSupAssignment_2_4.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
 		
 		//DefinitionSet:
-		//	"{" elements+=XEnumElement ("," elements+=XEnumElement)* "}";
+		//	{EnumDefinitionSet} "{" elements+=XEnumElement ("," elements+=XEnumElement)* "}" | {NumberDefinitionSet} "{"
+		//	elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}" | {NumberDefinitionInterval} "[" inf=XExpression ","
+		//	sup=XExpression "]";
 		public ParserRule getRule() { return rule; }
 
-		//"{" elements+=XEnumElement ("," elements+=XEnumElement)* "}"
-		public Group getGroup() { return cGroup; }
+		//{EnumDefinitionSet} "{" elements+=XEnumElement ("," elements+=XEnumElement)* "}" | {NumberDefinitionSet} "{"
+		//elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}" | {NumberDefinitionInterval} "[" inf=XExpression ","
+		//sup=XExpression "]"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//{EnumDefinitionSet} "{" elements+=XEnumElement ("," elements+=XEnumElement)* "}"
+		public Group getGroup_0() { return cGroup_0; }
+
+		//{EnumDefinitionSet}
+		public Action getEnumDefinitionSetAction_0_0() { return cEnumDefinitionSetAction_0_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		public Keyword getLeftCurlyBracketKeyword_0_1() { return cLeftCurlyBracketKeyword_0_1; }
 
 		//elements+=XEnumElement
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+		public Assignment getElementsAssignment_0_2() { return cElementsAssignment_0_2; }
 
 		//XEnumElement
-		public RuleCall getElementsXEnumElementParserRuleCall_1_0() { return cElementsXEnumElementParserRuleCall_1_0; }
+		public RuleCall getElementsXEnumElementParserRuleCall_0_2_0() { return cElementsXEnumElementParserRuleCall_0_2_0; }
 
 		//("," elements+=XEnumElement)*
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_0_3() { return cGroup_0_3; }
 
 		//","
-		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		public Keyword getCommaKeyword_0_3_0() { return cCommaKeyword_0_3_0; }
 
 		//elements+=XEnumElement
-		public Assignment getElementsAssignment_2_1() { return cElementsAssignment_2_1; }
+		public Assignment getElementsAssignment_0_3_1() { return cElementsAssignment_0_3_1; }
 
 		//XEnumElement
-		public RuleCall getElementsXEnumElementParserRuleCall_2_1_0() { return cElementsXEnumElementParserRuleCall_2_1_0; }
+		public RuleCall getElementsXEnumElementParserRuleCall_0_3_1_0() { return cElementsXEnumElementParserRuleCall_0_3_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_0_4() { return cRightCurlyBracketKeyword_0_4; }
+
+		//{NumberDefinitionSet} "{" elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{NumberDefinitionSet}
+		public Action getNumberDefinitionSetAction_1_0() { return cNumberDefinitionSetAction_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_1() { return cLeftCurlyBracketKeyword_1_1; }
+
+		//elements+=XNumberLiteral
+		public Assignment getElementsAssignment_1_2() { return cElementsAssignment_1_2; }
+
+		//XNumberLiteral
+		public RuleCall getElementsXNumberLiteralParserRuleCall_1_2_0() { return cElementsXNumberLiteralParserRuleCall_1_2_0; }
+
+		//("," elements+=XNumberLiteral)*
+		public Group getGroup_1_3() { return cGroup_1_3; }
+
+		//","
+		public Keyword getCommaKeyword_1_3_0() { return cCommaKeyword_1_3_0; }
+
+		//elements+=XNumberLiteral
+		public Assignment getElementsAssignment_1_3_1() { return cElementsAssignment_1_3_1; }
+
+		//XNumberLiteral
+		public RuleCall getElementsXNumberLiteralParserRuleCall_1_3_1_0() { return cElementsXNumberLiteralParserRuleCall_1_3_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_4() { return cRightCurlyBracketKeyword_1_4; }
+
+		//{NumberDefinitionInterval} "[" inf=XExpression "," sup=XExpression "]"
+		public Group getGroup_2() { return cGroup_2; }
+
+		//{NumberDefinitionInterval}
+		public Action getNumberDefinitionIntervalAction_2_0() { return cNumberDefinitionIntervalAction_2_0; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_2_1() { return cLeftSquareBracketKeyword_2_1; }
+
+		//inf=XExpression
+		public Assignment getInfAssignment_2_2() { return cInfAssignment_2_2; }
+
+		//XExpression
+		public RuleCall getInfXExpressionParserRuleCall_2_2_0() { return cInfXExpressionParserRuleCall_2_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_2_3() { return cCommaKeyword_2_3; }
+
+		//sup=XExpression
+		public Assignment getSupAssignment_2_4() { return cSupAssignment_2_4; }
+
+		//XExpression
+		public RuleCall getSupXExpressionParserRuleCall_2_4_0() { return cSupXExpressionParserRuleCall_2_4_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_2_5() { return cRightSquareBracketKeyword_2_5; }
 	}
 
 	public class SignalAliasElements extends AbstractParserRuleElementFinder {
@@ -2663,7 +2751,9 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DefinitionSet:
-	//	"{" elements+=XEnumElement ("," elements+=XEnumElement)* "}";
+	//	{EnumDefinitionSet} "{" elements+=XEnumElement ("," elements+=XEnumElement)* "}" | {NumberDefinitionSet} "{"
+	//	elements+=XNumberLiteral ("," elements+=XNumberLiteral)* "}" | {NumberDefinitionInterval} "[" inf=XExpression ","
+	//	sup=XExpression "]";
 	public DefinitionSetElements getDefinitionSetAccess() {
 		return (pDefinitionSet != null) ? pDefinitionSet : (pDefinitionSet = new DefinitionSetElements());
 	}

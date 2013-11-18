@@ -491,22 +491,13 @@ public interface LilPackage extends EPackage
   int DEFINITION_SET = 10;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEFINITION_SET__ELEMENTS = 0;
-
-  /**
    * The number of structural features of the '<em>Definition Set</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINITION_SET_FEATURE_COUNT = 1;
+  int DEFINITION_SET_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.SignalAliasImpl <em>Signal Alias</em>}' class.
@@ -1103,6 +1094,99 @@ public interface LilPackage extends EPackage
   int XENUM_ELEMENT_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.EnumDefinitionSetImpl <em>Enum Definition Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.EnumDefinitionSetImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getEnumDefinitionSet()
+   * @generated
+   */
+  int ENUM_DEFINITION_SET = 29;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_DEFINITION_SET__ELEMENTS = DEFINITION_SET_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Enum Definition Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_DEFINITION_SET_FEATURE_COUNT = DEFINITION_SET_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberDefinitionSetImpl <em>Number Definition Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.NumberDefinitionSetImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberDefinitionSet()
+   * @generated
+   */
+  int NUMBER_DEFINITION_SET = 30;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_DEFINITION_SET__ELEMENTS = DEFINITION_SET_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Number Definition Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_DEFINITION_SET_FEATURE_COUNT = DEFINITION_SET_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.NumberDefinitionIntervalImpl <em>Number Definition Interval</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.NumberDefinitionIntervalImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberDefinitionInterval()
+   * @generated
+   */
+  int NUMBER_DEFINITION_INTERVAL = 31;
+
+  /**
+   * The feature id for the '<em><b>Inf</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_DEFINITION_INTERVAL__INF = DEFINITION_SET_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Sup</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_DEFINITION_INTERVAL__SUP = DEFINITION_SET_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Number Definition Interval</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_DEFINITION_INTERVAL_FEATURE_COUNT = DEFINITION_SET_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.XBinaryOperationImpl <em>XBinary Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1110,7 +1194,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBinaryOperation()
    * @generated
    */
-  int XBINARY_OPERATION = 29;
+  int XBINARY_OPERATION = 32;
 
   /**
    * The feature id for the '<em><b>Left Operand</b></em>' containment reference.
@@ -1156,7 +1240,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXUnaryOperation()
    * @generated
    */
-  int XUNARY_OPERATION = 30;
+  int XUNARY_OPERATION = 33;
 
   /**
    * The feature id for the '<em><b>Feature</b></em>' attribute.
@@ -1193,7 +1277,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXEnumLiteral()
    * @generated
    */
-  int XENUM_LITERAL = 31;
+  int XENUM_LITERAL = 34;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -1230,7 +1314,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSignalLiteral()
    * @generated
    */
-  int XSIGNAL_LITERAL = 32;
+  int XSIGNAL_LITERAL = 35;
 
   /**
    * The feature id for the '<em><b>Signal</b></em>' reference.
@@ -1258,7 +1342,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXIfExpression()
    * @generated
    */
-  int XIF_EXPRESSION = 33;
+  int XIF_EXPRESSION = 36;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -1304,7 +1388,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXSwitchExpression()
    * @generated
    */
-  int XSWITCH_EXPRESSION = 34;
+  int XSWITCH_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>Switch</b></em>' containment reference.
@@ -1350,7 +1434,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXForEachExpression()
    * @generated
    */
-  int XFOR_EACH_EXPRESSION = 35;
+  int XFOR_EACH_EXPRESSION = 38;
 
   /**
    * The feature id for the '<em><b>For Expression</b></em>' containment reference.
@@ -1387,7 +1471,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXFunctionCallExpression()
    * @generated
    */
-  int XFUNCTION_CALL_EXPRESSION = 36;
+  int XFUNCTION_CALL_EXPRESSION = 39;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -1424,7 +1508,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXBooleanLiteral()
    * @generated
    */
-  int XBOOLEAN_LITERAL = 37;
+  int XBOOLEAN_LITERAL = 40;
 
   /**
    * The feature id for the '<em><b>Is True</b></em>' attribute.
@@ -1452,7 +1536,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNullLiteral()
    * @generated
    */
-  int XNULL_LITERAL = 38;
+  int XNULL_LITERAL = 41;
 
   /**
    * The number of structural features of the '<em>XNull Literal</em>' class.
@@ -1471,7 +1555,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXNumberLiteral()
    * @generated
    */
-  int XNUMBER_LITERAL = 39;
+  int XNUMBER_LITERAL = 42;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1499,7 +1583,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getXStringLiteral()
    * @generated
    */
-  int XSTRING_LITERAL = 40;
+  int XSTRING_LITERAL = 43;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1895,17 +1979,6 @@ public interface LilPackage extends EPackage
   EClass getDefinitionSet();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.DefinitionSet#getElements <em>Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see com.crubier.lil.lil.DefinitionSet#getElements()
-   * @see #getDefinitionSet()
-   * @generated
-   */
-  EReference getDefinitionSet_Elements();
-
-  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.SignalAlias <em>Signal Alias</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2282,6 +2355,80 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EClass getXEnumElement();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.EnumDefinitionSet <em>Enum Definition Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enum Definition Set</em>'.
+   * @see com.crubier.lil.lil.EnumDefinitionSet
+   * @generated
+   */
+  EClass getEnumDefinitionSet();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.EnumDefinitionSet#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see com.crubier.lil.lil.EnumDefinitionSet#getElements()
+   * @see #getEnumDefinitionSet()
+   * @generated
+   */
+  EReference getEnumDefinitionSet_Elements();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberDefinitionSet <em>Number Definition Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number Definition Set</em>'.
+   * @see com.crubier.lil.lil.NumberDefinitionSet
+   * @generated
+   */
+  EClass getNumberDefinitionSet();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.NumberDefinitionSet#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see com.crubier.lil.lil.NumberDefinitionSet#getElements()
+   * @see #getNumberDefinitionSet()
+   * @generated
+   */
+  EReference getNumberDefinitionSet_Elements();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.NumberDefinitionInterval <em>Number Definition Interval</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number Definition Interval</em>'.
+   * @see com.crubier.lil.lil.NumberDefinitionInterval
+   * @generated
+   */
+  EClass getNumberDefinitionInterval();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberDefinitionInterval#getInf <em>Inf</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Inf</em>'.
+   * @see com.crubier.lil.lil.NumberDefinitionInterval#getInf()
+   * @see #getNumberDefinitionInterval()
+   * @generated
+   */
+  EReference getNumberDefinitionInterval_Inf();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.NumberDefinitionInterval#getSup <em>Sup</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sup</em>'.
+   * @see com.crubier.lil.lil.NumberDefinitionInterval#getSup()
+   * @see #getNumberDefinitionInterval()
+   * @generated
+   */
+  EReference getNumberDefinitionInterval_Sup();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.XBinaryOperation <em>XBinary Operation</em>}'.
@@ -2960,14 +3107,6 @@ public interface LilPackage extends EPackage
     EClass DEFINITION_SET = eINSTANCE.getDefinitionSet();
 
     /**
-     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DEFINITION_SET__ELEMENTS = eINSTANCE.getDefinitionSet_Elements();
-
-    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.SignalAliasImpl <em>Signal Alias</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3290,6 +3429,68 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EClass XENUM_ELEMENT = eINSTANCE.getXEnumElement();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.EnumDefinitionSetImpl <em>Enum Definition Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.EnumDefinitionSetImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getEnumDefinitionSet()
+     * @generated
+     */
+    EClass ENUM_DEFINITION_SET = eINSTANCE.getEnumDefinitionSet();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENUM_DEFINITION_SET__ELEMENTS = eINSTANCE.getEnumDefinitionSet_Elements();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberDefinitionSetImpl <em>Number Definition Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.NumberDefinitionSetImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberDefinitionSet()
+     * @generated
+     */
+    EClass NUMBER_DEFINITION_SET = eINSTANCE.getNumberDefinitionSet();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER_DEFINITION_SET__ELEMENTS = eINSTANCE.getNumberDefinitionSet_Elements();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.NumberDefinitionIntervalImpl <em>Number Definition Interval</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.NumberDefinitionIntervalImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getNumberDefinitionInterval()
+     * @generated
+     */
+    EClass NUMBER_DEFINITION_INTERVAL = eINSTANCE.getNumberDefinitionInterval();
+
+    /**
+     * The meta object literal for the '<em><b>Inf</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER_DEFINITION_INTERVAL__INF = eINSTANCE.getNumberDefinitionInterval_Inf();
+
+    /**
+     * The meta object literal for the '<em><b>Sup</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER_DEFINITION_INTERVAL__SUP = eINSTANCE.getNumberDefinitionInterval_Sup();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.XBinaryOperationImpl <em>XBinary Operation</em>}' class.

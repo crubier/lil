@@ -15,10 +15,13 @@ import com.crubier.lil.lil.DataTypeCompoundField;
 import com.crubier.lil.lil.DefinitionSet;
 import com.crubier.lil.lil.Effect;
 import com.crubier.lil.lil.Entity;
+import com.crubier.lil.lil.EnumDefinitionSet;
 import com.crubier.lil.lil.Interactor;
 import com.crubier.lil.lil.LilFactory;
 import com.crubier.lil.lil.LilModel;
 import com.crubier.lil.lil.LilPackage;
+import com.crubier.lil.lil.NumberDefinitionInterval;
+import com.crubier.lil.lil.NumberDefinitionSet;
 import com.crubier.lil.lil.OnCause;
 import com.crubier.lil.lil.SetEffect;
 import com.crubier.lil.lil.Signal;
@@ -263,6 +266,27 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * @generated
    */
   private EClass xEnumElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumDefinitionSetEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numberDefinitionSetEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numberDefinitionIntervalEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -766,16 +790,6 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDefinitionSet_Elements()
-  {
-    return (EReference)definitionSetEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getSignalAlias()
   {
     return signalAliasEClass;
@@ -1129,6 +1143,76 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
   public EClass getXEnumElement()
   {
     return xEnumElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEnumDefinitionSet()
+  {
+    return enumDefinitionSetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEnumDefinitionSet_Elements()
+  {
+    return (EReference)enumDefinitionSetEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNumberDefinitionSet()
+  {
+    return numberDefinitionSetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumberDefinitionSet_Elements()
+  {
+    return (EReference)numberDefinitionSetEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNumberDefinitionInterval()
+  {
+    return numberDefinitionIntervalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumberDefinitionInterval_Inf()
+  {
+    return (EReference)numberDefinitionIntervalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNumberDefinitionInterval_Sup()
+  {
+    return (EReference)numberDefinitionIntervalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1536,7 +1620,6 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEReference(signalEClass, SIGNAL__DESTINATIONS);
 
     definitionSetEClass = createEClass(DEFINITION_SET);
-    createEReference(definitionSetEClass, DEFINITION_SET__ELEMENTS);
 
     signalAliasEClass = createEClass(SIGNAL_ALIAS);
     createEReference(signalAliasEClass, SIGNAL_ALIAS__SOURCE);
@@ -1591,6 +1674,16 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     createEReference(xCasePartEClass, XCASE_PART__THEN);
 
     xEnumElementEClass = createEClass(XENUM_ELEMENT);
+
+    enumDefinitionSetEClass = createEClass(ENUM_DEFINITION_SET);
+    createEReference(enumDefinitionSetEClass, ENUM_DEFINITION_SET__ELEMENTS);
+
+    numberDefinitionSetEClass = createEClass(NUMBER_DEFINITION_SET);
+    createEReference(numberDefinitionSetEClass, NUMBER_DEFINITION_SET__ELEMENTS);
+
+    numberDefinitionIntervalEClass = createEClass(NUMBER_DEFINITION_INTERVAL);
+    createEReference(numberDefinitionIntervalEClass, NUMBER_DEFINITION_INTERVAL__INF);
+    createEReference(numberDefinitionIntervalEClass, NUMBER_DEFINITION_INTERVAL__SUP);
 
     xBinaryOperationEClass = createEClass(XBINARY_OPERATION);
     createEReference(xBinaryOperationEClass, XBINARY_OPERATION__LEFT_OPERAND);
@@ -1677,6 +1770,9 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     xCollectionLiteralEClass.getESuperTypes().add(this.getXExpression());
     xSetLiteralEClass.getESuperTypes().add(this.getXCollectionLiteral());
     xListLiteralEClass.getESuperTypes().add(this.getXCollectionLiteral());
+    enumDefinitionSetEClass.getESuperTypes().add(this.getDefinitionSet());
+    numberDefinitionSetEClass.getESuperTypes().add(this.getDefinitionSet());
+    numberDefinitionIntervalEClass.getESuperTypes().add(this.getDefinitionSet());
     xBinaryOperationEClass.getESuperTypes().add(this.getXExpression());
     xUnaryOperationEClass.getESuperTypes().add(this.getXExpression());
     xEnumLiteralEClass.getESuperTypes().add(this.getXExpression());
@@ -1737,7 +1833,6 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEReference(getSignal_Destinations(), this.getSignalAlias(), null, "destinations", null, 0, -1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definitionSetEClass, DefinitionSet.class, "DefinitionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDefinitionSet_Elements(), this.getXEnumElement(), null, "elements", null, 0, -1, DefinitionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(signalAliasEClass, SignalAlias.class, "SignalAlias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSignalAlias_Source(), this.getAccessibleEntity(), null, "source", null, 0, 1, SignalAlias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1792,6 +1887,16 @@ public class LilPackageImpl extends EPackageImpl implements LilPackage
     initEReference(getXCasePart_Then(), this.getXExpression(), null, "then", null, 0, 1, XCasePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xEnumElementEClass, XEnumElement.class, "XEnumElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(enumDefinitionSetEClass, EnumDefinitionSet.class, "EnumDefinitionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEnumDefinitionSet_Elements(), this.getXEnumElement(), null, "elements", null, 0, -1, EnumDefinitionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(numberDefinitionSetEClass, NumberDefinitionSet.class, "NumberDefinitionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNumberDefinitionSet_Elements(), this.getXExpression(), null, "elements", null, 0, -1, NumberDefinitionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(numberDefinitionIntervalEClass, NumberDefinitionInterval.class, "NumberDefinitionInterval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNumberDefinitionInterval_Inf(), this.getXExpression(), null, "inf", null, 0, 1, NumberDefinitionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNumberDefinitionInterval_Sup(), this.getXExpression(), null, "sup", null, 0, 1, NumberDefinitionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xBinaryOperationEClass, XBinaryOperation.class, "XBinaryOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXBinaryOperation_LeftOperand(), this.getXExpression(), null, "leftOperand", null, 0, 1, XBinaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

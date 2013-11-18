@@ -52,7 +52,10 @@ Signal:
 	name=ID ':'  type=DataType ('in' definitionSet=DefinitionSet)? mode=SignalMode ('from' source=SignalAlias)? ('to' destinations+=SignalAlias)*;
 
 DefinitionSet:
-	'{' elements+=XEnumElement (',' elements+=XEnumElement)* '}';
+	{EnumDefinitionSet} '{' elements+=XEnumElement (',' elements+=XEnumElement)* '}' |
+	{NumberDefinitionSet} '{' elements+=XNumberLiteral (',' elements+=XNumberLiteral)*'}' |
+	{NumberDefinitionInterval} '[' inf=XNumberLiteral ',' sup=XNumberLiteral ']'
+;
 
 SignalAlias:
 	source=AccessibleEntity ('as' alias=[Signal])?;

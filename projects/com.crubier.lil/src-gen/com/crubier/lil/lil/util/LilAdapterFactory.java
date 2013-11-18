@@ -220,6 +220,21 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createXEnumElementAdapter();
       }
       @Override
+      public Adapter caseEnumDefinitionSet(EnumDefinitionSet object)
+      {
+        return createEnumDefinitionSetAdapter();
+      }
+      @Override
+      public Adapter caseNumberDefinitionSet(NumberDefinitionSet object)
+      {
+        return createNumberDefinitionSetAdapter();
+      }
+      @Override
+      public Adapter caseNumberDefinitionInterval(NumberDefinitionInterval object)
+      {
+        return createNumberDefinitionIntervalAdapter();
+      }
+      @Override
       public Adapter caseXBinaryOperation(XBinaryOperation object)
       {
         return createXBinaryOperationAdapter();
@@ -732,6 +747,51 @@ public class LilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createXEnumElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.EnumDefinitionSet <em>Enum Definition Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.EnumDefinitionSet
+   * @generated
+   */
+  public Adapter createEnumDefinitionSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberDefinitionSet <em>Number Definition Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.NumberDefinitionSet
+   * @generated
+   */
+  public Adapter createNumberDefinitionSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberDefinitionInterval <em>Number Definition Interval</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.NumberDefinitionInterval
+   * @generated
+   */
+  public Adapter createNumberDefinitionIntervalAdapter()
   {
     return null;
   }
