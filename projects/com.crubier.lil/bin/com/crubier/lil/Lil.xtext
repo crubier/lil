@@ -8,7 +8,7 @@ generate lil "http://www.crubier.com/lil/Lil"
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Model
 LilModel:
-	((interactors+=Interactor) | (dataTypes+=DataTypeCompound))*;
+	((interactors+=Interactor) | (dataTypes+=DataTypeDefinition))*;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -49,12 +49,12 @@ SignalEmission:
 	(instance=[Signal] ('to' destination=SignalAlias)?);
 
 Signal:
-	name=ID ':'  type=DataType ('in' definitionSet=DefinitionSet)? mode=SignalMode ('from' source=SignalAlias)? ('to' destinations+=SignalAlias)*;
+	name=ID ':' type=DataType mode=SignalMode ('from' source=SignalAlias)? ('to' destinations+=SignalAlias)*;
 
 DefinitionSet:
-	{EnumDefinitionSet} '{' elements+=XEnumElement (',' elements+=XEnumElement)* '}' |
-	{NumberDefinitionSet} '{' elements+=XNumberLiteral (',' elements+=XNumberLiteral)*'}' |
-	{NumberDefinitionInterval} '[' inf=XNumberLiteral ',' sup=XNumberLiteral ']'
+	{EnumDefinitionSet} '{' elements+=EnumElement (',' elements+=EnumElement)* '}' |
+	{NumberDefinitionSet} '{' elements+=NumberLiteral (',' elements+=NumberLiteral)*'}' |
+	{NumberDefinitionInterval} '[' inf=NumberLiteral ',' sup=NumberLiteral ']'
 ;
 
 SignalAlias:
@@ -64,16 +64,22 @@ SignalMode:
 	'event' | 'flow';
 
 DataType:
-	base=DataTypeBase | compound=[DataTypeCompound];
+	{DataTypeBase} type=TypeBase ('in' definitionSet=DefinitionSet)? | 
+	{DataTypeCollection} structure=('set'|'list'|'map') ('in' definitionSet=DefinitionSet)? | 
+	compound=[DataTypeStructure] ;
 
-DataTypeBase:
+TypeBase:
 	'void' | 'symbol' | 'number' | 'text' | 'time' | 'reference';
 
-DataTypeCompound:
-	'structure' name=ID ':'
-	(fields+=DataTypeCompoundField)*;
+DataTypeDefinition:
+	DataTypeStructure
+;
 
-DataTypeCompoundField:
+DataTypeStructure:
+	'structure' name=ID ':'
+	(fields+=DataTypeStructureField)*;
+
+DataTypeStructureField:
 	name=ID ':' type=DataType ;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,25 +91,25 @@ Cause:
 	(OnCause | WhenCause) ;
 
 OnCause:
-	'on' event=SignalReception ('if' guard=XExpression)?;
+	'on' event=SignalReception ('if' guard=Expression)?;
 
 WhenCause:
-	'when' condition=XExpression ('if' guard=XExpression)?;
+	'when' condition=Expression ('if' guard=Expression)?;
 
 Effect:
 	(AlwaysEffect | SetEffect | TriggerEffect)
 ;
 
 AlwaysEffect:
-	'always' target=SignalEmission '=' value=XExpression
+	'always' target=SignalEmission '=' value=Expression
 ;
 
 SetEffect:
-	'set' target=SignalEmission '=' value=XExpression
+	'set' target=SignalEmission '=' value=Expression
 ;
 
 TriggerEffect:
-	'trigger' target=SignalEmission '=' value=XExpression
+	'trigger' target=SignalEmission '=' value=Expression
 ;
 
 
@@ -113,97 +119,97 @@ TriggerEffect:
 //We do not use xbase because we only need a subset of it in order to be able to generate C code and in order to simplify the language
 //So we are going to construct the expressions language we need. It is similar to xbase on certain points, but still clearly different, semantically and syntaxically
 
-XExpression:
-	XOrExpression;
+Expression:
+	OrExpression;
 
-XOrExpression returns XExpression:
-	XAndExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOr) rightOperand=XAndExpression)*;
+OrExpression returns Expression:
+	AndExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOr) rightOperand=AndExpression)*;
 
 OpOr:
 	'or';
 
-XAndExpression returns XExpression:
-	XEqualityExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAnd) rightOperand=XEqualityExpression)*;
+AndExpression returns Expression:
+	EqualityExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAnd) rightOperand=EqualityExpression)*;
 
 OpAnd:
 	'and';
 
-XEqualityExpression returns XExpression:
-	XRelationalExpression (=>({XBinaryOperation.leftOperand=current} feature=OpEquality) rightOperand=XRelationalExpression)*;
+EqualityExpression returns Expression:
+	RelationalExpression (=>({XBinaryOperation.leftOperand=current} feature=OpEquality) rightOperand=RelationalExpression)*;
 
 OpEquality:
 	'==' | '!=' ;
 
-XRelationalExpression returns XExpression:
-	XOtherOperatorExpression (=>({XBinaryOperation.leftOperand=current} feature=OpCompare) rightOperand=XOtherOperatorExpression)*;
+RelationalExpression returns Expression:
+	OtherOperatorExpression (=>({XBinaryOperation.leftOperand=current} feature=OpCompare) rightOperand=OtherOperatorExpression)*;
 
 OpCompare:
 	'<=' | '>=' | '<' | '>' ;
 
-XOtherOperatorExpression returns XExpression:
-	XAdditiveExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOther) rightOperand=XAdditiveExpression)*;
+OtherOperatorExpression returns Expression:
+	AdditiveExpression (=>({XBinaryOperation.leftOperand=current} feature=OpOther) rightOperand=AdditiveExpression)*;
 
 OpOther:
 	  '<>' | '?:' ; //String join and groovy elvis operator for null checking
 
-XAdditiveExpression returns XExpression:
-	XMultiplicativeExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAdd) rightOperand=XMultiplicativeExpression)*;
+AdditiveExpression returns Expression:
+	MultiplicativeExpression (=>({XBinaryOperation.leftOperand=current} feature=OpAdd) rightOperand=MultiplicativeExpression)*;
 
 OpAdd:
 	'+' | '-';
 
-XMultiplicativeExpression returns XExpression:
-	XUnaryOperation (=>({XBinaryOperation.leftOperand=current} feature=OpMulti) rightOperand=XUnaryOperation)*;
+MultiplicativeExpression returns Expression:
+	UnaryOperation (=>({XBinaryOperation.leftOperand=current} feature=OpMulti) rightOperand=UnaryOperation)*;
 
 OpMulti:
 	'*' | '/' | '%';
 
-XUnaryOperation returns XExpression:
-	({XUnaryOperation} feature=OpUnary operand=XPrimaryExpression) | XPrimaryExpression;
+UnaryOperation returns Expression:
+	({UnaryOperation} feature=OpUnary operand=PrimaryExpression) | PrimaryExpression;
 
 OpUnary:
 	"!" | "-" | "+";
 
-XPrimaryExpression returns XExpression:
-	XSwitchExpression | XIfExpression | XLiteral | XForEachExpression | XFunctionCallExpression | XParenthesizedExpression;
+PrimaryExpression returns Expression:
+	SwitchExpression | IfExpression | Literal | ForEachExpression | FunctionCallExpression | ParenthesizedExpression;
 
-XLiteral returns XExpression:
-	XCollectionLiteral | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral | ({XEnumLiteral} '#'element=[XEnumElement] )| {XSignalLiteral} signal=[Signal];
+Literal returns Expression:
+	CollectionLiteral | BooleanLiteral | NumberLiteral | NullLiteral | StringLiteral | ({EnumLiteral} '#'element=[EnumElement] )| {SignalLiteral} signal=[Signal];
 
-XCollectionLiteral:
-	XSetLiteral | XListLiteral;
+CollectionLiteral:
+	SetLiteral | ListLiteral;
 
-XSetLiteral:
-	{XSetLiteral} '{' (elements+=XExpression (',' elements+=XExpression )*)? '}';
+SetLiteral:
+	{SetLiteral} '{' (elements+=Expression (',' elements+=Expression )*)? '}';
 
-XListLiteral:
-	{XListLiteral} '[' (elements+=XExpression (',' elements+=XExpression )*)? ']';
+ListLiteral:
+	{ListLiteral} '[' (elements+=Expression (',' elements+=Expression )*)? ']';
 
-XParenthesizedExpression returns XExpression:
-	'(' XExpression ')';
+ParenthesizedExpression returns Expression:
+	'(' Expression ')';
 
-XIfExpression returns XExpression:
-	{XIfExpression}
-	'if' '(' if=XExpression =>')'
-	(then=XExpression)
-	(=>'else' else=XExpression);
+IfExpression returns Expression:
+	{IfExpression}
+	'if' '(' if=Expression =>')'
+	(then=Expression)
+	(=>'else' else=Expression);
 
-XSwitchExpression returns XExpression:
-	{XSwitchExpression}
-	'switch' '(' switch=XExpression =>')' 
-	 (=> cases+=XCasePart)+
-	 (=>'default' ':' default=XExpression )?;
+SwitchExpression returns Expression:
+	{SwitchExpression}
+	'switch' '(' switch=Expression =>')' 
+	 (=> cases+=CasePart)+
+	 (=>'default' ':' default=Expression )?;
 
-XCasePart:
-	'case' case=XExpression ':' then=XExpression ;
+CasePart:
+	'case' case=Expression ':' then=Expression ;
 
-XForEachExpression returns XExpression:
-	{XForEachExpression}
-	'for' 'each' '(' forExpression=XExpression ')'
-		eachExpression=XExpression;
+ForEachExpression returns Expression:
+	{ForEachExpression}
+	'for' 'each' '(' forExpression=Expression ')'
+		eachExpression=Expression;
 
-XFunctionCallExpression returns XExpression:
-	{XFunctionCallExpression} function=BuiltInFunction '(' (arguments+=XExpression)? (',' arguments+=XExpression)* ')';
+FunctionCallExpression returns Expression:
+	{FunctionCallExpression} function=BuiltInFunction '(' (arguments+=Expression)? (',' arguments+=Expression)* ')';
 
 
 BuiltInFunction : //Same functions as c math.*
@@ -217,20 +223,20 @@ BuiltInFunction : //Same functions as c math.*
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Literals
-XBooleanLiteral returns XExpression :
-	{XBooleanLiteral} ('false' | isTrue?='true');
+BooleanLiteral returns Expression :
+	{BooleanLiteral} ('false' | isTrue?='true');
 
-XNullLiteral returns XExpression :
-	{XNullLiteral} 'null';
+NullLiteral returns Expression :
+	{NullLiteral} 'null';
 
-XNumberLiteral returns XExpression :
-	{XNumberLiteral} value= NUMBER;
+NumberLiteral returns Expression :
+	{NumberLiteral} value= NUMBER;
 
-XStringLiteral returns XExpression:
-	{XStringLiteral} value=STRING;
+StringLiteral returns Expression:
+	{StringLiteral} value=STRING;
 
-XEnumElement :
-	{XEnumLiteral} '#'name=ID;
+EnumElement :
+	{EnumLiteral} '#'name=ID;
 
 //QualifiedName:
 //  ValidID (=>'.' ValidID)*;

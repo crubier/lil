@@ -1,8 +1,7 @@
-structure person :
-	name : text
-	surname : text
-	birthdate : time
-	
+structure commandToSystem :
+	key : symbol
+	value : number
+		
 	
 interactor Gauge :
 	user : actor
@@ -15,17 +14,42 @@ interactor ControlPanel :
 		
 	theGauge : Gauge
 	
+	select: symbol in {#X,#Y} event from user
 	selection : symbol in {#X,#Y} flow to user
-	select: symbol in {#X,#Y}  event from user
-	increment : void event from user to system
-	decrement : void event from user to system
-	reset: void event from user to system
+	
+	increment : void event from user 
+	decrement : void event from user 
+	reset: void event from user
+	
+	setX : number event to system
+	setY : number event to system
+	
 	min: number flow from system
 	max: number flow from system
 	x: number flow from system
 	y: number flow from system
-	current: number in [0,100] flow 
+	current: number in [0,100] flow to theGauge 
 	
-	on init : 	always current = switch(selection) case #X : x case #Y : y
-				always val to theGauge = Math.clip(current,0,100)
+	on init : 	
+		always current = Math.clip(   switch(selection) case #X : x case #Y : y  ,0,100)
 	
+	on select : 
+		set selection = select  
+	
+	on increment if selection == #X and current < max :
+		trigger setX = current + 1
+		
+	on decrement if selection == #X and current > min :
+		trigger setX = current - 1
+		
+	on reset if selection == #X :
+		trigger setX = min
+		
+	on increment if selection == #Y and current < max :
+		trigger setY = current + 1
+		
+	on decrement if selection == #Y and current > min :
+		trigger setY = current - 1
+		
+	on reset if selection == #Y :
+		trigger setY = min
