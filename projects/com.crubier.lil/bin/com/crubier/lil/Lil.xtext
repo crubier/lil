@@ -65,8 +65,8 @@ SignalMode:
 
 DataType:
 	{DataTypeBase} type=TypeBase ('in' definitionSet=DefinitionSet)? | 
-	{DataTypeCollection} structure=('set'|'list'|'map') ('in' definitionSet=DefinitionSet)? | 
-	compound=[DataTypeStructure] ;
+	{DataTypeCollection} mode=('set'|'list'|'map') 'of' type=[DataType] ('in' definitionSet=DefinitionSet)? | 
+	{DataTypeCompound} compound=[DataTypeStructure] ;
 
 TypeBase:
 	'void' | 'symbol' | 'number' | 'text' | 'time' | 'reference';
