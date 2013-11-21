@@ -13,6 +13,9 @@
 - Design of safety-critical human-machine interfaces
 - Ensuring non ambiguous formal specification of human-machine interfaces
 
+
+Here is a sample of lil code :
+
 <p align="center">
   <img src="docs/images/screenshot.png"/>
 </p>
@@ -28,6 +31,9 @@
 - Model checking of performance properties
 - IDE integration with syntax coloring and content assist
 - Integration with [ARINC 661](http://en.wikipedia.org/wiki/ARINC_661) via [J661](http://j661.sourceforge.net)
+
+
+Positionning of lil : the missing link between task models and system APIs
 
 <p align="center">
   <img src="docs/images/hmidesign-02.png"/>
