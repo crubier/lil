@@ -61,7 +61,7 @@ SignalAlias:
 	source=AccessibleEntity ('as' alias=[Signal])?;
 	
 SignalMode:
-	'event' | 'flow';
+	'event' | 'flow' | 'constant';
 
 DataType:
 	{DataTypeBase} type=TypeBase ('in' definitionSet=DefinitionSet)? | 
@@ -69,7 +69,7 @@ DataType:
 	{DataTypeCompound} compound=[DataTypeStructure] ;
 
 TypeBase:
-	'void' | 'symbol' | 'number' | 'text' | 'time' | 'reference';
+	'void' | 'symbol' | 'number' | 'text' | 'time' | 'identifier';
 
 DataTypeDefinition:
 	DataTypeStructure
@@ -174,7 +174,7 @@ PrimaryExpression returns Expression:
 	SwitchExpression | IfExpression | Literal | ForEachExpression | FunctionCallExpression | ParenthesizedExpression;
 
 Literal returns Expression:
-	CollectionLiteral | BooleanLiteral | NumberLiteral | NullLiteral | StringLiteral | ({EnumLiteral} '#'element=[EnumElement] )| {SignalLiteral} signal=[Signal];
+	CollectionLiteral | BooleanLiteral | NumberLiteral | NullLiteral | StringLiteral | TimeLiteral | ({EnumLiteral} '#'element=[EnumElement] )| {SignalLiteral} signal=[Signal];
 
 CollectionLiteral:
 	SetLiteral | ListLiteral;
@@ -237,6 +237,17 @@ StringLiteral returns Expression:
 
 EnumElement :
 	{EnumLiteral} '#'name=ID;
+	
+TimeLiteral returns Expression :
+	{TimeLiteralNow} 'now'
+	| {TimeLiteral} (year=NUMBER 'year') (month=NUMBER 'month')? (day=NUMBER 'day')? (hour=NUMBER 'hour')? (minute=NUMBER ('m'|'minute'))? (second=NUMBER ('s'|'second'))?
+	| {TimeLiteral} (month=NUMBER 'month') (day=NUMBER 'day')? (hour=NUMBER 'hour')? (minute=NUMBER ('m'|'minute'))? (second=NUMBER ('s'|'second'))?
+	| {TimeLiteral} (day=NUMBER 'day') (hour=NUMBER 'hour')? (minute=NUMBER ('m'|'minute'))? (second=NUMBER ('s'|'second'))?
+	| {TimeLiteral} (hour=NUMBER 'hour') (minute=NUMBER ('m'|'minute'))? (second=NUMBER ('s'|'second'))?
+	| {TimeLiteral} (minute=NUMBER ('m'|'minute')) (second=NUMBER ('s'|'second'))?
+	| {TimeLiteral} (second=NUMBER ('s'|'second'))  
+//	| {TimeLiteral} (year=NUMBER ':')? (month=NUMBER ':')? (day=NUMBER ':')? (hour=NUMBER ':')? (minute=NUMBER ':')? (second=NUMBER )? ;
+;
 
 //QualifiedName:
 //  ValidID (=>'.' ValidID)*;

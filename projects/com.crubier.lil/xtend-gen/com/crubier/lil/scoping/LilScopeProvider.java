@@ -5,15 +5,12 @@ package com.crubier.lil.scoping;
 
 import com.crubier.lil.lil.AccessibleEntity;
 import com.crubier.lil.lil.Component;
-import com.crubier.lil.lil.DefinitionSet;
 import com.crubier.lil.lil.Entity;
-import com.crubier.lil.lil.EnumDefinitionSet;
+import com.crubier.lil.lil.EnumElement;
+import com.crubier.lil.lil.EnumLiteral;
 import com.crubier.lil.lil.Interactor;
-import com.crubier.lil.lil.Signal;
 import com.crubier.lil.lil.SignalAlias;
 import com.crubier.lil.lil.SignalEmission;
-import com.crubier.lil.lil.XEnumElement;
-import com.crubier.lil.lil.XEnumLiteral;
 import com.google.common.base.Objects;
 import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
@@ -56,7 +53,7 @@ public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
     }
   }
   
-  public IScope scope_XEnumLiteral_element(final XEnumLiteral literal, final EReference ref) {
+  public IScope scope_EnumLiteral_element(final EnumLiteral literal, final EReference ref) {
     EObject object = literal;
     boolean _not = (!(object instanceof Interactor));
     boolean _while = _not;
@@ -66,39 +63,9 @@ public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
       boolean _not_1 = (!(object instanceof Interactor));
       _while = _not_1;
     }
-    HashSet<XEnumElement> _hashSet = new HashSet<XEnumElement>();
-    final HashSet<XEnumElement> elements = _hashSet;
+    HashSet<EnumElement> _hashSet = new HashSet<EnumElement>();
+    final HashSet<EnumElement> elements = _hashSet;
     final Interactor interactor = ((Interactor) object);
-    EList<Signal> _signals = interactor.getSignals();
-    for (final Signal s : _signals) {
-      DefinitionSet _definitionSet = null;
-      if (s!=null) {
-        _definitionSet=s.getDefinitionSet();
-      }
-      if ((_definitionSet instanceof EnumDefinitionSet)) {
-        DefinitionSet _definitionSet_1 = null;
-        if (s!=null) {
-          _definitionSet_1=s.getDefinitionSet();
-        }
-        EList<XEnumElement> _elements = null;
-        DefinitionSet _definitionSet_2 = null;
-        if (s!=null) {
-          _definitionSet_1=s.getDefinitionSet();
-        }
-        if (((EnumDefinitionSet) _definitionSet_1)!=null) {
-          _elements=((EnumDefinitionSet) _definitionSet_1).getElements();
-        }
-        boolean _notEquals = (!Objects.equal(_elements, null));
-        if (_notEquals) {
-          DefinitionSet _definitionSet_3 = null;
-          if (s!=null) {
-            _definitionSet_3=s.getDefinitionSet();
-          }
-          EList<XEnumElement> _elements_1 = ((EnumDefinitionSet) _definitionSet_3).getElements();
-          elements.addAll(_elements_1);
-        }
-      }
-    }
     return Scopes.scopeFor(elements);
   }
 }

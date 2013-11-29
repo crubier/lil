@@ -2,9 +2,6 @@
  */
 package com.crubier.lil.lil;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,8 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.DataTypeCompound#getName <em>Name</em>}</li>
- *   <li>{@link com.crubier.lil.lil.DataTypeCompound#getFields <em>Fields</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.DataTypeCompound#getCompound <em>Compound</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,48 +19,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DataTypeCompound extends EObject
+public interface DataTypeCompound extends DataType
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Compound</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Compound</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.crubier.lil.lil.LilPackage#getDataTypeCompound_Name()
+   * @return the value of the '<em>Compound</em>' reference.
+   * @see #setCompound(DataTypeStructure)
+   * @see com.crubier.lil.lil.LilPackage#getDataTypeCompound_Compound()
    * @model
    * @generated
    */
-  String getName();
+  DataTypeStructure getCompound();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.DataTypeCompound#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.crubier.lil.lil.DataTypeCompound#getCompound <em>Compound</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Compound</em>' reference.
+   * @see #getCompound()
    * @generated
    */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.DataTypeCompoundField}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Fields</em>' containment reference list.
-   * @see com.crubier.lil.lil.LilPackage#getDataTypeCompound_Fields()
-   * @model containment="true"
-   * @generated
-   */
-  EList<DataTypeCompoundField> getFields();
+  void setCompound(DataTypeStructure value);
 
 } // DataTypeCompound

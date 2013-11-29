@@ -3,8 +3,8 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.Cause;
+import com.crubier.lil.lil.Expression;
 import com.crubier.lil.lil.LilPackage;
-import com.crubier.lil.lil.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -38,7 +38,7 @@ public class CauseImpl extends MinimalEObjectImpl.Container implements Cause
    * @generated
    * @ordered
    */
-  protected XExpression guard;
+  protected Expression guard;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class CauseImpl extends MinimalEObjectImpl.Container implements Cause
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getGuard()
+  public Expression getGuard()
   {
     return guard;
   }
@@ -76,9 +76,9 @@ public class CauseImpl extends MinimalEObjectImpl.Container implements Cause
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetGuard(XExpression newGuard, NotificationChain msgs)
+  public NotificationChain basicSetGuard(Expression newGuard, NotificationChain msgs)
   {
-    XExpression oldGuard = guard;
+    Expression oldGuard = guard;
     guard = newGuard;
     if (eNotificationRequired())
     {
@@ -93,7 +93,7 @@ public class CauseImpl extends MinimalEObjectImpl.Container implements Cause
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setGuard(XExpression newGuard)
+  public void setGuard(Expression newGuard)
   {
     if (newGuard != guard)
     {
@@ -152,7 +152,7 @@ public class CauseImpl extends MinimalEObjectImpl.Container implements Cause
     switch (featureID)
     {
       case LilPackage.CAUSE__GUARD:
-        setGuard((XExpression)newValue);
+        setGuard((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,7 +169,7 @@ public class CauseImpl extends MinimalEObjectImpl.Container implements Cause
     switch (featureID)
     {
       case LilPackage.CAUSE__GUARD:
-        setGuard((XExpression)null);
+        setGuard((Expression)null);
         return;
     }
     super.eUnset(featureID);

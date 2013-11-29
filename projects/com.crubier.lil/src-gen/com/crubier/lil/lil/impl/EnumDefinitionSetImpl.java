@@ -3,8 +3,8 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.EnumDefinitionSet;
+import com.crubier.lil.lil.EnumElement;
 import com.crubier.lil.lil.LilPackage;
-import com.crubier.lil.lil.XEnumElement;
 
 import java.util.Collection;
 
@@ -41,7 +41,7 @@ public class EnumDefinitionSetImpl extends DefinitionSetImpl implements EnumDefi
    * @generated
    * @ordered
    */
-  protected EList<XEnumElement> elements;
+  protected EList<EnumElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class EnumDefinitionSetImpl extends DefinitionSetImpl implements EnumDefi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<XEnumElement> getElements()
+  public EList<EnumElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<XEnumElement>(XEnumElement.class, this, LilPackage.ENUM_DEFINITION_SET__ELEMENTS);
+      elements = new EObjectContainmentEList<EnumElement>(EnumElement.class, this, LilPackage.ENUM_DEFINITION_SET__ELEMENTS);
     }
     return elements;
   }
@@ -123,7 +123,7 @@ public class EnumDefinitionSetImpl extends DefinitionSetImpl implements EnumDefi
     {
       case LilPackage.ENUM_DEFINITION_SET__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends XEnumElement>)newValue);
+        getElements().addAll((Collection<? extends EnumElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

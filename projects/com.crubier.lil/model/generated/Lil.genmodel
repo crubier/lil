@@ -45,7 +45,6 @@
     <genClasses ecoreClass="Lil.ecore#//Signal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//Signal/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Signal/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Signal/definitionSet"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//Signal/mode"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Signal/source"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Signal/destinations"/>
@@ -55,17 +54,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalAlias/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalAlias/alias"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//DataType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataType/base"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//DataType/compound"/>
+    <genClasses ecoreClass="Lil.ecore#//DataType"/>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeDefinition"/>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeStructure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeStructure/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeStructure/fields"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//DataTypeCompound">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeCompound/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompound/fields"/>
-    </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//DataTypeCompoundField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeCompoundField/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompoundField/type"/>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeStructureField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeStructureField/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeStructureField/type"/>
     </genClasses>
     <genClasses ecoreClass="Lil.ecore#//Behavior">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//Behavior/cause"/>
@@ -87,17 +84,17 @@
     <genClasses ecoreClass="Lil.ecore#//AlwaysEffect"/>
     <genClasses ecoreClass="Lil.ecore#//SetEffect"/>
     <genClasses ecoreClass="Lil.ecore#//TriggerEffect"/>
-    <genClasses ecoreClass="Lil.ecore#//XExpression"/>
-    <genClasses ecoreClass="Lil.ecore#//XCollectionLiteral">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XCollectionLiteral/elements"/>
+    <genClasses ecoreClass="Lil.ecore#//Expression"/>
+    <genClasses ecoreClass="Lil.ecore#//CollectionLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//CollectionLiteral/elements"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XSetLiteral"/>
-    <genClasses ecoreClass="Lil.ecore#//XListLiteral"/>
-    <genClasses ecoreClass="Lil.ecore#//XCasePart">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XCasePart/case"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XCasePart/then"/>
+    <genClasses ecoreClass="Lil.ecore#//SetLiteral"/>
+    <genClasses ecoreClass="Lil.ecore#//ListLiteral"/>
+    <genClasses ecoreClass="Lil.ecore#//CasePart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//CasePart/case"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//CasePart/then"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XEnumElement"/>
+    <genClasses ecoreClass="Lil.ecore#//EnumElement"/>
     <genClasses ecoreClass="Lil.ecore#//EnumDefinitionSet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//EnumDefinitionSet/elements"/>
     </genClasses>
@@ -108,49 +105,70 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberDefinitionInterval/inf"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//NumberDefinitionInterval/sup"/>
     </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeBase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeBase/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeBase/definitionSet"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeCollection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//DataTypeCollection/mode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCollection/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCollection/definitionSet"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//DataTypeCompound">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//DataTypeCompound/compound"/>
+    </genClasses>
     <genClasses ecoreClass="Lil.ecore#//XBinaryOperation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XBinaryOperation/leftOperand"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//XBinaryOperation/feature"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XBinaryOperation/rightOperand"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XUnaryOperation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//XUnaryOperation/feature"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XUnaryOperation/operand"/>
+    <genClasses ecoreClass="Lil.ecore#//UnaryOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//UnaryOperation/feature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//UnaryOperation/operand"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XEnumLiteral">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//XEnumLiteral/element"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//XEnumLiteral/name"/>
+    <genClasses ecoreClass="Lil.ecore#//EnumLiteral">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//EnumLiteral/element"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//EnumLiteral/name"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XSignalLiteral">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//XSignalLiteral/signal"/>
+    <genClasses ecoreClass="Lil.ecore#//SignalLiteral">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Lil.ecore#//SignalLiteral/signal"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XIfExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XIfExpression/if"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XIfExpression/then"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XIfExpression/else"/>
+    <genClasses ecoreClass="Lil.ecore#//IfExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//IfExpression/if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//IfExpression/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//IfExpression/else"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XSwitchExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XSwitchExpression/switch"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XSwitchExpression/cases"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XSwitchExpression/default"/>
+    <genClasses ecoreClass="Lil.ecore#//SwitchExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//SwitchExpression/switch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//SwitchExpression/cases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//SwitchExpression/default"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XForEachExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XForEachExpression/forExpression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XForEachExpression/eachExpression"/>
+    <genClasses ecoreClass="Lil.ecore#//ForEachExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//ForEachExpression/forExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//ForEachExpression/eachExpression"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XFunctionCallExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//XFunctionCallExpression/function"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//XFunctionCallExpression/arguments"/>
+    <genClasses ecoreClass="Lil.ecore#//FunctionCallExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//FunctionCallExpression/function"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lil.ecore#//FunctionCallExpression/arguments"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XBooleanLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//XBooleanLiteral/isTrue"/>
+    <genClasses ecoreClass="Lil.ecore#//BooleanLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//BooleanLiteral/isTrue"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XNullLiteral"/>
-    <genClasses ecoreClass="Lil.ecore#//XNumberLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//XNumberLiteral/value"/>
+    <genClasses ecoreClass="Lil.ecore#//NullLiteral"/>
+    <genClasses ecoreClass="Lil.ecore#//NumberLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//NumberLiteral/value"/>
     </genClasses>
-    <genClasses ecoreClass="Lil.ecore#//XStringLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//XStringLiteral/value"/>
+    <genClasses ecoreClass="Lil.ecore#//StringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//StringLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Lil.ecore#//TimeLiteralNow"/>
+    <genClasses ecoreClass="Lil.ecore#//TimeLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//TimeLiteral/year"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//TimeLiteral/month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//TimeLiteral/day"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//TimeLiteral/hour"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//TimeLiteral/minute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lil.ecore#//TimeLiteral/second"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

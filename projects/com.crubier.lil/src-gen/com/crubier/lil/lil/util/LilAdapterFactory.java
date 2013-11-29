@@ -140,14 +140,19 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeAdapter();
       }
       @Override
-      public Adapter caseDataTypeCompound(DataTypeCompound object)
+      public Adapter caseDataTypeDefinition(DataTypeDefinition object)
       {
-        return createDataTypeCompoundAdapter();
+        return createDataTypeDefinitionAdapter();
       }
       @Override
-      public Adapter caseDataTypeCompoundField(DataTypeCompoundField object)
+      public Adapter caseDataTypeStructure(DataTypeStructure object)
       {
-        return createDataTypeCompoundFieldAdapter();
+        return createDataTypeStructureAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeStructureField(DataTypeStructureField object)
+      {
+        return createDataTypeStructureFieldAdapter();
       }
       @Override
       public Adapter caseBehavior(Behavior object)
@@ -190,34 +195,34 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createTriggerEffectAdapter();
       }
       @Override
-      public Adapter caseXExpression(XExpression object)
+      public Adapter caseExpression(Expression object)
       {
-        return createXExpressionAdapter();
+        return createExpressionAdapter();
       }
       @Override
-      public Adapter caseXCollectionLiteral(XCollectionLiteral object)
+      public Adapter caseCollectionLiteral(CollectionLiteral object)
       {
-        return createXCollectionLiteralAdapter();
+        return createCollectionLiteralAdapter();
       }
       @Override
-      public Adapter caseXSetLiteral(XSetLiteral object)
+      public Adapter caseSetLiteral(SetLiteral object)
       {
-        return createXSetLiteralAdapter();
+        return createSetLiteralAdapter();
       }
       @Override
-      public Adapter caseXListLiteral(XListLiteral object)
+      public Adapter caseListLiteral(ListLiteral object)
       {
-        return createXListLiteralAdapter();
+        return createListLiteralAdapter();
       }
       @Override
-      public Adapter caseXCasePart(XCasePart object)
+      public Adapter caseCasePart(CasePart object)
       {
-        return createXCasePartAdapter();
+        return createCasePartAdapter();
       }
       @Override
-      public Adapter caseXEnumElement(XEnumElement object)
+      public Adapter caseEnumElement(EnumElement object)
       {
-        return createXEnumElementAdapter();
+        return createEnumElementAdapter();
       }
       @Override
       public Adapter caseEnumDefinitionSet(EnumDefinitionSet object)
@@ -235,64 +240,89 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createNumberDefinitionIntervalAdapter();
       }
       @Override
+      public Adapter caseDataTypeBase(DataTypeBase object)
+      {
+        return createDataTypeBaseAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeCollection(DataTypeCollection object)
+      {
+        return createDataTypeCollectionAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeCompound(DataTypeCompound object)
+      {
+        return createDataTypeCompoundAdapter();
+      }
+      @Override
       public Adapter caseXBinaryOperation(XBinaryOperation object)
       {
         return createXBinaryOperationAdapter();
       }
       @Override
-      public Adapter caseXUnaryOperation(XUnaryOperation object)
+      public Adapter caseUnaryOperation(UnaryOperation object)
       {
-        return createXUnaryOperationAdapter();
+        return createUnaryOperationAdapter();
       }
       @Override
-      public Adapter caseXEnumLiteral(XEnumLiteral object)
+      public Adapter caseEnumLiteral(EnumLiteral object)
       {
-        return createXEnumLiteralAdapter();
+        return createEnumLiteralAdapter();
       }
       @Override
-      public Adapter caseXSignalLiteral(XSignalLiteral object)
+      public Adapter caseSignalLiteral(SignalLiteral object)
       {
-        return createXSignalLiteralAdapter();
+        return createSignalLiteralAdapter();
       }
       @Override
-      public Adapter caseXIfExpression(XIfExpression object)
+      public Adapter caseIfExpression(IfExpression object)
       {
-        return createXIfExpressionAdapter();
+        return createIfExpressionAdapter();
       }
       @Override
-      public Adapter caseXSwitchExpression(XSwitchExpression object)
+      public Adapter caseSwitchExpression(SwitchExpression object)
       {
-        return createXSwitchExpressionAdapter();
+        return createSwitchExpressionAdapter();
       }
       @Override
-      public Adapter caseXForEachExpression(XForEachExpression object)
+      public Adapter caseForEachExpression(ForEachExpression object)
       {
-        return createXForEachExpressionAdapter();
+        return createForEachExpressionAdapter();
       }
       @Override
-      public Adapter caseXFunctionCallExpression(XFunctionCallExpression object)
+      public Adapter caseFunctionCallExpression(FunctionCallExpression object)
       {
-        return createXFunctionCallExpressionAdapter();
+        return createFunctionCallExpressionAdapter();
       }
       @Override
-      public Adapter caseXBooleanLiteral(XBooleanLiteral object)
+      public Adapter caseBooleanLiteral(BooleanLiteral object)
       {
-        return createXBooleanLiteralAdapter();
+        return createBooleanLiteralAdapter();
       }
       @Override
-      public Adapter caseXNullLiteral(XNullLiteral object)
+      public Adapter caseNullLiteral(NullLiteral object)
       {
-        return createXNullLiteralAdapter();
+        return createNullLiteralAdapter();
       }
       @Override
-      public Adapter caseXNumberLiteral(XNumberLiteral object)
+      public Adapter caseNumberLiteral(NumberLiteral object)
       {
-        return createXNumberLiteralAdapter();
+        return createNumberLiteralAdapter();
       }
       @Override
-      public Adapter caseXStringLiteral(XStringLiteral object)
+      public Adapter caseStringLiteral(StringLiteral object)
       {
-        return createXStringLiteralAdapter();
+        return createStringLiteralAdapter();
+      }
+      @Override
+      public Adapter caseTimeLiteralNow(TimeLiteralNow object)
+      {
+        return createTimeLiteralNowAdapter();
+      }
+      @Override
+      public Adapter caseTimeLiteral(TimeLiteral object)
+      {
+        return createTimeLiteralAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -512,31 +542,46 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompound <em>Data Type Compound</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeDefinition <em>Data Type Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataTypeCompound
+   * @see com.crubier.lil.lil.DataTypeDefinition
    * @generated
    */
-  public Adapter createDataTypeCompoundAdapter()
+  public Adapter createDataTypeDefinitionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompoundField <em>Data Type Compound Field</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeStructure <em>Data Type Structure</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataTypeCompoundField
+   * @see com.crubier.lil.lil.DataTypeStructure
    * @generated
    */
-  public Adapter createDataTypeCompoundFieldAdapter()
+  public Adapter createDataTypeStructureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeStructureField <em>Data Type Structure Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeStructureField
+   * @generated
+   */
+  public Adapter createDataTypeStructureFieldAdapter()
   {
     return null;
   }
@@ -662,91 +707,91 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XExpression <em>XExpression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XExpression
+   * @see com.crubier.lil.lil.Expression
    * @generated
    */
-  public Adapter createXExpressionAdapter()
+  public Adapter createExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XCollectionLiteral <em>XCollection Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.CollectionLiteral <em>Collection Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XCollectionLiteral
+   * @see com.crubier.lil.lil.CollectionLiteral
    * @generated
    */
-  public Adapter createXCollectionLiteralAdapter()
+  public Adapter createCollectionLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XSetLiteral <em>XSet Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.SetLiteral <em>Set Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XSetLiteral
+   * @see com.crubier.lil.lil.SetLiteral
    * @generated
    */
-  public Adapter createXSetLiteralAdapter()
+  public Adapter createSetLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XListLiteral <em>XList Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ListLiteral <em>List Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XListLiteral
+   * @see com.crubier.lil.lil.ListLiteral
    * @generated
    */
-  public Adapter createXListLiteralAdapter()
+  public Adapter createListLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XCasePart <em>XCase Part</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.CasePart <em>Case Part</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XCasePart
+   * @see com.crubier.lil.lil.CasePart
    * @generated
    */
-  public Adapter createXCasePartAdapter()
+  public Adapter createCasePartAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XEnumElement <em>XEnum Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.EnumElement <em>Enum Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XEnumElement
+   * @see com.crubier.lil.lil.EnumElement
    * @generated
    */
-  public Adapter createXEnumElementAdapter()
+  public Adapter createEnumElementAdapter()
   {
     return null;
   }
@@ -797,6 +842,51 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeBase <em>Data Type Base</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeBase
+   * @generated
+   */
+  public Adapter createDataTypeBaseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCollection <em>Data Type Collection</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeCollection
+   * @generated
+   */
+  public Adapter createDataTypeCollectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCompound <em>Data Type Compound</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeCompound
+   * @generated
+   */
+  public Adapter createDataTypeCompoundAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XBinaryOperation <em>XBinary Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -812,166 +902,196 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XUnaryOperation <em>XUnary Operation</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.UnaryOperation <em>Unary Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XUnaryOperation
+   * @see com.crubier.lil.lil.UnaryOperation
    * @generated
    */
-  public Adapter createXUnaryOperationAdapter()
+  public Adapter createUnaryOperationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XEnumLiteral <em>XEnum Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.EnumLiteral <em>Enum Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XEnumLiteral
+   * @see com.crubier.lil.lil.EnumLiteral
    * @generated
    */
-  public Adapter createXEnumLiteralAdapter()
+  public Adapter createEnumLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XSignalLiteral <em>XSignal Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.SignalLiteral <em>Signal Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XSignalLiteral
+   * @see com.crubier.lil.lil.SignalLiteral
    * @generated
    */
-  public Adapter createXSignalLiteralAdapter()
+  public Adapter createSignalLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XIfExpression <em>XIf Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.IfExpression <em>If Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XIfExpression
+   * @see com.crubier.lil.lil.IfExpression
    * @generated
    */
-  public Adapter createXIfExpressionAdapter()
+  public Adapter createIfExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XSwitchExpression <em>XSwitch Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.SwitchExpression <em>Switch Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XSwitchExpression
+   * @see com.crubier.lil.lil.SwitchExpression
    * @generated
    */
-  public Adapter createXSwitchExpressionAdapter()
+  public Adapter createSwitchExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XForEachExpression <em>XFor Each Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ForEachExpression <em>For Each Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XForEachExpression
+   * @see com.crubier.lil.lil.ForEachExpression
    * @generated
    */
-  public Adapter createXForEachExpressionAdapter()
+  public Adapter createForEachExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XFunctionCallExpression <em>XFunction Call Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.FunctionCallExpression <em>Function Call Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XFunctionCallExpression
+   * @see com.crubier.lil.lil.FunctionCallExpression
    * @generated
    */
-  public Adapter createXFunctionCallExpressionAdapter()
+  public Adapter createFunctionCallExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XBooleanLiteral <em>XBoolean Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.BooleanLiteral <em>Boolean Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XBooleanLiteral
+   * @see com.crubier.lil.lil.BooleanLiteral
    * @generated
    */
-  public Adapter createXBooleanLiteralAdapter()
+  public Adapter createBooleanLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XNullLiteral <em>XNull Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NullLiteral <em>Null Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XNullLiteral
+   * @see com.crubier.lil.lil.NullLiteral
    * @generated
    */
-  public Adapter createXNullLiteralAdapter()
+  public Adapter createNullLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XNumberLiteral <em>XNumber Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.NumberLiteral <em>Number Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XNumberLiteral
+   * @see com.crubier.lil.lil.NumberLiteral
    * @generated
    */
-  public Adapter createXNumberLiteralAdapter()
+  public Adapter createNumberLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.XStringLiteral <em>XString Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.StringLiteral <em>String Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.XStringLiteral
+   * @see com.crubier.lil.lil.StringLiteral
    * @generated
    */
-  public Adapter createXStringLiteralAdapter()
+  public Adapter createStringLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.TimeLiteralNow <em>Time Literal Now</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.TimeLiteralNow
+   * @generated
+   */
+  public Adapter createTimeLiteralNowAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.TimeLiteral <em>Time Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.TimeLiteral
+   * @generated
+   */
+  public Adapter createTimeLiteralAdapter()
   {
     return null;
   }

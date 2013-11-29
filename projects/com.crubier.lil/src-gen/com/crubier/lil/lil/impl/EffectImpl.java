@@ -3,9 +3,9 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.Effect;
+import com.crubier.lil.lil.Expression;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.SignalEmission;
-import com.crubier.lil.lil.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -50,7 +50,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
    * @generated
    * @ordered
    */
-  protected XExpression value;
+  protected Expression value;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,7 +126,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getValue()
+  public Expression getValue()
   {
     return value;
   }
@@ -136,9 +136,9 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(XExpression newValue, NotificationChain msgs)
+  public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs)
   {
-    XExpression oldValue = value;
+    Expression oldValue = value;
     value = newValue;
     if (eNotificationRequired())
     {
@@ -153,7 +153,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(XExpression newValue)
+  public void setValue(Expression newValue)
   {
     if (newValue != value)
     {
@@ -219,7 +219,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
         setTarget((SignalEmission)newValue);
         return;
       case LilPackage.EFFECT__VALUE:
-        setValue((XExpression)newValue);
+        setValue((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,7 +239,7 @@ public class EffectImpl extends MinimalEObjectImpl.Container implements Effect
         setTarget((SignalEmission)null);
         return;
       case LilPackage.EFFECT__VALUE:
-        setValue((XExpression)null);
+        setValue((Expression)null);
         return;
     }
     super.eUnset(featureID);

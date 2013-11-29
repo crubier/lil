@@ -24,7 +24,7 @@ public interface NumberDefinitionSet extends DefinitionSet
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.XExpression}.
+   * The list contents are of type {@link com.crubier.lil.lil.Expression}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
@@ -36,6 +36,6 @@ public interface NumberDefinitionSet extends DefinitionSet
    * @model containment="true"
    * @generated
    */
-  EList<XExpression> getElements();
+  EList<Expression> getElements();
 
 } // NumberDefinitionSet

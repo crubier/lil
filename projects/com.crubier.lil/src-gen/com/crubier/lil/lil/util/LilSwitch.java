@@ -165,17 +165,25 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_TYPE_COMPOUND:
+      case LilPackage.DATA_TYPE_DEFINITION:
       {
-        DataTypeCompound dataTypeCompound = (DataTypeCompound)theEObject;
-        T result = caseDataTypeCompound(dataTypeCompound);
+        DataTypeDefinition dataTypeDefinition = (DataTypeDefinition)theEObject;
+        T result = caseDataTypeDefinition(dataTypeDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_TYPE_COMPOUND_FIELD:
+      case LilPackage.DATA_TYPE_STRUCTURE:
       {
-        DataTypeCompoundField dataTypeCompoundField = (DataTypeCompoundField)theEObject;
-        T result = caseDataTypeCompoundField(dataTypeCompoundField);
+        DataTypeStructure dataTypeStructure = (DataTypeStructure)theEObject;
+        T result = caseDataTypeStructure(dataTypeStructure);
+        if (result == null) result = caseDataTypeDefinition(dataTypeStructure);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_STRUCTURE_FIELD:
+      {
+        DataTypeStructureField dataTypeStructureField = (DataTypeStructureField)theEObject;
+        T result = caseDataTypeStructureField(dataTypeStructureField);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -240,50 +248,50 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XEXPRESSION:
+      case LilPackage.EXPRESSION:
       {
-        XExpression xExpression = (XExpression)theEObject;
-        T result = caseXExpression(xExpression);
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XCOLLECTION_LITERAL:
+      case LilPackage.COLLECTION_LITERAL:
       {
-        XCollectionLiteral xCollectionLiteral = (XCollectionLiteral)theEObject;
-        T result = caseXCollectionLiteral(xCollectionLiteral);
-        if (result == null) result = caseXExpression(xCollectionLiteral);
+        CollectionLiteral collectionLiteral = (CollectionLiteral)theEObject;
+        T result = caseCollectionLiteral(collectionLiteral);
+        if (result == null) result = caseExpression(collectionLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XSET_LITERAL:
+      case LilPackage.SET_LITERAL:
       {
-        XSetLiteral xSetLiteral = (XSetLiteral)theEObject;
-        T result = caseXSetLiteral(xSetLiteral);
-        if (result == null) result = caseXCollectionLiteral(xSetLiteral);
-        if (result == null) result = caseXExpression(xSetLiteral);
+        SetLiteral setLiteral = (SetLiteral)theEObject;
+        T result = caseSetLiteral(setLiteral);
+        if (result == null) result = caseCollectionLiteral(setLiteral);
+        if (result == null) result = caseExpression(setLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XLIST_LITERAL:
+      case LilPackage.LIST_LITERAL:
       {
-        XListLiteral xListLiteral = (XListLiteral)theEObject;
-        T result = caseXListLiteral(xListLiteral);
-        if (result == null) result = caseXCollectionLiteral(xListLiteral);
-        if (result == null) result = caseXExpression(xListLiteral);
+        ListLiteral listLiteral = (ListLiteral)theEObject;
+        T result = caseListLiteral(listLiteral);
+        if (result == null) result = caseCollectionLiteral(listLiteral);
+        if (result == null) result = caseExpression(listLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XCASE_PART:
+      case LilPackage.CASE_PART:
       {
-        XCasePart xCasePart = (XCasePart)theEObject;
-        T result = caseXCasePart(xCasePart);
+        CasePart casePart = (CasePart)theEObject;
+        T result = caseCasePart(casePart);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XENUM_ELEMENT:
+      case LilPackage.ENUM_ELEMENT:
       {
-        XEnumElement xEnumElement = (XEnumElement)theEObject;
-        T result = caseXEnumElement(xEnumElement);
+        EnumElement enumElement = (EnumElement)theEObject;
+        T result = caseEnumElement(enumElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -311,100 +319,140 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilPackage.DATA_TYPE_BASE:
+      {
+        DataTypeBase dataTypeBase = (DataTypeBase)theEObject;
+        T result = caseDataTypeBase(dataTypeBase);
+        if (result == null) result = caseDataType(dataTypeBase);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_COLLECTION:
+      {
+        DataTypeCollection dataTypeCollection = (DataTypeCollection)theEObject;
+        T result = caseDataTypeCollection(dataTypeCollection);
+        if (result == null) result = caseDataType(dataTypeCollection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_COMPOUND:
+      {
+        DataTypeCompound dataTypeCompound = (DataTypeCompound)theEObject;
+        T result = caseDataTypeCompound(dataTypeCompound);
+        if (result == null) result = caseDataType(dataTypeCompound);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilPackage.XBINARY_OPERATION:
       {
         XBinaryOperation xBinaryOperation = (XBinaryOperation)theEObject;
         T result = caseXBinaryOperation(xBinaryOperation);
-        if (result == null) result = caseXExpression(xBinaryOperation);
+        if (result == null) result = caseExpression(xBinaryOperation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XUNARY_OPERATION:
+      case LilPackage.UNARY_OPERATION:
       {
-        XUnaryOperation xUnaryOperation = (XUnaryOperation)theEObject;
-        T result = caseXUnaryOperation(xUnaryOperation);
-        if (result == null) result = caseXExpression(xUnaryOperation);
+        UnaryOperation unaryOperation = (UnaryOperation)theEObject;
+        T result = caseUnaryOperation(unaryOperation);
+        if (result == null) result = caseExpression(unaryOperation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XENUM_LITERAL:
+      case LilPackage.ENUM_LITERAL:
       {
-        XEnumLiteral xEnumLiteral = (XEnumLiteral)theEObject;
-        T result = caseXEnumLiteral(xEnumLiteral);
-        if (result == null) result = caseXExpression(xEnumLiteral);
-        if (result == null) result = caseXEnumElement(xEnumLiteral);
+        EnumLiteral enumLiteral = (EnumLiteral)theEObject;
+        T result = caseEnumLiteral(enumLiteral);
+        if (result == null) result = caseExpression(enumLiteral);
+        if (result == null) result = caseEnumElement(enumLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XSIGNAL_LITERAL:
+      case LilPackage.SIGNAL_LITERAL:
       {
-        XSignalLiteral xSignalLiteral = (XSignalLiteral)theEObject;
-        T result = caseXSignalLiteral(xSignalLiteral);
-        if (result == null) result = caseXExpression(xSignalLiteral);
+        SignalLiteral signalLiteral = (SignalLiteral)theEObject;
+        T result = caseSignalLiteral(signalLiteral);
+        if (result == null) result = caseExpression(signalLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XIF_EXPRESSION:
+      case LilPackage.IF_EXPRESSION:
       {
-        XIfExpression xIfExpression = (XIfExpression)theEObject;
-        T result = caseXIfExpression(xIfExpression);
-        if (result == null) result = caseXExpression(xIfExpression);
+        IfExpression ifExpression = (IfExpression)theEObject;
+        T result = caseIfExpression(ifExpression);
+        if (result == null) result = caseExpression(ifExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XSWITCH_EXPRESSION:
+      case LilPackage.SWITCH_EXPRESSION:
       {
-        XSwitchExpression xSwitchExpression = (XSwitchExpression)theEObject;
-        T result = caseXSwitchExpression(xSwitchExpression);
-        if (result == null) result = caseXExpression(xSwitchExpression);
+        SwitchExpression switchExpression = (SwitchExpression)theEObject;
+        T result = caseSwitchExpression(switchExpression);
+        if (result == null) result = caseExpression(switchExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XFOR_EACH_EXPRESSION:
+      case LilPackage.FOR_EACH_EXPRESSION:
       {
-        XForEachExpression xForEachExpression = (XForEachExpression)theEObject;
-        T result = caseXForEachExpression(xForEachExpression);
-        if (result == null) result = caseXExpression(xForEachExpression);
+        ForEachExpression forEachExpression = (ForEachExpression)theEObject;
+        T result = caseForEachExpression(forEachExpression);
+        if (result == null) result = caseExpression(forEachExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XFUNCTION_CALL_EXPRESSION:
+      case LilPackage.FUNCTION_CALL_EXPRESSION:
       {
-        XFunctionCallExpression xFunctionCallExpression = (XFunctionCallExpression)theEObject;
-        T result = caseXFunctionCallExpression(xFunctionCallExpression);
-        if (result == null) result = caseXExpression(xFunctionCallExpression);
+        FunctionCallExpression functionCallExpression = (FunctionCallExpression)theEObject;
+        T result = caseFunctionCallExpression(functionCallExpression);
+        if (result == null) result = caseExpression(functionCallExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XBOOLEAN_LITERAL:
+      case LilPackage.BOOLEAN_LITERAL:
       {
-        XBooleanLiteral xBooleanLiteral = (XBooleanLiteral)theEObject;
-        T result = caseXBooleanLiteral(xBooleanLiteral);
-        if (result == null) result = caseXExpression(xBooleanLiteral);
+        BooleanLiteral booleanLiteral = (BooleanLiteral)theEObject;
+        T result = caseBooleanLiteral(booleanLiteral);
+        if (result == null) result = caseExpression(booleanLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XNULL_LITERAL:
+      case LilPackage.NULL_LITERAL:
       {
-        XNullLiteral xNullLiteral = (XNullLiteral)theEObject;
-        T result = caseXNullLiteral(xNullLiteral);
-        if (result == null) result = caseXExpression(xNullLiteral);
+        NullLiteral nullLiteral = (NullLiteral)theEObject;
+        T result = caseNullLiteral(nullLiteral);
+        if (result == null) result = caseExpression(nullLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XNUMBER_LITERAL:
+      case LilPackage.NUMBER_LITERAL:
       {
-        XNumberLiteral xNumberLiteral = (XNumberLiteral)theEObject;
-        T result = caseXNumberLiteral(xNumberLiteral);
-        if (result == null) result = caseXExpression(xNumberLiteral);
+        NumberLiteral numberLiteral = (NumberLiteral)theEObject;
+        T result = caseNumberLiteral(numberLiteral);
+        if (result == null) result = caseExpression(numberLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.XSTRING_LITERAL:
+      case LilPackage.STRING_LITERAL:
       {
-        XStringLiteral xStringLiteral = (XStringLiteral)theEObject;
-        T result = caseXStringLiteral(xStringLiteral);
-        if (result == null) result = caseXExpression(xStringLiteral);
+        StringLiteral stringLiteral = (StringLiteral)theEObject;
+        T result = caseStringLiteral(stringLiteral);
+        if (result == null) result = caseExpression(stringLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.TIME_LITERAL_NOW:
+      {
+        TimeLiteralNow timeLiteralNow = (TimeLiteralNow)theEObject;
+        T result = caseTimeLiteralNow(timeLiteralNow);
+        if (result == null) result = caseExpression(timeLiteralNow);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.TIME_LITERAL:
+      {
+        TimeLiteral timeLiteral = (TimeLiteral)theEObject;
+        T result = caseTimeLiteral(timeLiteral);
+        if (result == null) result = caseExpression(timeLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -621,33 +669,49 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Type Compound</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataTypeCompound(DataTypeCompound object)
+  public T caseDataTypeDefinition(DataTypeDefinition object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound Field</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Structure</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Type Compound Field</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Structure</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataTypeCompoundField(DataTypeCompoundField object)
+  public T caseDataTypeStructure(DataTypeStructure object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Structure Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Structure Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeStructureField(DataTypeStructureField object)
   {
     return null;
   }
@@ -781,97 +845,97 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XExpression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XExpression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXExpression(XExpression object)
+  public T caseExpression(Expression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XCollection Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Collection Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XCollection Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Collection Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXCollectionLiteral(XCollectionLiteral object)
+  public T caseCollectionLiteral(CollectionLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XSet Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Set Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XSet Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Set Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXSetLiteral(XSetLiteral object)
+  public T caseSetLiteral(SetLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XList Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>List Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XList Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>List Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXListLiteral(XListLiteral object)
+  public T caseListLiteral(ListLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XCase Part</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Case Part</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XCase Part</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Case Part</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXCasePart(XCasePart object)
+  public T caseCasePart(CasePart object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XEnum Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Enum Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XEnum Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Enum Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXEnumElement(XEnumElement object)
+  public T caseEnumElement(EnumElement object)
   {
     return null;
   }
@@ -925,6 +989,54 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Base</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Base</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeBase(DataTypeBase object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Collection</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Collection</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeCollection(DataTypeCollection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Compound</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Compound</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeCompound(DataTypeCompound object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>XBinary Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -941,177 +1053,209 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XUnary Operation</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unary Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XUnary Operation</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unary Operation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXUnaryOperation(XUnaryOperation object)
+  public T caseUnaryOperation(UnaryOperation object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XEnum Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Enum Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XEnum Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Enum Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXEnumLiteral(XEnumLiteral object)
+  public T caseEnumLiteral(EnumLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XSignal Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Signal Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XSignal Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Signal Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXSignalLiteral(XSignalLiteral object)
+  public T caseSignalLiteral(SignalLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XIf Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>If Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XIf Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>If Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXIfExpression(XIfExpression object)
+  public T caseIfExpression(IfExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XSwitch Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Switch Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XSwitch Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Switch Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXSwitchExpression(XSwitchExpression object)
+  public T caseSwitchExpression(SwitchExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XFor Each Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>For Each Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XFor Each Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>For Each Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXForEachExpression(XForEachExpression object)
+  public T caseForEachExpression(ForEachExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XFunction Call Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Function Call Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XFunction Call Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Function Call Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXFunctionCallExpression(XFunctionCallExpression object)
+  public T caseFunctionCallExpression(FunctionCallExpression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XBoolean Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XBoolean Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXBooleanLiteral(XBooleanLiteral object)
+  public T caseBooleanLiteral(BooleanLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XNull Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Null Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XNull Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Null Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXNullLiteral(XNullLiteral object)
+  public T caseNullLiteral(NullLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XNumber Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Number Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XNumber Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Number Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXNumberLiteral(XNumberLiteral object)
+  public T caseNumberLiteral(NumberLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XString Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>String Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XString Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>String Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseXStringLiteral(XStringLiteral object)
+  public T caseStringLiteral(StringLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Time Literal Now</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Time Literal Now</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTimeLiteralNow(TimeLiteralNow object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Time Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Time Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTimeLiteral(TimeLiteral object)
   {
     return null;
   }

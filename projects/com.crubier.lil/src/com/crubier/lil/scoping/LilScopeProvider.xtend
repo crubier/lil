@@ -11,10 +11,10 @@ import org.eclipse.xtext.scoping.Scopes
 import com.crubier.lil.lil.Interactor
 import org.eclipse.emf.ecore.EObject
 import com.crubier.lil.lil.Component
-import com.crubier.lil.lil.XEnumLiteral
+import com.crubier.lil.lil.EnumLiteral
 import com.crubier.lil.lil.LilModel
 import java.util.HashSet
-import com.crubier.lil.lil.XEnumElement
+import com.crubier.lil.lil.EnumElement
 import com.crubier.lil.lil.DefinitionSet
 import com.crubier.lil.lil.EnumDefinitionSet
 
@@ -43,19 +43,19 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 
 	// enum literal scope is at the interactor level
-	def public IScope scope_XEnumLiteral_element(XEnumLiteral literal, EReference ref) {
+	def public IScope scope_EnumLiteral_element(EnumLiteral literal, EReference ref) {
 		var EObject object = literal;
 		while (!(object instanceof Interactor)) {
 			object = object.eContainer;
 		}
 
-		val elements = new HashSet<XEnumElement>
+		val elements = new HashSet<EnumElement>
 		val interactor = object as Interactor
-		for (s : interactor.signals) {
-			if(s?.definitionSet instanceof EnumDefinitionSet)
-				if ((s?.definitionSet as EnumDefinitionSet)?.elements != null)
-					elements.addAll((s?.definitionSet as EnumDefinitionSet).elements)
-		}
+//		for (s : interactor.signals) {
+//			if(s?.definitionSet instanceof EnumDefinitionSet)
+//				if ((s?.definitionSet as EnumDefinitionSet)?.elements != null)
+//					elements.addAll((s?.definitionSet as EnumDefinitionSet).elements)
+//		}
 		return Scopes.scopeFor(elements);
 	}
 

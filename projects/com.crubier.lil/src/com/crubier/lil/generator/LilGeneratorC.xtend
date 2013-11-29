@@ -20,29 +20,29 @@ class LilGeneratorC implements IGenerator {
 		println("generate C code");
 		
 		for(e : resource.allContents.toIterable.filter(typeof(Interactor))) {
-			fsa.generateFile("c/"+e.name+".c",e.compile)
+//			fsa.generateFile("c/"+e.name+".c",e.compile)
 		}
 		
 //		fsa.generateFile('gen.java', 'test :\n' + 
 //			resource.allContents.filter(typeof(InteractorDeclaration)).map[name].join(', '))
 	}
 	
-	def compile(Interactor e) '''
-		//lil framework generated this artifact automatically
-		public class «e.name» {
-			«FOR f:e.signals»
-				«f.compile»
-			«ENDFOR»
-		}
-		
-	'''
-	
-	def compile(Signal s) '''
-	«IF s.mode == "flow"»
-		«IF s.type.base!=null» «s.type.base» «s.name» ;
-		«ELSE» «IF s.type.compound!=null» «s.type.compound» «s.name» ;«ENDIF»«ENDIF»
-	«ENDIF»
-	'''
+//	def compile(Interactor e) '''
+//		//lil framework generated this artifact automatically
+//		public class «e.name» {
+//			«FOR f:e.signals»
+//				«f.compile»
+//			«ENDFOR»
+//		}
+//		
+//	'''
+//	
+//	def compile(Signal s) '''
+//	«IF s.mode == "flow"»
+//		«IF s.type.base!=null» «s.type.base» «s.name» ;
+//		«ELSE» «IF s.type.compound!=null» «s.type.compound» «s.name» ;«ENDIF»«ENDIF»
+//	«ENDIF»
+//	'''
 	
 	
 }

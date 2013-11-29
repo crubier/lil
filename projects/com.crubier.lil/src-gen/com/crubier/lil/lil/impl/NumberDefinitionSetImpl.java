@@ -2,9 +2,9 @@
  */
 package com.crubier.lil.lil.impl;
 
+import com.crubier.lil.lil.Expression;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.NumberDefinitionSet;
-import com.crubier.lil.lil.XExpression;
 
 import java.util.Collection;
 
@@ -41,7 +41,7 @@ public class NumberDefinitionSetImpl extends DefinitionSetImpl implements Number
    * @generated
    * @ordered
    */
-  protected EList<XExpression> elements;
+  protected EList<Expression> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class NumberDefinitionSetImpl extends DefinitionSetImpl implements Number
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<XExpression> getElements()
+  public EList<Expression> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<XExpression>(XExpression.class, this, LilPackage.NUMBER_DEFINITION_SET__ELEMENTS);
+      elements = new EObjectContainmentEList<Expression>(Expression.class, this, LilPackage.NUMBER_DEFINITION_SET__ELEMENTS);
     }
     return elements;
   }
@@ -123,7 +123,7 @@ public class NumberDefinitionSetImpl extends DefinitionSetImpl implements Number
     {
       case LilPackage.NUMBER_DEFINITION_SET__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends XExpression>)newValue);
+        getElements().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

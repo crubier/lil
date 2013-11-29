@@ -77,8 +77,9 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.DEFINITION_SET: return createDefinitionSet();
       case LilPackage.SIGNAL_ALIAS: return createSignalAlias();
       case LilPackage.DATA_TYPE: return createDataType();
-      case LilPackage.DATA_TYPE_COMPOUND: return createDataTypeCompound();
-      case LilPackage.DATA_TYPE_COMPOUND_FIELD: return createDataTypeCompoundField();
+      case LilPackage.DATA_TYPE_DEFINITION: return createDataTypeDefinition();
+      case LilPackage.DATA_TYPE_STRUCTURE: return createDataTypeStructure();
+      case LilPackage.DATA_TYPE_STRUCTURE_FIELD: return createDataTypeStructureField();
       case LilPackage.BEHAVIOR: return createBehavior();
       case LilPackage.CAUSE: return createCause();
       case LilPackage.ON_CAUSE: return createOnCause();
@@ -87,27 +88,32 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.ALWAYS_EFFECT: return createAlwaysEffect();
       case LilPackage.SET_EFFECT: return createSetEffect();
       case LilPackage.TRIGGER_EFFECT: return createTriggerEffect();
-      case LilPackage.XEXPRESSION: return createXExpression();
-      case LilPackage.XCOLLECTION_LITERAL: return createXCollectionLiteral();
-      case LilPackage.XSET_LITERAL: return createXSetLiteral();
-      case LilPackage.XLIST_LITERAL: return createXListLiteral();
-      case LilPackage.XCASE_PART: return createXCasePart();
-      case LilPackage.XENUM_ELEMENT: return createXEnumElement();
+      case LilPackage.EXPRESSION: return createExpression();
+      case LilPackage.COLLECTION_LITERAL: return createCollectionLiteral();
+      case LilPackage.SET_LITERAL: return createSetLiteral();
+      case LilPackage.LIST_LITERAL: return createListLiteral();
+      case LilPackage.CASE_PART: return createCasePart();
+      case LilPackage.ENUM_ELEMENT: return createEnumElement();
       case LilPackage.ENUM_DEFINITION_SET: return createEnumDefinitionSet();
       case LilPackage.NUMBER_DEFINITION_SET: return createNumberDefinitionSet();
       case LilPackage.NUMBER_DEFINITION_INTERVAL: return createNumberDefinitionInterval();
+      case LilPackage.DATA_TYPE_BASE: return createDataTypeBase();
+      case LilPackage.DATA_TYPE_COLLECTION: return createDataTypeCollection();
+      case LilPackage.DATA_TYPE_COMPOUND: return createDataTypeCompound();
       case LilPackage.XBINARY_OPERATION: return createXBinaryOperation();
-      case LilPackage.XUNARY_OPERATION: return createXUnaryOperation();
-      case LilPackage.XENUM_LITERAL: return createXEnumLiteral();
-      case LilPackage.XSIGNAL_LITERAL: return createXSignalLiteral();
-      case LilPackage.XIF_EXPRESSION: return createXIfExpression();
-      case LilPackage.XSWITCH_EXPRESSION: return createXSwitchExpression();
-      case LilPackage.XFOR_EACH_EXPRESSION: return createXForEachExpression();
-      case LilPackage.XFUNCTION_CALL_EXPRESSION: return createXFunctionCallExpression();
-      case LilPackage.XBOOLEAN_LITERAL: return createXBooleanLiteral();
-      case LilPackage.XNULL_LITERAL: return createXNullLiteral();
-      case LilPackage.XNUMBER_LITERAL: return createXNumberLiteral();
-      case LilPackage.XSTRING_LITERAL: return createXStringLiteral();
+      case LilPackage.UNARY_OPERATION: return createUnaryOperation();
+      case LilPackage.ENUM_LITERAL: return createEnumLiteral();
+      case LilPackage.SIGNAL_LITERAL: return createSignalLiteral();
+      case LilPackage.IF_EXPRESSION: return createIfExpression();
+      case LilPackage.SWITCH_EXPRESSION: return createSwitchExpression();
+      case LilPackage.FOR_EACH_EXPRESSION: return createForEachExpression();
+      case LilPackage.FUNCTION_CALL_EXPRESSION: return createFunctionCallExpression();
+      case LilPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
+      case LilPackage.NULL_LITERAL: return createNullLiteral();
+      case LilPackage.NUMBER_LITERAL: return createNumberLiteral();
+      case LilPackage.STRING_LITERAL: return createStringLiteral();
+      case LilPackage.TIME_LITERAL_NOW: return createTimeLiteralNow();
+      case LilPackage.TIME_LITERAL: return createTimeLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -261,10 +267,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataTypeCompound createDataTypeCompound()
+  public DataTypeDefinition createDataTypeDefinition()
   {
-    DataTypeCompoundImpl dataTypeCompound = new DataTypeCompoundImpl();
-    return dataTypeCompound;
+    DataTypeDefinitionImpl dataTypeDefinition = new DataTypeDefinitionImpl();
+    return dataTypeDefinition;
   }
 
   /**
@@ -272,10 +278,21 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataTypeCompoundField createDataTypeCompoundField()
+  public DataTypeStructure createDataTypeStructure()
   {
-    DataTypeCompoundFieldImpl dataTypeCompoundField = new DataTypeCompoundFieldImpl();
-    return dataTypeCompoundField;
+    DataTypeStructureImpl dataTypeStructure = new DataTypeStructureImpl();
+    return dataTypeStructure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeStructureField createDataTypeStructureField()
+  {
+    DataTypeStructureFieldImpl dataTypeStructureField = new DataTypeStructureFieldImpl();
+    return dataTypeStructureField;
   }
 
   /**
@@ -371,10 +388,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression createXExpression()
+  public Expression createExpression()
   {
-    XExpressionImpl xExpression = new XExpressionImpl();
-    return xExpression;
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
   }
 
   /**
@@ -382,10 +399,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XCollectionLiteral createXCollectionLiteral()
+  public CollectionLiteral createCollectionLiteral()
   {
-    XCollectionLiteralImpl xCollectionLiteral = new XCollectionLiteralImpl();
-    return xCollectionLiteral;
+    CollectionLiteralImpl collectionLiteral = new CollectionLiteralImpl();
+    return collectionLiteral;
   }
 
   /**
@@ -393,10 +410,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XSetLiteral createXSetLiteral()
+  public SetLiteral createSetLiteral()
   {
-    XSetLiteralImpl xSetLiteral = new XSetLiteralImpl();
-    return xSetLiteral;
+    SetLiteralImpl setLiteral = new SetLiteralImpl();
+    return setLiteral;
   }
 
   /**
@@ -404,10 +421,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XListLiteral createXListLiteral()
+  public ListLiteral createListLiteral()
   {
-    XListLiteralImpl xListLiteral = new XListLiteralImpl();
-    return xListLiteral;
+    ListLiteralImpl listLiteral = new ListLiteralImpl();
+    return listLiteral;
   }
 
   /**
@@ -415,10 +432,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XCasePart createXCasePart()
+  public CasePart createCasePart()
   {
-    XCasePartImpl xCasePart = new XCasePartImpl();
-    return xCasePart;
+    CasePartImpl casePart = new CasePartImpl();
+    return casePart;
   }
 
   /**
@@ -426,10 +443,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XEnumElement createXEnumElement()
+  public EnumElement createEnumElement()
   {
-    XEnumElementImpl xEnumElement = new XEnumElementImpl();
-    return xEnumElement;
+    EnumElementImpl enumElement = new EnumElementImpl();
+    return enumElement;
   }
 
   /**
@@ -470,6 +487,39 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public DataTypeBase createDataTypeBase()
+  {
+    DataTypeBaseImpl dataTypeBase = new DataTypeBaseImpl();
+    return dataTypeBase;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeCollection createDataTypeCollection()
+  {
+    DataTypeCollectionImpl dataTypeCollection = new DataTypeCollectionImpl();
+    return dataTypeCollection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeCompound createDataTypeCompound()
+  {
+    DataTypeCompoundImpl dataTypeCompound = new DataTypeCompoundImpl();
+    return dataTypeCompound;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public XBinaryOperation createXBinaryOperation()
   {
     XBinaryOperationImpl xBinaryOperation = new XBinaryOperationImpl();
@@ -481,10 +531,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XUnaryOperation createXUnaryOperation()
+  public UnaryOperation createUnaryOperation()
   {
-    XUnaryOperationImpl xUnaryOperation = new XUnaryOperationImpl();
-    return xUnaryOperation;
+    UnaryOperationImpl unaryOperation = new UnaryOperationImpl();
+    return unaryOperation;
   }
 
   /**
@@ -492,10 +542,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XEnumLiteral createXEnumLiteral()
+  public EnumLiteral createEnumLiteral()
   {
-    XEnumLiteralImpl xEnumLiteral = new XEnumLiteralImpl();
-    return xEnumLiteral;
+    EnumLiteralImpl enumLiteral = new EnumLiteralImpl();
+    return enumLiteral;
   }
 
   /**
@@ -503,10 +553,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XSignalLiteral createXSignalLiteral()
+  public SignalLiteral createSignalLiteral()
   {
-    XSignalLiteralImpl xSignalLiteral = new XSignalLiteralImpl();
-    return xSignalLiteral;
+    SignalLiteralImpl signalLiteral = new SignalLiteralImpl();
+    return signalLiteral;
   }
 
   /**
@@ -514,10 +564,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XIfExpression createXIfExpression()
+  public IfExpression createIfExpression()
   {
-    XIfExpressionImpl xIfExpression = new XIfExpressionImpl();
-    return xIfExpression;
+    IfExpressionImpl ifExpression = new IfExpressionImpl();
+    return ifExpression;
   }
 
   /**
@@ -525,10 +575,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XSwitchExpression createXSwitchExpression()
+  public SwitchExpression createSwitchExpression()
   {
-    XSwitchExpressionImpl xSwitchExpression = new XSwitchExpressionImpl();
-    return xSwitchExpression;
+    SwitchExpressionImpl switchExpression = new SwitchExpressionImpl();
+    return switchExpression;
   }
 
   /**
@@ -536,10 +586,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XForEachExpression createXForEachExpression()
+  public ForEachExpression createForEachExpression()
   {
-    XForEachExpressionImpl xForEachExpression = new XForEachExpressionImpl();
-    return xForEachExpression;
+    ForEachExpressionImpl forEachExpression = new ForEachExpressionImpl();
+    return forEachExpression;
   }
 
   /**
@@ -547,10 +597,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XFunctionCallExpression createXFunctionCallExpression()
+  public FunctionCallExpression createFunctionCallExpression()
   {
-    XFunctionCallExpressionImpl xFunctionCallExpression = new XFunctionCallExpressionImpl();
-    return xFunctionCallExpression;
+    FunctionCallExpressionImpl functionCallExpression = new FunctionCallExpressionImpl();
+    return functionCallExpression;
   }
 
   /**
@@ -558,10 +608,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XBooleanLiteral createXBooleanLiteral()
+  public BooleanLiteral createBooleanLiteral()
   {
-    XBooleanLiteralImpl xBooleanLiteral = new XBooleanLiteralImpl();
-    return xBooleanLiteral;
+    BooleanLiteralImpl booleanLiteral = new BooleanLiteralImpl();
+    return booleanLiteral;
   }
 
   /**
@@ -569,10 +619,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XNullLiteral createXNullLiteral()
+  public NullLiteral createNullLiteral()
   {
-    XNullLiteralImpl xNullLiteral = new XNullLiteralImpl();
-    return xNullLiteral;
+    NullLiteralImpl nullLiteral = new NullLiteralImpl();
+    return nullLiteral;
   }
 
   /**
@@ -580,10 +630,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XNumberLiteral createXNumberLiteral()
+  public NumberLiteral createNumberLiteral()
   {
-    XNumberLiteralImpl xNumberLiteral = new XNumberLiteralImpl();
-    return xNumberLiteral;
+    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
+    return numberLiteral;
   }
 
   /**
@@ -591,10 +641,32 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XStringLiteral createXStringLiteral()
+  public StringLiteral createStringLiteral()
   {
-    XStringLiteralImpl xStringLiteral = new XStringLiteralImpl();
-    return xStringLiteral;
+    StringLiteralImpl stringLiteral = new StringLiteralImpl();
+    return stringLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimeLiteralNow createTimeLiteralNow()
+  {
+    TimeLiteralNowImpl timeLiteralNow = new TimeLiteralNowImpl();
+    return timeLiteralNow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimeLiteral createTimeLiteral()
+  {
+    TimeLiteralImpl timeLiteral = new TimeLiteralImpl();
+    return timeLiteral;
   }
 
   /**

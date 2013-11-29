@@ -47,11 +47,18 @@ class LilGeneratorFlattenedLil implements IGenerator {
 	
 	/**
 	 * Flattens an interactor recursively
+	 * 
 	 */
 	def flatten(Component component) {
+		
+		// The class of interactor of the component
 		val interactor = component.interactor
+		// Component name will be used as a prefix for 
 		val prefix = component.name;
 		
+		
+		// If an
+
 		
 		val actors = interactor.entities.toSet.filter(typeof(Actor))
 		val components = interactor.entities.toSet.filter(typeof(Component))
@@ -74,6 +81,24 @@ class LilGeneratorFlattenedLil implements IGenerator {
 //		}
 		
 		return result
+	}
+	
+	/**
+	 * Flattens an interactor recursively
+	 */
+	def flatten(Interactor interactor) {
+		//  Interactor flattening algorithm :
+		//
+		// 	1	Flatten the interactor (=class) associated with each component (=instance of interactor) inside this interactor
+		// 	2	Add the resulting code to the code of the current interactor
+		//			2.1	Take the component interactor code
+		//			2.2	Prefix everything inside this code with the component name
+		//			2.3	Merge the resulting code with the current interactor code
+		
+		
+
+		
+		
 	}
 	
 	/**

@@ -2,9 +2,9 @@
  */
 package com.crubier.lil.lil.impl;
 
+import com.crubier.lil.lil.Expression;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.NumberDefinitionInterval;
-import com.crubier.lil.lil.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -38,7 +38,7 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
    * @generated
    * @ordered
    */
-  protected XExpression inf;
+  protected Expression inf;
 
   /**
    * The cached value of the '{@link #getSup() <em>Sup</em>}' containment reference.
@@ -48,7 +48,7 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
    * @generated
    * @ordered
    */
-  protected XExpression sup;
+  protected Expression sup;
 
   /**
    * <!-- begin-user-doc -->
@@ -76,7 +76,7 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getInf()
+  public Expression getInf()
   {
     return inf;
   }
@@ -86,9 +86,9 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInf(XExpression newInf, NotificationChain msgs)
+  public NotificationChain basicSetInf(Expression newInf, NotificationChain msgs)
   {
-    XExpression oldInf = inf;
+    Expression oldInf = inf;
     inf = newInf;
     if (eNotificationRequired())
     {
@@ -103,7 +103,7 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInf(XExpression newInf)
+  public void setInf(Expression newInf)
   {
     if (newInf != inf)
     {
@@ -124,7 +124,7 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getSup()
+  public Expression getSup()
   {
     return sup;
   }
@@ -134,9 +134,9 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSup(XExpression newSup, NotificationChain msgs)
+  public NotificationChain basicSetSup(Expression newSup, NotificationChain msgs)
   {
-    XExpression oldSup = sup;
+    Expression oldSup = sup;
     sup = newSup;
     if (eNotificationRequired())
     {
@@ -151,7 +151,7 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSup(XExpression newSup)
+  public void setSup(Expression newSup)
   {
     if (newSup != sup)
     {
@@ -214,10 +214,10 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
     switch (featureID)
     {
       case LilPackage.NUMBER_DEFINITION_INTERVAL__INF:
-        setInf((XExpression)newValue);
+        setInf((Expression)newValue);
         return;
       case LilPackage.NUMBER_DEFINITION_INTERVAL__SUP:
-        setSup((XExpression)newValue);
+        setSup((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -234,10 +234,10 @@ public class NumberDefinitionIntervalImpl extends DefinitionSetImpl implements N
     switch (featureID)
     {
       case LilPackage.NUMBER_DEFINITION_INTERVAL__INF:
-        setInf((XExpression)null);
+        setInf((Expression)null);
         return;
       case LilPackage.NUMBER_DEFINITION_INTERVAL__SUP:
-        setSup((XExpression)null);
+        setSup((Expression)null);
         return;
     }
     super.eUnset(featureID);

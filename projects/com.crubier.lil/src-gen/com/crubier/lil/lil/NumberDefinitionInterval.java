@@ -31,12 +31,12 @@ public interface NumberDefinitionInterval extends DefinitionSet
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Inf</em>' containment reference.
-   * @see #setInf(XExpression)
+   * @see #setInf(Expression)
    * @see com.crubier.lil.lil.LilPackage#getNumberDefinitionInterval_Inf()
    * @model containment="true"
    * @generated
    */
-  XExpression getInf();
+  Expression getInf();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.NumberDefinitionInterval#getInf <em>Inf</em>}' containment reference.
@@ -46,7 +46,7 @@ public interface NumberDefinitionInterval extends DefinitionSet
    * @see #getInf()
    * @generated
    */
-  void setInf(XExpression value);
+  void setInf(Expression value);
 
   /**
    * Returns the value of the '<em><b>Sup</b></em>' containment reference.
@@ -57,12 +57,12 @@ public interface NumberDefinitionInterval extends DefinitionSet
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Sup</em>' containment reference.
-   * @see #setSup(XExpression)
+   * @see #setSup(Expression)
    * @see com.crubier.lil.lil.LilPackage#getNumberDefinitionInterval_Sup()
    * @model containment="true"
    * @generated
    */
-  XExpression getSup();
+  Expression getSup();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.NumberDefinitionInterval#getSup <em>Sup</em>}' containment reference.
@@ -72,6 +72,6 @@ public interface NumberDefinitionInterval extends DefinitionSet
    * @see #getSup()
    * @generated
    */
-  void setSup(XExpression value);
+  void setSup(Expression value);
 
 } // NumberDefinitionInterval

@@ -21,7 +21,7 @@ package com.crubier.lil.lil;
  * @model
  * @generated
  */
-public interface XBinaryOperation extends XExpression
+public interface XBinaryOperation extends Expression
 {
   /**
    * Returns the value of the '<em><b>Left Operand</b></em>' containment reference.
@@ -32,12 +32,12 @@ public interface XBinaryOperation extends XExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left Operand</em>' containment reference.
-   * @see #setLeftOperand(XExpression)
+   * @see #setLeftOperand(Expression)
    * @see com.crubier.lil.lil.LilPackage#getXBinaryOperation_LeftOperand()
    * @model containment="true"
    * @generated
    */
-  XExpression getLeftOperand();
+  Expression getLeftOperand();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.XBinaryOperation#getLeftOperand <em>Left Operand</em>}' containment reference.
@@ -47,7 +47,7 @@ public interface XBinaryOperation extends XExpression
    * @see #getLeftOperand()
    * @generated
    */
-  void setLeftOperand(XExpression value);
+  void setLeftOperand(Expression value);
 
   /**
    * Returns the value of the '<em><b>Feature</b></em>' attribute.
@@ -84,12 +84,12 @@ public interface XBinaryOperation extends XExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Right Operand</em>' containment reference.
-   * @see #setRightOperand(XExpression)
+   * @see #setRightOperand(Expression)
    * @see com.crubier.lil.lil.LilPackage#getXBinaryOperation_RightOperand()
    * @model containment="true"
    * @generated
    */
-  XExpression getRightOperand();
+  Expression getRightOperand();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.XBinaryOperation#getRightOperand <em>Right Operand</em>}' containment reference.
@@ -99,6 +99,6 @@ public interface XBinaryOperation extends XExpression
    * @see #getRightOperand()
    * @generated
    */
-  void setRightOperand(XExpression value);
+  void setRightOperand(Expression value);
 
 } // XBinaryOperation

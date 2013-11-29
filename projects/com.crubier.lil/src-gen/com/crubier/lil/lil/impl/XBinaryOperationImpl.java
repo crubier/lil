@@ -2,9 +2,9 @@
  */
 package com.crubier.lil.lil.impl;
 
+import com.crubier.lil.lil.Expression;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.XBinaryOperation;
-import com.crubier.lil.lil.XExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOperation
+public class XBinaryOperationImpl extends ExpressionImpl implements XBinaryOperation
 {
   /**
    * The cached value of the '{@link #getLeftOperand() <em>Left Operand</em>}' containment reference.
@@ -39,7 +39,7 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
    * @generated
    * @ordered
    */
-  protected XExpression leftOperand;
+  protected Expression leftOperand;
 
   /**
    * The default value of the '{@link #getFeature() <em>Feature</em>}' attribute.
@@ -69,7 +69,7 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
    * @generated
    * @ordered
    */
-  protected XExpression rightOperand;
+  protected Expression rightOperand;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,7 +97,7 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getLeftOperand()
+  public Expression getLeftOperand()
   {
     return leftOperand;
   }
@@ -107,9 +107,9 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeftOperand(XExpression newLeftOperand, NotificationChain msgs)
+  public NotificationChain basicSetLeftOperand(Expression newLeftOperand, NotificationChain msgs)
   {
-    XExpression oldLeftOperand = leftOperand;
+    Expression oldLeftOperand = leftOperand;
     leftOperand = newLeftOperand;
     if (eNotificationRequired())
     {
@@ -124,7 +124,7 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeftOperand(XExpression newLeftOperand)
+  public void setLeftOperand(Expression newLeftOperand)
   {
     if (newLeftOperand != leftOperand)
     {
@@ -168,7 +168,7 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
    * <!-- end-user-doc -->
    * @generated
    */
-  public XExpression getRightOperand()
+  public Expression getRightOperand()
   {
     return rightOperand;
   }
@@ -178,9 +178,9 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRightOperand(XExpression newRightOperand, NotificationChain msgs)
+  public NotificationChain basicSetRightOperand(Expression newRightOperand, NotificationChain msgs)
   {
-    XExpression oldRightOperand = rightOperand;
+    Expression oldRightOperand = rightOperand;
     rightOperand = newRightOperand;
     if (eNotificationRequired())
     {
@@ -195,7 +195,7 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRightOperand(XExpression newRightOperand)
+  public void setRightOperand(Expression newRightOperand)
   {
     if (newRightOperand != rightOperand)
     {
@@ -260,13 +260,13 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
     switch (featureID)
     {
       case LilPackage.XBINARY_OPERATION__LEFT_OPERAND:
-        setLeftOperand((XExpression)newValue);
+        setLeftOperand((Expression)newValue);
         return;
       case LilPackage.XBINARY_OPERATION__FEATURE:
         setFeature((String)newValue);
         return;
       case LilPackage.XBINARY_OPERATION__RIGHT_OPERAND:
-        setRightOperand((XExpression)newValue);
+        setRightOperand((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -283,13 +283,13 @@ public class XBinaryOperationImpl extends XExpressionImpl implements XBinaryOper
     switch (featureID)
     {
       case LilPackage.XBINARY_OPERATION__LEFT_OPERAND:
-        setLeftOperand((XExpression)null);
+        setLeftOperand((Expression)null);
         return;
       case LilPackage.XBINARY_OPERATION__FEATURE:
         setFeature(FEATURE_EDEFAULT);
         return;
       case LilPackage.XBINARY_OPERATION__RIGHT_OPERAND:
-        setRightOperand((XExpression)null);
+        setRightOperand((Expression)null);
         return;
     }
     super.eUnset(featureID);

@@ -140,22 +140,31 @@ public interface LilFactory extends EFactory
   DataType createDataType();
 
   /**
-   * Returns a new object of class '<em>Data Type Compound</em>'.
+   * Returns a new object of class '<em>Data Type Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Compound</em>'.
+   * @return a new object of class '<em>Data Type Definition</em>'.
    * @generated
    */
-  DataTypeCompound createDataTypeCompound();
+  DataTypeDefinition createDataTypeDefinition();
 
   /**
-   * Returns a new object of class '<em>Data Type Compound Field</em>'.
+   * Returns a new object of class '<em>Data Type Structure</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Compound Field</em>'.
+   * @return a new object of class '<em>Data Type Structure</em>'.
    * @generated
    */
-  DataTypeCompoundField createDataTypeCompoundField();
+  DataTypeStructure createDataTypeStructure();
+
+  /**
+   * Returns a new object of class '<em>Data Type Structure Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Structure Field</em>'.
+   * @generated
+   */
+  DataTypeStructureField createDataTypeStructureField();
 
   /**
    * Returns a new object of class '<em>Behavior</em>'.
@@ -230,58 +239,58 @@ public interface LilFactory extends EFactory
   TriggerEffect createTriggerEffect();
 
   /**
-   * Returns a new object of class '<em>XExpression</em>'.
+   * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XExpression</em>'.
+   * @return a new object of class '<em>Expression</em>'.
    * @generated
    */
-  XExpression createXExpression();
+  Expression createExpression();
 
   /**
-   * Returns a new object of class '<em>XCollection Literal</em>'.
+   * Returns a new object of class '<em>Collection Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XCollection Literal</em>'.
+   * @return a new object of class '<em>Collection Literal</em>'.
    * @generated
    */
-  XCollectionLiteral createXCollectionLiteral();
+  CollectionLiteral createCollectionLiteral();
 
   /**
-   * Returns a new object of class '<em>XSet Literal</em>'.
+   * Returns a new object of class '<em>Set Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XSet Literal</em>'.
+   * @return a new object of class '<em>Set Literal</em>'.
    * @generated
    */
-  XSetLiteral createXSetLiteral();
+  SetLiteral createSetLiteral();
 
   /**
-   * Returns a new object of class '<em>XList Literal</em>'.
+   * Returns a new object of class '<em>List Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XList Literal</em>'.
+   * @return a new object of class '<em>List Literal</em>'.
    * @generated
    */
-  XListLiteral createXListLiteral();
+  ListLiteral createListLiteral();
 
   /**
-   * Returns a new object of class '<em>XCase Part</em>'.
+   * Returns a new object of class '<em>Case Part</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XCase Part</em>'.
+   * @return a new object of class '<em>Case Part</em>'.
    * @generated
    */
-  XCasePart createXCasePart();
+  CasePart createCasePart();
 
   /**
-   * Returns a new object of class '<em>XEnum Element</em>'.
+   * Returns a new object of class '<em>Enum Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XEnum Element</em>'.
+   * @return a new object of class '<em>Enum Element</em>'.
    * @generated
    */
-  XEnumElement createXEnumElement();
+  EnumElement createEnumElement();
 
   /**
    * Returns a new object of class '<em>Enum Definition Set</em>'.
@@ -311,6 +320,33 @@ public interface LilFactory extends EFactory
   NumberDefinitionInterval createNumberDefinitionInterval();
 
   /**
+   * Returns a new object of class '<em>Data Type Base</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Base</em>'.
+   * @generated
+   */
+  DataTypeBase createDataTypeBase();
+
+  /**
+   * Returns a new object of class '<em>Data Type Collection</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Collection</em>'.
+   * @generated
+   */
+  DataTypeCollection createDataTypeCollection();
+
+  /**
+   * Returns a new object of class '<em>Data Type Compound</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Compound</em>'.
+   * @generated
+   */
+  DataTypeCompound createDataTypeCompound();
+
+  /**
    * Returns a new object of class '<em>XBinary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -320,103 +356,121 @@ public interface LilFactory extends EFactory
   XBinaryOperation createXBinaryOperation();
 
   /**
-   * Returns a new object of class '<em>XUnary Operation</em>'.
+   * Returns a new object of class '<em>Unary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XUnary Operation</em>'.
+   * @return a new object of class '<em>Unary Operation</em>'.
    * @generated
    */
-  XUnaryOperation createXUnaryOperation();
+  UnaryOperation createUnaryOperation();
 
   /**
-   * Returns a new object of class '<em>XEnum Literal</em>'.
+   * Returns a new object of class '<em>Enum Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XEnum Literal</em>'.
+   * @return a new object of class '<em>Enum Literal</em>'.
    * @generated
    */
-  XEnumLiteral createXEnumLiteral();
+  EnumLiteral createEnumLiteral();
 
   /**
-   * Returns a new object of class '<em>XSignal Literal</em>'.
+   * Returns a new object of class '<em>Signal Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XSignal Literal</em>'.
+   * @return a new object of class '<em>Signal Literal</em>'.
    * @generated
    */
-  XSignalLiteral createXSignalLiteral();
+  SignalLiteral createSignalLiteral();
 
   /**
-   * Returns a new object of class '<em>XIf Expression</em>'.
+   * Returns a new object of class '<em>If Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XIf Expression</em>'.
+   * @return a new object of class '<em>If Expression</em>'.
    * @generated
    */
-  XIfExpression createXIfExpression();
+  IfExpression createIfExpression();
 
   /**
-   * Returns a new object of class '<em>XSwitch Expression</em>'.
+   * Returns a new object of class '<em>Switch Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XSwitch Expression</em>'.
+   * @return a new object of class '<em>Switch Expression</em>'.
    * @generated
    */
-  XSwitchExpression createXSwitchExpression();
+  SwitchExpression createSwitchExpression();
 
   /**
-   * Returns a new object of class '<em>XFor Each Expression</em>'.
+   * Returns a new object of class '<em>For Each Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XFor Each Expression</em>'.
+   * @return a new object of class '<em>For Each Expression</em>'.
    * @generated
    */
-  XForEachExpression createXForEachExpression();
+  ForEachExpression createForEachExpression();
 
   /**
-   * Returns a new object of class '<em>XFunction Call Expression</em>'.
+   * Returns a new object of class '<em>Function Call Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XFunction Call Expression</em>'.
+   * @return a new object of class '<em>Function Call Expression</em>'.
    * @generated
    */
-  XFunctionCallExpression createXFunctionCallExpression();
+  FunctionCallExpression createFunctionCallExpression();
 
   /**
-   * Returns a new object of class '<em>XBoolean Literal</em>'.
+   * Returns a new object of class '<em>Boolean Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XBoolean Literal</em>'.
+   * @return a new object of class '<em>Boolean Literal</em>'.
    * @generated
    */
-  XBooleanLiteral createXBooleanLiteral();
+  BooleanLiteral createBooleanLiteral();
 
   /**
-   * Returns a new object of class '<em>XNull Literal</em>'.
+   * Returns a new object of class '<em>Null Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XNull Literal</em>'.
+   * @return a new object of class '<em>Null Literal</em>'.
    * @generated
    */
-  XNullLiteral createXNullLiteral();
+  NullLiteral createNullLiteral();
 
   /**
-   * Returns a new object of class '<em>XNumber Literal</em>'.
+   * Returns a new object of class '<em>Number Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XNumber Literal</em>'.
+   * @return a new object of class '<em>Number Literal</em>'.
    * @generated
    */
-  XNumberLiteral createXNumberLiteral();
+  NumberLiteral createNumberLiteral();
 
   /**
-   * Returns a new object of class '<em>XString Literal</em>'.
+   * Returns a new object of class '<em>String Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>XString Literal</em>'.
+   * @return a new object of class '<em>String Literal</em>'.
    * @generated
    */
-  XStringLiteral createXStringLiteral();
+  StringLiteral createStringLiteral();
+
+  /**
+   * Returns a new object of class '<em>Time Literal Now</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Time Literal Now</em>'.
+   * @generated
+   */
+  TimeLiteralNow createTimeLiteralNow();
+
+  /**
+   * Returns a new object of class '<em>Time Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Time Literal</em>'.
+   * @generated
+   */
+  TimeLiteral createTimeLiteral();
 
   /**
    * Returns the package supported by this factory.

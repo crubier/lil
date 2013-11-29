@@ -55,6 +55,7 @@ public class InternalLilLexer extends Lexer {
     public static final int T__89=89;
     public static final int T__88=88;
     public static final int RULE_ML_COMMENT=7;
+    public static final int T__125=125;
     public static final int RULE_STRING=5;
     public static final int T__71=71;
     public static final int T__72=72;
@@ -74,6 +75,17 @@ public class InternalLilLexer extends Lexer {
     public static final int T__65=65;
     public static final int T__62=62;
     public static final int T__63=63;
+    public static final int T__118=118;
+    public static final int T__119=119;
+    public static final int T__116=116;
+    public static final int T__117=117;
+    public static final int T__114=114;
+    public static final int T__115=115;
+    public static final int T__124=124;
+    public static final int T__123=123;
+    public static final int T__122=122;
+    public static final int T__121=121;
+    public static final int T__120=120;
     public static final int T__61=61;
     public static final int T__60=60;
     public static final int T__55=55;
@@ -94,6 +106,7 @@ public class InternalLilLexer extends Lexer {
     public static final int T__106=106;
     public static final int T__111=111;
     public static final int T__110=110;
+    public static final int T__113=113;
     public static final int RULE_INT=6;
     public static final int T__112=112;
     public static final int T__50=50;
@@ -475,11 +488,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:27:7: ( 'in' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:27:9: 'in'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:27:7: ( '{' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:27:9: '{'
             {
-            match("in"); 
-
+            match('{'); 
 
             }
 
@@ -496,10 +508,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:28:7: ( '{' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:28:9: '{'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:28:7: ( '}' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:28:9: '}'
             {
-            match('{'); 
+            match('}'); 
 
             }
 
@@ -516,10 +528,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:29:7: ( '}' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:29:9: '}'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:29:7: ( '[' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:29:9: '['
             {
-            match('}'); 
+            match('['); 
 
             }
 
@@ -536,10 +548,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:30:7: ( '[' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:30:9: '['
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:30:7: ( ']' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:30:9: ']'
             {
-            match('['); 
+            match(']'); 
 
             }
 
@@ -556,10 +568,11 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:31:7: ( ']' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:31:9: ']'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:31:7: ( 'event' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:31:9: 'event'
             {
-            match(']'); 
+            match("event"); 
+
 
             }
 
@@ -576,10 +589,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:32:7: ( 'event' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:32:9: 'event'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:32:7: ( 'flow' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:32:9: 'flow'
             {
-            match("event"); 
+            match("flow"); 
 
 
             }
@@ -597,10 +610,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:33:7: ( 'flow' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:33:9: 'flow'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:33:7: ( 'constant' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:33:9: 'constant'
             {
-            match("flow"); 
+            match("constant"); 
 
 
             }
@@ -618,10 +631,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:34:7: ( 'void' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:34:9: 'void'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:34:7: ( 'in' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:34:9: 'in'
             {
-            match("void"); 
+            match("in"); 
 
 
             }
@@ -639,10 +652,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:35:7: ( 'symbol' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:35:9: 'symbol'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:35:7: ( 'set' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:35:9: 'set'
             {
-            match("symbol"); 
+            match("set"); 
 
 
             }
@@ -660,10 +673,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:36:7: ( 'number' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:36:9: 'number'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:36:7: ( 'list' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:36:9: 'list'
             {
-            match("number"); 
+            match("list"); 
 
 
             }
@@ -681,10 +694,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:37:7: ( 'text' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:37:9: 'text'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:37:7: ( 'map' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:37:9: 'map'
             {
-            match("text"); 
+            match("map"); 
 
 
             }
@@ -702,10 +715,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:38:7: ( 'time' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:38:9: 'time'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:38:7: ( 'of' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:38:9: 'of'
             {
-            match("time"); 
+            match("of"); 
 
 
             }
@@ -723,10 +736,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:39:7: ( 'reference' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:39:9: 'reference'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:39:7: ( 'void' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:39:9: 'void'
             {
-            match("reference"); 
+            match("void"); 
 
 
             }
@@ -744,10 +757,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:40:7: ( 'structure' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:40:9: 'structure'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:40:7: ( 'symbol' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:40:9: 'symbol'
             {
-            match("structure"); 
+            match("symbol"); 
 
 
             }
@@ -765,10 +778,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:41:7: ( 'on' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:41:9: 'on'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:41:7: ( 'number' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:41:9: 'number'
             {
-            match("on"); 
+            match("number"); 
 
 
             }
@@ -786,10 +799,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:42:7: ( 'if' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:42:9: 'if'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:42:7: ( 'text' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:42:9: 'text'
             {
-            match("if"); 
+            match("text"); 
 
 
             }
@@ -807,10 +820,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:43:7: ( 'when' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:43:9: 'when'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:43:7: ( 'time' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:43:9: 'time'
             {
-            match("when"); 
+            match("time"); 
 
 
             }
@@ -828,10 +841,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:44:7: ( 'always' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:44:9: 'always'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:44:7: ( 'identifier' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:44:9: 'identifier'
             {
-            match("always"); 
+            match("identifier"); 
 
 
             }
@@ -849,10 +862,11 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:45:7: ( '=' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:45:9: '='
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:45:7: ( 'structure' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:45:9: 'structure'
             {
-            match('='); 
+            match("structure"); 
+
 
             }
 
@@ -869,10 +883,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:46:7: ( 'set' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:46:9: 'set'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:46:7: ( 'on' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:46:9: 'on'
             {
-            match("set"); 
+            match("on"); 
 
 
             }
@@ -890,10 +904,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:47:7: ( 'trigger' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:47:9: 'trigger'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:47:7: ( 'if' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:47:9: 'if'
             {
-            match("trigger"); 
+            match("if"); 
 
 
             }
@@ -911,10 +925,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:48:7: ( 'or' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:48:9: 'or'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:48:7: ( 'when' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:48:9: 'when'
             {
-            match("or"); 
+            match("when"); 
 
 
             }
@@ -932,10 +946,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:49:7: ( 'and' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:49:9: 'and'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:49:7: ( 'always' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:49:9: 'always'
             {
-            match("and"); 
+            match("always"); 
 
 
             }
@@ -953,11 +967,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:50:7: ( '==' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:50:9: '=='
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:50:7: ( '=' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:50:9: '='
             {
-            match("=="); 
-
+            match('='); 
 
             }
 
@@ -974,10 +987,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:51:7: ( '!=' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:51:9: '!='
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:51:7: ( 'trigger' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:51:9: 'trigger'
             {
-            match("!="); 
+            match("trigger"); 
 
 
             }
@@ -995,10 +1008,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:52:7: ( '<=' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:52:9: '<='
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:52:7: ( 'or' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:52:9: 'or'
             {
-            match("<="); 
+            match("or"); 
 
 
             }
@@ -1016,10 +1029,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:53:7: ( '>=' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:53:9: '>='
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:53:7: ( 'and' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:53:9: 'and'
             {
-            match(">="); 
+            match("and"); 
 
 
             }
@@ -1037,10 +1050,11 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:54:7: ( '<' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:54:9: '<'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:54:7: ( '==' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:54:9: '=='
             {
-            match('<'); 
+            match("=="); 
+
 
             }
 
@@ -1057,10 +1071,11 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:55:7: ( '>' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:55:9: '>'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:55:7: ( '!=' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:55:9: '!='
             {
-            match('>'); 
+            match("!="); 
+
 
             }
 
@@ -1077,10 +1092,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:56:7: ( '<>' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:56:9: '<>'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:56:7: ( '<=' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:56:9: '<='
             {
-            match("<>"); 
+            match("<="); 
 
 
             }
@@ -1098,10 +1113,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:57:7: ( '?:' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:57:9: '?:'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:57:7: ( '>=' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:57:9: '>='
             {
-            match("?:"); 
+            match(">="); 
 
 
             }
@@ -1119,10 +1134,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:58:7: ( '+' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:58:9: '+'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:58:7: ( '<' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:58:9: '<'
             {
-            match('+'); 
+            match('<'); 
 
             }
 
@@ -1139,10 +1154,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:59:7: ( '-' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:59:9: '-'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:59:7: ( '>' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:59:9: '>'
             {
-            match('-'); 
+            match('>'); 
 
             }
 
@@ -1159,10 +1174,11 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:60:7: ( '*' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:60:9: '*'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:60:7: ( '<>' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:60:9: '<>'
             {
-            match('*'); 
+            match("<>"); 
+
 
             }
 
@@ -1179,10 +1195,11 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:61:7: ( '/' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:61:9: '/'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:61:7: ( '?:' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:61:9: '?:'
             {
-            match('/'); 
+            match("?:"); 
+
 
             }
 
@@ -1199,10 +1216,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:62:7: ( '%' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:62:9: '%'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:62:7: ( '+' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:62:9: '+'
             {
-            match('%'); 
+            match('+'); 
 
             }
 
@@ -1219,10 +1236,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:63:7: ( '!' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:63:9: '!'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:63:7: ( '-' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:63:9: '-'
             {
-            match('!'); 
+            match('-'); 
 
             }
 
@@ -1239,10 +1256,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:64:7: ( '#' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:64:9: '#'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:64:7: ( '*' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:64:9: '*'
             {
-            match('#'); 
+            match('*'); 
 
             }
 
@@ -1259,10 +1276,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:65:7: ( '(' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:65:9: '('
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:65:7: ( '/' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:65:9: '/'
             {
-            match('('); 
+            match('/'); 
 
             }
 
@@ -1279,10 +1296,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:66:7: ( ')' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:66:9: ')'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:66:7: ( '%' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:66:9: '%'
             {
-            match(')'); 
+            match('%'); 
 
             }
 
@@ -1299,11 +1316,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:67:7: ( 'else' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:67:9: 'else'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:67:7: ( '!' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:67:9: '!'
             {
-            match("else"); 
-
+            match('!'); 
 
             }
 
@@ -1320,11 +1336,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:68:7: ( 'switch' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:68:9: 'switch'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:68:7: ( '#' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:68:9: '#'
             {
-            match("switch"); 
-
+            match('#'); 
 
             }
 
@@ -1341,11 +1356,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:69:7: ( 'default' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:69:9: 'default'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:69:7: ( '(' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:69:9: '('
             {
-            match("default"); 
-
+            match('('); 
 
             }
 
@@ -1362,11 +1376,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:70:7: ( 'case' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:70:9: 'case'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:70:7: ( ')' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:70:9: ')'
             {
-            match("case"); 
-
+            match(')'); 
 
             }
 
@@ -1383,10 +1396,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:71:7: ( 'for' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:71:9: 'for'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:71:7: ( 'else' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:71:9: 'else'
             {
-            match("for"); 
+            match("else"); 
 
 
             }
@@ -1404,10 +1417,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:72:7: ( 'each' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:72:9: 'each'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:72:7: ( 'switch' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:72:9: 'switch'
             {
-            match("each"); 
+            match("switch"); 
 
 
             }
@@ -1425,10 +1438,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:73:7: ( 'Math.abs' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:73:9: 'Math.abs'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:73:7: ( 'default' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:73:9: 'default'
             {
-            match("Math.abs"); 
+            match("default"); 
 
 
             }
@@ -1446,10 +1459,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:74:7: ( 'Math.acos' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:74:9: 'Math.acos'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:74:7: ( 'case' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:74:9: 'case'
             {
-            match("Math.acos"); 
+            match("case"); 
 
 
             }
@@ -1467,10 +1480,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:75:7: ( 'Math.acosh' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:75:9: 'Math.acosh'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:75:7: ( 'for' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:75:9: 'for'
             {
-            match("Math.acosh"); 
+            match("for"); 
 
 
             }
@@ -1488,10 +1501,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:76:7: ( 'Math.asin' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:76:9: 'Math.asin'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:76:7: ( 'each' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:76:9: 'each'
             {
-            match("Math.asin"); 
+            match("each"); 
 
 
             }
@@ -1509,10 +1522,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:77:7: ( 'Math.asinh' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:77:9: 'Math.asinh'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:77:7: ( 'Math.abs' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:77:9: 'Math.abs'
             {
-            match("Math.asinh"); 
+            match("Math.abs"); 
 
 
             }
@@ -1530,10 +1543,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:78:7: ( 'Math.atan' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:78:9: 'Math.atan'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:78:7: ( 'Math.acos' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:78:9: 'Math.acos'
             {
-            match("Math.atan"); 
+            match("Math.acos"); 
 
 
             }
@@ -1551,10 +1564,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:79:7: ( 'Math.atanh' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:79:9: 'Math.atanh'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:79:7: ( 'Math.acosh' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:79:9: 'Math.acosh'
             {
-            match("Math.atanh"); 
+            match("Math.acosh"); 
 
 
             }
@@ -1572,10 +1585,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:80:7: ( 'Math.atan2' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:80:9: 'Math.atan2'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:80:7: ( 'Math.asin' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:80:9: 'Math.asin'
             {
-            match("Math.atan2"); 
+            match("Math.asin"); 
 
 
             }
@@ -1593,10 +1606,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:81:7: ( 'Math.ceil' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:81:9: 'Math.ceil'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:81:7: ( 'Math.asinh' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:81:9: 'Math.asinh'
             {
-            match("Math.ceil"); 
+            match("Math.asinh"); 
 
 
             }
@@ -1614,10 +1627,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:82:7: ( 'Math.clip' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:82:9: 'Math.clip'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:82:7: ( 'Math.atan' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:82:9: 'Math.atan'
             {
-            match("Math.clip"); 
+            match("Math.atan"); 
 
 
             }
@@ -1635,10 +1648,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:83:7: ( 'Math.cos' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:83:9: 'Math.cos'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:83:7: ( 'Math.atanh' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:83:9: 'Math.atanh'
             {
-            match("Math.cos"); 
+            match("Math.atanh"); 
 
 
             }
@@ -1656,10 +1669,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:84:7: ( 'Math.cosh' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:84:9: 'Math.cosh'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:84:7: ( 'Math.atan2' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:84:9: 'Math.atan2'
             {
-            match("Math.cosh"); 
+            match("Math.atan2"); 
 
 
             }
@@ -1677,10 +1690,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:85:7: ( 'Math.exp' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:85:9: 'Math.exp'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:85:7: ( 'Math.ceil' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:85:9: 'Math.ceil'
             {
-            match("Math.exp"); 
+            match("Math.ceil"); 
 
 
             }
@@ -1698,10 +1711,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:86:7: ( 'Math.floor' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:86:9: 'Math.floor'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:86:7: ( 'Math.clip' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:86:9: 'Math.clip'
             {
-            match("Math.floor"); 
+            match("Math.clip"); 
 
 
             }
@@ -1719,10 +1732,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:87:7: ( 'Math.fround' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:87:9: 'Math.fround'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:87:7: ( 'Math.cos' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:87:9: 'Math.cos'
             {
-            match("Math.fround"); 
+            match("Math.cos"); 
 
 
             }
@@ -1740,10 +1753,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:88:7: ( 'Math.hypot' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:88:9: 'Math.hypot'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:88:7: ( 'Math.cosh' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:88:9: 'Math.cosh'
             {
-            match("Math.hypot"); 
+            match("Math.cosh"); 
 
 
             }
@@ -1761,10 +1774,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:89:7: ( 'Math.log' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:89:9: 'Math.log'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:89:7: ( 'Math.exp' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:89:9: 'Math.exp'
             {
-            match("Math.log"); 
+            match("Math.exp"); 
 
 
             }
@@ -1782,10 +1795,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:90:7: ( 'Math.log10' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:90:9: 'Math.log10'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:90:7: ( 'Math.floor' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:90:9: 'Math.floor'
             {
-            match("Math.log10"); 
+            match("Math.floor"); 
 
 
             }
@@ -1803,10 +1816,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:91:7: ( 'Math.log2' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:91:9: 'Math.log2'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:91:7: ( 'Math.fround' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:91:9: 'Math.fround'
             {
-            match("Math.log2"); 
+            match("Math.fround"); 
 
 
             }
@@ -1824,10 +1837,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:92:7: ( 'Math.max' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:92:9: 'Math.max'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:92:7: ( 'Math.hypot' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:92:9: 'Math.hypot'
             {
-            match("Math.max"); 
+            match("Math.hypot"); 
 
 
             }
@@ -1845,10 +1858,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:93:7: ( 'Math.min' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:93:9: 'Math.min'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:93:7: ( 'Math.log' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:93:9: 'Math.log'
             {
-            match("Math.min"); 
+            match("Math.log"); 
 
 
             }
@@ -1866,10 +1879,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:94:7: ( 'Math.pow' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:94:9: 'Math.pow'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:94:7: ( 'Math.log10' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:94:9: 'Math.log10'
             {
-            match("Math.pow"); 
+            match("Math.log10"); 
 
 
             }
@@ -1887,10 +1900,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:95:7: ( 'Math.random' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:95:9: 'Math.random'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:95:7: ( 'Math.log2' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:95:9: 'Math.log2'
             {
-            match("Math.random"); 
+            match("Math.log2"); 
 
 
             }
@@ -1908,10 +1921,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:96:7: ( 'Math.round' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:96:9: 'Math.round'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:96:7: ( 'Math.max' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:96:9: 'Math.max'
             {
-            match("Math.round"); 
+            match("Math.max"); 
 
 
             }
@@ -1929,10 +1942,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:97:7: ( 'Math.sign' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:97:9: 'Math.sign'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:97:7: ( 'Math.min' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:97:9: 'Math.min'
             {
-            match("Math.sign"); 
+            match("Math.min"); 
 
 
             }
@@ -1950,10 +1963,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:98:7: ( 'Math.sin' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:98:9: 'Math.sin'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:98:7: ( 'Math.pow' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:98:9: 'Math.pow'
             {
-            match("Math.sin"); 
+            match("Math.pow"); 
 
 
             }
@@ -1971,10 +1984,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:99:7: ( 'Math.sinh' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:99:9: 'Math.sinh'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:99:7: ( 'Math.random' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:99:9: 'Math.random'
             {
-            match("Math.sinh"); 
+            match("Math.random"); 
 
 
             }
@@ -1992,10 +2005,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:100:8: ( 'Math.sqrt' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:100:10: 'Math.sqrt'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:100:8: ( 'Math.round' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:100:10: 'Math.round'
             {
-            match("Math.sqrt"); 
+            match("Math.round"); 
 
 
             }
@@ -2013,10 +2026,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:101:8: ( 'Math.tan' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:101:10: 'Math.tan'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:101:8: ( 'Math.sign' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:101:10: 'Math.sign'
             {
-            match("Math.tan"); 
+            match("Math.sign"); 
 
 
             }
@@ -2034,10 +2047,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:102:8: ( 'Math.tanh' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:102:10: 'Math.tanh'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:102:8: ( 'Math.sin' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:102:10: 'Math.sin'
             {
-            match("Math.tanh"); 
+            match("Math.sin"); 
 
 
             }
@@ -2055,10 +2068,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:103:8: ( 'Math.trunc' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:103:10: 'Math.trunc'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:103:8: ( 'Math.sinh' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:103:10: 'Math.sinh'
             {
-            match("Math.trunc"); 
+            match("Math.sinh"); 
 
 
             }
@@ -2076,10 +2089,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:104:8: ( 'Set.orderby' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:104:10: 'Set.orderby'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:104:8: ( 'Math.sqrt' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:104:10: 'Math.sqrt'
             {
-            match("Set.orderby"); 
+            match("Math.sqrt"); 
 
 
             }
@@ -2097,10 +2110,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:105:8: ( 'Set.add' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:105:10: 'Set.add'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:105:8: ( 'Math.tan' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:105:10: 'Math.tan'
             {
-            match("Set.add"); 
+            match("Math.tan"); 
 
 
             }
@@ -2118,10 +2131,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:106:8: ( 'Set.find' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:106:10: 'Set.find'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:106:8: ( 'Math.tanh' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:106:10: 'Math.tanh'
             {
-            match("Set.find"); 
+            match("Math.tanh"); 
 
 
             }
@@ -2139,10 +2152,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:107:8: ( 'Set.change' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:107:10: 'Set.change'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:107:8: ( 'Math.trunc' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:107:10: 'Math.trunc'
             {
-            match("Set.change"); 
+            match("Math.trunc"); 
 
 
             }
@@ -2160,10 +2173,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:108:8: ( 'Set.remove' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:108:10: 'Set.remove'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:108:8: ( 'Set.orderby' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:108:10: 'Set.orderby'
             {
-            match("Set.remove"); 
+            match("Set.orderby"); 
 
 
             }
@@ -2181,10 +2194,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:109:8: ( 'false' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:109:10: 'false'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:109:8: ( 'Set.add' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:109:10: 'Set.add'
             {
-            match("false"); 
+            match("Set.add"); 
 
 
             }
@@ -2202,10 +2215,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:110:8: ( 'true' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:110:10: 'true'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:110:8: ( 'Set.find' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:110:10: 'Set.find'
             {
-            match("true"); 
+            match("Set.find"); 
 
 
             }
@@ -2223,10 +2236,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:111:8: ( 'null' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:111:10: 'null'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:111:8: ( 'Set.change' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:111:10: 'Set.change'
             {
-            match("null"); 
+            match("Set.change"); 
 
 
             }
@@ -2244,10 +2257,11 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:112:8: ( '.' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:112:10: '.'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:112:8: ( 'Set.remove' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:112:10: 'Set.remove'
             {
-            match('.'); 
+            match("Set.remove"); 
+
 
             }
 
@@ -2259,15 +2273,285 @@ public class InternalLilLexer extends Lexer {
     }
     // $ANTLR end "T__112"
 
+    // $ANTLR start "T__113"
+    public final void mT__113() throws RecognitionException {
+        try {
+            int _type = T__113;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:113:8: ( 'false' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:113:10: 'false'
+            {
+            match("false"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__113"
+
+    // $ANTLR start "T__114"
+    public final void mT__114() throws RecognitionException {
+        try {
+            int _type = T__114;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:114:8: ( 'true' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:114:10: 'true'
+            {
+            match("true"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__114"
+
+    // $ANTLR start "T__115"
+    public final void mT__115() throws RecognitionException {
+        try {
+            int _type = T__115;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:115:8: ( 'null' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:115:10: 'null'
+            {
+            match("null"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__115"
+
+    // $ANTLR start "T__116"
+    public final void mT__116() throws RecognitionException {
+        try {
+            int _type = T__116;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:116:8: ( 'now' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:116:10: 'now'
+            {
+            match("now"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__116"
+
+    // $ANTLR start "T__117"
+    public final void mT__117() throws RecognitionException {
+        try {
+            int _type = T__117;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:117:8: ( 'year' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:117:10: 'year'
+            {
+            match("year"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__117"
+
+    // $ANTLR start "T__118"
+    public final void mT__118() throws RecognitionException {
+        try {
+            int _type = T__118;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:118:8: ( 'month' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:118:10: 'month'
+            {
+            match("month"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__118"
+
+    // $ANTLR start "T__119"
+    public final void mT__119() throws RecognitionException {
+        try {
+            int _type = T__119;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:119:8: ( 'day' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:119:10: 'day'
+            {
+            match("day"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__119"
+
+    // $ANTLR start "T__120"
+    public final void mT__120() throws RecognitionException {
+        try {
+            int _type = T__120;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:120:8: ( 'hour' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:120:10: 'hour'
+            {
+            match("hour"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__120"
+
+    // $ANTLR start "T__121"
+    public final void mT__121() throws RecognitionException {
+        try {
+            int _type = T__121;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:121:8: ( 'm' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:121:10: 'm'
+            {
+            match('m'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__121"
+
+    // $ANTLR start "T__122"
+    public final void mT__122() throws RecognitionException {
+        try {
+            int _type = T__122;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:122:8: ( 'minute' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:122:10: 'minute'
+            {
+            match("minute"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__122"
+
+    // $ANTLR start "T__123"
+    public final void mT__123() throws RecognitionException {
+        try {
+            int _type = T__123;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:123:8: ( 's' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:123:10: 's'
+            {
+            match('s'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__123"
+
+    // $ANTLR start "T__124"
+    public final void mT__124() throws RecognitionException {
+        try {
+            int _type = T__124;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:124:8: ( 'second' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:124:10: 'second'
+            {
+            match("second"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__124"
+
+    // $ANTLR start "T__125"
+    public final void mT__125() throws RecognitionException {
+        try {
+            int _type = T__125;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:125:8: ( '.' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:125:10: '.'
+            {
+            match('.'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__125"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4175:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4175:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4912:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4912:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4175:11: ( '^' )?
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4912:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2276,7 +2560,7 @@ public class InternalLilLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4175:11: '^'
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4912:11: '^'
                     {
                     match('^'); 
 
@@ -2294,7 +2578,7 @@ public class InternalLilLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4175:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4912:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -2343,10 +2627,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4177:10: ( ( '0' .. '9' )+ )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4177:12: ( '0' .. '9' )+
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4914:10: ( ( '0' .. '9' )+ )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4914:12: ( '0' .. '9' )+
             {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4177:12: ( '0' .. '9' )+
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4914:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -2360,7 +2644,7 @@ public class InternalLilLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4177:13: '0' .. '9'
+            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4914:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2392,10 +2676,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -2413,10 +2697,10 @@ public class InternalLilLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -2432,7 +2716,7 @@ public class InternalLilLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2448,7 +2732,7 @@ public class InternalLilLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2473,10 +2757,10 @@ public class InternalLilLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -2492,7 +2776,7 @@ public class InternalLilLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2508,7 +2792,7 @@ public class InternalLilLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4179:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4916:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2551,12 +2835,12 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4181:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4181:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4918:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4918:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4181:24: ( options {greedy=false; } : . )*
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4918:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -2581,7 +2865,7 @@ public class InternalLilLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4181:52: .
+            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4918:52: .
             	    {
             	    matchAny(); 
 
@@ -2611,12 +2895,12 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4183:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4183:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4920:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4920:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4183:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4920:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -2629,7 +2913,7 @@ public class InternalLilLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4183:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4920:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2649,7 +2933,7 @@ public class InternalLilLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4183:40: ( ( '\\r' )? '\\n' )?
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4920:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2658,9 +2942,9 @@ public class InternalLilLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4183:41: ( '\\r' )? '\\n'
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4920:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4183:41: ( '\\r' )?
+                    // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4920:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2669,7 +2953,7 @@ public class InternalLilLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4183:41: '\\r'
+                            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4920:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2701,10 +2985,10 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4185:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4185:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4922:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4922:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4185:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4922:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -2758,8 +3042,8 @@ public class InternalLilLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4187:16: ( . )
-            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4187:18: .
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4924:16: ( . )
+            // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:4924:18: .
             {
             matchAny(); 
 
@@ -2774,8 +3058,8 @@ public class InternalLilLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=109;
+        // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=122;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -3493,49 +3777,140 @@ public class InternalLilLexer extends Lexer {
                 }
                 break;
             case 103 :
-                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:635: RULE_ID
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:635: T__113
+                {
+                mT__113(); 
+
+                }
+                break;
+            case 104 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:642: T__114
+                {
+                mT__114(); 
+
+                }
+                break;
+            case 105 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:649: T__115
+                {
+                mT__115(); 
+
+                }
+                break;
+            case 106 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:656: T__116
+                {
+                mT__116(); 
+
+                }
+                break;
+            case 107 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:663: T__117
+                {
+                mT__117(); 
+
+                }
+                break;
+            case 108 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:670: T__118
+                {
+                mT__118(); 
+
+                }
+                break;
+            case 109 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:677: T__119
+                {
+                mT__119(); 
+
+                }
+                break;
+            case 110 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:684: T__120
+                {
+                mT__120(); 
+
+                }
+                break;
+            case 111 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:691: T__121
+                {
+                mT__121(); 
+
+                }
+                break;
+            case 112 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:698: T__122
+                {
+                mT__122(); 
+
+                }
+                break;
+            case 113 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:705: T__123
+                {
+                mT__123(); 
+
+                }
+                break;
+            case 114 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:712: T__124
+                {
+                mT__124(); 
+
+                }
+                break;
+            case 115 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:719: T__125
+                {
+                mT__125(); 
+
+                }
+                break;
+            case 116 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:726: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 104 :
-                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:643: RULE_INT
+            case 117 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:734: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 105 :
-                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:652: RULE_STRING
+            case 118 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:743: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 106 :
-                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:664: RULE_ML_COMMENT
+            case 119 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:755: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 107 :
-                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:680: RULE_SL_COMMENT
+            case 120 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:771: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 108 :
-                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:696: RULE_WS
+            case 121 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:787: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 109 :
-                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:704: RULE_ANY_OTHER
+            case 122 :
+                // ../com.crubier.lil/src-gen/com/crubier/lil/parser/antlr/internal/InternalLil.g:1:795: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3549,256 +3924,257 @@ public class InternalLilLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\56\1\uffff\6\56\1\uffff\2\56\4\uffff\4\56\1\124\1\126"+
-        "\1\131\1\133\1\53\3\uffff\1\142\4\uffff\3\56\1\uffff\1\53\2\uffff"+
-        "\2\53\2\uffff\1\160\1\161\2\uffff\3\56\1\167\5\56\1\176\1\177\5"+
-        "\56\1\uffff\4\56\1\u0089\3\56\4\uffff\6\56\24\uffff\3\56\4\uffff"+
-        "\2\56\2\uffff\1\u009a\1\u009b\1\u009c\2\56\1\uffff\1\56\1\u00a0"+
-        "\4\56\2\uffff\7\56\1\u00ac\1\56\1\uffff\17\56\1\u00bd\3\uffff\2"+
-        "\56\1\u00c0\1\uffff\6\56\1\u00c7\1\u00c8\1\u00c9\1\u00ca\1\u00cb"+
-        "\1\uffff\1\56\1\u00cd\1\u00ce\1\56\1\u00d0\1\56\1\u00d2\1\u00d3"+
-        "\1\u00d4\1\56\1\u00d6\3\56\1\uffff\1\56\1\uffff\1\56\1\u00e2\1\uffff"+
-        "\3\56\1\u00e6\1\56\1\u00e8\5\uffff\1\u00e9\2\uffff\1\56\1\uffff"+
-        "\1\u00eb\3\uffff\1\56\1\uffff\2\56\6\uffff\1\56\1\u00fb\1\u00fc"+
-        "\1\uffff\1\u00fd\1\56\1\u00ff\1\uffff\1\u0100\2\uffff\1\56\1\uffff"+
-        "\1\u0102\2\56\13\uffff\1\56\3\uffff\1\56\2\uffff\1\u0119\1\uffff"+
-        "\1\56\1\u011b\22\uffff\2\56\1\uffff\1\56\4\uffff\1\u012b\1\u012e"+
-        "\1\uffff\1\u0130\1\u0132\1\56\1\u0134\1\u0135\1\u0137\1\u0139\1"+
-        "\u013c\11\uffff\1\u013d\12\uffff";
+        "\1\uffff\1\62\1\uffff\1\62\1\74\4\62\1\uffff\2\62\4\uffff\2\62\1"+
+        "\133\2\62\1\140\1\142\1\145\1\147\1\56\3\uffff\1\156\4\uffff\5\62"+
+        "\1\uffff\1\56\2\uffff\2\56\2\uffff\1\177\1\62\1\u0081\2\uffff\3"+
+        "\62\1\u0087\4\62\1\uffff\1\62\1\u008f\1\u0090\1\u0091\6\62\1\uffff"+
+        "\4\62\1\u009c\3\62\4\uffff\7\62\1\uffff\3\62\24\uffff\6\62\4\uffff"+
+        "\2\62\1\uffff\1\62\1\uffff\1\u00b5\1\u00b6\1\u00b7\2\62\1\uffff"+
+        "\1\62\1\u00bb\5\62\3\uffff\10\62\1\u00c9\1\62\1\uffff\10\62\1\u00d3"+
+        "\5\62\1\u00d9\1\62\1\u00db\5\62\1\u00e1\1\62\3\uffff\2\62\1\u00e5"+
+        "\1\uffff\10\62\1\u00ee\1\u00ef\1\u00f0\1\u00f1\1\u00f2\1\uffff\1"+
+        "\62\1\u00f4\1\u00f5\1\62\1\u00f7\1\62\1\u00f9\1\u00fa\1\u00fb\1"+
+        "\uffff\2\62\1\u00fe\1\62\1\u0100\1\uffff\1\62\1\uffff\1\62\1\uffff"+
+        "\1\u0108\1\u0109\1\62\1\uffff\2\62\1\u010e\1\uffff\4\62\1\u0113"+
+        "\1\62\1\u0115\1\62\5\uffff\1\u0117\2\uffff\1\62\1\uffff\1\u0119"+
+        "\3\uffff\1\u011a\1\62\1\uffff\1\62\1\uffff\1\62\10\uffff\2\62\1"+
+        "\u012b\1\u012c\1\uffff\1\u012d\1\u012e\1\62\1\u0130\1\uffff\1\u0131"+
+        "\1\uffff\1\62\1\uffff\1\62\2\uffff\1\u0134\1\u0135\1\62\13\uffff"+
+        "\2\62\4\uffff\1\62\2\uffff\1\62\1\u014d\2\uffff\1\u014e\22\uffff"+
+        "\3\62\1\u015a\5\uffff\1\u015f\1\u0162\1\uffff\1\u0164\1\u0166\2"+
+        "\62\1\u0169\1\uffff\1\u016b\1\u016d\1\u0170\11\uffff\1\u0171\1\u0172"+
+        "\12\uffff";
     static final String DFA12_eofS =
-        "\u013e\uffff";
+        "\u0173\uffff";
     static final String DFA12_minS =
-        "\1\0\1\146\1\uffff\1\143\1\145\1\156\2\141\1\150\1\uffff\1\141\1"+
-        "\145\4\uffff\1\141\1\157\1\165\1\145\4\75\1\72\3\uffff\1\52\4\uffff"+
-        "\1\145\1\141\1\145\1\uffff\1\101\2\uffff\2\0\2\uffff\2\60\2\uffff"+
-        "\1\144\1\154\1\164\1\60\1\154\1\155\1\162\1\151\1\150\2\60\1\162"+
-        "\1\151\1\163\1\164\1\145\1\uffff\2\157\1\162\1\154\1\60\1\170\1"+
-        "\155\1\151\4\uffff\1\145\1\163\1\143\1\151\1\154\1\146\24\uffff"+
-        "\1\146\2\164\4\uffff\1\145\1\164\2\uffff\3\60\1\141\1\157\1\uffff"+
-        "\1\146\1\60\1\142\1\165\1\164\1\145\2\uffff\1\145\1\154\1\145\1"+
-        "\150\1\156\1\155\1\167\1\60\1\163\1\uffff\1\164\1\145\1\147\1\145"+
-        "\1\156\1\145\1\150\1\144\1\142\1\154\1\145\1\141\1\150\1\56\1\162"+
-        "\1\60\3\uffff\1\171\1\162\1\60\1\uffff\1\157\2\143\1\162\1\156\1"+
-        "\144\5\60\1\uffff\1\145\2\60\1\147\1\60\1\164\3\60\1\145\1\60\1"+
-        "\162\1\165\1\56\2\141\1\uffff\1\163\1\60\1\uffff\1\154\1\164\1\150"+
-        "\1\60\1\164\1\60\5\uffff\1\60\2\uffff\1\145\1\uffff\1\60\3\uffff"+
-        "\1\162\1\uffff\1\145\1\154\1\141\5\uffff\1\143\2\60\1\uffff\1\60"+
-        "\1\165\1\60\1\uffff\1\60\2\uffff\1\162\1\uffff\1\60\1\156\1\164"+
-        "\1\142\1\145\1\uffff\1\154\1\uffff\1\157\1\141\1\uffff\1\141\1\151"+
-        "\1\141\1\164\3\uffff\1\162\2\uffff\1\60\1\uffff\1\143\1\60\1\uffff"+
-        "\1\157\1\151\1\141\2\uffff\1\163\2\uffff\1\147\4\uffff\1\147\1\uffff"+
-        "\1\156\1\uffff\1\157\1\145\1\uffff\1\145\1\uffff\1\163\2\156\1\150"+
-        "\1\61\1\uffff\2\150\1\162\2\60\2\150\1\62\11\uffff\1\60\12\uffff";
+        "\1\0\1\144\1\uffff\1\143\1\60\1\146\2\141\1\150\1\uffff\1\141\1"+
+        "\145\4\uffff\1\141\1\151\1\60\2\157\4\75\1\72\3\uffff\1\52\4\uffff"+
+        "\2\141\2\145\1\157\1\uffff\1\101\2\uffff\2\0\2\uffff\1\60\1\145"+
+        "\1\60\2\uffff\1\144\1\154\1\164\1\60\1\143\1\155\1\162\1\151\1\uffff"+
+        "\1\150\3\60\1\162\1\151\1\156\1\163\1\164\1\145\1\uffff\2\157\1"+
+        "\162\1\154\1\60\1\170\1\155\1\151\4\uffff\1\145\1\163\1\143\1\163"+
+        "\1\160\2\156\1\uffff\1\151\1\154\1\167\24\uffff\1\146\1\171\2\164"+
+        "\1\141\1\165\4\uffff\1\145\1\164\1\uffff\1\156\1\uffff\3\60\1\141"+
+        "\1\157\1\uffff\1\146\1\60\1\157\1\142\1\165\1\164\1\145\3\uffff"+
+        "\1\145\1\154\1\163\1\145\1\150\1\156\1\155\1\167\1\60\1\163\1\uffff"+
+        "\1\164\1\145\1\147\1\145\1\156\1\145\1\150\1\164\1\60\1\164\1\165"+
+        "\1\144\1\142\1\154\1\60\1\141\1\60\1\150\1\56\3\162\1\60\1\164\3"+
+        "\uffff\1\171\1\162\1\60\1\uffff\1\156\1\157\2\143\1\162\1\156\1"+
+        "\144\1\164\5\60\1\uffff\1\145\2\60\1\147\1\60\1\164\3\60\1\uffff"+
+        "\1\150\1\164\1\60\1\145\1\60\1\uffff\1\165\1\uffff\1\56\1\141\2"+
+        "\60\1\141\1\uffff\1\151\1\163\1\60\1\uffff\1\144\1\154\1\164\1\150"+
+        "\1\60\1\164\1\60\1\141\5\uffff\1\60\2\uffff\1\145\1\uffff\1\60\3"+
+        "\uffff\1\60\1\145\1\uffff\1\162\1\uffff\1\154\1\141\7\uffff\1\143"+
+        "\1\146\2\60\1\uffff\2\60\1\165\1\60\1\uffff\1\60\1\uffff\1\156\1"+
+        "\uffff\1\162\2\uffff\2\60\1\164\1\142\1\145\1\uffff\1\154\1\uffff"+
+        "\1\157\1\141\1\uffff\1\141\1\151\1\141\1\164\1\151\4\uffff\1\162"+
+        "\2\uffff\1\164\1\60\2\uffff\1\60\1\uffff\1\157\1\151\1\141\2\uffff"+
+        "\1\163\2\uffff\1\147\4\uffff\1\147\1\uffff\1\156\1\uffff\1\157\2"+
+        "\145\1\60\2\uffff\1\163\2\156\1\150\1\61\1\uffff\2\150\2\162\1\60"+
+        "\1\uffff\2\150\1\62\11\uffff\2\60\12\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\156\1\uffff\1\163\1\171\1\164\1\141\1\150\1\151\1\uffff"+
-        "\2\162\4\uffff\1\166\1\157\1\165\1\145\2\75\1\76\1\75\1\72\3\uffff"+
-        "\1\57\4\uffff\1\145\1\141\1\145\1\uffff\1\172\2\uffff\2\uffff\2"+
-        "\uffff\2\172\2\uffff\1\171\1\167\1\164\1\172\1\164\1\155\1\162\1"+
-        "\151\1\150\2\172\1\162\1\151\1\163\1\164\1\145\1\uffff\2\157\1\162"+
-        "\1\154\1\172\1\170\1\155\1\165\4\uffff\1\145\1\163\1\143\1\151\1"+
-        "\155\1\146\24\uffff\1\146\2\164\4\uffff\1\145\1\164\2\uffff\3\172"+
-        "\1\141\1\157\1\uffff\1\146\1\172\1\142\1\165\1\164\1\145\2\uffff"+
-        "\1\145\1\154\1\145\1\150\1\156\1\155\1\167\1\172\1\163\1\uffff\1"+
-        "\164\1\145\1\147\1\145\1\156\1\145\1\150\1\144\1\142\1\154\1\145"+
-        "\1\141\1\150\1\56\1\162\1\172\3\uffff\1\171\1\162\1\172\1\uffff"+
-        "\1\157\2\143\1\162\1\156\1\144\5\172\1\uffff\1\145\2\172\1\147\1"+
-        "\172\1\164\3\172\1\145\1\172\1\162\1\165\1\56\1\162\1\141\1\uffff"+
-        "\1\163\1\172\1\uffff\1\154\1\164\1\150\1\172\1\164\1\172\5\uffff"+
-        "\1\172\2\uffff\1\145\1\uffff\1\172\3\uffff\1\162\1\uffff\1\145\1"+
-        "\154\1\164\5\uffff\1\143\2\172\1\uffff\1\172\1\165\1\172\1\uffff"+
-        "\1\172\2\uffff\1\162\1\uffff\1\172\1\156\2\164\1\157\1\uffff\1\162"+
-        "\1\uffff\1\157\1\151\1\uffff\1\157\1\161\1\162\1\164\3\uffff\1\162"+
-        "\2\uffff\1\172\1\uffff\1\143\1\172\1\uffff\1\157\1\151\1\141\2\uffff"+
-        "\1\163\2\uffff\1\147\4\uffff\1\156\1\uffff\1\156\1\uffff\1\157\1"+
-        "\145\1\uffff\1\145\1\uffff\1\163\2\156\1\150\1\62\1\uffff\2\150"+
-        "\1\162\2\172\3\150\11\uffff\1\172\12\uffff";
+        "\1\uffff\1\156\1\uffff\1\163\1\172\1\164\1\141\1\157\1\151\1\uffff"+
+        "\2\162\4\uffff\1\166\1\151\1\172\1\157\1\165\2\75\1\76\1\75\1\72"+
+        "\3\uffff\1\57\4\uffff\1\145\1\141\2\145\1\157\1\uffff\1\172\2\uffff"+
+        "\2\uffff\2\uffff\1\172\1\145\1\172\2\uffff\1\171\1\167\1\164\1\172"+
+        "\1\164\1\155\1\162\1\151\1\uffff\1\150\3\172\1\162\1\151\1\156\1"+
+        "\163\1\164\1\145\1\uffff\2\157\1\162\1\154\1\172\1\170\1\155\1\165"+
+        "\4\uffff\1\145\1\163\1\143\1\163\1\160\2\156\1\uffff\1\151\1\155"+
+        "\1\167\24\uffff\1\146\1\171\2\164\1\141\1\165\4\uffff\1\145\1\164"+
+        "\1\uffff\1\156\1\uffff\3\172\1\141\1\157\1\uffff\1\146\1\172\1\157"+
+        "\1\142\1\165\1\164\1\145\3\uffff\1\145\1\154\1\163\1\145\1\150\1"+
+        "\156\1\155\1\167\1\172\1\163\1\uffff\1\164\1\145\1\147\1\145\1\156"+
+        "\1\145\1\150\1\164\1\172\1\164\1\165\1\144\1\142\1\154\1\172\1\141"+
+        "\1\172\1\150\1\56\3\162\1\172\1\164\3\uffff\1\171\1\162\1\172\1"+
+        "\uffff\1\156\1\157\2\143\1\162\1\156\1\144\1\164\5\172\1\uffff\1"+
+        "\145\2\172\1\147\1\172\1\164\3\172\1\uffff\1\150\1\164\1\172\1\145"+
+        "\1\172\1\uffff\1\165\1\uffff\1\56\1\162\2\172\1\141\1\uffff\1\151"+
+        "\1\163\1\172\1\uffff\1\144\1\154\1\164\1\150\1\172\1\164\1\172\1"+
+        "\141\5\uffff\1\172\2\uffff\1\145\1\uffff\1\172\3\uffff\1\172\1\145"+
+        "\1\uffff\1\162\1\uffff\1\154\1\164\7\uffff\1\143\1\146\2\172\1\uffff"+
+        "\2\172\1\165\1\172\1\uffff\1\172\1\uffff\1\156\1\uffff\1\162\2\uffff"+
+        "\2\172\2\164\1\157\1\uffff\1\162\1\uffff\1\157\1\151\1\uffff\1\157"+
+        "\1\161\1\162\1\164\1\151\4\uffff\1\162\2\uffff\1\164\1\172\2\uffff"+
+        "\1\172\1\uffff\1\157\1\151\1\141\2\uffff\1\163\2\uffff\1\147\4\uffff"+
+        "\1\156\1\uffff\1\156\1\uffff\1\157\2\145\1\172\2\uffff\1\163\2\156"+
+        "\1\150\1\62\1\uffff\2\150\2\162\1\172\1\uffff\3\150\11\uffff\2\172"+
+        "\12\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\6\uffff\1\15\2\uffff\1\22\1\23\1\24\1\25\11\uffff\1"+
-        "\60\1\61\1\62\1\uffff\1\64\1\66\1\67\1\70\3\uffff\1\146\1\uffff"+
-        "\1\147\1\150\2\uffff\1\154\1\155\2\uffff\1\147\1\2\20\uffff\1\15"+
-        "\10\uffff\1\22\1\23\1\24\1\25\6\uffff\1\50\1\43\1\51\1\65\1\52\1"+
-        "\56\1\54\1\53\1\55\1\57\1\60\1\61\1\62\1\152\1\153\1\63\1\64\1\66"+
-        "\1\67\1\70\3\uffff\1\146\1\150\1\151\1\154\2\uffff\1\21\1\40\5\uffff"+
-        "\1\13\6\uffff\1\37\1\46\11\uffff\1\20\20\uffff\1\3\1\47\1\10\3\uffff"+
-        "\1\44\13\uffff\1\75\20\uffff\1\17\2\uffff\1\4\6\uffff\1\74\1\14"+
-        "\1\41\1\16\1\27\1\uffff\1\33\1\34\1\uffff\1\144\1\uffff\1\71\1\76"+
-        "\1\30\1\uffff\1\145\3\uffff\1\136\1\137\1\140\1\141\1\142\3\uffff"+
-        "\1\12\3\uffff\1\5\1\uffff\1\7\1\143\1\uffff\1\26\5\uffff\1\113\1"+
-        "\uffff\1\116\2\uffff\1\124\4\uffff\1\42\1\11\1\31\1\uffff\1\72\1"+
-        "\6\1\uffff\1\32\2\uffff\1\77\3\uffff\1\107\1\110\1\uffff\1\114\1"+
-        "\115\1\uffff\1\122\1\123\1\125\1\126\1\uffff\1\132\1\uffff\1\135"+
-        "\2\uffff\1\45\1\uffff\1\73\5\uffff\1\127\10\uffff\1\112\1\111\1"+
-        "\120\1\121\1\117\1\131\1\130\1\134\1\133\1\uffff\1\36\1\35\1\101"+
-        "\1\100\1\103\1\102\1\105\1\106\1\104\1\1";
+        "\2\uffff\1\2\6\uffff\1\15\2\uffff\1\21\1\22\1\23\1\24\12\uffff\1"+
+        "\64\1\65\1\66\1\uffff\1\70\1\72\1\73\1\74\5\uffff\1\163\1\uffff"+
+        "\1\164\1\165\2\uffff\1\171\1\172\3\uffff\1\164\1\2\10\uffff\1\161"+
+        "\12\uffff\1\15\10\uffff\1\21\1\22\1\23\1\24\7\uffff\1\157\3\uffff"+
+        "\1\54\1\50\1\55\1\71\1\56\1\62\1\60\1\57\1\61\1\63\1\64\1\65\1\66"+
+        "\1\167\1\170\1\67\1\70\1\72\1\73\1\74\6\uffff\1\163\1\165\1\166"+
+        "\1\171\2\uffff\1\30\1\uffff\1\45\5\uffff\1\13\7\uffff\1\34\1\44"+
+        "\1\52\12\uffff\1\20\30\uffff\1\3\1\53\1\10\3\uffff\1\31\15\uffff"+
+        "\1\101\11\uffff\1\33\5\uffff\1\152\1\uffff\1\155\5\uffff\1\17\3"+
+        "\uffff\1\4\10\uffff\1\100\1\14\1\46\1\16\1\26\1\uffff\1\40\1\41"+
+        "\1\uffff\1\150\1\uffff\1\75\1\102\1\32\2\uffff\1\35\1\uffff\1\151"+
+        "\2\uffff\1\142\1\143\1\144\1\145\1\146\1\153\1\156\4\uffff\1\12"+
+        "\4\uffff\1\5\1\uffff\1\7\1\uffff\1\147\1\uffff\1\25\1\154\5\uffff"+
+        "\1\117\1\uffff\1\122\2\uffff\1\130\5\uffff\1\47\1\11\1\162\1\36"+
+        "\1\uffff\1\76\1\6\2\uffff\1\160\1\37\1\uffff\1\103\3\uffff\1\113"+
+        "\1\114\1\uffff\1\120\1\121\1\uffff\1\126\1\127\1\131\1\132\1\uffff"+
+        "\1\136\1\uffff\1\141\4\uffff\1\51\1\77\5\uffff\1\133\5\uffff\1\27"+
+        "\3\uffff\1\116\1\115\1\124\1\125\1\123\1\135\1\134\1\140\1\137\2"+
+        "\uffff\1\43\1\105\1\104\1\107\1\106\1\111\1\112\1\110\1\1\1\42";
     static final String DFA12_specialS =
-        "\1\1\47\uffff\1\2\1\0\u0114\uffff}>";
+        "\1\1\52\uffff\1\2\1\0\u0146\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\53\2\52\2\53\1\52\22\53\1\52\1\25\1\50\1\36\1\53\1\35\1"+
-            "\53\1\51\1\37\1\40\1\33\1\31\1\11\1\32\1\44\1\34\12\47\1\2\1"+
-            "\53\1\26\1\24\1\27\1\30\1\53\14\46\1\42\5\46\1\43\7\46\1\16"+
-            "\1\53\1\17\1\45\1\46\1\53\1\3\1\46\1\7\1\41\1\20\1\12\2\46\1"+
-            "\1\4\46\1\22\1\5\1\6\1\46\1\23\1\4\1\13\1\46\1\21\1\10\3\46"+
-            "\1\14\1\53\1\15\uff82\53",
-            "\1\55\7\uffff\1\54",
+            "\11\56\2\55\2\56\1\55\22\56\1\55\1\26\1\53\1\37\1\56\1\36\1"+
+            "\56\1\54\1\40\1\41\1\34\1\32\1\11\1\33\1\47\1\35\12\52\1\2\1"+
+            "\56\1\27\1\25\1\30\1\31\1\56\14\51\1\43\5\51\1\44\7\51\1\16"+
+            "\1\56\1\17\1\50\1\51\1\56\1\3\1\51\1\7\1\42\1\20\1\12\1\51\1"+
+            "\46\1\1\2\51\1\21\1\22\1\24\1\5\1\6\2\51\1\4\1\13\1\51\1\23"+
+            "\1\10\1\51\1\45\1\51\1\14\1\56\1\15\uff82\56",
+            "\1\60\1\uffff\1\61\7\uffff\1\57",
             "",
-            "\1\62\10\uffff\1\61\1\uffff\1\60\4\uffff\1\63",
-            "\1\64\16\uffff\1\66\2\uffff\1\67\1\uffff\1\65",
-            "\1\71\3\uffff\1\72\1\uffff\1\70",
-            "\1\73",
-            "\1\75\6\uffff\1\74",
-            "\1\77\1\76",
+            "\1\66\10\uffff\1\65\1\uffff\1\64\4\uffff\1\67",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\4\62\1\70\16\62\1"+
+            "\72\2\62\1\73\1\62\1\71\1\62",
+            "\1\76\7\uffff\1\77\3\uffff\1\100\1\uffff\1\75",
+            "\1\101",
+            "\1\104\6\uffff\1\102\6\uffff\1\103",
+            "\1\106\1\105",
             "",
-            "\1\104\12\uffff\1\102\2\uffff\1\103\2\uffff\1\101",
-            "\1\106\3\uffff\1\107\5\uffff\1\105\2\uffff\1\110",
+            "\1\113\12\uffff\1\111\2\uffff\1\112\2\uffff\1\110",
+            "\1\115\3\uffff\1\116\5\uffff\1\114\2\uffff\1\117",
             "",
             "",
             "",
             "",
-            "\1\117\12\uffff\1\116\11\uffff\1\115",
-            "\1\120",
-            "\1\121",
-            "\1\122",
-            "\1\123",
-            "\1\125",
-            "\1\127\1\130",
-            "\1\132",
+            "\1\126\12\uffff\1\125\11\uffff\1\124",
+            "\1\127",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\1\130\7\62\1\132"+
+            "\5\62\1\131\13\62",
             "\1\134",
-            "",
-            "",
-            "",
-            "\1\140\4\uffff\1\141",
-            "",
-            "",
-            "",
-            "",
-            "\1\147",
+            "\1\136\5\uffff\1\135",
+            "\1\137",
+            "\1\141",
+            "\1\143\1\144",
+            "\1\146",
             "\1\150",
-            "\1\151",
-            "",
-            "\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             "",
-            "\0\154",
-            "\0\154",
+            "",
+            "\1\154\4\uffff\1\155",
             "",
             "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\10\56\1\157\12\56"+
-            "\1\156\6\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             "",
-            "\1\163\24\uffff\1\162",
-            "\1\164\12\uffff\1\165",
+            "\1\164\3\uffff\1\163",
+            "\1\165",
             "\1\166",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\1\170\7\uffff\1\171",
-            "\1\172",
-            "\1\173",
-            "\1\174",
-            "\1\175",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\167",
+            "\1\170",
+            "",
+            "\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "",
+            "\0\173",
+            "\0\173",
+            "",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\10\62\1\176\12\62"+
+            "\1\175\6\62",
             "\1\u0080",
-            "\1\u0081",
-            "\1\u0082",
-            "\1\u0083",
-            "\1\u0084",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
-            "\1\u0085",
+            "",
+            "\1\u0083\24\uffff\1\u0082",
+            "\1\u0084\12\uffff\1\u0085",
             "\1\u0086",
-            "\1\u0087",
-            "\1\u0088",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\1\u008a",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u008a\10\uffff\1\u0088\7\uffff\1\u0089",
             "\1\u008b",
-            "\1\u008c\13\uffff\1\u008d",
-            "",
-            "",
-            "",
+            "\1\u008c",
+            "\1\u008d",
             "",
             "\1\u008e",
-            "\1\u008f",
-            "\1\u0090",
-            "\1\u0091",
-            "\1\u0093\1\u0092",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u0092",
+            "\1\u0093",
             "\1\u0094",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u0095",
             "\1\u0096",
             "\1\u0097",
             "",
-            "",
-            "",
-            "",
             "\1\u0098",
             "\1\u0099",
-            "",
-            "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u009a",
+            "\1\u009b",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "\1\u009d",
             "\1\u009e",
+            "\1\u009f\13\uffff\1\u00a0",
             "",
-            "\1\u009f",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "",
+            "",
             "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
             "\1\u00a4",
-            "",
-            "",
             "\1\u00a5",
             "\1\u00a6",
             "\1\u00a7",
-            "\1\u00a8",
-            "\1\u00a9",
-            "\1\u00aa",
-            "\1\u00ab",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\1\u00ad",
             "",
+            "\1\u00a8",
+            "\1\u00aa\1\u00a9",
+            "\1\u00ab",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00ac",
+            "\1\u00ad",
             "\1\u00ae",
             "\1\u00af",
             "\1\u00b0",
             "\1\u00b1",
+            "",
+            "",
+            "",
+            "",
             "\1\u00b2",
             "\1\u00b3",
+            "",
             "\1\u00b4",
-            "\1\u00b5",
-            "\1\u00b6",
-            "\1\u00b7",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "\1\u00b8",
             "\1\u00b9",
+            "",
             "\1\u00ba",
-            "\1\u00bb",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "\1\u00bc",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "",
-            "",
-            "",
+            "\1\u00bd",
             "\1\u00be",
             "\1\u00bf",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00c0",
+            "",
+            "",
             "",
             "\1\u00c1",
             "\1\u00c2",
@@ -3806,140 +4182,207 @@ public class InternalLilLexer extends Lexer {
             "\1\u00c4",
             "\1\u00c5",
             "\1\u00c6",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00c7",
+            "\1\u00c8",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00ca",
             "",
+            "\1\u00cb",
             "\1\u00cc",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00cd",
+            "\1\u00ce",
             "\1\u00cf",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00d0",
             "\1\u00d1",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00d2",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00d4",
             "\1\u00d5",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00d6",
             "\1\u00d7",
             "\1\u00d8",
-            "\1\u00d9",
-            "\1\u00db\1\uffff\1\u00dd\2\uffff\1\u00dc\10\uffff\1\u00da\2"+
-            "\uffff\1\u00de",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00da",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00dc",
+            "\1\u00dd",
+            "\1\u00de",
             "\1\u00df",
-            "",
             "\1\u00e0",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\22\56\1\u00e1\7\56",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00e2",
+            "",
+            "",
             "",
             "\1\u00e3",
             "\1\u00e4",
-            "\1\u00e5",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "\1\u00e6",
             "\1\u00e7",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "",
-            "",
+            "\1\u00e8",
+            "\1\u00e9",
             "\1\u00ea",
-            "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "",
-            "",
-            "",
+            "\1\u00eb",
             "\1\u00ec",
-            "",
             "\1\u00ed",
-            "\1\u00ee",
-            "\1\u00ef\1\uffff\1\u00f0\1\uffff\1\u00f1\1\u00f2\1\uffff\1"+
-            "\u00f3\3\uffff\1\u00f4\1\u00f5\2\uffff\1\u00f6\1\uffff\1\u00f7"+
-            "\1\u00f8\1\u00f9",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
+            "\1\u00f3",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00f6",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00f8",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
-            "",
-            "",
-            "",
-            "\1\u00fa",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\1\u00fe",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "",
+            "\1\u00fc",
+            "\1\u00fd",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u00ff",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
             "\1\u0101",
             "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\1\u0103",
-            "\1\u0104",
-            "\1\u0105\1\u0106\17\uffff\1\u0107\1\u0108",
-            "\1\u0109\6\uffff\1\u010a\2\uffff\1\u010b",
+            "\1\u0102",
+            "\1\u0104\1\uffff\1\u0106\2\uffff\1\u0105\10\uffff\1\u0103\2"+
+            "\uffff\1\u0107",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u010a",
             "",
-            "\1\u010c\5\uffff\1\u010d",
+            "\1\u010b",
+            "\1\u010c",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\22\62\1\u010d\7\62",
             "",
-            "\1\u010e",
-            "\1\u010f\7\uffff\1\u0110",
+            "\1\u010f",
+            "\1\u0110",
+            "\1\u0111",
+            "\1\u0112",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u0114",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u0116",
             "",
-            "\1\u0111\15\uffff\1\u0112",
-            "\1\u0113\7\uffff\1\u0114",
-            "\1\u0115\20\uffff\1\u0116",
-            "\1\u0117",
             "",
+            "",
+            "",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
             "",
             "\1\u0118",
             "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\1\u011a",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\1\u011b",
             "",
             "\1\u011c",
+            "",
             "\1\u011d",
-            "\1\u011e",
-            "",
-            "",
-            "\1\u011f",
-            "",
-            "",
-            "\1\u0120",
+            "\1\u011e\1\uffff\1\u011f\1\uffff\1\u0120\1\u0121\1\uffff\1"+
+            "\u0122\3\uffff\1\u0123\1\u0124\2\uffff\1\u0125\1\uffff\1\u0126"+
+            "\1\u0127\1\u0128",
             "",
             "",
             "",
             "",
-            "\1\u0121\6\uffff\1\u0122",
             "",
-            "\1\u0123",
             "",
-            "\1\u0124",
-            "\1\u0125",
             "",
-            "\1\u0126",
-            "",
-            "\1\u0127",
-            "\1\u0128",
             "\1\u0129",
             "\1\u012a",
-            "\1\u012c\1\u012d",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "\1\u012f",
-            "\1\u0131",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "\1\u0132",
+            "",
             "\1\u0133",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "\1\u0136",
-            "\1\u0138",
-            "\1\u013b\65\uffff\1\u013a",
+            "\1\u0137\1\u0138\17\uffff\1\u0139\1\u013a",
+            "\1\u013b\6\uffff\1\u013c\2\uffff\1\u013d",
+            "",
+            "\1\u013e\5\uffff\1\u013f",
+            "",
+            "\1\u0140",
+            "\1\u0141\7\uffff\1\u0142",
+            "",
+            "\1\u0143\15\uffff\1\u0144",
+            "\1\u0145\7\uffff\1\u0146",
+            "\1\u0147\20\uffff\1\u0148",
+            "\1\u0149",
+            "\1\u014a",
+            "",
+            "",
+            "",
+            "",
+            "\1\u014b",
+            "",
+            "",
+            "\1\u014c",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "\1\u014f",
+            "\1\u0150",
+            "\1\u0151",
+            "",
+            "",
+            "\1\u0152",
+            "",
+            "",
+            "\1\u0153",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0154\6\uffff\1\u0155",
+            "",
+            "\1\u0156",
+            "",
+            "\1\u0157",
+            "\1\u0158",
+            "\1\u0159",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "",
+            "\1\u015b",
+            "\1\u015c",
+            "\1\u015d",
+            "\1\u015e",
+            "\1\u0160\1\u0161",
+            "",
+            "\1\u0163",
+            "\1\u0165",
+            "\1\u0167",
+            "\1\u0168",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "\1\u016a",
+            "\1\u016c",
+            "\1\u016f\65\uffff\1\u016e",
             "",
             "",
             "",
@@ -3949,7 +4392,8 @@ public class InternalLilLexer extends Lexer {
             "",
             "",
             "",
-            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "",
             "",
             "",
@@ -3992,19 +4436,19 @@ public class InternalLilLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_41 = input.LA(1);
+                        int LA12_44 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_41>='\u0000' && LA12_41<='\uFFFF')) ) {s = 108;}
+                        if ( ((LA12_44>='\u0000' && LA12_44<='\uFFFF')) ) {s = 123;}
 
-                        else s = 43;
+                        else s = 46;
 
                         if ( s>=0 ) return s;
                         break;
@@ -4044,69 +4488,75 @@ public class InternalLilLexer extends Lexer {
 
                         else if ( (LA12_0=='e') ) {s = 16;}
 
-                        else if ( (LA12_0=='v') ) {s = 17;}
+                        else if ( (LA12_0=='l') ) {s = 17;}
 
-                        else if ( (LA12_0=='n') ) {s = 18;}
+                        else if ( (LA12_0=='m') ) {s = 18;}
 
-                        else if ( (LA12_0=='r') ) {s = 19;}
+                        else if ( (LA12_0=='v') ) {s = 19;}
 
-                        else if ( (LA12_0=='=') ) {s = 20;}
+                        else if ( (LA12_0=='n') ) {s = 20;}
 
-                        else if ( (LA12_0=='!') ) {s = 21;}
+                        else if ( (LA12_0=='=') ) {s = 21;}
 
-                        else if ( (LA12_0=='<') ) {s = 22;}
+                        else if ( (LA12_0=='!') ) {s = 22;}
 
-                        else if ( (LA12_0=='>') ) {s = 23;}
+                        else if ( (LA12_0=='<') ) {s = 23;}
 
-                        else if ( (LA12_0=='?') ) {s = 24;}
+                        else if ( (LA12_0=='>') ) {s = 24;}
 
-                        else if ( (LA12_0=='+') ) {s = 25;}
+                        else if ( (LA12_0=='?') ) {s = 25;}
 
-                        else if ( (LA12_0=='-') ) {s = 26;}
+                        else if ( (LA12_0=='+') ) {s = 26;}
 
-                        else if ( (LA12_0=='*') ) {s = 27;}
+                        else if ( (LA12_0=='-') ) {s = 27;}
 
-                        else if ( (LA12_0=='/') ) {s = 28;}
+                        else if ( (LA12_0=='*') ) {s = 28;}
 
-                        else if ( (LA12_0=='%') ) {s = 29;}
+                        else if ( (LA12_0=='/') ) {s = 29;}
 
-                        else if ( (LA12_0=='#') ) {s = 30;}
+                        else if ( (LA12_0=='%') ) {s = 30;}
 
-                        else if ( (LA12_0=='(') ) {s = 31;}
+                        else if ( (LA12_0=='#') ) {s = 31;}
 
-                        else if ( (LA12_0==')') ) {s = 32;}
+                        else if ( (LA12_0=='(') ) {s = 32;}
 
-                        else if ( (LA12_0=='d') ) {s = 33;}
+                        else if ( (LA12_0==')') ) {s = 33;}
 
-                        else if ( (LA12_0=='M') ) {s = 34;}
+                        else if ( (LA12_0=='d') ) {s = 34;}
 
-                        else if ( (LA12_0=='S') ) {s = 35;}
+                        else if ( (LA12_0=='M') ) {s = 35;}
 
-                        else if ( (LA12_0=='.') ) {s = 36;}
+                        else if ( (LA12_0=='S') ) {s = 36;}
 
-                        else if ( (LA12_0=='^') ) {s = 37;}
+                        else if ( (LA12_0=='y') ) {s = 37;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='L')||(LA12_0>='N' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||(LA12_0>='g' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='m')||LA12_0=='q'||LA12_0=='u'||(LA12_0>='x' && LA12_0<='z')) ) {s = 38;}
+                        else if ( (LA12_0=='h') ) {s = 38;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 39;}
+                        else if ( (LA12_0=='.') ) {s = 39;}
 
-                        else if ( (LA12_0=='\"') ) {s = 40;}
+                        else if ( (LA12_0=='^') ) {s = 40;}
 
-                        else if ( (LA12_0=='\'') ) {s = 41;}
+                        else if ( ((LA12_0>='A' && LA12_0<='L')||(LA12_0>='N' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='g'||(LA12_0>='j' && LA12_0<='k')||(LA12_0>='q' && LA12_0<='r')||LA12_0=='u'||LA12_0=='x'||LA12_0=='z') ) {s = 41;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 42;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 42;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='$'||LA12_0=='&'||LA12_0==';'||LA12_0=='@'||LA12_0=='\\'||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 43;}
+                        else if ( (LA12_0=='\"') ) {s = 43;}
+
+                        else if ( (LA12_0=='\'') ) {s = 44;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 45;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='$'||LA12_0=='&'||LA12_0==';'||LA12_0=='@'||LA12_0=='\\'||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 46;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_40 = input.LA(1);
+                        int LA12_43 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_40>='\u0000' && LA12_40<='\uFFFF')) ) {s = 108;}
+                        if ( ((LA12_43>='\u0000' && LA12_43<='\uFFFF')) ) {s = 123;}
 
-                        else s = 43;
+                        else s = 46;
 
                         if ( s>=0 ) return s;
                         break;

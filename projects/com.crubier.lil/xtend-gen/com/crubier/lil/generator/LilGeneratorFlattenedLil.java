@@ -68,6 +68,13 @@ public class LilGeneratorFlattenedLil implements IGenerator {
   }
   
   /**
+   * Flattens an interactor recursively
+   */
+  public Object flatten(final Interactor interactor) {
+    return null;
+  }
+  
+  /**
    * merge two interactors
    * pre condition : the interactors must NOT be compound, they must not have any sub components
    */
