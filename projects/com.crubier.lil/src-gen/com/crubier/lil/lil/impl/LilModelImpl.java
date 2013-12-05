@@ -2,8 +2,9 @@
  */
 package com.crubier.lil.lil.impl;
 
+import com.crubier.lil.lil.ActorTypeDefinition;
 import com.crubier.lil.lil.DataTypeDefinition;
-import com.crubier.lil.lil.Interactor;
+import com.crubier.lil.lil.InteractorTypeDefinition;
 import com.crubier.lil.lil.LilModel;
 import com.crubier.lil.lil.LilPackage;
 
@@ -28,8 +29,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.LilModelImpl#getInteractors <em>Interactors</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.LilModelImpl#getDataTypes <em>Data Types</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.LilModelImpl#getActorType <em>Actor Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.LilModelImpl#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.LilModelImpl#getInteractorType <em>Interactor Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,24 +40,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class LilModelImpl extends MinimalEObjectImpl.Container implements LilModel
 {
   /**
-   * The cached value of the '{@link #getInteractors() <em>Interactors</em>}' containment reference list.
+   * The cached value of the '{@link #getActorType() <em>Actor Type</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInteractors()
+   * @see #getActorType()
    * @generated
    * @ordered
    */
-  protected EList<Interactor> interactors;
+  protected EList<ActorTypeDefinition> actorType;
 
   /**
-   * The cached value of the '{@link #getDataTypes() <em>Data Types</em>}' containment reference list.
+   * The cached value of the '{@link #getDataType() <em>Data Type</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDataTypes()
+   * @see #getDataType()
    * @generated
    * @ordered
    */
-  protected EList<DataTypeDefinition> dataTypes;
+  protected EList<DataTypeDefinition> dataType;
+
+  /**
+   * The cached value of the '{@link #getInteractorType() <em>Interactor Type</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInteractorType()
+   * @generated
+   * @ordered
+   */
+  protected EList<InteractorTypeDefinition> interactorType;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,13 +95,13 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Interactor> getInteractors()
+  public EList<ActorTypeDefinition> getActorType()
   {
-    if (interactors == null)
+    if (actorType == null)
     {
-      interactors = new EObjectContainmentEList<Interactor>(Interactor.class, this, LilPackage.LIL_MODEL__INTERACTORS);
+      actorType = new EObjectContainmentEList<ActorTypeDefinition>(ActorTypeDefinition.class, this, LilPackage.LIL_MODEL__ACTOR_TYPE);
     }
-    return interactors;
+    return actorType;
   }
 
   /**
@@ -97,13 +109,27 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DataTypeDefinition> getDataTypes()
+  public EList<DataTypeDefinition> getDataType()
   {
-    if (dataTypes == null)
+    if (dataType == null)
     {
-      dataTypes = new EObjectContainmentEList<DataTypeDefinition>(DataTypeDefinition.class, this, LilPackage.LIL_MODEL__DATA_TYPES);
+      dataType = new EObjectContainmentEList<DataTypeDefinition>(DataTypeDefinition.class, this, LilPackage.LIL_MODEL__DATA_TYPE);
     }
-    return dataTypes;
+    return dataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<InteractorTypeDefinition> getInteractorType()
+  {
+    if (interactorType == null)
+    {
+      interactorType = new EObjectContainmentEList<InteractorTypeDefinition>(InteractorTypeDefinition.class, this, LilPackage.LIL_MODEL__INTERACTOR_TYPE);
+    }
+    return interactorType;
   }
 
   /**
@@ -116,10 +142,12 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
   {
     switch (featureID)
     {
-      case LilPackage.LIL_MODEL__INTERACTORS:
-        return ((InternalEList<?>)getInteractors()).basicRemove(otherEnd, msgs);
-      case LilPackage.LIL_MODEL__DATA_TYPES:
-        return ((InternalEList<?>)getDataTypes()).basicRemove(otherEnd, msgs);
+      case LilPackage.LIL_MODEL__ACTOR_TYPE:
+        return ((InternalEList<?>)getActorType()).basicRemove(otherEnd, msgs);
+      case LilPackage.LIL_MODEL__DATA_TYPE:
+        return ((InternalEList<?>)getDataType()).basicRemove(otherEnd, msgs);
+      case LilPackage.LIL_MODEL__INTERACTOR_TYPE:
+        return ((InternalEList<?>)getInteractorType()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,10 +162,12 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
   {
     switch (featureID)
     {
-      case LilPackage.LIL_MODEL__INTERACTORS:
-        return getInteractors();
-      case LilPackage.LIL_MODEL__DATA_TYPES:
-        return getDataTypes();
+      case LilPackage.LIL_MODEL__ACTOR_TYPE:
+        return getActorType();
+      case LilPackage.LIL_MODEL__DATA_TYPE:
+        return getDataType();
+      case LilPackage.LIL_MODEL__INTERACTOR_TYPE:
+        return getInteractorType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,13 +183,17 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
   {
     switch (featureID)
     {
-      case LilPackage.LIL_MODEL__INTERACTORS:
-        getInteractors().clear();
-        getInteractors().addAll((Collection<? extends Interactor>)newValue);
+      case LilPackage.LIL_MODEL__ACTOR_TYPE:
+        getActorType().clear();
+        getActorType().addAll((Collection<? extends ActorTypeDefinition>)newValue);
         return;
-      case LilPackage.LIL_MODEL__DATA_TYPES:
-        getDataTypes().clear();
-        getDataTypes().addAll((Collection<? extends DataTypeDefinition>)newValue);
+      case LilPackage.LIL_MODEL__DATA_TYPE:
+        getDataType().clear();
+        getDataType().addAll((Collection<? extends DataTypeDefinition>)newValue);
+        return;
+      case LilPackage.LIL_MODEL__INTERACTOR_TYPE:
+        getInteractorType().clear();
+        getInteractorType().addAll((Collection<? extends InteractorTypeDefinition>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -175,11 +209,14 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
   {
     switch (featureID)
     {
-      case LilPackage.LIL_MODEL__INTERACTORS:
-        getInteractors().clear();
+      case LilPackage.LIL_MODEL__ACTOR_TYPE:
+        getActorType().clear();
         return;
-      case LilPackage.LIL_MODEL__DATA_TYPES:
-        getDataTypes().clear();
+      case LilPackage.LIL_MODEL__DATA_TYPE:
+        getDataType().clear();
+        return;
+      case LilPackage.LIL_MODEL__INTERACTOR_TYPE:
+        getInteractorType().clear();
         return;
     }
     super.eUnset(featureID);
@@ -195,10 +232,12 @@ public class LilModelImpl extends MinimalEObjectImpl.Container implements LilMod
   {
     switch (featureID)
     {
-      case LilPackage.LIL_MODEL__INTERACTORS:
-        return interactors != null && !interactors.isEmpty();
-      case LilPackage.LIL_MODEL__DATA_TYPES:
-        return dataTypes != null && !dataTypes.isEmpty();
+      case LilPackage.LIL_MODEL__ACTOR_TYPE:
+        return actorType != null && !actorType.isEmpty();
+      case LilPackage.LIL_MODEL__DATA_TYPE:
+        return dataType != null && !dataType.isEmpty();
+      case LilPackage.LIL_MODEL__INTERACTOR_TYPE:
+        return interactorType != null && !interactorType.isEmpty();
     }
     return super.eIsSet(featureID);
   }

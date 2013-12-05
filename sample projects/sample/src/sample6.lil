@@ -1,26 +1,31 @@
-datatype Person : 
+Person data : 
 	name : text
 	surname : text
 	birthdate : text
 	sex:symbol
 
-datatype EnginePower : 
+human actor :
+	pointing : input
+	viewing : output
+	
+
+EnginePower data: 
 	number in [0,100]
 
-datatype XorYchoice : 
+XorYchoice data : 
 	symbol in {#X,#Y}
 	
 	
-interactor Gauge :
-	user : actor
+Gauge interactor :
+	user : human actor
 	val : number in [0,100] flow from parent to user
 	
 	
-interactor ControlPanel :
-	user : actor
-	system : actor
+ControlPanel interactor:
+	user : human actor
+	system : human actor
 		
-	theGauge : Gauge
+	theGauge : Gauge interactor
 	
 	selection : XorYchoice flow to user
 	select: XorYchoice event from user

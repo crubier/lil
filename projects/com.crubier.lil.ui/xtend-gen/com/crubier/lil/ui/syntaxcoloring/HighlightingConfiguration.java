@@ -5,37 +5,29 @@ import org.eclipse.swt.graphics.RGB;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcceptor;
 import org.eclipse.xtext.ui.editor.utils.TextStyle;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class HighlightingConfiguration implements IHighlightingConfiguration {
-  public final static String KEYWORD_ID = "keyword";
+  public final static String KEYWORD_ID = "Keyword";
   
-  public final static String COMMENT_ID = "comment";
+  public final static String COMMENT_ID = "Comment";
+  
+  public final static String INTERACTOR_ID = "Interactor";
+  
+  public void addType(final IHighlightingConfigurationAcceptor acceptor, final String s, final int r, final int g, final int b, final int style) {
+    TextStyle _textStyle = new TextStyle();
+    final TextStyle textStyle = _textStyle;
+    RGB _rGB = new RGB(255, 255, 255);
+    textStyle.setBackgroundColor(_rGB);
+    RGB _rGB_1 = new RGB(r, g, b);
+    textStyle.setColor(_rGB_1);
+    textStyle.setStyle(style);
+    acceptor.acceptDefaultHighlighting(s, s, textStyle);
+  }
   
   public void configure(final IHighlightingConfigurationAcceptor acceptor) {
-    InputOutput.<String>println("coloring");
-    TextStyle _keywordTextStyle = this.keywordTextStyle();
-    acceptor.acceptDefaultHighlighting(HighlightingConfiguration.KEYWORD_ID, "Keyword", _keywordTextStyle);
-    TextStyle _commentTextStyle = this.commentTextStyle();
-    acceptor.acceptDefaultHighlighting(HighlightingConfiguration.COMMENT_ID, "Comment", _commentTextStyle);
-  }
-  
-  public TextStyle keywordTextStyle() {
-    TextStyle _textStyle = new TextStyle();
-    final TextStyle textStyle = _textStyle;
-    RGB _rGB = new RGB(127, 0, 85);
-    textStyle.setColor(_rGB);
-    textStyle.setStyle(SWT.BOLD);
-    return textStyle;
-  }
-  
-  public TextStyle commentTextStyle() {
-    TextStyle _textStyle = new TextStyle();
-    final TextStyle textStyle = _textStyle;
-    RGB _rGB = new RGB(31, 127, 31);
-    textStyle.setColor(_rGB);
-    textStyle.setStyle(SWT.BOLD);
-    return textStyle;
+    this.addType(acceptor, HighlightingConfiguration.KEYWORD_ID, 127, 0, 85, SWT.BOLD);
+    this.addType(acceptor, HighlightingConfiguration.COMMENT_ID, 31, 127, 31, SWT.BOLD);
+    this.addType(acceptor, HighlightingConfiguration.INTERACTOR_ID, 255, 0, 255, SWT.BOLD);
   }
 }

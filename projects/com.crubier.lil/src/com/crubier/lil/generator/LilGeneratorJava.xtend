@@ -6,8 +6,8 @@ package com.crubier.lil.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
-import com.crubier.lil.lil.Interactor
-import com.crubier.lil.lil.Signal
+import com.crubier.lil.lil.LilPackage
+import com.crubier.lil.lil.LilFactory
 
 /**
  * Generates code from your model files on save.
@@ -19,9 +19,9 @@ class LilGeneratorJava implements IGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		println("generate Java code");
 		
-		for(e : resource.allContents.toIterable.filter(typeof(Interactor))) {
-//			fsa.generateFile("java/"+e.name+".java",e.compile)
-		}
+//		for(e : resource.allContents.toIterable.filter(typeof(Interactor))) {
+////			fsa.generateFile("java/"+e.name+".java",e.compile)
+//		}
 		
 //		fsa.generateFile('gen.java', 'test :\n' + 
 //			resource.allContents.filter(typeof(InteractorDeclaration)).map[name].join(', '))

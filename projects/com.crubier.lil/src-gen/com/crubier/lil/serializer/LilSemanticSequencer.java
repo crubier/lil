@@ -1,47 +1,51 @@
 package com.crubier.lil.serializer;
 
 import com.crubier.lil.lil.AccessibleEntity;
-import com.crubier.lil.lil.Actor;
 import com.crubier.lil.lil.ActorAlias;
-import com.crubier.lil.lil.AlwaysEffect;
-import com.crubier.lil.lil.Behavior;
-import com.crubier.lil.lil.BooleanLiteral;
-import com.crubier.lil.lil.CasePart;
-import com.crubier.lil.lil.Component;
-import com.crubier.lil.lil.DataTypeBase;
-import com.crubier.lil.lil.DataTypeCollection;
-import com.crubier.lil.lil.DataTypeCompound;
-import com.crubier.lil.lil.DataTypeStructure;
-import com.crubier.lil.lil.DataTypeStructureField;
-import com.crubier.lil.lil.EnumDefinitionSet;
-import com.crubier.lil.lil.EnumLiteral;
-import com.crubier.lil.lil.ForEachExpression;
-import com.crubier.lil.lil.FunctionCallExpression;
-import com.crubier.lil.lil.IfExpression;
-import com.crubier.lil.lil.Interactor;
+import com.crubier.lil.lil.ActorComponent;
+import com.crubier.lil.lil.ActorType;
+import com.crubier.lil.lil.ActorTypeDefinition;
+import com.crubier.lil.lil.DataCollectionType;
+import com.crubier.lil.lil.DataComponent;
+import com.crubier.lil.lil.DataDefinitionEnumElement;
+import com.crubier.lil.lil.DataDefinitionSetEnum;
+import com.crubier.lil.lil.DataDefinitionSetInterval;
+import com.crubier.lil.lil.DataDefinitionSetNumber;
+import com.crubier.lil.lil.DataType;
+import com.crubier.lil.lil.DataTypeDefinitionAlias;
+import com.crubier.lil.lil.DataTypeDefinitionCompound;
+import com.crubier.lil.lil.ExpressionBinaryOperation;
+import com.crubier.lil.lil.ExpressionCase;
+import com.crubier.lil.lil.ExpressionForEach;
+import com.crubier.lil.lil.ExpressionFunctionCall;
+import com.crubier.lil.lil.ExpressionIf;
+import com.crubier.lil.lil.ExpressionLiteralList;
+import com.crubier.lil.lil.ExpressionLiteralSet;
+import com.crubier.lil.lil.ExpressionSwitch;
+import com.crubier.lil.lil.InteractorActor;
+import com.crubier.lil.lil.InteractorBehavior;
+import com.crubier.lil.lil.InteractorBehaviorAlwaysEffect;
+import com.crubier.lil.lil.InteractorBehaviorOnCause;
+import com.crubier.lil.lil.InteractorBehaviorSetEffect;
+import com.crubier.lil.lil.InteractorBehaviorTriggerEffect;
+import com.crubier.lil.lil.InteractorBehaviorWhenCause;
+import com.crubier.lil.lil.InteractorComponent;
+import com.crubier.lil.lil.InteractorData;
+import com.crubier.lil.lil.InteractorSignalAlias;
+import com.crubier.lil.lil.InteractorSignalEmission;
+import com.crubier.lil.lil.InteractorSignalReception;
+import com.crubier.lil.lil.InteractorType;
+import com.crubier.lil.lil.InteractorTypeDefinition;
 import com.crubier.lil.lil.LilModel;
 import com.crubier.lil.lil.LilPackage;
-import com.crubier.lil.lil.ListLiteral;
-import com.crubier.lil.lil.NullLiteral;
-import com.crubier.lil.lil.NumberDefinitionInterval;
-import com.crubier.lil.lil.NumberDefinitionSet;
-import com.crubier.lil.lil.NumberLiteral;
-import com.crubier.lil.lil.OnCause;
-import com.crubier.lil.lil.SetEffect;
-import com.crubier.lil.lil.SetLiteral;
-import com.crubier.lil.lil.Signal;
-import com.crubier.lil.lil.SignalAlias;
-import com.crubier.lil.lil.SignalEmission;
-import com.crubier.lil.lil.SignalLiteral;
-import com.crubier.lil.lil.SignalReception;
-import com.crubier.lil.lil.StringLiteral;
-import com.crubier.lil.lil.SwitchExpression;
-import com.crubier.lil.lil.TimeLiteral;
-import com.crubier.lil.lil.TimeLiteralNow;
-import com.crubier.lil.lil.TriggerEffect;
+import com.crubier.lil.lil.LiteralBoolean;
+import com.crubier.lil.lil.LiteralData;
+import com.crubier.lil.lil.LiteralEnum;
+import com.crubier.lil.lil.LiteralNull;
+import com.crubier.lil.lil.LiteralNumber;
+import com.crubier.lil.lil.LiteralString;
+import com.crubier.lil.lil.LiteralTime;
 import com.crubier.lil.lil.UnaryOperation;
-import com.crubier.lil.lil.WhenCause;
-import com.crubier.lil.lil.XBinaryOperation;
 import com.crubier.lil.services.LilGrammarAccess;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -71,210 +75,349 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.ACTOR:
-				if(context == grammarAccess.getActorRule() ||
-				   context == grammarAccess.getEntityRule()) {
-					sequence_Actor(context, (Actor) semanticObject); 
-					return; 
-				}
-				else break;
 			case LilPackage.ACTOR_ALIAS:
 				if(context == grammarAccess.getActorAliasRule()) {
 					sequence_ActorAlias(context, (ActorAlias) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.ALWAYS_EFFECT:
-				if(context == grammarAccess.getAlwaysEffectRule() ||
-				   context == grammarAccess.getEffectRule()) {
-					sequence_AlwaysEffect(context, (AlwaysEffect) semanticObject); 
+			case LilPackage.ACTOR_COMPONENT:
+				if(context == grammarAccess.getActorComponentRule()) {
+					sequence_ActorComponent(context, (ActorComponent) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.BEHAVIOR:
-				if(context == grammarAccess.getBehaviorRule()) {
-					sequence_Behavior(context, (Behavior) semanticObject); 
+			case LilPackage.ACTOR_TYPE:
+				if(context == grammarAccess.getActorTypeRule()) {
+					sequence_ActorType(context, (ActorType) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.BOOLEAN_LITERAL:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getBooleanLiteralRule() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_BooleanLiteral(context, (BooleanLiteral) semanticObject); 
+			case LilPackage.ACTOR_TYPE_DEFINITION:
+				if(context == grammarAccess.getActorTypeDefinitionRule()) {
+					sequence_ActorTypeDefinition(context, (ActorTypeDefinition) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.CASE_PART:
-				if(context == grammarAccess.getCasePartRule()) {
-					sequence_CasePart(context, (CasePart) semanticObject); 
+			case LilPackage.DATA_COLLECTION_TYPE:
+				if(context == grammarAccess.getDataCollectionTypeRule()) {
+					sequence_DataCollectionType(context, (DataCollectionType) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.COMPONENT:
-				if(context == grammarAccess.getComponentRule() ||
-				   context == grammarAccess.getEntityRule()) {
-					sequence_Component(context, (Component) semanticObject); 
+			case LilPackage.DATA_COMPONENT:
+				if(context == grammarAccess.getDataComponentRule()) {
+					sequence_DataComponent(context, (DataComponent) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_TYPE_BASE:
+			case LilPackage.DATA_DEFINITION_ENUM_ELEMENT:
+				if(context == grammarAccess.getDataDefinitionEnumElementRule()) {
+					sequence_DataDefinitionEnumElement(context, (DataDefinitionEnumElement) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_DEFINITION_SET_ENUM:
+				if(context == grammarAccess.getDataDefinitionSetRule()) {
+					sequence_DataDefinitionSet(context, (DataDefinitionSetEnum) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_DEFINITION_SET_INTERVAL:
+				if(context == grammarAccess.getDataDefinitionSetRule()) {
+					sequence_DataDefinitionSet(context, (DataDefinitionSetInterval) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_DEFINITION_SET_NUMBER:
+				if(context == grammarAccess.getDataDefinitionSetRule()) {
+					sequence_DataDefinitionSet(context, (DataDefinitionSetNumber) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE:
 				if(context == grammarAccess.getDataTypeRule()) {
-					sequence_DataType(context, (DataTypeBase) semanticObject); 
+					sequence_DataType(context, (DataType) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_TYPE_COLLECTION:
-				if(context == grammarAccess.getDataTypeRule()) {
-					sequence_DataType(context, (DataTypeCollection) semanticObject); 
+			case LilPackage.DATA_TYPE_DEFINITION_ALIAS:
+				if(context == grammarAccess.getDataTypeDefinitionRule()) {
+					sequence_DataTypeDefinition(context, (DataTypeDefinitionAlias) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_TYPE_COMPOUND:
-				if(context == grammarAccess.getDataTypeRule()) {
-					sequence_DataType(context, (DataTypeCompound) semanticObject); 
+			case LilPackage.DATA_TYPE_DEFINITION_COMPOUND:
+				if(context == grammarAccess.getDataTypeDefinitionRule()) {
+					sequence_DataTypeDefinition(context, (DataTypeDefinitionCompound) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_TYPE_STRUCTURE:
-				if(context == grammarAccess.getDataTypeDefinitionRule() ||
-				   context == grammarAccess.getDataTypeStructureRule()) {
-					sequence_DataTypeStructure(context, (DataTypeStructure) semanticObject); 
+			case LilPackage.EXPRESSION_BINARY_OPERATION:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule()) {
+					sequence_ExpressionAddition_ExpressionAnd_ExpressionCompare_ExpressionEquality_ExpressionMultiplication_ExpressionOr_ExpressionOther(context, (ExpressionBinaryOperation) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_TYPE_STRUCTURE_FIELD:
-				if(context == grammarAccess.getDataTypeStructureFieldRule()) {
-					sequence_DataTypeStructureField(context, (DataTypeStructureField) semanticObject); 
+			case LilPackage.EXPRESSION_CASE:
+				if(context == grammarAccess.getExpressionCaseRule()) {
+					sequence_ExpressionCase(context, (ExpressionCase) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.ENUM_DEFINITION_SET:
-				if(context == grammarAccess.getDefinitionSetRule()) {
-					sequence_DefinitionSet(context, (EnumDefinitionSet) semanticObject); 
+			case LilPackage.EXPRESSION_FOR_EACH:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionForEachRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule()) {
+					sequence_ExpressionForEach(context, (ExpressionForEach) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.ENUM_LITERAL:
-				if(context == grammarAccess.getEnumElementRule()) {
-					sequence_EnumElement(context, (EnumLiteral) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_Literal(context, (EnumLiteral) semanticObject); 
+			case LilPackage.EXPRESSION_FUNCTION_CALL:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionFunctionCallRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule()) {
+					sequence_ExpressionFunctionCall(context, (ExpressionFunctionCall) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.FOR_EACH_EXPRESSION:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getForEachExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_ForEachExpression(context, (ForEachExpression) semanticObject); 
+			case LilPackage.EXPRESSION_IF:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionIfRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule()) {
+					sequence_ExpressionIf(context, (ExpressionIf) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.FUNCTION_CALL_EXPRESSION:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getFunctionCallExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_FunctionCallExpression(context, (FunctionCallExpression) semanticObject); 
+			case LilPackage.EXPRESSION_LITERAL_LIST:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionLiteralRule() ||
+				   context == grammarAccess.getExpressionLiteralCollectionRule() ||
+				   context == grammarAccess.getExpressionLiteralListRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule()) {
+					sequence_ExpressionLiteralList(context, (ExpressionLiteralList) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.IF_EXPRESSION:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getIfExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_IfExpression(context, (IfExpression) semanticObject); 
+			case LilPackage.EXPRESSION_LITERAL_SET:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionLiteralRule() ||
+				   context == grammarAccess.getExpressionLiteralCollectionRule() ||
+				   context == grammarAccess.getExpressionLiteralSetRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule()) {
+					sequence_ExpressionLiteralSet(context, (ExpressionLiteralSet) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.INTERACTOR:
-				if(context == grammarAccess.getInteractorRule()) {
-					sequence_Interactor(context, (Interactor) semanticObject); 
+			case LilPackage.EXPRESSION_SWITCH:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionSwitchRule() ||
+				   context == grammarAccess.getExpressionUnaryRule()) {
+					sequence_ExpressionSwitch(context, (ExpressionSwitch) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_ACTOR:
+				if(context == grammarAccess.getEntityRule() ||
+				   context == grammarAccess.getInteractorActorRule()) {
+					sequence_InteractorActor(context, (InteractorActor) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_BEHAVIOR:
+				if(context == grammarAccess.getInteractorBehaviorRule()) {
+					sequence_InteractorBehavior(context, (InteractorBehavior) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_BEHAVIOR_ALWAYS_EFFECT:
+				if(context == grammarAccess.getInteractorBehaviorAlwaysEffectRule() ||
+				   context == grammarAccess.getInteractorBehaviorEffectRule()) {
+					sequence_InteractorBehaviorAlwaysEffect(context, (InteractorBehaviorAlwaysEffect) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_BEHAVIOR_ON_CAUSE:
+				if(context == grammarAccess.getInteractorBehaviorCauseRule() ||
+				   context == grammarAccess.getInteractorBehaviorOnCauseRule()) {
+					sequence_InteractorBehaviorOnCause(context, (InteractorBehaviorOnCause) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_BEHAVIOR_SET_EFFECT:
+				if(context == grammarAccess.getInteractorBehaviorEffectRule() ||
+				   context == grammarAccess.getInteractorBehaviorSetEffectRule()) {
+					sequence_InteractorBehaviorSetEffect(context, (InteractorBehaviorSetEffect) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_BEHAVIOR_TRIGGER_EFFECT:
+				if(context == grammarAccess.getInteractorBehaviorEffectRule() ||
+				   context == grammarAccess.getInteractorBehaviorTriggerEffectRule()) {
+					sequence_InteractorBehaviorTriggerEffect(context, (InteractorBehaviorTriggerEffect) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_BEHAVIOR_WHEN_CAUSE:
+				if(context == grammarAccess.getInteractorBehaviorCauseRule() ||
+				   context == grammarAccess.getInteractorBehaviorWhenCauseRule()) {
+					sequence_InteractorBehaviorWhenCause(context, (InteractorBehaviorWhenCause) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_COMPONENT:
+				if(context == grammarAccess.getEntityRule() ||
+				   context == grammarAccess.getInteractorComponentRule()) {
+					sequence_InteractorComponent(context, (InteractorComponent) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_DATA:
+				if(context == grammarAccess.getInteractorDataRule()) {
+					sequence_InteractorData(context, (InteractorData) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_SIGNAL_ALIAS:
+				if(context == grammarAccess.getInteractorSignalAliasRule()) {
+					sequence_InteractorSignalAlias(context, (InteractorSignalAlias) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_SIGNAL_EMISSION:
+				if(context == grammarAccess.getInteractorSignalEmissionRule()) {
+					sequence_InteractorSignalEmission(context, (InteractorSignalEmission) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_SIGNAL_RECEPTION:
+				if(context == grammarAccess.getInteractorSignalReceptionRule()) {
+					sequence_InteractorSignalReception(context, (InteractorSignalReception) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_TYPE:
+				if(context == grammarAccess.getInteractorTypeRule()) {
+					sequence_InteractorType(context, (InteractorType) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_TYPE_DEFINITION:
+				if(context == grammarAccess.getInteractorTypeDefinitionRule()) {
+					sequence_InteractorTypeDefinition(context, (InteractorTypeDefinition) semanticObject); 
 					return; 
 				}
 				else break;
@@ -284,338 +427,200 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.LIST_LITERAL:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getCollectionLiteralRule() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getListLiteralRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_ListLiteral(context, (ListLiteral) semanticObject); 
+			case LilPackage.LITERAL_BOOLEAN:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionLiteralRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule() ||
+				   context == grammarAccess.getLiteralBooleanRule()) {
+					sequence_LiteralBoolean(context, (LiteralBoolean) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.NULL_LITERAL:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getNullLiteralRule() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_NullLiteral(context, (NullLiteral) semanticObject); 
+			case LilPackage.LITERAL_DATA:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionLiteralRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule()) {
+					sequence_ExpressionLiteral(context, (LiteralData) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.NUMBER_DEFINITION_INTERVAL:
-				if(context == grammarAccess.getDefinitionSetRule()) {
-					sequence_DefinitionSet(context, (NumberDefinitionInterval) semanticObject); 
+			case LilPackage.LITERAL_ENUM:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionLiteralRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule() ||
+				   context == grammarAccess.getLiteralEnumRule()) {
+					sequence_LiteralEnum(context, (LiteralEnum) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.NUMBER_DEFINITION_SET:
-				if(context == grammarAccess.getDefinitionSetRule()) {
-					sequence_DefinitionSet(context, (NumberDefinitionSet) semanticObject); 
+			case LilPackage.LITERAL_NULL:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionLiteralRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule() ||
+				   context == grammarAccess.getLiteralNullRule()) {
+					sequence_LiteralNull(context, (LiteralNull) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.NUMBER_LITERAL:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getNumberLiteralRule() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_NumberLiteral(context, (NumberLiteral) semanticObject); 
+			case LilPackage.LITERAL_NUMBER:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionLiteralRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule() ||
+				   context == grammarAccess.getLiteralNumberRule()) {
+					sequence_LiteralNumber(context, (LiteralNumber) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.ON_CAUSE:
-				if(context == grammarAccess.getCauseRule() ||
-				   context == grammarAccess.getOnCauseRule()) {
-					sequence_OnCause(context, (OnCause) semanticObject); 
+			case LilPackage.LITERAL_STRING:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionLiteralRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule() ||
+				   context == grammarAccess.getLiteralStringRule()) {
+					sequence_LiteralString(context, (LiteralString) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.SET_EFFECT:
-				if(context == grammarAccess.getEffectRule() ||
-				   context == grammarAccess.getSetEffectRule()) {
-					sequence_SetEffect(context, (SetEffect) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.SET_LITERAL:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getCollectionLiteralRule() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getSetLiteralRule() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_SetLiteral(context, (SetLiteral) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.SIGNAL:
-				if(context == grammarAccess.getSignalRule()) {
-					sequence_Signal(context, (Signal) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.SIGNAL_ALIAS:
-				if(context == grammarAccess.getSignalAliasRule()) {
-					sequence_SignalAlias(context, (SignalAlias) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.SIGNAL_EMISSION:
-				if(context == grammarAccess.getSignalEmissionRule()) {
-					sequence_SignalEmission(context, (SignalEmission) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.SIGNAL_LITERAL:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_Literal(context, (SignalLiteral) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.SIGNAL_RECEPTION:
-				if(context == grammarAccess.getSignalReceptionRule()) {
-					sequence_SignalReception(context, (SignalReception) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.STRING_LITERAL:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getStringLiteralRule() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_StringLiteral(context, (StringLiteral) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.SWITCH_EXPRESSION:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getSwitchExpressionRule() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_SwitchExpression(context, (SwitchExpression) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.TIME_LITERAL:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getTimeLiteralRule() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_TimeLiteral(context, (TimeLiteral) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.TIME_LITERAL_NOW:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getLiteralRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getTimeLiteralRule() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_TimeLiteral(context, (TimeLiteralNow) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.TRIGGER_EFFECT:
-				if(context == grammarAccess.getEffectRule() ||
-				   context == grammarAccess.getTriggerEffectRule()) {
-					sequence_TriggerEffect(context, (TriggerEffect) semanticObject); 
+			case LilPackage.LITERAL_TIME:
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionLiteralRule() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule() ||
+				   context == grammarAccess.getLiteralTimeRule()) {
+					sequence_LiteralTime(context, (LiteralTime) semanticObject); 
 					return; 
 				}
 				else break;
 			case LilPackage.UNARY_OPERATION:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_UnaryOperation(context, (UnaryOperation) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.WHEN_CAUSE:
-				if(context == grammarAccess.getCauseRule() ||
-				   context == grammarAccess.getWhenCauseRule()) {
-					sequence_WhenCause(context, (WhenCause) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.XBINARY_OPERATION:
-				if(context == grammarAccess.getAdditiveExpressionRule() ||
-				   context == grammarAccess.getAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getAndExpressionRule() ||
-				   context == grammarAccess.getAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getEqualityExpressionRule() ||
-				   context == grammarAccess.getEqualityExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionRule() ||
-				   context == grammarAccess.getMultiplicativeExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOrExpressionRule() ||
-				   context == grammarAccess.getOrExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getOtherOperatorExpressionRule() ||
-				   context == grammarAccess.getOtherOperatorExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getParenthesizedExpressionRule() ||
-				   context == grammarAccess.getPrimaryExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionRule() ||
-				   context == grammarAccess.getRelationalExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
-				   context == grammarAccess.getUnaryOperationRule()) {
-					sequence_AdditiveExpression_AndExpression_EqualityExpression_MultiplicativeExpression_OrExpression_OtherOperatorExpression_RelationalExpression(context, (XBinaryOperation) semanticObject); 
+				if(context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAdditionRule() ||
+				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionAndRule() ||
+				   context == grammarAccess.getExpressionAndAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionCompareRule() ||
+				   context == grammarAccess.getExpressionCompareAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionEqualityRule() ||
+				   context == grammarAccess.getExpressionEqualityAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionMultiplicationRule() ||
+				   context == grammarAccess.getExpressionMultiplicationAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOrRule() ||
+				   context == grammarAccess.getExpressionOrAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionOtherRule() ||
+				   context == grammarAccess.getExpressionOtherAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getExpressionParenthesizedRule() ||
+				   context == grammarAccess.getExpressionPrimaryRule() ||
+				   context == grammarAccess.getExpressionUnaryRule()) {
+					sequence_ExpressionUnary(context, (UnaryOperation) semanticObject); 
 					return; 
 				}
 				else break;
@@ -634,7 +639,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (source=[Actor|ID] alias=[Actor|ID])
+	 *     (source=[InteractorActor|ID] alias=[InteractorActor|ID])
 	 */
 	protected void sequence_ActorAlias(EObject context, ActorAlias semanticObject) {
 		if(errorAcceptor != null) {
@@ -645,106 +650,54 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActorAliasAccess().getSourceActorIDTerminalRuleCall_0_0_1(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getActorAliasAccess().getAliasActorIDTerminalRuleCall_2_0_1(), semanticObject.getAlias());
+		feeder.accept(grammarAccess.getActorAliasAccess().getSourceInteractorActorIDTerminalRuleCall_0_0_1(), semanticObject.getSource());
+		feeder.accept(grammarAccess.getActorAliasAccess().getAliasInteractorActorIDTerminalRuleCall_2_0_1(), semanticObject.getAlias());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID type=ActorType)
 	 */
-	protected void sequence_Actor(EObject context, Actor semanticObject) {
+	protected void sequence_ActorComponent(EObject context, ActorComponent semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ENTITY__NAME));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_COMPONENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_COMPONENT__NAME));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_COMPONENT__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_COMPONENT__TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActorAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getActorComponentAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getActorComponentAccess().getTypeActorTypeParserRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (leftOperand=AdditiveExpression_XBinaryOperation_1_0_0_0 feature=OpAdd rightOperand=MultiplicativeExpression) | 
-	 *         (leftOperand=MultiplicativeExpression_XBinaryOperation_1_0_0_0 feature=OpMulti rightOperand=UnaryOperation) | 
-	 *         (leftOperand=OtherOperatorExpression_XBinaryOperation_1_0_0_0 feature=OpOther rightOperand=AdditiveExpression) | 
-	 *         (leftOperand=RelationalExpression_XBinaryOperation_1_0_0_0 feature=OpCompare rightOperand=OtherOperatorExpression) | 
-	 *         (leftOperand=EqualityExpression_XBinaryOperation_1_0_0_0 feature=OpEquality rightOperand=RelationalExpression) | 
-	 *         (leftOperand=AndExpression_XBinaryOperation_1_0_0_0 feature=OpAnd rightOperand=EqualityExpression) | 
-	 *         (leftOperand=OrExpression_XBinaryOperation_1_0_0_0 feature=OpOr rightOperand=AndExpression)
-	 *     )
+	 *     (name=ID component+=ActorComponent*)
 	 */
-	protected void sequence_AdditiveExpression_AndExpression_EqualityExpression_MultiplicativeExpression_OrExpression_OtherOperatorExpression_RelationalExpression(EObject context, XBinaryOperation semanticObject) {
+	protected void sequence_ActorTypeDefinition(EObject context, ActorTypeDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (target=SignalEmission value=Expression)
+	 *     (base=ActorBaseType | custom=[ActorTypeDefinition|ID])
 	 */
-	protected void sequence_AlwaysEffect(EObject context, AlwaysEffect semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__TARGET));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAlwaysEffectAccess().getTargetSignalEmissionParserRuleCall_1_0(), semanticObject.getTarget());
-		feeder.accept(grammarAccess.getAlwaysEffectAccess().getValueExpressionParserRuleCall_3_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (cause=Cause effects+=Effect+)
-	 */
-	protected void sequence_Behavior(EObject context, Behavior semanticObject) {
+	protected void sequence_ActorType(EObject context, ActorType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (isTrue?='true'?)
+	 *     (type='collection' | type='set' | type='list' | type='queue' | (type='map' mapping=DataType))
 	 */
-	protected void sequence_BooleanLiteral(EObject context, BooleanLiteral semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (case=Expression then=Expression)
-	 */
-	protected void sequence_CasePart(EObject context, CasePart semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.CASE_PART__CASE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.CASE_PART__CASE));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.CASE_PART__THEN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.CASE_PART__THEN));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCasePartAccess().getCaseExpressionParserRuleCall_1_0(), semanticObject.getCase());
-		feeder.accept(grammarAccess.getCasePartAccess().getThenExpressionParserRuleCall_3_0(), semanticObject.getThen());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID interactor=[Interactor|ID] (actors+=ActorAlias actors+=ActorAlias*)?)
-	 */
-	protected void sequence_Component(EObject context, Component semanticObject) {
+	protected void sequence_DataCollectionType(EObject context, DataCollectionType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -753,98 +706,18 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (name=ID type=DataType)
 	 */
-	protected void sequence_DataTypeStructureField(EObject context, DataTypeStructureField semanticObject) {
+	protected void sequence_DataComponent(EObject context, DataComponent semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_STRUCTURE_FIELD__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_STRUCTURE_FIELD__NAME));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_STRUCTURE_FIELD__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_STRUCTURE_FIELD__TYPE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_COMPONENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_COMPONENT__NAME));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_COMPONENT__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_COMPONENT__TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataTypeStructureFieldAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDataTypeStructureFieldAccess().getTypeDataTypeParserRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getDataComponentAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDataComponentAccess().getTypeDataTypeParserRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID fields+=DataTypeStructureField*)
-	 */
-	protected void sequence_DataTypeStructure(EObject context, DataTypeStructure semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (type=TypeBase definitionSet=DefinitionSet?)
-	 */
-	protected void sequence_DataType(EObject context, DataTypeBase semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((mode='set' | mode='list' | mode='map') type=[DataType|ID] definitionSet=DefinitionSet?)
-	 */
-	protected void sequence_DataType(EObject context, DataTypeCollection semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     compound=[DataTypeStructure|ID]
-	 */
-	protected void sequence_DataType(EObject context, DataTypeCompound semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND__COMPOUND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_COMPOUND__COMPOUND));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataTypeAccess().getCompoundDataTypeStructureIDTerminalRuleCall_2_1_0_1(), semanticObject.getCompound());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (elements+=EnumElement elements+=EnumElement*)
-	 */
-	protected void sequence_DefinitionSet(EObject context, EnumDefinitionSet semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (inf=NumberLiteral sup=NumberLiteral)
-	 */
-	protected void sequence_DefinitionSet(EObject context, NumberDefinitionInterval semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.NUMBER_DEFINITION_INTERVAL__INF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.NUMBER_DEFINITION_INTERVAL__INF));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.NUMBER_DEFINITION_INTERVAL__SUP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.NUMBER_DEFINITION_INTERVAL__SUP));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDefinitionSetAccess().getInfNumberLiteralParserRuleCall_2_2_0(), semanticObject.getInf());
-		feeder.accept(grammarAccess.getDefinitionSetAccess().getSupNumberLiteralParserRuleCall_2_4_0(), semanticObject.getSup());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (elements+=NumberLiteral elements+=NumberLiteral*)
-	 */
-	protected void sequence_DefinitionSet(EObject context, NumberDefinitionSet semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -852,8 +725,125 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_EnumElement(EObject context, EnumLiteral semanticObject) {
+	protected void sequence_DataDefinitionEnumElement(EObject context, DataDefinitionEnumElement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_DEFINITION_ENUM_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_DEFINITION_ENUM_ELEMENT__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataDefinitionEnumElementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (element+=DataDefinitionEnumElement element+=DataDefinitionEnumElement*)
+	 */
+	protected void sequence_DataDefinitionSet(EObject context, DataDefinitionSetEnum semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (inf=LiteralNumber sup=LiteralNumber)
+	 */
+	protected void sequence_DataDefinitionSet(EObject context, DataDefinitionSetInterval semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_DEFINITION_SET_INTERVAL__INF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_DEFINITION_SET_INTERVAL__INF));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_DEFINITION_SET_INTERVAL__SUP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_DEFINITION_SET_INTERVAL__SUP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataDefinitionSetAccess().getInfLiteralNumberParserRuleCall_2_2_0(), semanticObject.getInf());
+		feeder.accept(grammarAccess.getDataDefinitionSetAccess().getSupLiteralNumberParserRuleCall_2_4_0(), semanticObject.getSup());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (element+=LiteralNumber element+=LiteralNumber*)
+	 */
+	protected void sequence_DataDefinitionSet(EObject context, DataDefinitionSetNumber semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID alias=DataType)
+	 */
+	protected void sequence_DataTypeDefinition(EObject context, DataTypeDefinitionAlias semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_DEFINITION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_DEFINITION__NAME));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_DEFINITION_ALIAS__ALIAS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_DEFINITION_ALIAS__ALIAS));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeDefinitionAccess().getNameIDTerminalRuleCall_1_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDataTypeDefinitionAccess().getAliasDataTypeParserRuleCall_1_4_0(), semanticObject.getAlias());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID component+=DataComponent*)
+	 */
+	protected void sequence_DataTypeDefinition(EObject context, DataTypeDefinitionCompound semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((base=DataBaseType definitionSet=DataDefinitionSet?) | custom=[DataTypeDefinition|ID]) collection=DataCollectionType?)
+	 */
+	protected void sequence_DataType(EObject context, DataType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         (leftOperand=ExpressionAddition_ExpressionBinaryOperation_1_0_0_0 feature=ExpressionAdditionOp rightOperand=ExpressionMultiplication) | 
+	 *         (leftOperand=ExpressionMultiplication_ExpressionBinaryOperation_1_0_0_0 feature=ExpressionMultiplicationOp rightOperand=ExpressionUnary) | 
+	 *         (leftOperand=ExpressionOther_ExpressionBinaryOperation_1_0_0_0 feature=ExpressionOtherOp rightOperand=ExpressionAddition) | 
+	 *         (leftOperand=ExpressionCompare_ExpressionBinaryOperation_1_0_0_0 feature=ExpressionCompareOp rightOperand=ExpressionOther) | 
+	 *         (leftOperand=ExpressionEquality_ExpressionBinaryOperation_1_0_0_0 feature=ExpressionEqualityOp rightOperand=ExpressionCompare) | 
+	 *         (leftOperand=ExpressionAnd_ExpressionBinaryOperation_1_0_0_0 feature=ExpressionAndOp rightOperand=ExpressionEquality) | 
+	 *         (leftOperand=ExpressionOr_ExpressionBinaryOperation_1_0_0_0 feature=ExpressionOrOp rightOperand=ExpressionAnd)
+	 *     )
+	 */
+	protected void sequence_ExpressionAddition_ExpressionAnd_ExpressionCompare_ExpressionEquality_ExpressionMultiplication_ExpressionOr_ExpressionOther(EObject context, ExpressionBinaryOperation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (case=Expression then=Expression)
+	 */
+	protected void sequence_ExpressionCase(EObject context, ExpressionCase semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EXPRESSION_CASE__CASE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EXPRESSION_CASE__CASE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EXPRESSION_CASE__THEN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EXPRESSION_CASE__THEN));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getExpressionCaseAccess().getCaseExpressionParserRuleCall_1_0(), semanticObject.getCase());
+		feeder.accept(grammarAccess.getExpressionCaseAccess().getThenExpressionParserRuleCall_3_0(), semanticObject.getThen());
+		feeder.finish();
 	}
 	
 	
@@ -861,26 +851,26 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (forExpression=Expression eachExpression=Expression)
 	 */
-	protected void sequence_ForEachExpression(EObject context, ForEachExpression semanticObject) {
+	protected void sequence_ExpressionForEach(EObject context, ExpressionForEach semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.FOR_EACH_EXPRESSION__FOR_EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.FOR_EACH_EXPRESSION__FOR_EXPRESSION));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.FOR_EACH_EXPRESSION__EACH_EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.FOR_EACH_EXPRESSION__EACH_EXPRESSION));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EXPRESSION_FOR_EACH__FOR_EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EXPRESSION_FOR_EACH__FOR_EXPRESSION));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EXPRESSION_FOR_EACH__EACH_EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EXPRESSION_FOR_EACH__EACH_EXPRESSION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getForEachExpressionAccess().getForExpressionExpressionParserRuleCall_4_0(), semanticObject.getForExpression());
-		feeder.accept(grammarAccess.getForEachExpressionAccess().getEachExpressionExpressionParserRuleCall_6_0(), semanticObject.getEachExpression());
+		feeder.accept(grammarAccess.getExpressionForEachAccess().getForExpressionExpressionParserRuleCall_4_0(), semanticObject.getForExpression());
+		feeder.accept(grammarAccess.getExpressionForEachAccess().getEachExpressionExpressionParserRuleCall_6_0(), semanticObject.getEachExpression());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (function=BuiltInFunction arguments+=Expression? arguments+=Expression*)
+	 *     (function=ExpressionFunctionCallBase arguments+=Expression? arguments+=Expression*)
 	 */
-	protected void sequence_FunctionCallExpression(EObject context, FunctionCallExpression semanticObject) {
+	protected void sequence_ExpressionFunctionCall(EObject context, ExpressionFunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -889,36 +879,262 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (if=Expression then=Expression else=Expression)
 	 */
-	protected void sequence_IfExpression(EObject context, IfExpression semanticObject) {
+	protected void sequence_ExpressionIf(EObject context, ExpressionIf semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.IF_EXPRESSION__IF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.IF_EXPRESSION__IF));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.IF_EXPRESSION__THEN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.IF_EXPRESSION__THEN));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.IF_EXPRESSION__ELSE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.IF_EXPRESSION__ELSE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EXPRESSION_IF__IF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EXPRESSION_IF__IF));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EXPRESSION_IF__THEN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EXPRESSION_IF__THEN));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EXPRESSION_IF__ELSE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EXPRESSION_IF__ELSE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getIfExpressionAccess().getIfExpressionParserRuleCall_3_0(), semanticObject.getIf());
-		feeder.accept(grammarAccess.getIfExpressionAccess().getThenExpressionParserRuleCall_5_0(), semanticObject.getThen());
-		feeder.accept(grammarAccess.getIfExpressionAccess().getElseExpressionParserRuleCall_6_1_0(), semanticObject.getElse());
+		feeder.accept(grammarAccess.getExpressionIfAccess().getIfExpressionParserRuleCall_3_0(), semanticObject.getIf());
+		feeder.accept(grammarAccess.getExpressionIfAccess().getThenExpressionParserRuleCall_5_0(), semanticObject.getThen());
+		feeder.accept(grammarAccess.getExpressionIfAccess().getElseExpressionParserRuleCall_6_1_0(), semanticObject.getElse());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (entities+=Entity | signals+=Signal | behaviors+=Behavior)*)
+	 *     ((elements+=Expression elements+=Expression*)?)
 	 */
-	protected void sequence_Interactor(EObject context, Interactor semanticObject) {
+	protected void sequence_ExpressionLiteralList(EObject context, ExpressionLiteralList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (interactors+=Interactor | dataTypes+=DataTypeDefinition)*
+	 *     ((elements+=Expression elements+=Expression*)?)
+	 */
+	protected void sequence_ExpressionLiteralSet(EObject context, ExpressionLiteralSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     data=[InteractorData|ID]
+	 */
+	protected void sequence_ExpressionLiteral(EObject context, LiteralData semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.LITERAL_DATA__DATA) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.LITERAL_DATA__DATA));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getExpressionLiteralAccess().getDataInteractorDataIDTerminalRuleCall_7_1_0_1(), semanticObject.getData());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (switch=Expression case+=ExpressionCase+ default=Expression?)
+	 */
+	protected void sequence_ExpressionSwitch(EObject context, ExpressionSwitch semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (feature=ExpressionUnaryOp operand=ExpressionPrimary)
+	 */
+	protected void sequence_ExpressionUnary(EObject context, UnaryOperation semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.UNARY_OPERATION__FEATURE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.UNARY_OPERATION__FEATURE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.UNARY_OPERATION__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.UNARY_OPERATION__OPERAND));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getExpressionUnaryAccess().getFeatureExpressionUnaryOpParserRuleCall_0_1_0(), semanticObject.getFeature());
+		feeder.accept(grammarAccess.getExpressionUnaryAccess().getOperandExpressionPrimaryParserRuleCall_0_2_0(), semanticObject.getOperand());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID type=ActorType)
+	 */
+	protected void sequence_InteractorActor(EObject context, InteractorActor semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ENTITY__NAME));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_ACTOR__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_ACTOR__TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInteractorActorAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getInteractorActorAccess().getTypeActorTypeParserRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (target=InteractorSignalEmission value=Expression)
+	 */
+	protected void sequence_InteractorBehaviorAlwaysEffect(EObject context, InteractorBehaviorAlwaysEffect semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__TARGET));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInteractorBehaviorAlwaysEffectAccess().getTargetInteractorSignalEmissionParserRuleCall_1_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getInteractorBehaviorAlwaysEffectAccess().getValueExpressionParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (event=InteractorSignalReception guard=Expression?)
+	 */
+	protected void sequence_InteractorBehaviorOnCause(EObject context, InteractorBehaviorOnCause semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (target=InteractorSignalEmission value=Expression)
+	 */
+	protected void sequence_InteractorBehaviorSetEffect(EObject context, InteractorBehaviorSetEffect semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__TARGET));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInteractorBehaviorSetEffectAccess().getTargetInteractorSignalEmissionParserRuleCall_1_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getInteractorBehaviorSetEffectAccess().getValueExpressionParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (target=InteractorSignalEmission value=Expression)
+	 */
+	protected void sequence_InteractorBehaviorTriggerEffect(EObject context, InteractorBehaviorTriggerEffect semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__TARGET));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_BEHAVIOR_EFFECT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInteractorBehaviorTriggerEffectAccess().getTargetInteractorSignalEmissionParserRuleCall_1_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getInteractorBehaviorTriggerEffectAccess().getValueExpressionParserRuleCall_3_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (condition=Expression guard=Expression?)
+	 */
+	protected void sequence_InteractorBehaviorWhenCause(EObject context, InteractorBehaviorWhenCause semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (cause=InteractorBehaviorCause effect+=InteractorBehaviorEffect+)
+	 */
+	protected void sequence_InteractorBehavior(EObject context, InteractorBehavior semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID type=InteractorType (actors+=ActorAlias actors+=ActorAlias*)?)
+	 */
+	protected void sequence_InteractorComponent(EObject context, InteractorComponent semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID type=DataType mode=InteractorDataComponentMode source=InteractorSignalAlias? destinations+=InteractorSignalAlias*)
+	 */
+	protected void sequence_InteractorData(EObject context, InteractorData semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (source=AccessibleEntity alias=[InteractorData|ID]?)
+	 */
+	protected void sequence_InteractorSignalAlias(EObject context, InteractorSignalAlias semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (instance=[InteractorData|ID] destination=InteractorSignalAlias?)
+	 */
+	protected void sequence_InteractorSignalEmission(EObject context, InteractorSignalEmission semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((instance=[InteractorData|ID] source=InteractorSignalAlias?) | init?='init')
+	 */
+	protected void sequence_InteractorSignalReception(EObject context, InteractorSignalReception semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (actor+=InteractorActor | data+=InteractorData | component+=InteractorComponent | behavior+=InteractorBehavior)*)
+	 */
+	protected void sequence_InteractorTypeDefinition(EObject context, InteractorTypeDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     custom=[InteractorTypeDefinition|ID]
+	 */
+	protected void sequence_InteractorType(EObject context, InteractorType semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_TYPE__CUSTOM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_TYPE__CUSTOM));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInteractorTypeAccess().getCustomInteractorTypeDefinitionIDTerminalRuleCall_0_1(), semanticObject.getCustom());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (actorType+=ActorTypeDefinition | dataType+=DataTypeDefinition | interactorType+=InteractorTypeDefinition)*
 	 */
 	protected void sequence_LilModel(EObject context, LilModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -927,43 +1143,34 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((elements+=Expression elements+=Expression*)?)
+	 *     (isTrue?='true'?)
 	 */
-	protected void sequence_ListLiteral(EObject context, ListLiteral semanticObject) {
+	protected void sequence_LiteralBoolean(EObject context, LiteralBoolean semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     element=[EnumElement|ID]
+	 *     value=[DataDefinitionEnumElement|ID]
 	 */
-	protected void sequence_Literal(EObject context, EnumLiteral semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     signal=[Signal|ID]
-	 */
-	protected void sequence_Literal(EObject context, SignalLiteral semanticObject) {
+	protected void sequence_LiteralEnum(EObject context, LiteralEnum semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.SIGNAL_LITERAL__SIGNAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.SIGNAL_LITERAL__SIGNAL));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.LITERAL_ENUM__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.LITERAL_ENUM__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getLiteralAccess().getSignalSignalIDTerminalRuleCall_7_1_0_1(), semanticObject.getSignal());
+		feeder.accept(grammarAccess.getLiteralEnumAccess().getValueDataDefinitionEnumElementIDTerminalRuleCall_2_0_1(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     {NullLiteral}
+	 *     {LiteralNull}
 	 */
-	protected void sequence_NullLiteral(EObject context, NullLiteral semanticObject) {
+	protected void sequence_LiteralNull(EObject context, LiteralNull semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -972,88 +1179,15 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     value=NUMBER
 	 */
-	protected void sequence_NumberLiteral(EObject context, NumberLiteral semanticObject) {
+	protected void sequence_LiteralNumber(EObject context, LiteralNumber semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.NUMBER_LITERAL__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.NUMBER_LITERAL__VALUE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.LITERAL_NUMBER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.LITERAL_NUMBER__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getNumberLiteralAccess().getValueNUMBERParserRuleCall_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getLiteralNumberAccess().getValueNUMBERParserRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (event=SignalReception guard=Expression?)
-	 */
-	protected void sequence_OnCause(EObject context, OnCause semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (target=SignalEmission value=Expression)
-	 */
-	protected void sequence_SetEffect(EObject context, SetEffect semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__TARGET));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSetEffectAccess().getTargetSignalEmissionParserRuleCall_1_0(), semanticObject.getTarget());
-		feeder.accept(grammarAccess.getSetEffectAccess().getValueExpressionParserRuleCall_3_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((elements+=Expression elements+=Expression*)?)
-	 */
-	protected void sequence_SetLiteral(EObject context, SetLiteral semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (source=AccessibleEntity alias=[Signal|ID]?)
-	 */
-	protected void sequence_SignalAlias(EObject context, SignalAlias semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (instance=[Signal|ID] destination=SignalAlias?)
-	 */
-	protected void sequence_SignalEmission(EObject context, SignalEmission semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((instance=[Signal|ID] source=SignalAlias?) | init?='init')
-	 */
-	protected void sequence_SignalReception(EObject context, SignalReception semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID type=DataType mode=SignalMode source=SignalAlias? destinations+=SignalAlias*)
-	 */
-	protected void sequence_Signal(EObject context, Signal semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1061,30 +1195,22 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     value=STRING
 	 */
-	protected void sequence_StringLiteral(EObject context, StringLiteral semanticObject) {
+	protected void sequence_LiteralString(EObject context, LiteralString semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.STRING_LITERAL__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.STRING_LITERAL__VALUE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.LITERAL_STRING__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.LITERAL_STRING__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getLiteralStringAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (switch=Expression cases+=CasePart+ default=Expression?)
-	 */
-	protected void sequence_SwitchExpression(EObject context, SwitchExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (
+	 *         now?='now' | 
 	 *         (
 	 *             year=NUMBER 
 	 *             month=NUMBER? 
@@ -1100,63 +1226,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         second=NUMBER
 	 *     )
 	 */
-	protected void sequence_TimeLiteral(EObject context, TimeLiteral semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     {TimeLiteralNow}
-	 */
-	protected void sequence_TimeLiteral(EObject context, TimeLiteralNow semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (target=SignalEmission value=Expression)
-	 */
-	protected void sequence_TriggerEffect(EObject context, TriggerEffect semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__TARGET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__TARGET));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.EFFECT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.EFFECT__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTriggerEffectAccess().getTargetSignalEmissionParserRuleCall_1_0(), semanticObject.getTarget());
-		feeder.accept(grammarAccess.getTriggerEffectAccess().getValueExpressionParserRuleCall_3_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (feature=OpUnary operand=PrimaryExpression)
-	 */
-	protected void sequence_UnaryOperation(EObject context, UnaryOperation semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.UNARY_OPERATION__FEATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.UNARY_OPERATION__FEATURE));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.UNARY_OPERATION__OPERAND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.UNARY_OPERATION__OPERAND));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUnaryOperationAccess().getFeatureOpUnaryParserRuleCall_0_1_0(), semanticObject.getFeature());
-		feeder.accept(grammarAccess.getUnaryOperationAccess().getOperandPrimaryExpressionParserRuleCall_0_2_0(), semanticObject.getOperand());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (condition=Expression guard=Expression?)
-	 */
-	protected void sequence_WhenCause(EObject context, WhenCause semanticObject) {
+	protected void sequence_LiteralTime(EObject context, LiteralTime semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

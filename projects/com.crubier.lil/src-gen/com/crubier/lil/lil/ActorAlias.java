@@ -32,12 +32,12 @@ public interface ActorAlias extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source</em>' reference.
-   * @see #setSource(Actor)
+   * @see #setSource(InteractorActor)
    * @see com.crubier.lil.lil.LilPackage#getActorAlias_Source()
    * @model
    * @generated
    */
-  Actor getSource();
+  InteractorActor getSource();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.ActorAlias#getSource <em>Source</em>}' reference.
@@ -47,7 +47,7 @@ public interface ActorAlias extends EObject
    * @see #getSource()
    * @generated
    */
-  void setSource(Actor value);
+  void setSource(InteractorActor value);
 
   /**
    * Returns the value of the '<em><b>Alias</b></em>' reference.
@@ -58,12 +58,12 @@ public interface ActorAlias extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Alias</em>' reference.
-   * @see #setAlias(Actor)
+   * @see #setAlias(InteractorActor)
    * @see com.crubier.lil.lil.LilPackage#getActorAlias_Alias()
    * @model
    * @generated
    */
-  Actor getAlias();
+  InteractorActor getAlias();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.ActorAlias#getAlias <em>Alias</em>}' reference.
@@ -73,6 +73,6 @@ public interface ActorAlias extends EObject
    * @see #getAlias()
    * @generated
    */
-  void setAlias(Actor value);
+  void setAlias(InteractorActor value);
 
 } // ActorAlias

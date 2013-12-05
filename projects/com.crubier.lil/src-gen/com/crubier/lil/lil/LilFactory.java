@@ -32,13 +32,139 @@ public interface LilFactory extends EFactory
   LilModel createLilModel();
 
   /**
-   * Returns a new object of class '<em>Interactor</em>'.
+   * Returns a new object of class '<em>Actor Type Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor</em>'.
+   * @return a new object of class '<em>Actor Type Definition</em>'.
    * @generated
    */
-  Interactor createInteractor();
+  ActorTypeDefinition createActorTypeDefinition();
+
+  /**
+   * Returns a new object of class '<em>Actor Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Actor Type</em>'.
+   * @generated
+   */
+  ActorType createActorType();
+
+  /**
+   * Returns a new object of class '<em>Actor Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Actor Component</em>'.
+   * @generated
+   */
+  ActorComponent createActorComponent();
+
+  /**
+   * Returns a new object of class '<em>Data Type Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Definition</em>'.
+   * @generated
+   */
+  DataTypeDefinition createDataTypeDefinition();
+
+  /**
+   * Returns a new object of class '<em>Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type</em>'.
+   * @generated
+   */
+  DataType createDataType();
+
+  /**
+   * Returns a new object of class '<em>Data Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Definition Set</em>'.
+   * @generated
+   */
+  DataDefinitionSet createDataDefinitionSet();
+
+  /**
+   * Returns a new object of class '<em>Data Definition Enum Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Definition Enum Element</em>'.
+   * @generated
+   */
+  DataDefinitionEnumElement createDataDefinitionEnumElement();
+
+  /**
+   * Returns a new object of class '<em>Data Collection Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Collection Type</em>'.
+   * @generated
+   */
+  DataCollectionType createDataCollectionType();
+
+  /**
+   * Returns a new object of class '<em>Data Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Component</em>'.
+   * @generated
+   */
+  DataComponent createDataComponent();
+
+  /**
+   * Returns a new object of class '<em>Interactor Type Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Type Definition</em>'.
+   * @generated
+   */
+  InteractorTypeDefinition createInteractorTypeDefinition();
+
+  /**
+   * Returns a new object of class '<em>Interactor Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Type</em>'.
+   * @generated
+   */
+  InteractorType createInteractorType();
+
+  /**
+   * Returns a new object of class '<em>Interactor Actor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Actor</em>'.
+   * @generated
+   */
+  InteractorActor createInteractorActor();
+
+  /**
+   * Returns a new object of class '<em>Interactor Data</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Data</em>'.
+   * @generated
+   */
+  InteractorData createInteractorData();
+
+  /**
+   * Returns a new object of class '<em>Interactor Signal Alias</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Signal Alias</em>'.
+   * @generated
+   */
+  InteractorSignalAlias createInteractorSignalAlias();
+
+  /**
+   * Returns a new object of class '<em>Interactor Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Component</em>'.
+   * @generated
+   */
+  InteractorComponent createInteractorComponent();
 
   /**
    * Returns a new object of class '<em>Accessible Entity</em>'.
@@ -59,15 +185,6 @@ public interface LilFactory extends EFactory
   Entity createEntity();
 
   /**
-   * Returns a new object of class '<em>Actor</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Actor</em>'.
-   * @generated
-   */
-  Actor createActor();
-
-  /**
    * Returns a new object of class '<em>Actor Alias</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -77,166 +194,94 @@ public interface LilFactory extends EFactory
   ActorAlias createActorAlias();
 
   /**
-   * Returns a new object of class '<em>Component</em>'.
+   * Returns a new object of class '<em>Interactor Signal Reception</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component</em>'.
+   * @return a new object of class '<em>Interactor Signal Reception</em>'.
    * @generated
    */
-  Component createComponent();
+  InteractorSignalReception createInteractorSignalReception();
 
   /**
-   * Returns a new object of class '<em>Signal Reception</em>'.
+   * Returns a new object of class '<em>Interactor Signal Emission</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Signal Reception</em>'.
+   * @return a new object of class '<em>Interactor Signal Emission</em>'.
    * @generated
    */
-  SignalReception createSignalReception();
+  InteractorSignalEmission createInteractorSignalEmission();
 
   /**
-   * Returns a new object of class '<em>Signal Emission</em>'.
+   * Returns a new object of class '<em>Interactor Behavior</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Signal Emission</em>'.
+   * @return a new object of class '<em>Interactor Behavior</em>'.
    * @generated
    */
-  SignalEmission createSignalEmission();
+  InteractorBehavior createInteractorBehavior();
 
   /**
-   * Returns a new object of class '<em>Signal</em>'.
+   * Returns a new object of class '<em>Interactor Behavior Cause</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Signal</em>'.
+   * @return a new object of class '<em>Interactor Behavior Cause</em>'.
    * @generated
    */
-  Signal createSignal();
+  InteractorBehaviorCause createInteractorBehaviorCause();
 
   /**
-   * Returns a new object of class '<em>Definition Set</em>'.
+   * Returns a new object of class '<em>Interactor Behavior On Cause</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Definition Set</em>'.
+   * @return a new object of class '<em>Interactor Behavior On Cause</em>'.
    * @generated
    */
-  DefinitionSet createDefinitionSet();
+  InteractorBehaviorOnCause createInteractorBehaviorOnCause();
 
   /**
-   * Returns a new object of class '<em>Signal Alias</em>'.
+   * Returns a new object of class '<em>Interactor Behavior When Cause</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Signal Alias</em>'.
+   * @return a new object of class '<em>Interactor Behavior When Cause</em>'.
    * @generated
    */
-  SignalAlias createSignalAlias();
+  InteractorBehaviorWhenCause createInteractorBehaviorWhenCause();
 
   /**
-   * Returns a new object of class '<em>Data Type</em>'.
+   * Returns a new object of class '<em>Interactor Behavior Effect</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type</em>'.
+   * @return a new object of class '<em>Interactor Behavior Effect</em>'.
    * @generated
    */
-  DataType createDataType();
+  InteractorBehaviorEffect createInteractorBehaviorEffect();
 
   /**
-   * Returns a new object of class '<em>Data Type Definition</em>'.
+   * Returns a new object of class '<em>Interactor Behavior Always Effect</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Definition</em>'.
+   * @return a new object of class '<em>Interactor Behavior Always Effect</em>'.
    * @generated
    */
-  DataTypeDefinition createDataTypeDefinition();
+  InteractorBehaviorAlwaysEffect createInteractorBehaviorAlwaysEffect();
 
   /**
-   * Returns a new object of class '<em>Data Type Structure</em>'.
+   * Returns a new object of class '<em>Interactor Behavior Set Effect</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Structure</em>'.
+   * @return a new object of class '<em>Interactor Behavior Set Effect</em>'.
    * @generated
    */
-  DataTypeStructure createDataTypeStructure();
+  InteractorBehaviorSetEffect createInteractorBehaviorSetEffect();
 
   /**
-   * Returns a new object of class '<em>Data Type Structure Field</em>'.
+   * Returns a new object of class '<em>Interactor Behavior Trigger Effect</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Structure Field</em>'.
+   * @return a new object of class '<em>Interactor Behavior Trigger Effect</em>'.
    * @generated
    */
-  DataTypeStructureField createDataTypeStructureField();
-
-  /**
-   * Returns a new object of class '<em>Behavior</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Behavior</em>'.
-   * @generated
-   */
-  Behavior createBehavior();
-
-  /**
-   * Returns a new object of class '<em>Cause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Cause</em>'.
-   * @generated
-   */
-  Cause createCause();
-
-  /**
-   * Returns a new object of class '<em>On Cause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>On Cause</em>'.
-   * @generated
-   */
-  OnCause createOnCause();
-
-  /**
-   * Returns a new object of class '<em>When Cause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>When Cause</em>'.
-   * @generated
-   */
-  WhenCause createWhenCause();
-
-  /**
-   * Returns a new object of class '<em>Effect</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Effect</em>'.
-   * @generated
-   */
-  Effect createEffect();
-
-  /**
-   * Returns a new object of class '<em>Always Effect</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Always Effect</em>'.
-   * @generated
-   */
-  AlwaysEffect createAlwaysEffect();
-
-  /**
-   * Returns a new object of class '<em>Set Effect</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Set Effect</em>'.
-   * @generated
-   */
-  SetEffect createSetEffect();
-
-  /**
-   * Returns a new object of class '<em>Trigger Effect</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Trigger Effect</em>'.
-   * @generated
-   */
-  TriggerEffect createTriggerEffect();
+  InteractorBehaviorTriggerEffect createInteractorBehaviorTriggerEffect();
 
   /**
    * Returns a new object of class '<em>Expression</em>'.
@@ -248,112 +293,94 @@ public interface LilFactory extends EFactory
   Expression createExpression();
 
   /**
-   * Returns a new object of class '<em>Collection Literal</em>'.
+   * Returns a new object of class '<em>Expression Literal Collection</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Collection Literal</em>'.
+   * @return a new object of class '<em>Expression Literal Collection</em>'.
    * @generated
    */
-  CollectionLiteral createCollectionLiteral();
+  ExpressionLiteralCollection createExpressionLiteralCollection();
 
   /**
-   * Returns a new object of class '<em>Set Literal</em>'.
+   * Returns a new object of class '<em>Expression Literal Set</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Set Literal</em>'.
+   * @return a new object of class '<em>Expression Literal Set</em>'.
    * @generated
    */
-  SetLiteral createSetLiteral();
+  ExpressionLiteralSet createExpressionLiteralSet();
 
   /**
-   * Returns a new object of class '<em>List Literal</em>'.
+   * Returns a new object of class '<em>Expression Literal List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>List Literal</em>'.
+   * @return a new object of class '<em>Expression Literal List</em>'.
    * @generated
    */
-  ListLiteral createListLiteral();
+  ExpressionLiteralList createExpressionLiteralList();
 
   /**
-   * Returns a new object of class '<em>Case Part</em>'.
+   * Returns a new object of class '<em>Expression Case</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Case Part</em>'.
+   * @return a new object of class '<em>Expression Case</em>'.
    * @generated
    */
-  CasePart createCasePart();
+  ExpressionCase createExpressionCase();
 
   /**
-   * Returns a new object of class '<em>Enum Element</em>'.
+   * Returns a new object of class '<em>Data Type Definition Compound</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Enum Element</em>'.
+   * @return a new object of class '<em>Data Type Definition Compound</em>'.
    * @generated
    */
-  EnumElement createEnumElement();
+  DataTypeDefinitionCompound createDataTypeDefinitionCompound();
 
   /**
-   * Returns a new object of class '<em>Enum Definition Set</em>'.
+   * Returns a new object of class '<em>Data Type Definition Alias</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Enum Definition Set</em>'.
+   * @return a new object of class '<em>Data Type Definition Alias</em>'.
    * @generated
    */
-  EnumDefinitionSet createEnumDefinitionSet();
+  DataTypeDefinitionAlias createDataTypeDefinitionAlias();
 
   /**
-   * Returns a new object of class '<em>Number Definition Set</em>'.
+   * Returns a new object of class '<em>Data Definition Set Enum</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Definition Set</em>'.
+   * @return a new object of class '<em>Data Definition Set Enum</em>'.
    * @generated
    */
-  NumberDefinitionSet createNumberDefinitionSet();
+  DataDefinitionSetEnum createDataDefinitionSetEnum();
 
   /**
-   * Returns a new object of class '<em>Number Definition Interval</em>'.
+   * Returns a new object of class '<em>Data Definition Set Number</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Definition Interval</em>'.
+   * @return a new object of class '<em>Data Definition Set Number</em>'.
    * @generated
    */
-  NumberDefinitionInterval createNumberDefinitionInterval();
+  DataDefinitionSetNumber createDataDefinitionSetNumber();
 
   /**
-   * Returns a new object of class '<em>Data Type Base</em>'.
+   * Returns a new object of class '<em>Data Definition Set Interval</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Base</em>'.
+   * @return a new object of class '<em>Data Definition Set Interval</em>'.
    * @generated
    */
-  DataTypeBase createDataTypeBase();
+  DataDefinitionSetInterval createDataDefinitionSetInterval();
 
   /**
-   * Returns a new object of class '<em>Data Type Collection</em>'.
+   * Returns a new object of class '<em>Expression Binary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Collection</em>'.
+   * @return a new object of class '<em>Expression Binary Operation</em>'.
    * @generated
    */
-  DataTypeCollection createDataTypeCollection();
-
-  /**
-   * Returns a new object of class '<em>Data Type Compound</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type Compound</em>'.
-   * @generated
-   */
-  DataTypeCompound createDataTypeCompound();
-
-  /**
-   * Returns a new object of class '<em>XBinary Operation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XBinary Operation</em>'.
-   * @generated
-   */
-  XBinaryOperation createXBinaryOperation();
+  ExpressionBinaryOperation createExpressionBinaryOperation();
 
   /**
    * Returns a new object of class '<em>Unary Operation</em>'.
@@ -365,112 +392,103 @@ public interface LilFactory extends EFactory
   UnaryOperation createUnaryOperation();
 
   /**
-   * Returns a new object of class '<em>Enum Literal</em>'.
+   * Returns a new object of class '<em>Literal Data</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Enum Literal</em>'.
+   * @return a new object of class '<em>Literal Data</em>'.
    * @generated
    */
-  EnumLiteral createEnumLiteral();
+  LiteralData createLiteralData();
 
   /**
-   * Returns a new object of class '<em>Signal Literal</em>'.
+   * Returns a new object of class '<em>Expression If</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Signal Literal</em>'.
+   * @return a new object of class '<em>Expression If</em>'.
    * @generated
    */
-  SignalLiteral createSignalLiteral();
+  ExpressionIf createExpressionIf();
 
   /**
-   * Returns a new object of class '<em>If Expression</em>'.
+   * Returns a new object of class '<em>Expression Switch</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>If Expression</em>'.
+   * @return a new object of class '<em>Expression Switch</em>'.
    * @generated
    */
-  IfExpression createIfExpression();
+  ExpressionSwitch createExpressionSwitch();
 
   /**
-   * Returns a new object of class '<em>Switch Expression</em>'.
+   * Returns a new object of class '<em>Expression For Each</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Switch Expression</em>'.
+   * @return a new object of class '<em>Expression For Each</em>'.
    * @generated
    */
-  SwitchExpression createSwitchExpression();
+  ExpressionForEach createExpressionForEach();
 
   /**
-   * Returns a new object of class '<em>For Each Expression</em>'.
+   * Returns a new object of class '<em>Expression Function Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>For Each Expression</em>'.
+   * @return a new object of class '<em>Expression Function Call</em>'.
    * @generated
    */
-  ForEachExpression createForEachExpression();
+  ExpressionFunctionCall createExpressionFunctionCall();
 
   /**
-   * Returns a new object of class '<em>Function Call Expression</em>'.
+   * Returns a new object of class '<em>Literal Boolean</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Call Expression</em>'.
+   * @return a new object of class '<em>Literal Boolean</em>'.
    * @generated
    */
-  FunctionCallExpression createFunctionCallExpression();
+  LiteralBoolean createLiteralBoolean();
 
   /**
-   * Returns a new object of class '<em>Boolean Literal</em>'.
+   * Returns a new object of class '<em>Literal Null</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Literal</em>'.
+   * @return a new object of class '<em>Literal Null</em>'.
    * @generated
    */
-  BooleanLiteral createBooleanLiteral();
+  LiteralNull createLiteralNull();
 
   /**
-   * Returns a new object of class '<em>Null Literal</em>'.
+   * Returns a new object of class '<em>Literal Number</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Null Literal</em>'.
+   * @return a new object of class '<em>Literal Number</em>'.
    * @generated
    */
-  NullLiteral createNullLiteral();
+  LiteralNumber createLiteralNumber();
 
   /**
-   * Returns a new object of class '<em>Number Literal</em>'.
+   * Returns a new object of class '<em>Literal String</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Number Literal</em>'.
+   * @return a new object of class '<em>Literal String</em>'.
    * @generated
    */
-  NumberLiteral createNumberLiteral();
+  LiteralString createLiteralString();
 
   /**
-   * Returns a new object of class '<em>String Literal</em>'.
+   * Returns a new object of class '<em>Literal Enum</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>String Literal</em>'.
+   * @return a new object of class '<em>Literal Enum</em>'.
    * @generated
    */
-  StringLiteral createStringLiteral();
+  LiteralEnum createLiteralEnum();
 
   /**
-   * Returns a new object of class '<em>Time Literal Now</em>'.
+   * Returns a new object of class '<em>Literal Time</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Time Literal Now</em>'.
+   * @return a new object of class '<em>Literal Time</em>'.
    * @generated
    */
-  TimeLiteralNow createTimeLiteralNow();
-
-  /**
-   * Returns a new object of class '<em>Time Literal</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Time Literal</em>'.
-   * @generated
-   */
-  TimeLiteral createTimeLiteral();
+  LiteralTime createLiteralTime();
 
   /**
    * Returns the package supported by this factory.

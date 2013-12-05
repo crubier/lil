@@ -3,21 +3,6 @@
  */
 package com.crubier.lil.scoping;
 
-import com.crubier.lil.lil.AccessibleEntity;
-import com.crubier.lil.lil.Component;
-import com.crubier.lil.lil.Entity;
-import com.crubier.lil.lil.EnumElement;
-import com.crubier.lil.lil.EnumLiteral;
-import com.crubier.lil.lil.Interactor;
-import com.crubier.lil.lil.SignalAlias;
-import com.crubier.lil.lil.SignalEmission;
-import com.google.common.base.Objects;
-import java.util.HashSet;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.xtext.scoping.IScope;
-import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
 /**
@@ -28,44 +13,4 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
  */
 @SuppressWarnings("all")
 public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
-  public IScope scope_SignalEmission_instance(final SignalEmission flowemission, final EReference ref) {
-    SignalAlias _destination = flowemission.getDestination();
-    boolean _equals = Objects.equal(_destination, null);
-    if (_equals) {
-      EObject temp = flowemission;
-      boolean _not = (!(temp instanceof Interactor));
-      boolean _while = _not;
-      while (_while) {
-        EObject _eContainer = temp.eContainer();
-        temp = _eContainer;
-        boolean _not_1 = (!(temp instanceof Interactor));
-        _while = _not_1;
-      }
-      EList<EObject> _eContents = temp.eContents();
-      return Scopes.scopeFor(_eContents);
-    } else {
-      SignalAlias _destination_1 = flowemission.getDestination();
-      AccessibleEntity _source = _destination_1.getSource();
-      Entity _specific = _source.getSpecific();
-      Interactor _interactor = ((Component) _specific).getInteractor();
-      EList<EObject> _eContents_1 = _interactor.eContents();
-      return Scopes.scopeFor(_eContents_1);
-    }
-  }
-  
-  public IScope scope_EnumLiteral_element(final EnumLiteral literal, final EReference ref) {
-    EObject object = literal;
-    boolean _not = (!(object instanceof Interactor));
-    boolean _while = _not;
-    while (_while) {
-      EObject _eContainer = object.eContainer();
-      object = _eContainer;
-      boolean _not_1 = (!(object instanceof Interactor));
-      _while = _not_1;
-    }
-    HashSet<EnumElement> _hashSet = new HashSet<EnumElement>();
-    final HashSet<EnumElement> elements = _hashSet;
-    final Interactor interactor = ((Interactor) object);
-    return Scopes.scopeFor(elements);
-  }
 }

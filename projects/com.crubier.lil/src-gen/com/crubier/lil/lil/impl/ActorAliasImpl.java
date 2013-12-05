@@ -2,8 +2,8 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.Actor;
 import com.crubier.lil.lil.ActorAlias;
+import com.crubier.lil.lil.InteractorActor;
 import com.crubier.lil.lil.LilPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,7 +38,7 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * @generated
    * @ordered
    */
-  protected Actor source;
+  protected InteractorActor source;
 
   /**
    * The cached value of the '{@link #getAlias() <em>Alias</em>}' reference.
@@ -48,7 +48,7 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * @generated
    * @ordered
    */
-  protected Actor alias;
+  protected InteractorActor alias;
 
   /**
    * <!-- begin-user-doc -->
@@ -76,12 +76,12 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Actor getSource()
+  public InteractorActor getSource()
   {
     if (source != null && source.eIsProxy())
     {
       InternalEObject oldSource = (InternalEObject)source;
-      source = (Actor)eResolveProxy(oldSource);
+      source = (InteractorActor)eResolveProxy(oldSource);
       if (source != oldSource)
       {
         if (eNotificationRequired())
@@ -96,7 +96,7 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Actor basicGetSource()
+  public InteractorActor basicGetSource()
   {
     return source;
   }
@@ -106,9 +106,9 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSource(Actor newSource)
+  public void setSource(InteractorActor newSource)
   {
-    Actor oldSource = source;
+    InteractorActor oldSource = source;
     source = newSource;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.ACTOR_ALIAS__SOURCE, oldSource, source));
@@ -119,12 +119,12 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Actor getAlias()
+  public InteractorActor getAlias()
   {
     if (alias != null && alias.eIsProxy())
     {
       InternalEObject oldAlias = (InternalEObject)alias;
-      alias = (Actor)eResolveProxy(oldAlias);
+      alias = (InteractorActor)eResolveProxy(oldAlias);
       if (alias != oldAlias)
       {
         if (eNotificationRequired())
@@ -139,7 +139,7 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Actor basicGetAlias()
+  public InteractorActor basicGetAlias()
   {
     return alias;
   }
@@ -149,9 +149,9 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAlias(Actor newAlias)
+  public void setAlias(InteractorActor newAlias)
   {
-    Actor oldAlias = alias;
+    InteractorActor oldAlias = alias;
     alias = newAlias;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.ACTOR_ALIAS__ALIAS, oldAlias, alias));
@@ -188,10 +188,10 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
     switch (featureID)
     {
       case LilPackage.ACTOR_ALIAS__SOURCE:
-        setSource((Actor)newValue);
+        setSource((InteractorActor)newValue);
         return;
       case LilPackage.ACTOR_ALIAS__ALIAS:
-        setAlias((Actor)newValue);
+        setAlias((InteractorActor)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -208,10 +208,10 @@ public class ActorAliasImpl extends MinimalEObjectImpl.Container implements Acto
     switch (featureID)
     {
       case LilPackage.ACTOR_ALIAS__SOURCE:
-        setSource((Actor)null);
+        setSource((InteractorActor)null);
         return;
       case LilPackage.ACTOR_ALIAS__ALIAS:
-        setAlias((Actor)null);
+        setAlias((InteractorActor)null);
         return;
     }
     super.eUnset(featureID);

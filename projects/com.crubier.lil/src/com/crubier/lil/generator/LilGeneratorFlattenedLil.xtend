@@ -6,18 +6,10 @@ package com.crubier.lil.generator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
-import com.crubier.lil.lil.Interactor
 import com.google.inject.Inject
 import org.eclipse.xtext.serializer.ISerializer
-import com.crubier.lil.lil.Component
+import com.crubier.lil.lil.LilPackage
 import com.crubier.lil.lil.LilFactory
-import com.crubier.lil.lil.Actor
-import com.crubier.lil.lil.Signal
-import java.util.ArrayList
-import java.util.HashSet
-import com.crubier.lil.lil.Entity
-import com.crubier.lil.lil.Behavior
-import java.util.Set
 
 /**
  * Generates code from your model files on save.
@@ -45,121 +37,121 @@ class LilGeneratorFlattenedLil implements IGenerator {
 
 	}
 	
-	/**
-	 * Flattens an interactor recursively
-	 * 
-	 */
-	def flatten(Component component) {
-		
-		// The class of interactor of the component
-		val interactor = component.interactor
-		// Component name will be used as a prefix for 
-		val prefix = component.name;
-		
-		
-		// If an
-
-		
-		val actors = interactor.entities.toSet.filter(typeof(Actor))
-		val components = interactor.entities.toSet.filter(typeof(Component))
-		val behaviors = interactor.behaviors.toSet
-		val signals = interactor.signals.toSet
-		
-		val result = LilFactory.eINSTANCE.createInteractor
-		
-		val flatComponents = new ArrayList<Component>
-		for (c:components) {
-			
-		}
-		
-		
-		
-//		for( s : signals) {
-//			val signal = LilFactory.eINSTANCE.createSignal;
-//			signal.name = toString(prefix)+s.name.toLowerCase.toFirstUpper;
-//			println("name : " + (signal.name));
+//	/**
+//	 * Flattens an interactor recursively
+//	 * 
+//	 */
+//	def flatten(Component component) {
+//		
+//		// The class of interactor of the component
+//		val interactor = component.interactor
+//		// Component name will be used as a prefix for 
+//		val prefix = component.name;
+//		
+//		
+//		// If an
+//
+//		
+//		val actors = interactor.entities.toSet.filter(typeof(Actor))
+//		val components = interactor.entities.toSet.filter(typeof(Component))
+//		val behaviors = interactor.behaviors.toSet
+//		val signals = interactor.signals.toSet
+//		
+//		val result = LilFactory.eINSTANCE.createInteractor
+//		
+//		val flatComponents = new ArrayList<Component>
+//		for (c:components) {
+//			
 //		}
-		
-		return result
-	}
-	
-	/**
-	 * Flattens an interactor recursively
-	 */
-	def flatten(Interactor interactor) {
-		//  Interactor flattening algorithm :
-		//
-		// 	1	Flatten the interactor (=class) associated with each component (=instance of interactor) inside this interactor
-		// 	2	Add the resulting code to the code of the current interactor
-		//			2.1	Take the component interactor code
-		//			2.2	Prefix everything inside this code with the component name
-		//			2.3	Merge the resulting code with the current interactor code
-		
-		
-
-		
-		
-	}
-	
-	/**
-	 * merge two interactors
-	 * pre condition : the interactors must NOT be compound, they must not have any sub components
-	 */
-	def merge (Interactor l1, Interactor l2) {
-		val result = LilFactory.eINSTANCE.createInteractor
-		
-		//Merge entities
-		result.entities.clear					
-		val entities = new HashSet<Entity>
-		entities.addAll(l1.entities)
-		entities.addAll(l2.entities)
-		if(entities.filter(typeof(Component)).size >0) throw new Exception("Impossible to merge compound interactors") 
-		else result.entities.addAll(entities)
-		
-		//Merge signals
-		result.signals.clear
-		val signals = new HashSet<Signal>
-		signals.addAll(l1.signals)
-		signals.addAll(l2.signals)
-		if(signals.exists[val first=it signals.exists[val second=it second.name.toLowerCase == first.name.toLowerCase]]) throw new Exception("Impossible to merge interactors containing signals with identical names")
-		else result.signals.addAll(signals)
-		
-		//Merge behaviors
-		result.behaviors.clear
-		val behaviors = new HashSet<Behavior>
-		behaviors.addAll(l1.behaviors)
-		behaviors.addAll(l2.behaviors)
-		result.behaviors.addAll(behaviors)
-		
-		return result
-	}
-	
-	/**
-	 * merge any number of interactors
-	 */
-	def merge (Set<Interactor> l) {
-		val result = new HashSet<Interactor>
-		
-		if(l.length >1) {
-			result.add(merge(l.get(0),l.get(1)))
-			result.addAll(l.drop(2))
-		}
-		else if (l.length==1) {
-			result.add(l.get(0))
-		}
-		
-		return result
-	}
-	
-	
-//	def toString(List<String> prefix) {
-//		var res = "";
-//		for(String s : prefix) {
-//			res= res + s.toLowerCase().toFirstUpper();
-//		}
-//		return res;
+//		
+//		
+//		
+////		for( s : signals) {
+////			val signal = LilFactory.eINSTANCE.createSignal;
+////			signal.name = toString(prefix)+s.name.toLowerCase.toFirstUpper;
+////			println("name : " + (signal.name));
+////		}
+//		
+//		return result
 //	}
-	
+//	
+//	/**
+//	 * Flattens an interactor recursively
+//	 */
+//	def flatten(Interactor interactor) {
+//		//  Interactor flattening algorithm :
+//		//
+//		// 	1	Flatten the interactor (=class) associated with each component (=instance of interactor) inside this interactor
+//		// 	2	Add the resulting code to the code of the current interactor
+//		//			2.1	Take the component interactor code
+//		//			2.2	Prefix everything inside this code with the component name
+//		//			2.3	Merge the resulting code with the current interactor code
+//		
+//		
+//
+//		
+//		
+//	}
+//	
+//	/**
+//	 * merge two interactors
+//	 * pre condition : the interactors must NOT be compound, they must not have any sub components
+//	 */
+//	def merge (Interactor l1, Interactor l2) {
+//		val result = LilFactory.eINSTANCE.createInteractor
+//		
+//		//Merge entities
+//		result.entities.clear					
+//		val entities = new HashSet<Entity>
+//		entities.addAll(l1.entities)
+//		entities.addAll(l2.entities)
+//		if(entities.filter(typeof(Component)).size >0) throw new Exception("Impossible to merge compound interactors") 
+//		else result.entities.addAll(entities)
+//		
+//		//Merge signals
+//		result.signals.clear
+//		val signals = new HashSet<Signal>
+//		signals.addAll(l1.signals)
+//		signals.addAll(l2.signals)
+//		if(signals.exists[val first=it signals.exists[val second=it second.name.toLowerCase == first.name.toLowerCase]]) throw new Exception("Impossible to merge interactors containing signals with identical names")
+//		else result.signals.addAll(signals)
+//		
+//		//Merge behaviors
+//		result.behaviors.clear
+//		val behaviors = new HashSet<Behavior>
+//		behaviors.addAll(l1.behaviors)
+//		behaviors.addAll(l2.behaviors)
+//		result.behaviors.addAll(behaviors)
+//		
+//		return result
+//	}
+//	
+//	/**
+//	 * merge any number of interactors
+//	 */
+//	def merge (Set<Interactor> l) {
+//		val result = new HashSet<Interactor>
+//		
+//		if(l.length >1) {
+//			result.add(merge(l.get(0),l.get(1)))
+//			result.addAll(l.drop(2))
+//		}
+//		else if (l.length==1) {
+//			result.add(l.get(0))
+//		}
+//		
+//		return result
+//	}
+//	
+//	
+////	def toString(List<String> prefix) {
+////		var res = "";
+////		for(String s : prefix) {
+////			res= res + s.toLowerCase().toFirstUpper();
+////		}
+////		return res;
+////	}
+//	
 	
 	
 	

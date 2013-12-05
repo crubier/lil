@@ -1,18 +1,23 @@
-structure commandToSystem :
+commandToSystem data:
 	key : symbol
 	value : number
 		
 	
-interactor Gauge :
-	user : actor
+human actor :
+	pointing : input
+	viewing : output
+	
+	
+Gauge interactor:
+	user : input actor
 	val : number in [0,100] flow from parent to user
 	
 	
-interactor ControlPanel :
-	user : actor
-	system : actor
+ControlPanel interactor:
+	user : human actor
+	system : human actor
 		
-	theGauge : Gauge
+	theGauge : Gauge interactor
 	
 	select: symbol in {#X,#Y} event from user
 	selection : symbol in {#X,#Y} flow to user
@@ -31,7 +36,7 @@ interactor ControlPanel :
 	current: number in [0,100] flow to theGauge 
 	
 	on init : 	
-		always current = Math.clip(   switch(selection) case #X : x case #Y : y  ,0,100)
+		always current = math.clip(   switch(selection) case #X : x case #Y : y  ,0,100)
 	
 	on select : 
 		set selection = select  
