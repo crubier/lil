@@ -110,7 +110,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'm' | 'minute'
+	 *     'minute' | 'm'
 	 */
 	protected void emit_LiteralTime_MKeyword_1_5_1_0_or_MinuteKeyword_1_5_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -118,7 +118,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'minute' | 'm'
+	 *     'm' | 'minute'
 	 */
 	protected void emit_LiteralTime_MKeyword_2_4_1_0_or_MinuteKeyword_2_4_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -150,7 +150,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'second' | 's'
+	 *     's' | 'second'
 	 */
 	protected void emit_LiteralTime_SKeyword_1_6_1_0_or_SecondKeyword_1_6_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -166,7 +166,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'second' | 's'
+	 *     's' | 'second'
 	 */
 	protected void emit_LiteralTime_SKeyword_3_4_1_0_or_SecondKeyword_3_4_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

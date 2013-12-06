@@ -24,7 +24,7 @@ public interface DataTypeDefinitionCompound extends DataTypeDefinition
 {
   /**
    * Returns the value of the '<em><b>Component</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.DataComponent}.
+   * The list contents are of type {@link com.crubier.lil.lil.DataInstanceDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Component</em>' containment reference list isn't clear,
@@ -36,6 +36,6 @@ public interface DataTypeDefinitionCompound extends DataTypeDefinition
    * @model containment="true"
    * @generated
    */
-  EList<DataComponent> getComponent();
+  EList<DataInstanceDeclaration> getComponent();
 
 } // DataTypeDefinitionCompound

@@ -50,13 +50,13 @@ public interface LilFactory extends EFactory
   ActorType createActorType();
 
   /**
-   * Returns a new object of class '<em>Actor Component</em>'.
+   * Returns a new object of class '<em>Actor Instance Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Actor Component</em>'.
+   * @return a new object of class '<em>Actor Instance Declaration</em>'.
    * @generated
    */
-  ActorComponent createActorComponent();
+  ActorInstanceDeclaration createActorInstanceDeclaration();
 
   /**
    * Returns a new object of class '<em>Data Type Definition</em>'.
@@ -77,40 +77,67 @@ public interface LilFactory extends EFactory
   DataType createDataType();
 
   /**
-   * Returns a new object of class '<em>Data Definition Set</em>'.
+   * Returns a new object of class '<em>Data Type Symbol Definition Set</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Definition Set</em>'.
+   * @return a new object of class '<em>Data Type Symbol Definition Set</em>'.
    * @generated
    */
-  DataDefinitionSet createDataDefinitionSet();
+  DataTypeSymbolDefinitionSet createDataTypeSymbolDefinitionSet();
 
   /**
-   * Returns a new object of class '<em>Data Definition Enum Element</em>'.
+   * Returns a new object of class '<em>Data Type Symbol Definition Set Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Definition Enum Element</em>'.
+   * @return a new object of class '<em>Data Type Symbol Definition Set Element</em>'.
    * @generated
    */
-  DataDefinitionEnumElement createDataDefinitionEnumElement();
+  DataTypeSymbolDefinitionSetElement createDataTypeSymbolDefinitionSetElement();
 
   /**
-   * Returns a new object of class '<em>Data Collection Type</em>'.
+   * Returns a new object of class '<em>Data Type Number Definition Set</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Collection Type</em>'.
+   * @return a new object of class '<em>Data Type Number Definition Set</em>'.
    * @generated
    */
-  DataCollectionType createDataCollectionType();
+  DataTypeNumberDefinitionSet createDataTypeNumberDefinitionSet();
 
   /**
-   * Returns a new object of class '<em>Data Component</em>'.
+   * Returns a new object of class '<em>Data Type Text Definition Set</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Component</em>'.
+   * @return a new object of class '<em>Data Type Text Definition Set</em>'.
    * @generated
    */
-  DataComponent createDataComponent();
+  DataTypeTextDefinitionSet createDataTypeTextDefinitionSet();
+
+  /**
+   * Returns a new object of class '<em>Data Type Time Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Time Definition Set</em>'.
+   * @generated
+   */
+  DataTypeTimeDefinitionSet createDataTypeTimeDefinitionSet();
+
+  /**
+   * Returns a new object of class '<em>Data Type Identifier Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Identifier Definition Set</em>'.
+   * @generated
+   */
+  DataTypeIdentifierDefinitionSet createDataTypeIdentifierDefinitionSet();
+
+  /**
+   * Returns a new object of class '<em>Data Instance Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Instance Declaration</em>'.
+   * @generated
+   */
+  DataInstanceDeclaration createDataInstanceDeclaration();
 
   /**
    * Returns a new object of class '<em>Interactor Type Definition</em>'.
@@ -329,6 +356,33 @@ public interface LilFactory extends EFactory
   ExpressionCase createExpressionCase();
 
   /**
+   * Returns a new object of class '<em>Actor Type Input</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Actor Type Input</em>'.
+   * @generated
+   */
+  ActorTypeInput createActorTypeInput();
+
+  /**
+   * Returns a new object of class '<em>Actor Type Output</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Actor Type Output</em>'.
+   * @generated
+   */
+  ActorTypeOutput createActorTypeOutput();
+
+  /**
+   * Returns a new object of class '<em>Actor Type Custom</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Actor Type Custom</em>'.
+   * @generated
+   */
+  ActorTypeCustom createActorTypeCustom();
+
+  /**
    * Returns a new object of class '<em>Data Type Definition Compound</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -347,31 +401,166 @@ public interface LilFactory extends EFactory
   DataTypeDefinitionAlias createDataTypeDefinitionAlias();
 
   /**
-   * Returns a new object of class '<em>Data Definition Set Enum</em>'.
+   * Returns a new object of class '<em>Data Type Void</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Definition Set Enum</em>'.
+   * @return a new object of class '<em>Data Type Void</em>'.
    * @generated
    */
-  DataDefinitionSetEnum createDataDefinitionSetEnum();
+  DataTypeVoid createDataTypeVoid();
 
   /**
-   * Returns a new object of class '<em>Data Definition Set Number</em>'.
+   * Returns a new object of class '<em>Data Type Symbol</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Definition Set Number</em>'.
+   * @return a new object of class '<em>Data Type Symbol</em>'.
    * @generated
    */
-  DataDefinitionSetNumber createDataDefinitionSetNumber();
+  DataTypeSymbol createDataTypeSymbol();
 
   /**
-   * Returns a new object of class '<em>Data Definition Set Interval</em>'.
+   * Returns a new object of class '<em>Data Type Number</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Definition Set Interval</em>'.
+   * @return a new object of class '<em>Data Type Number</em>'.
    * @generated
    */
-  DataDefinitionSetInterval createDataDefinitionSetInterval();
+  DataTypeNumber createDataTypeNumber();
+
+  /**
+   * Returns a new object of class '<em>Data Type Text</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Text</em>'.
+   * @generated
+   */
+  DataTypeText createDataTypeText();
+
+  /**
+   * Returns a new object of class '<em>Data Type Time</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Time</em>'.
+   * @generated
+   */
+  DataTypeTime createDataTypeTime();
+
+  /**
+   * Returns a new object of class '<em>Data Type Identifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Identifier</em>'.
+   * @generated
+   */
+  DataTypeIdentifier createDataTypeIdentifier();
+
+  /**
+   * Returns a new object of class '<em>Data Type Custom</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Custom</em>'.
+   * @generated
+   */
+  DataTypeCustom createDataTypeCustom();
+
+  /**
+   * Returns a new object of class '<em>Data Type Collection</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Collection</em>'.
+   * @generated
+   */
+  DataTypeCollection createDataTypeCollection();
+
+  /**
+   * Returns a new object of class '<em>Data Type Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Set</em>'.
+   * @generated
+   */
+  DataTypeSet createDataTypeSet();
+
+  /**
+   * Returns a new object of class '<em>Data Type List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type List</em>'.
+   * @generated
+   */
+  DataTypeList createDataTypeList();
+
+  /**
+   * Returns a new object of class '<em>Data Type Queue</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Queue</em>'.
+   * @generated
+   */
+  DataTypeQueue createDataTypeQueue();
+
+  /**
+   * Returns a new object of class '<em>Data Definition Enum Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Definition Enum Element</em>'.
+   * @generated
+   */
+  DataDefinitionEnumElement createDataDefinitionEnumElement();
+
+  /**
+   * Returns a new object of class '<em>Data Type Number Definition Set Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Number Definition Set Set</em>'.
+   * @generated
+   */
+  DataTypeNumberDefinitionSetSet createDataTypeNumberDefinitionSetSet();
+
+  /**
+   * Returns a new object of class '<em>Data Type Number Definition Set Interval</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Number Definition Set Interval</em>'.
+   * @generated
+   */
+  DataTypeNumberDefinitionSetInterval createDataTypeNumberDefinitionSetInterval();
+
+  /**
+   * Returns a new object of class '<em>Data Type Text Definition Set Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Text Definition Set Set</em>'.
+   * @generated
+   */
+  DataTypeTextDefinitionSetSet createDataTypeTextDefinitionSetSet();
+
+  /**
+   * Returns a new object of class '<em>Data Type Time Definition Set Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Time Definition Set Set</em>'.
+   * @generated
+   */
+  DataTypeTimeDefinitionSetSet createDataTypeTimeDefinitionSetSet();
+
+  /**
+   * Returns a new object of class '<em>Data Type Time Definition Set Interval</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Time Definition Set Interval</em>'.
+   * @generated
+   */
+  DataTypeTimeDefinitionSetInterval createDataTypeTimeDefinitionSetInterval();
+
+  /**
+   * Returns a new object of class '<em>Data Type Identifier Definition Set Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Identifier Definition Set Set</em>'.
+   * @generated
+   */
+  DataTypeIdentifierDefinitionSetSet createDataTypeIdentifierDefinitionSetSet();
 
   /**
    * Returns a new object of class '<em>Expression Binary Operation</em>'.
@@ -464,13 +653,13 @@ public interface LilFactory extends EFactory
   LiteralNumber createLiteralNumber();
 
   /**
-   * Returns a new object of class '<em>Literal String</em>'.
+   * Returns a new object of class '<em>Literal Text</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Literal String</em>'.
+   * @return a new object of class '<em>Literal Text</em>'.
    * @generated
    */
-  LiteralString createLiteralString();
+  LiteralText createLiteralText();
 
   /**
    * Returns a new object of class '<em>Literal Enum</em>'.

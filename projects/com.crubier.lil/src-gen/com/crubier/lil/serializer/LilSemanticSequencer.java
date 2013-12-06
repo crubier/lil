@@ -2,18 +2,33 @@ package com.crubier.lil.serializer;
 
 import com.crubier.lil.lil.AccessibleEntity;
 import com.crubier.lil.lil.ActorAlias;
-import com.crubier.lil.lil.ActorComponent;
-import com.crubier.lil.lil.ActorType;
+import com.crubier.lil.lil.ActorInstanceDeclaration;
+import com.crubier.lil.lil.ActorTypeCustom;
 import com.crubier.lil.lil.ActorTypeDefinition;
-import com.crubier.lil.lil.DataCollectionType;
-import com.crubier.lil.lil.DataComponent;
+import com.crubier.lil.lil.ActorTypeInput;
+import com.crubier.lil.lil.ActorTypeOutput;
 import com.crubier.lil.lil.DataDefinitionEnumElement;
-import com.crubier.lil.lil.DataDefinitionSetEnum;
-import com.crubier.lil.lil.DataDefinitionSetInterval;
-import com.crubier.lil.lil.DataDefinitionSetNumber;
-import com.crubier.lil.lil.DataType;
+import com.crubier.lil.lil.DataInstanceDeclaration;
+import com.crubier.lil.lil.DataTypeCollection;
+import com.crubier.lil.lil.DataTypeCustom;
 import com.crubier.lil.lil.DataTypeDefinitionAlias;
 import com.crubier.lil.lil.DataTypeDefinitionCompound;
+import com.crubier.lil.lil.DataTypeIdentifier;
+import com.crubier.lil.lil.DataTypeIdentifierDefinitionSetSet;
+import com.crubier.lil.lil.DataTypeList;
+import com.crubier.lil.lil.DataTypeNumber;
+import com.crubier.lil.lil.DataTypeNumberDefinitionSetInterval;
+import com.crubier.lil.lil.DataTypeNumberDefinitionSetSet;
+import com.crubier.lil.lil.DataTypeQueue;
+import com.crubier.lil.lil.DataTypeSet;
+import com.crubier.lil.lil.DataTypeSymbol;
+import com.crubier.lil.lil.DataTypeSymbolDefinitionSet;
+import com.crubier.lil.lil.DataTypeText;
+import com.crubier.lil.lil.DataTypeTextDefinitionSetSet;
+import com.crubier.lil.lil.DataTypeTime;
+import com.crubier.lil.lil.DataTypeTimeDefinitionSetInterval;
+import com.crubier.lil.lil.DataTypeTimeDefinitionSetSet;
+import com.crubier.lil.lil.DataTypeVoid;
 import com.crubier.lil.lil.ExpressionBinaryOperation;
 import com.crubier.lil.lil.ExpressionCase;
 import com.crubier.lil.lil.ExpressionForEach;
@@ -43,7 +58,7 @@ import com.crubier.lil.lil.LiteralData;
 import com.crubier.lil.lil.LiteralEnum;
 import com.crubier.lil.lil.LiteralNull;
 import com.crubier.lil.lil.LiteralNumber;
-import com.crubier.lil.lil.LiteralString;
+import com.crubier.lil.lil.LiteralText;
 import com.crubier.lil.lil.LiteralTime;
 import com.crubier.lil.lil.UnaryOperation;
 import com.crubier.lil.services.LilGrammarAccess;
@@ -81,15 +96,15 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.ACTOR_COMPONENT:
-				if(context == grammarAccess.getActorComponentRule()) {
-					sequence_ActorComponent(context, (ActorComponent) semanticObject); 
+			case LilPackage.ACTOR_INSTANCE_DECLARATION:
+				if(context == grammarAccess.getActorInstanceDeclarationRule()) {
+					sequence_ActorInstanceDeclaration(context, (ActorInstanceDeclaration) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.ACTOR_TYPE:
+			case LilPackage.ACTOR_TYPE_CUSTOM:
 				if(context == grammarAccess.getActorTypeRule()) {
-					sequence_ActorType(context, (ActorType) semanticObject); 
+					sequence_ActorType(context, (ActorTypeCustom) semanticObject); 
 					return; 
 				}
 				else break;
@@ -99,45 +114,47 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_COLLECTION_TYPE:
-				if(context == grammarAccess.getDataCollectionTypeRule()) {
-					sequence_DataCollectionType(context, (DataCollectionType) semanticObject); 
+			case LilPackage.ACTOR_TYPE_INPUT:
+				if(context == grammarAccess.getActorTypeRule()) {
+					sequence_ActorType(context, (ActorTypeInput) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_COMPONENT:
-				if(context == grammarAccess.getDataComponentRule()) {
-					sequence_DataComponent(context, (DataComponent) semanticObject); 
+			case LilPackage.ACTOR_TYPE_OUTPUT:
+				if(context == grammarAccess.getActorTypeRule()) {
+					sequence_ActorType(context, (ActorTypeOutput) semanticObject); 
 					return; 
 				}
 				else break;
 			case LilPackage.DATA_DEFINITION_ENUM_ELEMENT:
-				if(context == grammarAccess.getDataDefinitionEnumElementRule()) {
-					sequence_DataDefinitionEnumElement(context, (DataDefinitionEnumElement) semanticObject); 
+				if(context == grammarAccess.getDataTypeSymbolDefinitionSetElementRule()) {
+					sequence_DataTypeSymbolDefinitionSetElement(context, (DataDefinitionEnumElement) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_DEFINITION_SET_ENUM:
-				if(context == grammarAccess.getDataDefinitionSetRule()) {
-					sequence_DataDefinitionSet(context, (DataDefinitionSetEnum) semanticObject); 
+			case LilPackage.DATA_INSTANCE_DECLARATION:
+				if(context == grammarAccess.getDataInstanceDeclarationRule()) {
+					sequence_DataInstanceDeclaration(context, (DataInstanceDeclaration) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_DEFINITION_SET_INTERVAL:
-				if(context == grammarAccess.getDataDefinitionSetRule()) {
-					sequence_DataDefinitionSet(context, (DataDefinitionSetInterval) semanticObject); 
+			case LilPackage.DATA_TYPE_COLLECTION:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeCollection) semanticObject); 
 					return; 
 				}
 				else break;
-			case LilPackage.DATA_DEFINITION_SET_NUMBER:
-				if(context == grammarAccess.getDataDefinitionSetRule()) {
-					sequence_DataDefinitionSet(context, (DataDefinitionSetNumber) semanticObject); 
-					return; 
-				}
-				else break;
-			case LilPackage.DATA_TYPE:
-				if(context == grammarAccess.getDataTypeRule()) {
-					sequence_DataType(context, (DataType) semanticObject); 
+			case LilPackage.DATA_TYPE_CUSTOM:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeCustom) semanticObject); 
 					return; 
 				}
 				else break;
@@ -150,6 +167,132 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.DATA_TYPE_DEFINITION_COMPOUND:
 				if(context == grammarAccess.getDataTypeDefinitionRule()) {
 					sequence_DataTypeDefinition(context, (DataTypeDefinitionCompound) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_IDENTIFIER:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeIdentifier) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_IDENTIFIER_DEFINITION_SET_SET:
+				if(context == grammarAccess.getDataTypeIdentifierDefinitionSetRule()) {
+					sequence_DataTypeIdentifierDefinitionSet(context, (DataTypeIdentifierDefinitionSetSet) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_LIST:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0()) {
+					sequence_DataType(context, (DataTypeList) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_NUMBER:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeNumber) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL:
+				if(context == grammarAccess.getDataTypeNumberDefinitionSetRule()) {
+					sequence_DataTypeNumberDefinitionSet(context, (DataTypeNumberDefinitionSetInterval) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET_SET:
+				if(context == grammarAccess.getDataTypeNumberDefinitionSetRule()) {
+					sequence_DataTypeNumberDefinitionSet(context, (DataTypeNumberDefinitionSetSet) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_QUEUE:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0()) {
+					sequence_DataType(context, (DataTypeQueue) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_SET:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeSet) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_SYMBOL:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeSymbol) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_SYMBOL_DEFINITION_SET:
+				if(context == grammarAccess.getDataTypeSymbolDefinitionSetRule()) {
+					sequence_DataTypeSymbolDefinitionSet(context, (DataTypeSymbolDefinitionSet) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_TEXT:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeText) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_TEXT_DEFINITION_SET_SET:
+				if(context == grammarAccess.getDataTypeTextDefinitionSetRule()) {
+					sequence_DataTypeTextDefinitionSet(context, (DataTypeTextDefinitionSetSet) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_TIME:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeTime) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_TIME_DEFINITION_SET_INTERVAL:
+				if(context == grammarAccess.getDataTypeTimeDefinitionSetRule()) {
+					sequence_DataTypeTimeDefinitionSet(context, (DataTypeTimeDefinitionSetInterval) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_TIME_DEFINITION_SET_SET:
+				if(context == grammarAccess.getDataTypeTimeDefinitionSetRule()) {
+					sequence_DataTypeTimeDefinitionSet(context, (DataTypeTimeDefinitionSetSet) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_VOID:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeVoid) semanticObject); 
 					return; 
 				}
 				else break;
@@ -551,7 +694,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.LITERAL_STRING:
+			case LilPackage.LITERAL_TEXT:
 				if(context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getExpressionAdditionRule() ||
 				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
@@ -571,8 +714,8 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getExpressionParenthesizedRule() ||
 				   context == grammarAccess.getExpressionPrimaryRule() ||
 				   context == grammarAccess.getExpressionUnaryRule() ||
-				   context == grammarAccess.getLiteralStringRule()) {
-					sequence_LiteralString(context, (LiteralString) semanticObject); 
+				   context == grammarAccess.getLiteralTextRule()) {
+					sequence_LiteralText(context, (LiteralText) semanticObject); 
 					return; 
 				}
 				else break;
@@ -660,24 +803,24 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (name=ID type=ActorType)
 	 */
-	protected void sequence_ActorComponent(EObject context, ActorComponent semanticObject) {
+	protected void sequence_ActorInstanceDeclaration(EObject context, ActorInstanceDeclaration semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_COMPONENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_COMPONENT__NAME));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_COMPONENT__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_COMPONENT__TYPE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_INSTANCE_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_INSTANCE_DECLARATION__NAME));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_INSTANCE_DECLARATION__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_INSTANCE_DECLARATION__TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActorComponentAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getActorComponentAccess().getTypeActorTypeParserRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getActorInstanceDeclarationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getActorInstanceDeclarationAccess().getTypeActorTypeParserRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID component+=ActorComponent*)
+	 *     (name=ID component+=ActorInstanceDeclaration*)
 	 */
 	protected void sequence_ActorTypeDefinition(EObject context, ActorTypeDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -686,18 +829,34 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (base=ActorBaseType | custom=[ActorTypeDefinition|ID])
+	 *     definition=[ActorTypeDefinition|ID]
 	 */
-	protected void sequence_ActorType(EObject context, ActorType semanticObject) {
+	protected void sequence_ActorType(EObject context, ActorTypeCustom semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.ACTOR_TYPE_CUSTOM__DEFINITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.ACTOR_TYPE_CUSTOM__DEFINITION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActorTypeAccess().getDefinitionActorTypeDefinitionIDTerminalRuleCall_2_1_0_1(), semanticObject.getDefinition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {ActorTypeInput}
+	 */
+	protected void sequence_ActorType(EObject context, ActorTypeInput semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (type='collection' | type='set' | type='list' | type='queue' | (type='map' mapping=DataType))
+	 *     {ActorTypeOutput}
 	 */
-	protected void sequence_DataCollectionType(EObject context, DataCollectionType semanticObject) {
+	protected void sequence_ActorType(EObject context, ActorTypeOutput semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -706,71 +865,18 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     (name=ID type=DataType)
 	 */
-	protected void sequence_DataComponent(EObject context, DataComponent semanticObject) {
+	protected void sequence_DataInstanceDeclaration(EObject context, DataInstanceDeclaration semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_COMPONENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_COMPONENT__NAME));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_COMPONENT__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_COMPONENT__TYPE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_INSTANCE_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_INSTANCE_DECLARATION__NAME));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_INSTANCE_DECLARATION__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_INSTANCE_DECLARATION__TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataComponentAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDataComponentAccess().getTypeDataTypeParserRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getDataInstanceDeclarationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDataInstanceDeclarationAccess().getTypeDataTypeParserRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_DataDefinitionEnumElement(EObject context, DataDefinitionEnumElement semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_DEFINITION_ENUM_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_DEFINITION_ENUM_ELEMENT__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataDefinitionEnumElementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (element+=DataDefinitionEnumElement element+=DataDefinitionEnumElement*)
-	 */
-	protected void sequence_DataDefinitionSet(EObject context, DataDefinitionSetEnum semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (inf=LiteralNumber sup=LiteralNumber)
-	 */
-	protected void sequence_DataDefinitionSet(EObject context, DataDefinitionSetInterval semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_DEFINITION_SET_INTERVAL__INF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_DEFINITION_SET_INTERVAL__INF));
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_DEFINITION_SET_INTERVAL__SUP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_DEFINITION_SET_INTERVAL__SUP));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataDefinitionSetAccess().getInfLiteralNumberParserRuleCall_2_2_0(), semanticObject.getInf());
-		feeder.accept(grammarAccess.getDataDefinitionSetAccess().getSupLiteralNumberParserRuleCall_2_4_0(), semanticObject.getSup());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (element+=LiteralNumber element+=LiteralNumber*)
-	 */
-	protected void sequence_DataDefinitionSet(EObject context, DataDefinitionSetNumber semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -795,7 +901,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID component+=DataComponent*)
+	 *     (name=ID component+=DataInstanceDeclaration*)
 	 */
 	protected void sequence_DataTypeDefinition(EObject context, DataTypeDefinitionCompound semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -804,9 +910,233 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (((base=DataBaseType definitionSet=DataDefinitionSet?) | custom=[DataTypeDefinition|ID]) collection=DataCollectionType?)
+	 *     (element+=LiteralNumber element+=LiteralNumber*)
 	 */
-	protected void sequence_DataType(EObject context, DataType semanticObject) {
+	protected void sequence_DataTypeIdentifierDefinitionSet(EObject context, DataTypeIdentifierDefinitionSetSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (inf=LiteralNumber sup=LiteralNumber)
+	 */
+	protected void sequence_DataTypeNumberDefinitionSet(EObject context, DataTypeNumberDefinitionSetInterval semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL__INF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL__INF));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL__SUP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL__SUP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeNumberDefinitionSetAccess().getInfLiteralNumberParserRuleCall_1_2_0(), semanticObject.getInf());
+		feeder.accept(grammarAccess.getDataTypeNumberDefinitionSetAccess().getSupLiteralNumberParserRuleCall_1_4_0(), semanticObject.getSup());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (element+=LiteralNumber element+=LiteralNumber*)
+	 */
+	protected void sequence_DataTypeNumberDefinitionSet(EObject context, DataTypeNumberDefinitionSetSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_DataTypeSymbolDefinitionSetElement(EObject context, DataDefinitionEnumElement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_DEFINITION_ENUM_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_DEFINITION_ENUM_ELEMENT__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeSymbolDefinitionSetElementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (element+=DataTypeSymbolDefinitionSetElement element+=DataTypeSymbolDefinitionSetElement*)
+	 */
+	protected void sequence_DataTypeSymbolDefinitionSet(EObject context, DataTypeSymbolDefinitionSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (element+=LiteralText element+=LiteralText*)
+	 */
+	protected void sequence_DataTypeTextDefinitionSet(EObject context, DataTypeTextDefinitionSetSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (inf=LiteralTime sup=LiteralTime)
+	 */
+	protected void sequence_DataTypeTimeDefinitionSet(EObject context, DataTypeTimeDefinitionSetInterval semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_TIME_DEFINITION_SET_INTERVAL__INF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_TIME_DEFINITION_SET_INTERVAL__INF));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_TIME_DEFINITION_SET_INTERVAL__SUP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_TIME_DEFINITION_SET_INTERVAL__SUP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeTimeDefinitionSetAccess().getInfLiteralTimeParserRuleCall_1_2_0(), semanticObject.getInf());
+		feeder.accept(grammarAccess.getDataTypeTimeDefinitionSetAccess().getSupLiteralTimeParserRuleCall_1_4_0(), semanticObject.getSup());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (element+=LiteralTime element+=LiteralTime*)
+	 */
+	protected void sequence_DataTypeTimeDefinitionSet(EObject context, DataTypeTimeDefinitionSetSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     elementType=DataType_DataTypeCollection_1_0_0
+	 */
+	protected void sequence_DataType(EObject context, DataTypeCollection semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_COLLECTION__ELEMENT_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_COLLECTION__ELEMENT_TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0(), semanticObject.getElementType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     definition=[DataTypeDefinition|ID]
+	 */
+	protected void sequence_DataType(EObject context, DataTypeCustom semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_CUSTOM__DEFINITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_CUSTOM__DEFINITION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeAccess().getDefinitionDataTypeDefinitionIDTerminalRuleCall_0_6_1_0_1(), semanticObject.getDefinition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (definitionSet=DataTypeIdentifierDefinitionSet?)
+	 */
+	protected void sequence_DataType(EObject context, DataTypeIdentifier semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     elementType=DataType_DataTypeList_3_0_0
+	 */
+	protected void sequence_DataType(EObject context, DataTypeList semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_LIST__ELEMENT_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_LIST__ELEMENT_TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0(), semanticObject.getElementType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (definitionSet=DataTypeNumberDefinitionSet?)
+	 */
+	protected void sequence_DataType(EObject context, DataTypeNumber semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     elementType=DataType_DataTypeQueue_4_0_0
+	 */
+	protected void sequence_DataType(EObject context, DataTypeQueue semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_QUEUE__ELEMENT_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_QUEUE__ELEMENT_TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0(), semanticObject.getElementType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     elementType=DataType_DataTypeSet_2_0_0
+	 */
+	protected void sequence_DataType(EObject context, DataTypeSet semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.DATA_TYPE_SET__ELEMENT_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.DATA_TYPE_SET__ELEMENT_TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0(), semanticObject.getElementType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (definitionSet=DataTypeSymbolDefinitionSet?)
+	 */
+	protected void sequence_DataType(EObject context, DataTypeSymbol semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (definitionSet=DataTypeTextDefinitionSet?)
+	 */
+	protected void sequence_DataType(EObject context, DataTypeText semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (definitionSet=DataTypeTimeDefinitionSet?)
+	 */
+	protected void sequence_DataType(EObject context, DataTypeTime semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {DataTypeVoid}
+	 */
+	protected void sequence_DataType(EObject context, DataTypeVoid semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1195,14 +1525,14 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Constraint:
 	 *     value=STRING
 	 */
-	protected void sequence_LiteralString(EObject context, LiteralString semanticObject) {
+	protected void sequence_LiteralText(EObject context, LiteralText semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.LITERAL_STRING__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.LITERAL_STRING__VALUE));
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.LITERAL_TEXT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.LITERAL_TEXT__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getLiteralStringAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getLiteralTextAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

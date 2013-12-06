@@ -11,7 +11,7 @@ import com.crubier.lil.lil.LiteralBoolean;
 import com.crubier.lil.lil.LiteralEnum;
 import com.crubier.lil.lil.LiteralNull;
 import com.crubier.lil.lil.LiteralNumber;
-import com.crubier.lil.lil.LiteralString;
+import com.crubier.lil.lil.LiteralText;
 import com.crubier.lil.lil.LiteralTime;
 import com.crubier.lil.ui.syntaxcoloring.HighlightingConfiguration;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -22,7 +22,6 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 import org.eclipse.xtext.util.ITextRegion;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 
 @SuppressWarnings("all")
 public class HighlightingCalculator implements ISemanticHighlightingCalculator {
@@ -60,17 +59,8 @@ public class HighlightingCalculator implements ISemanticHighlightingCalculator {
           if (current instanceof DataType) {
             final DataType _dataType = (DataType)current;
             _matched=true;
-            int _offset = regionf.getOffset();
-            String _elvis = null;
-            String _base = _dataType.getBase();
-            if (_base != null) {
-              _elvis = _base;
-            } else {
-              DataTypeDefinition _custom = _dataType.getCustom();
-              String _name = _custom.getName();
-              _elvis = ObjectExtensions.<String>operator_elvis(_base, _name);
-            }
-            int _length = _elvis.length();
+            int _offset = region.getOffset();
+            int _length = region.getLength();
             acceptor.addPosition(_offset, _length, HighlightingConfiguration.DATA_ID);
           }
         }
@@ -129,8 +119,8 @@ public class HighlightingCalculator implements ISemanticHighlightingCalculator {
           }
         }
         if (!_matched) {
-          if (current instanceof LiteralString) {
-            final LiteralString _literalString = (LiteralString)current;
+          if (current instanceof LiteralText) {
+            final LiteralText _literalText = (LiteralText)current;
             _matched=true;
             int _offset = regionf.getOffset();
             int _length = regionf.getLength();

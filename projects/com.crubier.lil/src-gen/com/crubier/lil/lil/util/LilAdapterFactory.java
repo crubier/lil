@@ -90,9 +90,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createActorTypeAdapter();
       }
       @Override
-      public Adapter caseActorComponent(ActorComponent object)
+      public Adapter caseActorInstanceDeclaration(ActorInstanceDeclaration object)
       {
-        return createActorComponentAdapter();
+        return createActorInstanceDeclarationAdapter();
       }
       @Override
       public Adapter caseDataTypeDefinition(DataTypeDefinition object)
@@ -105,24 +105,39 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeAdapter();
       }
       @Override
-      public Adapter caseDataDefinitionSet(DataDefinitionSet object)
+      public Adapter caseDataTypeSymbolDefinitionSet(DataTypeSymbolDefinitionSet object)
       {
-        return createDataDefinitionSetAdapter();
+        return createDataTypeSymbolDefinitionSetAdapter();
       }
       @Override
-      public Adapter caseDataDefinitionEnumElement(DataDefinitionEnumElement object)
+      public Adapter caseDataTypeSymbolDefinitionSetElement(DataTypeSymbolDefinitionSetElement object)
       {
-        return createDataDefinitionEnumElementAdapter();
+        return createDataTypeSymbolDefinitionSetElementAdapter();
       }
       @Override
-      public Adapter caseDataCollectionType(DataCollectionType object)
+      public Adapter caseDataTypeNumberDefinitionSet(DataTypeNumberDefinitionSet object)
       {
-        return createDataCollectionTypeAdapter();
+        return createDataTypeNumberDefinitionSetAdapter();
       }
       @Override
-      public Adapter caseDataComponent(DataComponent object)
+      public Adapter caseDataTypeTextDefinitionSet(DataTypeTextDefinitionSet object)
       {
-        return createDataComponentAdapter();
+        return createDataTypeTextDefinitionSetAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeTimeDefinitionSet(DataTypeTimeDefinitionSet object)
+      {
+        return createDataTypeTimeDefinitionSetAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeIdentifierDefinitionSet(DataTypeIdentifierDefinitionSet object)
+      {
+        return createDataTypeIdentifierDefinitionSetAdapter();
+      }
+      @Override
+      public Adapter caseDataInstanceDeclaration(DataInstanceDeclaration object)
+      {
+        return createDataInstanceDeclarationAdapter();
       }
       @Override
       public Adapter caseInteractorTypeDefinition(InteractorTypeDefinition object)
@@ -245,6 +260,21 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createExpressionCaseAdapter();
       }
       @Override
+      public Adapter caseActorTypeInput(ActorTypeInput object)
+      {
+        return createActorTypeInputAdapter();
+      }
+      @Override
+      public Adapter caseActorTypeOutput(ActorTypeOutput object)
+      {
+        return createActorTypeOutputAdapter();
+      }
+      @Override
+      public Adapter caseActorTypeCustom(ActorTypeCustom object)
+      {
+        return createActorTypeCustomAdapter();
+      }
+      @Override
       public Adapter caseDataTypeDefinitionCompound(DataTypeDefinitionCompound object)
       {
         return createDataTypeDefinitionCompoundAdapter();
@@ -255,19 +285,94 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeDefinitionAliasAdapter();
       }
       @Override
-      public Adapter caseDataDefinitionSetEnum(DataDefinitionSetEnum object)
+      public Adapter caseDataTypeVoid(DataTypeVoid object)
       {
-        return createDataDefinitionSetEnumAdapter();
+        return createDataTypeVoidAdapter();
       }
       @Override
-      public Adapter caseDataDefinitionSetNumber(DataDefinitionSetNumber object)
+      public Adapter caseDataTypeSymbol(DataTypeSymbol object)
       {
-        return createDataDefinitionSetNumberAdapter();
+        return createDataTypeSymbolAdapter();
       }
       @Override
-      public Adapter caseDataDefinitionSetInterval(DataDefinitionSetInterval object)
+      public Adapter caseDataTypeNumber(DataTypeNumber object)
       {
-        return createDataDefinitionSetIntervalAdapter();
+        return createDataTypeNumberAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeText(DataTypeText object)
+      {
+        return createDataTypeTextAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeTime(DataTypeTime object)
+      {
+        return createDataTypeTimeAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeIdentifier(DataTypeIdentifier object)
+      {
+        return createDataTypeIdentifierAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeCustom(DataTypeCustom object)
+      {
+        return createDataTypeCustomAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeCollection(DataTypeCollection object)
+      {
+        return createDataTypeCollectionAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeSet(DataTypeSet object)
+      {
+        return createDataTypeSetAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeList(DataTypeList object)
+      {
+        return createDataTypeListAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeQueue(DataTypeQueue object)
+      {
+        return createDataTypeQueueAdapter();
+      }
+      @Override
+      public Adapter caseDataDefinitionEnumElement(DataDefinitionEnumElement object)
+      {
+        return createDataDefinitionEnumElementAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeNumberDefinitionSetSet(DataTypeNumberDefinitionSetSet object)
+      {
+        return createDataTypeNumberDefinitionSetSetAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeNumberDefinitionSetInterval(DataTypeNumberDefinitionSetInterval object)
+      {
+        return createDataTypeNumberDefinitionSetIntervalAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeTextDefinitionSetSet(DataTypeTextDefinitionSetSet object)
+      {
+        return createDataTypeTextDefinitionSetSetAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeTimeDefinitionSetSet(DataTypeTimeDefinitionSetSet object)
+      {
+        return createDataTypeTimeDefinitionSetSetAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeTimeDefinitionSetInterval(DataTypeTimeDefinitionSetInterval object)
+      {
+        return createDataTypeTimeDefinitionSetIntervalAdapter();
+      }
+      @Override
+      public Adapter caseDataTypeIdentifierDefinitionSetSet(DataTypeIdentifierDefinitionSetSet object)
+      {
+        return createDataTypeIdentifierDefinitionSetSetAdapter();
       }
       @Override
       public Adapter caseExpressionBinaryOperation(ExpressionBinaryOperation object)
@@ -320,9 +425,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createLiteralNumberAdapter();
       }
       @Override
-      public Adapter caseLiteralString(LiteralString object)
+      public Adapter caseLiteralText(LiteralText object)
       {
-        return createLiteralStringAdapter();
+        return createLiteralTextAdapter();
       }
       @Override
       public Adapter caseLiteralEnum(LiteralEnum object)
@@ -402,16 +507,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorComponent <em>Actor Component</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorInstanceDeclaration <em>Actor Instance Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.ActorComponent
+   * @see com.crubier.lil.lil.ActorInstanceDeclaration
    * @generated
    */
-  public Adapter createActorComponentAdapter()
+  public Adapter createActorInstanceDeclarationAdapter()
   {
     return null;
   }
@@ -447,61 +552,106 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataDefinitionSet <em>Data Definition Set</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeSymbolDefinitionSet <em>Data Type Symbol Definition Set</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataDefinitionSet
+   * @see com.crubier.lil.lil.DataTypeSymbolDefinitionSet
    * @generated
    */
-  public Adapter createDataDefinitionSetAdapter()
+  public Adapter createDataTypeSymbolDefinitionSetAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataDefinitionEnumElement <em>Data Definition Enum Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeSymbolDefinitionSetElement <em>Data Type Symbol Definition Set Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataDefinitionEnumElement
+   * @see com.crubier.lil.lil.DataTypeSymbolDefinitionSetElement
    * @generated
    */
-  public Adapter createDataDefinitionEnumElementAdapter()
+  public Adapter createDataTypeSymbolDefinitionSetElementAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataCollectionType <em>Data Collection Type</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeNumberDefinitionSet <em>Data Type Number Definition Set</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataCollectionType
+   * @see com.crubier.lil.lil.DataTypeNumberDefinitionSet
    * @generated
    */
-  public Adapter createDataCollectionTypeAdapter()
+  public Adapter createDataTypeNumberDefinitionSetAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataComponent <em>Data Component</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeTextDefinitionSet <em>Data Type Text Definition Set</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataComponent
+   * @see com.crubier.lil.lil.DataTypeTextDefinitionSet
    * @generated
    */
-  public Adapter createDataComponentAdapter()
+  public Adapter createDataTypeTextDefinitionSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeTimeDefinitionSet <em>Data Type Time Definition Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeTimeDefinitionSet
+   * @generated
+   */
+  public Adapter createDataTypeTimeDefinitionSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeIdentifierDefinitionSet <em>Data Type Identifier Definition Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeIdentifierDefinitionSet
+   * @generated
+   */
+  public Adapter createDataTypeIdentifierDefinitionSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataInstanceDeclaration <em>Data Instance Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataInstanceDeclaration
+   * @generated
+   */
+  public Adapter createDataInstanceDeclarationAdapter()
   {
     return null;
   }
@@ -867,6 +1017,51 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorTypeInput <em>Actor Type Input</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.ActorTypeInput
+   * @generated
+   */
+  public Adapter createActorTypeInputAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorTypeOutput <em>Actor Type Output</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.ActorTypeOutput
+   * @generated
+   */
+  public Adapter createActorTypeOutputAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorTypeCustom <em>Actor Type Custom</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.ActorTypeCustom
+   * @generated
+   */
+  public Adapter createActorTypeCustomAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeDefinitionCompound <em>Data Type Definition Compound</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -897,46 +1092,271 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataDefinitionSetEnum <em>Data Definition Set Enum</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeVoid <em>Data Type Void</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataDefinitionSetEnum
+   * @see com.crubier.lil.lil.DataTypeVoid
    * @generated
    */
-  public Adapter createDataDefinitionSetEnumAdapter()
+  public Adapter createDataTypeVoidAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataDefinitionSetNumber <em>Data Definition Set Number</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeSymbol <em>Data Type Symbol</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataDefinitionSetNumber
+   * @see com.crubier.lil.lil.DataTypeSymbol
    * @generated
    */
-  public Adapter createDataDefinitionSetNumberAdapter()
+  public Adapter createDataTypeSymbolAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataDefinitionSetInterval <em>Data Definition Set Interval</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeNumber <em>Data Type Number</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataDefinitionSetInterval
+   * @see com.crubier.lil.lil.DataTypeNumber
    * @generated
    */
-  public Adapter createDataDefinitionSetIntervalAdapter()
+  public Adapter createDataTypeNumberAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeText <em>Data Type Text</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeText
+   * @generated
+   */
+  public Adapter createDataTypeTextAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeTime <em>Data Type Time</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeTime
+   * @generated
+   */
+  public Adapter createDataTypeTimeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeIdentifier <em>Data Type Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeIdentifier
+   * @generated
+   */
+  public Adapter createDataTypeIdentifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCustom <em>Data Type Custom</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeCustom
+   * @generated
+   */
+  public Adapter createDataTypeCustomAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeCollection <em>Data Type Collection</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeCollection
+   * @generated
+   */
+  public Adapter createDataTypeCollectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeSet <em>Data Type Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeSet
+   * @generated
+   */
+  public Adapter createDataTypeSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeList <em>Data Type List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeList
+   * @generated
+   */
+  public Adapter createDataTypeListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeQueue <em>Data Type Queue</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeQueue
+   * @generated
+   */
+  public Adapter createDataTypeQueueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataDefinitionEnumElement <em>Data Definition Enum Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataDefinitionEnumElement
+   * @generated
+   */
+  public Adapter createDataDefinitionEnumElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeNumberDefinitionSetSet <em>Data Type Number Definition Set Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeNumberDefinitionSetSet
+   * @generated
+   */
+  public Adapter createDataTypeNumberDefinitionSetSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeNumberDefinitionSetInterval <em>Data Type Number Definition Set Interval</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeNumberDefinitionSetInterval
+   * @generated
+   */
+  public Adapter createDataTypeNumberDefinitionSetIntervalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeTextDefinitionSetSet <em>Data Type Text Definition Set Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeTextDefinitionSetSet
+   * @generated
+   */
+  public Adapter createDataTypeTextDefinitionSetSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeTimeDefinitionSetSet <em>Data Type Time Definition Set Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeTimeDefinitionSetSet
+   * @generated
+   */
+  public Adapter createDataTypeTimeDefinitionSetSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeTimeDefinitionSetInterval <em>Data Type Time Definition Set Interval</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeTimeDefinitionSetInterval
+   * @generated
+   */
+  public Adapter createDataTypeTimeDefinitionSetIntervalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeIdentifierDefinitionSetSet <em>Data Type Identifier Definition Set Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.DataTypeIdentifierDefinitionSetSet
+   * @generated
+   */
+  public Adapter createDataTypeIdentifierDefinitionSetSetAdapter()
   {
     return null;
   }
@@ -1092,16 +1512,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.LiteralString <em>Literal String</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.LiteralText <em>Literal Text</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.LiteralString
+   * @see com.crubier.lil.lil.LiteralText
    * @generated
    */
-  public Adapter createLiteralStringAdapter()
+  public Adapter createLiteralTextAdapter()
   {
     return null;
   }

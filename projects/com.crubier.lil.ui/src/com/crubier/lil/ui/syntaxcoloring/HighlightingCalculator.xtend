@@ -1,7 +1,7 @@
 package com.crubier.lil.ui.syntaxcoloring
 
-import com.crubier.lil.lil.ActorType
-import com.crubier.lil.lil.ActorTypeDefinition
+//import com.crubier.lil.lil.ActorType
+//import com.crubier.lil.lil.ActorTypeDefinition
 import com.crubier.lil.lil.DataDefinitionEnumElement
 import com.crubier.lil.lil.DataType
 import com.crubier.lil.lil.DataTypeDefinition
@@ -11,13 +11,15 @@ import com.crubier.lil.lil.LiteralBoolean
 import com.crubier.lil.lil.LiteralEnum
 import com.crubier.lil.lil.LiteralNull
 import com.crubier.lil.lil.LiteralNumber
-import com.crubier.lil.lil.LiteralString
+import com.crubier.lil.lil.LiteralText
 import com.crubier.lil.lil.LiteralTime
 import org.eclipse.xtext.impl.TerminalRuleImpl
 import org.eclipse.xtext.resource.DefaultLocationInFileProvider
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator
+import com.crubier.lil.lil.ActorType
+import com.crubier.lil.lil.ActorTypeDefinition
 
 class HighlightingCalculator implements ISemanticHighlightingCalculator {
 
@@ -36,7 +38,7 @@ class HighlightingCalculator implements ISemanticHighlightingCalculator {
 				InteractorTypeDefinition:
 					acceptor.addPosition(region.offset, region.length, HighlightingConfiguration.INTERACTOR_ID)
 				DataType: 
-					acceptor.addPosition(regionf.offset, (current.base?:current.custom.name).length, HighlightingConfiguration.DATA_ID)	
+					acceptor.addPosition(region.offset,region.length, HighlightingConfiguration.DATA_ID)	
 				DataTypeDefinition:
 					acceptor.addPosition(region.offset, region.length, HighlightingConfiguration.DATA_ID)
 				ActorType:
@@ -49,7 +51,7 @@ class HighlightingCalculator implements ISemanticHighlightingCalculator {
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
 				LiteralNumber:
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
-				LiteralString:
+				LiteralText:
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
 				LiteralEnum:
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)

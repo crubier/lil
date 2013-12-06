@@ -2,7 +2,6 @@
  */
 package com.crubier.lil.lil;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DataDefinitionEnumElement extends EObject
+public interface DataDefinitionEnumElement extends DataTypeSymbolDefinitionSetElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

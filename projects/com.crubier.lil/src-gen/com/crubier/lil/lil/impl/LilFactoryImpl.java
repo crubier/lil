@@ -67,13 +67,16 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.LIL_MODEL: return createLilModel();
       case LilPackage.ACTOR_TYPE_DEFINITION: return createActorTypeDefinition();
       case LilPackage.ACTOR_TYPE: return createActorType();
-      case LilPackage.ACTOR_COMPONENT: return createActorComponent();
+      case LilPackage.ACTOR_INSTANCE_DECLARATION: return createActorInstanceDeclaration();
       case LilPackage.DATA_TYPE_DEFINITION: return createDataTypeDefinition();
       case LilPackage.DATA_TYPE: return createDataType();
-      case LilPackage.DATA_DEFINITION_SET: return createDataDefinitionSet();
-      case LilPackage.DATA_DEFINITION_ENUM_ELEMENT: return createDataDefinitionEnumElement();
-      case LilPackage.DATA_COLLECTION_TYPE: return createDataCollectionType();
-      case LilPackage.DATA_COMPONENT: return createDataComponent();
+      case LilPackage.DATA_TYPE_SYMBOL_DEFINITION_SET: return createDataTypeSymbolDefinitionSet();
+      case LilPackage.DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT: return createDataTypeSymbolDefinitionSetElement();
+      case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET: return createDataTypeNumberDefinitionSet();
+      case LilPackage.DATA_TYPE_TEXT_DEFINITION_SET: return createDataTypeTextDefinitionSet();
+      case LilPackage.DATA_TYPE_TIME_DEFINITION_SET: return createDataTypeTimeDefinitionSet();
+      case LilPackage.DATA_TYPE_IDENTIFIER_DEFINITION_SET: return createDataTypeIdentifierDefinitionSet();
+      case LilPackage.DATA_INSTANCE_DECLARATION: return createDataInstanceDeclaration();
       case LilPackage.INTERACTOR_TYPE_DEFINITION: return createInteractorTypeDefinition();
       case LilPackage.INTERACTOR_TYPE: return createInteractorType();
       case LilPackage.INTERACTOR_ACTOR: return createInteractorActor();
@@ -98,11 +101,29 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.EXPRESSION_LITERAL_SET: return createExpressionLiteralSet();
       case LilPackage.EXPRESSION_LITERAL_LIST: return createExpressionLiteralList();
       case LilPackage.EXPRESSION_CASE: return createExpressionCase();
+      case LilPackage.ACTOR_TYPE_INPUT: return createActorTypeInput();
+      case LilPackage.ACTOR_TYPE_OUTPUT: return createActorTypeOutput();
+      case LilPackage.ACTOR_TYPE_CUSTOM: return createActorTypeCustom();
       case LilPackage.DATA_TYPE_DEFINITION_COMPOUND: return createDataTypeDefinitionCompound();
       case LilPackage.DATA_TYPE_DEFINITION_ALIAS: return createDataTypeDefinitionAlias();
-      case LilPackage.DATA_DEFINITION_SET_ENUM: return createDataDefinitionSetEnum();
-      case LilPackage.DATA_DEFINITION_SET_NUMBER: return createDataDefinitionSetNumber();
-      case LilPackage.DATA_DEFINITION_SET_INTERVAL: return createDataDefinitionSetInterval();
+      case LilPackage.DATA_TYPE_VOID: return createDataTypeVoid();
+      case LilPackage.DATA_TYPE_SYMBOL: return createDataTypeSymbol();
+      case LilPackage.DATA_TYPE_NUMBER: return createDataTypeNumber();
+      case LilPackage.DATA_TYPE_TEXT: return createDataTypeText();
+      case LilPackage.DATA_TYPE_TIME: return createDataTypeTime();
+      case LilPackage.DATA_TYPE_IDENTIFIER: return createDataTypeIdentifier();
+      case LilPackage.DATA_TYPE_CUSTOM: return createDataTypeCustom();
+      case LilPackage.DATA_TYPE_COLLECTION: return createDataTypeCollection();
+      case LilPackage.DATA_TYPE_SET: return createDataTypeSet();
+      case LilPackage.DATA_TYPE_LIST: return createDataTypeList();
+      case LilPackage.DATA_TYPE_QUEUE: return createDataTypeQueue();
+      case LilPackage.DATA_DEFINITION_ENUM_ELEMENT: return createDataDefinitionEnumElement();
+      case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET_SET: return createDataTypeNumberDefinitionSetSet();
+      case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL: return createDataTypeNumberDefinitionSetInterval();
+      case LilPackage.DATA_TYPE_TEXT_DEFINITION_SET_SET: return createDataTypeTextDefinitionSetSet();
+      case LilPackage.DATA_TYPE_TIME_DEFINITION_SET_SET: return createDataTypeTimeDefinitionSetSet();
+      case LilPackage.DATA_TYPE_TIME_DEFINITION_SET_INTERVAL: return createDataTypeTimeDefinitionSetInterval();
+      case LilPackage.DATA_TYPE_IDENTIFIER_DEFINITION_SET_SET: return createDataTypeIdentifierDefinitionSetSet();
       case LilPackage.EXPRESSION_BINARY_OPERATION: return createExpressionBinaryOperation();
       case LilPackage.UNARY_OPERATION: return createUnaryOperation();
       case LilPackage.LITERAL_DATA: return createLiteralData();
@@ -113,7 +134,7 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.LITERAL_BOOLEAN: return createLiteralBoolean();
       case LilPackage.LITERAL_NULL: return createLiteralNull();
       case LilPackage.LITERAL_NUMBER: return createLiteralNumber();
-      case LilPackage.LITERAL_STRING: return createLiteralString();
+      case LilPackage.LITERAL_TEXT: return createLiteralText();
       case LilPackage.LITERAL_ENUM: return createLiteralEnum();
       case LilPackage.LITERAL_TIME: return createLiteralTime();
       default:
@@ -159,10 +180,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ActorComponent createActorComponent()
+  public ActorInstanceDeclaration createActorInstanceDeclaration()
   {
-    ActorComponentImpl actorComponent = new ActorComponentImpl();
-    return actorComponent;
+    ActorInstanceDeclarationImpl actorInstanceDeclaration = new ActorInstanceDeclarationImpl();
+    return actorInstanceDeclaration;
   }
 
   /**
@@ -192,10 +213,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataDefinitionSet createDataDefinitionSet()
+  public DataTypeSymbolDefinitionSet createDataTypeSymbolDefinitionSet()
   {
-    DataDefinitionSetImpl dataDefinitionSet = new DataDefinitionSetImpl();
-    return dataDefinitionSet;
+    DataTypeSymbolDefinitionSetImpl dataTypeSymbolDefinitionSet = new DataTypeSymbolDefinitionSetImpl();
+    return dataTypeSymbolDefinitionSet;
   }
 
   /**
@@ -203,10 +224,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataDefinitionEnumElement createDataDefinitionEnumElement()
+  public DataTypeSymbolDefinitionSetElement createDataTypeSymbolDefinitionSetElement()
   {
-    DataDefinitionEnumElementImpl dataDefinitionEnumElement = new DataDefinitionEnumElementImpl();
-    return dataDefinitionEnumElement;
+    DataTypeSymbolDefinitionSetElementImpl dataTypeSymbolDefinitionSetElement = new DataTypeSymbolDefinitionSetElementImpl();
+    return dataTypeSymbolDefinitionSetElement;
   }
 
   /**
@@ -214,10 +235,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataCollectionType createDataCollectionType()
+  public DataTypeNumberDefinitionSet createDataTypeNumberDefinitionSet()
   {
-    DataCollectionTypeImpl dataCollectionType = new DataCollectionTypeImpl();
-    return dataCollectionType;
+    DataTypeNumberDefinitionSetImpl dataTypeNumberDefinitionSet = new DataTypeNumberDefinitionSetImpl();
+    return dataTypeNumberDefinitionSet;
   }
 
   /**
@@ -225,10 +246,43 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataComponent createDataComponent()
+  public DataTypeTextDefinitionSet createDataTypeTextDefinitionSet()
   {
-    DataComponentImpl dataComponent = new DataComponentImpl();
-    return dataComponent;
+    DataTypeTextDefinitionSetImpl dataTypeTextDefinitionSet = new DataTypeTextDefinitionSetImpl();
+    return dataTypeTextDefinitionSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeTimeDefinitionSet createDataTypeTimeDefinitionSet()
+  {
+    DataTypeTimeDefinitionSetImpl dataTypeTimeDefinitionSet = new DataTypeTimeDefinitionSetImpl();
+    return dataTypeTimeDefinitionSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeIdentifierDefinitionSet createDataTypeIdentifierDefinitionSet()
+  {
+    DataTypeIdentifierDefinitionSetImpl dataTypeIdentifierDefinitionSet = new DataTypeIdentifierDefinitionSetImpl();
+    return dataTypeIdentifierDefinitionSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataInstanceDeclaration createDataInstanceDeclaration()
+  {
+    DataInstanceDeclarationImpl dataInstanceDeclaration = new DataInstanceDeclarationImpl();
+    return dataInstanceDeclaration;
   }
 
   /**
@@ -500,6 +554,39 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ActorTypeInput createActorTypeInput()
+  {
+    ActorTypeInputImpl actorTypeInput = new ActorTypeInputImpl();
+    return actorTypeInput;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActorTypeOutput createActorTypeOutput()
+  {
+    ActorTypeOutputImpl actorTypeOutput = new ActorTypeOutputImpl();
+    return actorTypeOutput;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActorTypeCustom createActorTypeCustom()
+  {
+    ActorTypeCustomImpl actorTypeCustom = new ActorTypeCustomImpl();
+    return actorTypeCustom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DataTypeDefinitionCompound createDataTypeDefinitionCompound()
   {
     DataTypeDefinitionCompoundImpl dataTypeDefinitionCompound = new DataTypeDefinitionCompoundImpl();
@@ -522,10 +609,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataDefinitionSetEnum createDataDefinitionSetEnum()
+  public DataTypeVoid createDataTypeVoid()
   {
-    DataDefinitionSetEnumImpl dataDefinitionSetEnum = new DataDefinitionSetEnumImpl();
-    return dataDefinitionSetEnum;
+    DataTypeVoidImpl dataTypeVoid = new DataTypeVoidImpl();
+    return dataTypeVoid;
   }
 
   /**
@@ -533,10 +620,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataDefinitionSetNumber createDataDefinitionSetNumber()
+  public DataTypeSymbol createDataTypeSymbol()
   {
-    DataDefinitionSetNumberImpl dataDefinitionSetNumber = new DataDefinitionSetNumberImpl();
-    return dataDefinitionSetNumber;
+    DataTypeSymbolImpl dataTypeSymbol = new DataTypeSymbolImpl();
+    return dataTypeSymbol;
   }
 
   /**
@@ -544,10 +631,175 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataDefinitionSetInterval createDataDefinitionSetInterval()
+  public DataTypeNumber createDataTypeNumber()
   {
-    DataDefinitionSetIntervalImpl dataDefinitionSetInterval = new DataDefinitionSetIntervalImpl();
-    return dataDefinitionSetInterval;
+    DataTypeNumberImpl dataTypeNumber = new DataTypeNumberImpl();
+    return dataTypeNumber;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeText createDataTypeText()
+  {
+    DataTypeTextImpl dataTypeText = new DataTypeTextImpl();
+    return dataTypeText;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeTime createDataTypeTime()
+  {
+    DataTypeTimeImpl dataTypeTime = new DataTypeTimeImpl();
+    return dataTypeTime;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeIdentifier createDataTypeIdentifier()
+  {
+    DataTypeIdentifierImpl dataTypeIdentifier = new DataTypeIdentifierImpl();
+    return dataTypeIdentifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeCustom createDataTypeCustom()
+  {
+    DataTypeCustomImpl dataTypeCustom = new DataTypeCustomImpl();
+    return dataTypeCustom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeCollection createDataTypeCollection()
+  {
+    DataTypeCollectionImpl dataTypeCollection = new DataTypeCollectionImpl();
+    return dataTypeCollection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeSet createDataTypeSet()
+  {
+    DataTypeSetImpl dataTypeSet = new DataTypeSetImpl();
+    return dataTypeSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeList createDataTypeList()
+  {
+    DataTypeListImpl dataTypeList = new DataTypeListImpl();
+    return dataTypeList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeQueue createDataTypeQueue()
+  {
+    DataTypeQueueImpl dataTypeQueue = new DataTypeQueueImpl();
+    return dataTypeQueue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataDefinitionEnumElement createDataDefinitionEnumElement()
+  {
+    DataDefinitionEnumElementImpl dataDefinitionEnumElement = new DataDefinitionEnumElementImpl();
+    return dataDefinitionEnumElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeNumberDefinitionSetSet createDataTypeNumberDefinitionSetSet()
+  {
+    DataTypeNumberDefinitionSetSetImpl dataTypeNumberDefinitionSetSet = new DataTypeNumberDefinitionSetSetImpl();
+    return dataTypeNumberDefinitionSetSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeNumberDefinitionSetInterval createDataTypeNumberDefinitionSetInterval()
+  {
+    DataTypeNumberDefinitionSetIntervalImpl dataTypeNumberDefinitionSetInterval = new DataTypeNumberDefinitionSetIntervalImpl();
+    return dataTypeNumberDefinitionSetInterval;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeTextDefinitionSetSet createDataTypeTextDefinitionSetSet()
+  {
+    DataTypeTextDefinitionSetSetImpl dataTypeTextDefinitionSetSet = new DataTypeTextDefinitionSetSetImpl();
+    return dataTypeTextDefinitionSetSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeTimeDefinitionSetSet createDataTypeTimeDefinitionSetSet()
+  {
+    DataTypeTimeDefinitionSetSetImpl dataTypeTimeDefinitionSetSet = new DataTypeTimeDefinitionSetSetImpl();
+    return dataTypeTimeDefinitionSetSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeTimeDefinitionSetInterval createDataTypeTimeDefinitionSetInterval()
+  {
+    DataTypeTimeDefinitionSetIntervalImpl dataTypeTimeDefinitionSetInterval = new DataTypeTimeDefinitionSetIntervalImpl();
+    return dataTypeTimeDefinitionSetInterval;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataTypeIdentifierDefinitionSetSet createDataTypeIdentifierDefinitionSetSet()
+  {
+    DataTypeIdentifierDefinitionSetSetImpl dataTypeIdentifierDefinitionSetSet = new DataTypeIdentifierDefinitionSetSetImpl();
+    return dataTypeIdentifierDefinitionSetSet;
   }
 
   /**
@@ -665,10 +917,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public LiteralString createLiteralString()
+  public LiteralText createLiteralText()
   {
-    LiteralStringImpl literalString = new LiteralStringImpl();
-    return literalString;
+    LiteralTextImpl literalText = new LiteralTextImpl();
+    return literalText;
   }
 
   /**

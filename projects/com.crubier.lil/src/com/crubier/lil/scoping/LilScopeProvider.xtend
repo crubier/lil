@@ -16,7 +16,7 @@ import com.crubier.lil.lil.InteractorComponent
 import com.crubier.lil.lil.LiteralEnum
 import java.util.HashSet
 import com.crubier.lil.lil.DataDefinitionEnumElement
-import com.crubier.lil.lil.DataDefinitionSetEnum
+
 
 /**
  * This class contains custom scoping description.
@@ -42,21 +42,21 @@ class LilScopeProvider extends AbstractDeclarativeScopeProvider {
 		}
 	}
 //
-	// enum literal scope is at the interactor level
-	def public IScope scope_LiteralEnum_value(LiteralEnum literal, EReference ref) {
-		var EObject object = literal;
-		while (!(object instanceof InteractorTypeDefinition)) {
-			object = object.eContainer;
-		}
-
-		val elements = new HashSet<DataDefinitionEnumElement>
-		val interactor = object as InteractorTypeDefinition
-		for (s : interactor.data) {
-			if(s?.type?.definitionSet instanceof DataDefinitionSetEnum)
-				if ((s?.type?.definitionSet as DataDefinitionSetEnum)?.element != null)
-					elements.addAll((s?.type?.definitionSet as DataDefinitionSetEnum).element)
-		}
-		return Scopes.scopeFor(elements);
-	}
+//	// enum literal scope is at the interactor level
+//	def public IScope scope_LiteralEnum_value(LiteralEnum literal, EReference ref) {
+//		var EObject object = literal;
+//		while (!(object instanceof InteractorTypeDefinition)) {
+//			object = object.eContainer;
+//		}
+//
+//		val elements = new HashSet<DataDefinitionEnumElement>
+//		val interactor = object as InteractorTypeDefinition
+//		for (s : interactor.data) {
+//			if(s?.type?.definitionSet instanceof DataDefinitionSetEnum)
+//				if ((s?.type?.definitionSet as DataDefinitionSetEnum)?.element != null)
+//					elements.addAll((s?.type?.definitionSet as DataDefinitionSetEnum).element)
+//		}
+//		return Scopes.scopeFor(elements);
+//	}
 
 }

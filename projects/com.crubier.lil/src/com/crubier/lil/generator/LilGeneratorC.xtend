@@ -29,22 +29,22 @@ class LilGeneratorC implements IGenerator {
 //			resource.allContents.filter(typeof(InteractorDeclaration)).map[name].join(', '))
 	}
 	
-	def compile(InteractorTypeDefinition e) '''
-		//lil framework generated this artifact automatically
-		public class «e.name» {
-			«FOR f:e.data»
-				«f.compile»
-			«ENDFOR»
-		}
-		
-	'''
-	
-	def compile(InteractorData s) '''
-	«IF s.mode == "flow"»
-		«IF s.type.base!=null» «s.type.base» «s.name» ;
-		«ELSE» «IF s.type.custom!=null» «s.type.custom» «s.name» ;«ENDIF»«ENDIF»
-	«ENDIF»
-	'''
+//	def compile(InteractorTypeDefinition e) '''
+//		//lil framework generated this artifact automatically
+//		public class «e.name» {
+//			«FOR f:e.data»
+//				«f.compile»
+//			«ENDFOR»
+//		}
+//		
+//	'''
+//	
+//	def compile(InteractorData s) '''
+//	«IF s.mode == "flow"»
+//		«IF s.type.base!=null» «s.type.base» «s.name» ;
+//		«ELSE» «IF s.type.custom!=null» «s.type.custom» «s.name» ;«ENDIF»«ENDIF»
+//	«ENDIF»
+//	'''
 	
 	
 }

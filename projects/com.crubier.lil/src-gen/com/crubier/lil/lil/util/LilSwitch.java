@@ -93,10 +93,10 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.ACTOR_COMPONENT:
+      case LilPackage.ACTOR_INSTANCE_DECLARATION:
       {
-        ActorComponent actorComponent = (ActorComponent)theEObject;
-        T result = caseActorComponent(actorComponent);
+        ActorInstanceDeclaration actorInstanceDeclaration = (ActorInstanceDeclaration)theEObject;
+        T result = caseActorInstanceDeclaration(actorInstanceDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -114,31 +114,52 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_DEFINITION_SET:
+      case LilPackage.DATA_TYPE_SYMBOL_DEFINITION_SET:
       {
-        DataDefinitionSet dataDefinitionSet = (DataDefinitionSet)theEObject;
-        T result = caseDataDefinitionSet(dataDefinitionSet);
+        DataTypeSymbolDefinitionSet dataTypeSymbolDefinitionSet = (DataTypeSymbolDefinitionSet)theEObject;
+        T result = caseDataTypeSymbolDefinitionSet(dataTypeSymbolDefinitionSet);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_DEFINITION_ENUM_ELEMENT:
+      case LilPackage.DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT:
       {
-        DataDefinitionEnumElement dataDefinitionEnumElement = (DataDefinitionEnumElement)theEObject;
-        T result = caseDataDefinitionEnumElement(dataDefinitionEnumElement);
+        DataTypeSymbolDefinitionSetElement dataTypeSymbolDefinitionSetElement = (DataTypeSymbolDefinitionSetElement)theEObject;
+        T result = caseDataTypeSymbolDefinitionSetElement(dataTypeSymbolDefinitionSetElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_COLLECTION_TYPE:
+      case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET:
       {
-        DataCollectionType dataCollectionType = (DataCollectionType)theEObject;
-        T result = caseDataCollectionType(dataCollectionType);
+        DataTypeNumberDefinitionSet dataTypeNumberDefinitionSet = (DataTypeNumberDefinitionSet)theEObject;
+        T result = caseDataTypeNumberDefinitionSet(dataTypeNumberDefinitionSet);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_COMPONENT:
+      case LilPackage.DATA_TYPE_TEXT_DEFINITION_SET:
       {
-        DataComponent dataComponent = (DataComponent)theEObject;
-        T result = caseDataComponent(dataComponent);
+        DataTypeTextDefinitionSet dataTypeTextDefinitionSet = (DataTypeTextDefinitionSet)theEObject;
+        T result = caseDataTypeTextDefinitionSet(dataTypeTextDefinitionSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_TIME_DEFINITION_SET:
+      {
+        DataTypeTimeDefinitionSet dataTypeTimeDefinitionSet = (DataTypeTimeDefinitionSet)theEObject;
+        T result = caseDataTypeTimeDefinitionSet(dataTypeTimeDefinitionSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_IDENTIFIER_DEFINITION_SET:
+      {
+        DataTypeIdentifierDefinitionSet dataTypeIdentifierDefinitionSet = (DataTypeIdentifierDefinitionSet)theEObject;
+        T result = caseDataTypeIdentifierDefinitionSet(dataTypeIdentifierDefinitionSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_INSTANCE_DECLARATION:
+      {
+        DataInstanceDeclaration dataInstanceDeclaration = (DataInstanceDeclaration)theEObject;
+        T result = caseDataInstanceDeclaration(dataInstanceDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -322,6 +343,30 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilPackage.ACTOR_TYPE_INPUT:
+      {
+        ActorTypeInput actorTypeInput = (ActorTypeInput)theEObject;
+        T result = caseActorTypeInput(actorTypeInput);
+        if (result == null) result = caseActorType(actorTypeInput);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.ACTOR_TYPE_OUTPUT:
+      {
+        ActorTypeOutput actorTypeOutput = (ActorTypeOutput)theEObject;
+        T result = caseActorTypeOutput(actorTypeOutput);
+        if (result == null) result = caseActorType(actorTypeOutput);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.ACTOR_TYPE_CUSTOM:
+      {
+        ActorTypeCustom actorTypeCustom = (ActorTypeCustom)theEObject;
+        T result = caseActorTypeCustom(actorTypeCustom);
+        if (result == null) result = caseActorType(actorTypeCustom);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilPackage.DATA_TYPE_DEFINITION_COMPOUND:
       {
         DataTypeDefinitionCompound dataTypeDefinitionCompound = (DataTypeDefinitionCompound)theEObject;
@@ -338,27 +383,147 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_DEFINITION_SET_ENUM:
+      case LilPackage.DATA_TYPE_VOID:
       {
-        DataDefinitionSetEnum dataDefinitionSetEnum = (DataDefinitionSetEnum)theEObject;
-        T result = caseDataDefinitionSetEnum(dataDefinitionSetEnum);
-        if (result == null) result = caseDataDefinitionSet(dataDefinitionSetEnum);
+        DataTypeVoid dataTypeVoid = (DataTypeVoid)theEObject;
+        T result = caseDataTypeVoid(dataTypeVoid);
+        if (result == null) result = caseDataType(dataTypeVoid);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_DEFINITION_SET_NUMBER:
+      case LilPackage.DATA_TYPE_SYMBOL:
       {
-        DataDefinitionSetNumber dataDefinitionSetNumber = (DataDefinitionSetNumber)theEObject;
-        T result = caseDataDefinitionSetNumber(dataDefinitionSetNumber);
-        if (result == null) result = caseDataDefinitionSet(dataDefinitionSetNumber);
+        DataTypeSymbol dataTypeSymbol = (DataTypeSymbol)theEObject;
+        T result = caseDataTypeSymbol(dataTypeSymbol);
+        if (result == null) result = caseDataType(dataTypeSymbol);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_DEFINITION_SET_INTERVAL:
+      case LilPackage.DATA_TYPE_NUMBER:
       {
-        DataDefinitionSetInterval dataDefinitionSetInterval = (DataDefinitionSetInterval)theEObject;
-        T result = caseDataDefinitionSetInterval(dataDefinitionSetInterval);
-        if (result == null) result = caseDataDefinitionSet(dataDefinitionSetInterval);
+        DataTypeNumber dataTypeNumber = (DataTypeNumber)theEObject;
+        T result = caseDataTypeNumber(dataTypeNumber);
+        if (result == null) result = caseDataType(dataTypeNumber);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_TEXT:
+      {
+        DataTypeText dataTypeText = (DataTypeText)theEObject;
+        T result = caseDataTypeText(dataTypeText);
+        if (result == null) result = caseDataType(dataTypeText);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_TIME:
+      {
+        DataTypeTime dataTypeTime = (DataTypeTime)theEObject;
+        T result = caseDataTypeTime(dataTypeTime);
+        if (result == null) result = caseDataType(dataTypeTime);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_IDENTIFIER:
+      {
+        DataTypeIdentifier dataTypeIdentifier = (DataTypeIdentifier)theEObject;
+        T result = caseDataTypeIdentifier(dataTypeIdentifier);
+        if (result == null) result = caseDataType(dataTypeIdentifier);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_CUSTOM:
+      {
+        DataTypeCustom dataTypeCustom = (DataTypeCustom)theEObject;
+        T result = caseDataTypeCustom(dataTypeCustom);
+        if (result == null) result = caseDataType(dataTypeCustom);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_COLLECTION:
+      {
+        DataTypeCollection dataTypeCollection = (DataTypeCollection)theEObject;
+        T result = caseDataTypeCollection(dataTypeCollection);
+        if (result == null) result = caseDataType(dataTypeCollection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_SET:
+      {
+        DataTypeSet dataTypeSet = (DataTypeSet)theEObject;
+        T result = caseDataTypeSet(dataTypeSet);
+        if (result == null) result = caseDataType(dataTypeSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_LIST:
+      {
+        DataTypeList dataTypeList = (DataTypeList)theEObject;
+        T result = caseDataTypeList(dataTypeList);
+        if (result == null) result = caseDataType(dataTypeList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_QUEUE:
+      {
+        DataTypeQueue dataTypeQueue = (DataTypeQueue)theEObject;
+        T result = caseDataTypeQueue(dataTypeQueue);
+        if (result == null) result = caseDataType(dataTypeQueue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_DEFINITION_ENUM_ELEMENT:
+      {
+        DataDefinitionEnumElement dataDefinitionEnumElement = (DataDefinitionEnumElement)theEObject;
+        T result = caseDataDefinitionEnumElement(dataDefinitionEnumElement);
+        if (result == null) result = caseDataTypeSymbolDefinitionSetElement(dataDefinitionEnumElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET_SET:
+      {
+        DataTypeNumberDefinitionSetSet dataTypeNumberDefinitionSetSet = (DataTypeNumberDefinitionSetSet)theEObject;
+        T result = caseDataTypeNumberDefinitionSetSet(dataTypeNumberDefinitionSetSet);
+        if (result == null) result = caseDataTypeNumberDefinitionSet(dataTypeNumberDefinitionSetSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL:
+      {
+        DataTypeNumberDefinitionSetInterval dataTypeNumberDefinitionSetInterval = (DataTypeNumberDefinitionSetInterval)theEObject;
+        T result = caseDataTypeNumberDefinitionSetInterval(dataTypeNumberDefinitionSetInterval);
+        if (result == null) result = caseDataTypeNumberDefinitionSet(dataTypeNumberDefinitionSetInterval);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_TEXT_DEFINITION_SET_SET:
+      {
+        DataTypeTextDefinitionSetSet dataTypeTextDefinitionSetSet = (DataTypeTextDefinitionSetSet)theEObject;
+        T result = caseDataTypeTextDefinitionSetSet(dataTypeTextDefinitionSetSet);
+        if (result == null) result = caseDataTypeTextDefinitionSet(dataTypeTextDefinitionSetSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_TIME_DEFINITION_SET_SET:
+      {
+        DataTypeTimeDefinitionSetSet dataTypeTimeDefinitionSetSet = (DataTypeTimeDefinitionSetSet)theEObject;
+        T result = caseDataTypeTimeDefinitionSetSet(dataTypeTimeDefinitionSetSet);
+        if (result == null) result = caseDataTypeTimeDefinitionSet(dataTypeTimeDefinitionSetSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_TIME_DEFINITION_SET_INTERVAL:
+      {
+        DataTypeTimeDefinitionSetInterval dataTypeTimeDefinitionSetInterval = (DataTypeTimeDefinitionSetInterval)theEObject;
+        T result = caseDataTypeTimeDefinitionSetInterval(dataTypeTimeDefinitionSetInterval);
+        if (result == null) result = caseDataTypeTimeDefinitionSet(dataTypeTimeDefinitionSetInterval);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.DATA_TYPE_IDENTIFIER_DEFINITION_SET_SET:
+      {
+        DataTypeIdentifierDefinitionSetSet dataTypeIdentifierDefinitionSetSet = (DataTypeIdentifierDefinitionSetSet)theEObject;
+        T result = caseDataTypeIdentifierDefinitionSetSet(dataTypeIdentifierDefinitionSetSet);
+        if (result == null) result = caseDataTypeIdentifierDefinitionSet(dataTypeIdentifierDefinitionSetSet);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -442,11 +607,11 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.LITERAL_STRING:
+      case LilPackage.LITERAL_TEXT:
       {
-        LiteralString literalString = (LiteralString)theEObject;
-        T result = caseLiteralString(literalString);
-        if (result == null) result = caseExpression(literalString);
+        LiteralText literalText = (LiteralText)theEObject;
+        T result = caseLiteralText(literalText);
+        if (result == null) result = caseExpression(literalText);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -519,17 +684,17 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Actor Component</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Actor Instance Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Actor Component</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Actor Instance Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseActorComponent(ActorComponent object)
+  public T caseActorInstanceDeclaration(ActorInstanceDeclaration object)
   {
     return null;
   }
@@ -567,65 +732,113 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Definition Set</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Symbol Definition Set</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Definition Set</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Symbol Definition Set</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataDefinitionSet(DataDefinitionSet object)
+  public T caseDataTypeSymbolDefinitionSet(DataTypeSymbolDefinitionSet object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Definition Enum Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Symbol Definition Set Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Definition Enum Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Symbol Definition Set Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataDefinitionEnumElement(DataDefinitionEnumElement object)
+  public T caseDataTypeSymbolDefinitionSetElement(DataTypeSymbolDefinitionSetElement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Collection Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Number Definition Set</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Collection Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Number Definition Set</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataCollectionType(DataCollectionType object)
+  public T caseDataTypeNumberDefinitionSet(DataTypeNumberDefinitionSet object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Component</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Text Definition Set</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Component</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Text Definition Set</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataComponent(DataComponent object)
+  public T caseDataTypeTextDefinitionSet(DataTypeTextDefinitionSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Time Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Time Definition Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeTimeDefinitionSet(DataTypeTimeDefinitionSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Identifier Definition Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Identifier Definition Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeIdentifierDefinitionSet(DataTypeIdentifierDefinitionSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Instance Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Instance Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataInstanceDeclaration(DataInstanceDeclaration object)
   {
     return null;
   }
@@ -1015,6 +1228,54 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Actor Type Input</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Actor Type Input</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActorTypeInput(ActorTypeInput object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Actor Type Output</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Actor Type Output</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActorTypeOutput(ActorTypeOutput object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Actor Type Custom</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Actor Type Custom</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActorTypeCustom(ActorTypeCustom object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Data Type Definition Compound</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1047,49 +1308,289 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Definition Set Enum</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Void</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Definition Set Enum</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Void</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataDefinitionSetEnum(DataDefinitionSetEnum object)
+  public T caseDataTypeVoid(DataTypeVoid object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Definition Set Number</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Symbol</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Definition Set Number</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Symbol</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataDefinitionSetNumber(DataDefinitionSetNumber object)
+  public T caseDataTypeSymbol(DataTypeSymbol object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Definition Set Interval</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Number</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Definition Set Interval</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Number</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataDefinitionSetInterval(DataDefinitionSetInterval object)
+  public T caseDataTypeNumber(DataTypeNumber object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Text</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Text</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeText(DataTypeText object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Time</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Time</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeTime(DataTypeTime object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Identifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Identifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeIdentifier(DataTypeIdentifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Custom</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Custom</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeCustom(DataTypeCustom object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Collection</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Collection</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeCollection(DataTypeCollection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeSet(DataTypeSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeList(DataTypeList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Queue</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Queue</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeQueue(DataTypeQueue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Definition Enum Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Definition Enum Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataDefinitionEnumElement(DataDefinitionEnumElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Number Definition Set Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Number Definition Set Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeNumberDefinitionSetSet(DataTypeNumberDefinitionSetSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Number Definition Set Interval</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Number Definition Set Interval</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeNumberDefinitionSetInterval(DataTypeNumberDefinitionSetInterval object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Text Definition Set Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Text Definition Set Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeTextDefinitionSetSet(DataTypeTextDefinitionSetSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Time Definition Set Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Time Definition Set Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeTimeDefinitionSetSet(DataTypeTimeDefinitionSetSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Time Definition Set Interval</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Time Definition Set Interval</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeTimeDefinitionSetInterval(DataTypeTimeDefinitionSetInterval object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type Identifier Definition Set Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type Identifier Definition Set Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataTypeIdentifierDefinitionSetSet(DataTypeIdentifierDefinitionSetSet object)
   {
     return null;
   }
@@ -1255,17 +1756,17 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Literal String</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Literal Text</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Literal String</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Literal Text</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLiteralString(LiteralString object)
+  public T caseLiteralText(LiteralText object)
   {
     return null;
   }

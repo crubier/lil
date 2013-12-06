@@ -1,328 +1,322 @@
 grammar com.crubier.lil.Lil hidden(WS, ML_COMMENT, SL_COMMENT)
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-
 generate lil "http://www.crubier.com/lil/Lil"
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Model
-	LilModel:
-	( (actorType+=ActorTypeDefinition) | (dataType+=DataTypeDefinition) | (interactorType+=InteractorTypeDefinition))*;
-	
-	
-	
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+LilModel:
+	((actorType+=ActorTypeDefinition) | (dataType+=DataTypeDefinition) | (interactorType+=InteractorTypeDefinition))*;
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Actor
-	ActorTypeDefinition:
-		name=ID "actor" ":"
-		(component+=ActorComponent)*;
-	
-	ActorType returns ActorType:
-		base=ActorBaseType |
-		custom=[ActorTypeDefinition]; 
-		
-	ActorBaseType :
-		"input" | "output";
-		
-	ActorComponent:
-		name=ID ":" type=ActorType;
+ActorTypeDefinition returns ActorTypeDefinition:
+	name=ID "actor" ":"
+	(component+=ActorInstanceDeclaration)*;
 
+ActorType returns ActorType:
+	{ActorTypeInput} "input" |
+	{ActorTypeOutput} "output" |
+	{ActorTypeCustom} definition=[ActorTypeDefinition];
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ActorInstanceDeclaration:
+	name=ID ":" type=ActorType;
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Data
-	DataTypeDefinition returns DataTypeDefinition:
-		{DataTypeDefinitionCompound} name=ID "data" ":" (component+=DataComponent)* |
-		{DataTypeDefinitionAlias} name=ID "data" ":" alias=DataType;
-		
-	DataType returns DataType:
-		(
-		(base=DataBaseType) ("in" definitionSet=DataDefinitionSet)? |  
-		custom=[DataTypeDefinition] 
-		) 
-		(collection=DataCollectionType)?;
-		
-	DataDefinitionSet:
-		{DataDefinitionSetEnum} "{" element+=DataDefinitionEnumElement ("," element+=DataDefinitionEnumElement)* "}" |
-		{DataDefinitionSetNumber} "{" element+=LiteralNumber ("," element+=LiteralNumber)*"}" |
-		{DataDefinitionSetInterval} "[" inf=LiteralNumber "," sup=LiteralNumber "]";
-		
-	DataDefinitionEnumElement :
-		{DataDefinitionEnumElement} "#"name=ID;
-		
-	DataBaseType :
-		"void" | "symbol" | "number" | "text" | "time" | "identifier";
-		// void, enum, long or double, string, long, char[16]
-		
-	DataCollectionType :
-		type="collection" |
-		type="set"|
-		type="list" |
-		type="queue" |
-		type="map" (=>"by" mapping=DataType)
-	;
-		
-	DataComponent:
-		name=ID ":" type=DataType
-	;
+DataTypeDefinition returns DataTypeDefinition:
+	{DataTypeDefinitionCompound} name=ID "data" ":" (component+=DataInstanceDeclaration)* |
+	{DataTypeDefinitionAlias} name=ID "data" ":" alias=DataType;
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+DataType returns DataType:
+	({DataTypeVoid} "void" |
+	{DataTypeSymbol} "symbol" ("in" definitionSet=DataTypeSymbolDefinitionSet)? |
+	{DataTypeNumber} "number" ("in" definitionSet=DataTypeNumberDefinitionSet)? |
+	{DataTypeText} "text" ("in" definitionSet=DataTypeTextDefinitionSet)? |
+	{DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)? |
+	{DataTypeIdentifier} "identifier" ("in" definitionSet=DataTypeIdentifierDefinitionSet)? |
+	{DataTypeCustom} definition=[DataTypeDefinition])
+	=> ({DataTypeCollection.elementType=current} "collection")*
+	=> ({DataTypeSet.elementType=current} "set" )*
+	=> ({DataTypeList.elementType=current} "list")*
+	=> ({DataTypeQueue.elementType=current} "queue")*;
+
+DataTypeSymbolDefinitionSet :
+	"{" element+=DataTypeSymbolDefinitionSetElement ("," element+=DataTypeSymbolDefinitionSetElement)* "}";
+	
+DataTypeSymbolDefinitionSetElement:
+	{DataDefinitionEnumElement} "#" name=ID;
+	
+DataTypeNumberDefinitionSet :
+	{DataTypeNumberDefinitionSetSet} "{" element+=LiteralNumber ("," element+=LiteralNumber)* "}" |
+	{DataTypeNumberDefinitionSetInterval}"[" inf=LiteralNumber "," sup=LiteralNumber "]";
+	
+DataTypeTextDefinitionSet :
+	{DataTypeTextDefinitionSetSet} "{" element+=LiteralText ("," element+=LiteralText)* "}";
+	
+DataTypeTimeDefinitionSet :
+	{DataTypeTimeDefinitionSetSet} "{" element+=LiteralTime ("," element+=LiteralTime)* "}" |
+	{DataTypeTimeDefinitionSetInterval}"[" inf=LiteralTime "," sup=LiteralTime "]";
+	
+DataTypeIdentifierDefinitionSet :
+	{DataTypeIdentifierDefinitionSetSet} "{" element+=LiteralNumber ("," element+=LiteralNumber)* "}" 
+;
+
+DataInstanceDeclaration:
+	name=ID ":" type=DataType;
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Interactor
-	InteractorTypeDefinition:
-		name=ID "interactor" ":"
-		(
-			(actor+=InteractorActor) |
-			(data+=InteractorData) |
-			(component+=InteractorComponent) | 
-			(behavior+=InteractorBehavior)
-		)*;
-	
-	InteractorType:
-		custom=[InteractorTypeDefinition];
-	
-	InteractorActor:
-		name=ID ":" type=ActorType "actor";
-	
-	InteractorData:
-		name=ID ":" type=DataType mode=InteractorDataComponentMode  ("from" source=InteractorSignalAlias)? ("to" destinations+=InteractorSignalAlias)*;
-		
-	InteractorSignalAlias:
-		source=AccessibleEntity ("as" alias=[InteractorData])?;
-	
-	InteractorDataComponentMode:
-		"event" | "flow" | "constant";
-	
-	InteractorComponent:
-		name=ID ":" type=InteractorType "interactor"  ( "with" actors+=ActorAlias ("," actors+=ActorAlias)*)? ;
-		
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//Entities
-	AccessibleEntity:
-			generic=GenericEntity | specific=[Entity];
-			
-	GenericEntity:
-		"any" | "self" | "other" | "parent" | "child" | "all" | "actors";
-		
-	Entity:
-		InteractorComponent | InteractorActor;
-			
-	ActorAlias:
-			source=[InteractorActor] "as" alias=[InteractorActor];
+InteractorTypeDefinition:
+	name=ID "interactor" ":"
+	((actor+=InteractorActor) |
+	(data+=InteractorData) |
+	(component+=InteractorComponent) |
+	(behavior+=InteractorBehavior))*;
 
-	
-	
-	
-		
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//Signals
-	
-	InteractorSignalReception:
-		(instance=[InteractorData] ("from" source=InteractorSignalAlias)? ) | 
-		(init?="init");
-			
-	InteractorSignalEmission:
-		(instance=[InteractorData] ("to" destination=InteractorSignalAlias)?);
-		
-		
+InteractorType:
+	custom=[InteractorTypeDefinition];
 
+InteractorActor:
+	name=ID ":" type=ActorType "actor";
+
+InteractorData:
+	name=ID ":" type=DataType mode=InteractorDataComponentMode ("from" source=InteractorSignalAlias)? ("to"
+	destinations+=InteractorSignalAlias)*;
+
+InteractorSignalAlias:
+	source=AccessibleEntity ("as" alias=[InteractorData])?;
+
+InteractorDataComponentMode:
+	"event" | "flow" | "constant";
+
+InteractorComponent:
+	name=ID ":" type=InteractorType "interactor" ("with" actors+=ActorAlias ("," actors+=ActorAlias)*)?;
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//Behaviors
-	InteractorBehavior:
-		cause=InteractorBehaviorCause ":" (effect+=InteractorBehaviorEffect)+;
-	
-	InteractorBehaviorCause:
-		(InteractorBehaviorOnCause | InteractorBehaviorWhenCause) ;
-	
-	InteractorBehaviorOnCause:
-		"on" event=InteractorSignalReception ("if" guard=Expression)?;
-	
-	InteractorBehaviorWhenCause:
-		"when" condition=Expression ("if" guard=Expression)?;
-	
-	InteractorBehaviorEffect:
-		(InteractorBehaviorAlwaysEffect | InteractorBehaviorSetEffect | InteractorBehaviorTriggerEffect)
-	;
-	
-	InteractorBehaviorAlwaysEffect:
-		"always" target=InteractorSignalEmission "=" value=Expression
-	;
-	
-	InteractorBehaviorSetEffect:
-		"set" target=InteractorSignalEmission "=" value=Expression
-	;
-	
-	InteractorBehaviorTriggerEffect:
-		"trigger" target=InteractorSignalEmission "=" value=Expression
-	;
+//Entities
+AccessibleEntity:
+	generic=GenericEntity | specific=[Entity];
 
+GenericEntity:
+	"any" | "self" | "other" | "parent" | "child" | "all" | "actors";
 
+Entity:
+	InteractorComponent | InteractorActor;
 
+ActorAlias:
+	source=[InteractorActor] "as" alias=[InteractorActor];
 
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Signals
+InteractorSignalReception:
+	(instance=[InteractorData] ("from" source=InteractorSignalAlias)?) |
+	(init?="init");
 
+InteractorSignalEmission:
+	(instance=[InteractorData] ("to" destination=InteractorSignalAlias)?);
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Behaviors
+InteractorBehavior:
+	cause=InteractorBehaviorCause ":" (effect+=InteractorBehaviorEffect)+;
+
+InteractorBehaviorCause:
+	(InteractorBehaviorOnCause | InteractorBehaviorWhenCause);
+
+InteractorBehaviorOnCause:
+	"on" event=InteractorSignalReception ("if" guard=Expression)?;
+
+InteractorBehaviorWhenCause:
+	"when" condition=Expression ("if" guard=Expression)?;
+
+InteractorBehaviorEffect:
+	(InteractorBehaviorAlwaysEffect | InteractorBehaviorSetEffect | InteractorBehaviorTriggerEffect);
+
+InteractorBehaviorAlwaysEffect:
+	"always" target=InteractorSignalEmission "=" value=Expression;
+
+InteractorBehaviorSetEffect:
+	"set" target=InteractorSignalEmission "=" value=Expression;
+
+InteractorBehaviorTriggerEffect:
+	"trigger" target=InteractorSignalEmission "=" value=Expression;
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Expressions
 //We do not use xbase because we only need a subset of it in order to be able to generate C code and in order to simplify the language
 //So we are going to construct the expressions language we need. It is similar to xbase on certain points, but still clearly different, semantically and syntaxically
-	Expression:
+Expression:
 	ExpressionOr;
 
 	//Composition of expressions
-	ExpressionOr returns Expression:
-		ExpressionAnd (=>({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionOrOp) rightOperand=ExpressionAnd)*;
-	
-	ExpressionOrOp:
-		"or";
-	
-	ExpressionAnd returns Expression:
-		ExpressionEquality (=>({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionAndOp) rightOperand=ExpressionEquality)*;
-	
-	ExpressionAndOp:
-		"and";
-	
-	ExpressionEquality returns Expression:
-		ExpressionCompare (=>({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionEqualityOp) rightOperand=ExpressionCompare)*;
-	
-	ExpressionEqualityOp:
-		"==" | "!=" ;
-	
-	ExpressionCompare returns Expression:
-		ExpressionOther (=>({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionCompareOp) rightOperand=ExpressionOther)*;
-	
-	ExpressionCompareOp:
-		"<=" | ">=" | "<" | ">" ;
-	
-	ExpressionOther returns Expression:
-		ExpressionAddition (=>({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionOtherOp) rightOperand=ExpressionAddition)*;
-	
-	ExpressionOtherOp:
-		  "<>" | "?:" ; //String join and groovy elvis operator for null checking
-	
-	ExpressionAddition returns Expression:
-		ExpressionMultiplication (=>({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionAdditionOp) rightOperand=ExpressionMultiplication)*;
-	
-	ExpressionAdditionOp:
-		"+" | "-";
-	
-	ExpressionMultiplication returns Expression:
-		ExpressionUnary (=>({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionMultiplicationOp) rightOperand=ExpressionUnary)*;
-	
-	ExpressionMultiplicationOp:
-		"*" | "/" | "%";
-	
-	ExpressionUnary returns Expression:
-		({UnaryOperation} feature=ExpressionUnaryOp operand=ExpressionPrimary) | ExpressionPrimary;
-	
-	ExpressionUnaryOp:
-		"!" | "-" | "+";
-	
-	ExpressionPrimary returns Expression:
-		ExpressionSwitch | ExpressionIf | ExpressionLiteral | ExpressionForEach | ExpressionFunctionCall | ExpressionParenthesized;
-	
-	ExpressionLiteral returns Expression:
-		ExpressionLiteralCollection | LiteralBoolean | LiteralNumber | LiteralNull | LiteralString | LiteralTime | LiteralEnum | {LiteralData} data=[InteractorData];
-	
-	ExpressionLiteralCollection:
-		ExpressionLiteralSet | ExpressionLiteralList;
-	
-	ExpressionLiteralSet:
-		{ExpressionLiteralSet} "{" (elements+=Expression ("," elements+=Expression )*)? "}";
-	
-	ExpressionLiteralList:
-		{ExpressionLiteralList} "[" (elements+=Expression ("," elements+=Expression )*)? "]";
-	
-	ExpressionParenthesized returns Expression:
-		"(" Expression ")";
-	
-	ExpressionIf returns Expression:
-		{ExpressionIf}
-		"if" "(" if=Expression =>")"
-		(then=Expression)
-		(=>"else" else=Expression);
-	
-	ExpressionSwitch returns Expression:
-		{ExpressionSwitch}
-		"switch" "(" switch=Expression =>")" 
-		 (=> case+=ExpressionCase)+
-		 (=>"default" ":" default=Expression )?;
-	
-	ExpressionCase:
-		"case" case=Expression ":" then=Expression ;
-	
-	ExpressionForEach returns Expression:
-		{ExpressionForEach}
-		"for" "each" "(" forExpression=Expression ")"
-			eachExpression=Expression;
-	
-	ExpressionFunctionCall returns Expression:
-		{ExpressionFunctionCall} function=ExpressionFunctionCallBase "(" (arguments+=Expression)? ("," arguments+=Expression)* ")";
-	
-	
-	ExpressionFunctionCallBase : //Insprired by standard libraries of C, Java, Javascript
-	"math.abs"|"math.acos"|"math.acosh" |"math.asin"|"math.asinh" |"math.atan"|"math.atanh" |"math.atan2" |
-	"math.ceil"|"math.clip"|"math.cos"|"math.cosh" |"math.exp"|"math.floor"|"math.fround" |"math.hypot" |"math.log"|
-	"math.log10" |"math.log2" |"math.max"|"math.min"|"math.pow"|"math.random"|"math.round"|"math.sign"|
-	"math.sin"|"math.sinh"|"math.sqrt"|"math.tan"|"math.tanh"|"math.trunc";
-	
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ExpressionOr returns Expression:
+	ExpressionAnd (=> ({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionOrOp)
+	rightOperand=ExpressionAnd)*;
+
+ExpressionOrOp:
+	"or";
+
+ExpressionAnd returns Expression:
+	ExpressionEquality (=> ({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionAndOp)
+	rightOperand=ExpressionEquality)*;
+
+ExpressionAndOp:
+	"and";
+
+ExpressionEquality returns Expression:
+	ExpressionCompare (=> ({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionEqualityOp)
+	rightOperand=ExpressionCompare)*;
+
+ExpressionEqualityOp:
+	"==" | "!=";
+
+ExpressionCompare returns Expression:
+	ExpressionOther (=> ({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionCompareOp)
+	rightOperand=ExpressionOther)*;
+
+ExpressionCompareOp:
+	"<=" | ">=" | "<" | ">";
+
+ExpressionOther returns Expression:
+	ExpressionAddition (=> ({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionOtherOp)
+	rightOperand=ExpressionAddition)*;
+
+ExpressionOtherOp:
+	"<>" | "?:"; //String join and groovy elvis operator for null checking
+ExpressionAddition returns Expression:
+	ExpressionMultiplication (=> ({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionAdditionOp)
+	rightOperand=ExpressionMultiplication)*;
+
+ExpressionAdditionOp:
+	"+" | "-";
+
+ExpressionMultiplication returns Expression:
+	ExpressionUnary (=> ({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionMultiplicationOp)
+	rightOperand=ExpressionUnary)*;
+
+ExpressionMultiplicationOp:
+	"*" | "/" | "%";
+
+ExpressionUnary returns Expression:
+	({UnaryOperation} feature=ExpressionUnaryOp operand=ExpressionPrimary) | ExpressionPrimary;
+
+ExpressionUnaryOp:
+	"!" | "-" | "+";
+
+ExpressionPrimary returns Expression:
+	ExpressionSwitch | ExpressionIf | ExpressionLiteral | ExpressionForEach | ExpressionFunctionCall |
+	ExpressionParenthesized;
+
+ExpressionLiteral returns Expression:
+	ExpressionLiteralCollection | LiteralBoolean | LiteralNumber | LiteralNull | LiteralText | LiteralTime | LiteralEnum
+	| {LiteralData} data=[InteractorData];
+
+ExpressionLiteralCollection:
+	ExpressionLiteralSet | ExpressionLiteralList;
+
+ExpressionLiteralSet:
+	{ExpressionLiteralSet} "{" (elements+=Expression ("," elements+=Expression)*)? "}";
+
+ExpressionLiteralList:
+	{ExpressionLiteralList} "[" (elements+=Expression ("," elements+=Expression)*)? "]";
+
+ExpressionParenthesized returns Expression:
+	"(" Expression ")";
+
+ExpressionIf returns Expression:
+	{ExpressionIf}
+	"if" "(" if=Expression => ")"
+	(then=Expression)
+	(=> "else" else=Expression);
+
+ExpressionSwitch returns Expression:
+	{ExpressionSwitch}
+	"switch" "(" switch=Expression => ")"
+	(=> case+=ExpressionCase)+
+	(=> "default" ":" default=Expression)?;
+
+ExpressionCase:
+	"case" case=Expression ":" then=Expression;
+
+ExpressionForEach returns Expression:
+	{ExpressionForEach}
+	"for" "each" "(" forExpression=Expression ")"
+	eachExpression=Expression;
+
+ExpressionFunctionCall returns Expression:
+	{ExpressionFunctionCall} function=ExpressionFunctionCallBase "(" (arguments+=Expression)? ("," arguments+=Expression)*
+	")";
+
+ExpressionFunctionCallBase: //Insprired by standard libraries of C, Java, Javascript
+	"math.abs" | "math.acos" | "math.acosh" | "math.asin" | "math.asinh" | "math.atan" | "math.atanh" | "math.atan2" |
+	"math.ceil" | "math.clip" | "math.cos" | "math.cosh" | "math.exp" | "math.floor" | "math.fround" | "math.hypot" |
+	"math.log" | "math.log10" | "math.log2" | "math.max" | "math.min" | "math.pow" | "math.random" | "math.round" |
+	"math.sign" | "math.sin" | "math.sinh" | "math.sqrt" | "math.tan" | "math.tanh" | "math.trunc";
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Literals
-	LiteralBoolean returns Expression :
-		{LiteralBoolean} ("false" | isTrue?="true");
-	
-	LiteralNull returns Expression :
-		{LiteralNull} "null";
-	
-	LiteralNumber returns Expression :
-		{LiteralNumber} value= NUMBER;
-	
-	LiteralString returns Expression:
-		{LiteralString} value=STRING;
-	
-	LiteralEnum returns Expression:
-		{LiteralEnum} "#"value=[DataDefinitionEnumElement];
-	
-	LiteralTime returns Expression :
-		{LiteralTime} now?="now"| 
-		{LiteralTime} (year=NUMBER "year") (month=NUMBER "month")? (day=NUMBER "day")? (hour=NUMBER "hour")? (minute=NUMBER ("m"|"minute"))? (second=NUMBER ("s"|"second"))?| 
-		{LiteralTime} (month=NUMBER "month") (day=NUMBER "day")? (hour=NUMBER "hour")? (minute=NUMBER ("m"|"minute"))? (second=NUMBER ("s"|"second"))?| 
-		{LiteralTime} (day=NUMBER "day") (hour=NUMBER "hour")? (minute=NUMBER ("m"|"minute"))? (second=NUMBER ("s"|"second"))?| 
-		{LiteralTime} (hour=NUMBER "hour") (minute=NUMBER ("m"|"minute"))? (second=NUMBER ("s"|"second"))?| 
-		{LiteralTime} (minute=NUMBER ("m"|"minute")) (second=NUMBER ("s"|"second"))?| 
-		{LiteralTime} (second=NUMBER ("s"|"second"))  ;
-	
+LiteralBoolean returns Expression:
+	{LiteralBoolean} ("false" | isTrue?="true");
+
+LiteralNull returns Expression:
+	{LiteralNull} "null";
+
+LiteralNumber returns Expression:
+	{LiteralNumber} value=NUMBER;
+
+LiteralText returns Expression:
+	{LiteralText} value=STRING;
+
+LiteralEnum returns Expression:
+	{LiteralEnum} "#" value=[DataDefinitionEnumElement];
+
+LiteralTime returns Expression:
+	{LiteralTime} now?="now" | {LiteralTime} (year=NUMBER "year") (month=NUMBER "month")? (day=NUMBER "day")? (hour=NUMBER
+	"hour")? (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" | "second"))? | {LiteralTime} (month=NUMBER "month")
+	(day=NUMBER "day")? (hour=NUMBER "hour")? (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" | "second"))? |
+	{LiteralTime} (day=NUMBER "day") (hour=NUMBER "hour")? (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" |
+	"second"))? | {LiteralTime} (hour=NUMBER "hour") (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" | "second"))? |
+	{LiteralTime} (minute=NUMBER ("m" | "minute")) (second=NUMBER ("s" | "second"))? | {LiteralTime} (second=NUMBER ("s" |
+	"second"));
+
 	//QualifiedName:
-	//  ValidID (=>"." ValidID)*;
-
-
-
-
-
-
+//  ValidID (=>"." ValidID)*;
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Terminals
 
-	//Xtext Data types
-	NUMBER returns ecore::EDouble : INT ('.' INT)?;
+//Xtext Data types
+NUMBER returns ecore::EDouble:
+	INT ('.' INT)?;
 
 	// Terminals
-	terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-	terminal INT returns ecore::EInt: ('0'..'9')+;
-	terminal STRING	: 
-				'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
-				"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
-			; 
-	terminal ML_COMMENT	: '/*' -> '*/';
-	terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
-	
-	terminal WS			: (' '|'\t'|'\r'|'\n')+;
-	
-	terminal ANY_OTHER: .;
+terminal ID:
+	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
+terminal INT returns ecore::EInt:
+	('0'..'9')+;
+
+terminal STRING:
+	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"' |
+	"'" ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | "'"))* "'";
+
+terminal ML_COMMENT:
+	'/*'->'*/';
+
+terminal SL_COMMENT:
+	'//' !('\n' | '\r')* ('\r'? '\n')?;
+
+terminal WS:
+	(' ' | '\t' | '\r' | '\n')+;
+
+terminal ANY_OTHER:
+	.;
