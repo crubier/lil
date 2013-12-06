@@ -1,6 +1,9 @@
 commandToSystem data:
 	key : symbol
 	value : number
+	
+enginePower data :
+	number in [0,100]
 		
 	
 human actor :
@@ -19,6 +22,8 @@ ControlPanel interactor:
 		
 	theGauge : Gauge interactor
 	
+	joe : number set flow to user
+	
 	select: symbol in {#X,#Y} event from user
 	selection : symbol in {#X,#Y} flow to user
 	
@@ -29,7 +34,7 @@ ControlPanel interactor:
 	setX : number event to system
 	setY : number event to system
 	
-	min: number flow from system
+	min: number in [0,100] set list flow from system
 	max: number flow from system
 	x: number flow from system
 	y: number flow from system
