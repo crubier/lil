@@ -3,6 +3,26 @@
  */
 package com.crubier.lil.scoping;
 
+import com.crubier.lil.lil.AccessibleEntity;
+import com.crubier.lil.lil.DataDefinitionEnumElement;
+import com.crubier.lil.lil.DataDefinitionSet;
+import com.crubier.lil.lil.DataDefinitionSetEnum;
+import com.crubier.lil.lil.DataType;
+import com.crubier.lil.lil.Entity;
+import com.crubier.lil.lil.InteractorComponent;
+import com.crubier.lil.lil.InteractorData;
+import com.crubier.lil.lil.InteractorSignalAlias;
+import com.crubier.lil.lil.InteractorSignalEmission;
+import com.crubier.lil.lil.InteractorType;
+import com.crubier.lil.lil.InteractorTypeDefinition;
+import com.crubier.lil.lil.LiteralEnum;
+import com.google.common.base.Objects;
+import java.util.HashSet;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
 /**
@@ -13,4 +33,121 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
  */
 @SuppressWarnings("all")
 public class LilScopeProvider extends AbstractDeclarativeScopeProvider {
+  public IScope scope_InteractorSignalEmission_instance(final InteractorSignalEmission signalemission, final EReference ref) {
+    InteractorSignalAlias _destination = signalemission.getDestination();
+    boolean _equals = Objects.equal(_destination, null);
+    if (_equals) {
+      EObject temp = signalemission;
+      boolean _not = (!(temp instanceof InteractorTypeDefinition));
+      boolean _while = _not;
+      while (_while) {
+        EObject _eContainer = temp.eContainer();
+        temp = _eContainer;
+        boolean _not_1 = (!(temp instanceof InteractorTypeDefinition));
+        _while = _not_1;
+      }
+      EList<EObject> _eContents = temp.eContents();
+      return Scopes.scopeFor(_eContents);
+    } else {
+      InteractorSignalAlias _destination_1 = null;
+      if (signalemission!=null) {
+        _destination_1=signalemission.getDestination();
+      }
+      AccessibleEntity _source = null;
+      if (_destination_1!=null) {
+        _source=_destination_1.getSource();
+      }
+      Entity _specific = null;
+      if (_source!=null) {
+        _specific=_source.getSpecific();
+      }
+      InteractorType _type = null;
+      InteractorSignalAlias _destination_2 = null;
+      if (signalemission!=null) {
+        _destination_2=signalemission.getDestination();
+      }
+      AccessibleEntity _source_1 = null;
+      if (_destination_2!=null) {
+        _source=_destination_2.getSource();
+      }
+      Entity _specific_1 = null;
+      if (_source!=null) {
+        _specific=_source.getSpecific();
+      }
+      if (((InteractorComponent) _specific)!=null) {
+        _type=((InteractorComponent) _specific).getType();
+      }
+      InteractorTypeDefinition _custom = null;
+      if (_type!=null) {
+        _custom=_type.getCustom();
+      }
+      EList<EObject> _eContents_1 = null;
+      if (_custom!=null) {
+        _eContents_1=_custom.eContents();
+      }
+      return Scopes.scopeFor(_eContents_1);
+    }
+  }
+  
+  public IScope scope_LiteralEnum_value(final LiteralEnum literal, final EReference ref) {
+    EObject object = literal;
+    boolean _not = (!(object instanceof InteractorTypeDefinition));
+    boolean _while = _not;
+    while (_while) {
+      EObject _eContainer = object.eContainer();
+      object = _eContainer;
+      boolean _not_1 = (!(object instanceof InteractorTypeDefinition));
+      _while = _not_1;
+    }
+    HashSet<DataDefinitionEnumElement> _hashSet = new HashSet<DataDefinitionEnumElement>();
+    final HashSet<DataDefinitionEnumElement> elements = _hashSet;
+    final InteractorTypeDefinition interactor = ((InteractorTypeDefinition) object);
+    EList<InteractorData> _data = interactor.getData();
+    for (final InteractorData s : _data) {
+      DataType _type = null;
+      if (s!=null) {
+        _type=s.getType();
+      }
+      DataDefinitionSet _definitionSet = null;
+      if (_type!=null) {
+        _definitionSet=_type.getDefinitionSet();
+      }
+      if ((_definitionSet instanceof DataDefinitionSetEnum)) {
+        DataType _type_1 = null;
+        if (s!=null) {
+          _type_1=s.getType();
+        }
+        DataDefinitionSet _definitionSet_1 = null;
+        if (_type_1!=null) {
+          _definitionSet_1=_type_1.getDefinitionSet();
+        }
+        EList<DataDefinitionEnumElement> _element = null;
+        DataType _type_2 = null;
+        if (s!=null) {
+          _type_1=s.getType();
+        }
+        DataDefinitionSet _definitionSet_2 = null;
+        if (_type_1!=null) {
+          _definitionSet_1=_type_1.getDefinitionSet();
+        }
+        if (((DataDefinitionSetEnum) _definitionSet_1)!=null) {
+          _element=((DataDefinitionSetEnum) _definitionSet_1).getElement();
+        }
+        boolean _notEquals = (!Objects.equal(_element, null));
+        if (_notEquals) {
+          DataType _type_3 = null;
+          if (s!=null) {
+            _type_3=s.getType();
+          }
+          DataDefinitionSet _definitionSet_3 = null;
+          if (_type_3!=null) {
+            _definitionSet_3=_type_3.getDefinitionSet();
+          }
+          EList<DataDefinitionEnumElement> _element_1 = ((DataDefinitionSetEnum) _definitionSet_3).getElement();
+          elements.addAll(_element_1);
+        }
+      }
+    }
+    return Scopes.scopeFor(elements);
+  }
 }

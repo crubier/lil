@@ -3,7 +3,14 @@
  */
 package com.crubier.lil.generator;
 
+import com.crubier.lil.lil.DataType;
+import com.crubier.lil.lil.DataTypeDefinition;
+import com.crubier.lil.lil.InteractorData;
+import com.crubier.lil.lil.InteractorTypeDefinition;
+import com.google.common.base.Objects;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.xbase.lib.InputOutput;
@@ -17,5 +24,74 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 public class LilGeneratorC implements IGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
     InputOutput.<String>println("generate C code");
+  }
+  
+  public CharSequence compile(final InteractorTypeDefinition e) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("//lil framework generated this artifact automatically");
+    _builder.newLine();
+    _builder.append("public class ");
+    String _name = e.getName();
+    _builder.append(_name, "");
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
+    {
+      EList<InteractorData> _data = e.getData();
+      for(final InteractorData f : _data) {
+        _builder.append("\t");
+        CharSequence _compile = this.compile(f);
+        _builder.append(_compile, "	");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence compile(final InteractorData s) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      String _mode = s.getMode();
+      boolean _equals = Objects.equal(_mode, "flow");
+      if (_equals) {
+        {
+          DataType _type = s.getType();
+          String _base = _type.getBase();
+          boolean _notEquals = (!Objects.equal(_base, null));
+          if (_notEquals) {
+            _builder.append(" ");
+            DataType _type_1 = s.getType();
+            String _base_1 = _type_1.getBase();
+            _builder.append(_base_1, "");
+            _builder.append(" ");
+            String _name = s.getName();
+            _builder.append(_name, "");
+            _builder.append(" ;");
+            _builder.newLineIfNotEmpty();
+          } else {
+            _builder.append(" ");
+            {
+              DataType _type_2 = s.getType();
+              DataTypeDefinition _custom = _type_2.getCustom();
+              boolean _notEquals_1 = (!Objects.equal(_custom, null));
+              if (_notEquals_1) {
+                _builder.append(" ");
+                DataType _type_3 = s.getType();
+                DataTypeDefinition _custom_1 = _type_3.getCustom();
+                _builder.append(_custom_1, "");
+                _builder.append(" ");
+                String _name_1 = s.getName();
+                _builder.append(_name_1, "");
+                _builder.append(" ;");
+              }
+            }
+          }
+        }
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
   }
 }

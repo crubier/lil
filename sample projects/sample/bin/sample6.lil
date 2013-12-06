@@ -1,4 +1,4 @@
-Person data : 
+person data : 
 	name : text
 	surname : text
 	birthdate : text
@@ -7,44 +7,51 @@ Person data :
 human actor :
 	pointing : input
 	viewing : output
+	sound:output
 	
 
-EnginePower data: 
+enginePower data: 
 	number in [0,100]
 
-XorYchoice data : 
+xorYchoice data : 
 	symbol in {#X,#Y}
 	
 	
-Gauge interactor :
+gauge interactor :
 	user : human actor
 	val : number in [0,100] flow from parent to user
 	
 	
-ControlPanel interactor:
+etatsinteracteur interactor :
+	etat : symbol in {#ON , #OFF, #DEF} flow
+	
+	user : human actor
+	
+	demarrer : void event from user
+	arreter : void event from user
+	
+	on demarrer if etat == #OFF : set etat = #ON
+	
+controlPanel interactor:
 	user : human actor
 	system : human actor
 		
-	theGauge : Gauge interactor
+	theGauge : gauge interactor
 	
-	selection : XorYchoice flow to user
-	select: XorYchoice event from user
+	selection : symbol in {#X,#Y} flow to user
+	select: symbol in {#X,#Y} event from user
+	
 	increment : void event from user to system
 	decrement : void event from user to system
 	reset: void event from user to system
-	min: EnginePower flow from system
-	max: EnginePower flow from system
-	x: EnginePower flow from system
-	y: EnginePower flow from system
-	current: EnginePower flow 
+	min: enginePower flow from system
+	max: enginePower flow from system
+	x: enginePower flow from system
+	y: enginePower flow from system
+	current: enginePower flow 
 	
-	on init : 	always current = switch(selection) case #X : x case #Y : y
-				always val to theGauge = Math.clip(current,0,100)
+	on init : 	always current = switch(selection) case #X : x case #Y : 2 year 5 day 2 hour 1 minute 5.3 second
+				always val to theGauge = math.clip(current,0,100)
 				
 	on increment : set val to theGauge = switch (7) case +1:false case 2:true default : false
-	
-	
-	
-	
-	
 	

@@ -8,6 +8,8 @@ import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
 import com.crubier.lil.lil.LilPackage
 import com.crubier.lil.lil.LilFactory
+import com.crubier.lil.lil.InteractorTypeDefinition
+import com.crubier.lil.lil.InteractorData
 
 /**
  * Generates code from your model files on save.
@@ -27,22 +29,22 @@ class LilGeneratorC implements IGenerator {
 //			resource.allContents.filter(typeof(InteractorDeclaration)).map[name].join(', '))
 	}
 	
-//	def compile(Interactor e) '''
-//		//lil framework generated this artifact automatically
-//		public class «e.name» {
-//			«FOR f:e.signals»
-//				«f.compile»
-//			«ENDFOR»
-//		}
-//		
-//	'''
-//	
-//	def compile(Signal s) '''
-//	«IF s.mode == "flow"»
-//		«IF s.type.base!=null» «s.type.base» «s.name» ;
-//		«ELSE» «IF s.type.compound!=null» «s.type.compound» «s.name» ;«ENDIF»«ENDIF»
-//	«ENDIF»
-//	'''
+	def compile(InteractorTypeDefinition e) '''
+		//lil framework generated this artifact automatically
+		public class «e.name» {
+			«FOR f:e.data»
+				«f.compile»
+			«ENDFOR»
+		}
+		
+	'''
+	
+	def compile(InteractorData s) '''
+	«IF s.mode == "flow"»
+		«IF s.type.base!=null» «s.type.base» «s.name» ;
+		«ELSE» «IF s.type.custom!=null» «s.type.custom» «s.name» ;«ENDIF»«ENDIF»
+	«ENDIF»
+	'''
 	
 	
 }

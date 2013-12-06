@@ -39,7 +39,7 @@ generate lil "http://www.crubier.com/lil/Lil"
 		
 	DataType returns DataType:
 		(
-		base=DataBaseType ("in" definitionSet=DataDefinitionSet)? |  
+		(base=DataBaseType) ("in" definitionSet=DataDefinitionSet)? |  
 		custom=[DataTypeDefinition] 
 		) 
 		(collection=DataCollectionType)?;
