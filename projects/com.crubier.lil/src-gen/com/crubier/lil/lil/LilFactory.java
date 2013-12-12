@@ -32,6 +32,15 @@ public interface LilFactory extends EFactory
   LilModel createLilModel();
 
   /**
+   * Returns a new object of class '<em>Import Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import Statement</em>'.
+   * @generated
+   */
+  ImportStatement createImportStatement();
+
+  /**
    * Returns a new object of class '<em>Actor Type Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -50,13 +59,13 @@ public interface LilFactory extends EFactory
   ActorType createActorType();
 
   /**
-   * Returns a new object of class '<em>Actor Instance Declaration</em>'.
+   * Returns a new object of class '<em>Actor Component Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Actor Instance Declaration</em>'.
+   * @return a new object of class '<em>Actor Component Declaration</em>'.
    * @generated
    */
-  ActorInstanceDeclaration createActorInstanceDeclaration();
+  ActorComponentDeclaration createActorComponentDeclaration();
 
   /**
    * Returns a new object of class '<em>Data Type Definition</em>'.
@@ -131,13 +140,13 @@ public interface LilFactory extends EFactory
   DataTypeIdentifierDefinitionSet createDataTypeIdentifierDefinitionSet();
 
   /**
-   * Returns a new object of class '<em>Data Instance Declaration</em>'.
+   * Returns a new object of class '<em>Data Component Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Instance Declaration</em>'.
+   * @return a new object of class '<em>Data Component Declaration</em>'.
    * @generated
    */
-  DataInstanceDeclaration createDataInstanceDeclaration();
+  DataComponentDeclaration createDataComponentDeclaration();
 
   /**
    * Returns a new object of class '<em>Interactor Type Definition</em>'.
@@ -158,94 +167,76 @@ public interface LilFactory extends EFactory
   InteractorType createInteractorType();
 
   /**
-   * Returns a new object of class '<em>Interactor Actor</em>'.
+   * Returns a new object of class '<em>Interactor Entity Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Actor</em>'.
+   * @return a new object of class '<em>Interactor Entity Declaration</em>'.
    * @generated
    */
-  InteractorActor createInteractorActor();
+  InteractorEntityDeclaration createInteractorEntityDeclaration();
 
   /**
-   * Returns a new object of class '<em>Interactor Data</em>'.
+   * Returns a new object of class '<em>Interactor Data Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Data</em>'.
+   * @return a new object of class '<em>Interactor Data Declaration</em>'.
    * @generated
    */
-  InteractorData createInteractorData();
+  InteractorDataDeclaration createInteractorDataDeclaration();
 
   /**
-   * Returns a new object of class '<em>Interactor Signal Alias</em>'.
+   * Returns a new object of class '<em>Interactor Actor Alias</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Signal Alias</em>'.
+   * @return a new object of class '<em>Interactor Actor Alias</em>'.
    * @generated
    */
-  InteractorSignalAlias createInteractorSignalAlias();
+  InteractorActorAlias createInteractorActorAlias();
 
   /**
-   * Returns a new object of class '<em>Interactor Component</em>'.
+   * Returns a new object of class '<em>Interactor Data Alias</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Component</em>'.
+   * @return a new object of class '<em>Interactor Data Alias</em>'.
    * @generated
    */
-  InteractorComponent createInteractorComponent();
+  InteractorDataAlias createInteractorDataAlias();
 
   /**
-   * Returns a new object of class '<em>Accessible Entity</em>'.
+   * Returns a new object of class '<em>Interactor Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Accessible Entity</em>'.
+   * @return a new object of class '<em>Interactor Entity</em>'.
    * @generated
    */
-  AccessibleEntity createAccessibleEntity();
+  InteractorEntity createInteractorEntity();
 
   /**
-   * Returns a new object of class '<em>Entity</em>'.
+   * Returns a new object of class '<em>Interactor Data Reception</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entity</em>'.
+   * @return a new object of class '<em>Interactor Data Reception</em>'.
    * @generated
    */
-  Entity createEntity();
+  InteractorDataReception createInteractorDataReception();
 
   /**
-   * Returns a new object of class '<em>Actor Alias</em>'.
+   * Returns a new object of class '<em>Interactor Data Emission</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Actor Alias</em>'.
+   * @return a new object of class '<em>Interactor Data Emission</em>'.
    * @generated
    */
-  ActorAlias createActorAlias();
+  InteractorDataEmission createInteractorDataEmission();
 
   /**
-   * Returns a new object of class '<em>Interactor Signal Reception</em>'.
+   * Returns a new object of class '<em>Interactor Behavior Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Signal Reception</em>'.
+   * @return a new object of class '<em>Interactor Behavior Declaration</em>'.
    * @generated
    */
-  InteractorSignalReception createInteractorSignalReception();
-
-  /**
-   * Returns a new object of class '<em>Interactor Signal Emission</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Signal Emission</em>'.
-   * @generated
-   */
-  InteractorSignalEmission createInteractorSignalEmission();
-
-  /**
-   * Returns a new object of class '<em>Interactor Behavior</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Behavior</em>'.
-   * @generated
-   */
-  InteractorBehavior createInteractorBehavior();
+  InteractorBehaviorDeclaration createInteractorBehaviorDeclaration();
 
   /**
    * Returns a new object of class '<em>Interactor Behavior Cause</em>'.
@@ -257,24 +248,6 @@ public interface LilFactory extends EFactory
   InteractorBehaviorCause createInteractorBehaviorCause();
 
   /**
-   * Returns a new object of class '<em>Interactor Behavior On Cause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Behavior On Cause</em>'.
-   * @generated
-   */
-  InteractorBehaviorOnCause createInteractorBehaviorOnCause();
-
-  /**
-   * Returns a new object of class '<em>Interactor Behavior When Cause</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Behavior When Cause</em>'.
-   * @generated
-   */
-  InteractorBehaviorWhenCause createInteractorBehaviorWhenCause();
-
-  /**
    * Returns a new object of class '<em>Interactor Behavior Effect</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -282,33 +255,6 @@ public interface LilFactory extends EFactory
    * @generated
    */
   InteractorBehaviorEffect createInteractorBehaviorEffect();
-
-  /**
-   * Returns a new object of class '<em>Interactor Behavior Always Effect</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Behavior Always Effect</em>'.
-   * @generated
-   */
-  InteractorBehaviorAlwaysEffect createInteractorBehaviorAlwaysEffect();
-
-  /**
-   * Returns a new object of class '<em>Interactor Behavior Set Effect</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Behavior Set Effect</em>'.
-   * @generated
-   */
-  InteractorBehaviorSetEffect createInteractorBehaviorSetEffect();
-
-  /**
-   * Returns a new object of class '<em>Interactor Behavior Trigger Effect</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Behavior Trigger Effect</em>'.
-   * @generated
-   */
-  InteractorBehaviorTriggerEffect createInteractorBehaviorTriggerEffect();
 
   /**
    * Returns a new object of class '<em>Expression</em>'.
@@ -500,15 +446,6 @@ public interface LilFactory extends EFactory
   DataTypeQueue createDataTypeQueue();
 
   /**
-   * Returns a new object of class '<em>Data Definition Enum Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Definition Enum Element</em>'.
-   * @generated
-   */
-  DataDefinitionEnumElement createDataDefinitionEnumElement();
-
-  /**
    * Returns a new object of class '<em>Data Type Number Definition Set Set</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -563,6 +500,222 @@ public interface LilFactory extends EFactory
   DataTypeIdentifierDefinitionSetSet createDataTypeIdentifierDefinitionSetSet();
 
   /**
+   * Returns a new object of class '<em>Interactor Type Custom</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Type Custom</em>'.
+   * @generated
+   */
+  InteractorTypeCustom createInteractorTypeCustom();
+
+  /**
+   * Returns a new object of class '<em>Interactor Actor Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Actor Declaration</em>'.
+   * @generated
+   */
+  InteractorActorDeclaration createInteractorActorDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Interactor Component Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Component Declaration</em>'.
+   * @generated
+   */
+  InteractorComponentDeclaration createInteractorComponentDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Interactor Data Declaration Event</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Data Declaration Event</em>'.
+   * @generated
+   */
+  InteractorDataDeclarationEvent createInteractorDataDeclarationEvent();
+
+  /**
+   * Returns a new object of class '<em>Interactor Data Declaration Flow</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Data Declaration Flow</em>'.
+   * @generated
+   */
+  InteractorDataDeclarationFlow createInteractorDataDeclarationFlow();
+
+  /**
+   * Returns a new object of class '<em>Interactor Data Declaration Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Data Declaration Constant</em>'.
+   * @generated
+   */
+  InteractorDataDeclarationConstant createInteractorDataDeclarationConstant();
+
+  /**
+   * Returns a new object of class '<em>Interactor Entity Any</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity Any</em>'.
+   * @generated
+   */
+  InteractorEntityAny createInteractorEntityAny();
+
+  /**
+   * Returns a new object of class '<em>Interactor Entity Self</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity Self</em>'.
+   * @generated
+   */
+  InteractorEntitySelf createInteractorEntitySelf();
+
+  /**
+   * Returns a new object of class '<em>Interactor Entity Other</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity Other</em>'.
+   * @generated
+   */
+  InteractorEntityOther createInteractorEntityOther();
+
+  /**
+   * Returns a new object of class '<em>Interactor Entity Parent</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity Parent</em>'.
+   * @generated
+   */
+  InteractorEntityParent createInteractorEntityParent();
+
+  /**
+   * Returns a new object of class '<em>Interactor Entity Child</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity Child</em>'.
+   * @generated
+   */
+  InteractorEntityChild createInteractorEntityChild();
+
+  /**
+   * Returns a new object of class '<em>Interactor Entity All</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity All</em>'.
+   * @generated
+   */
+  InteractorEntityAll createInteractorEntityAll();
+
+  /**
+   * Returns a new object of class '<em>Interactor Entity Actors</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity Actors</em>'.
+   * @generated
+   */
+  InteractorEntityActors createInteractorEntityActors();
+
+  /**
+   * Returns a new object of class '<em>Interactor Entity Specific</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity Specific</em>'.
+   * @generated
+   */
+  InteractorEntitySpecific createInteractorEntitySpecific();
+
+  /**
+   * Returns a new object of class '<em>Interactor Data Reception Internal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Data Reception Internal</em>'.
+   * @generated
+   */
+  InteractorDataReceptionInternal createInteractorDataReceptionInternal();
+
+  /**
+   * Returns a new object of class '<em>Interactor Data Reception External</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Data Reception External</em>'.
+   * @generated
+   */
+  InteractorDataReceptionExternal createInteractorDataReceptionExternal();
+
+  /**
+   * Returns a new object of class '<em>Interactor Data Reception Init</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Data Reception Init</em>'.
+   * @generated
+   */
+  InteractorDataReceptionInit createInteractorDataReceptionInit();
+
+  /**
+   * Returns a new object of class '<em>Interactor Data Emission Internal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Data Emission Internal</em>'.
+   * @generated
+   */
+  InteractorDataEmissionInternal createInteractorDataEmissionInternal();
+
+  /**
+   * Returns a new object of class '<em>Interactor Data Emission External</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Data Emission External</em>'.
+   * @generated
+   */
+  InteractorDataEmissionExternal createInteractorDataEmissionExternal();
+
+  /**
+   * Returns a new object of class '<em>Interactor Behavior Cause On</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Behavior Cause On</em>'.
+   * @generated
+   */
+  InteractorBehaviorCauseOn createInteractorBehaviorCauseOn();
+
+  /**
+   * Returns a new object of class '<em>Interactor Behavior Cause When</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Behavior Cause When</em>'.
+   * @generated
+   */
+  InteractorBehaviorCauseWhen createInteractorBehaviorCauseWhen();
+
+  /**
+   * Returns a new object of class '<em>Interactor Behavior Effect Always</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Behavior Effect Always</em>'.
+   * @generated
+   */
+  InteractorBehaviorEffectAlways createInteractorBehaviorEffectAlways();
+
+  /**
+   * Returns a new object of class '<em>Interactor Behavior Effect Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Behavior Effect Set</em>'.
+   * @generated
+   */
+  InteractorBehaviorEffectSet createInteractorBehaviorEffectSet();
+
+  /**
+   * Returns a new object of class '<em>Interactor Behavior Effect Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Behavior Effect Trigger</em>'.
+   * @generated
+   */
+  InteractorBehaviorEffectTrigger createInteractorBehaviorEffectTrigger();
+
+  /**
    * Returns a new object of class '<em>Expression Binary Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -579,15 +732,6 @@ public interface LilFactory extends EFactory
    * @generated
    */
   UnaryOperation createUnaryOperation();
-
-  /**
-   * Returns a new object of class '<em>Literal Data</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Literal Data</em>'.
-   * @generated
-   */
-  LiteralData createLiteralData();
 
   /**
    * Returns a new object of class '<em>Expression If</em>'.
@@ -669,6 +813,15 @@ public interface LilFactory extends EFactory
    * @generated
    */
   LiteralEnum createLiteralEnum();
+
+  /**
+   * Returns a new object of class '<em>Literal Time Now</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literal Time Now</em>'.
+   * @generated
+   */
+  LiteralTimeNow createLiteralTimeNow();
 
   /**
    * Returns a new object of class '<em>Literal Time</em>'.

@@ -80,6 +80,11 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createLilModelAdapter();
       }
       @Override
+      public Adapter caseImportStatement(ImportStatement object)
+      {
+        return createImportStatementAdapter();
+      }
+      @Override
       public Adapter caseActorTypeDefinition(ActorTypeDefinition object)
       {
         return createActorTypeDefinitionAdapter();
@@ -90,9 +95,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createActorTypeAdapter();
       }
       @Override
-      public Adapter caseActorInstanceDeclaration(ActorInstanceDeclaration object)
+      public Adapter caseActorComponentDeclaration(ActorComponentDeclaration object)
       {
-        return createActorInstanceDeclarationAdapter();
+        return createActorComponentDeclarationAdapter();
       }
       @Override
       public Adapter caseDataTypeDefinition(DataTypeDefinition object)
@@ -135,9 +140,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeIdentifierDefinitionSetAdapter();
       }
       @Override
-      public Adapter caseDataInstanceDeclaration(DataInstanceDeclaration object)
+      public Adapter caseDataComponentDeclaration(DataComponentDeclaration object)
       {
-        return createDataInstanceDeclarationAdapter();
+        return createDataComponentDeclarationAdapter();
       }
       @Override
       public Adapter caseInteractorTypeDefinition(InteractorTypeDefinition object)
@@ -150,54 +155,44 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createInteractorTypeAdapter();
       }
       @Override
-      public Adapter caseInteractorActor(InteractorActor object)
+      public Adapter caseInteractorEntityDeclaration(InteractorEntityDeclaration object)
       {
-        return createInteractorActorAdapter();
+        return createInteractorEntityDeclarationAdapter();
       }
       @Override
-      public Adapter caseInteractorData(InteractorData object)
+      public Adapter caseInteractorDataDeclaration(InteractorDataDeclaration object)
       {
-        return createInteractorDataAdapter();
+        return createInteractorDataDeclarationAdapter();
       }
       @Override
-      public Adapter caseInteractorSignalAlias(InteractorSignalAlias object)
+      public Adapter caseInteractorActorAlias(InteractorActorAlias object)
       {
-        return createInteractorSignalAliasAdapter();
+        return createInteractorActorAliasAdapter();
       }
       @Override
-      public Adapter caseInteractorComponent(InteractorComponent object)
+      public Adapter caseInteractorDataAlias(InteractorDataAlias object)
       {
-        return createInteractorComponentAdapter();
+        return createInteractorDataAliasAdapter();
       }
       @Override
-      public Adapter caseAccessibleEntity(AccessibleEntity object)
+      public Adapter caseInteractorEntity(InteractorEntity object)
       {
-        return createAccessibleEntityAdapter();
+        return createInteractorEntityAdapter();
       }
       @Override
-      public Adapter caseEntity(Entity object)
+      public Adapter caseInteractorDataReception(InteractorDataReception object)
       {
-        return createEntityAdapter();
+        return createInteractorDataReceptionAdapter();
       }
       @Override
-      public Adapter caseActorAlias(ActorAlias object)
+      public Adapter caseInteractorDataEmission(InteractorDataEmission object)
       {
-        return createActorAliasAdapter();
+        return createInteractorDataEmissionAdapter();
       }
       @Override
-      public Adapter caseInteractorSignalReception(InteractorSignalReception object)
+      public Adapter caseInteractorBehaviorDeclaration(InteractorBehaviorDeclaration object)
       {
-        return createInteractorSignalReceptionAdapter();
-      }
-      @Override
-      public Adapter caseInteractorSignalEmission(InteractorSignalEmission object)
-      {
-        return createInteractorSignalEmissionAdapter();
-      }
-      @Override
-      public Adapter caseInteractorBehavior(InteractorBehavior object)
-      {
-        return createInteractorBehaviorAdapter();
+        return createInteractorBehaviorDeclarationAdapter();
       }
       @Override
       public Adapter caseInteractorBehaviorCause(InteractorBehaviorCause object)
@@ -205,34 +200,9 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createInteractorBehaviorCauseAdapter();
       }
       @Override
-      public Adapter caseInteractorBehaviorOnCause(InteractorBehaviorOnCause object)
-      {
-        return createInteractorBehaviorOnCauseAdapter();
-      }
-      @Override
-      public Adapter caseInteractorBehaviorWhenCause(InteractorBehaviorWhenCause object)
-      {
-        return createInteractorBehaviorWhenCauseAdapter();
-      }
-      @Override
       public Adapter caseInteractorBehaviorEffect(InteractorBehaviorEffect object)
       {
         return createInteractorBehaviorEffectAdapter();
-      }
-      @Override
-      public Adapter caseInteractorBehaviorAlwaysEffect(InteractorBehaviorAlwaysEffect object)
-      {
-        return createInteractorBehaviorAlwaysEffectAdapter();
-      }
-      @Override
-      public Adapter caseInteractorBehaviorSetEffect(InteractorBehaviorSetEffect object)
-      {
-        return createInteractorBehaviorSetEffectAdapter();
-      }
-      @Override
-      public Adapter caseInteractorBehaviorTriggerEffect(InteractorBehaviorTriggerEffect object)
-      {
-        return createInteractorBehaviorTriggerEffectAdapter();
       }
       @Override
       public Adapter caseExpression(Expression object)
@@ -340,11 +310,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeQueueAdapter();
       }
       @Override
-      public Adapter caseDataDefinitionEnumElement(DataDefinitionEnumElement object)
-      {
-        return createDataDefinitionEnumElementAdapter();
-      }
-      @Override
       public Adapter caseDataTypeNumberDefinitionSetSet(DataTypeNumberDefinitionSetSet object)
       {
         return createDataTypeNumberDefinitionSetSetAdapter();
@@ -375,6 +340,126 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createDataTypeIdentifierDefinitionSetSetAdapter();
       }
       @Override
+      public Adapter caseInteractorTypeCustom(InteractorTypeCustom object)
+      {
+        return createInteractorTypeCustomAdapter();
+      }
+      @Override
+      public Adapter caseInteractorActorDeclaration(InteractorActorDeclaration object)
+      {
+        return createInteractorActorDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseInteractorComponentDeclaration(InteractorComponentDeclaration object)
+      {
+        return createInteractorComponentDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseInteractorDataDeclarationEvent(InteractorDataDeclarationEvent object)
+      {
+        return createInteractorDataDeclarationEventAdapter();
+      }
+      @Override
+      public Adapter caseInteractorDataDeclarationFlow(InteractorDataDeclarationFlow object)
+      {
+        return createInteractorDataDeclarationFlowAdapter();
+      }
+      @Override
+      public Adapter caseInteractorDataDeclarationConstant(InteractorDataDeclarationConstant object)
+      {
+        return createInteractorDataDeclarationConstantAdapter();
+      }
+      @Override
+      public Adapter caseInteractorEntityAny(InteractorEntityAny object)
+      {
+        return createInteractorEntityAnyAdapter();
+      }
+      @Override
+      public Adapter caseInteractorEntitySelf(InteractorEntitySelf object)
+      {
+        return createInteractorEntitySelfAdapter();
+      }
+      @Override
+      public Adapter caseInteractorEntityOther(InteractorEntityOther object)
+      {
+        return createInteractorEntityOtherAdapter();
+      }
+      @Override
+      public Adapter caseInteractorEntityParent(InteractorEntityParent object)
+      {
+        return createInteractorEntityParentAdapter();
+      }
+      @Override
+      public Adapter caseInteractorEntityChild(InteractorEntityChild object)
+      {
+        return createInteractorEntityChildAdapter();
+      }
+      @Override
+      public Adapter caseInteractorEntityAll(InteractorEntityAll object)
+      {
+        return createInteractorEntityAllAdapter();
+      }
+      @Override
+      public Adapter caseInteractorEntityActors(InteractorEntityActors object)
+      {
+        return createInteractorEntityActorsAdapter();
+      }
+      @Override
+      public Adapter caseInteractorEntitySpecific(InteractorEntitySpecific object)
+      {
+        return createInteractorEntitySpecificAdapter();
+      }
+      @Override
+      public Adapter caseInteractorDataReceptionInternal(InteractorDataReceptionInternal object)
+      {
+        return createInteractorDataReceptionInternalAdapter();
+      }
+      @Override
+      public Adapter caseInteractorDataReceptionExternal(InteractorDataReceptionExternal object)
+      {
+        return createInteractorDataReceptionExternalAdapter();
+      }
+      @Override
+      public Adapter caseInteractorDataReceptionInit(InteractorDataReceptionInit object)
+      {
+        return createInteractorDataReceptionInitAdapter();
+      }
+      @Override
+      public Adapter caseInteractorDataEmissionInternal(InteractorDataEmissionInternal object)
+      {
+        return createInteractorDataEmissionInternalAdapter();
+      }
+      @Override
+      public Adapter caseInteractorDataEmissionExternal(InteractorDataEmissionExternal object)
+      {
+        return createInteractorDataEmissionExternalAdapter();
+      }
+      @Override
+      public Adapter caseInteractorBehaviorCauseOn(InteractorBehaviorCauseOn object)
+      {
+        return createInteractorBehaviorCauseOnAdapter();
+      }
+      @Override
+      public Adapter caseInteractorBehaviorCauseWhen(InteractorBehaviorCauseWhen object)
+      {
+        return createInteractorBehaviorCauseWhenAdapter();
+      }
+      @Override
+      public Adapter caseInteractorBehaviorEffectAlways(InteractorBehaviorEffectAlways object)
+      {
+        return createInteractorBehaviorEffectAlwaysAdapter();
+      }
+      @Override
+      public Adapter caseInteractorBehaviorEffectSet(InteractorBehaviorEffectSet object)
+      {
+        return createInteractorBehaviorEffectSetAdapter();
+      }
+      @Override
+      public Adapter caseInteractorBehaviorEffectTrigger(InteractorBehaviorEffectTrigger object)
+      {
+        return createInteractorBehaviorEffectTriggerAdapter();
+      }
+      @Override
       public Adapter caseExpressionBinaryOperation(ExpressionBinaryOperation object)
       {
         return createExpressionBinaryOperationAdapter();
@@ -383,11 +468,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
       public Adapter caseUnaryOperation(UnaryOperation object)
       {
         return createUnaryOperationAdapter();
-      }
-      @Override
-      public Adapter caseLiteralData(LiteralData object)
-      {
-        return createLiteralDataAdapter();
       }
       @Override
       public Adapter caseExpressionIf(ExpressionIf object)
@@ -435,6 +515,11 @@ public class LilAdapterFactory extends AdapterFactoryImpl
         return createLiteralEnumAdapter();
       }
       @Override
+      public Adapter caseLiteralTimeNow(LiteralTimeNow object)
+      {
+        return createLiteralTimeNowAdapter();
+      }
+      @Override
       public Adapter caseLiteralTime(LiteralTime object)
       {
         return createLiteralTimeAdapter();
@@ -477,6 +562,21 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ImportStatement <em>Import Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.ImportStatement
+   * @generated
+   */
+  public Adapter createImportStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorTypeDefinition <em>Actor Type Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -507,16 +607,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorInstanceDeclaration <em>Actor Instance Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorComponentDeclaration <em>Actor Component Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.ActorInstanceDeclaration
+   * @see com.crubier.lil.lil.ActorComponentDeclaration
    * @generated
    */
-  public Adapter createActorInstanceDeclarationAdapter()
+  public Adapter createActorComponentDeclarationAdapter()
   {
     return null;
   }
@@ -642,16 +742,16 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataInstanceDeclaration <em>Data Instance Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataComponentDeclaration <em>Data Component Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.DataInstanceDeclaration
+   * @see com.crubier.lil.lil.DataComponentDeclaration
    * @generated
    */
-  public Adapter createDataInstanceDeclarationAdapter()
+  public Adapter createDataComponentDeclarationAdapter()
   {
     return null;
   }
@@ -687,151 +787,121 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorActor <em>Interactor Actor</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntityDeclaration <em>Interactor Entity Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorActor
+   * @see com.crubier.lil.lil.InteractorEntityDeclaration
    * @generated
    */
-  public Adapter createInteractorActorAdapter()
+  public Adapter createInteractorEntityDeclarationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorData <em>Interactor Data</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataDeclaration <em>Interactor Data Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorData
+   * @see com.crubier.lil.lil.InteractorDataDeclaration
    * @generated
    */
-  public Adapter createInteractorDataAdapter()
+  public Adapter createInteractorDataDeclarationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorSignalAlias <em>Interactor Signal Alias</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorActorAlias <em>Interactor Actor Alias</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorSignalAlias
+   * @see com.crubier.lil.lil.InteractorActorAlias
    * @generated
    */
-  public Adapter createInteractorSignalAliasAdapter()
+  public Adapter createInteractorActorAliasAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorComponent <em>Interactor Component</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataAlias <em>Interactor Data Alias</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorComponent
+   * @see com.crubier.lil.lil.InteractorDataAlias
    * @generated
    */
-  public Adapter createInteractorComponentAdapter()
+  public Adapter createInteractorDataAliasAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.AccessibleEntity <em>Accessible Entity</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntity <em>Interactor Entity</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.AccessibleEntity
+   * @see com.crubier.lil.lil.InteractorEntity
    * @generated
    */
-  public Adapter createAccessibleEntityAdapter()
+  public Adapter createInteractorEntityAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.Entity <em>Entity</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataReception <em>Interactor Data Reception</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.Entity
+   * @see com.crubier.lil.lil.InteractorDataReception
    * @generated
    */
-  public Adapter createEntityAdapter()
+  public Adapter createInteractorDataReceptionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ActorAlias <em>Actor Alias</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataEmission <em>Interactor Data Emission</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.ActorAlias
+   * @see com.crubier.lil.lil.InteractorDataEmission
    * @generated
    */
-  public Adapter createActorAliasAdapter()
+  public Adapter createInteractorDataEmissionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorSignalReception <em>Interactor Signal Reception</em>}'.
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorDeclaration <em>Interactor Behavior Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorSignalReception
+   * @see com.crubier.lil.lil.InteractorBehaviorDeclaration
    * @generated
    */
-  public Adapter createInteractorSignalReceptionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorSignalEmission <em>Interactor Signal Emission</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorSignalEmission
-   * @generated
-   */
-  public Adapter createInteractorSignalEmissionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehavior <em>Interactor Behavior</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorBehavior
-   * @generated
-   */
-  public Adapter createInteractorBehaviorAdapter()
+  public Adapter createInteractorBehaviorDeclarationAdapter()
   {
     return null;
   }
@@ -852,36 +922,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorOnCause <em>Interactor Behavior On Cause</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorBehaviorOnCause
-   * @generated
-   */
-  public Adapter createInteractorBehaviorOnCauseAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorWhenCause <em>Interactor Behavior When Cause</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorBehaviorWhenCause
-   * @generated
-   */
-  public Adapter createInteractorBehaviorWhenCauseAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorEffect <em>Interactor Behavior Effect</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -892,51 +932,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInteractorBehaviorEffectAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorAlwaysEffect <em>Interactor Behavior Always Effect</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorBehaviorAlwaysEffect
-   * @generated
-   */
-  public Adapter createInteractorBehaviorAlwaysEffectAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorSetEffect <em>Interactor Behavior Set Effect</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorBehaviorSetEffect
-   * @generated
-   */
-  public Adapter createInteractorBehaviorSetEffectAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorTriggerEffect <em>Interactor Behavior Trigger Effect</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.InteractorBehaviorTriggerEffect
-   * @generated
-   */
-  public Adapter createInteractorBehaviorTriggerEffectAdapter()
   {
     return null;
   }
@@ -1257,21 +1252,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataDefinitionEnumElement <em>Data Definition Enum Element</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.DataDefinitionEnumElement
-   * @generated
-   */
-  public Adapter createDataDefinitionEnumElementAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.DataTypeNumberDefinitionSetSet <em>Data Type Number Definition Set Set</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1362,6 +1342,366 @@ public class LilAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorTypeCustom <em>Interactor Type Custom</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorTypeCustom
+   * @generated
+   */
+  public Adapter createInteractorTypeCustomAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorActorDeclaration <em>Interactor Actor Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorActorDeclaration
+   * @generated
+   */
+  public Adapter createInteractorActorDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorComponentDeclaration <em>Interactor Component Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorComponentDeclaration
+   * @generated
+   */
+  public Adapter createInteractorComponentDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataDeclarationEvent <em>Interactor Data Declaration Event</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationEvent
+   * @generated
+   */
+  public Adapter createInteractorDataDeclarationEventAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataDeclarationFlow <em>Interactor Data Declaration Flow</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationFlow
+   * @generated
+   */
+  public Adapter createInteractorDataDeclarationFlowAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataDeclarationConstant <em>Interactor Data Declaration Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationConstant
+   * @generated
+   */
+  public Adapter createInteractorDataDeclarationConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntityAny <em>Interactor Entity Any</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorEntityAny
+   * @generated
+   */
+  public Adapter createInteractorEntityAnyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntitySelf <em>Interactor Entity Self</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorEntitySelf
+   * @generated
+   */
+  public Adapter createInteractorEntitySelfAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntityOther <em>Interactor Entity Other</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorEntityOther
+   * @generated
+   */
+  public Adapter createInteractorEntityOtherAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntityParent <em>Interactor Entity Parent</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorEntityParent
+   * @generated
+   */
+  public Adapter createInteractorEntityParentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntityChild <em>Interactor Entity Child</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorEntityChild
+   * @generated
+   */
+  public Adapter createInteractorEntityChildAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntityAll <em>Interactor Entity All</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorEntityAll
+   * @generated
+   */
+  public Adapter createInteractorEntityAllAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntityActors <em>Interactor Entity Actors</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorEntityActors
+   * @generated
+   */
+  public Adapter createInteractorEntityActorsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorEntitySpecific <em>Interactor Entity Specific</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorEntitySpecific
+   * @generated
+   */
+  public Adapter createInteractorEntitySpecificAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataReceptionInternal <em>Interactor Data Reception Internal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorDataReceptionInternal
+   * @generated
+   */
+  public Adapter createInteractorDataReceptionInternalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataReceptionExternal <em>Interactor Data Reception External</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorDataReceptionExternal
+   * @generated
+   */
+  public Adapter createInteractorDataReceptionExternalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataReceptionInit <em>Interactor Data Reception Init</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorDataReceptionInit
+   * @generated
+   */
+  public Adapter createInteractorDataReceptionInitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataEmissionInternal <em>Interactor Data Emission Internal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorDataEmissionInternal
+   * @generated
+   */
+  public Adapter createInteractorDataEmissionInternalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorDataEmissionExternal <em>Interactor Data Emission External</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorDataEmissionExternal
+   * @generated
+   */
+  public Adapter createInteractorDataEmissionExternalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorCauseOn <em>Interactor Behavior Cause On</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorBehaviorCauseOn
+   * @generated
+   */
+  public Adapter createInteractorBehaviorCauseOnAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorCauseWhen <em>Interactor Behavior Cause When</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorBehaviorCauseWhen
+   * @generated
+   */
+  public Adapter createInteractorBehaviorCauseWhenAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorEffectAlways <em>Interactor Behavior Effect Always</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorBehaviorEffectAlways
+   * @generated
+   */
+  public Adapter createInteractorBehaviorEffectAlwaysAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorEffectSet <em>Interactor Behavior Effect Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorBehaviorEffectSet
+   * @generated
+   */
+  public Adapter createInteractorBehaviorEffectSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.InteractorBehaviorEffectTrigger <em>Interactor Behavior Effect Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.InteractorBehaviorEffectTrigger
+   * @generated
+   */
+  public Adapter createInteractorBehaviorEffectTriggerAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.ExpressionBinaryOperation <em>Expression Binary Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1387,21 +1727,6 @@ public class LilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUnaryOperationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.LiteralData <em>Literal Data</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.crubier.lil.lil.LiteralData
-   * @generated
-   */
-  public Adapter createLiteralDataAdapter()
   {
     return null;
   }
@@ -1537,6 +1862,21 @@ public class LilAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLiteralEnumAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.crubier.lil.lil.LiteralTimeNow <em>Literal Time Now</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.crubier.lil.lil.LiteralTimeNow
+   * @generated
+   */
+  public Adapter createLiteralTimeNowAdapter()
   {
     return null;
   }

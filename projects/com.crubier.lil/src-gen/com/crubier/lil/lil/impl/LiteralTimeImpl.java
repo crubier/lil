@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.LiteralTimeImpl#isNow <em>Now</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.LiteralTimeImpl#getYear <em>Year</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.LiteralTimeImpl#getMonth <em>Month</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.LiteralTimeImpl#getDay <em>Day</em>}</li>
@@ -32,26 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class LiteralTimeImpl extends ExpressionImpl implements LiteralTime
 {
-  /**
-   * The default value of the '{@link #isNow() <em>Now</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isNow()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean NOW_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isNow() <em>Now</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isNow()
-   * @generated
-   * @ordered
-   */
-  protected boolean now = NOW_EDEFAULT;
-
   /**
    * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -191,29 +170,6 @@ public class LiteralTimeImpl extends ExpressionImpl implements LiteralTime
   protected EClass eStaticClass()
   {
     return LilPackage.Literals.LITERAL_TIME;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isNow()
-  {
-    return now;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNow(boolean newNow)
-  {
-    boolean oldNow = now;
-    now = newNow;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.LITERAL_TIME__NOW, oldNow, now));
   }
 
   /**
@@ -364,8 +320,6 @@ public class LiteralTimeImpl extends ExpressionImpl implements LiteralTime
   {
     switch (featureID)
     {
-      case LilPackage.LITERAL_TIME__NOW:
-        return isNow();
       case LilPackage.LITERAL_TIME__YEAR:
         return getYear();
       case LilPackage.LITERAL_TIME__MONTH:
@@ -392,9 +346,6 @@ public class LiteralTimeImpl extends ExpressionImpl implements LiteralTime
   {
     switch (featureID)
     {
-      case LilPackage.LITERAL_TIME__NOW:
-        setNow((Boolean)newValue);
-        return;
       case LilPackage.LITERAL_TIME__YEAR:
         setYear((Double)newValue);
         return;
@@ -427,9 +378,6 @@ public class LiteralTimeImpl extends ExpressionImpl implements LiteralTime
   {
     switch (featureID)
     {
-      case LilPackage.LITERAL_TIME__NOW:
-        setNow(NOW_EDEFAULT);
-        return;
       case LilPackage.LITERAL_TIME__YEAR:
         setYear(YEAR_EDEFAULT);
         return;
@@ -462,8 +410,6 @@ public class LiteralTimeImpl extends ExpressionImpl implements LiteralTime
   {
     switch (featureID)
     {
-      case LilPackage.LITERAL_TIME__NOW:
-        return now != NOW_EDEFAULT;
       case LilPackage.LITERAL_TIME__YEAR:
         return year != YEAR_EDEFAULT;
       case LilPackage.LITERAL_TIME__MONTH:
@@ -491,9 +437,7 @@ public class LiteralTimeImpl extends ExpressionImpl implements LiteralTime
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (now: ");
-    result.append(now);
-    result.append(", year: ");
+    result.append(" (year: ");
     result.append(year);
     result.append(", month: ");
     result.append(month);

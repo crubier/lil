@@ -4,7 +4,7 @@ package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.Expression;
 import com.crubier.lil.lil.InteractorBehaviorEffect;
-import com.crubier.lil.lil.InteractorSignalEmission;
+import com.crubier.lil.lil.InteractorDataEmission;
 import com.crubier.lil.lil.LilPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -40,7 +40,7 @@ public class InteractorBehaviorEffectImpl extends MinimalEObjectImpl.Container i
    * @generated
    * @ordered
    */
-  protected InteractorSignalEmission target;
+  protected InteractorDataEmission target;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -78,7 +78,7 @@ public class InteractorBehaviorEffectImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorSignalEmission getTarget()
+  public InteractorDataEmission getTarget()
   {
     return target;
   }
@@ -88,9 +88,9 @@ public class InteractorBehaviorEffectImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTarget(InteractorSignalEmission newTarget, NotificationChain msgs)
+  public NotificationChain basicSetTarget(InteractorDataEmission newTarget, NotificationChain msgs)
   {
-    InteractorSignalEmission oldTarget = target;
+    InteractorDataEmission oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
     {
@@ -105,7 +105,7 @@ public class InteractorBehaviorEffectImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(InteractorSignalEmission newTarget)
+  public void setTarget(InteractorDataEmission newTarget)
   {
     if (newTarget != target)
     {
@@ -216,7 +216,7 @@ public class InteractorBehaviorEffectImpl extends MinimalEObjectImpl.Container i
     switch (featureID)
     {
       case LilPackage.INTERACTOR_BEHAVIOR_EFFECT__TARGET:
-        setTarget((InteractorSignalEmission)newValue);
+        setTarget((InteractorDataEmission)newValue);
         return;
       case LilPackage.INTERACTOR_BEHAVIOR_EFFECT__VALUE:
         setValue((Expression)newValue);
@@ -236,7 +236,7 @@ public class InteractorBehaviorEffectImpl extends MinimalEObjectImpl.Container i
     switch (featureID)
     {
       case LilPackage.INTERACTOR_BEHAVIOR_EFFECT__TARGET:
-        setTarget((InteractorSignalEmission)null);
+        setTarget((InteractorDataEmission)null);
         return;
       case LilPackage.INTERACTOR_BEHAVIOR_EFFECT__VALUE:
         setValue((Expression)null);

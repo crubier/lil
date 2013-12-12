@@ -2,7 +2,7 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.DataInstanceDeclaration;
+import com.crubier.lil.lil.DataComponentDeclaration;
 import com.crubier.lil.lil.DataTypeDefinitionCompound;
 import com.crubier.lil.lil.LilPackage;
 
@@ -41,7 +41,7 @@ public class DataTypeDefinitionCompoundImpl extends DataTypeDefinitionImpl imple
    * @generated
    * @ordered
    */
-  protected EList<DataInstanceDeclaration> component;
+  protected EList<DataComponentDeclaration> component;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class DataTypeDefinitionCompoundImpl extends DataTypeDefinitionImpl imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DataInstanceDeclaration> getComponent()
+  public EList<DataComponentDeclaration> getComponent()
   {
     if (component == null)
     {
-      component = new EObjectContainmentEList<DataInstanceDeclaration>(DataInstanceDeclaration.class, this, LilPackage.DATA_TYPE_DEFINITION_COMPOUND__COMPONENT);
+      component = new EObjectContainmentEList<DataComponentDeclaration>(DataComponentDeclaration.class, this, LilPackage.DATA_TYPE_DEFINITION_COMPOUND__COMPONENT);
     }
     return component;
   }
@@ -123,7 +123,7 @@ public class DataTypeDefinitionCompoundImpl extends DataTypeDefinitionImpl imple
     {
       case LilPackage.DATA_TYPE_DEFINITION_COMPOUND__COMPONENT:
         getComponent().clear();
-        getComponent().addAll((Collection<? extends DataInstanceDeclaration>)newValue);
+        getComponent().addAll((Collection<? extends DataComponentDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

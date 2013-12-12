@@ -32,12 +32,12 @@ public interface InteractorBehaviorEffect extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target</em>' containment reference.
-   * @see #setTarget(InteractorSignalEmission)
+   * @see #setTarget(InteractorDataEmission)
    * @see com.crubier.lil.lil.LilPackage#getInteractorBehaviorEffect_Target()
    * @model containment="true"
    * @generated
    */
-  InteractorSignalEmission getTarget();
+  InteractorDataEmission getTarget();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.InteractorBehaviorEffect#getTarget <em>Target</em>}' containment reference.
@@ -47,7 +47,7 @@ public interface InteractorBehaviorEffect extends EObject
    * @see #getTarget()
    * @generated
    */
-  void setTarget(InteractorSignalEmission value);
+  void setTarget(InteractorDataEmission value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.

@@ -79,6 +79,13 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilPackage.IMPORT_STATEMENT:
+      {
+        ImportStatement importStatement = (ImportStatement)theEObject;
+        T result = caseImportStatement(importStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilPackage.ACTOR_TYPE_DEFINITION:
       {
         ActorTypeDefinition actorTypeDefinition = (ActorTypeDefinition)theEObject;
@@ -93,10 +100,10 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.ACTOR_INSTANCE_DECLARATION:
+      case LilPackage.ACTOR_COMPONENT_DECLARATION:
       {
-        ActorInstanceDeclaration actorInstanceDeclaration = (ActorInstanceDeclaration)theEObject;
-        T result = caseActorInstanceDeclaration(actorInstanceDeclaration);
+        ActorComponentDeclaration actorComponentDeclaration = (ActorComponentDeclaration)theEObject;
+        T result = caseActorComponentDeclaration(actorComponentDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -156,10 +163,10 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_INSTANCE_DECLARATION:
+      case LilPackage.DATA_COMPONENT_DECLARATION:
       {
-        DataInstanceDeclaration dataInstanceDeclaration = (DataInstanceDeclaration)theEObject;
-        T result = caseDataInstanceDeclaration(dataInstanceDeclaration);
+        DataComponentDeclaration dataComponentDeclaration = (DataComponentDeclaration)theEObject;
+        T result = caseDataComponentDeclaration(dataComponentDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -177,75 +184,60 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.INTERACTOR_ACTOR:
+      case LilPackage.INTERACTOR_ENTITY_DECLARATION:
       {
-        InteractorActor interactorActor = (InteractorActor)theEObject;
-        T result = caseInteractorActor(interactorActor);
-        if (result == null) result = caseEntity(interactorActor);
+        InteractorEntityDeclaration interactorEntityDeclaration = (InteractorEntityDeclaration)theEObject;
+        T result = caseInteractorEntityDeclaration(interactorEntityDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.INTERACTOR_DATA:
+      case LilPackage.INTERACTOR_DATA_DECLARATION:
       {
-        InteractorData interactorData = (InteractorData)theEObject;
-        T result = caseInteractorData(interactorData);
+        InteractorDataDeclaration interactorDataDeclaration = (InteractorDataDeclaration)theEObject;
+        T result = caseInteractorDataDeclaration(interactorDataDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.INTERACTOR_SIGNAL_ALIAS:
+      case LilPackage.INTERACTOR_ACTOR_ALIAS:
       {
-        InteractorSignalAlias interactorSignalAlias = (InteractorSignalAlias)theEObject;
-        T result = caseInteractorSignalAlias(interactorSignalAlias);
+        InteractorActorAlias interactorActorAlias = (InteractorActorAlias)theEObject;
+        T result = caseInteractorActorAlias(interactorActorAlias);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.INTERACTOR_COMPONENT:
+      case LilPackage.INTERACTOR_DATA_ALIAS:
       {
-        InteractorComponent interactorComponent = (InteractorComponent)theEObject;
-        T result = caseInteractorComponent(interactorComponent);
-        if (result == null) result = caseEntity(interactorComponent);
+        InteractorDataAlias interactorDataAlias = (InteractorDataAlias)theEObject;
+        T result = caseInteractorDataAlias(interactorDataAlias);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.ACCESSIBLE_ENTITY:
+      case LilPackage.INTERACTOR_ENTITY:
       {
-        AccessibleEntity accessibleEntity = (AccessibleEntity)theEObject;
-        T result = caseAccessibleEntity(accessibleEntity);
+        InteractorEntity interactorEntity = (InteractorEntity)theEObject;
+        T result = caseInteractorEntity(interactorEntity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.ENTITY:
+      case LilPackage.INTERACTOR_DATA_RECEPTION:
       {
-        Entity entity = (Entity)theEObject;
-        T result = caseEntity(entity);
+        InteractorDataReception interactorDataReception = (InteractorDataReception)theEObject;
+        T result = caseInteractorDataReception(interactorDataReception);
+        if (result == null) result = caseExpression(interactorDataReception);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.ACTOR_ALIAS:
+      case LilPackage.INTERACTOR_DATA_EMISSION:
       {
-        ActorAlias actorAlias = (ActorAlias)theEObject;
-        T result = caseActorAlias(actorAlias);
+        InteractorDataEmission interactorDataEmission = (InteractorDataEmission)theEObject;
+        T result = caseInteractorDataEmission(interactorDataEmission);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.INTERACTOR_SIGNAL_RECEPTION:
+      case LilPackage.INTERACTOR_BEHAVIOR_DECLARATION:
       {
-        InteractorSignalReception interactorSignalReception = (InteractorSignalReception)theEObject;
-        T result = caseInteractorSignalReception(interactorSignalReception);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.INTERACTOR_SIGNAL_EMISSION:
-      {
-        InteractorSignalEmission interactorSignalEmission = (InteractorSignalEmission)theEObject;
-        T result = caseInteractorSignalEmission(interactorSignalEmission);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.INTERACTOR_BEHAVIOR:
-      {
-        InteractorBehavior interactorBehavior = (InteractorBehavior)theEObject;
-        T result = caseInteractorBehavior(interactorBehavior);
+        InteractorBehaviorDeclaration interactorBehaviorDeclaration = (InteractorBehaviorDeclaration)theEObject;
+        T result = caseInteractorBehaviorDeclaration(interactorBehaviorDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -256,50 +248,10 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.INTERACTOR_BEHAVIOR_ON_CAUSE:
-      {
-        InteractorBehaviorOnCause interactorBehaviorOnCause = (InteractorBehaviorOnCause)theEObject;
-        T result = caseInteractorBehaviorOnCause(interactorBehaviorOnCause);
-        if (result == null) result = caseInteractorBehaviorCause(interactorBehaviorOnCause);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.INTERACTOR_BEHAVIOR_WHEN_CAUSE:
-      {
-        InteractorBehaviorWhenCause interactorBehaviorWhenCause = (InteractorBehaviorWhenCause)theEObject;
-        T result = caseInteractorBehaviorWhenCause(interactorBehaviorWhenCause);
-        if (result == null) result = caseInteractorBehaviorCause(interactorBehaviorWhenCause);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case LilPackage.INTERACTOR_BEHAVIOR_EFFECT:
       {
         InteractorBehaviorEffect interactorBehaviorEffect = (InteractorBehaviorEffect)theEObject;
         T result = caseInteractorBehaviorEffect(interactorBehaviorEffect);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.INTERACTOR_BEHAVIOR_ALWAYS_EFFECT:
-      {
-        InteractorBehaviorAlwaysEffect interactorBehaviorAlwaysEffect = (InteractorBehaviorAlwaysEffect)theEObject;
-        T result = caseInteractorBehaviorAlwaysEffect(interactorBehaviorAlwaysEffect);
-        if (result == null) result = caseInteractorBehaviorEffect(interactorBehaviorAlwaysEffect);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.INTERACTOR_BEHAVIOR_SET_EFFECT:
-      {
-        InteractorBehaviorSetEffect interactorBehaviorSetEffect = (InteractorBehaviorSetEffect)theEObject;
-        T result = caseInteractorBehaviorSetEffect(interactorBehaviorSetEffect);
-        if (result == null) result = caseInteractorBehaviorEffect(interactorBehaviorSetEffect);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.INTERACTOR_BEHAVIOR_TRIGGER_EFFECT:
-      {
-        InteractorBehaviorTriggerEffect interactorBehaviorTriggerEffect = (InteractorBehaviorTriggerEffect)theEObject;
-        T result = caseInteractorBehaviorTriggerEffect(interactorBehaviorTriggerEffect);
-        if (result == null) result = caseInteractorBehaviorEffect(interactorBehaviorTriggerEffect);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -471,14 +423,6 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LilPackage.DATA_DEFINITION_ENUM_ELEMENT:
-      {
-        DataDefinitionEnumElement dataDefinitionEnumElement = (DataDefinitionEnumElement)theEObject;
-        T result = caseDataDefinitionEnumElement(dataDefinitionEnumElement);
-        if (result == null) result = caseDataTypeSymbolDefinitionSetElement(dataDefinitionEnumElement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET_SET:
       {
         DataTypeNumberDefinitionSetSet dataTypeNumberDefinitionSetSet = (DataTypeNumberDefinitionSetSet)theEObject;
@@ -527,6 +471,201 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilPackage.INTERACTOR_TYPE_CUSTOM:
+      {
+        InteractorTypeCustom interactorTypeCustom = (InteractorTypeCustom)theEObject;
+        T result = caseInteractorTypeCustom(interactorTypeCustom);
+        if (result == null) result = caseInteractorType(interactorTypeCustom);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_ACTOR_DECLARATION:
+      {
+        InteractorActorDeclaration interactorActorDeclaration = (InteractorActorDeclaration)theEObject;
+        T result = caseInteractorActorDeclaration(interactorActorDeclaration);
+        if (result == null) result = caseInteractorEntityDeclaration(interactorActorDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_COMPONENT_DECLARATION:
+      {
+        InteractorComponentDeclaration interactorComponentDeclaration = (InteractorComponentDeclaration)theEObject;
+        T result = caseInteractorComponentDeclaration(interactorComponentDeclaration);
+        if (result == null) result = caseInteractorEntityDeclaration(interactorComponentDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_DATA_DECLARATION_EVENT:
+      {
+        InteractorDataDeclarationEvent interactorDataDeclarationEvent = (InteractorDataDeclarationEvent)theEObject;
+        T result = caseInteractorDataDeclarationEvent(interactorDataDeclarationEvent);
+        if (result == null) result = caseInteractorDataDeclaration(interactorDataDeclarationEvent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_DATA_DECLARATION_FLOW:
+      {
+        InteractorDataDeclarationFlow interactorDataDeclarationFlow = (InteractorDataDeclarationFlow)theEObject;
+        T result = caseInteractorDataDeclarationFlow(interactorDataDeclarationFlow);
+        if (result == null) result = caseInteractorDataDeclaration(interactorDataDeclarationFlow);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_DATA_DECLARATION_CONSTANT:
+      {
+        InteractorDataDeclarationConstant interactorDataDeclarationConstant = (InteractorDataDeclarationConstant)theEObject;
+        T result = caseInteractorDataDeclarationConstant(interactorDataDeclarationConstant);
+        if (result == null) result = caseInteractorDataDeclaration(interactorDataDeclarationConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_ENTITY_ANY:
+      {
+        InteractorEntityAny interactorEntityAny = (InteractorEntityAny)theEObject;
+        T result = caseInteractorEntityAny(interactorEntityAny);
+        if (result == null) result = caseInteractorEntity(interactorEntityAny);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_ENTITY_SELF:
+      {
+        InteractorEntitySelf interactorEntitySelf = (InteractorEntitySelf)theEObject;
+        T result = caseInteractorEntitySelf(interactorEntitySelf);
+        if (result == null) result = caseInteractorEntity(interactorEntitySelf);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_ENTITY_OTHER:
+      {
+        InteractorEntityOther interactorEntityOther = (InteractorEntityOther)theEObject;
+        T result = caseInteractorEntityOther(interactorEntityOther);
+        if (result == null) result = caseInteractorEntity(interactorEntityOther);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_ENTITY_PARENT:
+      {
+        InteractorEntityParent interactorEntityParent = (InteractorEntityParent)theEObject;
+        T result = caseInteractorEntityParent(interactorEntityParent);
+        if (result == null) result = caseInteractorEntity(interactorEntityParent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_ENTITY_CHILD:
+      {
+        InteractorEntityChild interactorEntityChild = (InteractorEntityChild)theEObject;
+        T result = caseInteractorEntityChild(interactorEntityChild);
+        if (result == null) result = caseInteractorEntity(interactorEntityChild);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_ENTITY_ALL:
+      {
+        InteractorEntityAll interactorEntityAll = (InteractorEntityAll)theEObject;
+        T result = caseInteractorEntityAll(interactorEntityAll);
+        if (result == null) result = caseInteractorEntity(interactorEntityAll);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_ENTITY_ACTORS:
+      {
+        InteractorEntityActors interactorEntityActors = (InteractorEntityActors)theEObject;
+        T result = caseInteractorEntityActors(interactorEntityActors);
+        if (result == null) result = caseInteractorEntity(interactorEntityActors);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_ENTITY_SPECIFIC:
+      {
+        InteractorEntitySpecific interactorEntitySpecific = (InteractorEntitySpecific)theEObject;
+        T result = caseInteractorEntitySpecific(interactorEntitySpecific);
+        if (result == null) result = caseInteractorEntity(interactorEntitySpecific);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_DATA_RECEPTION_INTERNAL:
+      {
+        InteractorDataReceptionInternal interactorDataReceptionInternal = (InteractorDataReceptionInternal)theEObject;
+        T result = caseInteractorDataReceptionInternal(interactorDataReceptionInternal);
+        if (result == null) result = caseInteractorDataReception(interactorDataReceptionInternal);
+        if (result == null) result = caseExpression(interactorDataReceptionInternal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_DATA_RECEPTION_EXTERNAL:
+      {
+        InteractorDataReceptionExternal interactorDataReceptionExternal = (InteractorDataReceptionExternal)theEObject;
+        T result = caseInteractorDataReceptionExternal(interactorDataReceptionExternal);
+        if (result == null) result = caseInteractorDataReception(interactorDataReceptionExternal);
+        if (result == null) result = caseExpression(interactorDataReceptionExternal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_DATA_RECEPTION_INIT:
+      {
+        InteractorDataReceptionInit interactorDataReceptionInit = (InteractorDataReceptionInit)theEObject;
+        T result = caseInteractorDataReceptionInit(interactorDataReceptionInit);
+        if (result == null) result = caseInteractorDataReception(interactorDataReceptionInit);
+        if (result == null) result = caseExpression(interactorDataReceptionInit);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_DATA_EMISSION_INTERNAL:
+      {
+        InteractorDataEmissionInternal interactorDataEmissionInternal = (InteractorDataEmissionInternal)theEObject;
+        T result = caseInteractorDataEmissionInternal(interactorDataEmissionInternal);
+        if (result == null) result = caseInteractorDataEmission(interactorDataEmissionInternal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_DATA_EMISSION_EXTERNAL:
+      {
+        InteractorDataEmissionExternal interactorDataEmissionExternal = (InteractorDataEmissionExternal)theEObject;
+        T result = caseInteractorDataEmissionExternal(interactorDataEmissionExternal);
+        if (result == null) result = caseInteractorDataEmission(interactorDataEmissionExternal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_BEHAVIOR_CAUSE_ON:
+      {
+        InteractorBehaviorCauseOn interactorBehaviorCauseOn = (InteractorBehaviorCauseOn)theEObject;
+        T result = caseInteractorBehaviorCauseOn(interactorBehaviorCauseOn);
+        if (result == null) result = caseInteractorBehaviorCause(interactorBehaviorCauseOn);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_BEHAVIOR_CAUSE_WHEN:
+      {
+        InteractorBehaviorCauseWhen interactorBehaviorCauseWhen = (InteractorBehaviorCauseWhen)theEObject;
+        T result = caseInteractorBehaviorCauseWhen(interactorBehaviorCauseWhen);
+        if (result == null) result = caseInteractorBehaviorCause(interactorBehaviorCauseWhen);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_BEHAVIOR_EFFECT_ALWAYS:
+      {
+        InteractorBehaviorEffectAlways interactorBehaviorEffectAlways = (InteractorBehaviorEffectAlways)theEObject;
+        T result = caseInteractorBehaviorEffectAlways(interactorBehaviorEffectAlways);
+        if (result == null) result = caseInteractorBehaviorEffect(interactorBehaviorEffectAlways);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_BEHAVIOR_EFFECT_SET:
+      {
+        InteractorBehaviorEffectSet interactorBehaviorEffectSet = (InteractorBehaviorEffectSet)theEObject;
+        T result = caseInteractorBehaviorEffectSet(interactorBehaviorEffectSet);
+        if (result == null) result = caseInteractorBehaviorEffect(interactorBehaviorEffectSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilPackage.INTERACTOR_BEHAVIOR_EFFECT_TRIGGER:
+      {
+        InteractorBehaviorEffectTrigger interactorBehaviorEffectTrigger = (InteractorBehaviorEffectTrigger)theEObject;
+        T result = caseInteractorBehaviorEffectTrigger(interactorBehaviorEffectTrigger);
+        if (result == null) result = caseInteractorBehaviorEffect(interactorBehaviorEffectTrigger);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilPackage.EXPRESSION_BINARY_OPERATION:
       {
         ExpressionBinaryOperation expressionBinaryOperation = (ExpressionBinaryOperation)theEObject;
@@ -540,14 +679,6 @@ public class LilSwitch<T> extends Switch<T>
         UnaryOperation unaryOperation = (UnaryOperation)theEObject;
         T result = caseUnaryOperation(unaryOperation);
         if (result == null) result = caseExpression(unaryOperation);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LilPackage.LITERAL_DATA:
-      {
-        LiteralData literalData = (LiteralData)theEObject;
-        T result = caseLiteralData(literalData);
-        if (result == null) result = caseExpression(literalData);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -623,6 +754,14 @@ public class LilSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilPackage.LITERAL_TIME_NOW:
+      {
+        LiteralTimeNow literalTimeNow = (LiteralTimeNow)theEObject;
+        T result = caseLiteralTimeNow(literalTimeNow);
+        if (result == null) result = caseExpression(literalTimeNow);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilPackage.LITERAL_TIME:
       {
         LiteralTime literalTime = (LiteralTime)theEObject;
@@ -647,6 +786,22 @@ public class LilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLilModel(LilModel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Import Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Import Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImportStatement(ImportStatement object)
   {
     return null;
   }
@@ -684,17 +839,17 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Actor Instance Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Actor Component Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Actor Instance Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Actor Component Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseActorInstanceDeclaration(ActorInstanceDeclaration object)
+  public T caseActorComponentDeclaration(ActorComponentDeclaration object)
   {
     return null;
   }
@@ -828,17 +983,17 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Instance Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data Component Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Instance Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data Component Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataInstanceDeclaration(DataInstanceDeclaration object)
+  public T caseDataComponentDeclaration(DataComponentDeclaration object)
   {
     return null;
   }
@@ -876,161 +1031,129 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Actor</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Actor</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInteractorActor(InteractorActor object)
+  public T caseInteractorEntityDeclaration(InteractorEntityDeclaration object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Data</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Data</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInteractorData(InteractorData object)
+  public T caseInteractorDataDeclaration(InteractorDataDeclaration object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Signal Alias</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Actor Alias</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Signal Alias</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Actor Alias</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInteractorSignalAlias(InteractorSignalAlias object)
+  public T caseInteractorActorAlias(InteractorActorAlias object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Component</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Alias</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Component</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Alias</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInteractorComponent(InteractorComponent object)
+  public T caseInteractorDataAlias(InteractorDataAlias object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Accessible Entity</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Accessible Entity</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAccessibleEntity(AccessibleEntity object)
+  public T caseInteractorEntity(InteractorEntity object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Reception</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Reception</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEntity(Entity object)
+  public T caseInteractorDataReception(InteractorDataReception object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Actor Alias</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Emission</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Actor Alias</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Emission</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseActorAlias(ActorAlias object)
+  public T caseInteractorDataEmission(InteractorDataEmission object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Signal Reception</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Signal Reception</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInteractorSignalReception(InteractorSignalReception object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Signal Emission</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Signal Emission</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInteractorSignalEmission(InteractorSignalEmission object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInteractorBehavior(InteractorBehavior object)
+  public T caseInteractorBehaviorDeclaration(InteractorBehaviorDeclaration object)
   {
     return null;
   }
@@ -1052,38 +1175,6 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior On Cause</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior On Cause</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInteractorBehaviorOnCause(InteractorBehaviorOnCause object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior When Cause</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior When Cause</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInteractorBehaviorWhenCause(InteractorBehaviorWhenCause object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Effect</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1095,54 +1186,6 @@ public class LilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInteractorBehaviorEffect(InteractorBehaviorEffect object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Always Effect</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior Always Effect</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInteractorBehaviorAlwaysEffect(InteractorBehaviorAlwaysEffect object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Set Effect</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior Set Effect</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInteractorBehaviorSetEffect(InteractorBehaviorSetEffect object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Trigger Effect</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior Trigger Effect</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInteractorBehaviorTriggerEffect(InteractorBehaviorTriggerEffect object)
   {
     return null;
   }
@@ -1484,22 +1527,6 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Definition Enum Element</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Definition Enum Element</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDataDefinitionEnumElement(DataDefinitionEnumElement object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Data Type Number Definition Set Set</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1596,6 +1623,390 @@ public class LilSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Type Custom</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Type Custom</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorTypeCustom(InteractorTypeCustom object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Actor Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Actor Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorActorDeclaration(InteractorActorDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Component Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Component Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorComponentDeclaration(InteractorComponentDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Declaration Event</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Declaration Event</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorDataDeclarationEvent(InteractorDataDeclarationEvent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Declaration Flow</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Declaration Flow</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorDataDeclarationFlow(InteractorDataDeclarationFlow object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Declaration Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Declaration Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorDataDeclarationConstant(InteractorDataDeclarationConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity Any</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity Any</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorEntityAny(InteractorEntityAny object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity Self</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity Self</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorEntitySelf(InteractorEntitySelf object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity Other</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity Other</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorEntityOther(InteractorEntityOther object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity Parent</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity Parent</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorEntityParent(InteractorEntityParent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity Child</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity Child</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorEntityChild(InteractorEntityChild object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity All</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity All</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorEntityAll(InteractorEntityAll object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity Actors</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity Actors</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorEntityActors(InteractorEntityActors object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Entity Specific</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Entity Specific</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorEntitySpecific(InteractorEntitySpecific object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Reception Internal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Reception Internal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorDataReceptionInternal(InteractorDataReceptionInternal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Reception External</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Reception External</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorDataReceptionExternal(InteractorDataReceptionExternal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Reception Init</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Reception Init</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorDataReceptionInit(InteractorDataReceptionInit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Emission Internal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Emission Internal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorDataEmissionInternal(InteractorDataEmissionInternal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Data Emission External</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Data Emission External</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorDataEmissionExternal(InteractorDataEmissionExternal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Cause On</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior Cause On</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorBehaviorCauseOn(InteractorBehaviorCauseOn object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Cause When</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior Cause When</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorBehaviorCauseWhen(InteractorBehaviorCauseWhen object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Effect Always</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior Effect Always</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorBehaviorEffectAlways(InteractorBehaviorEffectAlways object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Effect Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior Effect Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorBehaviorEffectSet(InteractorBehaviorEffectSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interactor Behavior Effect Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interactor Behavior Effect Trigger</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteractorBehaviorEffectTrigger(InteractorBehaviorEffectTrigger object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Expression Binary Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1623,22 +2034,6 @@ public class LilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUnaryOperation(UnaryOperation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Literal Data</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Literal Data</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLiteralData(LiteralData object)
   {
     return null;
   }
@@ -1783,6 +2178,22 @@ public class LilSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLiteralEnum(LiteralEnum object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Literal Time Now</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Literal Time Now</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiteralTimeNow(LiteralTimeNow object)
   {
     return null;
   }

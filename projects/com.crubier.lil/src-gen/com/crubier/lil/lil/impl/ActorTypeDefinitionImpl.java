@@ -2,7 +2,7 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.ActorInstanceDeclaration;
+import com.crubier.lil.lil.ActorComponentDeclaration;
 import com.crubier.lil.lil.ActorTypeDefinition;
 import com.crubier.lil.lil.LilPackage;
 
@@ -66,7 +66,7 @@ public class ActorTypeDefinitionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    * @ordered
    */
-  protected EList<ActorInstanceDeclaration> component;
+  protected EList<ActorComponentDeclaration> component;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,11 +117,11 @@ public class ActorTypeDefinitionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ActorInstanceDeclaration> getComponent()
+  public EList<ActorComponentDeclaration> getComponent()
   {
     if (component == null)
     {
-      component = new EObjectContainmentEList<ActorInstanceDeclaration>(ActorInstanceDeclaration.class, this, LilPackage.ACTOR_TYPE_DEFINITION__COMPONENT);
+      component = new EObjectContainmentEList<ActorComponentDeclaration>(ActorComponentDeclaration.class, this, LilPackage.ACTOR_TYPE_DEFINITION__COMPONENT);
     }
     return component;
   }
@@ -176,7 +176,7 @@ public class ActorTypeDefinitionImpl extends MinimalEObjectImpl.Container implem
         return;
       case LilPackage.ACTOR_TYPE_DEFINITION__COMPONENT:
         getComponent().clear();
-        getComponent().addAll((Collection<? extends ActorInstanceDeclaration>)newValue);
+        getComponent().addAll((Collection<? extends ActorComponentDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

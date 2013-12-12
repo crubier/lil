@@ -56,7 +56,7 @@ public interface InteractorTypeDefinition extends EObject
 
   /**
    * Returns the value of the '<em><b>Actor</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.InteractorActor}.
+   * The list contents are of type {@link com.crubier.lil.lil.InteractorEntityDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Actor</em>' containment reference list isn't clear,
@@ -68,11 +68,11 @@ public interface InteractorTypeDefinition extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<InteractorActor> getActor();
+  EList<InteractorEntityDeclaration> getActor();
 
   /**
    * Returns the value of the '<em><b>Data</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.InteractorData}.
+   * The list contents are of type {@link com.crubier.lil.lil.InteractorDataDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Data</em>' containment reference list isn't clear,
@@ -84,11 +84,11 @@ public interface InteractorTypeDefinition extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<InteractorData> getData();
+  EList<InteractorDataDeclaration> getData();
 
   /**
    * Returns the value of the '<em><b>Component</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.InteractorComponent}.
+   * The list contents are of type {@link com.crubier.lil.lil.InteractorEntityDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Component</em>' containment reference list isn't clear,
@@ -100,11 +100,11 @@ public interface InteractorTypeDefinition extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<InteractorComponent> getComponent();
+  EList<InteractorEntityDeclaration> getComponent();
 
   /**
    * Returns the value of the '<em><b>Behavior</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.InteractorBehavior}.
+   * The list contents are of type {@link com.crubier.lil.lil.InteractorBehaviorDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Behavior</em>' containment reference list isn't clear,
@@ -116,6 +116,6 @@ public interface InteractorTypeDefinition extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<InteractorBehavior> getBehavior();
+  EList<InteractorBehaviorDeclaration> getBehavior();
 
 } // InteractorTypeDefinition

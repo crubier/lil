@@ -9,7 +9,6 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import com.crubier.lil.lil.LilPackage
 import com.crubier.lil.lil.LilFactory
 import com.crubier.lil.lil.InteractorTypeDefinition
-import com.crubier.lil.lil.InteractorData
 
 /**
  * Generates code from your model files on save.

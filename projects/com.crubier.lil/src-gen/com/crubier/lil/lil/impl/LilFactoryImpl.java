@@ -65,9 +65,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
     switch (eClass.getClassifierID())
     {
       case LilPackage.LIL_MODEL: return createLilModel();
+      case LilPackage.IMPORT_STATEMENT: return createImportStatement();
       case LilPackage.ACTOR_TYPE_DEFINITION: return createActorTypeDefinition();
       case LilPackage.ACTOR_TYPE: return createActorType();
-      case LilPackage.ACTOR_INSTANCE_DECLARATION: return createActorInstanceDeclaration();
+      case LilPackage.ACTOR_COMPONENT_DECLARATION: return createActorComponentDeclaration();
       case LilPackage.DATA_TYPE_DEFINITION: return createDataTypeDefinition();
       case LilPackage.DATA_TYPE: return createDataType();
       case LilPackage.DATA_TYPE_SYMBOL_DEFINITION_SET: return createDataTypeSymbolDefinitionSet();
@@ -76,26 +77,19 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.DATA_TYPE_TEXT_DEFINITION_SET: return createDataTypeTextDefinitionSet();
       case LilPackage.DATA_TYPE_TIME_DEFINITION_SET: return createDataTypeTimeDefinitionSet();
       case LilPackage.DATA_TYPE_IDENTIFIER_DEFINITION_SET: return createDataTypeIdentifierDefinitionSet();
-      case LilPackage.DATA_INSTANCE_DECLARATION: return createDataInstanceDeclaration();
+      case LilPackage.DATA_COMPONENT_DECLARATION: return createDataComponentDeclaration();
       case LilPackage.INTERACTOR_TYPE_DEFINITION: return createInteractorTypeDefinition();
       case LilPackage.INTERACTOR_TYPE: return createInteractorType();
-      case LilPackage.INTERACTOR_ACTOR: return createInteractorActor();
-      case LilPackage.INTERACTOR_DATA: return createInteractorData();
-      case LilPackage.INTERACTOR_SIGNAL_ALIAS: return createInteractorSignalAlias();
-      case LilPackage.INTERACTOR_COMPONENT: return createInteractorComponent();
-      case LilPackage.ACCESSIBLE_ENTITY: return createAccessibleEntity();
-      case LilPackage.ENTITY: return createEntity();
-      case LilPackage.ACTOR_ALIAS: return createActorAlias();
-      case LilPackage.INTERACTOR_SIGNAL_RECEPTION: return createInteractorSignalReception();
-      case LilPackage.INTERACTOR_SIGNAL_EMISSION: return createInteractorSignalEmission();
-      case LilPackage.INTERACTOR_BEHAVIOR: return createInteractorBehavior();
+      case LilPackage.INTERACTOR_ENTITY_DECLARATION: return createInteractorEntityDeclaration();
+      case LilPackage.INTERACTOR_DATA_DECLARATION: return createInteractorDataDeclaration();
+      case LilPackage.INTERACTOR_ACTOR_ALIAS: return createInteractorActorAlias();
+      case LilPackage.INTERACTOR_DATA_ALIAS: return createInteractorDataAlias();
+      case LilPackage.INTERACTOR_ENTITY: return createInteractorEntity();
+      case LilPackage.INTERACTOR_DATA_RECEPTION: return createInteractorDataReception();
+      case LilPackage.INTERACTOR_DATA_EMISSION: return createInteractorDataEmission();
+      case LilPackage.INTERACTOR_BEHAVIOR_DECLARATION: return createInteractorBehaviorDeclaration();
       case LilPackage.INTERACTOR_BEHAVIOR_CAUSE: return createInteractorBehaviorCause();
-      case LilPackage.INTERACTOR_BEHAVIOR_ON_CAUSE: return createInteractorBehaviorOnCause();
-      case LilPackage.INTERACTOR_BEHAVIOR_WHEN_CAUSE: return createInteractorBehaviorWhenCause();
       case LilPackage.INTERACTOR_BEHAVIOR_EFFECT: return createInteractorBehaviorEffect();
-      case LilPackage.INTERACTOR_BEHAVIOR_ALWAYS_EFFECT: return createInteractorBehaviorAlwaysEffect();
-      case LilPackage.INTERACTOR_BEHAVIOR_SET_EFFECT: return createInteractorBehaviorSetEffect();
-      case LilPackage.INTERACTOR_BEHAVIOR_TRIGGER_EFFECT: return createInteractorBehaviorTriggerEffect();
       case LilPackage.EXPRESSION: return createExpression();
       case LilPackage.EXPRESSION_LITERAL_COLLECTION: return createExpressionLiteralCollection();
       case LilPackage.EXPRESSION_LITERAL_SET: return createExpressionLiteralSet();
@@ -117,16 +111,38 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.DATA_TYPE_SET: return createDataTypeSet();
       case LilPackage.DATA_TYPE_LIST: return createDataTypeList();
       case LilPackage.DATA_TYPE_QUEUE: return createDataTypeQueue();
-      case LilPackage.DATA_DEFINITION_ENUM_ELEMENT: return createDataDefinitionEnumElement();
       case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET_SET: return createDataTypeNumberDefinitionSetSet();
       case LilPackage.DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL: return createDataTypeNumberDefinitionSetInterval();
       case LilPackage.DATA_TYPE_TEXT_DEFINITION_SET_SET: return createDataTypeTextDefinitionSetSet();
       case LilPackage.DATA_TYPE_TIME_DEFINITION_SET_SET: return createDataTypeTimeDefinitionSetSet();
       case LilPackage.DATA_TYPE_TIME_DEFINITION_SET_INTERVAL: return createDataTypeTimeDefinitionSetInterval();
       case LilPackage.DATA_TYPE_IDENTIFIER_DEFINITION_SET_SET: return createDataTypeIdentifierDefinitionSetSet();
+      case LilPackage.INTERACTOR_TYPE_CUSTOM: return createInteractorTypeCustom();
+      case LilPackage.INTERACTOR_ACTOR_DECLARATION: return createInteractorActorDeclaration();
+      case LilPackage.INTERACTOR_COMPONENT_DECLARATION: return createInteractorComponentDeclaration();
+      case LilPackage.INTERACTOR_DATA_DECLARATION_EVENT: return createInteractorDataDeclarationEvent();
+      case LilPackage.INTERACTOR_DATA_DECLARATION_FLOW: return createInteractorDataDeclarationFlow();
+      case LilPackage.INTERACTOR_DATA_DECLARATION_CONSTANT: return createInteractorDataDeclarationConstant();
+      case LilPackage.INTERACTOR_ENTITY_ANY: return createInteractorEntityAny();
+      case LilPackage.INTERACTOR_ENTITY_SELF: return createInteractorEntitySelf();
+      case LilPackage.INTERACTOR_ENTITY_OTHER: return createInteractorEntityOther();
+      case LilPackage.INTERACTOR_ENTITY_PARENT: return createInteractorEntityParent();
+      case LilPackage.INTERACTOR_ENTITY_CHILD: return createInteractorEntityChild();
+      case LilPackage.INTERACTOR_ENTITY_ALL: return createInteractorEntityAll();
+      case LilPackage.INTERACTOR_ENTITY_ACTORS: return createInteractorEntityActors();
+      case LilPackage.INTERACTOR_ENTITY_SPECIFIC: return createInteractorEntitySpecific();
+      case LilPackage.INTERACTOR_DATA_RECEPTION_INTERNAL: return createInteractorDataReceptionInternal();
+      case LilPackage.INTERACTOR_DATA_RECEPTION_EXTERNAL: return createInteractorDataReceptionExternal();
+      case LilPackage.INTERACTOR_DATA_RECEPTION_INIT: return createInteractorDataReceptionInit();
+      case LilPackage.INTERACTOR_DATA_EMISSION_INTERNAL: return createInteractorDataEmissionInternal();
+      case LilPackage.INTERACTOR_DATA_EMISSION_EXTERNAL: return createInteractorDataEmissionExternal();
+      case LilPackage.INTERACTOR_BEHAVIOR_CAUSE_ON: return createInteractorBehaviorCauseOn();
+      case LilPackage.INTERACTOR_BEHAVIOR_CAUSE_WHEN: return createInteractorBehaviorCauseWhen();
+      case LilPackage.INTERACTOR_BEHAVIOR_EFFECT_ALWAYS: return createInteractorBehaviorEffectAlways();
+      case LilPackage.INTERACTOR_BEHAVIOR_EFFECT_SET: return createInteractorBehaviorEffectSet();
+      case LilPackage.INTERACTOR_BEHAVIOR_EFFECT_TRIGGER: return createInteractorBehaviorEffectTrigger();
       case LilPackage.EXPRESSION_BINARY_OPERATION: return createExpressionBinaryOperation();
       case LilPackage.UNARY_OPERATION: return createUnaryOperation();
-      case LilPackage.LITERAL_DATA: return createLiteralData();
       case LilPackage.EXPRESSION_IF: return createExpressionIf();
       case LilPackage.EXPRESSION_SWITCH: return createExpressionSwitch();
       case LilPackage.EXPRESSION_FOR_EACH: return createExpressionForEach();
@@ -136,6 +152,7 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
       case LilPackage.LITERAL_NUMBER: return createLiteralNumber();
       case LilPackage.LITERAL_TEXT: return createLiteralText();
       case LilPackage.LITERAL_ENUM: return createLiteralEnum();
+      case LilPackage.LITERAL_TIME_NOW: return createLiteralTimeNow();
       case LilPackage.LITERAL_TIME: return createLiteralTime();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -151,6 +168,17 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     LilModelImpl lilModel = new LilModelImpl();
     return lilModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImportStatement createImportStatement()
+  {
+    ImportStatementImpl importStatement = new ImportStatementImpl();
+    return importStatement;
   }
 
   /**
@@ -180,10 +208,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ActorInstanceDeclaration createActorInstanceDeclaration()
+  public ActorComponentDeclaration createActorComponentDeclaration()
   {
-    ActorInstanceDeclarationImpl actorInstanceDeclaration = new ActorInstanceDeclarationImpl();
-    return actorInstanceDeclaration;
+    ActorComponentDeclarationImpl actorComponentDeclaration = new ActorComponentDeclarationImpl();
+    return actorComponentDeclaration;
   }
 
   /**
@@ -279,10 +307,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataInstanceDeclaration createDataInstanceDeclaration()
+  public DataComponentDeclaration createDataComponentDeclaration()
   {
-    DataInstanceDeclarationImpl dataInstanceDeclaration = new DataInstanceDeclarationImpl();
-    return dataInstanceDeclaration;
+    DataComponentDeclarationImpl dataComponentDeclaration = new DataComponentDeclarationImpl();
+    return dataComponentDeclaration;
   }
 
   /**
@@ -312,10 +340,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorActor createInteractorActor()
+  public InteractorEntityDeclaration createInteractorEntityDeclaration()
   {
-    InteractorActorImpl interactorActor = new InteractorActorImpl();
-    return interactorActor;
+    InteractorEntityDeclarationImpl interactorEntityDeclaration = new InteractorEntityDeclarationImpl();
+    return interactorEntityDeclaration;
   }
 
   /**
@@ -323,10 +351,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorData createInteractorData()
+  public InteractorDataDeclaration createInteractorDataDeclaration()
   {
-    InteractorDataImpl interactorData = new InteractorDataImpl();
-    return interactorData;
+    InteractorDataDeclarationImpl interactorDataDeclaration = new InteractorDataDeclarationImpl();
+    return interactorDataDeclaration;
   }
 
   /**
@@ -334,10 +362,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorSignalAlias createInteractorSignalAlias()
+  public InteractorActorAlias createInteractorActorAlias()
   {
-    InteractorSignalAliasImpl interactorSignalAlias = new InteractorSignalAliasImpl();
-    return interactorSignalAlias;
+    InteractorActorAliasImpl interactorActorAlias = new InteractorActorAliasImpl();
+    return interactorActorAlias;
   }
 
   /**
@@ -345,10 +373,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorComponent createInteractorComponent()
+  public InteractorDataAlias createInteractorDataAlias()
   {
-    InteractorComponentImpl interactorComponent = new InteractorComponentImpl();
-    return interactorComponent;
+    InteractorDataAliasImpl interactorDataAlias = new InteractorDataAliasImpl();
+    return interactorDataAlias;
   }
 
   /**
@@ -356,10 +384,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AccessibleEntity createAccessibleEntity()
+  public InteractorEntity createInteractorEntity()
   {
-    AccessibleEntityImpl accessibleEntity = new AccessibleEntityImpl();
-    return accessibleEntity;
+    InteractorEntityImpl interactorEntity = new InteractorEntityImpl();
+    return interactorEntity;
   }
 
   /**
@@ -367,10 +395,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Entity createEntity()
+  public InteractorDataReception createInteractorDataReception()
   {
-    EntityImpl entity = new EntityImpl();
-    return entity;
+    InteractorDataReceptionImpl interactorDataReception = new InteractorDataReceptionImpl();
+    return interactorDataReception;
   }
 
   /**
@@ -378,10 +406,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ActorAlias createActorAlias()
+  public InteractorDataEmission createInteractorDataEmission()
   {
-    ActorAliasImpl actorAlias = new ActorAliasImpl();
-    return actorAlias;
+    InteractorDataEmissionImpl interactorDataEmission = new InteractorDataEmissionImpl();
+    return interactorDataEmission;
   }
 
   /**
@@ -389,32 +417,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorSignalReception createInteractorSignalReception()
+  public InteractorBehaviorDeclaration createInteractorBehaviorDeclaration()
   {
-    InteractorSignalReceptionImpl interactorSignalReception = new InteractorSignalReceptionImpl();
-    return interactorSignalReception;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InteractorSignalEmission createInteractorSignalEmission()
-  {
-    InteractorSignalEmissionImpl interactorSignalEmission = new InteractorSignalEmissionImpl();
-    return interactorSignalEmission;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InteractorBehavior createInteractorBehavior()
-  {
-    InteractorBehaviorImpl interactorBehavior = new InteractorBehaviorImpl();
-    return interactorBehavior;
+    InteractorBehaviorDeclarationImpl interactorBehaviorDeclaration = new InteractorBehaviorDeclarationImpl();
+    return interactorBehaviorDeclaration;
   }
 
   /**
@@ -433,65 +439,10 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InteractorBehaviorOnCause createInteractorBehaviorOnCause()
-  {
-    InteractorBehaviorOnCauseImpl interactorBehaviorOnCause = new InteractorBehaviorOnCauseImpl();
-    return interactorBehaviorOnCause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InteractorBehaviorWhenCause createInteractorBehaviorWhenCause()
-  {
-    InteractorBehaviorWhenCauseImpl interactorBehaviorWhenCause = new InteractorBehaviorWhenCauseImpl();
-    return interactorBehaviorWhenCause;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public InteractorBehaviorEffect createInteractorBehaviorEffect()
   {
     InteractorBehaviorEffectImpl interactorBehaviorEffect = new InteractorBehaviorEffectImpl();
     return interactorBehaviorEffect;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InteractorBehaviorAlwaysEffect createInteractorBehaviorAlwaysEffect()
-  {
-    InteractorBehaviorAlwaysEffectImpl interactorBehaviorAlwaysEffect = new InteractorBehaviorAlwaysEffectImpl();
-    return interactorBehaviorAlwaysEffect;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InteractorBehaviorSetEffect createInteractorBehaviorSetEffect()
-  {
-    InteractorBehaviorSetEffectImpl interactorBehaviorSetEffect = new InteractorBehaviorSetEffectImpl();
-    return interactorBehaviorSetEffect;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public InteractorBehaviorTriggerEffect createInteractorBehaviorTriggerEffect()
-  {
-    InteractorBehaviorTriggerEffectImpl interactorBehaviorTriggerEffect = new InteractorBehaviorTriggerEffectImpl();
-    return interactorBehaviorTriggerEffect;
   }
 
   /**
@@ -730,17 +681,6 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataDefinitionEnumElement createDataDefinitionEnumElement()
-  {
-    DataDefinitionEnumElementImpl dataDefinitionEnumElement = new DataDefinitionEnumElementImpl();
-    return dataDefinitionEnumElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public DataTypeNumberDefinitionSetSet createDataTypeNumberDefinitionSetSet()
   {
     DataTypeNumberDefinitionSetSetImpl dataTypeNumberDefinitionSetSet = new DataTypeNumberDefinitionSetSetImpl();
@@ -807,6 +747,270 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public InteractorTypeCustom createInteractorTypeCustom()
+  {
+    InteractorTypeCustomImpl interactorTypeCustom = new InteractorTypeCustomImpl();
+    return interactorTypeCustom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorActorDeclaration createInteractorActorDeclaration()
+  {
+    InteractorActorDeclarationImpl interactorActorDeclaration = new InteractorActorDeclarationImpl();
+    return interactorActorDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorComponentDeclaration createInteractorComponentDeclaration()
+  {
+    InteractorComponentDeclarationImpl interactorComponentDeclaration = new InteractorComponentDeclarationImpl();
+    return interactorComponentDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorDataDeclarationEvent createInteractorDataDeclarationEvent()
+  {
+    InteractorDataDeclarationEventImpl interactorDataDeclarationEvent = new InteractorDataDeclarationEventImpl();
+    return interactorDataDeclarationEvent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorDataDeclarationFlow createInteractorDataDeclarationFlow()
+  {
+    InteractorDataDeclarationFlowImpl interactorDataDeclarationFlow = new InteractorDataDeclarationFlowImpl();
+    return interactorDataDeclarationFlow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorDataDeclarationConstant createInteractorDataDeclarationConstant()
+  {
+    InteractorDataDeclarationConstantImpl interactorDataDeclarationConstant = new InteractorDataDeclarationConstantImpl();
+    return interactorDataDeclarationConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorEntityAny createInteractorEntityAny()
+  {
+    InteractorEntityAnyImpl interactorEntityAny = new InteractorEntityAnyImpl();
+    return interactorEntityAny;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorEntitySelf createInteractorEntitySelf()
+  {
+    InteractorEntitySelfImpl interactorEntitySelf = new InteractorEntitySelfImpl();
+    return interactorEntitySelf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorEntityOther createInteractorEntityOther()
+  {
+    InteractorEntityOtherImpl interactorEntityOther = new InteractorEntityOtherImpl();
+    return interactorEntityOther;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorEntityParent createInteractorEntityParent()
+  {
+    InteractorEntityParentImpl interactorEntityParent = new InteractorEntityParentImpl();
+    return interactorEntityParent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorEntityChild createInteractorEntityChild()
+  {
+    InteractorEntityChildImpl interactorEntityChild = new InteractorEntityChildImpl();
+    return interactorEntityChild;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorEntityAll createInteractorEntityAll()
+  {
+    InteractorEntityAllImpl interactorEntityAll = new InteractorEntityAllImpl();
+    return interactorEntityAll;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorEntityActors createInteractorEntityActors()
+  {
+    InteractorEntityActorsImpl interactorEntityActors = new InteractorEntityActorsImpl();
+    return interactorEntityActors;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorEntitySpecific createInteractorEntitySpecific()
+  {
+    InteractorEntitySpecificImpl interactorEntitySpecific = new InteractorEntitySpecificImpl();
+    return interactorEntitySpecific;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorDataReceptionInternal createInteractorDataReceptionInternal()
+  {
+    InteractorDataReceptionInternalImpl interactorDataReceptionInternal = new InteractorDataReceptionInternalImpl();
+    return interactorDataReceptionInternal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorDataReceptionExternal createInteractorDataReceptionExternal()
+  {
+    InteractorDataReceptionExternalImpl interactorDataReceptionExternal = new InteractorDataReceptionExternalImpl();
+    return interactorDataReceptionExternal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorDataReceptionInit createInteractorDataReceptionInit()
+  {
+    InteractorDataReceptionInitImpl interactorDataReceptionInit = new InteractorDataReceptionInitImpl();
+    return interactorDataReceptionInit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorDataEmissionInternal createInteractorDataEmissionInternal()
+  {
+    InteractorDataEmissionInternalImpl interactorDataEmissionInternal = new InteractorDataEmissionInternalImpl();
+    return interactorDataEmissionInternal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorDataEmissionExternal createInteractorDataEmissionExternal()
+  {
+    InteractorDataEmissionExternalImpl interactorDataEmissionExternal = new InteractorDataEmissionExternalImpl();
+    return interactorDataEmissionExternal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorBehaviorCauseOn createInteractorBehaviorCauseOn()
+  {
+    InteractorBehaviorCauseOnImpl interactorBehaviorCauseOn = new InteractorBehaviorCauseOnImpl();
+    return interactorBehaviorCauseOn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorBehaviorCauseWhen createInteractorBehaviorCauseWhen()
+  {
+    InteractorBehaviorCauseWhenImpl interactorBehaviorCauseWhen = new InteractorBehaviorCauseWhenImpl();
+    return interactorBehaviorCauseWhen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorBehaviorEffectAlways createInteractorBehaviorEffectAlways()
+  {
+    InteractorBehaviorEffectAlwaysImpl interactorBehaviorEffectAlways = new InteractorBehaviorEffectAlwaysImpl();
+    return interactorBehaviorEffectAlways;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorBehaviorEffectSet createInteractorBehaviorEffectSet()
+  {
+    InteractorBehaviorEffectSetImpl interactorBehaviorEffectSet = new InteractorBehaviorEffectSetImpl();
+    return interactorBehaviorEffectSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InteractorBehaviorEffectTrigger createInteractorBehaviorEffectTrigger()
+  {
+    InteractorBehaviorEffectTriggerImpl interactorBehaviorEffectTrigger = new InteractorBehaviorEffectTriggerImpl();
+    return interactorBehaviorEffectTrigger;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ExpressionBinaryOperation createExpressionBinaryOperation()
   {
     ExpressionBinaryOperationImpl expressionBinaryOperation = new ExpressionBinaryOperationImpl();
@@ -822,17 +1026,6 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     UnaryOperationImpl unaryOperation = new UnaryOperationImpl();
     return unaryOperation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public LiteralData createLiteralData()
-  {
-    LiteralDataImpl literalData = new LiteralDataImpl();
-    return literalData;
   }
 
   /**
@@ -932,6 +1125,17 @@ public class LilFactoryImpl extends EFactoryImpl implements LilFactory
   {
     LiteralEnumImpl literalEnum = new LiteralEnumImpl();
     return literalEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LiteralTimeNow createLiteralTimeNow()
+  {
+    LiteralTimeNowImpl literalTimeNow = new LiteralTimeNowImpl();
+    return literalTimeNow;
   }
 
   /**

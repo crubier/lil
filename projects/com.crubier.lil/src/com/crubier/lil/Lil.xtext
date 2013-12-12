@@ -7,28 +7,33 @@ generate lil "http://www.crubier.com/lil/Lil"
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Model
 LilModel:
+	"package" name=QualifiedName
+	(imports+=ImportStatement)*
 	((actorType+=ActorTypeDefinition) | (dataType+=DataTypeDefinition) | (interactorType+=InteractorTypeDefinition))*;
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ImportStatement:
+	"import" importedNamespace=QualifiedNameWithWildcard;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Actor
 ActorTypeDefinition returns ActorTypeDefinition:
 	name=ID "actor" ":"
-	(component+=ActorInstanceDeclaration)*;
+	(component+=ActorComponentDeclaration)*;
 
 ActorType returns ActorType:
 	{ActorTypeInput} "input" |
 	{ActorTypeOutput} "output" |
 	{ActorTypeCustom} definition=[ActorTypeDefinition];
 
-ActorInstanceDeclaration:
+ActorComponentDeclaration:
 	name=ID ":" type=ActorType;
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Data
 DataTypeDefinition returns DataTypeDefinition:
-	{DataTypeDefinitionCompound} name=ID "data" ":" (component+=DataInstanceDeclaration)* |
+	{DataTypeDefinitionCompound} name=ID "data" ":" (component+=DataComponentDeclaration)* |
 	{DataTypeDefinitionAlias} name=ID "data" ":" alias=DataType;
 
 DataType returns DataType:
@@ -48,7 +53,7 @@ DataTypeSymbolDefinitionSet :
 	"{" element+=DataTypeSymbolDefinitionSetElement ("," element+=DataTypeSymbolDefinitionSetElement)* "}";
 	
 DataTypeSymbolDefinitionSetElement:
-	{DataDefinitionEnumElement} "#" name=ID;
+	{DataTypeSymbolDefinitionSetElement} "#" name=ID;
 	
 DataTypeNumberDefinitionSet :
 	{DataTypeNumberDefinitionSetSet} "{" element+=LiteralNumber ("," element+=LiteralNumber)* "}" |
@@ -62,89 +67,88 @@ DataTypeTimeDefinitionSet :
 	{DataTypeTimeDefinitionSetInterval}"[" inf=LiteralTime "," sup=LiteralTime "]";
 	
 DataTypeIdentifierDefinitionSet :
-	{DataTypeIdentifierDefinitionSetSet} "{" element+=LiteralNumber ("," element+=LiteralNumber)* "}" 
-;
+	{DataTypeIdentifierDefinitionSetSet} "{" element+=LiteralNumber ("," element+=LiteralNumber)* "}" ;
 
-DataInstanceDeclaration:
+DataComponentDeclaration:
 	name=ID ":" type=DataType;
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Interactor
 InteractorTypeDefinition:
 	name=ID "interactor" ":"
-	((actor+=InteractorActor) |
-	(data+=InteractorData) |
-	(component+=InteractorComponent) |
-	(behavior+=InteractorBehavior))*;
+	(
+	(actor+=InteractorActorDeclaration) |
+	(data+=InteractorDataDeclaration) |
+	(component+=InteractorComponentDeclaration) |
+	(behavior+=InteractorBehaviorDeclaration)
+	)*;
 
-InteractorType:
-	custom=[InteractorTypeDefinition];
+InteractorType returns InteractorType:
+	{InteractorTypeCustom} definition=[InteractorTypeDefinition];
 
-InteractorActor:
-	name=ID ":" type=ActorType "actor";
+InteractorActorDeclaration returns InteractorEntityDeclaration:
+	{InteractorActorDeclaration} (name=ID ":" type=ActorType "actor");
+	
+InteractorComponentDeclaration returns InteractorEntityDeclaration:
+	{InteractorComponentDeclaration} (name=ID ":" type=InteractorType "interactor" ("with" actors+=InteractorActorAlias)*);
+	
+//InteractorEntityDeclaration :
+//	InteractorComponentDeclaration | InteractorActorDeclaration
+//;
 
-InteractorData:
-	name=ID ":" type=DataType mode=InteractorDataComponentMode ("from" source=InteractorSignalAlias)? ("to"
-	destinations+=InteractorSignalAlias)*;
+InteractorDataDeclaration returns InteractorDataDeclaration:
+	{InteractorDataDeclarationEvent} (name=ID ":" type=DataType "event" ("from" source=InteractorDataAlias)? ("to" destinations+=InteractorDataAlias)* )|
+	{InteractorDataDeclarationFlow} (name=ID ":" type=DataType "flow" ("from" source=InteractorDataAlias)? ("to" destinations+=InteractorDataAlias)*)|
+	{InteractorDataDeclarationConstant} (name=ID ":" type=DataType "constant");
 
-InteractorSignalAlias:
-	source=AccessibleEntity ("as" alias=[InteractorData])?;
-
-InteractorDataComponentMode:
-	"event" | "flow" | "constant";
-
-InteractorComponent:
-	name=ID ":" type=InteractorType "interactor" ("with" actors+=ActorAlias ("," actors+=ActorAlias)*)?;
-
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Entities
-AccessibleEntity:
-	generic=GenericEntity | specific=[Entity];
-
-GenericEntity:
-	"any" | "self" | "other" | "parent" | "child" | "all" | "actors";
-
-Entity:
-	InteractorComponent | InteractorActor;
-
-ActorAlias:
-	source=[InteractorActor] "as" alias=[InteractorActor];
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Signals
-InteractorSignalReception:
-	(instance=[InteractorData] ("from" source=InteractorSignalAlias)?) |
-	(init?="init");
+//Interactor Entities
 
-InteractorSignalEmission:
-	(instance=[InteractorData] ("to" destination=InteractorSignalAlias)?);
+InteractorActorAlias:
+	actor=[InteractorActorDeclaration] "as" alias=[InteractorActorDeclaration];
+	
+InteractorDataAlias:
+	entity=InteractorEntity ("as" alias=[InteractorDataDeclaration])?;
 
+InteractorEntity:
+	{InteractorEntityAny} "any" |
+	{InteractorEntitySelf} "self" |
+	{InteractorEntityOther} "other" |
+	{InteractorEntityParent} "parent" |
+	{InteractorEntityChild} "child" |
+	{InteractorEntityAll} "all" |
+	{InteractorEntityActors} "actors" |
+	{InteractorEntitySpecific} entity=[InteractorEntityDeclaration] ;
+//	|
+//	{InteractorEntityActor} actor=[InteractorActor] ;
+
+	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Behaviors
-InteractorBehavior:
-	cause=InteractorBehaviorCause ":" (effect+=InteractorBehaviorEffect)+;
+//Interactor Data
+InteractorDataReception returns InteractorDataReception:
+	{InteractorDataReceptionInternal} (data=[InteractorDataDeclaration] ) |
+	{InteractorDataReceptionExternal} (data=[InteractorDataDeclaration] "from" source=InteractorDataAlias) |
+	{InteractorDataReceptionInit} ("init");
 
-InteractorBehaviorCause:
-	(InteractorBehaviorOnCause | InteractorBehaviorWhenCause);
+InteractorDataEmission returns InteractorDataEmission:
+	{InteractorDataEmissionInternal} (data=[InteractorDataDeclaration]) |
+	{InteractorDataEmissionExternal} (data=[InteractorDataDeclaration] "to" destination=InteractorDataAlias);
 
-InteractorBehaviorOnCause:
-	"on" event=InteractorSignalReception ("if" guard=Expression)?;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Interactor Behaviors
+InteractorBehaviorDeclaration returns InteractorBehaviorDeclaration:
+	{InteractorBehaviorDeclaration} cause=InteractorBehaviorCause ":" (effect+=InteractorBehaviorEffect)+;
 
-InteractorBehaviorWhenCause:
-	"when" condition=Expression ("if" guard=Expression)?;
-
-InteractorBehaviorEffect:
-	(InteractorBehaviorAlwaysEffect | InteractorBehaviorSetEffect | InteractorBehaviorTriggerEffect);
-
-InteractorBehaviorAlwaysEffect:
-	"always" target=InteractorSignalEmission "=" value=Expression;
-
-InteractorBehaviorSetEffect:
-	"set" target=InteractorSignalEmission "=" value=Expression;
-
-InteractorBehaviorTriggerEffect:
-	"trigger" target=InteractorSignalEmission "=" value=Expression;
+InteractorBehaviorCause returns InteractorBehaviorCause :
+	{InteractorBehaviorCauseOn} "on" event=InteractorDataReception ("if" guard=Expression)? |
+	{InteractorBehaviorCauseWhen} "when" condition=Expression ("if" guard=Expression)?;
+	
+InteractorBehaviorEffect returns InteractorBehaviorEffect:
+	{InteractorBehaviorEffectAlways} ("always" target=InteractorDataEmission "=" value=Expression) |
+	{InteractorBehaviorEffectSet} ("set" target=InteractorDataEmission "=" value=Expression) |
+	{InteractorBehaviorEffectTrigger} ("trigger" target=InteractorDataEmission "=" value=Expression);
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -214,8 +218,8 @@ ExpressionPrimary returns Expression:
 	ExpressionParenthesized;
 
 ExpressionLiteral returns Expression:
-	ExpressionLiteralCollection | LiteralBoolean | LiteralNumber | LiteralNull | LiteralText | LiteralTime | LiteralEnum
-	| {LiteralData} data=[InteractorData];
+	ExpressionLiteralCollection | LiteralBoolean | LiteralNumber | LiteralNull | LiteralText | LiteralTime | LiteralEnum | InteractorDataReception;
+//	| {LiteralData} data=[InteractorData];
 
 ExpressionLiteralCollection:
 	ExpressionLiteralSet | ExpressionLiteralList;
@@ -275,19 +279,23 @@ LiteralText returns Expression:
 	{LiteralText} value=STRING;
 
 LiteralEnum returns Expression:
-	{LiteralEnum} "#" value=[DataDefinitionEnumElement];
+	{LiteralEnum} "#" value=[DataTypeSymbolDefinitionSetElement];
 
 LiteralTime returns Expression:
-	{LiteralTime} now?="now" | {LiteralTime} (year=NUMBER "year") (month=NUMBER "month")? (day=NUMBER "day")? (hour=NUMBER
-	"hour")? (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" | "second"))? | {LiteralTime} (month=NUMBER "month")
-	(day=NUMBER "day")? (hour=NUMBER "hour")? (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" | "second"))? |
-	{LiteralTime} (day=NUMBER "day") (hour=NUMBER "hour")? (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" |
-	"second"))? | {LiteralTime} (hour=NUMBER "hour") (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" | "second"))? |
-	{LiteralTime} (minute=NUMBER ("m" | "minute")) (second=NUMBER ("s" | "second"))? | {LiteralTime} (second=NUMBER ("s" |
-	"second"));
+	{LiteralTimeNow} "now" | 
+	{LiteralTime} (year=NUMBER "year") (month=NUMBER "month")? (day=NUMBER "day")? (hour=NUMBER"hour")? (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" | "second"))? | 
+	{LiteralTime} (month=NUMBER "month") (day=NUMBER "day")? (hour=NUMBER "hour")? (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" | "second"))? |
+	{LiteralTime} (day=NUMBER "day") (hour=NUMBER "hour")? (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" |"second"))? |
+	{LiteralTime} (hour=NUMBER "hour") (minute=NUMBER ("m" | "minute"))? (second=NUMBER ("s" | "second"))? |
+	{LiteralTime} (minute=NUMBER ("m" | "minute")) (second=NUMBER ("s" | "second"))? |
+	{LiteralTime} (second=NUMBER ("s" | "second"));
 
-	//QualifiedName:
-//  ValidID (=>"." ValidID)*;
+QualifiedName:
+  ID (=>"." ID)*;
+  
+QualifiedNameWithWildcard:
+  QualifiedName '.*'?;
+  
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

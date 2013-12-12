@@ -2,7 +2,7 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.DataDefinitionEnumElement;
+import com.crubier.lil.lil.DataTypeSymbolDefinitionSetElement;
 import com.crubier.lil.lil.LilPackage;
 import com.crubier.lil.lil.LiteralEnum;
 
@@ -36,7 +36,7 @@ public class LiteralEnumImpl extends ExpressionImpl implements LiteralEnum
    * @generated
    * @ordered
    */
-  protected DataDefinitionEnumElement value;
+  protected DataTypeSymbolDefinitionSetElement value;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,12 +64,12 @@ public class LiteralEnumImpl extends ExpressionImpl implements LiteralEnum
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataDefinitionEnumElement getValue()
+  public DataTypeSymbolDefinitionSetElement getValue()
   {
     if (value != null && value.eIsProxy())
     {
       InternalEObject oldValue = (InternalEObject)value;
-      value = (DataDefinitionEnumElement)eResolveProxy(oldValue);
+      value = (DataTypeSymbolDefinitionSetElement)eResolveProxy(oldValue);
       if (value != oldValue)
       {
         if (eNotificationRequired())
@@ -84,7 +84,7 @@ public class LiteralEnumImpl extends ExpressionImpl implements LiteralEnum
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataDefinitionEnumElement basicGetValue()
+  public DataTypeSymbolDefinitionSetElement basicGetValue()
   {
     return value;
   }
@@ -94,9 +94,9 @@ public class LiteralEnumImpl extends ExpressionImpl implements LiteralEnum
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(DataDefinitionEnumElement newValue)
+  public void setValue(DataTypeSymbolDefinitionSetElement newValue)
   {
-    DataDefinitionEnumElement oldValue = value;
+    DataTypeSymbolDefinitionSetElement oldValue = value;
     value = newValue;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.LITERAL_ENUM__VALUE, oldValue, value));
@@ -130,7 +130,7 @@ public class LiteralEnumImpl extends ExpressionImpl implements LiteralEnum
     switch (featureID)
     {
       case LilPackage.LITERAL_ENUM__VALUE:
-        setValue((DataDefinitionEnumElement)newValue);
+        setValue((DataTypeSymbolDefinitionSetElement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,7 +147,7 @@ public class LiteralEnumImpl extends ExpressionImpl implements LiteralEnum
     switch (featureID)
     {
       case LilPackage.LITERAL_ENUM__VALUE:
-        setValue((DataDefinitionEnumElement)null);
+        setValue((DataTypeSymbolDefinitionSetElement)null);
         return;
     }
     super.eUnset(featureID);

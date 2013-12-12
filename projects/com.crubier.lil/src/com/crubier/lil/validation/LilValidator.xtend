@@ -6,7 +6,6 @@ package com.crubier.lil.validation
 import org.eclipse.xtext.validation.Check
 import com.crubier.lil.lil.LilPackage
 
-//import org.eclipse.xtext.validation.Check
 
 /**
  * Custom validation rules. 

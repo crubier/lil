@@ -2,10 +2,9 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.InteractorActor;
-import com.crubier.lil.lil.InteractorBehavior;
-import com.crubier.lil.lil.InteractorComponent;
-import com.crubier.lil.lil.InteractorData;
+import com.crubier.lil.lil.InteractorBehaviorDeclaration;
+import com.crubier.lil.lil.InteractorDataDeclaration;
+import com.crubier.lil.lil.InteractorEntityDeclaration;
 import com.crubier.lil.lil.InteractorTypeDefinition;
 import com.crubier.lil.lil.LilPackage;
 
@@ -72,7 +71,7 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
    * @generated
    * @ordered
    */
-  protected EList<InteractorActor> actor;
+  protected EList<InteractorEntityDeclaration> actor;
 
   /**
    * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
@@ -82,7 +81,7 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
    * @generated
    * @ordered
    */
-  protected EList<InteractorData> data;
+  protected EList<InteractorDataDeclaration> data;
 
   /**
    * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
@@ -92,7 +91,7 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
    * @generated
    * @ordered
    */
-  protected EList<InteractorComponent> component;
+  protected EList<InteractorEntityDeclaration> component;
 
   /**
    * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' containment reference list.
@@ -102,7 +101,7 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
    * @generated
    * @ordered
    */
-  protected EList<InteractorBehavior> behavior;
+  protected EList<InteractorBehaviorDeclaration> behavior;
 
   /**
    * <!-- begin-user-doc -->
@@ -153,11 +152,11 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<InteractorActor> getActor()
+  public EList<InteractorEntityDeclaration> getActor()
   {
     if (actor == null)
     {
-      actor = new EObjectContainmentEList<InteractorActor>(InteractorActor.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__ACTOR);
+      actor = new EObjectContainmentEList<InteractorEntityDeclaration>(InteractorEntityDeclaration.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__ACTOR);
     }
     return actor;
   }
@@ -167,11 +166,11 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<InteractorData> getData()
+  public EList<InteractorDataDeclaration> getData()
   {
     if (data == null)
     {
-      data = new EObjectContainmentEList<InteractorData>(InteractorData.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__DATA);
+      data = new EObjectContainmentEList<InteractorDataDeclaration>(InteractorDataDeclaration.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__DATA);
     }
     return data;
   }
@@ -181,11 +180,11 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<InteractorComponent> getComponent()
+  public EList<InteractorEntityDeclaration> getComponent()
   {
     if (component == null)
     {
-      component = new EObjectContainmentEList<InteractorComponent>(InteractorComponent.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__COMPONENT);
+      component = new EObjectContainmentEList<InteractorEntityDeclaration>(InteractorEntityDeclaration.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__COMPONENT);
     }
     return component;
   }
@@ -195,11 +194,11 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<InteractorBehavior> getBehavior()
+  public EList<InteractorBehaviorDeclaration> getBehavior()
   {
     if (behavior == null)
     {
-      behavior = new EObjectContainmentEList<InteractorBehavior>(InteractorBehavior.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__BEHAVIOR);
+      behavior = new EObjectContainmentEList<InteractorBehaviorDeclaration>(InteractorBehaviorDeclaration.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__BEHAVIOR);
     }
     return behavior;
   }
@@ -266,19 +265,19 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
         return;
       case LilPackage.INTERACTOR_TYPE_DEFINITION__ACTOR:
         getActor().clear();
-        getActor().addAll((Collection<? extends InteractorActor>)newValue);
+        getActor().addAll((Collection<? extends InteractorEntityDeclaration>)newValue);
         return;
       case LilPackage.INTERACTOR_TYPE_DEFINITION__DATA:
         getData().clear();
-        getData().addAll((Collection<? extends InteractorData>)newValue);
+        getData().addAll((Collection<? extends InteractorDataDeclaration>)newValue);
         return;
       case LilPackage.INTERACTOR_TYPE_DEFINITION__COMPONENT:
         getComponent().clear();
-        getComponent().addAll((Collection<? extends InteractorComponent>)newValue);
+        getComponent().addAll((Collection<? extends InteractorEntityDeclaration>)newValue);
         return;
       case LilPackage.INTERACTOR_TYPE_DEFINITION__BEHAVIOR:
         getBehavior().clear();
-        getBehavior().addAll((Collection<? extends InteractorBehavior>)newValue);
+        getBehavior().addAll((Collection<? extends InteractorBehaviorDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

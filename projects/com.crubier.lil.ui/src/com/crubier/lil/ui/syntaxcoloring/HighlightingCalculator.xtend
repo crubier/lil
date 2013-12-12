@@ -1,8 +1,5 @@
 package com.crubier.lil.ui.syntaxcoloring
 
-//import com.crubier.lil.lil.ActorType
-//import com.crubier.lil.lil.ActorTypeDefinition
-import com.crubier.lil.lil.DataDefinitionEnumElement
 import com.crubier.lil.lil.DataType
 import com.crubier.lil.lil.DataTypeDefinition
 import com.crubier.lil.lil.InteractorType
@@ -13,13 +10,13 @@ import com.crubier.lil.lil.LiteralNull
 import com.crubier.lil.lil.LiteralNumber
 import com.crubier.lil.lil.LiteralText
 import com.crubier.lil.lil.LiteralTime
-import org.eclipse.xtext.impl.TerminalRuleImpl
 import org.eclipse.xtext.resource.DefaultLocationInFileProvider
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator
 import com.crubier.lil.lil.ActorType
 import com.crubier.lil.lil.ActorTypeDefinition
+import com.crubier.lil.lil.DataTypeSymbolDefinitionSetElement
 
 class HighlightingCalculator implements ISemanticHighlightingCalculator {
 
@@ -27,11 +24,12 @@ class HighlightingCalculator implements ISemanticHighlightingCalculator {
 		val locationProvider = new DefaultLocationInFileProvider();
 		val iterator = resource.allContents;
 
-
 		while (iterator.hasNext) {
+			
 			val current = iterator.next;
 			val region = locationProvider.getSignificantTextRegion(current);
 			val regionf = locationProvider.getFullTextRegion(current)
+			
 			switch current {
 				InteractorType:
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.INTERACTOR_ID)
@@ -55,12 +53,10 @@ class HighlightingCalculator implements ISemanticHighlightingCalculator {
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
 				LiteralEnum:
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
-				DataDefinitionEnumElement:
+				DataTypeSymbolDefinitionSetElement:
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
 				LiteralTime: 
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
-				TerminalRuleImpl:
-					acceptor.addPosition(region.offset, region.length, HighlightingConfiguration.SPECIAL_ID)
 			}
 
 		}

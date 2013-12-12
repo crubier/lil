@@ -67,13 +67,31 @@ public interface LilPackage extends EPackage
   int LIL_MODEL = 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIL_MODEL__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIL_MODEL__IMPORTS = 1;
+
+  /**
    * The feature id for the '<em><b>Actor Type</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIL_MODEL__ACTOR_TYPE = 0;
+  int LIL_MODEL__ACTOR_TYPE = 2;
 
   /**
    * The feature id for the '<em><b>Data Type</b></em>' containment reference list.
@@ -82,7 +100,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIL_MODEL__DATA_TYPE = 1;
+  int LIL_MODEL__DATA_TYPE = 3;
 
   /**
    * The feature id for the '<em><b>Interactor Type</b></em>' containment reference list.
@@ -91,7 +109,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIL_MODEL__INTERACTOR_TYPE = 2;
+  int LIL_MODEL__INTERACTOR_TYPE = 4;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -100,7 +118,35 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIL_MODEL_FEATURE_COUNT = 3;
+  int LIL_MODEL_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.ImportStatementImpl <em>Import Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.ImportStatementImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getImportStatement()
+   * @generated
+   */
+  int IMPORT_STATEMENT = 1;
+
+  /**
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_STATEMENT__IMPORTED_NAMESPACE = 0;
+
+  /**
+   * The number of structural features of the '<em>Import Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_STATEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.ActorTypeDefinitionImpl <em>Actor Type Definition</em>}' class.
@@ -110,7 +156,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorTypeDefinition()
    * @generated
    */
-  int ACTOR_TYPE_DEFINITION = 1;
+  int ACTOR_TYPE_DEFINITION = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -147,7 +193,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorType()
    * @generated
    */
-  int ACTOR_TYPE = 2;
+  int ACTOR_TYPE = 3;
 
   /**
    * The number of structural features of the '<em>Actor Type</em>' class.
@@ -159,14 +205,14 @@ public interface LilPackage extends EPackage
   int ACTOR_TYPE_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.ActorInstanceDeclarationImpl <em>Actor Instance Declaration</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.ActorComponentDeclarationImpl <em>Actor Component Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.ActorInstanceDeclarationImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorInstanceDeclaration()
+   * @see com.crubier.lil.lil.impl.ActorComponentDeclarationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorComponentDeclaration()
    * @generated
    */
-  int ACTOR_INSTANCE_DECLARATION = 3;
+  int ACTOR_COMPONENT_DECLARATION = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -175,7 +221,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTOR_INSTANCE_DECLARATION__NAME = 0;
+  int ACTOR_COMPONENT_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -184,16 +230,16 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTOR_INSTANCE_DECLARATION__TYPE = 1;
+  int ACTOR_COMPONENT_DECLARATION__TYPE = 1;
 
   /**
-   * The number of structural features of the '<em>Actor Instance Declaration</em>' class.
+   * The number of structural features of the '<em>Actor Component Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTOR_INSTANCE_DECLARATION_FEATURE_COUNT = 2;
+  int ACTOR_COMPONENT_DECLARATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeDefinitionImpl <em>Data Type Definition</em>}' class.
@@ -203,7 +249,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeDefinition()
    * @generated
    */
-  int DATA_TYPE_DEFINITION = 4;
+  int DATA_TYPE_DEFINITION = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -231,7 +277,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 5;
+  int DATA_TYPE = 6;
 
   /**
    * The number of structural features of the '<em>Data Type</em>' class.
@@ -250,7 +296,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeSymbolDefinitionSet()
    * @generated
    */
-  int DATA_TYPE_SYMBOL_DEFINITION_SET = 6;
+  int DATA_TYPE_SYMBOL_DEFINITION_SET = 7;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference list.
@@ -278,7 +324,16 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeSymbolDefinitionSetElement()
    * @generated
    */
-  int DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT = 7;
+  int DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Data Type Symbol Definition Set Element</em>' class.
@@ -287,7 +342,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT_FEATURE_COUNT = 0;
+  int DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeNumberDefinitionSetImpl <em>Data Type Number Definition Set</em>}' class.
@@ -297,7 +352,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeNumberDefinitionSet()
    * @generated
    */
-  int DATA_TYPE_NUMBER_DEFINITION_SET = 8;
+  int DATA_TYPE_NUMBER_DEFINITION_SET = 9;
 
   /**
    * The number of structural features of the '<em>Data Type Number Definition Set</em>' class.
@@ -316,7 +371,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeTextDefinitionSet()
    * @generated
    */
-  int DATA_TYPE_TEXT_DEFINITION_SET = 9;
+  int DATA_TYPE_TEXT_DEFINITION_SET = 10;
 
   /**
    * The number of structural features of the '<em>Data Type Text Definition Set</em>' class.
@@ -335,7 +390,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeTimeDefinitionSet()
    * @generated
    */
-  int DATA_TYPE_TIME_DEFINITION_SET = 10;
+  int DATA_TYPE_TIME_DEFINITION_SET = 11;
 
   /**
    * The number of structural features of the '<em>Data Type Time Definition Set</em>' class.
@@ -354,7 +409,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeIdentifierDefinitionSet()
    * @generated
    */
-  int DATA_TYPE_IDENTIFIER_DEFINITION_SET = 11;
+  int DATA_TYPE_IDENTIFIER_DEFINITION_SET = 12;
 
   /**
    * The number of structural features of the '<em>Data Type Identifier Definition Set</em>' class.
@@ -366,14 +421,14 @@ public interface LilPackage extends EPackage
   int DATA_TYPE_IDENTIFIER_DEFINITION_SET_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataInstanceDeclarationImpl <em>Data Instance Declaration</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataComponentDeclarationImpl <em>Data Component Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.DataInstanceDeclarationImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataInstanceDeclaration()
+   * @see com.crubier.lil.lil.impl.DataComponentDeclarationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataComponentDeclaration()
    * @generated
    */
-  int DATA_INSTANCE_DECLARATION = 12;
+  int DATA_COMPONENT_DECLARATION = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -382,7 +437,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_INSTANCE_DECLARATION__NAME = 0;
+  int DATA_COMPONENT_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -391,16 +446,16 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_INSTANCE_DECLARATION__TYPE = 1;
+  int DATA_COMPONENT_DECLARATION__TYPE = 1;
 
   /**
-   * The number of structural features of the '<em>Data Instance Declaration</em>' class.
+   * The number of structural features of the '<em>Data Component Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_INSTANCE_DECLARATION_FEATURE_COUNT = 2;
+  int DATA_COMPONENT_DECLARATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorTypeDefinitionImpl <em>Interactor Type Definition</em>}' class.
@@ -410,7 +465,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorTypeDefinition()
    * @generated
    */
-  int INTERACTOR_TYPE_DEFINITION = 13;
+  int INTERACTOR_TYPE_DEFINITION = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -474,16 +529,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorType()
    * @generated
    */
-  int INTERACTOR_TYPE = 14;
-
-  /**
-   * The feature id for the '<em><b>Custom</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_TYPE__CUSTOM = 0;
+  int INTERACTOR_TYPE = 15;
 
   /**
    * The number of structural features of the '<em>Interactor Type</em>' class.
@@ -492,45 +538,17 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERACTOR_TYPE_FEATURE_COUNT = 1;
+  int INTERACTOR_TYPE_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.EntityImpl <em>Entity</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntityDeclarationImpl <em>Interactor Entity Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.EntityImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getEntity()
+   * @see com.crubier.lil.lil.impl.InteractorEntityDeclarationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityDeclaration()
    * @generated
    */
-  int ENTITY = 20;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Entity</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorActorImpl <em>Interactor Actor</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorActorImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorActor()
-   * @generated
-   */
-  int INTERACTOR_ACTOR = 15;
+  int INTERACTOR_ENTITY_DECLARATION = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -539,7 +557,35 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERACTOR_ACTOR__NAME = ENTITY__NAME;
+  int INTERACTOR_ENTITY_DECLARATION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Interactor Entity Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_DECLARATION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataDeclarationImpl <em>Interactor Data Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataDeclarationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataDeclaration()
+   * @generated
+   */
+  int INTERACTOR_DATA_DECLARATION = 17;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -548,99 +594,35 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERACTOR_ACTOR__TYPE = ENTITY_FEATURE_COUNT + 0;
+  int INTERACTOR_DATA_DECLARATION__TYPE = 1;
 
   /**
-   * The number of structural features of the '<em>Interactor Actor</em>' class.
+   * The number of structural features of the '<em>Interactor Data Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_ACTOR_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 1;
+  int INTERACTOR_DATA_DECLARATION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataImpl <em>Interactor Data</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorActorAliasImpl <em>Interactor Actor Alias</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorDataImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorData()
+   * @see com.crubier.lil.lil.impl.InteractorActorAliasImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorActorAlias()
    * @generated
    */
-  int INTERACTOR_DATA = 16;
+  int INTERACTOR_ACTOR_ALIAS = 18;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_DATA__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Actor</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_DATA__TYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Mode</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_DATA__MODE = 2;
-
-  /**
-   * The feature id for the '<em><b>Source</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_DATA__SOURCE = 3;
-
-  /**
-   * The feature id for the '<em><b>Destinations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_DATA__DESTINATIONS = 4;
-
-  /**
-   * The number of structural features of the '<em>Interactor Data</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_DATA_FEATURE_COUNT = 5;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorSignalAliasImpl <em>Interactor Signal Alias</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorSignalAliasImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorSignalAlias()
-   * @generated
-   */
-  int INTERACTOR_SIGNAL_ALIAS = 17;
-
-  /**
-   * The feature id for the '<em><b>Source</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_SIGNAL_ALIAS__SOURCE = 0;
+  int INTERACTOR_ACTOR_ALIAS__ACTOR = 0;
 
   /**
    * The feature id for the '<em><b>Alias</b></em>' reference.
@@ -649,118 +631,35 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERACTOR_SIGNAL_ALIAS__ALIAS = 1;
+  int INTERACTOR_ACTOR_ALIAS__ALIAS = 1;
 
   /**
-   * The number of structural features of the '<em>Interactor Signal Alias</em>' class.
+   * The number of structural features of the '<em>Interactor Actor Alias</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_SIGNAL_ALIAS_FEATURE_COUNT = 2;
+  int INTERACTOR_ACTOR_ALIAS_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorComponentImpl <em>Interactor Component</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataAliasImpl <em>Interactor Data Alias</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorComponentImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorComponent()
+   * @see com.crubier.lil.lil.impl.InteractorDataAliasImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataAlias()
    * @generated
    */
-  int INTERACTOR_COMPONENT = 18;
+  int INTERACTOR_DATA_ALIAS = 19;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_COMPONENT__NAME = ENTITY__NAME;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Entity</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_COMPONENT__TYPE = ENTITY_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Actors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_COMPONENT__ACTORS = ENTITY_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Interactor Component</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_COMPONENT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.AccessibleEntityImpl <em>Accessible Entity</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.AccessibleEntityImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getAccessibleEntity()
-   * @generated
-   */
-  int ACCESSIBLE_ENTITY = 19;
-
-  /**
-   * The feature id for the '<em><b>Generic</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACCESSIBLE_ENTITY__GENERIC = 0;
-
-  /**
-   * The feature id for the '<em><b>Specific</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACCESSIBLE_ENTITY__SPECIFIC = 1;
-
-  /**
-   * The number of structural features of the '<em>Accessible Entity</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACCESSIBLE_ENTITY_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.ActorAliasImpl <em>Actor Alias</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.ActorAliasImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorAlias()
-   * @generated
-   */
-  int ACTOR_ALIAS = 21;
-
-  /**
-   * The feature id for the '<em><b>Source</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTOR_ALIAS__SOURCE = 0;
+  int INTERACTOR_DATA_ALIAS__ENTITY = 0;
 
   /**
    * The feature id for the '<em><b>Alias</b></em>' reference.
@@ -769,109 +668,111 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTOR_ALIAS__ALIAS = 1;
+  int INTERACTOR_DATA_ALIAS__ALIAS = 1;
 
   /**
-   * The number of structural features of the '<em>Actor Alias</em>' class.
+   * The number of structural features of the '<em>Interactor Data Alias</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTOR_ALIAS_FEATURE_COUNT = 2;
+  int INTERACTOR_DATA_ALIAS_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorSignalReceptionImpl <em>Interactor Signal Reception</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntityImpl <em>Interactor Entity</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorSignalReceptionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorSignalReception()
+   * @see com.crubier.lil.lil.impl.InteractorEntityImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntity()
    * @generated
    */
-  int INTERACTOR_SIGNAL_RECEPTION = 22;
+  int INTERACTOR_ENTITY = 20;
 
   /**
-   * The feature id for the '<em><b>Instance</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_SIGNAL_RECEPTION__INSTANCE = 0;
-
-  /**
-   * The feature id for the '<em><b>Source</b></em>' containment reference.
+   * The number of structural features of the '<em>Interactor Entity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_SIGNAL_RECEPTION__SOURCE = 1;
+  int INTERACTOR_ENTITY_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>Init</b></em>' attribute.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.ExpressionImpl <em>Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.ExpressionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpression()
+   * @generated
+   */
+  int EXPRESSION = 26;
+
+  /**
+   * The number of structural features of the '<em>Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_SIGNAL_RECEPTION__INIT = 2;
+  int EXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The number of structural features of the '<em>Interactor Signal Reception</em>' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataReceptionImpl <em>Interactor Data Reception</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataReceptionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataReception()
+   * @generated
+   */
+  int INTERACTOR_DATA_RECEPTION = 21;
+
+  /**
+   * The number of structural features of the '<em>Interactor Data Reception</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_SIGNAL_RECEPTION_FEATURE_COUNT = 3;
+  int INTERACTOR_DATA_RECEPTION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorSignalEmissionImpl <em>Interactor Signal Emission</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataEmissionImpl <em>Interactor Data Emission</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorSignalEmissionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorSignalEmission()
+   * @see com.crubier.lil.lil.impl.InteractorDataEmissionImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataEmission()
    * @generated
    */
-  int INTERACTOR_SIGNAL_EMISSION = 23;
+  int INTERACTOR_DATA_EMISSION = 22;
 
   /**
-   * The feature id for the '<em><b>Instance</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_SIGNAL_EMISSION__INSTANCE = 0;
-
-  /**
-   * The feature id for the '<em><b>Destination</b></em>' containment reference.
+   * The feature id for the '<em><b>Data</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_SIGNAL_EMISSION__DESTINATION = 1;
+  int INTERACTOR_DATA_EMISSION__DATA = 0;
 
   /**
-   * The number of structural features of the '<em>Interactor Signal Emission</em>' class.
+   * The number of structural features of the '<em>Interactor Data Emission</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_SIGNAL_EMISSION_FEATURE_COUNT = 2;
+  int INTERACTOR_DATA_EMISSION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorImpl <em>Interactor Behavior</em>}' class.
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorDeclarationImpl <em>Interactor Behavior Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorBehaviorImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehavior()
+   * @see com.crubier.lil.lil.impl.InteractorBehaviorDeclarationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorDeclaration()
    * @generated
    */
-  int INTERACTOR_BEHAVIOR = 24;
+  int INTERACTOR_BEHAVIOR_DECLARATION = 23;
 
   /**
    * The feature id for the '<em><b>Cause</b></em>' containment reference.
@@ -880,7 +781,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERACTOR_BEHAVIOR__CAUSE = 0;
+  int INTERACTOR_BEHAVIOR_DECLARATION__CAUSE = 0;
 
   /**
    * The feature id for the '<em><b>Effect</b></em>' containment reference list.
@@ -889,16 +790,16 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERACTOR_BEHAVIOR__EFFECT = 1;
+  int INTERACTOR_BEHAVIOR_DECLARATION__EFFECT = 1;
 
   /**
-   * The number of structural features of the '<em>Interactor Behavior</em>' class.
+   * The number of structural features of the '<em>Interactor Behavior Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERACTOR_BEHAVIOR_FEATURE_COUNT = 2;
+  int INTERACTOR_BEHAVIOR_DECLARATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorCauseImpl <em>Interactor Behavior Cause</em>}' class.
@@ -908,7 +809,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorCause()
    * @generated
    */
-  int INTERACTOR_BEHAVIOR_CAUSE = 25;
+  int INTERACTOR_BEHAVIOR_CAUSE = 24;
 
   /**
    * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -929,80 +830,6 @@ public interface LilPackage extends EPackage
   int INTERACTOR_BEHAVIOR_CAUSE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorOnCauseImpl <em>Interactor Behavior On Cause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorBehaviorOnCauseImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorOnCause()
-   * @generated
-   */
-  int INTERACTOR_BEHAVIOR_ON_CAUSE = 26;
-
-  /**
-   * The feature id for the '<em><b>Guard</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_ON_CAUSE__GUARD = INTERACTOR_BEHAVIOR_CAUSE__GUARD;
-
-  /**
-   * The feature id for the '<em><b>Event</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_ON_CAUSE__EVENT = INTERACTOR_BEHAVIOR_CAUSE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Interactor Behavior On Cause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_ON_CAUSE_FEATURE_COUNT = INTERACTOR_BEHAVIOR_CAUSE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorWhenCauseImpl <em>Interactor Behavior When Cause</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorBehaviorWhenCauseImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorWhenCause()
-   * @generated
-   */
-  int INTERACTOR_BEHAVIOR_WHEN_CAUSE = 27;
-
-  /**
-   * The feature id for the '<em><b>Guard</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_WHEN_CAUSE__GUARD = INTERACTOR_BEHAVIOR_CAUSE__GUARD;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_WHEN_CAUSE__CONDITION = INTERACTOR_BEHAVIOR_CAUSE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Interactor Behavior When Cause</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_WHEN_CAUSE_FEATURE_COUNT = INTERACTOR_BEHAVIOR_CAUSE_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorEffectImpl <em>Interactor Behavior Effect</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1010,7 +837,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorEffect()
    * @generated
    */
-  int INTERACTOR_BEHAVIOR_EFFECT = 28;
+  int INTERACTOR_BEHAVIOR_EFFECT = 25;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -1040,136 +867,6 @@ public interface LilPackage extends EPackage
   int INTERACTOR_BEHAVIOR_EFFECT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorAlwaysEffectImpl <em>Interactor Behavior Always Effect</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorBehaviorAlwaysEffectImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorAlwaysEffect()
-   * @generated
-   */
-  int INTERACTOR_BEHAVIOR_ALWAYS_EFFECT = 29;
-
-  /**
-   * The feature id for the '<em><b>Target</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_ALWAYS_EFFECT__TARGET = INTERACTOR_BEHAVIOR_EFFECT__TARGET;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_ALWAYS_EFFECT__VALUE = INTERACTOR_BEHAVIOR_EFFECT__VALUE;
-
-  /**
-   * The number of structural features of the '<em>Interactor Behavior Always Effect</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_ALWAYS_EFFECT_FEATURE_COUNT = INTERACTOR_BEHAVIOR_EFFECT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorSetEffectImpl <em>Interactor Behavior Set Effect</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorBehaviorSetEffectImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorSetEffect()
-   * @generated
-   */
-  int INTERACTOR_BEHAVIOR_SET_EFFECT = 30;
-
-  /**
-   * The feature id for the '<em><b>Target</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_SET_EFFECT__TARGET = INTERACTOR_BEHAVIOR_EFFECT__TARGET;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_SET_EFFECT__VALUE = INTERACTOR_BEHAVIOR_EFFECT__VALUE;
-
-  /**
-   * The number of structural features of the '<em>Interactor Behavior Set Effect</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_SET_EFFECT_FEATURE_COUNT = INTERACTOR_BEHAVIOR_EFFECT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorTriggerEffectImpl <em>Interactor Behavior Trigger Effect</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.InteractorBehaviorTriggerEffectImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorTriggerEffect()
-   * @generated
-   */
-  int INTERACTOR_BEHAVIOR_TRIGGER_EFFECT = 31;
-
-  /**
-   * The feature id for the '<em><b>Target</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_TRIGGER_EFFECT__TARGET = INTERACTOR_BEHAVIOR_EFFECT__TARGET;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_TRIGGER_EFFECT__VALUE = INTERACTOR_BEHAVIOR_EFFECT__VALUE;
-
-  /**
-   * The number of structural features of the '<em>Interactor Behavior Trigger Effect</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERACTOR_BEHAVIOR_TRIGGER_EFFECT_FEATURE_COUNT = INTERACTOR_BEHAVIOR_EFFECT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.ExpressionImpl <em>Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.ExpressionImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpression()
-   * @generated
-   */
-  int EXPRESSION = 32;
-
-  /**
-   * The number of structural features of the '<em>Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.ExpressionLiteralCollectionImpl <em>Expression Literal Collection</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1177,7 +874,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpressionLiteralCollection()
    * @generated
    */
-  int EXPRESSION_LITERAL_COLLECTION = 33;
+  int EXPRESSION_LITERAL_COLLECTION = 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1205,7 +902,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpressionLiteralSet()
    * @generated
    */
-  int EXPRESSION_LITERAL_SET = 34;
+  int EXPRESSION_LITERAL_SET = 28;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1233,7 +930,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpressionLiteralList()
    * @generated
    */
-  int EXPRESSION_LITERAL_LIST = 35;
+  int EXPRESSION_LITERAL_LIST = 29;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1261,7 +958,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpressionCase()
    * @generated
    */
-  int EXPRESSION_CASE = 36;
+  int EXPRESSION_CASE = 30;
 
   /**
    * The feature id for the '<em><b>Case</b></em>' containment reference.
@@ -1298,7 +995,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorTypeInput()
    * @generated
    */
-  int ACTOR_TYPE_INPUT = 37;
+  int ACTOR_TYPE_INPUT = 31;
 
   /**
    * The number of structural features of the '<em>Actor Type Input</em>' class.
@@ -1317,7 +1014,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorTypeOutput()
    * @generated
    */
-  int ACTOR_TYPE_OUTPUT = 38;
+  int ACTOR_TYPE_OUTPUT = 32;
 
   /**
    * The number of structural features of the '<em>Actor Type Output</em>' class.
@@ -1336,7 +1033,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorTypeCustom()
    * @generated
    */
-  int ACTOR_TYPE_CUSTOM = 39;
+  int ACTOR_TYPE_CUSTOM = 33;
 
   /**
    * The feature id for the '<em><b>Definition</b></em>' reference.
@@ -1364,7 +1061,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeDefinitionCompound()
    * @generated
    */
-  int DATA_TYPE_DEFINITION_COMPOUND = 40;
+  int DATA_TYPE_DEFINITION_COMPOUND = 34;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1401,7 +1098,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeDefinitionAlias()
    * @generated
    */
-  int DATA_TYPE_DEFINITION_ALIAS = 41;
+  int DATA_TYPE_DEFINITION_ALIAS = 35;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1438,7 +1135,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeVoid()
    * @generated
    */
-  int DATA_TYPE_VOID = 42;
+  int DATA_TYPE_VOID = 36;
 
   /**
    * The number of structural features of the '<em>Data Type Void</em>' class.
@@ -1457,7 +1154,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeSymbol()
    * @generated
    */
-  int DATA_TYPE_SYMBOL = 43;
+  int DATA_TYPE_SYMBOL = 37;
 
   /**
    * The feature id for the '<em><b>Definition Set</b></em>' containment reference.
@@ -1485,7 +1182,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeNumber()
    * @generated
    */
-  int DATA_TYPE_NUMBER = 44;
+  int DATA_TYPE_NUMBER = 38;
 
   /**
    * The feature id for the '<em><b>Definition Set</b></em>' containment reference.
@@ -1513,7 +1210,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeText()
    * @generated
    */
-  int DATA_TYPE_TEXT = 45;
+  int DATA_TYPE_TEXT = 39;
 
   /**
    * The feature id for the '<em><b>Definition Set</b></em>' containment reference.
@@ -1541,7 +1238,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeTime()
    * @generated
    */
-  int DATA_TYPE_TIME = 46;
+  int DATA_TYPE_TIME = 40;
 
   /**
    * The feature id for the '<em><b>Definition Set</b></em>' containment reference.
@@ -1569,7 +1266,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeIdentifier()
    * @generated
    */
-  int DATA_TYPE_IDENTIFIER = 47;
+  int DATA_TYPE_IDENTIFIER = 41;
 
   /**
    * The feature id for the '<em><b>Definition Set</b></em>' containment reference.
@@ -1597,7 +1294,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCustom()
    * @generated
    */
-  int DATA_TYPE_CUSTOM = 48;
+  int DATA_TYPE_CUSTOM = 42;
 
   /**
    * The feature id for the '<em><b>Definition</b></em>' reference.
@@ -1625,7 +1322,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeCollection()
    * @generated
    */
-  int DATA_TYPE_COLLECTION = 49;
+  int DATA_TYPE_COLLECTION = 43;
 
   /**
    * The feature id for the '<em><b>Element Type</b></em>' containment reference.
@@ -1653,7 +1350,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeSet()
    * @generated
    */
-  int DATA_TYPE_SET = 50;
+  int DATA_TYPE_SET = 44;
 
   /**
    * The feature id for the '<em><b>Element Type</b></em>' containment reference.
@@ -1681,7 +1378,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeList()
    * @generated
    */
-  int DATA_TYPE_LIST = 51;
+  int DATA_TYPE_LIST = 45;
 
   /**
    * The feature id for the '<em><b>Element Type</b></em>' containment reference.
@@ -1709,7 +1406,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeQueue()
    * @generated
    */
-  int DATA_TYPE_QUEUE = 52;
+  int DATA_TYPE_QUEUE = 46;
 
   /**
    * The feature id for the '<em><b>Element Type</b></em>' containment reference.
@@ -1730,34 +1427,6 @@ public interface LilPackage extends EPackage
   int DATA_TYPE_QUEUE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.DataDefinitionEnumElementImpl <em>Data Definition Enum Element</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.DataDefinitionEnumElementImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataDefinitionEnumElement()
-   * @generated
-   */
-  int DATA_DEFINITION_ENUM_ELEMENT = 53;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_DEFINITION_ENUM_ELEMENT__NAME = DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Data Definition Enum Element</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_DEFINITION_ENUM_ELEMENT_FEATURE_COUNT = DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.DataTypeNumberDefinitionSetSetImpl <em>Data Type Number Definition Set Set</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1765,7 +1434,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeNumberDefinitionSetSet()
    * @generated
    */
-  int DATA_TYPE_NUMBER_DEFINITION_SET_SET = 54;
+  int DATA_TYPE_NUMBER_DEFINITION_SET_SET = 47;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference list.
@@ -1793,7 +1462,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeNumberDefinitionSetInterval()
    * @generated
    */
-  int DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL = 55;
+  int DATA_TYPE_NUMBER_DEFINITION_SET_INTERVAL = 48;
 
   /**
    * The feature id for the '<em><b>Inf</b></em>' containment reference.
@@ -1830,7 +1499,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeTextDefinitionSetSet()
    * @generated
    */
-  int DATA_TYPE_TEXT_DEFINITION_SET_SET = 56;
+  int DATA_TYPE_TEXT_DEFINITION_SET_SET = 49;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference list.
@@ -1858,7 +1527,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeTimeDefinitionSetSet()
    * @generated
    */
-  int DATA_TYPE_TIME_DEFINITION_SET_SET = 57;
+  int DATA_TYPE_TIME_DEFINITION_SET_SET = 50;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference list.
@@ -1886,7 +1555,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeTimeDefinitionSetInterval()
    * @generated
    */
-  int DATA_TYPE_TIME_DEFINITION_SET_INTERVAL = 58;
+  int DATA_TYPE_TIME_DEFINITION_SET_INTERVAL = 51;
 
   /**
    * The feature id for the '<em><b>Inf</b></em>' containment reference.
@@ -1923,7 +1592,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataTypeIdentifierDefinitionSetSet()
    * @generated
    */
-  int DATA_TYPE_IDENTIFIER_DEFINITION_SET_SET = 59;
+  int DATA_TYPE_IDENTIFIER_DEFINITION_SET_SET = 52;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference list.
@@ -1944,6 +1613,759 @@ public interface LilPackage extends EPackage
   int DATA_TYPE_IDENTIFIER_DEFINITION_SET_SET_FEATURE_COUNT = DATA_TYPE_IDENTIFIER_DEFINITION_SET_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorTypeCustomImpl <em>Interactor Type Custom</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorTypeCustomImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorTypeCustom()
+   * @generated
+   */
+  int INTERACTOR_TYPE_CUSTOM = 53;
+
+  /**
+   * The feature id for the '<em><b>Definition</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_TYPE_CUSTOM__DEFINITION = INTERACTOR_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Interactor Type Custom</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_TYPE_CUSTOM_FEATURE_COUNT = INTERACTOR_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorActorDeclarationImpl <em>Interactor Actor Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorActorDeclarationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorActorDeclaration()
+   * @generated
+   */
+  int INTERACTOR_ACTOR_DECLARATION = 54;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ACTOR_DECLARATION__NAME = INTERACTOR_ENTITY_DECLARATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ACTOR_DECLARATION__TYPE = INTERACTOR_ENTITY_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Interactor Actor Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ACTOR_DECLARATION_FEATURE_COUNT = INTERACTOR_ENTITY_DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorComponentDeclarationImpl <em>Interactor Component Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorComponentDeclarationImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorComponentDeclaration()
+   * @generated
+   */
+  int INTERACTOR_COMPONENT_DECLARATION = 55;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_COMPONENT_DECLARATION__NAME = INTERACTOR_ENTITY_DECLARATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_COMPONENT_DECLARATION__TYPE = INTERACTOR_ENTITY_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Actors</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_COMPONENT_DECLARATION__ACTORS = INTERACTOR_ENTITY_DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Interactor Component Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_COMPONENT_DECLARATION_FEATURE_COUNT = INTERACTOR_ENTITY_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataDeclarationEventImpl <em>Interactor Data Declaration Event</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataDeclarationEventImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataDeclarationEvent()
+   * @generated
+   */
+  int INTERACTOR_DATA_DECLARATION_EVENT = 56;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_EVENT__NAME = INTERACTOR_DATA_DECLARATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_EVENT__TYPE = INTERACTOR_DATA_DECLARATION__TYPE;
+
+  /**
+   * The feature id for the '<em><b>Source</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_EVENT__SOURCE = INTERACTOR_DATA_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Destinations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_EVENT__DESTINATIONS = INTERACTOR_DATA_DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Interactor Data Declaration Event</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_EVENT_FEATURE_COUNT = INTERACTOR_DATA_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataDeclarationFlowImpl <em>Interactor Data Declaration Flow</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataDeclarationFlowImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataDeclarationFlow()
+   * @generated
+   */
+  int INTERACTOR_DATA_DECLARATION_FLOW = 57;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_FLOW__NAME = INTERACTOR_DATA_DECLARATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_FLOW__TYPE = INTERACTOR_DATA_DECLARATION__TYPE;
+
+  /**
+   * The feature id for the '<em><b>Source</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_FLOW__SOURCE = INTERACTOR_DATA_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Destinations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_FLOW__DESTINATIONS = INTERACTOR_DATA_DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Interactor Data Declaration Flow</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_FLOW_FEATURE_COUNT = INTERACTOR_DATA_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataDeclarationConstantImpl <em>Interactor Data Declaration Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataDeclarationConstantImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataDeclarationConstant()
+   * @generated
+   */
+  int INTERACTOR_DATA_DECLARATION_CONSTANT = 58;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_CONSTANT__NAME = INTERACTOR_DATA_DECLARATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_CONSTANT__TYPE = INTERACTOR_DATA_DECLARATION__TYPE;
+
+  /**
+   * The number of structural features of the '<em>Interactor Data Declaration Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_DECLARATION_CONSTANT_FEATURE_COUNT = INTERACTOR_DATA_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntityAnyImpl <em>Interactor Entity Any</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorEntityAnyImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityAny()
+   * @generated
+   */
+  int INTERACTOR_ENTITY_ANY = 59;
+
+  /**
+   * The number of structural features of the '<em>Interactor Entity Any</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_ANY_FEATURE_COUNT = INTERACTOR_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntitySelfImpl <em>Interactor Entity Self</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorEntitySelfImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntitySelf()
+   * @generated
+   */
+  int INTERACTOR_ENTITY_SELF = 60;
+
+  /**
+   * The number of structural features of the '<em>Interactor Entity Self</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_SELF_FEATURE_COUNT = INTERACTOR_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntityOtherImpl <em>Interactor Entity Other</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorEntityOtherImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityOther()
+   * @generated
+   */
+  int INTERACTOR_ENTITY_OTHER = 61;
+
+  /**
+   * The number of structural features of the '<em>Interactor Entity Other</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_OTHER_FEATURE_COUNT = INTERACTOR_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntityParentImpl <em>Interactor Entity Parent</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorEntityParentImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityParent()
+   * @generated
+   */
+  int INTERACTOR_ENTITY_PARENT = 62;
+
+  /**
+   * The number of structural features of the '<em>Interactor Entity Parent</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_PARENT_FEATURE_COUNT = INTERACTOR_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntityChildImpl <em>Interactor Entity Child</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorEntityChildImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityChild()
+   * @generated
+   */
+  int INTERACTOR_ENTITY_CHILD = 63;
+
+  /**
+   * The number of structural features of the '<em>Interactor Entity Child</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_CHILD_FEATURE_COUNT = INTERACTOR_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntityAllImpl <em>Interactor Entity All</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorEntityAllImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityAll()
+   * @generated
+   */
+  int INTERACTOR_ENTITY_ALL = 64;
+
+  /**
+   * The number of structural features of the '<em>Interactor Entity All</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_ALL_FEATURE_COUNT = INTERACTOR_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntityActorsImpl <em>Interactor Entity Actors</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorEntityActorsImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityActors()
+   * @generated
+   */
+  int INTERACTOR_ENTITY_ACTORS = 65;
+
+  /**
+   * The number of structural features of the '<em>Interactor Entity Actors</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_ACTORS_FEATURE_COUNT = INTERACTOR_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorEntitySpecificImpl <em>Interactor Entity Specific</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorEntitySpecificImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntitySpecific()
+   * @generated
+   */
+  int INTERACTOR_ENTITY_SPECIFIC = 66;
+
+  /**
+   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_SPECIFIC__ENTITY = INTERACTOR_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Interactor Entity Specific</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_ENTITY_SPECIFIC_FEATURE_COUNT = INTERACTOR_ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataReceptionInternalImpl <em>Interactor Data Reception Internal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataReceptionInternalImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataReceptionInternal()
+   * @generated
+   */
+  int INTERACTOR_DATA_RECEPTION_INTERNAL = 67;
+
+  /**
+   * The feature id for the '<em><b>Data</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_RECEPTION_INTERNAL__DATA = INTERACTOR_DATA_RECEPTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Interactor Data Reception Internal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_RECEPTION_INTERNAL_FEATURE_COUNT = INTERACTOR_DATA_RECEPTION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataReceptionExternalImpl <em>Interactor Data Reception External</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataReceptionExternalImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataReceptionExternal()
+   * @generated
+   */
+  int INTERACTOR_DATA_RECEPTION_EXTERNAL = 68;
+
+  /**
+   * The feature id for the '<em><b>Data</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_RECEPTION_EXTERNAL__DATA = INTERACTOR_DATA_RECEPTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Source</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_RECEPTION_EXTERNAL__SOURCE = INTERACTOR_DATA_RECEPTION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Interactor Data Reception External</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_RECEPTION_EXTERNAL_FEATURE_COUNT = INTERACTOR_DATA_RECEPTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataReceptionInitImpl <em>Interactor Data Reception Init</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataReceptionInitImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataReceptionInit()
+   * @generated
+   */
+  int INTERACTOR_DATA_RECEPTION_INIT = 69;
+
+  /**
+   * The number of structural features of the '<em>Interactor Data Reception Init</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_RECEPTION_INIT_FEATURE_COUNT = INTERACTOR_DATA_RECEPTION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataEmissionInternalImpl <em>Interactor Data Emission Internal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataEmissionInternalImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataEmissionInternal()
+   * @generated
+   */
+  int INTERACTOR_DATA_EMISSION_INTERNAL = 70;
+
+  /**
+   * The feature id for the '<em><b>Data</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_EMISSION_INTERNAL__DATA = INTERACTOR_DATA_EMISSION__DATA;
+
+  /**
+   * The number of structural features of the '<em>Interactor Data Emission Internal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_EMISSION_INTERNAL_FEATURE_COUNT = INTERACTOR_DATA_EMISSION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorDataEmissionExternalImpl <em>Interactor Data Emission External</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorDataEmissionExternalImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataEmissionExternal()
+   * @generated
+   */
+  int INTERACTOR_DATA_EMISSION_EXTERNAL = 71;
+
+  /**
+   * The feature id for the '<em><b>Data</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_EMISSION_EXTERNAL__DATA = INTERACTOR_DATA_EMISSION__DATA;
+
+  /**
+   * The feature id for the '<em><b>Destination</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_EMISSION_EXTERNAL__DESTINATION = INTERACTOR_DATA_EMISSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Interactor Data Emission External</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_DATA_EMISSION_EXTERNAL_FEATURE_COUNT = INTERACTOR_DATA_EMISSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorCauseOnImpl <em>Interactor Behavior Cause On</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorBehaviorCauseOnImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorCauseOn()
+   * @generated
+   */
+  int INTERACTOR_BEHAVIOR_CAUSE_ON = 72;
+
+  /**
+   * The feature id for the '<em><b>Guard</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_CAUSE_ON__GUARD = INTERACTOR_BEHAVIOR_CAUSE__GUARD;
+
+  /**
+   * The feature id for the '<em><b>Event</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_CAUSE_ON__EVENT = INTERACTOR_BEHAVIOR_CAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Interactor Behavior Cause On</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_CAUSE_ON_FEATURE_COUNT = INTERACTOR_BEHAVIOR_CAUSE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorCauseWhenImpl <em>Interactor Behavior Cause When</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorBehaviorCauseWhenImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorCauseWhen()
+   * @generated
+   */
+  int INTERACTOR_BEHAVIOR_CAUSE_WHEN = 73;
+
+  /**
+   * The feature id for the '<em><b>Guard</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_CAUSE_WHEN__GUARD = INTERACTOR_BEHAVIOR_CAUSE__GUARD;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_CAUSE_WHEN__CONDITION = INTERACTOR_BEHAVIOR_CAUSE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Interactor Behavior Cause When</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_CAUSE_WHEN_FEATURE_COUNT = INTERACTOR_BEHAVIOR_CAUSE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorEffectAlwaysImpl <em>Interactor Behavior Effect Always</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorBehaviorEffectAlwaysImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorEffectAlways()
+   * @generated
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_ALWAYS = 74;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_ALWAYS__TARGET = INTERACTOR_BEHAVIOR_EFFECT__TARGET;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_ALWAYS__VALUE = INTERACTOR_BEHAVIOR_EFFECT__VALUE;
+
+  /**
+   * The number of structural features of the '<em>Interactor Behavior Effect Always</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_ALWAYS_FEATURE_COUNT = INTERACTOR_BEHAVIOR_EFFECT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorEffectSetImpl <em>Interactor Behavior Effect Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorBehaviorEffectSetImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorEffectSet()
+   * @generated
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_SET = 75;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_SET__TARGET = INTERACTOR_BEHAVIOR_EFFECT__TARGET;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_SET__VALUE = INTERACTOR_BEHAVIOR_EFFECT__VALUE;
+
+  /**
+   * The number of structural features of the '<em>Interactor Behavior Effect Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_SET_FEATURE_COUNT = INTERACTOR_BEHAVIOR_EFFECT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorEffectTriggerImpl <em>Interactor Behavior Effect Trigger</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.InteractorBehaviorEffectTriggerImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorEffectTrigger()
+   * @generated
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_TRIGGER = 76;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_TRIGGER__TARGET = INTERACTOR_BEHAVIOR_EFFECT__TARGET;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_TRIGGER__VALUE = INTERACTOR_BEHAVIOR_EFFECT__VALUE;
+
+  /**
+   * The number of structural features of the '<em>Interactor Behavior Effect Trigger</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTOR_BEHAVIOR_EFFECT_TRIGGER_FEATURE_COUNT = INTERACTOR_BEHAVIOR_EFFECT_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.ExpressionBinaryOperationImpl <em>Expression Binary Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1951,7 +2373,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpressionBinaryOperation()
    * @generated
    */
-  int EXPRESSION_BINARY_OPERATION = 60;
+  int EXPRESSION_BINARY_OPERATION = 77;
 
   /**
    * The feature id for the '<em><b>Left Operand</b></em>' containment reference.
@@ -1997,7 +2419,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getUnaryOperation()
    * @generated
    */
-  int UNARY_OPERATION = 61;
+  int UNARY_OPERATION = 78;
 
   /**
    * The feature id for the '<em><b>Feature</b></em>' attribute.
@@ -2027,34 +2449,6 @@ public interface LilPackage extends EPackage
   int UNARY_OPERATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link com.crubier.lil.lil.impl.LiteralDataImpl <em>Literal Data</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.crubier.lil.lil.impl.LiteralDataImpl
-   * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralData()
-   * @generated
-   */
-  int LITERAL_DATA = 62;
-
-  /**
-   * The feature id for the '<em><b>Data</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL_DATA__DATA = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Literal Data</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL_DATA_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.ExpressionIfImpl <em>Expression If</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2062,7 +2456,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpressionIf()
    * @generated
    */
-  int EXPRESSION_IF = 63;
+  int EXPRESSION_IF = 79;
 
   /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
@@ -2108,7 +2502,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpressionSwitch()
    * @generated
    */
-  int EXPRESSION_SWITCH = 64;
+  int EXPRESSION_SWITCH = 80;
 
   /**
    * The feature id for the '<em><b>Switch</b></em>' containment reference.
@@ -2154,7 +2548,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpressionForEach()
    * @generated
    */
-  int EXPRESSION_FOR_EACH = 65;
+  int EXPRESSION_FOR_EACH = 81;
 
   /**
    * The feature id for the '<em><b>For Expression</b></em>' containment reference.
@@ -2191,7 +2585,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getExpressionFunctionCall()
    * @generated
    */
-  int EXPRESSION_FUNCTION_CALL = 66;
+  int EXPRESSION_FUNCTION_CALL = 82;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -2228,7 +2622,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralBoolean()
    * @generated
    */
-  int LITERAL_BOOLEAN = 67;
+  int LITERAL_BOOLEAN = 83;
 
   /**
    * The feature id for the '<em><b>Is True</b></em>' attribute.
@@ -2256,7 +2650,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralNull()
    * @generated
    */
-  int LITERAL_NULL = 68;
+  int LITERAL_NULL = 84;
 
   /**
    * The number of structural features of the '<em>Literal Null</em>' class.
@@ -2275,7 +2669,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralNumber()
    * @generated
    */
-  int LITERAL_NUMBER = 69;
+  int LITERAL_NUMBER = 85;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2303,7 +2697,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralText()
    * @generated
    */
-  int LITERAL_TEXT = 70;
+  int LITERAL_TEXT = 86;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2331,7 +2725,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralEnum()
    * @generated
    */
-  int LITERAL_ENUM = 71;
+  int LITERAL_ENUM = 87;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -2352,6 +2746,25 @@ public interface LilPackage extends EPackage
   int LITERAL_ENUM_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link com.crubier.lil.lil.impl.LiteralTimeNowImpl <em>Literal Time Now</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.crubier.lil.lil.impl.LiteralTimeNowImpl
+   * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralTimeNow()
+   * @generated
+   */
+  int LITERAL_TIME_NOW = 88;
+
+  /**
+   * The number of structural features of the '<em>Literal Time Now</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_TIME_NOW_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link com.crubier.lil.lil.impl.LiteralTimeImpl <em>Literal Time</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2359,16 +2772,7 @@ public interface LilPackage extends EPackage
    * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralTime()
    * @generated
    */
-  int LITERAL_TIME = 72;
-
-  /**
-   * The feature id for the '<em><b>Now</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL_TIME__NOW = EXPRESSION_FEATURE_COUNT + 0;
+  int LITERAL_TIME = 89;
 
   /**
    * The feature id for the '<em><b>Year</b></em>' attribute.
@@ -2377,7 +2781,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_TIME__YEAR = EXPRESSION_FEATURE_COUNT + 1;
+  int LITERAL_TIME__YEAR = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Month</b></em>' attribute.
@@ -2386,7 +2790,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_TIME__MONTH = EXPRESSION_FEATURE_COUNT + 2;
+  int LITERAL_TIME__MONTH = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Day</b></em>' attribute.
@@ -2395,7 +2799,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_TIME__DAY = EXPRESSION_FEATURE_COUNT + 3;
+  int LITERAL_TIME__DAY = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Hour</b></em>' attribute.
@@ -2404,7 +2808,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_TIME__HOUR = EXPRESSION_FEATURE_COUNT + 4;
+  int LITERAL_TIME__HOUR = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Minute</b></em>' attribute.
@@ -2413,7 +2817,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_TIME__MINUTE = EXPRESSION_FEATURE_COUNT + 5;
+  int LITERAL_TIME__MINUTE = EXPRESSION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Second</b></em>' attribute.
@@ -2422,7 +2826,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_TIME__SECOND = EXPRESSION_FEATURE_COUNT + 6;
+  int LITERAL_TIME__SECOND = EXPRESSION_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Literal Time</em>' class.
@@ -2431,7 +2835,7 @@ public interface LilPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LITERAL_TIME_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 7;
+  int LITERAL_TIME_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 6;
 
 
   /**
@@ -2443,6 +2847,28 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EClass getLilModel();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.LilModel#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.crubier.lil.lil.LilModel#getName()
+   * @see #getLilModel()
+   * @generated
+   */
+  EAttribute getLilModel_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.LilModel#getImports <em>Imports</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Imports</em>'.
+   * @see com.crubier.lil.lil.LilModel#getImports()
+   * @see #getLilModel()
+   * @generated
+   */
+  EReference getLilModel_Imports();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.LilModel#getActorType <em>Actor Type</em>}'.
@@ -2476,6 +2902,27 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EReference getLilModel_InteractorType();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.ImportStatement <em>Import Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import Statement</em>'.
+   * @see com.crubier.lil.lil.ImportStatement
+   * @generated
+   */
+  EClass getImportStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.ImportStatement#getImportedNamespace <em>Imported Namespace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see com.crubier.lil.lil.ImportStatement#getImportedNamespace()
+   * @see #getImportStatement()
+   * @generated
+   */
+  EAttribute getImportStatement_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.ActorTypeDefinition <em>Actor Type Definition</em>}'.
@@ -2520,36 +2967,36 @@ public interface LilPackage extends EPackage
   EClass getActorType();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.ActorInstanceDeclaration <em>Actor Instance Declaration</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.ActorComponentDeclaration <em>Actor Component Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Actor Instance Declaration</em>'.
-   * @see com.crubier.lil.lil.ActorInstanceDeclaration
+   * @return the meta object for class '<em>Actor Component Declaration</em>'.
+   * @see com.crubier.lil.lil.ActorComponentDeclaration
    * @generated
    */
-  EClass getActorInstanceDeclaration();
+  EClass getActorComponentDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.ActorInstanceDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.ActorComponentDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.crubier.lil.lil.ActorInstanceDeclaration#getName()
-   * @see #getActorInstanceDeclaration()
+   * @see com.crubier.lil.lil.ActorComponentDeclaration#getName()
+   * @see #getActorComponentDeclaration()
    * @generated
    */
-  EAttribute getActorInstanceDeclaration_Name();
+  EAttribute getActorComponentDeclaration_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.ActorInstanceDeclaration#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.ActorComponentDeclaration#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see com.crubier.lil.lil.ActorInstanceDeclaration#getType()
-   * @see #getActorInstanceDeclaration()
+   * @see com.crubier.lil.lil.ActorComponentDeclaration#getType()
+   * @see #getActorComponentDeclaration()
    * @generated
    */
-  EReference getActorInstanceDeclaration_Type();
+  EReference getActorComponentDeclaration_Type();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeDefinition <em>Data Type Definition</em>}'.
@@ -2614,6 +3061,17 @@ public interface LilPackage extends EPackage
   EClass getDataTypeSymbolDefinitionSetElement();
 
   /**
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataTypeSymbolDefinitionSetElement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.crubier.lil.lil.DataTypeSymbolDefinitionSetElement#getName()
+   * @see #getDataTypeSymbolDefinitionSetElement()
+   * @generated
+   */
+  EAttribute getDataTypeSymbolDefinitionSetElement_Name();
+
+  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeNumberDefinitionSet <em>Data Type Number Definition Set</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2654,36 +3112,36 @@ public interface LilPackage extends EPackage
   EClass getDataTypeIdentifierDefinitionSet();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.DataInstanceDeclaration <em>Data Instance Declaration</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.DataComponentDeclaration <em>Data Component Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Instance Declaration</em>'.
-   * @see com.crubier.lil.lil.DataInstanceDeclaration
+   * @return the meta object for class '<em>Data Component Declaration</em>'.
+   * @see com.crubier.lil.lil.DataComponentDeclaration
    * @generated
    */
-  EClass getDataInstanceDeclaration();
+  EClass getDataComponentDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataInstanceDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataComponentDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.crubier.lil.lil.DataInstanceDeclaration#getName()
-   * @see #getDataInstanceDeclaration()
+   * @see com.crubier.lil.lil.DataComponentDeclaration#getName()
+   * @see #getDataComponentDeclaration()
    * @generated
    */
-  EAttribute getDataInstanceDeclaration_Name();
+  EAttribute getDataComponentDeclaration_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.DataInstanceDeclaration#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.DataComponentDeclaration#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see com.crubier.lil.lil.DataInstanceDeclaration#getType()
-   * @see #getDataInstanceDeclaration()
+   * @see com.crubier.lil.lil.DataComponentDeclaration#getType()
+   * @see #getDataComponentDeclaration()
    * @generated
    */
-  EReference getDataInstanceDeclaration_Type();
+  EReference getDataComponentDeclaration_Type();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorTypeDefinition <em>Interactor Type Definition</em>}'.
@@ -2761,357 +3219,194 @@ public interface LilPackage extends EPackage
   EClass getInteractorType();
 
   /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorType#getCustom <em>Custom</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntityDeclaration <em>Interactor Entity Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Custom</em>'.
-   * @see com.crubier.lil.lil.InteractorType#getCustom()
-   * @see #getInteractorType()
+   * @return the meta object for class '<em>Interactor Entity Declaration</em>'.
+   * @see com.crubier.lil.lil.InteractorEntityDeclaration
    * @generated
    */
-  EReference getInteractorType_Custom();
+  EClass getInteractorEntityDeclaration();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorActor <em>Interactor Actor</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Actor</em>'.
-   * @see com.crubier.lil.lil.InteractorActor
-   * @generated
-   */
-  EClass getInteractorActor();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorActor#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see com.crubier.lil.lil.InteractorActor#getType()
-   * @see #getInteractorActor()
-   * @generated
-   */
-  EReference getInteractorActor_Type();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorData <em>Interactor Data</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Data</em>'.
-   * @see com.crubier.lil.lil.InteractorData
-   * @generated
-   */
-  EClass getInteractorData();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.InteractorData#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.InteractorEntityDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.crubier.lil.lil.InteractorData#getName()
-   * @see #getInteractorData()
+   * @see com.crubier.lil.lil.InteractorEntityDeclaration#getName()
+   * @see #getInteractorEntityDeclaration()
    * @generated
    */
-  EAttribute getInteractorData_Name();
+  EAttribute getInteractorEntityDeclaration_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorData#getType <em>Type</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataDeclaration <em>Interactor Data Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see com.crubier.lil.lil.InteractorData#getType()
-   * @see #getInteractorData()
+   * @return the meta object for class '<em>Interactor Data Declaration</em>'.
+   * @see com.crubier.lil.lil.InteractorDataDeclaration
    * @generated
    */
-  EReference getInteractorData_Type();
+  EClass getInteractorDataDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.InteractorData#getMode <em>Mode</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Mode</em>'.
-   * @see com.crubier.lil.lil.InteractorData#getMode()
-   * @see #getInteractorData()
-   * @generated
-   */
-  EAttribute getInteractorData_Mode();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorData#getSource <em>Source</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Source</em>'.
-   * @see com.crubier.lil.lil.InteractorData#getSource()
-   * @see #getInteractorData()
-   * @generated
-   */
-  EReference getInteractorData_Source();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.InteractorData#getDestinations <em>Destinations</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Destinations</em>'.
-   * @see com.crubier.lil.lil.InteractorData#getDestinations()
-   * @see #getInteractorData()
-   * @generated
-   */
-  EReference getInteractorData_Destinations();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorSignalAlias <em>Interactor Signal Alias</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Signal Alias</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalAlias
-   * @generated
-   */
-  EClass getInteractorSignalAlias();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorSignalAlias#getSource <em>Source</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Source</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalAlias#getSource()
-   * @see #getInteractorSignalAlias()
-   * @generated
-   */
-  EReference getInteractorSignalAlias_Source();
-
-  /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorSignalAlias#getAlias <em>Alias</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Alias</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalAlias#getAlias()
-   * @see #getInteractorSignalAlias()
-   * @generated
-   */
-  EReference getInteractorSignalAlias_Alias();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorComponent <em>Interactor Component</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Component</em>'.
-   * @see com.crubier.lil.lil.InteractorComponent
-   * @generated
-   */
-  EClass getInteractorComponent();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorComponent#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see com.crubier.lil.lil.InteractorComponent#getType()
-   * @see #getInteractorComponent()
-   * @generated
-   */
-  EReference getInteractorComponent_Type();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.InteractorComponent#getActors <em>Actors</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Actors</em>'.
-   * @see com.crubier.lil.lil.InteractorComponent#getActors()
-   * @see #getInteractorComponent()
-   * @generated
-   */
-  EReference getInteractorComponent_Actors();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.AccessibleEntity <em>Accessible Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Accessible Entity</em>'.
-   * @see com.crubier.lil.lil.AccessibleEntity
-   * @generated
-   */
-  EClass getAccessibleEntity();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.AccessibleEntity#getGeneric <em>Generic</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Generic</em>'.
-   * @see com.crubier.lil.lil.AccessibleEntity#getGeneric()
-   * @see #getAccessibleEntity()
-   * @generated
-   */
-  EAttribute getAccessibleEntity_Generic();
-
-  /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.AccessibleEntity#getSpecific <em>Specific</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Specific</em>'.
-   * @see com.crubier.lil.lil.AccessibleEntity#getSpecific()
-   * @see #getAccessibleEntity()
-   * @generated
-   */
-  EReference getAccessibleEntity_Specific();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.Entity <em>Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Entity</em>'.
-   * @see com.crubier.lil.lil.Entity
-   * @generated
-   */
-  EClass getEntity();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.Entity#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.InteractorDataDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.crubier.lil.lil.Entity#getName()
-   * @see #getEntity()
+   * @see com.crubier.lil.lil.InteractorDataDeclaration#getName()
+   * @see #getInteractorDataDeclaration()
    * @generated
    */
-  EAttribute getEntity_Name();
+  EAttribute getInteractorDataDeclaration_Name();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.ActorAlias <em>Actor Alias</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorDataDeclaration#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Actor Alias</em>'.
-   * @see com.crubier.lil.lil.ActorAlias
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see com.crubier.lil.lil.InteractorDataDeclaration#getType()
+   * @see #getInteractorDataDeclaration()
    * @generated
    */
-  EClass getActorAlias();
+  EReference getInteractorDataDeclaration_Type();
 
   /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.ActorAlias#getSource <em>Source</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorActorAlias <em>Interactor Actor Alias</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Source</em>'.
-   * @see com.crubier.lil.lil.ActorAlias#getSource()
-   * @see #getActorAlias()
+   * @return the meta object for class '<em>Interactor Actor Alias</em>'.
+   * @see com.crubier.lil.lil.InteractorActorAlias
    * @generated
    */
-  EReference getActorAlias_Source();
+  EClass getInteractorActorAlias();
 
   /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.ActorAlias#getAlias <em>Alias</em>}'.
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorActorAlias#getActor <em>Actor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Actor</em>'.
+   * @see com.crubier.lil.lil.InteractorActorAlias#getActor()
+   * @see #getInteractorActorAlias()
+   * @generated
+   */
+  EReference getInteractorActorAlias_Actor();
+
+  /**
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorActorAlias#getAlias <em>Alias</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Alias</em>'.
-   * @see com.crubier.lil.lil.ActorAlias#getAlias()
-   * @see #getActorAlias()
+   * @see com.crubier.lil.lil.InteractorActorAlias#getAlias()
+   * @see #getInteractorActorAlias()
    * @generated
    */
-  EReference getActorAlias_Alias();
+  EReference getInteractorActorAlias_Alias();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorSignalReception <em>Interactor Signal Reception</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataAlias <em>Interactor Data Alias</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Signal Reception</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalReception
+   * @return the meta object for class '<em>Interactor Data Alias</em>'.
+   * @see com.crubier.lil.lil.InteractorDataAlias
    * @generated
    */
-  EClass getInteractorSignalReception();
+  EClass getInteractorDataAlias();
 
   /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorSignalReception#getInstance <em>Instance</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorDataAlias#getEntity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Instance</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalReception#getInstance()
-   * @see #getInteractorSignalReception()
+   * @return the meta object for the containment reference '<em>Entity</em>'.
+   * @see com.crubier.lil.lil.InteractorDataAlias#getEntity()
+   * @see #getInteractorDataAlias()
    * @generated
    */
-  EReference getInteractorSignalReception_Instance();
+  EReference getInteractorDataAlias_Entity();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorSignalReception#getSource <em>Source</em>}'.
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorDataAlias#getAlias <em>Alias</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Source</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalReception#getSource()
-   * @see #getInteractorSignalReception()
+   * @return the meta object for the reference '<em>Alias</em>'.
+   * @see com.crubier.lil.lil.InteractorDataAlias#getAlias()
+   * @see #getInteractorDataAlias()
    * @generated
    */
-  EReference getInteractorSignalReception_Source();
+  EReference getInteractorDataAlias_Alias();
 
   /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.InteractorSignalReception#isInit <em>Init</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntity <em>Interactor Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Init</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalReception#isInit()
-   * @see #getInteractorSignalReception()
+   * @return the meta object for class '<em>Interactor Entity</em>'.
+   * @see com.crubier.lil.lil.InteractorEntity
    * @generated
    */
-  EAttribute getInteractorSignalReception_Init();
+  EClass getInteractorEntity();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorSignalEmission <em>Interactor Signal Emission</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataReception <em>Interactor Data Reception</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Signal Emission</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalEmission
+   * @return the meta object for class '<em>Interactor Data Reception</em>'.
+   * @see com.crubier.lil.lil.InteractorDataReception
    * @generated
    */
-  EClass getInteractorSignalEmission();
+  EClass getInteractorDataReception();
 
   /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorSignalEmission#getInstance <em>Instance</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataEmission <em>Interactor Data Emission</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Instance</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalEmission#getInstance()
-   * @see #getInteractorSignalEmission()
+   * @return the meta object for class '<em>Interactor Data Emission</em>'.
+   * @see com.crubier.lil.lil.InteractorDataEmission
    * @generated
    */
-  EReference getInteractorSignalEmission_Instance();
+  EClass getInteractorDataEmission();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorSignalEmission#getDestination <em>Destination</em>}'.
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorDataEmission#getData <em>Data</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Destination</em>'.
-   * @see com.crubier.lil.lil.InteractorSignalEmission#getDestination()
-   * @see #getInteractorSignalEmission()
+   * @return the meta object for the reference '<em>Data</em>'.
+   * @see com.crubier.lil.lil.InteractorDataEmission#getData()
+   * @see #getInteractorDataEmission()
    * @generated
    */
-  EReference getInteractorSignalEmission_Destination();
+  EReference getInteractorDataEmission_Data();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehavior <em>Interactor Behavior</em>}'.
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorDeclaration <em>Interactor Behavior Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Behavior</em>'.
-   * @see com.crubier.lil.lil.InteractorBehavior
+   * @return the meta object for class '<em>Interactor Behavior Declaration</em>'.
+   * @see com.crubier.lil.lil.InteractorBehaviorDeclaration
    * @generated
    */
-  EClass getInteractorBehavior();
+  EClass getInteractorBehaviorDeclaration();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorBehavior#getCause <em>Cause</em>}'.
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorBehaviorDeclaration#getCause <em>Cause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Cause</em>'.
-   * @see com.crubier.lil.lil.InteractorBehavior#getCause()
-   * @see #getInteractorBehavior()
+   * @see com.crubier.lil.lil.InteractorBehaviorDeclaration#getCause()
+   * @see #getInteractorBehaviorDeclaration()
    * @generated
    */
-  EReference getInteractorBehavior_Cause();
+  EReference getInteractorBehaviorDeclaration_Cause();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.InteractorBehavior#getEffect <em>Effect</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.InteractorBehaviorDeclaration#getEffect <em>Effect</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Effect</em>'.
-   * @see com.crubier.lil.lil.InteractorBehavior#getEffect()
-   * @see #getInteractorBehavior()
+   * @see com.crubier.lil.lil.InteractorBehaviorDeclaration#getEffect()
+   * @see #getInteractorBehaviorDeclaration()
    * @generated
    */
-  EReference getInteractorBehavior_Effect();
+  EReference getInteractorBehaviorDeclaration_Effect();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorCause <em>Interactor Behavior Cause</em>}'.
@@ -3133,48 +3428,6 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EReference getInteractorBehaviorCause_Guard();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorOnCause <em>Interactor Behavior On Cause</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Behavior On Cause</em>'.
-   * @see com.crubier.lil.lil.InteractorBehaviorOnCause
-   * @generated
-   */
-  EClass getInteractorBehaviorOnCause();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorBehaviorOnCause#getEvent <em>Event</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Event</em>'.
-   * @see com.crubier.lil.lil.InteractorBehaviorOnCause#getEvent()
-   * @see #getInteractorBehaviorOnCause()
-   * @generated
-   */
-  EReference getInteractorBehaviorOnCause_Event();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorWhenCause <em>Interactor Behavior When Cause</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Behavior When Cause</em>'.
-   * @see com.crubier.lil.lil.InteractorBehaviorWhenCause
-   * @generated
-   */
-  EClass getInteractorBehaviorWhenCause();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorBehaviorWhenCause#getCondition <em>Condition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see com.crubier.lil.lil.InteractorBehaviorWhenCause#getCondition()
-   * @see #getInteractorBehaviorWhenCause()
-   * @generated
-   */
-  EReference getInteractorBehaviorWhenCause_Condition();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorEffect <em>Interactor Behavior Effect</em>}'.
@@ -3207,36 +3460,6 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EReference getInteractorBehaviorEffect_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorAlwaysEffect <em>Interactor Behavior Always Effect</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Behavior Always Effect</em>'.
-   * @see com.crubier.lil.lil.InteractorBehaviorAlwaysEffect
-   * @generated
-   */
-  EClass getInteractorBehaviorAlwaysEffect();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorSetEffect <em>Interactor Behavior Set Effect</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Behavior Set Effect</em>'.
-   * @see com.crubier.lil.lil.InteractorBehaviorSetEffect
-   * @generated
-   */
-  EClass getInteractorBehaviorSetEffect();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorTriggerEffect <em>Interactor Behavior Trigger Effect</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interactor Behavior Trigger Effect</em>'.
-   * @see com.crubier.lil.lil.InteractorBehaviorTriggerEffect
-   * @generated
-   */
-  EClass getInteractorBehaviorTriggerEffect();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.Expression <em>Expression</em>}'.
@@ -3625,27 +3848,6 @@ public interface LilPackage extends EPackage
   EReference getDataTypeQueue_ElementType();
 
   /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.DataDefinitionEnumElement <em>Data Definition Enum Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Definition Enum Element</em>'.
-   * @see com.crubier.lil.lil.DataDefinitionEnumElement
-   * @generated
-   */
-  EClass getDataDefinitionEnumElement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.DataDefinitionEnumElement#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.crubier.lil.lil.DataDefinitionEnumElement#getName()
-   * @see #getDataDefinitionEnumElement()
-   * @generated
-   */
-  EAttribute getDataDefinitionEnumElement_Name();
-
-  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.DataTypeNumberDefinitionSetSet <em>Data Type Number Definition Set Set</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3794,6 +3996,411 @@ public interface LilPackage extends EPackage
   EReference getDataTypeIdentifierDefinitionSetSet_Element();
 
   /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorTypeCustom <em>Interactor Type Custom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Type Custom</em>'.
+   * @see com.crubier.lil.lil.InteractorTypeCustom
+   * @generated
+   */
+  EClass getInteractorTypeCustom();
+
+  /**
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorTypeCustom#getDefinition <em>Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Definition</em>'.
+   * @see com.crubier.lil.lil.InteractorTypeCustom#getDefinition()
+   * @see #getInteractorTypeCustom()
+   * @generated
+   */
+  EReference getInteractorTypeCustom_Definition();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorActorDeclaration <em>Interactor Actor Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Actor Declaration</em>'.
+   * @see com.crubier.lil.lil.InteractorActorDeclaration
+   * @generated
+   */
+  EClass getInteractorActorDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorActorDeclaration#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see com.crubier.lil.lil.InteractorActorDeclaration#getType()
+   * @see #getInteractorActorDeclaration()
+   * @generated
+   */
+  EReference getInteractorActorDeclaration_Type();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorComponentDeclaration <em>Interactor Component Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Component Declaration</em>'.
+   * @see com.crubier.lil.lil.InteractorComponentDeclaration
+   * @generated
+   */
+  EClass getInteractorComponentDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorComponentDeclaration#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see com.crubier.lil.lil.InteractorComponentDeclaration#getType()
+   * @see #getInteractorComponentDeclaration()
+   * @generated
+   */
+  EReference getInteractorComponentDeclaration_Type();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.InteractorComponentDeclaration#getActors <em>Actors</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Actors</em>'.
+   * @see com.crubier.lil.lil.InteractorComponentDeclaration#getActors()
+   * @see #getInteractorComponentDeclaration()
+   * @generated
+   */
+  EReference getInteractorComponentDeclaration_Actors();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataDeclarationEvent <em>Interactor Data Declaration Event</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Data Declaration Event</em>'.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationEvent
+   * @generated
+   */
+  EClass getInteractorDataDeclarationEvent();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorDataDeclarationEvent#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Source</em>'.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationEvent#getSource()
+   * @see #getInteractorDataDeclarationEvent()
+   * @generated
+   */
+  EReference getInteractorDataDeclarationEvent_Source();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.InteractorDataDeclarationEvent#getDestinations <em>Destinations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Destinations</em>'.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationEvent#getDestinations()
+   * @see #getInteractorDataDeclarationEvent()
+   * @generated
+   */
+  EReference getInteractorDataDeclarationEvent_Destinations();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataDeclarationFlow <em>Interactor Data Declaration Flow</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Data Declaration Flow</em>'.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationFlow
+   * @generated
+   */
+  EClass getInteractorDataDeclarationFlow();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorDataDeclarationFlow#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Source</em>'.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationFlow#getSource()
+   * @see #getInteractorDataDeclarationFlow()
+   * @generated
+   */
+  EReference getInteractorDataDeclarationFlow_Source();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.crubier.lil.lil.InteractorDataDeclarationFlow#getDestinations <em>Destinations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Destinations</em>'.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationFlow#getDestinations()
+   * @see #getInteractorDataDeclarationFlow()
+   * @generated
+   */
+  EReference getInteractorDataDeclarationFlow_Destinations();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataDeclarationConstant <em>Interactor Data Declaration Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Data Declaration Constant</em>'.
+   * @see com.crubier.lil.lil.InteractorDataDeclarationConstant
+   * @generated
+   */
+  EClass getInteractorDataDeclarationConstant();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntityAny <em>Interactor Entity Any</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Entity Any</em>'.
+   * @see com.crubier.lil.lil.InteractorEntityAny
+   * @generated
+   */
+  EClass getInteractorEntityAny();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntitySelf <em>Interactor Entity Self</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Entity Self</em>'.
+   * @see com.crubier.lil.lil.InteractorEntitySelf
+   * @generated
+   */
+  EClass getInteractorEntitySelf();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntityOther <em>Interactor Entity Other</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Entity Other</em>'.
+   * @see com.crubier.lil.lil.InteractorEntityOther
+   * @generated
+   */
+  EClass getInteractorEntityOther();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntityParent <em>Interactor Entity Parent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Entity Parent</em>'.
+   * @see com.crubier.lil.lil.InteractorEntityParent
+   * @generated
+   */
+  EClass getInteractorEntityParent();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntityChild <em>Interactor Entity Child</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Entity Child</em>'.
+   * @see com.crubier.lil.lil.InteractorEntityChild
+   * @generated
+   */
+  EClass getInteractorEntityChild();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntityAll <em>Interactor Entity All</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Entity All</em>'.
+   * @see com.crubier.lil.lil.InteractorEntityAll
+   * @generated
+   */
+  EClass getInteractorEntityAll();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntityActors <em>Interactor Entity Actors</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Entity Actors</em>'.
+   * @see com.crubier.lil.lil.InteractorEntityActors
+   * @generated
+   */
+  EClass getInteractorEntityActors();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorEntitySpecific <em>Interactor Entity Specific</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Entity Specific</em>'.
+   * @see com.crubier.lil.lil.InteractorEntitySpecific
+   * @generated
+   */
+  EClass getInteractorEntitySpecific();
+
+  /**
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorEntitySpecific#getEntity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entity</em>'.
+   * @see com.crubier.lil.lil.InteractorEntitySpecific#getEntity()
+   * @see #getInteractorEntitySpecific()
+   * @generated
+   */
+  EReference getInteractorEntitySpecific_Entity();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataReceptionInternal <em>Interactor Data Reception Internal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Data Reception Internal</em>'.
+   * @see com.crubier.lil.lil.InteractorDataReceptionInternal
+   * @generated
+   */
+  EClass getInteractorDataReceptionInternal();
+
+  /**
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorDataReceptionInternal#getData <em>Data</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Data</em>'.
+   * @see com.crubier.lil.lil.InteractorDataReceptionInternal#getData()
+   * @see #getInteractorDataReceptionInternal()
+   * @generated
+   */
+  EReference getInteractorDataReceptionInternal_Data();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataReceptionExternal <em>Interactor Data Reception External</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Data Reception External</em>'.
+   * @see com.crubier.lil.lil.InteractorDataReceptionExternal
+   * @generated
+   */
+  EClass getInteractorDataReceptionExternal();
+
+  /**
+   * Returns the meta object for the reference '{@link com.crubier.lil.lil.InteractorDataReceptionExternal#getData <em>Data</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Data</em>'.
+   * @see com.crubier.lil.lil.InteractorDataReceptionExternal#getData()
+   * @see #getInteractorDataReceptionExternal()
+   * @generated
+   */
+  EReference getInteractorDataReceptionExternal_Data();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorDataReceptionExternal#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Source</em>'.
+   * @see com.crubier.lil.lil.InteractorDataReceptionExternal#getSource()
+   * @see #getInteractorDataReceptionExternal()
+   * @generated
+   */
+  EReference getInteractorDataReceptionExternal_Source();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataReceptionInit <em>Interactor Data Reception Init</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Data Reception Init</em>'.
+   * @see com.crubier.lil.lil.InteractorDataReceptionInit
+   * @generated
+   */
+  EClass getInteractorDataReceptionInit();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataEmissionInternal <em>Interactor Data Emission Internal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Data Emission Internal</em>'.
+   * @see com.crubier.lil.lil.InteractorDataEmissionInternal
+   * @generated
+   */
+  EClass getInteractorDataEmissionInternal();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorDataEmissionExternal <em>Interactor Data Emission External</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Data Emission External</em>'.
+   * @see com.crubier.lil.lil.InteractorDataEmissionExternal
+   * @generated
+   */
+  EClass getInteractorDataEmissionExternal();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorDataEmissionExternal#getDestination <em>Destination</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Destination</em>'.
+   * @see com.crubier.lil.lil.InteractorDataEmissionExternal#getDestination()
+   * @see #getInteractorDataEmissionExternal()
+   * @generated
+   */
+  EReference getInteractorDataEmissionExternal_Destination();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorCauseOn <em>Interactor Behavior Cause On</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Behavior Cause On</em>'.
+   * @see com.crubier.lil.lil.InteractorBehaviorCauseOn
+   * @generated
+   */
+  EClass getInteractorBehaviorCauseOn();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorBehaviorCauseOn#getEvent <em>Event</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Event</em>'.
+   * @see com.crubier.lil.lil.InteractorBehaviorCauseOn#getEvent()
+   * @see #getInteractorBehaviorCauseOn()
+   * @generated
+   */
+  EReference getInteractorBehaviorCauseOn_Event();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorCauseWhen <em>Interactor Behavior Cause When</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Behavior Cause When</em>'.
+   * @see com.crubier.lil.lil.InteractorBehaviorCauseWhen
+   * @generated
+   */
+  EClass getInteractorBehaviorCauseWhen();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.crubier.lil.lil.InteractorBehaviorCauseWhen#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see com.crubier.lil.lil.InteractorBehaviorCauseWhen#getCondition()
+   * @see #getInteractorBehaviorCauseWhen()
+   * @generated
+   */
+  EReference getInteractorBehaviorCauseWhen_Condition();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorEffectAlways <em>Interactor Behavior Effect Always</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Behavior Effect Always</em>'.
+   * @see com.crubier.lil.lil.InteractorBehaviorEffectAlways
+   * @generated
+   */
+  EClass getInteractorBehaviorEffectAlways();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorEffectSet <em>Interactor Behavior Effect Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Behavior Effect Set</em>'.
+   * @see com.crubier.lil.lil.InteractorBehaviorEffectSet
+   * @generated
+   */
+  EClass getInteractorBehaviorEffectSet();
+
+  /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.InteractorBehaviorEffectTrigger <em>Interactor Behavior Effect Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interactor Behavior Effect Trigger</em>'.
+   * @see com.crubier.lil.lil.InteractorBehaviorEffectTrigger
+   * @generated
+   */
+  EClass getInteractorBehaviorEffectTrigger();
+
+  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.ExpressionBinaryOperation <em>Expression Binary Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3867,27 +4474,6 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EReference getUnaryOperation_Operand();
-
-  /**
-   * Returns the meta object for class '{@link com.crubier.lil.lil.LiteralData <em>Literal Data</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Literal Data</em>'.
-   * @see com.crubier.lil.lil.LiteralData
-   * @generated
-   */
-  EClass getLiteralData();
-
-  /**
-   * Returns the meta object for the reference '{@link com.crubier.lil.lil.LiteralData#getData <em>Data</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Data</em>'.
-   * @see com.crubier.lil.lil.LiteralData#getData()
-   * @see #getLiteralData()
-   * @generated
-   */
-  EReference getLiteralData_Data();
 
   /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.ExpressionIf <em>Expression If</em>}'.
@@ -4134,6 +4720,16 @@ public interface LilPackage extends EPackage
   EReference getLiteralEnum_Value();
 
   /**
+   * Returns the meta object for class '{@link com.crubier.lil.lil.LiteralTimeNow <em>Literal Time Now</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Literal Time Now</em>'.
+   * @see com.crubier.lil.lil.LiteralTimeNow
+   * @generated
+   */
+  EClass getLiteralTimeNow();
+
+  /**
    * Returns the meta object for class '{@link com.crubier.lil.lil.LiteralTime <em>Literal Time</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4142,17 +4738,6 @@ public interface LilPackage extends EPackage
    * @generated
    */
   EClass getLiteralTime();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.crubier.lil.lil.LiteralTime#isNow <em>Now</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Now</em>'.
-   * @see com.crubier.lil.lil.LiteralTime#isNow()
-   * @see #getLiteralTime()
-   * @generated
-   */
-  EAttribute getLiteralTime_Now();
 
   /**
    * Returns the meta object for the attribute '{@link com.crubier.lil.lil.LiteralTime#getYear <em>Year</em>}'.
@@ -4254,6 +4839,22 @@ public interface LilPackage extends EPackage
     EClass LIL_MODEL = eINSTANCE.getLilModel();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIL_MODEL__NAME = eINSTANCE.getLilModel_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIL_MODEL__IMPORTS = eINSTANCE.getLilModel_Imports();
+
+    /**
      * The meta object literal for the '<em><b>Actor Type</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4276,6 +4877,24 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EReference LIL_MODEL__INTERACTOR_TYPE = eINSTANCE.getLilModel_InteractorType();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.ImportStatementImpl <em>Import Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.ImportStatementImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getImportStatement()
+     * @generated
+     */
+    EClass IMPORT_STATEMENT = eINSTANCE.getImportStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_STATEMENT__IMPORTED_NAMESPACE = eINSTANCE.getImportStatement_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.ActorTypeDefinitionImpl <em>Actor Type Definition</em>}' class.
@@ -4314,14 +4933,14 @@ public interface LilPackage extends EPackage
     EClass ACTOR_TYPE = eINSTANCE.getActorType();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.ActorInstanceDeclarationImpl <em>Actor Instance Declaration</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.ActorComponentDeclarationImpl <em>Actor Component Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.ActorInstanceDeclarationImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorInstanceDeclaration()
+     * @see com.crubier.lil.lil.impl.ActorComponentDeclarationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorComponentDeclaration()
      * @generated
      */
-    EClass ACTOR_INSTANCE_DECLARATION = eINSTANCE.getActorInstanceDeclaration();
+    EClass ACTOR_COMPONENT_DECLARATION = eINSTANCE.getActorComponentDeclaration();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4329,7 +4948,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTOR_INSTANCE_DECLARATION__NAME = eINSTANCE.getActorInstanceDeclaration_Name();
+    EAttribute ACTOR_COMPONENT_DECLARATION__NAME = eINSTANCE.getActorComponentDeclaration_Name();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -4337,7 +4956,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTOR_INSTANCE_DECLARATION__TYPE = eINSTANCE.getActorInstanceDeclaration_Type();
+    EReference ACTOR_COMPONENT_DECLARATION__TYPE = eINSTANCE.getActorComponentDeclaration_Type();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeDefinitionImpl <em>Data Type Definition</em>}' class.
@@ -4396,6 +5015,14 @@ public interface LilPackage extends EPackage
     EClass DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT = eINSTANCE.getDataTypeSymbolDefinitionSetElement();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_TYPE_SYMBOL_DEFINITION_SET_ELEMENT__NAME = eINSTANCE.getDataTypeSymbolDefinitionSetElement_Name();
+
+    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeNumberDefinitionSetImpl <em>Data Type Number Definition Set</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4436,14 +5063,14 @@ public interface LilPackage extends EPackage
     EClass DATA_TYPE_IDENTIFIER_DEFINITION_SET = eINSTANCE.getDataTypeIdentifierDefinitionSet();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataInstanceDeclarationImpl <em>Data Instance Declaration</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataComponentDeclarationImpl <em>Data Component Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.DataInstanceDeclarationImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataInstanceDeclaration()
+     * @see com.crubier.lil.lil.impl.DataComponentDeclarationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataComponentDeclaration()
      * @generated
      */
-    EClass DATA_INSTANCE_DECLARATION = eINSTANCE.getDataInstanceDeclaration();
+    EClass DATA_COMPONENT_DECLARATION = eINSTANCE.getDataComponentDeclaration();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4451,7 +5078,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATA_INSTANCE_DECLARATION__NAME = eINSTANCE.getDataInstanceDeclaration_Name();
+    EAttribute DATA_COMPONENT_DECLARATION__NAME = eINSTANCE.getDataComponentDeclaration_Name();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -4459,7 +5086,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DATA_INSTANCE_DECLARATION__TYPE = eINSTANCE.getDataInstanceDeclaration_Type();
+    EReference DATA_COMPONENT_DECLARATION__TYPE = eINSTANCE.getDataComponentDeclaration_Type();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorTypeDefinitionImpl <em>Interactor Type Definition</em>}' class.
@@ -4522,40 +5149,14 @@ public interface LilPackage extends EPackage
     EClass INTERACTOR_TYPE = eINSTANCE.getInteractorType();
 
     /**
-     * The meta object literal for the '<em><b>Custom</b></em>' reference feature.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntityDeclarationImpl <em>Interactor Entity Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorEntityDeclarationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityDeclaration()
      * @generated
      */
-    EReference INTERACTOR_TYPE__CUSTOM = eINSTANCE.getInteractorType_Custom();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorActorImpl <em>Interactor Actor</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorActorImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorActor()
-     * @generated
-     */
-    EClass INTERACTOR_ACTOR = eINSTANCE.getInteractorActor();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_ACTOR__TYPE = eINSTANCE.getInteractorActor_Type();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataImpl <em>Interactor Data</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorDataImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorData()
-     * @generated
-     */
-    EClass INTERACTOR_DATA = eINSTANCE.getInteractorData();
+    EClass INTERACTOR_ENTITY_DECLARATION = eINSTANCE.getInteractorEntityDeclaration();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4563,127 +5164,17 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INTERACTOR_DATA__NAME = eINSTANCE.getInteractorData_Name();
+    EAttribute INTERACTOR_ENTITY_DECLARATION__NAME = eINSTANCE.getInteractorEntityDeclaration_Name();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataDeclarationImpl <em>Interactor Data Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataDeclarationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataDeclaration()
      * @generated
      */
-    EReference INTERACTOR_DATA__TYPE = eINSTANCE.getInteractorData_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTERACTOR_DATA__MODE = eINSTANCE.getInteractorData_Mode();
-
-    /**
-     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_DATA__SOURCE = eINSTANCE.getInteractorData_Source();
-
-    /**
-     * The meta object literal for the '<em><b>Destinations</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_DATA__DESTINATIONS = eINSTANCE.getInteractorData_Destinations();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorSignalAliasImpl <em>Interactor Signal Alias</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorSignalAliasImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorSignalAlias()
-     * @generated
-     */
-    EClass INTERACTOR_SIGNAL_ALIAS = eINSTANCE.getInteractorSignalAlias();
-
-    /**
-     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_SIGNAL_ALIAS__SOURCE = eINSTANCE.getInteractorSignalAlias_Source();
-
-    /**
-     * The meta object literal for the '<em><b>Alias</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_SIGNAL_ALIAS__ALIAS = eINSTANCE.getInteractorSignalAlias_Alias();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorComponentImpl <em>Interactor Component</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorComponentImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorComponent()
-     * @generated
-     */
-    EClass INTERACTOR_COMPONENT = eINSTANCE.getInteractorComponent();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_COMPONENT__TYPE = eINSTANCE.getInteractorComponent_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Actors</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_COMPONENT__ACTORS = eINSTANCE.getInteractorComponent_Actors();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.AccessibleEntityImpl <em>Accessible Entity</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.AccessibleEntityImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getAccessibleEntity()
-     * @generated
-     */
-    EClass ACCESSIBLE_ENTITY = eINSTANCE.getAccessibleEntity();
-
-    /**
-     * The meta object literal for the '<em><b>Generic</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACCESSIBLE_ENTITY__GENERIC = eINSTANCE.getAccessibleEntity_Generic();
-
-    /**
-     * The meta object literal for the '<em><b>Specific</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACCESSIBLE_ENTITY__SPECIFIC = eINSTANCE.getAccessibleEntity_Specific();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.EntityImpl <em>Entity</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.EntityImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getEntity()
-     * @generated
-     */
-    EClass ENTITY = eINSTANCE.getEntity();
+    EClass INTERACTOR_DATA_DECLARATION = eINSTANCE.getInteractorDataDeclaration();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -4691,25 +5182,33 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
+    EAttribute INTERACTOR_DATA_DECLARATION__NAME = eINSTANCE.getInteractorDataDeclaration_Name();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.ActorAliasImpl <em>Actor Alias</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.ActorAliasImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getActorAlias()
-     * @generated
-     */
-    EClass ACTOR_ALIAS = eINSTANCE.getActorAlias();
-
-    /**
-     * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTOR_ALIAS__SOURCE = eINSTANCE.getActorAlias_Source();
+    EReference INTERACTOR_DATA_DECLARATION__TYPE = eINSTANCE.getInteractorDataDeclaration_Type();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorActorAliasImpl <em>Interactor Actor Alias</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorActorAliasImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorActorAlias()
+     * @generated
+     */
+    EClass INTERACTOR_ACTOR_ALIAS = eINSTANCE.getInteractorActorAlias();
+
+    /**
+     * The meta object literal for the '<em><b>Actor</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_ACTOR_ALIAS__ACTOR = eINSTANCE.getInteractorActorAlias_Actor();
 
     /**
      * The meta object literal for the '<em><b>Alias</b></em>' reference feature.
@@ -4717,77 +5216,81 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTOR_ALIAS__ALIAS = eINSTANCE.getActorAlias_Alias();
+    EReference INTERACTOR_ACTOR_ALIAS__ALIAS = eINSTANCE.getInteractorActorAlias_Alias();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorSignalReceptionImpl <em>Interactor Signal Reception</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataAliasImpl <em>Interactor Data Alias</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorSignalReceptionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorSignalReception()
+     * @see com.crubier.lil.lil.impl.InteractorDataAliasImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataAlias()
      * @generated
      */
-    EClass INTERACTOR_SIGNAL_RECEPTION = eINSTANCE.getInteractorSignalReception();
+    EClass INTERACTOR_DATA_ALIAS = eINSTANCE.getInteractorDataAlias();
 
     /**
-     * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_SIGNAL_RECEPTION__INSTANCE = eINSTANCE.getInteractorSignalReception_Instance();
-
-    /**
-     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Entity</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INTERACTOR_SIGNAL_RECEPTION__SOURCE = eINSTANCE.getInteractorSignalReception_Source();
+    EReference INTERACTOR_DATA_ALIAS__ENTITY = eINSTANCE.getInteractorDataAlias_Entity();
 
     /**
-     * The meta object literal for the '<em><b>Init</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Alias</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INTERACTOR_SIGNAL_RECEPTION__INIT = eINSTANCE.getInteractorSignalReception_Init();
+    EReference INTERACTOR_DATA_ALIAS__ALIAS = eINSTANCE.getInteractorDataAlias_Alias();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorSignalEmissionImpl <em>Interactor Signal Emission</em>}' class.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntityImpl <em>Interactor Entity</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorSignalEmissionImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorSignalEmission()
+     * @see com.crubier.lil.lil.impl.InteractorEntityImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntity()
      * @generated
      */
-    EClass INTERACTOR_SIGNAL_EMISSION = eINSTANCE.getInteractorSignalEmission();
+    EClass INTERACTOR_ENTITY = eINSTANCE.getInteractorEntity();
 
     /**
-     * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataReceptionImpl <em>Interactor Data Reception</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataReceptionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataReception()
      * @generated
      */
-    EReference INTERACTOR_SIGNAL_EMISSION__INSTANCE = eINSTANCE.getInteractorSignalEmission_Instance();
+    EClass INTERACTOR_DATA_RECEPTION = eINSTANCE.getInteractorDataReception();
 
     /**
-     * The meta object literal for the '<em><b>Destination</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataEmissionImpl <em>Interactor Data Emission</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataEmissionImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataEmission()
      * @generated
      */
-    EReference INTERACTOR_SIGNAL_EMISSION__DESTINATION = eINSTANCE.getInteractorSignalEmission_Destination();
+    EClass INTERACTOR_DATA_EMISSION = eINSTANCE.getInteractorDataEmission();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorImpl <em>Interactor Behavior</em>}' class.
+     * The meta object literal for the '<em><b>Data</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorBehaviorImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehavior()
      * @generated
      */
-    EClass INTERACTOR_BEHAVIOR = eINSTANCE.getInteractorBehavior();
+    EReference INTERACTOR_DATA_EMISSION__DATA = eINSTANCE.getInteractorDataEmission_Data();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorDeclarationImpl <em>Interactor Behavior Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorBehaviorDeclarationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorDeclaration()
+     * @generated
+     */
+    EClass INTERACTOR_BEHAVIOR_DECLARATION = eINSTANCE.getInteractorBehaviorDeclaration();
 
     /**
      * The meta object literal for the '<em><b>Cause</b></em>' containment reference feature.
@@ -4795,7 +5298,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INTERACTOR_BEHAVIOR__CAUSE = eINSTANCE.getInteractorBehavior_Cause();
+    EReference INTERACTOR_BEHAVIOR_DECLARATION__CAUSE = eINSTANCE.getInteractorBehaviorDeclaration_Cause();
 
     /**
      * The meta object literal for the '<em><b>Effect</b></em>' containment reference list feature.
@@ -4803,7 +5306,7 @@ public interface LilPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INTERACTOR_BEHAVIOR__EFFECT = eINSTANCE.getInteractorBehavior_Effect();
+    EReference INTERACTOR_BEHAVIOR_DECLARATION__EFFECT = eINSTANCE.getInteractorBehaviorDeclaration_Effect();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorCauseImpl <em>Interactor Behavior Cause</em>}' class.
@@ -4822,42 +5325,6 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EReference INTERACTOR_BEHAVIOR_CAUSE__GUARD = eINSTANCE.getInteractorBehaviorCause_Guard();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorOnCauseImpl <em>Interactor Behavior On Cause</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorBehaviorOnCauseImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorOnCause()
-     * @generated
-     */
-    EClass INTERACTOR_BEHAVIOR_ON_CAUSE = eINSTANCE.getInteractorBehaviorOnCause();
-
-    /**
-     * The meta object literal for the '<em><b>Event</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_BEHAVIOR_ON_CAUSE__EVENT = eINSTANCE.getInteractorBehaviorOnCause_Event();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorWhenCauseImpl <em>Interactor Behavior When Cause</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorBehaviorWhenCauseImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorWhenCause()
-     * @generated
-     */
-    EClass INTERACTOR_BEHAVIOR_WHEN_CAUSE = eINSTANCE.getInteractorBehaviorWhenCause();
-
-    /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERACTOR_BEHAVIOR_WHEN_CAUSE__CONDITION = eINSTANCE.getInteractorBehaviorWhenCause_Condition();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorEffectImpl <em>Interactor Behavior Effect</em>}' class.
@@ -4884,36 +5351,6 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EReference INTERACTOR_BEHAVIOR_EFFECT__VALUE = eINSTANCE.getInteractorBehaviorEffect_Value();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorAlwaysEffectImpl <em>Interactor Behavior Always Effect</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorBehaviorAlwaysEffectImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorAlwaysEffect()
-     * @generated
-     */
-    EClass INTERACTOR_BEHAVIOR_ALWAYS_EFFECT = eINSTANCE.getInteractorBehaviorAlwaysEffect();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorSetEffectImpl <em>Interactor Behavior Set Effect</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorBehaviorSetEffectImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorSetEffect()
-     * @generated
-     */
-    EClass INTERACTOR_BEHAVIOR_SET_EFFECT = eINSTANCE.getInteractorBehaviorSetEffect();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorTriggerEffectImpl <em>Interactor Behavior Trigger Effect</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.InteractorBehaviorTriggerEffectImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorTriggerEffect()
-     * @generated
-     */
-    EClass INTERACTOR_BEHAVIOR_TRIGGER_EFFECT = eINSTANCE.getInteractorBehaviorTriggerEffect();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -5254,24 +5691,6 @@ public interface LilPackage extends EPackage
     EReference DATA_TYPE_QUEUE__ELEMENT_TYPE = eINSTANCE.getDataTypeQueue_ElementType();
 
     /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataDefinitionEnumElementImpl <em>Data Definition Enum Element</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.DataDefinitionEnumElementImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getDataDefinitionEnumElement()
-     * @generated
-     */
-    EClass DATA_DEFINITION_ENUM_ELEMENT = eINSTANCE.getDataDefinitionEnumElement();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DATA_DEFINITION_ENUM_ELEMENT__NAME = eINSTANCE.getDataDefinitionEnumElement_Name();
-
-    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.DataTypeNumberDefinitionSetSetImpl <em>Data Type Number Definition Set Set</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5396,6 +5815,366 @@ public interface LilPackage extends EPackage
     EReference DATA_TYPE_IDENTIFIER_DEFINITION_SET_SET__ELEMENT = eINSTANCE.getDataTypeIdentifierDefinitionSetSet_Element();
 
     /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorTypeCustomImpl <em>Interactor Type Custom</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorTypeCustomImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorTypeCustom()
+     * @generated
+     */
+    EClass INTERACTOR_TYPE_CUSTOM = eINSTANCE.getInteractorTypeCustom();
+
+    /**
+     * The meta object literal for the '<em><b>Definition</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_TYPE_CUSTOM__DEFINITION = eINSTANCE.getInteractorTypeCustom_Definition();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorActorDeclarationImpl <em>Interactor Actor Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorActorDeclarationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorActorDeclaration()
+     * @generated
+     */
+    EClass INTERACTOR_ACTOR_DECLARATION = eINSTANCE.getInteractorActorDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_ACTOR_DECLARATION__TYPE = eINSTANCE.getInteractorActorDeclaration_Type();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorComponentDeclarationImpl <em>Interactor Component Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorComponentDeclarationImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorComponentDeclaration()
+     * @generated
+     */
+    EClass INTERACTOR_COMPONENT_DECLARATION = eINSTANCE.getInteractorComponentDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_COMPONENT_DECLARATION__TYPE = eINSTANCE.getInteractorComponentDeclaration_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Actors</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_COMPONENT_DECLARATION__ACTORS = eINSTANCE.getInteractorComponentDeclaration_Actors();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataDeclarationEventImpl <em>Interactor Data Declaration Event</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataDeclarationEventImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataDeclarationEvent()
+     * @generated
+     */
+    EClass INTERACTOR_DATA_DECLARATION_EVENT = eINSTANCE.getInteractorDataDeclarationEvent();
+
+    /**
+     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_DATA_DECLARATION_EVENT__SOURCE = eINSTANCE.getInteractorDataDeclarationEvent_Source();
+
+    /**
+     * The meta object literal for the '<em><b>Destinations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_DATA_DECLARATION_EVENT__DESTINATIONS = eINSTANCE.getInteractorDataDeclarationEvent_Destinations();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataDeclarationFlowImpl <em>Interactor Data Declaration Flow</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataDeclarationFlowImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataDeclarationFlow()
+     * @generated
+     */
+    EClass INTERACTOR_DATA_DECLARATION_FLOW = eINSTANCE.getInteractorDataDeclarationFlow();
+
+    /**
+     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_DATA_DECLARATION_FLOW__SOURCE = eINSTANCE.getInteractorDataDeclarationFlow_Source();
+
+    /**
+     * The meta object literal for the '<em><b>Destinations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_DATA_DECLARATION_FLOW__DESTINATIONS = eINSTANCE.getInteractorDataDeclarationFlow_Destinations();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataDeclarationConstantImpl <em>Interactor Data Declaration Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataDeclarationConstantImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataDeclarationConstant()
+     * @generated
+     */
+    EClass INTERACTOR_DATA_DECLARATION_CONSTANT = eINSTANCE.getInteractorDataDeclarationConstant();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntityAnyImpl <em>Interactor Entity Any</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorEntityAnyImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityAny()
+     * @generated
+     */
+    EClass INTERACTOR_ENTITY_ANY = eINSTANCE.getInteractorEntityAny();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntitySelfImpl <em>Interactor Entity Self</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorEntitySelfImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntitySelf()
+     * @generated
+     */
+    EClass INTERACTOR_ENTITY_SELF = eINSTANCE.getInteractorEntitySelf();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntityOtherImpl <em>Interactor Entity Other</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorEntityOtherImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityOther()
+     * @generated
+     */
+    EClass INTERACTOR_ENTITY_OTHER = eINSTANCE.getInteractorEntityOther();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntityParentImpl <em>Interactor Entity Parent</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorEntityParentImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityParent()
+     * @generated
+     */
+    EClass INTERACTOR_ENTITY_PARENT = eINSTANCE.getInteractorEntityParent();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntityChildImpl <em>Interactor Entity Child</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorEntityChildImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityChild()
+     * @generated
+     */
+    EClass INTERACTOR_ENTITY_CHILD = eINSTANCE.getInteractorEntityChild();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntityAllImpl <em>Interactor Entity All</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorEntityAllImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityAll()
+     * @generated
+     */
+    EClass INTERACTOR_ENTITY_ALL = eINSTANCE.getInteractorEntityAll();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntityActorsImpl <em>Interactor Entity Actors</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorEntityActorsImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntityActors()
+     * @generated
+     */
+    EClass INTERACTOR_ENTITY_ACTORS = eINSTANCE.getInteractorEntityActors();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorEntitySpecificImpl <em>Interactor Entity Specific</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorEntitySpecificImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorEntitySpecific()
+     * @generated
+     */
+    EClass INTERACTOR_ENTITY_SPECIFIC = eINSTANCE.getInteractorEntitySpecific();
+
+    /**
+     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_ENTITY_SPECIFIC__ENTITY = eINSTANCE.getInteractorEntitySpecific_Entity();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataReceptionInternalImpl <em>Interactor Data Reception Internal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataReceptionInternalImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataReceptionInternal()
+     * @generated
+     */
+    EClass INTERACTOR_DATA_RECEPTION_INTERNAL = eINSTANCE.getInteractorDataReceptionInternal();
+
+    /**
+     * The meta object literal for the '<em><b>Data</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_DATA_RECEPTION_INTERNAL__DATA = eINSTANCE.getInteractorDataReceptionInternal_Data();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataReceptionExternalImpl <em>Interactor Data Reception External</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataReceptionExternalImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataReceptionExternal()
+     * @generated
+     */
+    EClass INTERACTOR_DATA_RECEPTION_EXTERNAL = eINSTANCE.getInteractorDataReceptionExternal();
+
+    /**
+     * The meta object literal for the '<em><b>Data</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_DATA_RECEPTION_EXTERNAL__DATA = eINSTANCE.getInteractorDataReceptionExternal_Data();
+
+    /**
+     * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_DATA_RECEPTION_EXTERNAL__SOURCE = eINSTANCE.getInteractorDataReceptionExternal_Source();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataReceptionInitImpl <em>Interactor Data Reception Init</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataReceptionInitImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataReceptionInit()
+     * @generated
+     */
+    EClass INTERACTOR_DATA_RECEPTION_INIT = eINSTANCE.getInteractorDataReceptionInit();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataEmissionInternalImpl <em>Interactor Data Emission Internal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataEmissionInternalImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataEmissionInternal()
+     * @generated
+     */
+    EClass INTERACTOR_DATA_EMISSION_INTERNAL = eINSTANCE.getInteractorDataEmissionInternal();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorDataEmissionExternalImpl <em>Interactor Data Emission External</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorDataEmissionExternalImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorDataEmissionExternal()
+     * @generated
+     */
+    EClass INTERACTOR_DATA_EMISSION_EXTERNAL = eINSTANCE.getInteractorDataEmissionExternal();
+
+    /**
+     * The meta object literal for the '<em><b>Destination</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_DATA_EMISSION_EXTERNAL__DESTINATION = eINSTANCE.getInteractorDataEmissionExternal_Destination();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorCauseOnImpl <em>Interactor Behavior Cause On</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorBehaviorCauseOnImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorCauseOn()
+     * @generated
+     */
+    EClass INTERACTOR_BEHAVIOR_CAUSE_ON = eINSTANCE.getInteractorBehaviorCauseOn();
+
+    /**
+     * The meta object literal for the '<em><b>Event</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_BEHAVIOR_CAUSE_ON__EVENT = eINSTANCE.getInteractorBehaviorCauseOn_Event();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorCauseWhenImpl <em>Interactor Behavior Cause When</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorBehaviorCauseWhenImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorCauseWhen()
+     * @generated
+     */
+    EClass INTERACTOR_BEHAVIOR_CAUSE_WHEN = eINSTANCE.getInteractorBehaviorCauseWhen();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTOR_BEHAVIOR_CAUSE_WHEN__CONDITION = eINSTANCE.getInteractorBehaviorCauseWhen_Condition();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorEffectAlwaysImpl <em>Interactor Behavior Effect Always</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorBehaviorEffectAlwaysImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorEffectAlways()
+     * @generated
+     */
+    EClass INTERACTOR_BEHAVIOR_EFFECT_ALWAYS = eINSTANCE.getInteractorBehaviorEffectAlways();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorEffectSetImpl <em>Interactor Behavior Effect Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorBehaviorEffectSetImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorEffectSet()
+     * @generated
+     */
+    EClass INTERACTOR_BEHAVIOR_EFFECT_SET = eINSTANCE.getInteractorBehaviorEffectSet();
+
+    /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.InteractorBehaviorEffectTriggerImpl <em>Interactor Behavior Effect Trigger</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.InteractorBehaviorEffectTriggerImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getInteractorBehaviorEffectTrigger()
+     * @generated
+     */
+    EClass INTERACTOR_BEHAVIOR_EFFECT_TRIGGER = eINSTANCE.getInteractorBehaviorEffectTrigger();
+
+    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.ExpressionBinaryOperationImpl <em>Expression Binary Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5454,24 +6233,6 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EReference UNARY_OPERATION__OPERAND = eINSTANCE.getUnaryOperation_Operand();
-
-    /**
-     * The meta object literal for the '{@link com.crubier.lil.lil.impl.LiteralDataImpl <em>Literal Data</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.crubier.lil.lil.impl.LiteralDataImpl
-     * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralData()
-     * @generated
-     */
-    EClass LITERAL_DATA = eINSTANCE.getLiteralData();
-
-    /**
-     * The meta object literal for the '<em><b>Data</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LITERAL_DATA__DATA = eINSTANCE.getLiteralData_Data();
 
     /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.ExpressionIfImpl <em>Expression If</em>}' class.
@@ -5676,6 +6437,16 @@ public interface LilPackage extends EPackage
     EReference LITERAL_ENUM__VALUE = eINSTANCE.getLiteralEnum_Value();
 
     /**
+     * The meta object literal for the '{@link com.crubier.lil.lil.impl.LiteralTimeNowImpl <em>Literal Time Now</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.crubier.lil.lil.impl.LiteralTimeNowImpl
+     * @see com.crubier.lil.lil.impl.LilPackageImpl#getLiteralTimeNow()
+     * @generated
+     */
+    EClass LITERAL_TIME_NOW = eINSTANCE.getLiteralTimeNow();
+
+    /**
      * The meta object literal for the '{@link com.crubier.lil.lil.impl.LiteralTimeImpl <em>Literal Time</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5684,14 +6455,6 @@ public interface LilPackage extends EPackage
      * @generated
      */
     EClass LITERAL_TIME = eINSTANCE.getLiteralTime();
-
-    /**
-     * The meta object literal for the '<em><b>Now</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LITERAL_TIME__NOW = eINSTANCE.getLiteralTime_Now();
 
     /**
      * The meta object literal for the '<em><b>Year</b></em>' attribute feature.

@@ -30,12 +30,12 @@ public interface LiteralEnum extends Expression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' reference.
-   * @see #setValue(DataDefinitionEnumElement)
+   * @see #setValue(DataTypeSymbolDefinitionSetElement)
    * @see com.crubier.lil.lil.LilPackage#getLiteralEnum_Value()
    * @model
    * @generated
    */
-  DataDefinitionEnumElement getValue();
+  DataTypeSymbolDefinitionSetElement getValue();
 
   /**
    * Sets the value of the '{@link com.crubier.lil.lil.LiteralEnum#getValue <em>Value</em>}' reference.
@@ -45,6 +45,6 @@ public interface LiteralEnum extends Expression
    * @see #getValue()
    * @generated
    */
-  void setValue(DataDefinitionEnumElement value);
+  void setValue(DataTypeSymbolDefinitionSetElement value);
 
 } // LiteralEnum

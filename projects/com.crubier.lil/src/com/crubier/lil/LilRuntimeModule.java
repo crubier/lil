@@ -3,9 +3,15 @@
  */
 package com.crubier.lil;
 
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
+
+import com.crubier.lil.naming.LilQualifiedNameProvider;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class LilRuntimeModule extends com.crubier.lil.AbstractLilRuntimeModule {
-
+	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return LilQualifiedNameProvider.class;
+	}
 }

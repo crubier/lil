@@ -11,7 +11,6 @@ package com.crubier.lil.lil;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.LiteralTime#isNow <em>Now</em>}</li>
  *   <li>{@link com.crubier.lil.lil.LiteralTime#getYear <em>Year</em>}</li>
  *   <li>{@link com.crubier.lil.lil.LiteralTime#getMonth <em>Month</em>}</li>
  *   <li>{@link com.crubier.lil.lil.LiteralTime#getDay <em>Day</em>}</li>
@@ -27,32 +26,6 @@ package com.crubier.lil.lil;
  */
 public interface LiteralTime extends Expression
 {
-  /**
-   * Returns the value of the '<em><b>Now</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Now</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Now</em>' attribute.
-   * @see #setNow(boolean)
-   * @see com.crubier.lil.lil.LilPackage#getLiteralTime_Now()
-   * @model
-   * @generated
-   */
-  boolean isNow();
-
-  /**
-   * Sets the value of the '{@link com.crubier.lil.lil.LiteralTime#isNow <em>Now</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Now</em>' attribute.
-   * @see #isNow()
-   * @generated
-   */
-  void setNow(boolean value);
-
   /**
    * Returns the value of the '<em><b>Year</b></em>' attribute.
    * <!-- begin-user-doc -->

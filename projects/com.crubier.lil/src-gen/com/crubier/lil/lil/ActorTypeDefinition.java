@@ -53,7 +53,7 @@ public interface ActorTypeDefinition extends EObject
 
   /**
    * Returns the value of the '<em><b>Component</b></em>' containment reference list.
-   * The list contents are of type {@link com.crubier.lil.lil.ActorInstanceDeclaration}.
+   * The list contents are of type {@link com.crubier.lil.lil.ActorComponentDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Component</em>' containment reference list isn't clear,
@@ -65,6 +65,6 @@ public interface ActorTypeDefinition extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ActorInstanceDeclaration> getComponent();
+  EList<ActorComponentDeclaration> getComponent();
 
 } // ActorTypeDefinition

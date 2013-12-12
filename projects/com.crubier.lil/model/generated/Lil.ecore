@@ -2,6 +2,9 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="lil" nsURI="http://www.crubier.com/lil/Lil" nsPrefix="lil">
   <eClassifiers xsi:type="ecore:EClass" name="LilModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//ImportStatement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actorType" upperBound="-1"
         eType="#//ActorTypeDefinition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" upperBound="-1"
@@ -9,13 +12,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="interactorType" upperBound="-1"
         eType="#//InteractorTypeDefinition" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImportStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActorTypeDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
-        eType="#//ActorInstanceDeclaration" containment="true"/>
+        eType="#//ActorComponentDeclaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActorType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ActorInstanceDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="ActorComponentDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ActorType"
         containment="true"/>
@@ -28,12 +34,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
         eType="#//DataTypeSymbolDefinitionSetElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataTypeSymbolDefinitionSetElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTypeSymbolDefinitionSetElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeNumberDefinitionSet"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeTextDefinitionSet"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeTimeDefinitionSet"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeIdentifierDefinitionSet"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataInstanceDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="DataComponentDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"
         containment="true"/>
@@ -41,65 +49,38 @@
   <eClassifiers xsi:type="ecore:EClass" name="InteractorTypeDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actor" upperBound="-1"
-        eType="#//InteractorActor" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//InteractorData"
+        eType="#//InteractorEntityDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//InteractorDataDeclaration"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
-        eType="#//InteractorComponent" containment="true"/>
+        eType="#//InteractorEntityDeclaration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" upperBound="-1"
-        eType="#//InteractorBehavior" containment="true"/>
+        eType="#//InteractorBehaviorDeclaration" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="custom" eType="#//InteractorTypeDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntityDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorActor" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ActorType"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorData">
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//InteractorSignalAlias"
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorActorAlias">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actor" eType="#//InteractorActorDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//InteractorActorDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataAlias">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//InteractorEntity"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="destinations" upperBound="-1"
-        eType="#//InteractorSignalAlias" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//InteractorDataDeclaration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorSignalAlias">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//AccessibleEntity"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//InteractorData"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataReception" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataEmission">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//InteractorDataDeclaration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorComponent" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//InteractorType"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
-        eType="#//ActorAlias" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AccessibleEntity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specific" eType="#//Entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActorAlias">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//InteractorActor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//InteractorActor"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorSignalReception">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//InteractorData"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//InteractorSignalAlias"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorSignalEmission">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="#//InteractorData"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//InteractorSignalAlias"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehavior">
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cause" eType="#//InteractorBehaviorCause"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="effect" upperBound="-1"
@@ -109,23 +90,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorOnCause" eSuperTypes="#//InteractorBehaviorCause">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//InteractorSignalReception"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorWhenCause" eSuperTypes="#//InteractorBehaviorCause">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Expression"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorEffect">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//InteractorSignalEmission"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//InteractorDataEmission"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorAlwaysEffect" eSuperTypes="#//InteractorBehaviorEffect"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorSetEffect" eSuperTypes="#//InteractorBehaviorEffect"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorTriggerEffect" eSuperTypes="#//InteractorBehaviorEffect"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExpressionLiteralCollection" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -146,7 +116,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeDefinitionCompound" eSuperTypes="#//DataTypeDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
-        eType="#//DataInstanceDeclaration" containment="true"/>
+        eType="#//DataComponentDeclaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeDefinitionAlias" eSuperTypes="#//DataTypeDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="alias" eType="#//DataType"
@@ -192,9 +162,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elementType" eType="#//DataType"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataDefinitionEnumElement" eSuperTypes="#//DataTypeSymbolDefinitionSetElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeNumberDefinitionSetSet" eSuperTypes="#//DataTypeNumberDefinitionSet">
     <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
         eType="#//Expression" containment="true"/>
@@ -225,6 +192,67 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorTypeCustom" eSuperTypes="#//InteractorType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//InteractorTypeDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorActorDeclaration" eSuperTypes="#//InteractorEntityDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ActorType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorComponentDeclaration" eSuperTypes="#//InteractorEntityDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//InteractorType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
+        eType="#//InteractorActorAlias" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataDeclarationEvent" eSuperTypes="#//InteractorDataDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//InteractorDataAlias"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinations" upperBound="-1"
+        eType="#//InteractorDataAlias" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataDeclarationFlow" eSuperTypes="#//InteractorDataDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//InteractorDataAlias"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinations" upperBound="-1"
+        eType="#//InteractorDataAlias" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataDeclarationConstant" eSuperTypes="#//InteractorDataDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntityAny" eSuperTypes="#//InteractorEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntitySelf" eSuperTypes="#//InteractorEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntityOther" eSuperTypes="#//InteractorEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntityParent" eSuperTypes="#//InteractorEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntityChild" eSuperTypes="#//InteractorEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntityAll" eSuperTypes="#//InteractorEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntityActors" eSuperTypes="#//InteractorEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntitySpecific" eSuperTypes="#//InteractorEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//InteractorEntityDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataReceptionInternal" eSuperTypes="#//InteractorDataReception">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//InteractorDataDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataReceptionExternal" eSuperTypes="#//InteractorDataReception">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//InteractorDataDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//InteractorDataAlias"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataReceptionInit" eSuperTypes="#//InteractorDataReception"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataEmissionInternal" eSuperTypes="#//InteractorDataEmission"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataEmissionExternal" eSuperTypes="#//InteractorDataEmission">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//InteractorDataAlias"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorCauseOn" eSuperTypes="#//InteractorBehaviorCause">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//InteractorDataReception"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorCauseWhen" eSuperTypes="#//InteractorBehaviorCause">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorEffectAlways" eSuperTypes="#//InteractorBehaviorEffect"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorEffectSet" eSuperTypes="#//InteractorBehaviorEffect"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorBehaviorEffectTrigger" eSuperTypes="#//InteractorBehaviorEffect"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExpressionBinaryOperation" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftOperand" eType="#//Expression"
         containment="true"/>
@@ -236,9 +264,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="feature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="#//Expression"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LiteralData" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//InteractorData"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExpressionIf" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="if" eType="#//Expression"
@@ -278,10 +303,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LiteralEnum" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//DataDefinitionEnumElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//DataTypeSymbolDefinitionSetElement"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralTimeNow" eSuperTypes="#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="LiteralTime" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="now" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
