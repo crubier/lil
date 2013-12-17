@@ -13,6 +13,7 @@ import com.crubier.lil.lil.LiteralNull;
 import com.crubier.lil.lil.LiteralNumber;
 import com.crubier.lil.lil.LiteralText;
 import com.crubier.lil.lil.LiteralTime;
+import com.crubier.lil.lil.LiteralTimeNow;
 import com.crubier.lil.ui.syntaxcoloring.HighlightingConfiguration;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -147,6 +148,15 @@ public class HighlightingCalculator implements ISemanticHighlightingCalculator {
         if (!_matched) {
           if (current instanceof LiteralTime) {
             final LiteralTime _literalTime = (LiteralTime)current;
+            _matched=true;
+            int _offset = regionf.getOffset();
+            int _length = regionf.getLength();
+            acceptor.addPosition(_offset, _length, HighlightingConfiguration.LITERAL_ID);
+          }
+        }
+        if (!_matched) {
+          if (current instanceof LiteralTimeNow) {
+            final LiteralTimeNow _literalTimeNow = (LiteralTimeNow)current;
             _matched=true;
             int _offset = regionf.getOffset();
             int _length = regionf.getLength();

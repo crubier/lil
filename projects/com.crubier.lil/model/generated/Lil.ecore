@@ -52,7 +52,7 @@
         eType="#//InteractorEntityDeclaration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//InteractorDataDeclaration"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interactor" upperBound="-1"
         eType="#//InteractorEntityDeclaration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" upperBound="-1"
         eType="#//InteractorBehaviorDeclaration" containment="true"/>
@@ -123,6 +123,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeVoid" eSuperTypes="#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTypeBoolean" eSuperTypes="#//DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeSymbol" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="definitionSet" eType="#//DataTypeSymbolDefinitionSet"
         containment="true"/>
@@ -199,7 +200,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ActorType"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorComponentDeclaration" eSuperTypes="#//InteractorEntityDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorInteractorDeclaration" eSuperTypes="#//InteractorEntityDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//InteractorType"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
@@ -228,6 +229,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="InteractorEntitySpecific" eSuperTypes="#//InteractorEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//InteractorEntityDeclaration"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntityActor" eSuperTypes="#//InteractorEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//InteractorActorDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorEntityInteractor" eSuperTypes="#//InteractorEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//InteractorInteractorDeclaration"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InteractorDataReceptionInternal" eSuperTypes="#//InteractorDataReception">
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//InteractorDataDeclaration"/>
   </eClassifiers>
@@ -236,7 +243,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//InteractorDataAlias"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataReceptionInit" eSuperTypes="#//InteractorDataReception"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractorDataReceptionInitialization"
+      eSuperTypes="#//InteractorDataReception"/>
   <eClassifiers xsi:type="ecore:EClass" name="InteractorDataEmissionInternal" eSuperTypes="#//InteractorDataEmission"/>
   <eClassifiers xsi:type="ecore:EClass" name="InteractorDataEmissionExternal" eSuperTypes="#//InteractorDataEmission">
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//InteractorDataAlias"

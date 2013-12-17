@@ -1,0 +1,170 @@
+package cruiseControl2
+
+human actor :
+// nothing specified at this level
+
+system actor :
+//nothing specified at this level
+
+// Le type de donnŽe "speed" est un nombre compris entre 0 et 200
+speed data :
+	number in [0, 200]
+
+// Modes du controleur de vitesse
+cruiseMode data :
+	symbol in {#NONE,#LIMIT,#CONTROL}
+	
+	
+pedals interactor :
+	driver : human actor
+	
+	throttle : number flow from driver to parent
+	brake : number flow from driver to parent
+	clutch : number flow from driver to parent
+	
+	throttleOverride : void event from driver to parent
+	
+dashboardScreen interactor :
+	driver : human actor
+	car : system actor
+	
+	mode : symbol in {#DISTANCE,#CRUISECONTROL} flow
+	
+	//topLine : (number ,cruiseMode) flow to driver
+	bottomLine : number flow to driver
+	
+	totalDistance : number flow from car
+	intervalDistance : number flow from car
+	
+	cruiseMode : cruiseMode flow from parent
+	cruiseSpeed : speed flow from parent
+	
+	on initialization :
+		set mode = #DISTANCE
+		always topLine	= if (mode==#DISTANCE) totalDistance else cruiseMode
+		always bottomLine	= if (mode==#CRUISECONTROL) intervalDistance else cruiseSpeed 
+	 
+	
+	
+	
+speedSelector interactor :
+	driver : human actor
+	
+	step : number constant
+	
+	selectedSpeed : speed flow to parent
+	//changed : void event to parent
+	
+	increment : void event from driver
+	decrement : void event from driver
+	
+	on increment :
+//		selectedSpeed = min(200,[selectedSpeed] + step)
+		
+	on decrement : 
+//		set selectedSpeed = max(20,selectedSpeed + step)
+		
+
+	
+	
+
+// Cet interacteur reprŽsente le fonctionnement complet du controleur de vitesse de ma peugeot 307
+cruiseControl interactor :
+
+	// Deux acteurs : le conducteur et la voiture
+	driver : human actor
+	car : system actor
+	
+	//Etat du controleur de vitesse
+	enabled : boolean flow to car to driver
+	mode : cruiseMode flow from driver to car
+	
+	toggle : void event from driver 
+	
+	selector : speedSelector interactor
+	
+	pedals : pedals interactor
+	
+	screen : dashboardScreen interactor
+	
+	// Vitesse dŽsirŽe
+	targetSpeed : speed flow from selector /*as selectedSpeed */ to car
+	
+	// Vitesse rŽelle 
+	actualSpeed : speed flow from car to driver
+	
+	// Signal de dŽfaut en provenance du rŽgulateur
+	failure : boolean flow from car
+	
+	// Alarme en cas de fonctionnnement non nominal
+	alarm : boolean flow to driver
+	
+	on initialization :
+		set enabled = false
+		always alarm = enabled and ( failure or targetSpeed > actualSpeed )
+		always targetspeed = (selectedSpeed from selector) 
+	
+	on other :
+		always ta	
+		
+	when failure :
+		set enabled = false	
+		
+	on toggle :
+		set enabled = !enabled
+		
+	on changed from selector if mode != #NONE:
+		set enabled = true
+		
+	when mode==#NONE :
+		set enabled = false
+		
+	when mode==#LIMIT :
+		set enabled = false
+		
+	when mode==#CONTROL :
+		set enabled = false
+		
+		
+	depassementvitesse : number flow to driver
+	
+	when now % 1s ==0 : trigger beep
+		
+		
+	/* 
+	lebeeper : beeper interactor
+	
+	on initialization :
+		always interval to lebeeper = targetSpeed - actualSpeed
+		*/
+		
+
+		
+beepersimple interactor :
+		user : human actor
+		beep : void event to user
+		interval : time flow from parent to timer
+		timer : timer interactor
+		
+		on timeout from timer :
+			trigger beep
+			set interval = 1 second
+		
+		
+		
+		
+beeper interactor :
+		user : human actor
+		beep : void event to user
+		
+		lastBeep : time flow
+		interval : time flow from parent
+		
+		when (now - lastBeep == interval) : 
+			trigger beep = 1
+			set lastBeep = now
+			
+			
+			
+			
+		

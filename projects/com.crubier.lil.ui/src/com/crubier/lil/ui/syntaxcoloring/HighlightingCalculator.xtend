@@ -17,6 +17,7 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculato
 import com.crubier.lil.lil.ActorType
 import com.crubier.lil.lil.ActorTypeDefinition
 import com.crubier.lil.lil.DataTypeSymbolDefinitionSetElement
+import com.crubier.lil.lil.LiteralTimeNow
 
 class HighlightingCalculator implements ISemanticHighlightingCalculator {
 
@@ -56,6 +57,8 @@ class HighlightingCalculator implements ISemanticHighlightingCalculator {
 				DataTypeSymbolDefinitionSetElement:
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
 				LiteralTime: 
+					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
+				LiteralTimeNow :
 					acceptor.addPosition(regionf.offset, regionf.length, HighlightingConfiguration.LITERAL_ID)
 			}
 

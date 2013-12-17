@@ -1,0 +1,86 @@
+package sample1
+
+import standardActors.*
+
+
+// Le type de donnée "speed" est un nombre compris entre 0 et 200
+speed data :
+	number in [0, 200]
+
+// Modes du controleur de vitesse
+cruiseMode data :
+	symbol in {#NONE,#LIMIT,#CONTROL}
+
+// Cet interacteur représente le fonctionnement complet du controleur de vitesse de ma peugeot 307
+cruiseControl interactor :
+
+	// Deux acteurs : le conducteur et la voiture
+	driver : human actor
+	car : system actor
+	
+	// Une constante représentant le pas d'incrementation de la vitesse
+	step : number constant
+	
+	// Une constante représentant le seuil minimum d'appui sur une pédale 
+	threshold : number constant
+	
+	//Etat du controleur de vitesse
+	enabled : boolean flow to car
+	mode : cruiseMode flow from driver to car
+	
+	// Vitesse désirée
+	desiredSpeed : speed flow to car to driver
+	
+	// Vitesse réelle 
+	actualSpeed : speed flow from car
+	
+	// Signal de défaut en provenance du régulateur
+	failure : boolean flow from car
+	
+	// Boutons de l'interface utilisateur
+	increaseSpeed : void event from driver
+	decreaseSpeed : void event from driver
+	toggleControl : void event from driver
+	
+	// Pedales
+	throttleOverride : void event from driver
+	throttle : number flow from driver
+	brake : number flow from driver
+	clutch : number flow from driver
+	
+	// Affichage d'alerte
+	alarm : boolean flow to driver
+	
+	on initialization :
+		set enabled = false
+		always enabled = enabled and (brake < threshold) and (clutch < threshold)
+//		always alarm = failure or (mode!=#OFF and (actualSpeed > desiredSpeed))
+
+	on toggleControl if enabled :
+		set enabled = false
+		
+	on toggleControl if !enabled :
+		set enabled = true
+		set desiredSpeed = actualSpeed
+	
+	on increaseSpeed :
+		set enabled = true
+		set desiredSpeed = math.min(actualSpeed + step,200)
+		
+	on decreaseSpeed :
+		set desiredSpeed = math.max(actualSpeed - step,20)
+		
+	when brake > threshold and enabled:
+		set enabled = false
+	
+	when clutch > threshold and enabled: 
+		set enabled = false
+		
+	
+	
+	
+	
+		
+	
+	
+	

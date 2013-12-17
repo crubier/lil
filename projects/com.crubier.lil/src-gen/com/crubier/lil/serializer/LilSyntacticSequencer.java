@@ -126,7 +126,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'minute' | 'm'
+	 *     'm' | 'minute'
 	 */
 	protected void emit_LiteralTime_MKeyword_3_3_1_0_or_MinuteKeyword_3_3_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -134,7 +134,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'm' | 'minute'
+	 *     'minute' | 'm'
 	 */
 	protected void emit_LiteralTime_MKeyword_4_2_1_0_or_MinuteKeyword_4_2_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -158,7 +158,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'second' | 's'
+	 *     's' | 'second'
 	 */
 	protected void emit_LiteralTime_SKeyword_2_5_1_0_or_SecondKeyword_2_5_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -166,7 +166,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'second' | 's'
+	 *     's' | 'second'
 	 */
 	protected void emit_LiteralTime_SKeyword_3_4_1_0_or_SecondKeyword_3_4_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -174,7 +174,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     's' | 'second'
+	 *     'second' | 's'
 	 */
 	protected void emit_LiteralTime_SKeyword_4_3_1_0_or_SecondKeyword_4_3_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -182,7 +182,7 @@ public class LilSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'second' | 's'
+	 *     's' | 'second'
 	 */
 	protected void emit_LiteralTime_SKeyword_5_2_1_0_or_SecondKeyword_5_2_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

@@ -322,45 +322,48 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cDataTypeVoidAction_0_0_0 = (Action)cGroup_0_0.eContents().get(0);
 		private final Keyword cVoidKeyword_0_0_1 = (Keyword)cGroup_0_0.eContents().get(1);
 		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
-		private final Action cDataTypeSymbolAction_0_1_0 = (Action)cGroup_0_1.eContents().get(0);
-		private final Keyword cSymbolKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
-		private final Group cGroup_0_1_2 = (Group)cGroup_0_1.eContents().get(2);
-		private final Keyword cInKeyword_0_1_2_0 = (Keyword)cGroup_0_1_2.eContents().get(0);
-		private final Assignment cDefinitionSetAssignment_0_1_2_1 = (Assignment)cGroup_0_1_2.eContents().get(1);
-		private final RuleCall cDefinitionSetDataTypeSymbolDefinitionSetParserRuleCall_0_1_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_1_2_1.eContents().get(0);
+		private final Action cDataTypeBooleanAction_0_1_0 = (Action)cGroup_0_1.eContents().get(0);
+		private final Keyword cBooleanKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
 		private final Group cGroup_0_2 = (Group)cAlternatives_0.eContents().get(2);
-		private final Action cDataTypeNumberAction_0_2_0 = (Action)cGroup_0_2.eContents().get(0);
-		private final Keyword cNumberKeyword_0_2_1 = (Keyword)cGroup_0_2.eContents().get(1);
+		private final Action cDataTypeSymbolAction_0_2_0 = (Action)cGroup_0_2.eContents().get(0);
+		private final Keyword cSymbolKeyword_0_2_1 = (Keyword)cGroup_0_2.eContents().get(1);
 		private final Group cGroup_0_2_2 = (Group)cGroup_0_2.eContents().get(2);
 		private final Keyword cInKeyword_0_2_2_0 = (Keyword)cGroup_0_2_2.eContents().get(0);
 		private final Assignment cDefinitionSetAssignment_0_2_2_1 = (Assignment)cGroup_0_2_2.eContents().get(1);
-		private final RuleCall cDefinitionSetDataTypeNumberDefinitionSetParserRuleCall_0_2_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_2_2_1.eContents().get(0);
+		private final RuleCall cDefinitionSetDataTypeSymbolDefinitionSetParserRuleCall_0_2_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_2_2_1.eContents().get(0);
 		private final Group cGroup_0_3 = (Group)cAlternatives_0.eContents().get(3);
-		private final Action cDataTypeTextAction_0_3_0 = (Action)cGroup_0_3.eContents().get(0);
-		private final Keyword cTextKeyword_0_3_1 = (Keyword)cGroup_0_3.eContents().get(1);
+		private final Action cDataTypeNumberAction_0_3_0 = (Action)cGroup_0_3.eContents().get(0);
+		private final Keyword cNumberKeyword_0_3_1 = (Keyword)cGroup_0_3.eContents().get(1);
 		private final Group cGroup_0_3_2 = (Group)cGroup_0_3.eContents().get(2);
 		private final Keyword cInKeyword_0_3_2_0 = (Keyword)cGroup_0_3_2.eContents().get(0);
 		private final Assignment cDefinitionSetAssignment_0_3_2_1 = (Assignment)cGroup_0_3_2.eContents().get(1);
-		private final RuleCall cDefinitionSetDataTypeTextDefinitionSetParserRuleCall_0_3_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_3_2_1.eContents().get(0);
+		private final RuleCall cDefinitionSetDataTypeNumberDefinitionSetParserRuleCall_0_3_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_3_2_1.eContents().get(0);
 		private final Group cGroup_0_4 = (Group)cAlternatives_0.eContents().get(4);
-		private final Action cDataTypeTimeAction_0_4_0 = (Action)cGroup_0_4.eContents().get(0);
-		private final Keyword cTimeKeyword_0_4_1 = (Keyword)cGroup_0_4.eContents().get(1);
+		private final Action cDataTypeTextAction_0_4_0 = (Action)cGroup_0_4.eContents().get(0);
+		private final Keyword cTextKeyword_0_4_1 = (Keyword)cGroup_0_4.eContents().get(1);
 		private final Group cGroup_0_4_2 = (Group)cGroup_0_4.eContents().get(2);
 		private final Keyword cInKeyword_0_4_2_0 = (Keyword)cGroup_0_4_2.eContents().get(0);
 		private final Assignment cDefinitionSetAssignment_0_4_2_1 = (Assignment)cGroup_0_4_2.eContents().get(1);
-		private final RuleCall cDefinitionSetDataTypeTimeDefinitionSetParserRuleCall_0_4_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_4_2_1.eContents().get(0);
+		private final RuleCall cDefinitionSetDataTypeTextDefinitionSetParserRuleCall_0_4_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_4_2_1.eContents().get(0);
 		private final Group cGroup_0_5 = (Group)cAlternatives_0.eContents().get(5);
-		private final Action cDataTypeIdentifierAction_0_5_0 = (Action)cGroup_0_5.eContents().get(0);
-		private final Keyword cIdentifierKeyword_0_5_1 = (Keyword)cGroup_0_5.eContents().get(1);
+		private final Action cDataTypeTimeAction_0_5_0 = (Action)cGroup_0_5.eContents().get(0);
+		private final Keyword cTimeKeyword_0_5_1 = (Keyword)cGroup_0_5.eContents().get(1);
 		private final Group cGroup_0_5_2 = (Group)cGroup_0_5.eContents().get(2);
 		private final Keyword cInKeyword_0_5_2_0 = (Keyword)cGroup_0_5_2.eContents().get(0);
 		private final Assignment cDefinitionSetAssignment_0_5_2_1 = (Assignment)cGroup_0_5_2.eContents().get(1);
-		private final RuleCall cDefinitionSetDataTypeIdentifierDefinitionSetParserRuleCall_0_5_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_5_2_1.eContents().get(0);
+		private final RuleCall cDefinitionSetDataTypeTimeDefinitionSetParserRuleCall_0_5_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_5_2_1.eContents().get(0);
 		private final Group cGroup_0_6 = (Group)cAlternatives_0.eContents().get(6);
-		private final Action cDataTypeCustomAction_0_6_0 = (Action)cGroup_0_6.eContents().get(0);
-		private final Assignment cDefinitionAssignment_0_6_1 = (Assignment)cGroup_0_6.eContents().get(1);
-		private final CrossReference cDefinitionDataTypeDefinitionCrossReference_0_6_1_0 = (CrossReference)cDefinitionAssignment_0_6_1.eContents().get(0);
-		private final RuleCall cDefinitionDataTypeDefinitionIDTerminalRuleCall_0_6_1_0_1 = (RuleCall)cDefinitionDataTypeDefinitionCrossReference_0_6_1_0.eContents().get(1);
+		private final Action cDataTypeIdentifierAction_0_6_0 = (Action)cGroup_0_6.eContents().get(0);
+		private final Keyword cIdentifierKeyword_0_6_1 = (Keyword)cGroup_0_6.eContents().get(1);
+		private final Group cGroup_0_6_2 = (Group)cGroup_0_6.eContents().get(2);
+		private final Keyword cInKeyword_0_6_2_0 = (Keyword)cGroup_0_6_2.eContents().get(0);
+		private final Assignment cDefinitionSetAssignment_0_6_2_1 = (Assignment)cGroup_0_6_2.eContents().get(1);
+		private final RuleCall cDefinitionSetDataTypeIdentifierDefinitionSetParserRuleCall_0_6_2_1_0 = (RuleCall)cDefinitionSetAssignment_0_6_2_1.eContents().get(0);
+		private final Group cGroup_0_7 = (Group)cAlternatives_0.eContents().get(7);
+		private final Action cDataTypeCustomAction_0_7_0 = (Action)cGroup_0_7.eContents().get(0);
+		private final Assignment cDefinitionAssignment_0_7_1 = (Assignment)cGroup_0_7.eContents().get(1);
+		private final CrossReference cDefinitionDataTypeDefinitionCrossReference_0_7_1_0 = (CrossReference)cDefinitionAssignment_0_7_1.eContents().get(0);
+		private final RuleCall cDefinitionDataTypeDefinitionIDTerminalRuleCall_0_7_1_0_1 = (RuleCall)cDefinitionDataTypeDefinitionCrossReference_0_7_1_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
 		private final Action cDataTypeCollectionElementTypeAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
@@ -379,29 +382,29 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cQueueKeyword_4_0_1 = (Keyword)cGroup_4_0.eContents().get(1);
 		
 		//DataType:
-		//	({DataTypeVoid} "void" | {DataTypeSymbol} "symbol" ("in" definitionSet=DataTypeSymbolDefinitionSet)? |
-		//	{DataTypeNumber} "number" ("in" definitionSet=DataTypeNumberDefinitionSet)? | {DataTypeText} "text" ("in"
-		//	definitionSet=DataTypeTextDefinitionSet)? | {DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)? |
-		//	{DataTypeIdentifier} "identifier" ("in" definitionSet=DataTypeIdentifierDefinitionSet)? | {DataTypeCustom}
-		//	definition=[DataTypeDefinition]) => ({DataTypeCollection.elementType=current} "collection")* =>
-		//	({DataTypeSet.elementType=current} "set")* => ({DataTypeList.elementType=current} "list")* =>
-		//	({DataTypeQueue.elementType=current} "queue")*;
+		//	({DataTypeVoid} "void" | {DataTypeBoolean} "boolean" | {DataTypeSymbol} "symbol" ("in"
+		//	definitionSet=DataTypeSymbolDefinitionSet)? | {DataTypeNumber} "number" ("in"
+		//	definitionSet=DataTypeNumberDefinitionSet)? | {DataTypeText} "text" ("in" definitionSet=DataTypeTextDefinitionSet)? |
+		//	{DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)? | {DataTypeIdentifier} "identifier" ("in"
+		//	definitionSet=DataTypeIdentifierDefinitionSet)? | {DataTypeCustom} definition=[DataTypeDefinition]) =>
+		//	({DataTypeCollection.elementType=current} "collection")* => ({DataTypeSet.elementType=current} "set")* =>
+		//	({DataTypeList.elementType=current} "list")* => ({DataTypeQueue.elementType=current} "queue")*;
 		public ParserRule getRule() { return rule; }
 
-		//({DataTypeVoid} "void" | {DataTypeSymbol} "symbol" ("in" definitionSet=DataTypeSymbolDefinitionSet)? | {DataTypeNumber}
-		//"number" ("in" definitionSet=DataTypeNumberDefinitionSet)? | {DataTypeText} "text" ("in"
-		//definitionSet=DataTypeTextDefinitionSet)? | {DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)? |
-		//{DataTypeIdentifier} "identifier" ("in" definitionSet=DataTypeIdentifierDefinitionSet)? | {DataTypeCustom}
-		//definition=[DataTypeDefinition]) => ({DataTypeCollection.elementType=current} "collection")* =>
-		//({DataTypeSet.elementType=current} "set")* => ({DataTypeList.elementType=current} "list")* =>
-		//({DataTypeQueue.elementType=current} "queue")*
+		//({DataTypeVoid} "void" | {DataTypeBoolean} "boolean" | {DataTypeSymbol} "symbol" ("in"
+		//definitionSet=DataTypeSymbolDefinitionSet)? | {DataTypeNumber} "number" ("in"
+		//definitionSet=DataTypeNumberDefinitionSet)? | {DataTypeText} "text" ("in" definitionSet=DataTypeTextDefinitionSet)? |
+		//{DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)? | {DataTypeIdentifier} "identifier" ("in"
+		//definitionSet=DataTypeIdentifierDefinitionSet)? | {DataTypeCustom} definition=[DataTypeDefinition]) =>
+		//({DataTypeCollection.elementType=current} "collection")* => ({DataTypeSet.elementType=current} "set")* =>
+		//({DataTypeList.elementType=current} "list")* => ({DataTypeQueue.elementType=current} "queue")*
 		public Group getGroup() { return cGroup; }
 
-		//{DataTypeVoid} "void" | {DataTypeSymbol} "symbol" ("in" definitionSet=DataTypeSymbolDefinitionSet)? | {DataTypeNumber}
-		//"number" ("in" definitionSet=DataTypeNumberDefinitionSet)? | {DataTypeText} "text" ("in"
-		//definitionSet=DataTypeTextDefinitionSet)? | {DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)? |
-		//{DataTypeIdentifier} "identifier" ("in" definitionSet=DataTypeIdentifierDefinitionSet)? | {DataTypeCustom}
-		//definition=[DataTypeDefinition]
+		//{DataTypeVoid} "void" | {DataTypeBoolean} "boolean" | {DataTypeSymbol} "symbol" ("in"
+		//definitionSet=DataTypeSymbolDefinitionSet)? | {DataTypeNumber} "number" ("in"
+		//definitionSet=DataTypeNumberDefinitionSet)? | {DataTypeText} "text" ("in" definitionSet=DataTypeTextDefinitionSet)? |
+		//{DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)? | {DataTypeIdentifier} "identifier" ("in"
+		//definitionSet=DataTypeIdentifierDefinitionSet)? | {DataTypeCustom} definition=[DataTypeDefinition]
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//{DataTypeVoid} "void"
@@ -413,125 +416,134 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//"void"
 		public Keyword getVoidKeyword_0_0_1() { return cVoidKeyword_0_0_1; }
 
-		//{DataTypeSymbol} "symbol" ("in" definitionSet=DataTypeSymbolDefinitionSet)?
+		//{DataTypeBoolean} "boolean"
 		public Group getGroup_0_1() { return cGroup_0_1; }
 
-		//{DataTypeSymbol}
-		public Action getDataTypeSymbolAction_0_1_0() { return cDataTypeSymbolAction_0_1_0; }
+		//{DataTypeBoolean}
+		public Action getDataTypeBooleanAction_0_1_0() { return cDataTypeBooleanAction_0_1_0; }
 
-		//"symbol"
-		public Keyword getSymbolKeyword_0_1_1() { return cSymbolKeyword_0_1_1; }
+		//"boolean"
+		public Keyword getBooleanKeyword_0_1_1() { return cBooleanKeyword_0_1_1; }
 
-		//("in" definitionSet=DataTypeSymbolDefinitionSet)?
-		public Group getGroup_0_1_2() { return cGroup_0_1_2; }
-
-		//"in"
-		public Keyword getInKeyword_0_1_2_0() { return cInKeyword_0_1_2_0; }
-
-		//definitionSet=DataTypeSymbolDefinitionSet
-		public Assignment getDefinitionSetAssignment_0_1_2_1() { return cDefinitionSetAssignment_0_1_2_1; }
-
-		//DataTypeSymbolDefinitionSet
-		public RuleCall getDefinitionSetDataTypeSymbolDefinitionSetParserRuleCall_0_1_2_1_0() { return cDefinitionSetDataTypeSymbolDefinitionSetParserRuleCall_0_1_2_1_0; }
-
-		//{DataTypeNumber} "number" ("in" definitionSet=DataTypeNumberDefinitionSet)?
+		//{DataTypeSymbol} "symbol" ("in" definitionSet=DataTypeSymbolDefinitionSet)?
 		public Group getGroup_0_2() { return cGroup_0_2; }
 
-		//{DataTypeNumber}
-		public Action getDataTypeNumberAction_0_2_0() { return cDataTypeNumberAction_0_2_0; }
+		//{DataTypeSymbol}
+		public Action getDataTypeSymbolAction_0_2_0() { return cDataTypeSymbolAction_0_2_0; }
 
-		//"number"
-		public Keyword getNumberKeyword_0_2_1() { return cNumberKeyword_0_2_1; }
+		//"symbol"
+		public Keyword getSymbolKeyword_0_2_1() { return cSymbolKeyword_0_2_1; }
 
-		//("in" definitionSet=DataTypeNumberDefinitionSet)?
+		//("in" definitionSet=DataTypeSymbolDefinitionSet)?
 		public Group getGroup_0_2_2() { return cGroup_0_2_2; }
 
 		//"in"
 		public Keyword getInKeyword_0_2_2_0() { return cInKeyword_0_2_2_0; }
 
-		//definitionSet=DataTypeNumberDefinitionSet
+		//definitionSet=DataTypeSymbolDefinitionSet
 		public Assignment getDefinitionSetAssignment_0_2_2_1() { return cDefinitionSetAssignment_0_2_2_1; }
 
-		//DataTypeNumberDefinitionSet
-		public RuleCall getDefinitionSetDataTypeNumberDefinitionSetParserRuleCall_0_2_2_1_0() { return cDefinitionSetDataTypeNumberDefinitionSetParserRuleCall_0_2_2_1_0; }
+		//DataTypeSymbolDefinitionSet
+		public RuleCall getDefinitionSetDataTypeSymbolDefinitionSetParserRuleCall_0_2_2_1_0() { return cDefinitionSetDataTypeSymbolDefinitionSetParserRuleCall_0_2_2_1_0; }
 
-		//{DataTypeText} "text" ("in" definitionSet=DataTypeTextDefinitionSet)?
+		//{DataTypeNumber} "number" ("in" definitionSet=DataTypeNumberDefinitionSet)?
 		public Group getGroup_0_3() { return cGroup_0_3; }
 
-		//{DataTypeText}
-		public Action getDataTypeTextAction_0_3_0() { return cDataTypeTextAction_0_3_0; }
+		//{DataTypeNumber}
+		public Action getDataTypeNumberAction_0_3_0() { return cDataTypeNumberAction_0_3_0; }
 
-		//"text"
-		public Keyword getTextKeyword_0_3_1() { return cTextKeyword_0_3_1; }
+		//"number"
+		public Keyword getNumberKeyword_0_3_1() { return cNumberKeyword_0_3_1; }
 
-		//("in" definitionSet=DataTypeTextDefinitionSet)?
+		//("in" definitionSet=DataTypeNumberDefinitionSet)?
 		public Group getGroup_0_3_2() { return cGroup_0_3_2; }
 
 		//"in"
 		public Keyword getInKeyword_0_3_2_0() { return cInKeyword_0_3_2_0; }
 
-		//definitionSet=DataTypeTextDefinitionSet
+		//definitionSet=DataTypeNumberDefinitionSet
 		public Assignment getDefinitionSetAssignment_0_3_2_1() { return cDefinitionSetAssignment_0_3_2_1; }
 
-		//DataTypeTextDefinitionSet
-		public RuleCall getDefinitionSetDataTypeTextDefinitionSetParserRuleCall_0_3_2_1_0() { return cDefinitionSetDataTypeTextDefinitionSetParserRuleCall_0_3_2_1_0; }
+		//DataTypeNumberDefinitionSet
+		public RuleCall getDefinitionSetDataTypeNumberDefinitionSetParserRuleCall_0_3_2_1_0() { return cDefinitionSetDataTypeNumberDefinitionSetParserRuleCall_0_3_2_1_0; }
 
-		//{DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)?
+		//{DataTypeText} "text" ("in" definitionSet=DataTypeTextDefinitionSet)?
 		public Group getGroup_0_4() { return cGroup_0_4; }
 
-		//{DataTypeTime}
-		public Action getDataTypeTimeAction_0_4_0() { return cDataTypeTimeAction_0_4_0; }
+		//{DataTypeText}
+		public Action getDataTypeTextAction_0_4_0() { return cDataTypeTextAction_0_4_0; }
 
-		//"time"
-		public Keyword getTimeKeyword_0_4_1() { return cTimeKeyword_0_4_1; }
+		//"text"
+		public Keyword getTextKeyword_0_4_1() { return cTextKeyword_0_4_1; }
 
-		//("in" definitionSet=DataTypeTimeDefinitionSet)?
+		//("in" definitionSet=DataTypeTextDefinitionSet)?
 		public Group getGroup_0_4_2() { return cGroup_0_4_2; }
 
 		//"in"
 		public Keyword getInKeyword_0_4_2_0() { return cInKeyword_0_4_2_0; }
 
-		//definitionSet=DataTypeTimeDefinitionSet
+		//definitionSet=DataTypeTextDefinitionSet
 		public Assignment getDefinitionSetAssignment_0_4_2_1() { return cDefinitionSetAssignment_0_4_2_1; }
 
-		//DataTypeTimeDefinitionSet
-		public RuleCall getDefinitionSetDataTypeTimeDefinitionSetParserRuleCall_0_4_2_1_0() { return cDefinitionSetDataTypeTimeDefinitionSetParserRuleCall_0_4_2_1_0; }
+		//DataTypeTextDefinitionSet
+		public RuleCall getDefinitionSetDataTypeTextDefinitionSetParserRuleCall_0_4_2_1_0() { return cDefinitionSetDataTypeTextDefinitionSetParserRuleCall_0_4_2_1_0; }
 
-		//{DataTypeIdentifier} "identifier" ("in" definitionSet=DataTypeIdentifierDefinitionSet)?
+		//{DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)?
 		public Group getGroup_0_5() { return cGroup_0_5; }
 
-		//{DataTypeIdentifier}
-		public Action getDataTypeIdentifierAction_0_5_0() { return cDataTypeIdentifierAction_0_5_0; }
+		//{DataTypeTime}
+		public Action getDataTypeTimeAction_0_5_0() { return cDataTypeTimeAction_0_5_0; }
 
-		//"identifier"
-		public Keyword getIdentifierKeyword_0_5_1() { return cIdentifierKeyword_0_5_1; }
+		//"time"
+		public Keyword getTimeKeyword_0_5_1() { return cTimeKeyword_0_5_1; }
 
-		//("in" definitionSet=DataTypeIdentifierDefinitionSet)?
+		//("in" definitionSet=DataTypeTimeDefinitionSet)?
 		public Group getGroup_0_5_2() { return cGroup_0_5_2; }
 
 		//"in"
 		public Keyword getInKeyword_0_5_2_0() { return cInKeyword_0_5_2_0; }
 
-		//definitionSet=DataTypeIdentifierDefinitionSet
+		//definitionSet=DataTypeTimeDefinitionSet
 		public Assignment getDefinitionSetAssignment_0_5_2_1() { return cDefinitionSetAssignment_0_5_2_1; }
 
-		//DataTypeIdentifierDefinitionSet
-		public RuleCall getDefinitionSetDataTypeIdentifierDefinitionSetParserRuleCall_0_5_2_1_0() { return cDefinitionSetDataTypeIdentifierDefinitionSetParserRuleCall_0_5_2_1_0; }
+		//DataTypeTimeDefinitionSet
+		public RuleCall getDefinitionSetDataTypeTimeDefinitionSetParserRuleCall_0_5_2_1_0() { return cDefinitionSetDataTypeTimeDefinitionSetParserRuleCall_0_5_2_1_0; }
 
-		//{DataTypeCustom} definition=[DataTypeDefinition]
+		//{DataTypeIdentifier} "identifier" ("in" definitionSet=DataTypeIdentifierDefinitionSet)?
 		public Group getGroup_0_6() { return cGroup_0_6; }
 
+		//{DataTypeIdentifier}
+		public Action getDataTypeIdentifierAction_0_6_0() { return cDataTypeIdentifierAction_0_6_0; }
+
+		//"identifier"
+		public Keyword getIdentifierKeyword_0_6_1() { return cIdentifierKeyword_0_6_1; }
+
+		//("in" definitionSet=DataTypeIdentifierDefinitionSet)?
+		public Group getGroup_0_6_2() { return cGroup_0_6_2; }
+
+		//"in"
+		public Keyword getInKeyword_0_6_2_0() { return cInKeyword_0_6_2_0; }
+
+		//definitionSet=DataTypeIdentifierDefinitionSet
+		public Assignment getDefinitionSetAssignment_0_6_2_1() { return cDefinitionSetAssignment_0_6_2_1; }
+
+		//DataTypeIdentifierDefinitionSet
+		public RuleCall getDefinitionSetDataTypeIdentifierDefinitionSetParserRuleCall_0_6_2_1_0() { return cDefinitionSetDataTypeIdentifierDefinitionSetParserRuleCall_0_6_2_1_0; }
+
+		//{DataTypeCustom} definition=[DataTypeDefinition]
+		public Group getGroup_0_7() { return cGroup_0_7; }
+
 		//{DataTypeCustom}
-		public Action getDataTypeCustomAction_0_6_0() { return cDataTypeCustomAction_0_6_0; }
+		public Action getDataTypeCustomAction_0_7_0() { return cDataTypeCustomAction_0_7_0; }
 
 		//definition=[DataTypeDefinition]
-		public Assignment getDefinitionAssignment_0_6_1() { return cDefinitionAssignment_0_6_1; }
+		public Assignment getDefinitionAssignment_0_7_1() { return cDefinitionAssignment_0_7_1; }
 
 		//[DataTypeDefinition]
-		public CrossReference getDefinitionDataTypeDefinitionCrossReference_0_6_1_0() { return cDefinitionDataTypeDefinitionCrossReference_0_6_1_0; }
+		public CrossReference getDefinitionDataTypeDefinitionCrossReference_0_7_1_0() { return cDefinitionDataTypeDefinitionCrossReference_0_7_1_0; }
 
 		//ID
-		public RuleCall getDefinitionDataTypeDefinitionIDTerminalRuleCall_0_6_1_0_1() { return cDefinitionDataTypeDefinitionIDTerminalRuleCall_0_6_1_0_1; }
+		public RuleCall getDefinitionDataTypeDefinitionIDTerminalRuleCall_0_7_1_0_1() { return cDefinitionDataTypeDefinitionIDTerminalRuleCall_0_7_1_0_1; }
 
 		//=> ({DataTypeCollection.elementType=current} "collection")*
 		public Group getGroup_1() { return cGroup_1; }
@@ -974,8 +986,8 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cActorInteractorActorDeclarationParserRuleCall_3_0_0 = (RuleCall)cActorAssignment_3_0.eContents().get(0);
 		private final Assignment cDataAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
 		private final RuleCall cDataInteractorDataDeclarationParserRuleCall_3_1_0 = (RuleCall)cDataAssignment_3_1.eContents().get(0);
-		private final Assignment cComponentAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
-		private final RuleCall cComponentInteractorComponentDeclarationParserRuleCall_3_2_0 = (RuleCall)cComponentAssignment_3_2.eContents().get(0);
+		private final Assignment cInteractorAssignment_3_2 = (Assignment)cAlternatives_3.eContents().get(2);
+		private final RuleCall cInteractorInteractorInteractorDeclarationParserRuleCall_3_2_0 = (RuleCall)cInteractorAssignment_3_2.eContents().get(0);
 		private final Assignment cBehaviorAssignment_3_3 = (Assignment)cAlternatives_3.eContents().get(3);
 		private final RuleCall cBehaviorInteractorBehaviorDeclarationParserRuleCall_3_3_0 = (RuleCall)cBehaviorAssignment_3_3.eContents().get(0);
 		
@@ -984,11 +996,11 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		////Interactor
 		//InteractorTypeDefinition:
 		//	name=ID "interactor" ":" (actor+=InteractorActorDeclaration | data+=InteractorDataDeclaration |
-		//	component+=InteractorComponentDeclaration | behavior+=InteractorBehaviorDeclaration)*;
+		//	interactor+=InteractorInteractorDeclaration | behavior+=InteractorBehaviorDeclaration)*;
 		public ParserRule getRule() { return rule; }
 
 		//name=ID "interactor" ":" (actor+=InteractorActorDeclaration | data+=InteractorDataDeclaration |
-		//component+=InteractorComponentDeclaration | behavior+=InteractorBehaviorDeclaration)*
+		//interactor+=InteractorInteractorDeclaration | behavior+=InteractorBehaviorDeclaration)*
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -1003,7 +1015,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//(actor+=InteractorActorDeclaration | data+=InteractorDataDeclaration | component+=InteractorComponentDeclaration |
+		//(actor+=InteractorActorDeclaration | data+=InteractorDataDeclaration | interactor+=InteractorInteractorDeclaration |
 		//behavior+=InteractorBehaviorDeclaration)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
@@ -1019,11 +1031,11 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//InteractorDataDeclaration
 		public RuleCall getDataInteractorDataDeclarationParserRuleCall_3_1_0() { return cDataInteractorDataDeclarationParserRuleCall_3_1_0; }
 
-		//component+=InteractorComponentDeclaration
-		public Assignment getComponentAssignment_3_2() { return cComponentAssignment_3_2; }
+		//interactor+=InteractorInteractorDeclaration
+		public Assignment getInteractorAssignment_3_2() { return cInteractorAssignment_3_2; }
 
-		//InteractorComponentDeclaration
-		public RuleCall getComponentInteractorComponentDeclarationParserRuleCall_3_2_0() { return cComponentInteractorComponentDeclarationParserRuleCall_3_2_0; }
+		//InteractorInteractorDeclaration
+		public RuleCall getInteractorInteractorInteractorDeclarationParserRuleCall_3_2_0() { return cInteractorInteractorInteractorDeclarationParserRuleCall_3_2_0; }
 
 		//behavior+=InteractorBehaviorDeclaration
 		public Assignment getBehaviorAssignment_3_3() { return cBehaviorAssignment_3_3; }
@@ -1104,10 +1116,10 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getActorKeyword_1_3() { return cActorKeyword_1_3; }
 	}
 
-	public class InteractorComponentDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InteractorComponentDeclaration");
+	public class InteractorInteractorDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InteractorInteractorDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cInteractorComponentDeclarationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cInteractorInteractorDeclarationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_1_0_0 = (RuleCall)cNameAssignment_1_0.eContents().get(0);
@@ -1120,16 +1132,16 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cActorsAssignment_1_4_1 = (Assignment)cGroup_1_4.eContents().get(1);
 		private final RuleCall cActorsInteractorActorAliasParserRuleCall_1_4_1_0 = (RuleCall)cActorsAssignment_1_4_1.eContents().get(0);
 		
-		//InteractorComponentDeclaration returns InteractorEntityDeclaration:
-		//	{InteractorComponentDeclaration} (name=ID ":" type=InteractorType "interactor" ("with"
+		//InteractorInteractorDeclaration returns InteractorEntityDeclaration:
+		//	{InteractorInteractorDeclaration} (name=ID ":" type=InteractorType "interactor" ("with"
 		//	actors+=InteractorActorAlias)*);
 		public ParserRule getRule() { return rule; }
 
-		//{InteractorComponentDeclaration} (name=ID ":" type=InteractorType "interactor" ("with" actors+=InteractorActorAlias)*)
+		//{InteractorInteractorDeclaration} (name=ID ":" type=InteractorType "interactor" ("with" actors+=InteractorActorAlias)*)
 		public Group getGroup() { return cGroup; }
 
-		//{InteractorComponentDeclaration}
-		public Action getInteractorComponentDeclarationAction_0() { return cInteractorComponentDeclarationAction_0; }
+		//{InteractorInteractorDeclaration}
+		public Action getInteractorInteractorDeclarationAction_0() { return cInteractorInteractorDeclarationAction_0; }
 
 		//name=ID ":" type=InteractorType "interactor" ("with" actors+=InteractorActorAlias)*
 		public Group getGroup_1() { return cGroup_1; }
@@ -1212,9 +1224,6 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeDataTypeParserRuleCall_2_1_2_0 = (RuleCall)cTypeAssignment_2_1_2.eContents().get(0);
 		private final Keyword cConstantKeyword_2_1_3 = (Keyword)cGroup_2_1.eContents().get(3);
 		
-		////InteractorEntityDeclaration :
-		////	InteractorComponentDeclaration | InteractorActorDeclaration
-		////;
 		//InteractorDataDeclaration:
 		//	{InteractorDataDeclarationEvent} (name=ID ":" type=DataType "event" ("from" source=InteractorDataAlias)? ("to"
 		//	destinations+=InteractorDataAlias)*) | {InteractorDataDeclarationFlow} (name=ID ":" type=DataType "flow" ("from"
@@ -1471,16 +1480,32 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cEntityAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
 		private final CrossReference cEntityInteractorEntityDeclarationCrossReference_7_1_0 = (CrossReference)cEntityAssignment_7_1.eContents().get(0);
 		private final RuleCall cEntityInteractorEntityDeclarationIDTerminalRuleCall_7_1_0_1 = (RuleCall)cEntityInteractorEntityDeclarationCrossReference_7_1_0.eContents().get(1);
+		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
+		private final Action cInteractorEntityActorAction_8_0 = (Action)cGroup_8.eContents().get(0);
+		private final Assignment cEntityAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final CrossReference cEntityInteractorActorDeclarationCrossReference_8_1_0 = (CrossReference)cEntityAssignment_8_1.eContents().get(0);
+		private final RuleCall cEntityInteractorActorDeclarationIDTerminalRuleCall_8_1_0_1 = (RuleCall)cEntityInteractorActorDeclarationCrossReference_8_1_0.eContents().get(1);
+		private final Keyword cActorKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final Action cInteractorEntityInteractorAction_9_0 = (Action)cGroup_9.eContents().get(0);
+		private final Assignment cEntityAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final CrossReference cEntityInteractorInteractorDeclarationCrossReference_9_1_0 = (CrossReference)cEntityAssignment_9_1.eContents().get(0);
+		private final RuleCall cEntityInteractorInteractorDeclarationIDTerminalRuleCall_9_1_0_1 = (RuleCall)cEntityInteractorInteractorDeclarationCrossReference_9_1_0.eContents().get(1);
+		private final Keyword cInteractorKeyword_9_2 = (Keyword)cGroup_9.eContents().get(2);
 		
 		//InteractorEntity:
 		//	{InteractorEntityAny} "any" | {InteractorEntitySelf} "self" | {InteractorEntityOther} "other" |
 		//	{InteractorEntityParent} "parent" | {InteractorEntityChild} "child" | {InteractorEntityAll} "all" |
-		//	{InteractorEntityActors} "actors" | {InteractorEntitySpecific} entity=[InteractorEntityDeclaration];
+		//	{InteractorEntityActors} "actors" | {InteractorEntitySpecific} entity=[InteractorEntityDeclaration] |
+		//	{InteractorEntityActor} entity=[InteractorActorDeclaration] "actor" | {InteractorEntityInteractor}
+		//	entity=[InteractorInteractorDeclaration] "interactor";
 		public ParserRule getRule() { return rule; }
 
 		//{InteractorEntityAny} "any" | {InteractorEntitySelf} "self" | {InteractorEntityOther} "other" | {InteractorEntityParent}
 		//"parent" | {InteractorEntityChild} "child" | {InteractorEntityAll} "all" | {InteractorEntityActors} "actors" |
-		//{InteractorEntitySpecific} entity=[InteractorEntityDeclaration]
+		//{InteractorEntitySpecific} entity=[InteractorEntityDeclaration] | {InteractorEntityActor}
+		//entity=[InteractorActorDeclaration] "actor" | {InteractorEntityInteractor} entity=[InteractorInteractorDeclaration]
+		//"interactor"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{InteractorEntityAny} "any"
@@ -1560,6 +1585,42 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getEntityInteractorEntityDeclarationIDTerminalRuleCall_7_1_0_1() { return cEntityInteractorEntityDeclarationIDTerminalRuleCall_7_1_0_1; }
+
+		//{InteractorEntityActor} entity=[InteractorActorDeclaration] "actor"
+		public Group getGroup_8() { return cGroup_8; }
+
+		//{InteractorEntityActor}
+		public Action getInteractorEntityActorAction_8_0() { return cInteractorEntityActorAction_8_0; }
+
+		//entity=[InteractorActorDeclaration]
+		public Assignment getEntityAssignment_8_1() { return cEntityAssignment_8_1; }
+
+		//[InteractorActorDeclaration]
+		public CrossReference getEntityInteractorActorDeclarationCrossReference_8_1_0() { return cEntityInteractorActorDeclarationCrossReference_8_1_0; }
+
+		//ID
+		public RuleCall getEntityInteractorActorDeclarationIDTerminalRuleCall_8_1_0_1() { return cEntityInteractorActorDeclarationIDTerminalRuleCall_8_1_0_1; }
+
+		//"actor"
+		public Keyword getActorKeyword_8_2() { return cActorKeyword_8_2; }
+
+		//{InteractorEntityInteractor} entity=[InteractorInteractorDeclaration] "interactor"
+		public Group getGroup_9() { return cGroup_9; }
+
+		//{InteractorEntityInteractor}
+		public Action getInteractorEntityInteractorAction_9_0() { return cInteractorEntityInteractorAction_9_0; }
+
+		//entity=[InteractorInteractorDeclaration]
+		public Assignment getEntityAssignment_9_1() { return cEntityAssignment_9_1; }
+
+		//[InteractorInteractorDeclaration]
+		public CrossReference getEntityInteractorInteractorDeclarationCrossReference_9_1_0() { return cEntityInteractorInteractorDeclarationCrossReference_9_1_0; }
+
+		//ID
+		public RuleCall getEntityInteractorInteractorDeclarationIDTerminalRuleCall_9_1_0_1() { return cEntityInteractorInteractorDeclarationIDTerminalRuleCall_9_1_0_1; }
+
+		//"interactor"
+		public Keyword getInteractorKeyword_9_2() { return cInteractorKeyword_9_2; }
 	}
 
 	public class InteractorDataReceptionElements extends AbstractParserRuleElementFinder {
@@ -1580,8 +1641,8 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSourceAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
 		private final RuleCall cSourceInteractorDataAliasParserRuleCall_1_1_2_0 = (RuleCall)cSourceAssignment_1_1_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cInteractorDataReceptionInitAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Keyword cInitKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Action cInteractorDataReceptionInitializationAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cInitializationKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		
 		////	|
 		////	{InteractorEntityActor} actor=[InteractorActor] ;
@@ -1589,11 +1650,13 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		////Interactor Data
 		//InteractorDataReception:
 		//	{InteractorDataReceptionInternal} data=[InteractorDataDeclaration] | {InteractorDataReceptionExternal}
-		//	(data=[InteractorDataDeclaration] "from" source=InteractorDataAlias) | {InteractorDataReceptionInit} "init";
+		//	(data=[InteractorDataDeclaration] "from" source=InteractorDataAlias) | {InteractorDataReceptionInitialization}
+		//	"initialization";
 		public ParserRule getRule() { return rule; }
 
 		//{InteractorDataReceptionInternal} data=[InteractorDataDeclaration] | {InteractorDataReceptionExternal}
-		//(data=[InteractorDataDeclaration] "from" source=InteractorDataAlias) | {InteractorDataReceptionInit} "init"
+		//(data=[InteractorDataDeclaration] "from" source=InteractorDataAlias) | {InteractorDataReceptionInitialization}
+		//"initialization"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{InteractorDataReceptionInternal} data=[InteractorDataDeclaration]
@@ -1638,14 +1701,14 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		//InteractorDataAlias
 		public RuleCall getSourceInteractorDataAliasParserRuleCall_1_1_2_0() { return cSourceInteractorDataAliasParserRuleCall_1_1_2_0; }
 
-		//{InteractorDataReceptionInit} "init"
+		//{InteractorDataReceptionInitialization} "initialization"
 		public Group getGroup_2() { return cGroup_2; }
 
-		//{InteractorDataReceptionInit}
-		public Action getInteractorDataReceptionInitAction_2_0() { return cInteractorDataReceptionInitAction_2_0; }
+		//{InteractorDataReceptionInitialization}
+		public Action getInteractorDataReceptionInitializationAction_2_0() { return cInteractorDataReceptionInitializationAction_2_0; }
 
-		//"init"
-		public Keyword getInitKeyword_2_1() { return cInitKeyword_2_1; }
+		//"initialization"
+		public Keyword getInitializationKeyword_2_1() { return cInitializationKeyword_2_1; }
 	}
 
 	public class InteractorDataEmissionElements extends AbstractParserRuleElementFinder {
@@ -3920,7 +3983,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	private InteractorTypeDefinitionElements pInteractorTypeDefinition;
 	private InteractorTypeElements pInteractorType;
 	private InteractorActorDeclarationElements pInteractorActorDeclaration;
-	private InteractorComponentDeclarationElements pInteractorComponentDeclaration;
+	private InteractorInteractorDeclarationElements pInteractorInteractorDeclaration;
 	private InteractorDataDeclarationElements pInteractorDataDeclaration;
 	private InteractorActorAliasElements pInteractorActorAlias;
 	private InteractorDataAliasElements pInteractorDataAlias;
@@ -4078,13 +4141,13 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DataType:
-	//	({DataTypeVoid} "void" | {DataTypeSymbol} "symbol" ("in" definitionSet=DataTypeSymbolDefinitionSet)? |
-	//	{DataTypeNumber} "number" ("in" definitionSet=DataTypeNumberDefinitionSet)? | {DataTypeText} "text" ("in"
-	//	definitionSet=DataTypeTextDefinitionSet)? | {DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)? |
-	//	{DataTypeIdentifier} "identifier" ("in" definitionSet=DataTypeIdentifierDefinitionSet)? | {DataTypeCustom}
-	//	definition=[DataTypeDefinition]) => ({DataTypeCollection.elementType=current} "collection")* =>
-	//	({DataTypeSet.elementType=current} "set")* => ({DataTypeList.elementType=current} "list")* =>
-	//	({DataTypeQueue.elementType=current} "queue")*;
+	//	({DataTypeVoid} "void" | {DataTypeBoolean} "boolean" | {DataTypeSymbol} "symbol" ("in"
+	//	definitionSet=DataTypeSymbolDefinitionSet)? | {DataTypeNumber} "number" ("in"
+	//	definitionSet=DataTypeNumberDefinitionSet)? | {DataTypeText} "text" ("in" definitionSet=DataTypeTextDefinitionSet)? |
+	//	{DataTypeTime} "time" ("in" definitionSet=DataTypeTimeDefinitionSet)? | {DataTypeIdentifier} "identifier" ("in"
+	//	definitionSet=DataTypeIdentifierDefinitionSet)? | {DataTypeCustom} definition=[DataTypeDefinition]) =>
+	//	({DataTypeCollection.elementType=current} "collection")* => ({DataTypeSet.elementType=current} "set")* =>
+	//	({DataTypeList.elementType=current} "list")* => ({DataTypeQueue.elementType=current} "queue")*;
 	public DataTypeElements getDataTypeAccess() {
 		return (pDataType != null) ? pDataType : (pDataType = new DataTypeElements());
 	}
@@ -4170,7 +4233,7 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	////Interactor
 	//InteractorTypeDefinition:
 	//	name=ID "interactor" ":" (actor+=InteractorActorDeclaration | data+=InteractorDataDeclaration |
-	//	component+=InteractorComponentDeclaration | behavior+=InteractorBehaviorDeclaration)*;
+	//	interactor+=InteractorInteractorDeclaration | behavior+=InteractorBehaviorDeclaration)*;
 	public InteractorTypeDefinitionElements getInteractorTypeDefinitionAccess() {
 		return (pInteractorTypeDefinition != null) ? pInteractorTypeDefinition : (pInteractorTypeDefinition = new InteractorTypeDefinitionElements());
 	}
@@ -4199,20 +4262,17 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 		return getInteractorActorDeclarationAccess().getRule();
 	}
 
-	//InteractorComponentDeclaration returns InteractorEntityDeclaration:
-	//	{InteractorComponentDeclaration} (name=ID ":" type=InteractorType "interactor" ("with"
+	//InteractorInteractorDeclaration returns InteractorEntityDeclaration:
+	//	{InteractorInteractorDeclaration} (name=ID ":" type=InteractorType "interactor" ("with"
 	//	actors+=InteractorActorAlias)*);
-	public InteractorComponentDeclarationElements getInteractorComponentDeclarationAccess() {
-		return (pInteractorComponentDeclaration != null) ? pInteractorComponentDeclaration : (pInteractorComponentDeclaration = new InteractorComponentDeclarationElements());
+	public InteractorInteractorDeclarationElements getInteractorInteractorDeclarationAccess() {
+		return (pInteractorInteractorDeclaration != null) ? pInteractorInteractorDeclaration : (pInteractorInteractorDeclaration = new InteractorInteractorDeclarationElements());
 	}
 	
-	public ParserRule getInteractorComponentDeclarationRule() {
-		return getInteractorComponentDeclarationAccess().getRule();
+	public ParserRule getInteractorInteractorDeclarationRule() {
+		return getInteractorInteractorDeclarationAccess().getRule();
 	}
 
-	////InteractorEntityDeclaration :
-	////	InteractorComponentDeclaration | InteractorActorDeclaration
-	////;
 	//InteractorDataDeclaration:
 	//	{InteractorDataDeclarationEvent} (name=ID ":" type=DataType "event" ("from" source=InteractorDataAlias)? ("to"
 	//	destinations+=InteractorDataAlias)*) | {InteractorDataDeclarationFlow} (name=ID ":" type=DataType "flow" ("from"
@@ -4251,7 +4311,9 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	//InteractorEntity:
 	//	{InteractorEntityAny} "any" | {InteractorEntitySelf} "self" | {InteractorEntityOther} "other" |
 	//	{InteractorEntityParent} "parent" | {InteractorEntityChild} "child" | {InteractorEntityAll} "all" |
-	//	{InteractorEntityActors} "actors" | {InteractorEntitySpecific} entity=[InteractorEntityDeclaration];
+	//	{InteractorEntityActors} "actors" | {InteractorEntitySpecific} entity=[InteractorEntityDeclaration] |
+	//	{InteractorEntityActor} entity=[InteractorActorDeclaration] "actor" | {InteractorEntityInteractor}
+	//	entity=[InteractorInteractorDeclaration] "interactor";
 	public InteractorEntityElements getInteractorEntityAccess() {
 		return (pInteractorEntity != null) ? pInteractorEntity : (pInteractorEntity = new InteractorEntityElements());
 	}
@@ -4266,7 +4328,8 @@ public class LilGrammarAccess extends AbstractGrammarElementFinder {
 	////Interactor Data
 	//InteractorDataReception:
 	//	{InteractorDataReceptionInternal} data=[InteractorDataDeclaration] | {InteractorDataReceptionExternal}
-	//	(data=[InteractorDataDeclaration] "from" source=InteractorDataAlias) | {InteractorDataReceptionInit} "init";
+	//	(data=[InteractorDataDeclaration] "from" source=InteractorDataAlias) | {InteractorDataReceptionInitialization}
+	//	"initialization";
 	public InteractorDataReceptionElements getInteractorDataReceptionAccess() {
 		return (pInteractorDataReception != null) ? pInteractorDataReception : (pInteractorDataReception = new InteractorDataReceptionElements());
 	}

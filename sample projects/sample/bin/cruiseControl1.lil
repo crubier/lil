@@ -1,0 +1,65 @@
+package cruiseControl1
+
+
+human actor :
+// nothing specified at this level
+
+system actor :
+//nothing specified at this level
+
+// Le type de donnŽe "speed" est un nombre compris entre 0 et 200
+speed data :
+	number in [0, 200]
+
+// Modes du controleur de vitesse
+cruiseMode data :
+	symbol in {#NONE,#LIMIT,#CONTROL}
+
+// Cet interacteur reprŽsente le fonctionnement complet du controleur de vitesse de ma peugeot 307
+cruiseControl interactor :
+
+	// Deux acteurs : le conducteur et la voiture
+	driver : human actor
+	car : system actor
+	
+	
+	
+	//Etat du controleur de vitesse
+	enabled : boolean flow to car to driver
+	mode : cruiseMode flow from driver to car
+	
+	toggle : void event from driver 
+	
+	// Vitesse dŽsirŽe
+	targetSpeed : speed flow from driver to car
+	
+	// Vitesse rŽelle 
+	actualSpeed : speed flow from car to driver
+	
+	// Signal de dŽfaut en provenance du rŽgulateur
+	failure : boolean flow from car
+	
+	// Alarme en cas de fonctionnnement non nominal
+	alarm : boolean flow to driver
+	
+	on initialization :
+		set enabled = false
+		always alarm = enabled and ( failure or targetSpeed > actualSpeed )
+		
+	when failure :
+		set enabled = false	
+		
+	on toggle if enabled :
+		set enabled = false
+		
+	on toggle if ! enabled :
+		set enabled = true
+	
+	when mode==#NONE :
+		set enabled = false
+		
+	when mode==#LIMIT :
+		set enabled = false
+		
+	when mode==#CONTROL :
+		set enabled = false

@@ -1,44 +1,53 @@
 package com.crubier.lil.ui.syntaxcoloring;
 
 import com.crubier.lil.ui.syntaxcoloring.HighlightingConfiguration;
+import com.google.common.base.Objects;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
 
 @SuppressWarnings("all")
 public class TokenToAttributeIdMapper extends AbstractAntlrTokenToAttributeIdMapper {
   protected String calculateId(final String tokenName, final int tokenType) {
-    boolean _and = false;
-    boolean _and_1 = false;
-    boolean _startsWith = tokenName.startsWith("\'");
-    if (!_startsWith) {
-      _and_1 = false;
-    } else {
-      int _length = tokenName.length();
-      boolean _greaterThan = (_length > 3);
-      _and_1 = (_startsWith && _greaterThan);
-    }
-    if (!_and_1) {
-      _and = false;
-    } else {
-      boolean _startsWith_1 = tokenName.startsWith("math");
-      boolean _not = (!_startsWith_1);
-      _and = (_and_1 && _not);
-    }
-    if (_and) {
-      return HighlightingConfiguration.KEYWORD_ID;
-    } else {
-      boolean _or = false;
-      boolean _equals = tokenName.equals("RULE_ML_COMMENT");
-      if (_equals) {
-        _or = true;
-      } else {
-        boolean _equals_1 = tokenName.equals("RULE_SL_COMMENT");
-        _or = (_equals || _equals_1);
-      }
-      if (_or) {
+    boolean _matched = false;
+    if (!_matched) {
+      if (Objects.equal(tokenName,"RULE_ML_COMMENT")) {
+        _matched=true;
         return HighlightingConfiguration.COMMENT_ID;
-      } else {
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(tokenName,"RULE_SL_COMMENT")) {
+        _matched=true;
+        return HighlightingConfiguration.COMMENT_ID;
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(tokenName,"\'initialization\'")) {
+        _matched=true;
         return null;
       }
     }
+    if (!_matched) {
+      boolean _startsWith = tokenName.startsWith("\'math.");
+      if (_startsWith) {
+        _matched=true;
+        return null;
+      }
+    }
+    if (!_matched) {
+      boolean _and = false;
+      boolean _startsWith_1 = tokenName.startsWith("\'");
+      if (!_startsWith_1) {
+        _and = false;
+      } else {
+        int _length = tokenName.length();
+        boolean _greaterThan = (_length > 3);
+        _and = (_startsWith_1 && _greaterThan);
+      }
+      if (_and) {
+        _matched=true;
+        return HighlightingConfiguration.KEYWORD_ID;
+      }
+    }
+    return null;
   }
 }

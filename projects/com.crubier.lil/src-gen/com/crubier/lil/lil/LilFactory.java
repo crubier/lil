@@ -356,6 +356,15 @@ public interface LilFactory extends EFactory
   DataTypeVoid createDataTypeVoid();
 
   /**
+   * Returns a new object of class '<em>Data Type Boolean</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type Boolean</em>'.
+   * @generated
+   */
+  DataTypeBoolean createDataTypeBoolean();
+
+  /**
    * Returns a new object of class '<em>Data Type Symbol</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -518,13 +527,13 @@ public interface LilFactory extends EFactory
   InteractorActorDeclaration createInteractorActorDeclaration();
 
   /**
-   * Returns a new object of class '<em>Interactor Component Declaration</em>'.
+   * Returns a new object of class '<em>Interactor Interactor Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Component Declaration</em>'.
+   * @return a new object of class '<em>Interactor Interactor Declaration</em>'.
    * @generated
    */
-  InteractorComponentDeclaration createInteractorComponentDeclaration();
+  InteractorInteractorDeclaration createInteractorInteractorDeclaration();
 
   /**
    * Returns a new object of class '<em>Interactor Data Declaration Event</em>'.
@@ -626,6 +635,24 @@ public interface LilFactory extends EFactory
   InteractorEntitySpecific createInteractorEntitySpecific();
 
   /**
+   * Returns a new object of class '<em>Interactor Entity Actor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity Actor</em>'.
+   * @generated
+   */
+  InteractorEntityActor createInteractorEntityActor();
+
+  /**
+   * Returns a new object of class '<em>Interactor Entity Interactor</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interactor Entity Interactor</em>'.
+   * @generated
+   */
+  InteractorEntityInteractor createInteractorEntityInteractor();
+
+  /**
    * Returns a new object of class '<em>Interactor Data Reception Internal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -644,13 +671,13 @@ public interface LilFactory extends EFactory
   InteractorDataReceptionExternal createInteractorDataReceptionExternal();
 
   /**
-   * Returns a new object of class '<em>Interactor Data Reception Init</em>'.
+   * Returns a new object of class '<em>Interactor Data Reception Initialization</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interactor Data Reception Init</em>'.
+   * @return a new object of class '<em>Interactor Data Reception Initialization</em>'.
    * @generated
    */
-  InteractorDataReceptionInit createInteractorDataReceptionInit();
+  InteractorDataReceptionInitialization createInteractorDataReceptionInitialization();
 
   /**
    * Returns a new object of class '<em>Interactor Data Emission Internal</em>'.

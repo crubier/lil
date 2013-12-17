@@ -1,0 +1,26 @@
+package standardActors
+
+// A standard human actor
+human actor :
+	pointing : 	input
+	viewing : 	output
+	sound : 	output
+	
+// A standard system actor
+system actor :
+	command : 	output
+	report : 	input
+
+// The crew of an aircraft
+crew actor :
+	captain : 	human
+	officer : 	human
+	purser : 	human
+	attendant : human
+
+// Systems of an aircraft
+aircraft actor :
+	flight : 		system
+	maintenance :	system
+	cabin : 		system
+	

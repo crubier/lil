@@ -6,6 +6,7 @@ import com.crubier.lil.lil.ActorTypeDefinition;
 import com.crubier.lil.lil.ActorTypeInput;
 import com.crubier.lil.lil.ActorTypeOutput;
 import com.crubier.lil.lil.DataComponentDeclaration;
+import com.crubier.lil.lil.DataTypeBoolean;
 import com.crubier.lil.lil.DataTypeCollection;
 import com.crubier.lil.lil.DataTypeCustom;
 import com.crubier.lil.lil.DataTypeDefinitionAlias;
@@ -44,7 +45,6 @@ import com.crubier.lil.lil.InteractorBehaviorDeclaration;
 import com.crubier.lil.lil.InteractorBehaviorEffectAlways;
 import com.crubier.lil.lil.InteractorBehaviorEffectSet;
 import com.crubier.lil.lil.InteractorBehaviorEffectTrigger;
-import com.crubier.lil.lil.InteractorComponentDeclaration;
 import com.crubier.lil.lil.InteractorDataAlias;
 import com.crubier.lil.lil.InteractorDataDeclarationConstant;
 import com.crubier.lil.lil.InteractorDataDeclarationEvent;
@@ -52,16 +52,19 @@ import com.crubier.lil.lil.InteractorDataDeclarationFlow;
 import com.crubier.lil.lil.InteractorDataEmissionExternal;
 import com.crubier.lil.lil.InteractorDataEmissionInternal;
 import com.crubier.lil.lil.InteractorDataReceptionExternal;
-import com.crubier.lil.lil.InteractorDataReceptionInit;
+import com.crubier.lil.lil.InteractorDataReceptionInitialization;
 import com.crubier.lil.lil.InteractorDataReceptionInternal;
+import com.crubier.lil.lil.InteractorEntityActor;
 import com.crubier.lil.lil.InteractorEntityActors;
 import com.crubier.lil.lil.InteractorEntityAll;
 import com.crubier.lil.lil.InteractorEntityAny;
 import com.crubier.lil.lil.InteractorEntityChild;
+import com.crubier.lil.lil.InteractorEntityInteractor;
 import com.crubier.lil.lil.InteractorEntityOther;
 import com.crubier.lil.lil.InteractorEntityParent;
 import com.crubier.lil.lil.InteractorEntitySelf;
 import com.crubier.lil.lil.InteractorEntitySpecific;
+import com.crubier.lil.lil.InteractorInteractorDeclaration;
 import com.crubier.lil.lil.InteractorTypeCustom;
 import com.crubier.lil.lil.InteractorTypeDefinition;
 import com.crubier.lil.lil.LilModel;
@@ -130,6 +133,16 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.DATA_COMPONENT_DECLARATION:
 				if(context == grammarAccess.getDataComponentDeclarationRule()) {
 					sequence_DataComponentDeclaration(context, (DataComponentDeclaration) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.DATA_TYPE_BOOLEAN:
+				if(context == grammarAccess.getDataTypeRule() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeCollectionElementTypeAction_1_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeListElementTypeAction_3_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeQueueElementTypeAction_4_0_0() ||
+				   context == grammarAccess.getDataTypeAccess().getDataTypeSetElementTypeAction_2_0_0()) {
+					sequence_DataType(context, (DataTypeBoolean) semanticObject); 
 					return; 
 				}
 				else break;
@@ -528,12 +541,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.INTERACTOR_COMPONENT_DECLARATION:
-				if(context == grammarAccess.getInteractorComponentDeclarationRule()) {
-					sequence_InteractorComponentDeclaration(context, (InteractorComponentDeclaration) semanticObject); 
-					return; 
-				}
-				else break;
 			case LilPackage.INTERACTOR_DATA_ALIAS:
 				if(context == grammarAccess.getInteractorDataAliasRule()) {
 					sequence_InteractorDataAlias(context, (InteractorDataAlias) semanticObject); 
@@ -595,7 +602,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LilPackage.INTERACTOR_DATA_RECEPTION_INIT:
+			case LilPackage.INTERACTOR_DATA_RECEPTION_INITIALIZATION:
 				if(context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getExpressionAdditionRule() ||
 				   context == grammarAccess.getExpressionAdditionAccess().getExpressionBinaryOperationLeftOperandAction_1_0_0_0() ||
@@ -616,7 +623,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getExpressionPrimaryRule() ||
 				   context == grammarAccess.getExpressionUnaryRule() ||
 				   context == grammarAccess.getInteractorDataReceptionRule()) {
-					sequence_InteractorDataReception(context, (InteractorDataReceptionInit) semanticObject); 
+					sequence_InteractorDataReception(context, (InteractorDataReceptionInitialization) semanticObject); 
 					return; 
 				}
 				else break;
@@ -645,6 +652,12 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case LilPackage.INTERACTOR_ENTITY_ACTOR:
+				if(context == grammarAccess.getInteractorEntityRule()) {
+					sequence_InteractorEntity(context, (InteractorEntityActor) semanticObject); 
+					return; 
+				}
+				else break;
 			case LilPackage.INTERACTOR_ENTITY_ACTORS:
 				if(context == grammarAccess.getInteractorEntityRule()) {
 					sequence_InteractorEntity(context, (InteractorEntityActors) semanticObject); 
@@ -669,6 +682,12 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case LilPackage.INTERACTOR_ENTITY_INTERACTOR:
+				if(context == grammarAccess.getInteractorEntityRule()) {
+					sequence_InteractorEntity(context, (InteractorEntityInteractor) semanticObject); 
+					return; 
+				}
+				else break;
 			case LilPackage.INTERACTOR_ENTITY_OTHER:
 				if(context == grammarAccess.getInteractorEntityRule()) {
 					sequence_InteractorEntity(context, (InteractorEntityOther) semanticObject); 
@@ -690,6 +709,12 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LilPackage.INTERACTOR_ENTITY_SPECIFIC:
 				if(context == grammarAccess.getInteractorEntityRule()) {
 					sequence_InteractorEntity(context, (InteractorEntitySpecific) semanticObject); 
+					return; 
+				}
+				else break;
+			case LilPackage.INTERACTOR_INTERACTOR_DECLARATION:
+				if(context == grammarAccess.getInteractorInteractorDeclarationRule()) {
+					sequence_InteractorInteractorDeclaration(context, (InteractorInteractorDeclaration) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1123,6 +1148,15 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     {DataTypeBoolean}
+	 */
+	protected void sequence_DataType(EObject context, DataTypeBoolean semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     elementType=DataType_DataTypeCollection_1_0_0
 	 */
 	protected void sequence_DataType(EObject context, DataTypeCollection semanticObject) {
@@ -1148,7 +1182,7 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDataTypeAccess().getDefinitionDataTypeDefinitionIDTerminalRuleCall_0_6_1_0_1(), semanticObject.getDefinition());
+		feeder.accept(grammarAccess.getDataTypeAccess().getDefinitionDataTypeDefinitionIDTerminalRuleCall_0_7_1_0_1(), semanticObject.getDefinition());
 		feeder.finish();
 	}
 	
@@ -1527,15 +1561,6 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=InteractorType actors+=InteractorActorAlias*)
-	 */
-	protected void sequence_InteractorComponentDeclaration(EObject context, InteractorComponentDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (entity=InteractorEntity alias=[InteractorDataDeclaration|ID]?)
 	 */
 	protected void sequence_InteractorDataAlias(EObject context, InteractorDataAlias semanticObject) {
@@ -1636,9 +1661,9 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     {InteractorDataReceptionInit}
+	 *     {InteractorDataReceptionInitialization}
 	 */
-	protected void sequence_InteractorDataReception(EObject context, InteractorDataReceptionInit semanticObject) {
+	protected void sequence_InteractorDataReception(EObject context, InteractorDataReceptionInitialization semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1655,6 +1680,22 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getInteractorDataReceptionAccess().getDataInteractorDataDeclarationIDTerminalRuleCall_0_1_0_1(), semanticObject.getData());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     entity=[InteractorActorDeclaration|ID]
+	 */
+	protected void sequence_InteractorEntity(EObject context, InteractorEntityActor semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_ENTITY_ACTOR__ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_ENTITY_ACTOR__ENTITY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInteractorEntityAccess().getEntityInteractorActorDeclarationIDTerminalRuleCall_8_1_0_1(), semanticObject.getEntity());
 		feeder.finish();
 	}
 	
@@ -1692,6 +1733,22 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_InteractorEntity(EObject context, InteractorEntityChild semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     entity=[InteractorInteractorDeclaration|ID]
+	 */
+	protected void sequence_InteractorEntity(EObject context, InteractorEntityInteractor semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LilPackage.Literals.INTERACTOR_ENTITY_INTERACTOR__ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilPackage.Literals.INTERACTOR_ENTITY_INTERACTOR__ENTITY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getInteractorEntityAccess().getEntityInteractorInteractorDeclarationIDTerminalRuleCall_9_1_0_1(), semanticObject.getEntity());
+		feeder.finish();
 	}
 	
 	
@@ -1740,12 +1797,21 @@ public class LilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (name=ID type=InteractorType actors+=InteractorActorAlias*)
+	 */
+	protected void sequence_InteractorInteractorDeclaration(EObject context, InteractorInteractorDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         name=ID 
 	 *         (
 	 *             actor+=InteractorActorDeclaration | 
 	 *             data+=InteractorDataDeclaration | 
-	 *             component+=InteractorComponentDeclaration | 
+	 *             interactor+=InteractorInteractorDeclaration | 
 	 *             behavior+=InteractorBehaviorDeclaration
 	 *         )*
 	 *     )

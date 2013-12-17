@@ -38,6 +38,7 @@ DataTypeDefinition returns DataTypeDefinition:
 
 DataType returns DataType:
 	({DataTypeVoid} "void" |
+	{DataTypeBoolean} "boolean" |
 	{DataTypeSymbol} "symbol" ("in" definitionSet=DataTypeSymbolDefinitionSet)? |
 	{DataTypeNumber} "number" ("in" definitionSet=DataTypeNumberDefinitionSet)? |
 	{DataTypeText} "text" ("in" definitionSet=DataTypeTextDefinitionSet)? |
@@ -80,7 +81,7 @@ InteractorTypeDefinition:
 	(
 	(actor+=InteractorActorDeclaration) |
 	(data+=InteractorDataDeclaration) |
-	(component+=InteractorComponentDeclaration) |
+	(interactor+=InteractorInteractorDeclaration) |
 	(behavior+=InteractorBehaviorDeclaration)
 	)*;
 
@@ -90,12 +91,8 @@ InteractorType returns InteractorType:
 InteractorActorDeclaration returns InteractorEntityDeclaration:
 	{InteractorActorDeclaration} (name=ID ":" type=ActorType "actor");
 	
-InteractorComponentDeclaration returns InteractorEntityDeclaration:
-	{InteractorComponentDeclaration} (name=ID ":" type=InteractorType "interactor" ("with" actors+=InteractorActorAlias)*);
-	
-//InteractorEntityDeclaration :
-//	InteractorComponentDeclaration | InteractorActorDeclaration
-//;
+InteractorInteractorDeclaration returns InteractorEntityDeclaration:
+	{InteractorInteractorDeclaration} (name=ID ":" type=InteractorType "interactor" ("with" actors+=InteractorActorAlias)*);
 
 InteractorDataDeclaration returns InteractorDataDeclaration:
 	{InteractorDataDeclarationEvent} (name=ID ":" type=DataType "event" ("from" source=InteractorDataAlias)? ("to" destinations+=InteractorDataAlias)* )|
@@ -112,7 +109,7 @@ InteractorActorAlias:
 InteractorDataAlias:
 	entity=InteractorEntity ("as" alias=[InteractorDataDeclaration])?;
 
-InteractorEntity:
+InteractorEntity returns InteractorEntity:
 	{InteractorEntityAny} "any" |
 	{InteractorEntitySelf} "self" |
 	{InteractorEntityOther} "other" |
@@ -120,7 +117,9 @@ InteractorEntity:
 	{InteractorEntityChild} "child" |
 	{InteractorEntityAll} "all" |
 	{InteractorEntityActors} "actors" |
-	{InteractorEntitySpecific} entity=[InteractorEntityDeclaration] ;
+	{InteractorEntitySpecific} entity=[InteractorEntityDeclaration] |
+	{InteractorEntityActor} entity=[InteractorActorDeclaration] "actor" |
+	{InteractorEntityInteractor} entity=[InteractorInteractorDeclaration] "interactor";
 //	|
 //	{InteractorEntityActor} actor=[InteractorActor] ;
 
@@ -130,7 +129,7 @@ InteractorEntity:
 InteractorDataReception returns InteractorDataReception:
 	{InteractorDataReceptionInternal} (data=[InteractorDataDeclaration] ) |
 	{InteractorDataReceptionExternal} (data=[InteractorDataDeclaration] "from" source=InteractorDataAlias) |
-	{InteractorDataReceptionInit} ("init");
+	{InteractorDataReceptionInitialization} ("initialization");
 
 InteractorDataEmission returns InteractorDataEmission:
 	{InteractorDataEmissionInternal} (data=[InteractorDataDeclaration]) |
@@ -164,14 +163,14 @@ ExpressionOr returns Expression:
 	rightOperand=ExpressionAnd)*;
 
 ExpressionOrOp:
-	"or";
+	"||";
 
 ExpressionAnd returns Expression:
 	ExpressionEquality (=> ({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionAndOp)
 	rightOperand=ExpressionEquality)*;
 
 ExpressionAndOp:
-	"and";
+	"&&";
 
 ExpressionEquality returns Expression:
 	ExpressionCompare (=> ({ExpressionBinaryOperation.leftOperand=current} feature=ExpressionEqualityOp)

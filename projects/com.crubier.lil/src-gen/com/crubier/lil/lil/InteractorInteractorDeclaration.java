@@ -6,22 +6,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Interactor Component Declaration</b></em>'.
+ * A representation of the model object '<em><b>Interactor Interactor Declaration</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.InteractorComponentDeclaration#getType <em>Type</em>}</li>
- *   <li>{@link com.crubier.lil.lil.InteractorComponentDeclaration#getActors <em>Actors</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.InteractorInteractorDeclaration#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.InteractorInteractorDeclaration#getActors <em>Actors</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.crubier.lil.lil.LilPackage#getInteractorComponentDeclaration()
+ * @see com.crubier.lil.lil.LilPackage#getInteractorInteractorDeclaration()
  * @model
  * @generated
  */
-public interface InteractorComponentDeclaration extends InteractorEntityDeclaration
+public interface InteractorInteractorDeclaration extends InteractorEntityDeclaration
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.
@@ -33,14 +33,14 @@ public interface InteractorComponentDeclaration extends InteractorEntityDeclarat
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' containment reference.
    * @see #setType(InteractorType)
-   * @see com.crubier.lil.lil.LilPackage#getInteractorComponentDeclaration_Type()
+   * @see com.crubier.lil.lil.LilPackage#getInteractorInteractorDeclaration_Type()
    * @model containment="true"
    * @generated
    */
   InteractorType getType();
 
   /**
-   * Sets the value of the '{@link com.crubier.lil.lil.InteractorComponentDeclaration#getType <em>Type</em>}' containment reference.
+   * Sets the value of the '{@link com.crubier.lil.lil.InteractorInteractorDeclaration#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' containment reference.
@@ -59,10 +59,10 @@ public interface InteractorComponentDeclaration extends InteractorEntityDeclarat
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Actors</em>' containment reference list.
-   * @see com.crubier.lil.lil.LilPackage#getInteractorComponentDeclaration_Actors()
+   * @see com.crubier.lil.lil.LilPackage#getInteractorInteractorDeclaration_Actors()
    * @model containment="true"
    * @generated
    */
   EList<InteractorActorAlias> getActors();
 
-} // InteractorComponentDeclaration
+} // InteractorInteractorDeclaration

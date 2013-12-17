@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.crubier.lil.lil.InteractorTypeDefinition#getName <em>Name</em>}</li>
  *   <li>{@link com.crubier.lil.lil.InteractorTypeDefinition#getActor <em>Actor</em>}</li>
  *   <li>{@link com.crubier.lil.lil.InteractorTypeDefinition#getData <em>Data</em>}</li>
- *   <li>{@link com.crubier.lil.lil.InteractorTypeDefinition#getComponent <em>Component</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.InteractorTypeDefinition#getInteractor <em>Interactor</em>}</li>
  *   <li>{@link com.crubier.lil.lil.InteractorTypeDefinition#getBehavior <em>Behavior</em>}</li>
  * </ul>
  * </p>
@@ -87,20 +87,20 @@ public interface InteractorTypeDefinition extends EObject
   EList<InteractorDataDeclaration> getData();
 
   /**
-   * Returns the value of the '<em><b>Component</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Interactor</b></em>' containment reference list.
    * The list contents are of type {@link com.crubier.lil.lil.InteractorEntityDeclaration}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Component</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Interactor</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Component</em>' containment reference list.
-   * @see com.crubier.lil.lil.LilPackage#getInteractorTypeDefinition_Component()
+   * @return the value of the '<em>Interactor</em>' containment reference list.
+   * @see com.crubier.lil.lil.LilPackage#getInteractorTypeDefinition_Interactor()
    * @model containment="true"
    * @generated
    */
-  EList<InteractorEntityDeclaration> getComponent();
+  EList<InteractorEntityDeclaration> getInteractor();
 
   /**
    * Returns the value of the '<em><b>Behavior</b></em>' containment reference list.

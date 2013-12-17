@@ -2,28 +2,28 @@
  */
 package com.crubier.lil.lil.impl;
 
-import com.crubier.lil.lil.InteractorDataReceptionInit;
+import com.crubier.lil.lil.DataTypeBoolean;
 import com.crubier.lil.lil.LilPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Interactor Data Reception Init</b></em>'.
+ * An implementation of the model object '<em><b>Data Type Boolean</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class InteractorDataReceptionInitImpl extends InteractorDataReceptionImpl implements InteractorDataReceptionInit
+public class DataTypeBooleanImpl extends DataTypeImpl implements DataTypeBoolean
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InteractorDataReceptionInitImpl()
+  protected DataTypeBooleanImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class InteractorDataReceptionInitImpl extends InteractorDataReceptionImpl
   @Override
   protected EClass eStaticClass()
   {
-    return LilPackage.Literals.INTERACTOR_DATA_RECEPTION_INIT;
+    return LilPackage.Literals.DATA_TYPE_BOOLEAN;
   }
 
-} //InteractorDataReceptionInitImpl
+} //DataTypeBooleanImpl

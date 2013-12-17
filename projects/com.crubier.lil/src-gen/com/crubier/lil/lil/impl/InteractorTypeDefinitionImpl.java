@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.crubier.lil.lil.impl.InteractorTypeDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.InteractorTypeDefinitionImpl#getActor <em>Actor</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.InteractorTypeDefinitionImpl#getData <em>Data</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.InteractorTypeDefinitionImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.InteractorTypeDefinitionImpl#getInteractor <em>Interactor</em>}</li>
  *   <li>{@link com.crubier.lil.lil.impl.InteractorTypeDefinitionImpl#getBehavior <em>Behavior</em>}</li>
  * </ul>
  * </p>
@@ -84,14 +84,14 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
   protected EList<InteractorDataDeclaration> data;
 
   /**
-   * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
+   * The cached value of the '{@link #getInteractor() <em>Interactor</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComponent()
+   * @see #getInteractor()
    * @generated
    * @ordered
    */
-  protected EList<InteractorEntityDeclaration> component;
+  protected EList<InteractorEntityDeclaration> interactor;
 
   /**
    * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' containment reference list.
@@ -180,13 +180,13 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<InteractorEntityDeclaration> getComponent()
+  public EList<InteractorEntityDeclaration> getInteractor()
   {
-    if (component == null)
+    if (interactor == null)
     {
-      component = new EObjectContainmentEList<InteractorEntityDeclaration>(InteractorEntityDeclaration.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__COMPONENT);
+      interactor = new EObjectContainmentEList<InteractorEntityDeclaration>(InteractorEntityDeclaration.class, this, LilPackage.INTERACTOR_TYPE_DEFINITION__INTERACTOR);
     }
-    return component;
+    return interactor;
   }
 
   /**
@@ -217,8 +217,8 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
         return ((InternalEList<?>)getActor()).basicRemove(otherEnd, msgs);
       case LilPackage.INTERACTOR_TYPE_DEFINITION__DATA:
         return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
-      case LilPackage.INTERACTOR_TYPE_DEFINITION__COMPONENT:
-        return ((InternalEList<?>)getComponent()).basicRemove(otherEnd, msgs);
+      case LilPackage.INTERACTOR_TYPE_DEFINITION__INTERACTOR:
+        return ((InternalEList<?>)getInteractor()).basicRemove(otherEnd, msgs);
       case LilPackage.INTERACTOR_TYPE_DEFINITION__BEHAVIOR:
         return ((InternalEList<?>)getBehavior()).basicRemove(otherEnd, msgs);
     }
@@ -241,8 +241,8 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
         return getActor();
       case LilPackage.INTERACTOR_TYPE_DEFINITION__DATA:
         return getData();
-      case LilPackage.INTERACTOR_TYPE_DEFINITION__COMPONENT:
-        return getComponent();
+      case LilPackage.INTERACTOR_TYPE_DEFINITION__INTERACTOR:
+        return getInteractor();
       case LilPackage.INTERACTOR_TYPE_DEFINITION__BEHAVIOR:
         return getBehavior();
     }
@@ -271,9 +271,9 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
         getData().clear();
         getData().addAll((Collection<? extends InteractorDataDeclaration>)newValue);
         return;
-      case LilPackage.INTERACTOR_TYPE_DEFINITION__COMPONENT:
-        getComponent().clear();
-        getComponent().addAll((Collection<? extends InteractorEntityDeclaration>)newValue);
+      case LilPackage.INTERACTOR_TYPE_DEFINITION__INTERACTOR:
+        getInteractor().clear();
+        getInteractor().addAll((Collection<? extends InteractorEntityDeclaration>)newValue);
         return;
       case LilPackage.INTERACTOR_TYPE_DEFINITION__BEHAVIOR:
         getBehavior().clear();
@@ -302,8 +302,8 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
       case LilPackage.INTERACTOR_TYPE_DEFINITION__DATA:
         getData().clear();
         return;
-      case LilPackage.INTERACTOR_TYPE_DEFINITION__COMPONENT:
-        getComponent().clear();
+      case LilPackage.INTERACTOR_TYPE_DEFINITION__INTERACTOR:
+        getInteractor().clear();
         return;
       case LilPackage.INTERACTOR_TYPE_DEFINITION__BEHAVIOR:
         getBehavior().clear();
@@ -328,8 +328,8 @@ public class InteractorTypeDefinitionImpl extends MinimalEObjectImpl.Container i
         return actor != null && !actor.isEmpty();
       case LilPackage.INTERACTOR_TYPE_DEFINITION__DATA:
         return data != null && !data.isEmpty();
-      case LilPackage.INTERACTOR_TYPE_DEFINITION__COMPONENT:
-        return component != null && !component.isEmpty();
+      case LilPackage.INTERACTOR_TYPE_DEFINITION__INTERACTOR:
+        return interactor != null && !interactor.isEmpty();
       case LilPackage.INTERACTOR_TYPE_DEFINITION__BEHAVIOR:
         return behavior != null && !behavior.isEmpty();
     }

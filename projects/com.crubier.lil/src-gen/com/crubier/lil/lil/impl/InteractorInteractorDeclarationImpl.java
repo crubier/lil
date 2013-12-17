@@ -3,7 +3,7 @@
 package com.crubier.lil.lil.impl;
 
 import com.crubier.lil.lil.InteractorActorAlias;
-import com.crubier.lil.lil.InteractorComponentDeclaration;
+import com.crubier.lil.lil.InteractorInteractorDeclaration;
 import com.crubier.lil.lil.InteractorType;
 import com.crubier.lil.lil.LilPackage;
 
@@ -24,19 +24,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Interactor Component Declaration</b></em>'.
+ * An implementation of the model object '<em><b>Interactor Interactor Declaration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.crubier.lil.lil.impl.InteractorComponentDeclarationImpl#getType <em>Type</em>}</li>
- *   <li>{@link com.crubier.lil.lil.impl.InteractorComponentDeclarationImpl#getActors <em>Actors</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.InteractorInteractorDeclarationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.crubier.lil.lil.impl.InteractorInteractorDeclarationImpl#getActors <em>Actors</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarationImpl implements InteractorComponentDeclaration
+public class InteractorInteractorDeclarationImpl extends InteractorEntityDeclarationImpl implements InteractorInteractorDeclaration
 {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -63,7 +63,7 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InteractorComponentDeclarationImpl()
+  protected InteractorInteractorDeclarationImpl()
   {
     super();
   }
@@ -76,7 +76,7 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
   @Override
   protected EClass eStaticClass()
   {
-    return LilPackage.Literals.INTERACTOR_COMPONENT_DECLARATION;
+    return LilPackage.Literals.INTERACTOR_INTERACTOR_DECLARATION;
   }
 
   /**
@@ -100,7 +100,7 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
     type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.INTERACTOR_COMPONENT_DECLARATION__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilPackage.INTERACTOR_INTERACTOR_DECLARATION__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -117,14 +117,14 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
     {
       NotificationChain msgs = null;
       if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.INTERACTOR_COMPONENT_DECLARATION__TYPE, null, msgs);
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilPackage.INTERACTOR_INTERACTOR_DECLARATION__TYPE, null, msgs);
       if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.INTERACTOR_COMPONENT_DECLARATION__TYPE, null, msgs);
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilPackage.INTERACTOR_INTERACTOR_DECLARATION__TYPE, null, msgs);
       msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.INTERACTOR_COMPONENT_DECLARATION__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilPackage.INTERACTOR_INTERACTOR_DECLARATION__TYPE, newType, newType));
   }
 
   /**
@@ -136,7 +136,7 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
   {
     if (actors == null)
     {
-      actors = new EObjectContainmentEList<InteractorActorAlias>(InteractorActorAlias.class, this, LilPackage.INTERACTOR_COMPONENT_DECLARATION__ACTORS);
+      actors = new EObjectContainmentEList<InteractorActorAlias>(InteractorActorAlias.class, this, LilPackage.INTERACTOR_INTERACTOR_DECLARATION__ACTORS);
     }
     return actors;
   }
@@ -151,9 +151,9 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__TYPE:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__TYPE:
         return basicSetType(null, msgs);
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__ACTORS:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__ACTORS:
         return ((InternalEList<?>)getActors()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -169,9 +169,9 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__TYPE:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__TYPE:
         return getType();
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__ACTORS:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__ACTORS:
         return getActors();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -188,10 +188,10 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__TYPE:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__TYPE:
         setType((InteractorType)newValue);
         return;
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__ACTORS:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__ACTORS:
         getActors().clear();
         getActors().addAll((Collection<? extends InteractorActorAlias>)newValue);
         return;
@@ -209,10 +209,10 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__TYPE:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__TYPE:
         setType((InteractorType)null);
         return;
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__ACTORS:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__ACTORS:
         getActors().clear();
         return;
     }
@@ -229,12 +229,12 @@ public class InteractorComponentDeclarationImpl extends InteractorEntityDeclarat
   {
     switch (featureID)
     {
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__TYPE:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__TYPE:
         return type != null;
-      case LilPackage.INTERACTOR_COMPONENT_DECLARATION__ACTORS:
+      case LilPackage.INTERACTOR_INTERACTOR_DECLARATION__ACTORS:
         return actors != null && !actors.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //InteractorComponentDeclarationImpl
+} //InteractorInteractorDeclarationImpl

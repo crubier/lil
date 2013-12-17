@@ -1,17 +1,38 @@
 package sample6
 
-person data : 
-	name : text
-	surname : text
-	birthdate : text
-	sex:symbol
 
+// A standard human actor
 human actor :
-	pointing : input
-	viewing : output
-	sound:output
+	pointing : 	input
+	viewing : 	output
+	sound : 	output
 	
+// A standard system actor
+system actor :
+	command : 	output
+	report : 	input
 
+// The crew of an aircraft
+crew actor :
+	captain : 	human
+	officer : 	human
+	purser : 	human
+	attendant : human
+
+// Systems of an aircraft
+aircraft actor :
+	flight : 		system
+	maintenance :	system
+	cabin : 		system
+	
+	
+// Data types
+person data : 
+	name : 		text
+	surname : 	text
+	birthdate :	time in [0 year, now]
+	sex :		symbol in {#F,#M}
+	
 enginePower data: 
 	number in [0,100]
 
@@ -24,7 +45,7 @@ gauge interactor :
 	val : number in [0,100] flow from parent to user
 	
 	
-etatsinteracteur interactor :
+stateInteractor interactor :
 	etat : symbol in {#ON , #OFF, #DEFAULT} flow
 	
 	user : human actor
@@ -51,8 +72,10 @@ controlPanel interactor:
 	x: enginePower flow from system
 	y: enginePower flow from system
 	current: enginePower flow 
+	
+	on initialization : set current = 1 - 3 * (now-5year)
 	/*
-	on init : 	always current = switch(selection) case #X : x case #Y : 2 year 5 day 2 hour 1 minute 5.3 second
+	on initialization : 	always current = switch(selection) case #X : x case #Y : 2 year 5 day 2 hour 1 minute 5.3 second
 				always val to theGauge = math.clip(current,0,100)
 				
 	on increment : set val to theGauge = switch (7) case +1:false case 2:true default : false
